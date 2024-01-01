@@ -1,0 +1,6 @@
+docutils==0.17.1
+linkify
+linkify-it-py
+jupyter-book
+matplotlib
+numpy

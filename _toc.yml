@@ -1,0 +1,185 @@
+format: jb-book
+root: about/unsyllabus
+parts:
+- caption: About this course
+  chapters:
+  - file: about/syllabus
+  - file: about/course_schedule
+  - file: about/accommodations
+  - file: about/doing_well
+  - file: about/faq
+
+- caption: Getting Started
+  chapters:
+  - file: about/pre_term
+  - file: getting-started/tasks1
+  - file: getting-started/tasks2
+  - file: getting-started/tasks3
+  - file: notes/setup/stack
+    title: Setup Your Machine
+    sections:
+    - file: notes/setup/install_macOS
+    - file: notes/setup/install_windows
+    - file: notes/setup/install_ubuntu
+
+- caption: Demo section
+  chapters:
+  - file: notes/demo01/demo01_summary
+    title: Demo 1 - Data Science
+    sections:
+      - file: notes/demo01/lecture1
+      - file: notes/demo01/lecture2
+      - file: notes/demo01/lecture3
+  - file: notes/demo02/demo02_summary
+    title: Demo 2 - Introductory Physics
+    sections:
+      - file: notes/demo02/videos
+      - file: notes/demo02/homework
+      - file: notes/demo02/readings
+      - file: notes/demo02/lab
+      - file: notes/demo02/learninglogs
+      - file: notes/demo02/test
+      - file: notes/demo03/demo03_summary
+        title: Demo 3 - Shakespeare
+      - file: notes/demo04/demo04_summary
+        title: Demo 4 - Chemistry
+      - url: https://firas.moosvi.com/books/active-learning-technologies/jupyterdays/capacitor_talk/Capacitor.html
+        title: Capacitor Lecture
+- caption: Part 1 - Kinematics
+  chapters:
+  - file: notes/week01/week01_summary
+    title: Week 1 - Introductions!
+  - file: notes/week02/week02_summary
+    title: Week 2 - Chapter 2
+    sections:
+      - file: notes/week02/readings
+      - file: notes/week02/videos
+      - file: notes/week02/homework
+      - file: notes/week02/lecture
+      - file: notes/week02/test
+      - file: notes/week02/lab
+      - file: notes/week02/learninglogs
+  - file: notes/week03/week03_summary
+    title: Week 3 - Chapter 3
+    sections:
+      - file: notes/week03/readings
+      - file: notes/week03/videos
+      - file: notes/week03/homework
+      - file: notes/week03/lecture
+      - file: notes/week03/test
+      - file: notes/week03/lab
+      - file: notes/week03/learninglogs
+  - file: notes/week04/week04_summary
+    title: Week 4 - Chapter 4
+    sections:
+      - file: notes/week04/readings
+      - file: notes/week04/videos
+      - file: notes/week04/homework
+      - file: notes/week04/lecture
+      - file: notes/week04/test
+      - file: notes/week04/lab
+      - file: notes/week04/learninglogs
+- caption: Part 2 - Dynamics
+  chapters:
+  - file: notes/week05/week05_summary
+    title: Week 5 - Chapter 5
+    sections:
+      - file: notes/week05/readings
+      - file: notes/week05/videos
+      - file: notes/week05/homework
+      - file: notes/week05/lecture
+      - file: notes/week05/test
+      - file: notes/week05/lab
+      - file: notes/week05/learninglogs
+  - file: notes/week06/week06_summary
+    title: Week 6 - Week Off !!
+  - file: notes/week07/week07_summary
+    title: Week 7 - Chapter 6
+    sections:
+      - file: notes/week07/readings
+      - file: notes/week07/videos
+      - file: notes/week07/homework
+      - file: notes/week07/lecture
+      - file: notes/week07/test
+      - file: notes/week07/lab
+      - file: notes/week07/learninglogs
+  - file: notes/week08/week08_summary
+    title: Week 8 - Chapter 7
+    sections:
+      - file: notes/week08/readings
+      - file: notes/week08/videos
+      - file: notes/week08/homework
+      - file: notes/week08/lecture
+      - file: notes/week08/test
+      - file: notes/week08/lab
+      - file: notes/week08/learninglogs
+  - file: notes/week09/week09_summary
+    title: Week 9 - Chapter 8
+    sections:
+      - file: notes/week09/readings
+      - file: notes/week09/videos
+      - file: notes/week09/homework
+      - file: notes/week09/lecture
+      - file: notes/week09/test
+      - file: notes/week09/lab
+      - file: notes/week09/learninglogs
+- caption: Part 3 - Energy & Momentum
+  chapters:
+  - file: notes/week10/week10_summary
+    title: Week 10 - Chapter 9
+    sections:
+      - file: notes/week10/readings
+      - file: notes/week10/videos
+      - file: notes/week10/homework
+      - file: notes/week10/lecture
+      - file: notes/week10/test
+      - file: notes/week10/lab
+      - file: notes/week10/learninglogs
+  - file: notes/week11/week11_summary
+    title: Week 11 - Chapter 10
+    sections:
+      - file: notes/week11/readings
+      - file: notes/week11/videos
+      - file: notes/week11/homework
+      - file: notes/week11/lecture
+      - file: notes/week11/test
+      - file: notes/week11/lab
+      - file: notes/week11/learninglogs
+  - file: notes/week12/week12_summary
+    title: Week 12 - Chapter 11
+    sections:
+      - file: notes/week12/readings
+      - file: notes/week12/videos
+      - file: notes/week12/homework
+      - file: notes/week12/lecture
+      - file: notes/week12/test
+      - file: notes/week12/lab
+      - file: notes/week12/learninglogs
+- caption: Week 13 - Exam Review
+  chapters:
+  - file: notes/week13/week13_summary
+    title: Week 13 - Review
+    sections:
+      - file: notes/week13/readings
+      - file: notes/week13/videos
+      - file: notes/week13/homework
+      - file: notes/week13/lecture
+      - file: notes/week13/test
+      - file: notes/week13/lab
+      - file: notes/week13/learninglogs
+- caption: Final Exam
+  chapters:
+  - file: notes/final
+- caption: Lab Materials
+  chapters:
+  - file: notes/labs
+    title: Lab Stuff
+- caption: Course Feedback
+  chapters:
+  - file: about/feedback
+    title: Anonymous Feedback Form
+
+- caption: Tools
+  chapters:
+  - file: tools/ed_discussion/ed_discussion
+  - file: tools/github/github
