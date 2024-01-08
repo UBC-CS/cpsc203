@@ -1,7 +1,7 @@
 # Book settings
-title: Physics 111 
+title: CPSC 203 
 author: Firas Moosvi
-logo: images/logo.jpg
+logo: images/logo.png
 copyright: ""
 exclude_patterns: ["LICENSE.md", "README.md"]
 only_build_toc_files: true
@@ -18,12 +18,12 @@ html:
   use_issues_button: true
   use_edit_page_button: true
   navbar_number_sections : false
-  announcement: "Use this JupyterBook as a <a href='https://github.com/firasm/jupyterbook_course_template' style='color:pink;'>template by clicking here</a>!"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  # announcement: "Use this JupyterBook as a <a href='https://github.com/firasm/jupyterbook_course_template' style='color:pink;'>template by clicking here</a>!"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   # google_analytics_id: UA-11111111 # add your Google Analytics Tracking Code
   comments:
     hypothesis: false
     utterances:
-      repo: "firasm/jupyterbook_course_template"
+      repo: "UBC-CS/cpsc203"
     dokieli: false
   extra_footer : |
       <div>
@@ -31,13 +31,13 @@ html:
           All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
       </div>
 
-launch_buttons:
-  notebook_interface : "jupyterlab"
-  binderhub_url      : "https://mybinder.org"
-  thebe              : true
+# launch_buttons:
+#   notebook_interface : "jupyterlab"
+#   binderhub_url      : "https://mybinder.org"
+#   thebe              : true
 
 repository: 
-  url          : https://github.com/firasm/jupyterbook_course_template
+  url          : https://github.com/UBC-CS/cpsc203
   path_to_book : ""
   branch       : main
 
@@ -62,38 +62,45 @@ sphinx:
       # Instructor information
       INSTRUCTOR: "Dr. Firas Moosvi (he/his/him)"
       PRONOUNCE: "Fur-az Moose-vee"
-      OFFICE: "ROOM 111"
+      OFFICE: "ICCS 253"
       PHONE: "N/A"
 
       # Course Information
-      COURSE_CODE: "PHYS 111"
-      SECTION: "001"
+      COURSE_CODE: "CPSC 203"
+      SECTION: "201"
       CREDITS: "3"
-      TITLE: "Introductory Physics for the Physical Sciences I"
-      PREREQS: "One of MATH 12, PREC 12, MATH 125, MATH 126 and PHYS 11 (Physics 12 is strongly recommended)."
-      COREQS: "Math 100"
+      TITLE: "Programming, Problem Solving, and Algorithms"
+      PREREQS: "Pre-reqs: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337."
+      COREQS: "N/A"
       TERM: "2023 Winter Term 2"
-      ROOM: "ROOM 100"
-      MEETING_TIMES: "Monday, Wednesday, Friday from 1-2 PM"
+      ROOM: "AERL 120"
+      MEETING_TIMES: "Tuesday, Thursday from 11:00 -12:30"
       # FORMAT: "Lectures, Labs, Tutorials will all be running in-person."
 
       # Important Links
-      CANVAS_ID: "63995"
+      CANVAS_ID: "130127"
       CANVAS_LINK: "https://canvas.ubc.ca/courses/CANVAS_ID"
       ZOOM_LINK: "[Zoom](https://canvas.ubc.ca/courses/CANVAS_ID/external_tools/15408)"
       ANNOUNCEMENTS_LINK: "[Canvas Announcements](https://canvas.ubc.ca/courses/CANVAS_ID/announcements)"
-      COURSE_LINK: "https://firas.moosvi.com/courses/cosc123"
-      FORUM_LINK: "[Ed Discussion](https://edstem.org/us/join/fgh45hfgh)"
+      COURSE_LINK: "https://firas.moosvi.com/courses/cpsc203/2023W2/"
+      FORUM_LINK: "[Ed Discussion](https://edstem.org/us/join/xyhhmY)"
       TEXTBOOK: "We will not be needing a textbook for this course as you will be provided all the notes you need via the course website and linked materials."
-      ANON_FEEDBACK: "[feedback form](https://ubc.ca1.qualtrics.com/?course=cosc123&term=2022_WT1)"
+      ANON_FEEDBACK: "[feedback form](https://ubc.ca1.qualtrics.com/?course=cpsc203&term=2023_WT2)"
       ASSOCIATE_HEAD: "Associate Head [associate.head@fakeemail.ca](mailto:associate.head@fakeemail.ca)"
-      ANALYTICS_OPTOUT: "[complete this form](https://ubc.ca1.qualtrics.com/jfe/form/xxxxxxxxxx)"
+      ANALYTICS_OPTOUT: "[complete this form](https://ubc.ca1.qualtrics.com/jfe/form/SV_0p6lP4TtNpJn410/?course=cpsc203&term=2023_WT2)"
 
       # Withdrawal Dates and Exam Period
-      W_DATE_1: "11:59 PDT on January 22, 2024"
-      W_DATE_2: "11:59 PDT on March 26, 2024"
-      W_DATE_3: "11:59 PDT on March 26, 2024"
-      EXAM_PERIOD: "Friday December 10th - Wednesday, December 22"
+      # https://vancouver.calendar.ubc.ca/dates-and-deadlines
+      W_DATE_1: "11:59 PDT on January 19, 2024"
+      W_DATE_2: "11:59 PDT on March 1, 2024"
+      W_DATE_3: "11:59 PDT on March 1, 2024"
+      EXAM_PERIOD: "Tuesday April 16th - Saturday, April 27"
 
       # Course Policies
       GRACE_PERIOD: "48 hour"
+
+      # TA Names
+      TA1: "Braeden Fong"
+      TA1pronounce: "BRAY-DIN"
+      TA2: "Manushree Singhania"
+      TA2pronounce: "MA-NU-SHREE"
