@@ -1,4 +1,4 @@
-```{dropdown} 6. Get Familiar with the course pattern.
+```{dropdown} 1. Get Familiar with the course pattern.
     :class-container: sd-shadow-lg
     :color: primary
     :open:

@@ -1,4 +1,4 @@
-```{dropdown} 7. Complete the first Learning Log (LL01) on PrairieLearn.
+```{dropdown} 2. Complete the first Learning Log (LL01) on PrairieLearn.
     :class-container: sd-shadow-lg
     :color: primary
     :open:
