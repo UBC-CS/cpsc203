@@ -1,4 +1,4 @@
-```{dropdown} 7. [Required] Take a break!
+```{dropdown} 2. [Required] Take a break!
     :class-container: sd-shadow-lg
     :color: primary
     :open:

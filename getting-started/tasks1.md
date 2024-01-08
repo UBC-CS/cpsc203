@@ -10,11 +10,5 @@ I've split these tasks up into several chunks so it's a bit more manageable.
 ```{include} bits/04_github.md
 ```
 
-```{include} bits/05_gradescope.md
-```
-
 ```{include} bits/06_course_survey.md
-```
-
-```{include} bits/07_take_a_break.md
 ```

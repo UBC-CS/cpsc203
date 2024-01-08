@@ -8,7 +8,5 @@ The more I understand your circumstances (anonymously), the more I hope to do to
 
 Again, this is optional but please fill it out!!
 
-[Survey link](https://ubc.ca1.qualtrics.com/jfe/form/SV_7Oi7FwTWO2N5gMK?course=cosc123&term=2022_WT2)
-
-Sometime in the first week of the course, I will use the email addresses you provide to invite you to our course Discussion platform (Ed Discussion).
+[Survey link](https://ubc.ca1.qualtrics.com/jfe/form/SV_7Oi7FwTWO2N5gMK?course=cpsc203&term=2023_WT2)
 ```

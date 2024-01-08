@@ -35,7 +35,7 @@ Here is a list of things you can do (but don't have to) before the term starts:
 ```{include} bits/02_print.md
 ```
 
-```{include} bits/0X_hypothesis.md
+```{include} bits/07_take_a_break.md
 ```
 
 ```{include} bits/pre_term_faq.md

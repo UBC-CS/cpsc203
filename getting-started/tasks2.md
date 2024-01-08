@@ -10,9 +10,6 @@ I've split these tasks up into several chunks so it's a bit more manageable.
 ```{include} bits/09_read_unsyllabus.md
 ```
 
-```{include} bits/10_lab_location.md
-```
-
 ```{include} bits/11_setup_computer.md
 ```
 
