@@ -11,7 +11,7 @@ parts:
 
 - caption: Getting Started
   chapters:
-  - file: about/pre_term
+  - file: getting-started/pre_term
   - file: getting-started/tasks1
   - file: getting-started/tasks2
   - file: getting-started/tasks3

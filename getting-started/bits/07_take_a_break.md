@@ -1,6 +1,6 @@
-```{dropdown} 2. [Required] Take a break!
+```{dropdown} 3. [Required] Take a break!
     :class-container: sd-shadow-lg
-    :color: primary
+    :color: success
     :open:
 
 There's still a few days left before term starts, go outside, enjoy the freedom!
