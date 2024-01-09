@@ -109,10 +109,8 @@ In this course, we will be using the following required learning technologies (p
 
 - [Canvas](https://faculty.canvas.ubc.ca/canvas-privacy/)
 - [Ed Discussion](https://edstem.org/privacy)
-- [Gradescope](https://www.gradescope.com/privacy)
 - [GitHub](https://docs.github.com/en/github/site-policy/github-privacy-statement)
 - [PrairieLearn](https://www.prairielearn.com/legal/privacy)
-- [Sli.do](https://www.slido.com/terms?experience_id=1&utm_campaign=_eid-007-control&utm_source=www.slido.com-_ab#privacy-policy)
 
 ```{include} unsyllabus_bits/tools/canvas.md
 ```
@@ -126,11 +124,15 @@ In this course, we will be using the following required learning technologies (p
 ```{include} unsyllabus_bits/tools/prairielearn.md
 ```
 
+<!-- 
+- [Sli.do](https://www.slido.com/terms?experience_id=1&utm_campaign=_eid-007-control&utm_source=www.slido.com-_ab#privacy-policy)
 ```{include} unsyllabus_bits/tools/slido.md
 ```
+- [Gradescope](https://www.gradescope.com/privacy)
 
 ```{include} unsyllabus_bits/tools/gradescope.md
 ```
+ -->
 
 ### What type of information will I collect about you in this course?
 
