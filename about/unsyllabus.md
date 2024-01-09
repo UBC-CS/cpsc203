@@ -18,7 +18,6 @@ This course website is currently under construction. It will continue to be upda
 ```
  -->
 
-
 (important-details)=
 ## Important Details
 
