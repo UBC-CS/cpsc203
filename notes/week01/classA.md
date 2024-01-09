@@ -9,4 +9,4 @@ We will leave the website open even after the course is over for a reasonable nu
 <iframe src="../../Lec01Intro.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-## [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec01Intro.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec01Intro.pdf)
