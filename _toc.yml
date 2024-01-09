@@ -15,12 +15,12 @@ parts:
   - file: getting-started/tasks1
   - file: getting-started/tasks2
   - file: getting-started/tasks3
-  - file: notes/setup/stack
-    title: Setup Your Machine
-    sections:
-    - file: notes/setup/install_macOS
-    - file: notes/setup/install_windows
-    - file: notes/setup/install_ubuntu
+  # - file: notes/setup/stack
+  #   title: Setup Your Machine
+  #   sections:
+  #   - file: notes/setup/install_macOS
+  #   - file: notes/setup/install_windows
+  #   - file: notes/setup/install_ubuntu
 
 # - caption: Demo section
 #   chapters:
