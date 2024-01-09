@@ -10,3 +10,7 @@ We will leave the website open even after the course is over for a reasonable nu
 </div>
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec01Intro.pdf)
+
+## Acknowledgements
+
+Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.
