@@ -45,10 +45,14 @@ parts:
 #         title: Demo 4 - Chemistry
 #       - url: https://firas.moosvi.com/books/active-learning-technologies/jupyterdays/capacitor_talk/Capacitor.html
 #         title: Capacitor Lecture
-# - caption: Part 1 - Kinematics
-#   chapters:
-#   - file: notes/week01/week01_summary
-#     title: Week 1 - Introductions!
+
+- caption: Part 1 - Basics
+  chapters:
+  - file: notes/week01/week01_summary
+    title: Week 1 - Introductions!
+    sections:
+      - file: notes/week01/classA
+
 #   - file: notes/week02/week02_summary
 #     title: Week 2 - Chapter 2
 #     sections:
