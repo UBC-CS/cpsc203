@@ -52,7 +52,7 @@ parts:
     title: Week 1 - Introductions!
     sections:
       - file: notes/week01/classA
-
+      - file: notes/week01/classB
 #   - file: notes/week02/week02_summary
 #     title: Week 2 - Chapter 2
 #     sections:
