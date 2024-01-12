@@ -2,7 +2,11 @@
 
 Today we will be learning about the Terminal!
 
-We will be following the notes [from this page](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week02/Class2B/Class2B.html). I will soon add those to our course page so you can view them directly!
+We will be following the notes [from this page](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week02/Class2B/Class2B.html). 
+
+I will soon add those to our course page so you can view them directly!
+
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec02Terminal.pdf)
 
 Here are some useful Terminal Commands
 
