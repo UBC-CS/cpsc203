@@ -1,4 +1,4 @@
-# Class Meeting 1
+# Class Meeting 1B
 
 Today we will be learning about the Terminal!
 

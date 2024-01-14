@@ -1,4 +1,4 @@
-# Class Meeting 1
+# Class Meeting 1A
 
 Below are the slides from today's class embedded.
 Feel free to download them to keep them locally, or leave them archived here and just bookmark them.
