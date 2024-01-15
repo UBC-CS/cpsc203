@@ -47,6 +47,7 @@ parts:
 #         title: Capacitor Lecture
 
 - caption: Part 1 - Basics
+  maxdepth: 1
   chapters:
   - file: notes/week01/week01_summary
     title: Week 1 - Introductions!

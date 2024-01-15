@@ -144,10 +144,10 @@ By the end of class, and after deliberate practice you should be able to:
 
 ## Guide to your operating system (Optional)
 
-For macOS users, [here's a video](https://www.youtube-nocookie.com/embed/RX160bcMFuA) that shows you a little about some features on your computer.
+For macOS users, [here's a video](https://www.youtube-nocookie.com/embed/egK5BKEn87c) that shows you a little about some features on your computer.
 
 https://youtu.be/RX160bcMFuA
 
 ## Guide to the operating system for Windows 10 users
 
-For Windows 10 users, [here's a video](https://www.youtube-nocookie.com/embed/egK5BKEn87c) that shows you a little about some features on your computer.
+For Windows 10 users, [here's a video](https://www.youtube-nocookie.com/embed/RX160bcMFuA) that shows you a little about some features on your computer.
