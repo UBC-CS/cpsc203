@@ -3,7 +3,7 @@ Things may change depending on many factors so this is subject to change.
 
 | Wk | Date   | Topic                         | POTW    | Lab    | Logs  | Examlet |
 |----|--------|-------------------------------|---------|--------|-------|---------|
-| 1  | Jan 8  | Terminal, Markdown, and Git   | POTW 1  | Lab 1  | LL 1  | -       |
+| 1  | Jan 8  | Terminal, Markdown            | POTW 1  | Lab 1  | LL 1  | -       |
 | 2  | Jan 15 | Data Representation and Lists | POTW 2  | Lab 2  | LL 2  | Test 1  |
 | 3  | Jan 22 | Decomposition and Design      | POTW 3  | Lab 3  | LL 3  | -       |
 | 4  | Jan 29 | Python Classes                | POTW 4  | Lab 4  | LL 4  | Test 2  |
