@@ -2,6 +2,10 @@
 
 Today we will be learning about the Terminal!
 
+<div>
+<iframe src="../../Lec02Terminal.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+</div>
+
 <img src="images/Terminal.png" alt="CommandPrompt" width="450px" >
 
 <img src="https://gitforwindows.org/img/gw1.png" alt="CommandPrompt" width="450px" >

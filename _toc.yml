@@ -54,10 +54,10 @@ parts:
     sections:
       - file: notes/week01/classA
       - file: notes/week01/classB
-#   - file: notes/week02/week02_summary
-#     title: Week 2 - Chapter 2
-#     sections:
-#       - file: notes/week02/readings
+  - file: notes/week02/week02_summary
+    title: Week 2 - Chapter 2
+    sections:
+      - file: notes/week02/class2A
 #       - file: notes/week02/videos
 #       - file: notes/week02/homework
 #       - file: notes/week02/lecture
