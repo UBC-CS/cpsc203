@@ -39,7 +39,7 @@ Once you have completed these installation instructions, make sure to follow the
 
 ## Table of Contents
 
-- [UBC Student Email](#ubc-student-email)
+<!-- - [UBC Student Email](#ubc-student-email) -->
 - [Zoom](#zoom)
 - [Web browser](#web-browser)
 <!-- - [Microsoft Office](#microsoft-office) -->
@@ -51,11 +51,13 @@ Once you have completed these installation instructions, make sure to follow the
 - [Tree](#tree)
 <!-- - [Test JupyterLab](#test-jupyterlab) -->
 
+<!--
 ## UBC Student Email
 
 Please sign up for a UBC Student Email. 
 This account will also grant you access to a range of other UBC services (not used in this course), including Microsoft Teams and OneDrive. 
-To do so navigate to [https://it.ubc.ca/services/email-voice-internet/ubc-student-email-service](https://it.ubc.ca/services/email-voice-internet/ubc-student-email-service) and follow the instructions under "Get Started". 
+To do so navigate to [https://it.ubc.ca/services/email-voice-internet/ubc-student-email-service](https://it.ubc.ca/services/email-voice-internet/ubc-student-email-service) and follow the instructions under "Get Started".
+-->
 
 ## Web browser
 
