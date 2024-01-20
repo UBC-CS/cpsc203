@@ -51,7 +51,8 @@ When given the option, you should choose to download the `arm64` or Apple Silico
 - [Python](#python)
 - [Visual Studio Code](#visual-studio-code)
 - [Terminal](#terminal)
-- [Test JupyterLab](#test-jupyterlab)
+<!-- - [Test JupyterLab](#test-jupyterlab) -->
+- [tree](#tree)
 
 <!-- 
 ## UBC Student Email
