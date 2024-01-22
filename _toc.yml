@@ -52,10 +52,10 @@ parts:
   - file: notes/week01/week01_summary
     title: Week 1 - Introductions!
     sections:
-      - file: notes/week01/classA
-      - file: notes/week01/classB
+      - file: notes/week01/class1A
+      - file: notes/week01/class1B
   - file: notes/week02/week02_summary
-    title: Week 2 - Chapter 2
+    title: Week 2 - Python Review
     sections:
       - file: notes/week02/class2A
       - file: notes/week02/class2B
@@ -65,11 +65,13 @@ parts:
 #       - file: notes/week02/test
 #       - file: notes/week02/lab
 #       - file: notes/week02/learninglogs
-#   - file: notes/week03/week03_summary
-#     title: Week 3 - Chapter 3
-#     sections:
-#       - file: notes/week03/readings
-#       - file: notes/week03/videos
+  - file: notes/week03/week03_summary
+    title: Week 3 - Chapter 3
+    sections:
+      # - file: notes/week03/readings
+      - file: notes/week03/videos
+      - file: notes/week03/class3A
+      # - file: notes/week03/class3B
 #       - file: notes/week03/homework
 #       - file: notes/week03/lecture
 #       - file: notes/week03/test
