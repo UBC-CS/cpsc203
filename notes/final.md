@@ -85,7 +85,7 @@ This means a total score of 41/50 on the tests.
 The final exam will be out of 50 marks, so the minimum mark you need to achieve on the final to pass the course is 9/50, or 18%.
 **Please, please, please** do not take this to mean that you can take the exam lightly, and that you are guaranteed to pass the course.
 Failing the final that badly will trigger a manual review of the course work you have submitted so far, and may result in more headache for you in the end. 
-The point of this example is just to assure you that if you've been working hard in the course, doing the tests and bonus tests, keeping up with the material, getting help when you need it, chances are, you will be fine.
+The point of this example is just to assure you that if you've been working hard in the course, doing the tests, keeping up with the material, getting help when you need it, chances are, you will be fine.
 
 I will be individually reviewing each case of large disparities between course and final exam performances. 
 
