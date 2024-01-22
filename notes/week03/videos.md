@@ -14,6 +14,12 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week03_video3" class="box"> <label> Colour Representation</input></label>
 
+<input type="checkbox" id="week03_video4" class="box"> <label>Handcraft program design</input></label>
+
+<input type="checkbox" id="week03_video5" class="box"> <label> Classes in Python</input></label>
+
+
+
 ```
 ````
 
