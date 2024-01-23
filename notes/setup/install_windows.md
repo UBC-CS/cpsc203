@@ -272,7 +272,7 @@ conda --version
 you should see something like this
 
 ```
-conda 4.12.0
+conda 23.11.0
 ```
 
 > *Optional* One annoyance with our current terminal setup is that the word `(base)` is not on the same row as the rest of the prompt string (the part with `your_name@your_computer`. To fix this we can edit the `.bash_profile` configuration file to indicate that we do not want a newline at the beginning of the prompt string. Open up the configuration file using VS Code by typing the following command into a terminal:
