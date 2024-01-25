@@ -5,10 +5,10 @@ Feel free to download them to keep them locally, or leave them archived here and
 We will leave the website open even after the course is over for a reasonable number of years.
 
 <div>
-<iframe src="../../Lec05efficiency.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec06knitting1.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec05efficiency.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec06knitting1.pdf)
 
 <!--
 ## Important links for today:

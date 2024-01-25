@@ -71,7 +71,7 @@ parts:
       # - file: notes/week03/readings
       - file: notes/week03/videos
       - file: notes/week03/class3A
-      # - file: notes/week03/class3B
+      - file: notes/week03/class3B
 #       - file: notes/week03/homework
 #       - file: notes/week03/lecture
 #       - file: notes/week03/test
