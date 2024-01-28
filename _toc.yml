@@ -66,7 +66,7 @@ parts:
 #       - file: notes/week02/lab
 #       - file: notes/week02/learninglogs
   - file: notes/week03/week03_summary
-    title: Week 3 - Efficiency and `dataclass`
+    title: Week 3 - Efficiency and Dataclass
     sections:
       # - file: notes/week03/readings
       - file: notes/week03/videos
@@ -77,11 +77,11 @@ parts:
 #       - file: notes/week03/test
 #       - file: notes/week03/lab
 #       - file: notes/week03/learninglogs
-#   - file: notes/week04/week04_summary
-#     title: Week 4 - Chapter 4
-#     sections:
-#       - file: notes/week04/readings
-#       - file: notes/week04/videos
+  - file: notes/week04/week04_summary
+    title: Week 4 - Chapter 4
+    sections:
+      # - file: notes/week04/readings
+      - file: notes/week04/videos
 #       - file: notes/week04/homework
 #       - file: notes/week04/lecture
 #       - file: notes/week04/test

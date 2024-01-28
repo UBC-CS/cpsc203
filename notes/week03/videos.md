@@ -18,8 +18,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week03_video5" class="box"> <label> Classes in Python</input></label>
 
-
-
 ```
 ````
 
