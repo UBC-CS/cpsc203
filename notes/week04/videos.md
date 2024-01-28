@@ -10,9 +10,11 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week04_video1" class="box"> <label>Knitting Functions</input></label>
 
-<input type="checkbox" id="week04_video2" class="box"> <label>Handcraft program design</input></label>
+<input type="checkbox" id="week04_video2" class="box"> <label> Introduction to Pandas</input></label>
 
-<input type="checkbox" id="week04_video3" class="box"> <label> Classes in Python</input></label>
+<input type="checkbox" id="week04_video3" class="box"> <label> Data, Internet, and Billboard 100</input></label>
+
+<input type="checkbox" id="week04_video4" class="box"> <label> Beautiful Soup</input></label>
 
 ```
 ````
@@ -33,24 +35,34 @@ Below are the assigned videos for this week.
 </div>
 ```
 
-### Videos before Thursday's class
-
-```{dropdown} 4. Handcraft Program Design
+```{dropdown} 2. Introduction to Pandas
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/905091212?h=dccc9e6836" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/907139342" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
 
-```{dropdown} 5. Classes in Python
+### Videos before Thursday's class
+
+```{dropdown} 3. Data, Internet, and Billboard 100
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/905092897?h=4a4081ea42" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/907137178" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 4. Beautiful Soup
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/907137714" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
