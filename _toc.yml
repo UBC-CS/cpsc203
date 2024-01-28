@@ -57,9 +57,9 @@ parts:
   - file: notes/week02/week02_summary
     title: Week 2 - Python Review
     sections:
+      - file: notes/week02/videos
       - file: notes/week02/class2A
       - file: notes/week02/class2B
-#       - file: notes/week02/videos
 #       - file: notes/week02/homework
 #       - file: notes/week02/lecture
 #       - file: notes/week02/test
@@ -82,6 +82,8 @@ parts:
     sections:
       # - file: notes/week04/readings
       - file: notes/week04/videos
+      - file: notes/week04/class4A
+      - file: notes/week04/class4B
 #       - file: notes/week04/homework
 #       - file: notes/week04/lecture
 #       - file: notes/week04/test
