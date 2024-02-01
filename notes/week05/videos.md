@@ -48,4 +48,33 @@ Below are the assigned videos for this week.
 ```
 ### Videos before Thursday's class
 
-Coming soon!
+```{dropdown} 3. Dataframe Filtering
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/908496448" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 4. Pandas and Dates
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/908493751" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 5. Plotting with Pandas
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/908497239" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+

@@ -92,7 +92,7 @@ parts:
 - caption: Part 2 - Working with Data
   chapters:
   - file: notes/week05/week05_summary
-    title: Week 5 - Chapter 5
+    title: Week 5 - Web Scraping
     sections:
       - file: notes/week05/videos
       - file: notes/week05/class5A
