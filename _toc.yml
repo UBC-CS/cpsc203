@@ -78,7 +78,7 @@ parts:
 #       - file: notes/week03/lab
 #       - file: notes/week03/learninglogs
   - file: notes/week04/week04_summary
-    title: Week 4 - Chapter 4
+    title: Week 4 - Python Classes
     sections:
       # - file: notes/week04/readings
       - file: notes/week04/videos
@@ -89,13 +89,16 @@ parts:
 #       - file: notes/week04/test
 #       - file: notes/week04/lab
 #       - file: notes/week04/learninglogs
-# - caption: Part 2 - Dynamics
-#   chapters:
-#   - file: notes/week05/week05_summary
-#     title: Week 5 - Chapter 5
-#     sections:
+- caption: Part 2 - Working with Data
+  chapters:
+  - file: notes/week05/week05_summary
+    title: Week 5 - Chapter 5
+    sections:
+      - file: notes/week05/videos
+      - file: notes/week05/class5A
+      - file: notes/week05/class5B
 #       - file: notes/week05/readings
-#       - file: notes/week05/videos
+
 #       - file: notes/week05/homework
 #       - file: notes/week05/lecture
 #       - file: notes/week05/test

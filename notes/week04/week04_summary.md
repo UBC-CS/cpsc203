@@ -2,4 +2,4 @@
 Week 4 Summary
 =======================
 
-This week we be continuing knitting and learning about Python classes, learning about Pandas, BeautifulSoup, and parsing data from the internet!
+This week we will be continuing knitting and learning about Python classes and learning about Pandas.
