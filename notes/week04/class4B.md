@@ -2,6 +2,12 @@
 
 We're going to change things up for today and switch today's class to a Review and catch-up class with no new content.
 
+<div>
+<iframe src="../../Lec08_Review.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+</div>
+
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec08_Review.pdf)
+
 ## Optional links for today
 
 <!--

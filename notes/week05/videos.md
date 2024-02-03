@@ -68,7 +68,7 @@ Below are the assigned videos for this week.
 </div>
 ```
 
-```{dropdown} 5. Plotting with Pandas
+```{dropdown} 5. Plotting with Pandas   
     :class-container: sd-shadow-lg
     :color: primary
     :open:
