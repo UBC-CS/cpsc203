@@ -106,8 +106,14 @@ parts:
 #       - file: notes/week05/test
 #       - file: notes/week05/lab
 #       - file: notes/week05/learninglogs
-#   - file: notes/week06/week06_summary
-#     title: Week 6 - Week Off !!
+  - file: notes/week06/week06_summary
+    title: Week 6 - Git and Version Control
+    sections:
+      - file: notes/week06/videos
+      - file: notes/week06/class6A
+      - file: notes/week06/class6B
+
+
 #   - file: notes/week07/week07_summary
 #     title: Week 7 - Chapter 6
 #     sections:

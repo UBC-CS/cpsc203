@@ -1,14 +1,8 @@
-# Class Meeting 6A
+# Class Meeting 6B
 
-Below are the slides from today's class embedded.
-Feel free to download them to keep them locally, or leave them archived here and just bookmark them.
-We will leave the website open even after the course is over for a reasonable number of years.
+There is no class today - take some time to reflect on the content for this week, do your practice, and take the time to finish up Lab 5 (it's slightly longer this week).
 
-<div>
-<iframe src="../../Lec11_Git_VersionControl.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
-</div>
-
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec11_Git_VersionControl.pdf)
+## Optional links for today
 
 <!--
 ## Important links for today:
