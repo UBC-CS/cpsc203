@@ -78,3 +78,17 @@ Below are the assigned videos for this week.
 </div>
 ```
 
+## Optional Videos
+
+
+```{dropdown} 5. Seaborn
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+You can see the associated [Jupyter Notebook here](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week06/Class6B/Class6B.html)
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/6GUZXDef2U0?si=YA7_o1vRlkSG0_eW" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```

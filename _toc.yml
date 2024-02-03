@@ -46,7 +46,7 @@ parts:
 #       - url: https://firas.moosvi.com/books/active-learning-technologies/jupyterdays/capacitor_talk/Capacitor.html
 #         title: Capacitor Lecture
 
-- caption: Part 1 - Basics
+- caption: Part 1 - Introductions
   maxdepth: 1
   chapters:
   - file: notes/week01/week01_summary
@@ -65,6 +65,8 @@ parts:
 #       - file: notes/week02/test
 #       - file: notes/week02/lab
 #       - file: notes/week02/learninglogs
+- caption: Part 2 - Dataclass in Python
+  chapters:
   - file: notes/week03/week03_summary
     title: Week 3 - Efficiency and Dataclass
     sections:
@@ -78,7 +80,7 @@ parts:
 #       - file: notes/week03/lab
 #       - file: notes/week03/learninglogs
   - file: notes/week04/week04_summary
-    title: Week 4 - Python Classes
+    title: Week 4 - Dataclass cont'd
     sections:
       # - file: notes/week04/readings
       - file: notes/week04/videos
@@ -89,7 +91,7 @@ parts:
 #       - file: notes/week04/test
 #       - file: notes/week04/lab
 #       - file: notes/week04/learninglogs
-- caption: Part 2 - Working with Data
+- caption: Part 3 - Working with Data
   chapters:
   - file: notes/week05/week05_summary
     title: Week 5 - Web Scraping
@@ -116,6 +118,8 @@ parts:
 #       - file: notes/week07/test
 #       - file: notes/week07/lab
 #       - file: notes/week07/learninglogs
+# - caption: Part 4 - Visualizing Algorithms
+#   chapters:
 #   - file: notes/week08/week08_summary
 #     title: Week 8 - Chapter 7
 #     sections:
@@ -158,6 +162,8 @@ parts:
 #       - file: notes/week11/test
 #       - file: notes/week11/lab
 #       - file: notes/week11/learninglogs
+# - caption: Part 5 - Visualizing Algorithms II
+#   chapters:
 #   - file: notes/week12/week12_summary
 #     title: Week 12 - Chapter 11
 #     sections:
