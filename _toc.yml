@@ -112,7 +112,7 @@ parts:
       - file: notes/week06/videos
       - file: notes/week06/class6A
       - file: notes/week06/class6B
-  - file: notes/week06/week06_summary
+  - file: notes/week07/week07_summary
     title: Week 7 - Reading week!
 # - caption: Part 4 - Visualizing Algorithms
 #   chapters:

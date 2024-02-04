@@ -83,7 +83,6 @@ Below are the assigned videos for this week.
 ```{dropdown} Pandas in Data Science Tutorial
     :class-container: sd-shadow-lg
     :color: primary
-    :closed:
 
 Some of you have asked me for advanced Pandas tutorials for your own side-projects and other courses.
 Though much of this content is beyond the scope of this course, here is a nice video that I assign to students in one of my other data science courses that might be useful for you.
@@ -123,7 +122,6 @@ You can download the [`pokemon.csv` dataset here](https://github.com/firasm/bits
 ```{dropdown} 5. Seaborn
     :class-container: sd-shadow-lg
     :color: primary
-    :closed:
 
 You can see the associated [Jupyter Notebook here](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week06/Class6B/Class6B.html)
 
