@@ -112,18 +112,8 @@ parts:
       - file: notes/week06/videos
       - file: notes/week06/class6A
       - file: notes/week06/class6B
-
-
-#   - file: notes/week07/week07_summary
-#     title: Week 7 - Chapter 6
-#     sections:
-#       - file: notes/week07/readings
-#       - file: notes/week07/videos
-#       - file: notes/week07/homework
-#       - file: notes/week07/lecture
-#       - file: notes/week07/test
-#       - file: notes/week07/lab
-#       - file: notes/week07/learninglogs
+  - file: notes/week06/week06_summary
+    title: Week 7 - Reading week!
 # - caption: Part 4 - Visualizing Algorithms
 #   chapters:
 #   - file: notes/week08/week08_summary
