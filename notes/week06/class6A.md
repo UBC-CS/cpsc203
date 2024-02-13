@@ -61,7 +61,7 @@ You will need to get into a group of 3 for this activity, and it would be best i
 - Accept a [**group** GitHub Classroom assignment](https://classroom.github.com/a/-GA1rFkW).
 - Clone the repo locally using the Terminal.
 - Open the repo in VS Code.
-- Contributor 1,2,3 all make a change in VS Code
+- Contributor 1,2,3 all independently make changes to fix their functions in VS Code
 - Contributor 1,2,3 all commit to their repos BUT DO NOT PUSH!
 
 ## Guided Activity 2: Code Reviews
@@ -73,15 +73,13 @@ We'll now do a demo on how to submit a Pull Request, and do a code review.
 
 Here are some command sequences that might be useful:
 
-```
 - `git status`
+- `git clone ...`
 - `git add .` or `git add -A`
 - `git commit -m`
 - `git switch -c 'person1'`
 - `git switch -c 'person2'`
-- edit the file
-- `add, commit, push`
-```
+- `git add`, `git commit`, `git push`
 
 ## Important links for today:
 
