@@ -114,13 +114,15 @@ parts:
       - file: notes/week06/class6B
   - file: notes/week07/week07_summary
     title: Week 7 - Reading week!
-# - caption: Part 4 - Visualizing Algorithms
-#   chapters:
-#   - file: notes/week08/week08_summary
-#     title: Week 8 - Chapter 7
-#     sections:
-#       - file: notes/week08/readings
-#       - file: notes/week08/videos
+
+- caption: Part 4 - Algorithms and Data Structures
+  chapters:
+  - file: notes/week08/week08_summary
+    title: Week 8 - Data Structures
+    sections:
+      - file: notes/week08/videos
+      - file: notes/week08/class8A
+
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
 #       - file: notes/week08/test

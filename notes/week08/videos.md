@@ -6,126 +6,88 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 ````{margin}
 ```{admonition} Checklist of items
-:class: tip
+:class: tip sticky
 
-<input type="checkbox" id="week08_video1" class="box"><label>Video 1</input></label>
+<input type="checkbox" id="week08_video1" class="box"> <label>What are Data Structures</input></label>
 
-<input type="checkbox" id="week08_video2" class="box"><label>Video 2</input></label>
+<input type="checkbox" id="week08_video2" class="box"> <label>Introduction to Queues</input></label>
 
-<input type="checkbox" id="week08_video3" class="box"><label>Video 3</input></label>
+<input type="checkbox" id="week08_video3" class="box"> <label>Computing Voronoi Diagrams</input></label>
 
-<input type="checkbox" id="week08_video4" class="box"><label>Video 4</input></label>
+<input type="checkbox" id="week08_video4" class="box"> <label>Motivating Voronoi Diagrams</input></label>
 
-<input type="checkbox" id="week08_video5" class="box"><label>Video 5</input></label>
-
-<input type="checkbox" id="week08_video6" class="box"><label>Video 6</input></label>
-
-<input type="checkbox" id="week08_video7" class="box"><label>Video 7</input></label>
-
-<input type="checkbox" id="week08_video8" class="box"><label>Video 8</input></label>
+<input type="checkbox" id="week08_video5" class="box"> <label>Queues and Voronoi Diagrams</input></label>
 
 ```
 ````
-## Content Summary from Crash Course Physics
-
-```{dropdown} Friction (Same as last week's)
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/fo_pmp5rtzo" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-```
-
 ## Required Videos
 
-```{dropdown} 1. 5 Steps to Solve any Free Body Diagram Problem
+### Tuesday's Class
+
+
+```{dropdown} 1. What are Data Structures?
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/pA9Uc_rJNiA" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://youtu.be/bum_19loj9A" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0120_lecture_notes_-_5_steps_to_solve_any_free_body_diagram_problem.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/5-steps-fbd.html)
 ```
 
-```{dropdown} 2. Introduction to Newton's Third Law of Motion
+
+```{dropdown} 2. Introduction to Queues
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916622482" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+
+### Thursday's class
+
+```{dropdown} 1. Motivating Voronoi Diagrams
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/908509998" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 2. Computing Voronoi Diagrams
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626365" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 3. Queues and Voronoi Diagrams
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916620754" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+### Optional Videos
+
+This will be a required video next week (Week 9).
+
+```{dropdown} 4. Pointilism
     :class-container: sd-shadow-lg
     :color: primary
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/bAevUhFUhV4" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0102_lecture_notes_-_introduction_to_newtons_third_law_of_motion.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/third-law.html)
-```
-
-```{dropdown} 3. A Common Misconception about Newton's Third Law Force Pairs (or Action-Reaction Pairs)
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/wmmjfbl7zG4" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0105_lecture_notes_-_a_common_misconception_about_newtons_thrid_law_force_pairs__or_action-reaction_pairs_.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/third-law-misconception.html)
-```
-
-```{dropdown} 4. Understanding the Tension Force
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/iWgbhbwwbPk" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0099_lecture_notes_-_understanding_the_tension_force.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/tension-force.html)
-```
-
-```{dropdown} 5. An Introductory Tension Force Problem
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/JUHeaZk9oNA" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0121_lecture_notes_-_an_introductory_tension_force_problem.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/tension-problem.html)
-```
-
-```{dropdown} 6. Force vs. Time on a Dynamics Cart
-    :class-container: sd-shadow-lg
-    :color: primary
-    
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/DU_vaEizFBI" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-- [Notes](https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0094_lecture_notes_-_force_vs._time_on_a_dynamics_cart.pdf)
-- [Direct link to Mr. P's page](https://www.flippingphysics.com/force-vs-time.html)
-```
-
-```{dropdown} 7. (Part 1) Reviewing Pulleys, Inclines and Free Body Diagrams with an Example Problem
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/M-EkxNU7Yt8" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-```
-
-```{dropdown} 8. (Part 2) Reviewing Pulleys, Inclines and Free Body Diagrams with an Example Problem
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/ncyVqk6IKc0" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626910" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
