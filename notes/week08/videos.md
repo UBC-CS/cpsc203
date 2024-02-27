@@ -31,7 +31,7 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://youtu.be/bum_19loj9A" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/bum_19loj9A?si=fM7d46JU36jO89W5" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
 
