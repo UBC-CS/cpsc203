@@ -122,6 +122,7 @@ parts:
     sections:
       - file: notes/week08/videos
       - file: notes/week08/class8A
+      - file: notes/week08/class8B
 
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
