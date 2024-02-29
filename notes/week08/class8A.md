@@ -30,7 +30,7 @@ conda install -c conda-forge jupyterlab
 
 You can then run `jupyter lab` in the Terminal to launch a JupyterLab instance.
 
-### Clone the Class Activity Repository
+2. Clone the Class Activity Repository
 
 You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
 
