@@ -1,4 +1,4 @@
-# Class Meeting 8A
+# Class Meeting 8B
 
 Slides will be released before class (sorry!).
 
