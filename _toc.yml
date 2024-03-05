@@ -123,7 +123,12 @@ parts:
       - file: notes/week08/videos
       - file: notes/week08/class8A
       - file: notes/week08/class8B
-
+  - file: notes/week09/week09_summary
+    title: Week 9 - Graphs
+    sections:
+      - file: notes/week09/videos
+      - file: notes/week09/class9A
+      - file: notes/week09/class9B
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
 #       - file: notes/week08/test
