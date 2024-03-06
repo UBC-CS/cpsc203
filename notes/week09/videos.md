@@ -46,17 +46,17 @@ More videos coming soon...
 </div>
 ```
 
-<!-- 
-
-```{dropdown} 2. Computing Voronoi Diagrams
+```{dropdown} 2. Graph Exploration
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626365" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/920172396" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
+
+<!--
 
 ```{dropdown} 3. Queues and Voronoi Diagrams
     :class-container: sd-shadow-lg
