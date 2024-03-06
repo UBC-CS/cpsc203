@@ -34,17 +34,19 @@ None!
 
 ### Thursday's class
 
-Coming soon!
+More videos coming soon...
 
-<!-- ```{dropdown} 1. Motivating Voronoi Diagrams
+```{dropdown} 1. Directed Graphs
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/908509998" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/919934168" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
+
+<!-- 
 
 ```{dropdown} 2. Computing Voronoi Diagrams
     :class-container: sd-shadow-lg
