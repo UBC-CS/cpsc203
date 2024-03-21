@@ -32,8 +32,15 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 ### Thursday's class
 
-Coming soon...
+```{dropdown} 1. Introduction to Project 2
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
 
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/925699308" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
 
 <!-- 
 ```{dropdown} 2. Graph Exploration

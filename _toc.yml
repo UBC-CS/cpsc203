@@ -134,7 +134,7 @@ parts:
     sections:
       - file: notes/week11/videos
       - file: notes/week11/class11A
-      # - file: notes/week11/class11B
+      - file: notes/week11/class11B
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
 #       - file: notes/week08/test

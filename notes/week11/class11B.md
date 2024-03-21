@@ -1,20 +1,18 @@
 # Class Meeting 11B
 
-Today we will be continuing our discussion on Graphs...
+Today's class is cancelled so you have some time to get started on Project 2.
+One of our TAs, Minh, has made a video to help you get started if you're stuck.
 
-<div>
-<iframe src="../../Lec15_Graph_Exploration.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+```{dropdown} 1. Introduction to Project 2
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/925699308" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
+```
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec15_Graph_Exploration.pdf)
-
-## Important links for today:
-
-- [Graphs Tutorial](https://www.geeksforgeeks.org/introduction-to-graphs-data-structure-and-algorithm-tutorials/?ref=gcse)
-
-<!-- 
-## Optional links for today
--->
 
 ## Logistics
 
