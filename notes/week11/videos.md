@@ -12,6 +12,9 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week11_video1" class="box"> <label>Music Generation</input></label>
 
+<input type="checkbox" id="week11_video2" class="box"> <label>Introduction to Project 2</input></label>
+
+
 ```
 ````
 
