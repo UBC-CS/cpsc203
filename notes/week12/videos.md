@@ -8,7 +8,12 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 ```{admonition} Checklist of items
 :class: tip sticky
 
-<input type="checkbox" id="week12_video1" class="box"> <label>Music Generation</input></label>
+<input type="checkbox" id="week12_video1" class="box"> <label>1. Searching State Spaces - Depth First Search</input></label>
+
+<input type="checkbox" id="week12_video2" class="box"> <label>2. Depth First Search Part 2</input></label>
+
+<input type="checkbox" id="week12_video3" class="box"> <label>3. Stacks and Breadth-first search</input></label>
+
 
 ```
 ````
