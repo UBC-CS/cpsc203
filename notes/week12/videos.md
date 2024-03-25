@@ -35,7 +35,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 ```{dropdown} 2. Depth First Search Part 2
     :class-container: sd-shadow-lg
     :color: primary
-    :open:
 
 <div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/926765121" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
@@ -45,7 +44,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 ```{dropdown} 3. Stacks and Breadth-first search
     :class-container: sd-shadow-lg
     :color: primary
-    :open:
 
 <div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/926767051" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
@@ -54,7 +52,7 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 ### Thursday's class
 
-
+We'll continue the stuff from Tuesday on Thursday.
 <!-- 
 ```{dropdown} 2. Graph Exploration
     :class-container: sd-shadow-lg
