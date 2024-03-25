@@ -135,6 +135,12 @@ parts:
       - file: notes/week11/videos
       - file: notes/week11/class11A
       - file: notes/week11/class11B
+  - file: notes/week12/week12_summary
+    title: Week 12 - State Spaces
+    sections:
+      - file: notes/week12/videos
+      - file: notes/week12/class12A
+#      - file: notes/week12/class12B
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
 #       - file: notes/week08/test
