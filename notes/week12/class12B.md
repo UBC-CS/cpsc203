@@ -3,7 +3,7 @@
 Today we will be try to find the shortest path through some graphs.
 
 <div>
-<iframe src="../../Lec17_StateSpace.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec18_Maps.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec18_Maps.pdf)
