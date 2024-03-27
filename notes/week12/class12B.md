@@ -1,17 +1,20 @@
-# Class Meeting 12A
+# Class Meeting 12B
 
-Today we will be working on understanding and exploring the Depth-first algorithm.
+Today we will be try to find the shortest path through some graphs.
 
 <div>
 <iframe src="../../Lec17_StateSpace.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec18_StateSpaces.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec18_Maps.pdf)
 
 ## Important links for today:
 
-- [Solve a Sudoku puzzle](https://www.sudokuonline.io/kids/numbers-4-4)
-- [Mathematics of Sudoku](https://en.wikipedia.org/wiki/Mathematics_of_Sudoku)
+- [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+- [Graphical explanation of Dijkstra's algorithm](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
+- [REALLY great example](https://www.youtube.com/watch?v=wsSEKm-rU6U)
+- [OSMNX reference](https://github.com/gboeing/osmnx-examples/tree/master/notebooks)
+- [Tutorial](https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07)
 
 <!-- 
 ## Optional links for today

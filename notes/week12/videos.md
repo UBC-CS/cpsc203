@@ -53,16 +53,16 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 ### Thursday's class
 
 We'll continue the stuff from Tuesday on Thursday.
-<!-- 
-```{dropdown} 2. Graph Exploration
+
+```{dropdown} 4. Dijkstra's Algorithm
     :class-container: sd-shadow-lg
     :color: primary
     :open:
 
 <div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/920172396" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/927565362" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
-``` -->
+```
 
 <!--
 

@@ -140,7 +140,7 @@ parts:
     sections:
       - file: notes/week12/videos
       - file: notes/week12/class12A
-#      - file: notes/week12/class12B
+      - file: notes/week12/class12B
 #       - file: notes/week08/homework
 #       - file: notes/week08/lecture
 #       - file: notes/week08/test
