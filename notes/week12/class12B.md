@@ -21,7 +21,9 @@ Today we will be try to find the shortest path through some graphs.
 
 ## Logistics
 
-1. Clone the Class Activity Repository
+There is no repo to clone today!
+<!--
+ 1. Clone the Class Activity Repository
 
 You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
 
@@ -31,7 +33,8 @@ Then, clone the `classActivity1XY` repository by running the following line in y
 
 ```
 git clone <your_clone_url>
-```
+``` 
+-->
 
 ## Acknowledgements
 
