@@ -25,7 +25,7 @@ You will first need to "accept" the GitHub Classroom assignment to get a copy of
 
 You can do that by [clicking here](https://classroom.github.com/a/9O9S8RgF).
 
-Then, clone the `classActivity09A` repository by running the following line in your Terminal:
+Then, clone the `classActivity0XY` repository by running the following line in your Terminal:
 
 ```
 git clone <your_clone_url>
