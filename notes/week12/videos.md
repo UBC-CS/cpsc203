@@ -54,7 +54,18 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 We'll continue the stuff from Tuesday on Thursday.
 
-```{dropdown} 4. Dijkstra's Algorithm
+
+```{dropdown} 4. Single Source Shortest Path
+    :class-container: sd-shadow-lg
+    :color: primary
+    :open:
+
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/927840623" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+```
+
+```{dropdown} 5. Dijkstra's Algorithm
     :class-container: sd-shadow-lg
     :color: primary
     :open:
