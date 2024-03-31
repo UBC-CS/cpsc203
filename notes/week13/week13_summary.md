@@ -1,5 +1,5 @@
 (page_topic13)=
-Topic 13
+Week 13 Summary
 =======================
 
-Notes about topic 13.
+This week we will be working with Maps data, a natural application of Graphs.
