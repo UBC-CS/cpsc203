@@ -19,11 +19,23 @@ Today we will be working on using Maps.
 
 ## Logistics
 
+### Installing packages
+
+You will probably need to install some packages for today's class:
+
+- `conda install osmnx`
+- `conda install networkx`
+- `conda install folium`
+- `conda install scikit-learn`
+- `conda install mapclassify`
+
+### Cloning a repository
+
 1. Clone the Class Activity Repository
 
 You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
 
-You can do that by [clicking here](https://classroom.github.com/a/ZEaSSumI).
+You can do that by [clicking here](https://classroom.github.com/a/qYP0az4U).
 
 Then, clone the `classActivity1XY` repository by running the following line in your Terminal:
 
