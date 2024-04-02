@@ -146,7 +146,7 @@ parts:
     sections:
       - file: notes/week13/videos
       - file: notes/week13/class13A
-      - file: notes/week13/class13B
+      # - file: notes/week13/class13B
 
 # - caption: Week 13 - Exam Review
 #   chapters:
