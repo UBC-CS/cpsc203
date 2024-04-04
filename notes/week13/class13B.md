@@ -3,7 +3,7 @@
 Today we will be working on the Travelling Salesperson problem (the slides are the same as 13A).
 
 <div>
-<iframe src="../../Lec18_Maps.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec19_Maps2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec19_Maps2.pdf)
