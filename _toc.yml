@@ -148,11 +148,12 @@ parts:
       - file: notes/week13/class13A
       - file: notes/week13/class13B
   - file: notes/week14/week14_summary
-    title: Week 13 - Natural Language Processing (Optional)
+    title: Week 14 - Natural Language Processing (Optional)
     sections:
-      # - file: notes/week14/videos
       - file: notes/week14/class14A
       # - file: notes/week14/class14B
+      # - file: notes/week14/videos
+
 
 # - caption: Week 13 - Exam Review
 #   chapters:
