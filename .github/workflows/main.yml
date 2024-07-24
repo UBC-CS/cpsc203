@@ -21,7 +21,7 @@ jobs:
         python-version: "3.10"
 
     - name: cache installation
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ env.pythonLocation }}
         key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('requirements.txt') }}
@@ -29,6 +29,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
     # Build the book
     - name: Build the book
       run: |
