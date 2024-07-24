@@ -1,0 +1,5 @@
+Suggests:
+  devtools,
+  reprex,
+  styler,
+  usethis
