@@ -1,3 +1,5 @@
+Imports:
+  rmarkdown
 Suggests:
   devtools,
   reprex,
