@@ -9,8 +9,13 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  render-knitr-quarto:
+    uses: ./.github/workflows/render-knitr-quarto.yml
+
   deploy-book:
     runs-on: ubuntu-latest
+    needs: render-knitr-quarto
+
     steps:
     - uses: actions/checkout@v4
 
@@ -34,7 +39,15 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build .
-        
+
+    # Add Quarto artifact to output directory after building book
+    # Building book afterwards would overwrite artifact output
+    - name: Download Quarto artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: quarto-artifact
+        path: _build/html/
+
     # Push to server
     - name: rsync and ssh
       env:

@@ -1,0 +1,33 @@
+name: Reusuable render Quarto with knitr engine workflow
+
+on: workflow_call
+
+jobs:
+  build-render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: renv
+          use-public-rspm: true
+
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+
+      # Output set to `_build/html/` in `/_quarto.yml` to match Jupyter Book
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Create Quarto artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quarto-artifact
+          path: _build/html/
