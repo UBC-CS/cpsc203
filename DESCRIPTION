@@ -1,8 +1,0 @@
-Imports:
-  countdown,
-  rmarkdown
-Suggests:
-  devtools,
-  reprex,
-  styler,
-  usethis
