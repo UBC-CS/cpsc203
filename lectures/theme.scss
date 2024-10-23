@@ -1,0 +1,96 @@
+/*-- scss:uses --*/
+
+/*-- scss:functions --*/
+
+@function theme-color($color) {
+  @return map-get($colors, $color);
+}
+
+/*-- scss:defaults --*/
+
+// Colours
+$small-font-size: 0.6em;
+
+$colors: (
+  "activity": #447099,
+  "abbreviation": #4BFF37,
+  "red": #FF0000,
+  "pink": #FF4081,
+  "orange": #FF9900,
+  "apricot": #FFAA2B,
+  "yellow": #FFFF00,
+  "green": #00FF00,
+  "lime": #9DEE00,
+  "cyan": #00E3EE,
+  "blue": #0000FF,
+  "violet": #9900FF,
+  "purple": #674EA7
+);
+
+/*-- scss:mixins --*/
+
+/*-- scss:rules --*/
+
+.reveal .activity {
+  background-color: theme-color("activity");
+}
+
+.medium-table table {
+  font-size: 0.8em;
+}
+
+.small-font-size{
+  table {
+    font-size: $small-font-size;
+  }
+
+  p {
+    font-size: $small-font-size;
+  }
+}
+
+table caption {
+  text-align: left;
+}
+
+.abbreviation-highlight {
+  color: theme-color("abbreviation");
+}
+
+.text-hidden {
+  opacity: 0;
+}
+
+// Generate hexagons
+@each $name, $color in $colors {
+  .hexagon-#{$name} {
+    background: $color;
+    height: 120px;
+    aspect-ratio: 1/cos(30deg);
+    clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+    display: inline-block;
+    margin: 0px 5px;
+  }
+}
+
+// Generate swatches
+@each $name, $color in $colors {
+  .swatch-#{$name} {
+    background-color: $color;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 0px 5px;
+  }
+}
+
+// Backgrounds
+.reveal .bg-jobs {
+    &:is(.slide-background) {
+      background-image: url("../../../../../images/steve-jobs.jpg");
+      background-size: contain;
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+}
