@@ -1,0 +1,472 @@
+---
+date: 2024-01-01
+---
+
+## Announcements
+
+<!-- TODO: Add a slide "Why this is important..." -->
+
+## When to do what in CPSC 203
+
+::: small-font-size
+|   | Mon | Tue | Wed | Thu | Fri |
+|------------|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Pre-class videos | {{< iconify fa6-regular circle >}} |  | {{< iconify fa6-solid xmark >}} |  |  |
+| Classes |  | {{< iconify fa6-solid xmark >}} |  | {{< iconify fa6-solid xmark >}} |  |
+| Learning Log |  |  |  |  | {{< iconify fa6-solid xmark >}} |
+| Problems of the Week | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} |
+| Labs | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} |  |  | {{< iconify fa6-solid xmark >}} |
+| Practice Test and Test | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} |  |
+
+: {{< iconify fa6-solid xmark >}}---This week's content; {{< iconify fa6-regular circle >}}---Last week's content
+:::
+
+::: small-font-size
+::: callout-note
+**Note:** this is a "suggested" schedule.
+All due dates are on Friday at 6 PM (with a 48-hour grace period).
+
+Term projects are not on this schedule as they span multiple weeks.
+:::
+:::
+
+# Software design: ingenuity and simplicity
+
+## {{< iconify fa6-solid laptop-code >}} Your turn: Elegance {.activity}
+
+Find 2 images, one which exemplifies your definition of elegance, and one which decidedly does not.
+They should be related to each other...
+
+::: medium-table
+|   | Naming | Example |
+|------------------------|------------------------|------------------------|
+| [**e**]{.abbreviation-highlight}legant | `e<name>.<ext>` | `eKITTY.png` |
+| [**not e**]{.abbreviation-highlight}legant | `note<name>.<ext>` | `noteKITTY.png` |
+
+: Naming convention for files
+:::
+
+Upload your images to this directory:
+
+<https://bit.ly/3QucOO3>
+
+{{< countdown minutes=10 >}}
+
+::: notes
+(Gallery walk)
+:::
+
+## Elegance: examples
+
+Scissors...
+
+::: columns
+::: {.column width="33%"}
+![](images/two-scissors.jpg){fig-alt="A set of scissors."}
+:::
+
+::: {.column width="33%"}
+![](images/non-functional-scissors.jpg){fig-alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."}
+:::
+
+::: {.column width="33%"}
+![](images/assorted-scissors.png){fig-alt="A variety of scissors in different colours."}
+:::
+:::
+
+::: notes
+Heidi...
+:::
+
+## {{< iconify fa6-solid laptop-code >}} Your turn: Elegance---definition {.activity}
+
+Gallery: <https://bit.ly/3QucOO3>
+
+After looking at the images in the gallery, reflect and write a short definition of the word *elegance*:
+
+<https://forms.gle/1eGK2xnH7quAt2nf8>
+
+Elegance: the quality of being [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+{{< countdown minutes=10 >}}
+
+## Elegance and computing
+
+How does this apply to the way we solve problems in computing?
+
+I[n]{.fragment fragment-index="1"}g[e]{.fragment fragment-index="1"}n[u]{.fragment fragment-index="1"}i[t]{.fragment fragment-index="1"}y:
+
+\
+\
+
+S[i]{.fragment fragment-index="1"}m[p]{.fragment fragment-index="1"}l[i]{.fragment fragment-index="1"}c[i]{.fragment fragment-index="1"}t[y]{.fragment fragment-index="1"}:
+
+::: aside
+For further reading: <https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/>
+:::
+
+::: notes
+1)  INGENUITY --- The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.
+2)  SIMPLICITY --- Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).
+:::
+
+##  {.center .bg-jobs data-menu-title="Steve Jobs quote"}
+
+> Simplicity is the ultimate sophistication.
+> It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with **elegant** solutions.
+> \[...\]
+> It's not just minimalism or the absence of clutter.
+> It involves digging through the depth of complexity.
+> To be truly simple, you have to go really deep.
+> \[...\]
+> You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.
+>
+> --- **Steve Jobs**
+
+# Slides from the assigned videos
+
+## Handcraft
+
+::: columns
+::: {.column width="33%"}
+![](images/quilt.jpg){fig-alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."}
+
+![](images/doily.jpg){fig-alt="A white doily with a spiral pattern on a wooden surface."}
+:::
+
+::: {.column width="33%"}
+![](images/pinecone-pen.jpg){fig-alt="A pen made from pinecone."}
+
+![](images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."}
+:::
+
+::: {.column width="33%"}
+![](images/paper-violin.jpg){fig-alt="A violin made from intricately quilled green paper with a bow."}
+
+![](images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colours."}
+:::
+:::
+
+::: notes
+Metaphor for software development---ingenuity, function, simplicity, resource constraints.
+But also a direct parallel.
+Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.
+
+-   Quilt---patterns
+-   Crochet---2 different kinds
+-   Paper---Friend's artistry
+:::
+
+## Knitting
+
+::: columns
+::: {.column width="33%"}
+The language used to communicate patterns uses exactly the same fundamental constructs as Python!!!
+:::
+
+::: {.column width="66%"}
+![](images/sherbet-stripes.png){fig-alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."}
+:::
+:::
+
+## Knitting: examples
+
+::: columns
+::: {.column width="33%"}
+![](images/colourful-knitted-striped-dishcloth.jpg){fig-alt="A knitted dishcloth with diagonal stripes in orange, green, yellow, and teal."}
+
+![](images/knitted-dishcloth-with-eyelets.jpg){fig-alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."}
+:::
+
+::: {.column width="33%"}
+![](images/knitted-dishcloth-with-dragon-design.jpg){fig-alt="A green knitted dishcloth featuring a textured dragon design."}
+
+![](images/knitted-dishcloth-with-diamond-lace-pattern.jpg){fig-alt="A purple knitted dishcloth featuring a diamond lace pattern."}
+:::
+
+::: {.column width="33%"}
+![](images/knitted-dishcloth-with-metroid-power-up-design.jpg){fig-alt="A teal knitted dishcloth featuring a raised power-up design from the video game Metroid."}
+
+![](images/knitted-dishcloth-with-heart-pattern.jpg){fig-alt="A blue knitted dishcloth featuring a repeating heart pattern."}
+:::
+:::
+
+::: notes
+Show $40 \times 40$, but then transition into $n \times n$---"one difference between a knitting project and our problems we solve"
+
+Axis of algorithmic quality includes
+:::
+
+## Quantifying the task... {.smaller}
+
+![](images/knitted-dishcloth-with-eyelets.jpg){.absolute top="0px" right="0px" width="20%" fig-alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."}
+
+::: columns
+::: {.column width="78%"}
+1.  If we describe one dimension of a square rag by $n$, how much work is done by the knitter? [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+2.  If we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+3.  If each stitch takes a second, what is the largest rag we could make in one evening? [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+4.  If it takes an evening to make a $40 \times 40$ rag, how long will it take to make an $80 \times 80$ rag? [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+5.  If it takes time $t$ to make an $n$ by $n$ rag, how long will it take to make a $3n \times 3n$ rag? [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+:::
+:::
+
+General idea: quantify the size of the problem ($n$) and consider the cost of our task *as that size increases*.
+
+::: notes
+Draw the parabola in 4.
+Point out that quadratic is slower than exponential growth.
+:::
+
+## Quantifying the task...
+
+If we are solving a problem [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline} for a given input, we can parameterize the running time of the solution by the size of the input.
+
+We usually denote this input size using the variable $n$.
+
+::: columns
+::: {.column width="25%"}
+![](images/pixelated-knitting-pattern.jpg){fig-alt="A pixelated knitting pattern."}
+:::
+
+::: {.column width="75%"}
+Discussion:
+
+1.  
+
+2.  
+
+3.  
+:::
+:::
+
+::: notes
+First blank: or write an algorithm
+
+1.  In this example we choose to label $n$ as the side-length
+2.  We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3$n$ x $n$ takes time 3$n^2$ to knit, we ignore the 3 when we’re talking about algorithms.
+It's the squared part that really determines how long we'll have to wait.
+We say that the variable term "dominates".
+3.  Sometimes we have more than one parameter
+:::
+
+## Quantifying the task...
+
+Suppose we can knit 10^12^ stitches per second...
+
+|            | 10        | 100       | 1000      | 10,000   | 10^12^   |
+|------------|-----------|-----------|-----------|----------|----------|
+| $n$        | 10^-11^ s | 10^-10^ s | 10^-9^ s  | 10^-8^ s | 1 s      |
+| $n \log n$ | 10^-11^ s | 10^-9^ s  | 10^-8^ s  | 10^-7^ s | 40 s     |
+| $n^2$      | 10^-10^ s | 10^-8^ s  | 10^-6^ s  | 10^-4^ s | 10^12^ s |
+| $n^3$      | 10^-9^ s  | 10^-6^ s  | 10^-3^ s  | 1 s      | 10^24^ s |
+| $2^n$      | 10^-9^ s  | 10^18^ s  | 10^289^ s |          |          |
+
+The amount of computation we do inside our algorithm actually matters!
+
+::: notes
+Why does this matter?
+
+Annotate:
+
+1.  Each stitch takes a tiny tiny fraction of a second 1/10^12^ = 10^-12^ (fastest machine is 415 x 10^15^).
+2.  $n$ is size parameter for our computation.
+3.  $T(n)$ is the amount of time our computation takes.
+
+Choose one to illustrate if our rag/data size is 1000, and we need to compute n^3^ steps/stitches (like knitting a cube!!), then the total time is 1000^3^/10^12^ = 10^-3^ a thousandth of a second.
+Nbd.
+
+BUT let’s look at bigger data.
+10^12^ (\~128gb pretty big) 10^12^ mm = 1M km, 384,400 km to the moon.
+149M km to the sun.
+So knitting something that big would take 10^12^ s = \~32000 years.
+The sun will long since have burnt out by 10^18^ s
+
+Punchline---we don't want to do $2^n$ amount of computation, and we need creative approaches for big data.
+
+Recap---we’ve seen a problem whose size we characterize by $n^2$, we’ll see problems whose time we characterize by $n$, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by $2^n$.
+🙁
+
+NOTE: $\log$ is $\log_2$.
+And $\log 1000 = 10$.
+:::
+
+## Colour interpretation
+
+What's your favorite color?
+Do you have a sense for *why* it's your favorite?
+Does that color influence your dress/decor/purchases?
+
+Psychological: <https://www.playbuzz.com/jon10/what-color-matches-your-personality>
+
+Cultural: <https://markedbydesign.net/blog/meaning-in-color>
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-purple}
+
+## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity}
+
+Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
+Contradictions are especially interesting.
+Report your findings to the group (briefly).
+
+::: columns
+::: {.column width="50%"}
+[]{.hexagon-red}
+
+[]{.hexagon-orange}
+
+[]{.hexagon-yellow}
+:::
+
+::: {.column width="50%"}
+[]{.hexagon-green}
+
+[]{.hexagon-blue}
+
+[]{.hexagon-violet}
+:::
+:::
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Big design implications for data visualization
+:::
+
+## Colour---representation
+
+![](images/ssd.jpg){.absolute top="0px" right="0px" width="30%" fig-alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."}
+
+First, some general questions…
+
+What does data look like to a computer?
+
+\
+\
+
+Is that enough?
+
+::: footer
+<https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/>
+:::
+
+::: notes
+1.  Positive and negative charges interpreted as 1 and 0.
+2.  Binary digits = *bits*
+:::
+
+## Colour---representation
+
+Can we use bits to represent integers?
+
+|       |       |       |       |
+|-------|-------|-------|-------|
+| 3     | 1     | 5     | 7     |
+| 10^3^ | 10^2^ | 10^1^ | 10^0^ |
+
+|  |  |  |  |
+|------------------|------------------|------------------|------------------|
+| [10^3^]{.text-hidden} | [10^2^]{.text-hidden} | [10^1^]{.text-hidden} | [10^0^]{.text-hidden} |
+| [2]{.text-hidden}^3^ | [2]{.text-hidden}^2^ | [2]{.text-hidden}^1^ | [2]{.text-hidden}^0^ |
+
+::: notes
+Talk about the BASE of the number.
+:::
+
+## Colour---representation
+
+What's the highest number we can represent with 4 bits?
+
+\
+\
+
+What's the highest number we can represent with 5 bits?
+
+\
+\
+
+How many bits do we need to express 127?
+
+\
+\
+
+::: notes
+Can we represent any integer this way?
+YES!
+Until we run out of memory.
+But we have more memory than we can even conceive of.
+
+How does this help us with color?
+:::
+
+## Colour---representation
+
+Can we use integers to represent colors?
+
+RGB (red, green, blue), where each "component" is in range 0 through 255.
+
+ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{bottom=-5px}
+
+Fun calculator for color values: <https://colorizer.org>
+
+How many bits for 256 values?
+`4  5  6  7  8  9  10`
+
+## Colour---representation
+
+What color is
+
+::: small-font-size
+\
+
+`0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1`
+
+\
+:::
+
+Easier to read if we use *hexadecimal* representation:
+
+Each component is represented by 2 hex digits `0123456789abcdef`
+
+ex. `#674ea7` []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-orange}
+
+::: notes
+Hex = base 16
+:::
+
+## Colour---representation (aside)
+
+What do you observe about the following RGB colors?
+
+|  Red  | Green | Blue  |
+|:-----:|:-----:|:-----:|
+|  255  |  0    |  0    |
+|  17   |  0    |  178  |
+|  45   |  0    |  13   |
+|  200  |  0    |  220  |
+|  62   |  0    |  37   |
+|  130  |  0    |  95   |
+
+## POTD demo
+
+The "problem of the day" (POTD) programming exercises start next week.
+
+Navigate to [ca.prairielearn.com](https://ca.prairielearn.com)...
+
+## TODO for next class...
+
+POTD
+
+Play: <https://www.google.com/search?q=color+picker>
+
+Practice exercises for next week's examlet available Sunday.
+
+# Tech stack
+
+##  {.centered background-iframe="https://firas.moosvi.com/courses/cpsc203/2023_WT2/notes/setup/stack.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+
+# Type hints in Python
+
+# Before next class
+
+Make sure to finish the setup of the tech stack!
