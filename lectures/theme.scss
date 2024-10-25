@@ -94,3 +94,12 @@ table caption {
       opacity: 0.3;
     }
 }
+
+.reveal .bg-how-learning-works {
+    &:is(.slide-background) {
+      background-image: url("../../../../../images/how-learning-works.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+}
