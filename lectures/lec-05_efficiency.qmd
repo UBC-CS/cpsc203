@@ -226,7 +226,7 @@ We usually denote this input size using the variable $n$.
 
 ::: columns
 ::: {.column width="25%"}
-![](images/pixelated-knitting-pattern.jpg){fig-alt="A pixelated knitting pattern."}
+![](imapixelated-chevron-knitting-pattern.jpg){fig-alt="A pixelated knitting pattern."}
 :::
 
 ::: {.column width="75%"}

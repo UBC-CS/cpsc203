@@ -1,0 +1,146 @@
+---
+date: 2023-01-08
+---
+
+## Announcements
+
+##  {.centered background-iframe="https://firas.moosvi.com/courses/cpsc203/2023_WT2/notes/setup/stack.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+
+## Practice problems
+
+$1 + 3 + 5 + \ldots + 1337$ = [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+\
+
+How many terms?
+
+English description: The sum of the first $k$ odd integers is [\_\_\_\_\_\_\_\_]{.underline}
+
+What about $11 + 13 + \ldots + 23$?
+
+\
+
+And $2 + 4 + 6 + \ldots + 1338$?
+
+# Python Demo: Lists
+
+Given code lives at <https://us.prairielearn.com>
+
+Normally you will work on the exercises on your own machines.
+
+Today, we have not yet set up your machines!!
+
+# Slides from the assigned videos
+
+##  {background-iframe="https://player.vimeo.com/video/905091212?h=dccc9e6836" data-menu-title="Handcraft program design"}
+
+## Back to handcraft
+
+:::::: columns
+::: {.column width="33%"}
+![](images/quilt.jpg){fig-alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."}
+
+![](images/doily.jpg){fig-alt="A white doily with a spiral pattern on a wooden surface."}
+:::
+
+::: {.column width="33%"}
+![](images/pinecone-pen.jpg){fig-alt="A pen made from pinecone."}
+
+![](images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."}
+:::
+
+::: {.column width="33%"}
+![](images/paper-violin.jpg){fig-alt="A violin made from intricately quilled green paper with a bow."}
+
+![](images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colours."}
+:::
+::::::
+
+## Where are we?
+
+::: {layout="[2,8]"}
+![](images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
+
+![](images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
+:::
+
+::: notes
+The 8x8 grid illustrates dishcloth.
+Each block has 5 rows of 5 stitches.
+How would you represent a handcraft using Python types?
+:::
+
+## Program design
+
+::: {layout="[1,1,1]"}
+![](images/pixelated-chevron-knitting-pattern.jpg){fig-alt="A chevron knitting pattern with zigzag lines."}
+
+![](images/pixelated-diagonal-lines-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+
+![](images/pixelated-diamond-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+:::
+
+A handcraft is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} has a [\_\_\_\_\_\_\_\_\_\_]{.underline}, and a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is either "knit" or "purl," and is drawn as a [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+
+::: notes
+Missing words: blocks, blocks, position, rows, stitches, rectangles
+:::
+
+##  {background-iframe="https://player.vimeo.com/video/905092897" data-menu-title="Classes in Python" menu="false"}
+
+## Classes in Python
+
+Mechanism for creating user-defined types.
+
+Used to identify attributes with an object.
+Associates functionality with the relevant objects.
+
+Example:
+
+``` python
+@dataclass
+class color:
+  """
+  color: simply gathers color components
+  """
+  red: int = 120
+  green: int = 120
+  blue: int = 120
+```
+
+::: notes
+Data classes allow us to create substructures to organize data in a way useful to us.
+Attributes are data and the functionality a member functions.
+Attributes can be defined with default values.
+:::
+
+## Design Strategies
+
+1.  Decompose a problem into classes
+
+2.  List the data associated with each class
+
+3.  Write the "driver" code that illustrates the functionality you expect from each class.
+
+4.  Implement the functions you expect.
+
+5.  Run the driver code to test your functionality.
+
+# Class activity
+
+{{< countdown minutes=10 >}}
+
+# Break
+
+{{< countdown minutes=5 >}}
+
+# POTD week 1 and 2
+
+{{< countdown minutes=5 >}}
+
+# Review of Python
+
+{{< countdown minutes=30 >}}
