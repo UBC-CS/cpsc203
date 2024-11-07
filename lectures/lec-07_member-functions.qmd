@@ -1,0 +1,435 @@
+---
+date: 2024-01-01
+---
+
+## Announcements
+
+# Slides from the assigned videos
+
+##  {background-iframe="https://player.vimeo.com/video/907131240" data-menu-title="Knitting functions"}
+
+## Adding Functionality
+
+::: columns
+::: {.column width="50%"}
+Creating blocks is an arduous task.
+We’d like a way to make new blocks out of old ones!
+How many different kinds of blocks are found in this image?
+How are they related to one another?
+:::
+
+::: {.column width="50%"}
+![](images/pixelated-diamond-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+:::
+:::
+
+## Example block
+
+::: {layout="[1,1]"}
+![](images/composite-block.png){fig-alt="A block of 5x5 stitches, originally making a wave pattern, is flipped vertically and horizontally to create a new composite knitting pattern."}
+
+![](images/pixelated-wave-knitting-pattern.jpg){fig-alt="A knitting pattern of horizontal waves."}
+:::
+
+::: notes
+Point out that coordinates of (0,0) corresponds to to upper left (in contrast to convention of the Cartesian coordinate system).
+Discuss how to loop with `range()`.
+:::
+
+## A block pattern
+
+::: columns
+::: {.column width="50%"}
+We can use that one block to create a surprising pattern!
+
+TODOS:
+
+1.  Write flippy member functions
+
+2.  Use them to create patterns
+:::
+
+::: {.column width="50%"}
+![](images/pixelated-chain-knitting-pattern.jpg){fig-alt="A knitting pattern resembling chains formed from the composite block."}
+:::
+:::
+
+## A block pattern
+
+::: columns
+::: {.column width="50%"}
+| Position | Row | Column |
+|------------------------|------------------------|------------------------|
+| ![](images/block.png){width="70"} |  |  |
+| ![](images/block-grey.png){width="70" style="transform: scaleX(-1);"} |  |  |
+| ![](images/block-grey.png){width="70" style="transform: scaleY(-1);"} |  |  |
+| ![](images/block-grey.png){width="70" style="transform: scale(-1, -1);"} |  |  |
+:::
+
+::: {.column width="50%"}
+![](images/pixelated-chain-knitting-pattern.jpg){fig-alt="A knitting pattern resembling chains formed from the composite block."}
+:::
+:::
+
+::: notes
+Develop positions for each orientation of our block.
+:::
+
+## Flip vertical {.smaller}
+
+Suppose we want to perform a vertical reflection of a block.
+Sketch the resulting block.
+Describe how you would accomplish the flipped block, in terms of the block representation in our code (list of rows).
+
+1.  
+
+2.  
+
+::: {layout="[1,1,1]"}
+![](images/y-block.png){width="300" fig-alt="A block of 5x5 stitches making a Y pattern."}
+
+![](images/block-grid.png){width="300" fig-alt="A grid of 5x5 stitches."}
+:::
+
+::: notes
+1.  Make a new list which is a copy of the old.
+2.  Reverse that list.
+3.  Build a block out of the new list (block constructor).
+4.  Return the new block.
+
+Block contains a list of rows AND a position.
+WHERE shall we put it?
+:::
+
+## Flip vertical
+
+Review the code we've written and make 3 observations:
+
+1.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+2.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+3.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+## Flip horizontal {.smaller}
+
+Suppose we want to create a new block which is just the horizontal reflection of a given block.
+Sketch the new block.
+Describe how you would accomplish the flipped block, in terms of the block representation in our code.
+
+1.  
+
+2.  
+
+::: {layout="[1,1,1]"}
+![](images/block-diagonal.png){width="300" fig-alt="A block of 5x5 stitches with a diagonal pattern."}
+
+![](images/block-grid.png){width="300" fig-alt="A grid of 5x5 stitches."}
+:::
+
+::: notes
+1.  Flip every row.
+2.  Need a `flipH` function in row class.
+:::
+
+## Flip horizontal
+
+Review the code we've written and make 3 observations:
+
+1.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+2.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+3.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+## Rotate 180° {.smaller}
+
+Suppose we want to create a new block which is a 180° rotation of a given block.
+Sketch the new block.
+Describe how you would accomplish the flipped block.
+
+1.  
+
+2.  
+
+::: {layout="[1,1,1]"}
+![](images/block-diagonal.png){width="300" fig-alt="A block of 5x5 stitches with a diagonal pattern."}
+
+![](images/block-grid.png){width="300" fig-alt="A grid of 5x5 stitches."}
+
+![](images/block-grid.png){width="300" fig-alt="A grid of 5x5 stitches."}
+:::
+
+::: notes
+1.  Flip vertical.
+2.  Flip horizontal.
+3.  Return block.
+:::
+
+## Rotate 180°
+
+Review the code we've written and make 3 observations:
+
+1.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+2.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+3.  Line [\_\_\_]{.underline}: [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+::: notes
+Next time we will 1) look at ways of streamlining the block creation process and 2) also learn more about member functions.
+:::
+
+## Pandas and data frames
+
+`import pandas`
+
+Imports the pandas library.
+We will almost always use an abbreviation...
+
+Instead of saying `pandas.read_csv('file.csv')`
+
+we can say
+
+This function returns a DataFrame containing the data from `file.csv`.
+
+## CSV files
+
+To implement: `df = pd.read_csv('file.csv')`
+
+`file.csv` must have field names in row 1, and data beginning in row 2.
+
+```{.default filename="bill_week.csv"}
+,week,title,artist,rank,last_week,peak_pos,weeks_on_chart
+0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19
+1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12
+2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10
+3,2019-09-21,Circles,Post Malone,4,7,4,2
+4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24
+5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15
+6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14
+```
+
+##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
+
+## Selecting rows {.smaller}
+
+::: columns
+::: {.column width="40%"}
+![](images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in Pandas DataFrames."}
+:::
+
+::: {.column width="60%"}
+-   `df.nlargest(10,'last_week')`
+
+    Returns top 10 hits from last week.
+
+\
+
+-   `df[ df['weeks_on_chart'] > 10 ]`
+
+    Returns all songs that have been on the charts for more than 10 weeks.
+:::
+:::
+
+## Adding a column {.smaller}
+
+-   `df['gradient'] = df['last_week'] - df['rank']`
+
+    Adds a column to the DataFrame containing the difference for every row.
+
+\
+
+-   `df[ df['gradient'] > 10 ]`
+
+    Returns all songs that have moved more than 10 spaces in the last week.
+
+## Some challenges...
+
+Given last week’s chart:
+
+1.  How many new songs were there?
+
+2.  What’s the average peak?
+
+3.  Among those who were on the list for more than 10wk, what’s the average peak?
+    (Is it very different than the previous answer?)
+
+4.  Which song changed the most?
+    Was it rising or falling?
+
+5.  Write and answer your own question:
+
+    [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+::: notes
+``` python
+df2 = pd.read_csv('bill_week.csv')
+df3 = df2[ df2['weeks_on_chart'] > 10 ]
+print("all:  ")
+print(df2)
+print("endurance:  ")
+print(df3)
+
+df4 = df2[ df2['last_week'] == 101].count()['title']
+df5 = df3['peak_pos'].mean()
+print("new count")
+print(df4)
+print("peak avg")
+print(df5)
+```
+:::
+
+## Some challenges...
+
+::: columns
+::: {.column width="50%"}
+How many new songs were there?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|------------|------------|------------|------------|------------|------------|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::
+
+::: notes
+Filter, apply function, think about output (sometimes means choosing columns, too)
+
+``` python
+df[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title’]
+```
+:::
+
+## Some challenges...
+
+::: columns
+::: {.column width="50%"}
+What’s the average peak?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|------------|------------|------------|------------|------------|------------|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::
+
+::: notes
+``` python
+df5 = df3['peak_pos'].mean()
+```
+:::
+
+## Some challenges...
+
+::: columns
+::: {.column width="50%"}
+Among those who were on the list for more than 10wk, what's the average peak?
+(Is it very different than the previous answer?)
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|------------|------------|------------|------------|------------|------------|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::
+
+::: notes
+``` python
+enduring_peak = df[df['weeks_on_chart']>=10]['peak_pos'].mean()
+print("enduring avg peak: " + str(enduring_peak))
+```
+:::
+
+## Some challenges...
+
+::: columns
+::: {.column width="50%"}
+Which song moved the most?
+Did it rise or fall?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|------------|------------|------------|------------|------------|------------|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::
+
+::: notes
+``` python
+df['gradient'] = df['rank'] - df['last_week']
+print(df.loc[df['gradient'].abs().idxmax()])
+```
+:::
+
+## Additional resources
+
+Great resource on the Python `@dataclass` decorator: <https://realpython.com/python-data-classes/>
+
+# Implement member functions of Stitcher
+
+## Three challenges
+
+1.  Write a member function whose purpose is to change the color of a handcraft.
+    What's a reasonable name for your new function?
+    In which class should the function live?
+    How can you test your code?
+
+2.  Write a member function called `invert()` that changes knits to purls and purls to knits.
+    We expect to use this function on an object of type `hc`.
+
+3.  Write a `block` member function that flips a block around its diagonal.
+
+{{< countdown minutes=45 >}}
+
+# Break
+
+{{< countdown minutes=5 >}}
+
+# Installing packages using conda
+
+##  {background-iframe="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" background-interactive="true" data-menu-title="conda cheat sheet"}
+
+##  {background-image="images/vs-code-select-interpreter.png" data-menu-title="Select interpreter"}
+
+##  {background-image="images/vs-code-new-terminal.png" data-menu-title="Open new terminal"}
+
+##  {background-image="images/vs-code-conda-install-package.png" data-menu-title="conda install package in terminal"}
+
+# Demo of pandas
