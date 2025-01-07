@@ -1,6 +1,6 @@
 # Book settings
 title: CPSC 203 
-author: Firas Moosvi
+author: Firas Moosvi and Ian M. Mitchell
 logo: images/logo.png
 copyright: ""
 exclude_patterns: ["LICENSE.md", "README.md"]
@@ -60,9 +60,9 @@ sphinx:
 
     myst_substitutions:
       # Instructor information
-      INSTRUCTOR: "Dr. Firas Moosvi (he/his/him)"
-      PRONOUNCE: "Fur-az Moose-vee"
-      OFFICE: "ICCS 253"
+      INSTRUCTOR: "Prof. Ian M. Mitchell (he/his/him)"
+      PRONOUNCE: "ee-en mitch-ell"
+      OFFICE: "ICCS 223"
       PHONE: "N/A"
 
       # Course Information
@@ -72,37 +72,37 @@ sphinx:
       TITLE: "Programming, Problem Solving, and Algorithms"
       PREREQS: "Pre-reqs: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337."
       COREQS: "N/A"
-      TERM: "2023 Winter Term 2"
-      ROOM: "AERL 120"
-      MEETING_TIMES: "Tuesday, Thursday from 11:00 -12:30"
+      TERM: "2024 Winter Term 2"
+      ROOM: "SWNG 221"
+      MEETING_TIMES: "Tuesday, Thursday from 12:30 -14:00"
       # FORMAT: "Lectures, Labs, Tutorials will all be running in-person."
 
       # Important Links
-      CANVAS_ID: "130127"
+      CANVAS_ID: "152117"
       CANVAS_LINK: "https://canvas.ubc.ca/courses/CANVAS_ID"
-      ZOOM_LINK: "[Zoom](https://canvas.ubc.ca/courses/CANVAS_ID/external_tools/15408)"
-      ANNOUNCEMENTS_LINK: "[Canvas Announcements](https://canvas.ubc.ca/courses/CANVAS_ID/announcements)"
-      COURSE_LINK: "https://firas.moosvi.com/courses/cpsc203/2023W2/"
-      FORUM_LINK: "[Ed Discussion](https://edstem.org/us/join/xyhhmY)"
+      #ZOOM_LINK: "[Zoom](https://canvas.ubc.ca/courses/CANVAS_ID/external_tools/15408)"
+      #ANNOUNCEMENTS_LINK: "[Canvas Announcements](https://canvas.ubc.ca/courses/CANVAS_ID/announcements)"
+      COURSE_LINK: "https://ubc-cs.github.io/cpsc203/"
+      FORUM_LINK: "[Piazza](https://piazza.com/ubc.ca/winterterm22024/cpsc203/home)"
       TEXTBOOK: "We will not be needing a textbook for this course as you will be provided all the notes you need via the course website and linked materials."
-      ANON_FEEDBACK: "[feedback form](https://ubc.ca1.qualtrics.com/?course=cpsc203&term=2023_WT2)"
-      ASSOCIATE_HEAD: "Associate Head [associate.head@fakeemail.ca](mailto:associate.head@fakeemail.ca)"
-      ANALYTICS_OPTOUT: "[complete this form](https://ubc.ca1.qualtrics.com/jfe/form/SV_0p6lP4TtNpJn410/?course=cpsc203&term=2023_WT2)"
+      #ANON_FEEDBACK: "[feedback form](https://ubc.ca1.qualtrics.com/?course=cpsc203&term=2023_WT2)"
+      #ASSOCIATE_HEAD: "Associate Head [associate.head@fakeemail.ca](mailto:associate.head@fakeemail.ca)"
+      #ANALYTICS_OPTOUT: "[complete this form](https://ubc.ca1.qualtrics.com/jfe/form/SV_0p6lP4TtNpJn410/?course=cpsc203&term=2023_WT2)"
 
       # Withdrawal Dates and Exam Period
       # https://vancouver.calendar.ubc.ca/dates-and-deadlines
-      W_DATE_1: "11:59 PDT on January 19, 2024"
-      W_DATE_2: "11:59 PDT on March 1, 2024"
-      W_DATE_3: "11:59 PDT on March 1, 2024"
-      EXAM_PERIOD: "Tuesday April 16th - Saturday, April 27"
+      W_DATE_1: "11:59 PDT on Friday, January 17, 2025"
+      W_DATE_2: "11:59 PDT on Friday, March 7, 2025"
+      W_DATE_3: "11:59 PDT on Friday, March 7, 2025"
+      EXAM_PERIOD: "Saturday April 12th - Sunday, April 27"
 
       # Course Policies
       GRACE_PERIOD: "48 hour"
 
       # TA Names
-      TA1: "Braeden Fong"
-      TA1pronounce: "BRAY-DIN"
-      TA2: "Manushree Singhania"
-      TA2pronounce: "MA-NU-SHREE"
-      TA3: "Minh Anh Nguyen"
-      TA3pronounce: "Ming Ang"
+      #TA1: "Braeden Fong"
+      #TA1pronounce: "BRAY-DIN"
+      #TA2: "Manushree Singhania"
+      #TA2pronounce: "MA-NU-SHREE"
+      #TA3: "Minh Anh Nguyen"
+      #TA3pronounce: "Ming Ang"
