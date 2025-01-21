@@ -48,10 +48,12 @@ All course content, references, and resources provided in this course are free a
 ```{include} syllabus_bits/passing_requirement.md
 ```
 
+<!-->
 ## Learning Intentions
 (learning-intentions)=
 ```{include} syllabus_bits/course_LOs.md
 ``` 
+-->
 
 <div class="page_break"> </div>
 
@@ -86,7 +88,7 @@ All course content, references, and resources provided in this course are free a
 (doing-well)=
 ## How do I do well in this course?
 
-```{include} unsyllabus_bits/doing_well_physics.md
+```{include} unsyllabus_bits/doing_well_cpsc.md
 ```
 
 (missed-things)=
@@ -107,10 +109,12 @@ All course content, references, and resources provided in this course are free a
 
 In this course, we will be using the following required learning technologies (privacy policies linked): 
 
-- [Canvas](https://faculty.canvas.ubc.ca/canvas-privacy/)
+- [Canvas](https://faculty.canvas.ubc.ca/canvas-privacy/).
+- [PrairieLearn](https://www.prairielearn.com/legal/privacy).
+- [Piazza](https://piazza.com/legal/privacy).  See also [UBC's Piazza Guide](https://lthub.ubc.ca/guides/piazza-instructor-guide/)
+- [GitHub](https://docs.github.com/en/github/site-policy/github-privacy-statement).
+<!--
 - [Ed Discussion](https://edstem.org/privacy)
-- [GitHub](https://docs.github.com/en/github/site-policy/github-privacy-statement)
-- [PrairieLearn](https://www.prairielearn.com/legal/privacy)
 
 ```{include} unsyllabus_bits/tools/canvas.md
 ```
@@ -124,7 +128,6 @@ In this course, we will be using the following required learning technologies (p
 ```{include} unsyllabus_bits/tools/prairielearn.md
 ```
 
-<!-- 
 - [Sli.do](https://www.slido.com/terms?experience_id=1&utm_campaign=_eid-007-control&utm_source=www.slido.com-_ab#privacy-policy)
 ```{include} unsyllabus_bits/tools/slido.md
 ```
@@ -132,7 +135,6 @@ In this course, we will be using the following required learning technologies (p
 
 ```{include} unsyllabus_bits/tools/gradescope.md
 ```
- -->
 
 ### What type of information will I collect about you in this course?
 
@@ -146,6 +148,7 @@ In this course, we will be using the following required learning technologies (p
 
 ```{include} unsyllabus_bits/teaching_philosophy.md
 ```
+-->
 
 (academic-integrity)=
 ## Academic Integrity
@@ -155,11 +158,13 @@ In this course, we will be using the following required learning technologies (p
 
 <div class="page_break"> </div>
 
+<!--
 (withdrawing)=
 ## What should I think about if I'm considering withdrawing from the course?
 
 ```{include} unsyllabus_bits/withdrawing.md
 ```
+-->
 
 (acknowledgements)=
 ## Acknowledgements

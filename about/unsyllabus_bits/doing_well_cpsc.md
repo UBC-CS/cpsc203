@@ -15,7 +15,7 @@ And some ingredients for your success:
 1. Do not be fooled by familiarity of the material.
 
 ```{important}
-These guidelines were adapted from [Dr. Simon Bates' Physics 117 course from UBCV](https://sites.google.com/site/simonpbates/home?authuser=0).
+These guidelines were adapted from [Dr. Simon Bates'](https://sites.google.com/site/simonpbates/home?authuser=0) Physics 117 course from UBCV.
 ```
 
 ### ... but I've never been good at computer science!
@@ -39,6 +39,6 @@ That's fine!
 No judgement from me, you are more than welcome in this course.
 I just ask that you not make any snap judgements about the class, the material, the instructor (me), or the teaching team.
 Whatever your motivations are for taking this course, give us a chance, maybe you don't HAVE TO be miserable taking this course!
-You might even enjoy the feeling of community and camaraderie that develops over the course of the semester :-). 
+You might even enjoy the feeling of community and camaraderie that develops over the course of the semester 🤞. 
 
 I hope you're not miserable, if you do feel miserable, come talk to me - maybe I can help you see the light at the end of tunnel?

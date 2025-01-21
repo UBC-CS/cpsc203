@@ -1,6 +1,7 @@
 The syllabus was constructed and adapted from many other templates and examples.
 Below is the list of resources I have used to put this syllabus together:
 
+- CPSC 203 2023W2 Course web page (Instructor: [Dr. Firas Moosvi](https://firas.moosvi.com))
 - Physics 117 (Instructor: [Dr. Simon Bates](https://sites.google.com/site/simonpbates/home?authuser=0))
 - Psychology 417A-951 (Instructor: [Dr. Catherine Rawn](https://blogs.ubc.ca/catherinerawn/))
 - [Dr. Christopher Jones](https://hcommons.org/members/profchrismjones/) and [this tweet](https://twitter.com/ProfChrisMJones/status/1282036533562834944)
