@@ -48,7 +48,7 @@ All course content, references, and resources provided in this course are free a
 ```{include} syllabus_bits/passing_requirement.md
 ```
 
-<!-->
+<!--
 ## Learning Intentions
 (learning-intentions)=
 ```{include} syllabus_bits/course_LOs.md
