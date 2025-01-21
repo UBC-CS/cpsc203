@@ -5,11 +5,11 @@
 | Term              | {{ TERM }}                      |
 | Instructor        | {{ INSTRUCTOR }}                |
 | Lectures          | {{ MEETING_TIMES }}: {{ ROOM }} |
-| Mode of Delivery  | In-person (All course activities and assessments, including the Final Exam, will be conducted in-person) |
+| Mode of Delivery  | In-person: All course activities and assessments, including the Final Exam, will be conducted in-person |
 | Canvas URL        | {{ CANVAS_LINK.replace('CANVAS_ID',CANVAS_ID) }}                                                                                                   |
 | Course Discussion | To ask any course-related questions, use private (personal, not useful for anyone else) or public (helpful for other) messages on {{ FORUM_LINK }} |
 
-You can find all the important term dates in the [UBC Academic Calendar](https://vancouver.calendar.ubc.ca/dates-and-due dates).
+You can find all the important term dates in the [UBC Academic Calendar](https://vancouver.calendar.ubc.ca/dates-and-due).
 
 <!--
 ```{warning}

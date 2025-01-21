@@ -21,14 +21,16 @@ In particular, I hope (and expect) that the following features of the course sho
 
 - {{ GRACE_PERIOD }} grace-period on all due dates.
 - Long testing window so you can start the tests when you are comfortable.
-<!-- - Each test has a "bonus test" available one week later; for each test, we will take the better score of the pair. -->
 - No high-stakes exams (the single largest assessment item is the final exam).
-<!-- - All course assessments are completely open book, open notes, and open web (except for cheating websites like Chegg, CourseHero, Slader, Bartleby, etc...) -->
 - Plenty of TA and instructor student hours and several outside of normal business hours.
 - Class website that outlines exactly what you should do when to help you manage your time.
 - Tonnes of supplemental materials including other instructional videos in case you want a different perspective.
 - Weekly prompt to accept the integrity pledge to keep you accountable.
 - A true willingness from the instructor (me) to help you learn and succeed in this course!
+<!-- 
+- Each test has a "bonus test" available one week later; for each test, we will take the better score of the pair.
+- All course assessments are completely open book, open notes, and open web (except for cheating websites like Chegg, CourseHero, Slader, Bartleby, etc...)
+-->
 
 With these features, and several other little things, I sincerely hope that you will consider completing this course with maximum integrity so that you never have to feel guilty, ashamed, or disappointed in yourself and your actions!
 

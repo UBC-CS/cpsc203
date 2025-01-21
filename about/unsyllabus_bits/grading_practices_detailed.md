@@ -18,5 +18,5 @@ Assessments in the "Exam" category **must** be completed in the time window spec
 ```
 
 ```{note}
-Please refer to [this page](https://students.ubc.ca/enrolment/exams/exam-clashes-hardships-cancellations) for details on exam clashes, hardships, and cancellations.
+Please refer to the [UBC Calendar](https://students.ubc.ca/enrolment/exams/exam-clashes-hardships-cancellations) for details on exam clashes, hardships, and cancellations.
 ```

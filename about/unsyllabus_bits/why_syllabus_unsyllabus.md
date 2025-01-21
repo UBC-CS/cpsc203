@@ -32,7 +32,6 @@ and also:
 Having an adaptive syllabus is important to me as it allows me to be responsive to your feedback in a meaningful way.
 I invite you to be co-contributors to this unsyllabus, and use the tools provided to add your own annotations, questions, and suggestions on making this syllabus work for you.
 At various points in the term, I will invite you to provide feedback on how things are going in the class.
-You may use those opportunities (or any other using the anonymous {{ ANON_FEEDBACK }} or {{ FORUM_LINK }}) to propose adjustments to how the class is running for consideration.
 
 | Document   | Status                                                                                                                                   |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------|
