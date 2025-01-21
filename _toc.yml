@@ -174,10 +174,10 @@ parts:
 #   chapters:
 #   - file: notes/labs
 #     title: Lab Stuff
-- caption: Course Feedback
-  chapters:
-  - file: about/feedback
-    title: Anonymous Feedback Form
+#- caption: Course Feedback
+#  chapters:
+#  - file: about/feedback
+#    title: Anonymous Feedback Form
 
 # - caption: Tools
 #   chapters:
