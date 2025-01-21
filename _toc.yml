@@ -11,10 +11,10 @@ parts:
 
 - caption: Getting Started
   chapters:
-  - file: getting-started/pre_term
-  - file: getting-started/tasks1
-  - file: getting-started/tasks2
-  - file: getting-started/tasks3
+  #- file: getting-started/pre_term
+  #- file: getting-started/tasks1
+  #- file: getting-started/tasks2
+  #- file: getting-started/tasks3
   - file: notes/setup/stack
     title: Setup Your Machine
     sections:
