@@ -545,6 +545,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contact-us">Contact Us</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-requirements">Passing requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-or-missed-assignments-and-or-exams">Late or Missed Assignments and/or Exams</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-policy">Late Policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">What should I do if I need accommodations to be successful in this course?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting Help</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus-vs-unsyllabus">Syllabus vs. Unsyllabus</a><ul class="nav section-nav flex-column">
@@ -556,11 +562,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-do-well-in-this-course">How do I do well in this course?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-ve-never-been-good-at-computer-science">… but I’ve never been good at computer science!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-don-t-even-like-computers">… but I don’t even like computers!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-things">Missed things</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">What should I do if I need accommodations to be successful in this course?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-tools">Course Tools</a><ul class="nav section-nav flex-column">
@@ -680,7 +681,7 @@ document.write(`
 <div class="sd-card-body docutils">
 <p class="sd-card-text">What to do if you have to miss things because of special days (including getting sick).</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="#missed-things"><span class="std std-ref">Missed things</span></a></div>
+<span class="sd-stretched-link sd-hide-link-text">missed-things</span></div>
 </div>
 </div>
 </div>
@@ -756,12 +757,12 @@ All course content, references, and resources provided in this course are free a
 <td><p>See Piazza <a class="reference external" href="https://piazza.com/class/m5m1kbw121f3ii/post/26">“Office Hours Schedule”</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Aryan Ballani</p></td>
-<td><p>Ar-yan</p></td>
+<td><p>ar-yan</p></td>
 <td><p><a class="reference external" href="https://piazza.com/ubc.ca/winterterm22024/cpsc203/home">Piazza</a></p></td>
 <td><p>See Piazza <a class="reference external" href="https://piazza.com/class/m5m1kbw121f3ii/post/26">“Office Hours Schedule”</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Minh Anh Nguyen</p></td>
-<td><p>Ming Ang</p></td>
+<td><p>ming ang</p></td>
 <td><p><a class="reference external" href="https://piazza.com/ubc.ca/winterterm22024/cpsc203/home">Piazza</a></p></td>
 <td><p>See Piazza <a class="reference external" href="https://piazza.com/class/m5m1kbw121f3ii/post/26">“Office Hours Schedule”</a></p></td>
 </tr>
@@ -809,17 +810,11 @@ All course content, references, and resources provided in this course are free a
 </tbody>
 </table>
 </div>
-<p>There will be 6 tests in this course in an (approximately) bi-weekly schedule.</p>
-<!-- For each of the tests, there will be a bonus test exactly one week later and the better score of the Test-Bonus Test pair will be taken. -->
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Many assessments in the “Homework” category may be submitted after the original deadline for partial credit.  The amount of partial credit and the corresponding deadlines can be found in PrairieLearn.</p>
-<p>Assessments in the “Exam” category <strong>must</strong> be completed in the time window specified for that particular assessment.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please refer to the <a class="reference external" href="https://students.ubc.ca/enrolment/exams/exam-clashes-hardships-cancellations">UBC Calendar</a> for details on exam clashes, hardships, and cancellations.</p>
-</div>
+<!--
+There will be 6 tests in this course in an (approximately) bi-weekly schedule.
+
+For each of the tests, there will be a bonus test exactly one week later and the better score of the Test-Bonus Test pair will be taken. 
+-->
 </section>
 <section id="passing-requirements">
 <span id="id5"></span><h2>Passing requirements<a class="headerlink" href="#passing-requirements" title="Permalink to this heading">#</a></h2>
@@ -833,6 +828,46 @@ All course content, references, and resources provided in this course are free a
 </li>
 </ul>
 <p>If a student does not satisfy these requirements, the student may be assigned the <strong>lower</strong> of their earned course grade or 45% in the course.</p>
+</section>
+<section id="late-or-missed-assignments-and-or-exams">
+<span id="late-missing-policy"></span><h2>Late or Missed Assignments and/or Exams<a class="headerlink" href="#late-or-missed-assignments-and-or-exams" title="Permalink to this heading">#</a></h2>
+<section id="late-policy">
+<h3>Late Policy<a class="headerlink" href="#late-policy" title="Permalink to this heading">#</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Many assessments in the “Homework” category may be submitted after the original deadline for partial credit.  The amount of partial credit and the corresponding deadlines can be found in PrairieLearn.</p>
+<p>Assessments in the “Exam” category <strong>must</strong> be completed in the time window specified for that particular assessment.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please refer to the <a class="reference external" href="https://students.ubc.ca/enrolment/exams/exam-clashes-hardships-cancellations">UBC Calendar</a> for details on exam clashes, hardships, and cancellations.</p>
+</div>
+</section>
+<section id="what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">
+<h3>What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?<a class="headerlink" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations" title="Permalink to this heading">#</a></h3>
+<p>Normally, most assessments in this course have multi-day window or a generous grace period, which should suffice to account for unexpected but short-term absences.</p>
+<p>For longer term absences (a week or more), please contact the instructor to discuss options.</p>
+<p>If ill health is an issue, students are encouraged to seek attention from a health professional.  UBC’s <a class="reference external" href="https://students.ubc.ca/health/">Student Health and Wellbeing website</a> has links to many different resources.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don’t be shy or embarassed to use these health services, and if the first one doesn’t work for you, try another!</p>
+</div>
+</section>
+<section id="what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">
+<h3>What should I do if I need accommodations to be successful in this course?<a class="headerlink" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course" title="Permalink to this heading">#</a></h3>
+<p>Please see <a class="reference internal" href="#page-accommodations"><code class="xref myst docutils literal notranslate"><span class="pre">page-accommodations</span></code></a></p>
+<!--
+### Compassion
+
+Overall, my philosophy is that I think we could all use some extra compassion and humanity wherever and whenever it's possible.
+If you're going through something that is affecting you (in the course or otherwise), you are always welcome to come and talk to me about it. 
+If I am not able to help you myself, then I can probably direct you to the right person or resource on campus.
+If you need extra help, or extra time to deal with something you're going through, just ask.
+You will *never* owe me an explanation about your physical health, mental health, or those of your family members, friends, etc... I will believe you, and I will trust you.
+I will not judge you, nor think any less of you.
+I will do everything in my power to work out something that is both reasonable and fair. 
+This, I promise!
+-->
 <!--
 ## Learning Intentions
 (learning-intentions)=
@@ -840,6 +875,7 @@ All course content, references, and resources provided in this course are free a
 ``` 
 -->
 <div class="page_break"> </div>
+</section>
 </section>
 <section id="schedule">
 <h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">#</a></h2>
@@ -1110,35 +1146,6 @@ I just ask that you not make any snap judgements about the class, the material, 
 Whatever your motivations are for taking this course, give us a chance, maybe you don’t HAVE TO be miserable taking this course!
 You might even enjoy the feeling of community and camaraderie that develops over the course of the semester 🤞.</p>
 <p>I hope you’re not miserable, if you do feel miserable, come talk to me - maybe I can help you see the light at the end of tunnel?</p>
-</section>
-</section>
-<section id="missed-things">
-<span id="id9"></span><h2>Missed things<a class="headerlink" href="#missed-things" title="Permalink to this heading">#</a></h2>
-<section id="what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">
-<h3>What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?<a class="headerlink" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations" title="Permalink to this heading">#</a></h3>
-<p>Normally, most due dates in this course have a generous grace period, which should suffice to account for unexpected but short-term absences.</p>
-<p>For longer term absences (a week or more), please contact the instructor to discuss options.</p>
-<p>If ill health is an issue, students are encouraged to seek attention from a health professional.  UBC’s <a class="reference external" href="https://students.ubc.ca/health/">Student Health and Wellbeing website</a> has links to many different resources.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Don’t be shy or embarassed to use these health services, and if the first one doesn’t work for you, try another!</p>
-</div>
-</section>
-<section id="what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">
-<h3>What should I do if I need accommodations to be successful in this course?<a class="headerlink" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course" title="Permalink to this heading">#</a></h3>
-<p>Please see <a class="reference internal" href="#page-accommodations"><code class="xref myst docutils literal notranslate"><span class="pre">page-accommodations</span></code></a></p>
-<!--
-### Compassion
-
-Overall, my philosophy is that I think we could all use some extra compassion and humanity wherever and whenever it's possible.
-If you're going through something that is affecting you (in the course or otherwise), you are always welcome to come and talk to me about it. 
-If I am not able to help you myself, then I can probably direct you to the right person or resource on campus.
-If you need extra help, or extra time to deal with something you're going through, just ask.
-You will *never* owe me an explanation about your physical health, mental health, or those of your family members, friends, etc... I will believe you, and I will trust you.
-I will not judge you, nor think any less of you.
-I will do everything in my power to work out something that is both reasonable and fair. 
-This, I promise!
--->
 <div class="page_break"> </div>
 </section>
 </section>
@@ -1211,7 +1218,7 @@ Even though the tools above are required for this course, if you have a moral or
 </section>
 </section>
 <section id="academic-integrity">
-<span id="id10"></span><h2>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Permalink to this heading">#</a></h2>
+<span id="id9"></span><h2>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Permalink to this heading">#</a></h2>
 <section id="how-do-i-go-through-this-course-with-integrity">
 <h3>How do I go through this course with integrity?<a class="headerlink" href="#how-do-i-go-through-this-course-with-integrity" title="Permalink to this heading">#</a></h3>
 <p>I want to be proud of your work in this course, and I want YOU to be proud of yourself as well!
@@ -1275,7 +1282,7 @@ In particular, I hope (and expect) that the following features of the course sho
 </section>
 </section>
 <section id="acknowledgements">
-<span id="id11"></span><h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
+<span id="id10"></span><h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
 <p>The syllabus was constructed and adapted from many other templates and examples.
 Below is the list of resources I have used to put this syllabus together:</p>
 <ul class="simple">
@@ -1295,8 +1302,8 @@ The land it is situated on has always been a place of learning for the Musqueam 
 <img alt="Aerial photo of the UBC campus showing the Martha Piper fountain, and mountains in the skyline." src="../_images/ubc_aerial.jpg" />
 </section>
 <section id="references">
-<span id="id12"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<span class="target" id="id13"></span></section>
+<span id="id11"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<span class="target" id="id12"></span></section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -1375,6 +1382,12 @@ The land it is situated on has always been a place of learning for the Musqueam 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contact-us">Contact Us</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-requirements">Passing requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-or-missed-assignments-and-or-exams">Late or Missed Assignments and/or Exams</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-policy">Late Policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">What should I do if I need accommodations to be successful in this course?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting Help</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus-vs-unsyllabus">Syllabus vs. Unsyllabus</a><ul class="nav section-nav flex-column">
@@ -1386,11 +1399,6 @@ The land it is situated on has always been a place of learning for the Musqueam 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-do-well-in-this-course">How do I do well in this course?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-ve-never-been-good-at-computer-science">… but I’ve never been good at computer science!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-don-t-even-like-computers">… but I don’t even like computers!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-things">Missed things</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-miss-labs-tests-or-the-exam-due-to-an-illness-health-or-other-personal-situations">What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-i-do-if-i-need-accommodations-to-be-successful-in-this-course">What should I do if I need accommodations to be successful in this course?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-tools">Course Tools</a><ul class="nav section-nav flex-column">
