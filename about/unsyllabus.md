@@ -39,7 +39,7 @@ All course content, references, and resources provided in this course are free a
 (evaluation)=
 ## Evaluation
 
-```{include} unsyllabus_bits/grading_practices_detailed.md
+```{include} syllabus_bits/grading_practices_detailed.md
 ```
 
 (passing-requirements)=
@@ -47,6 +47,13 @@ All course content, references, and resources provided in this course are free a
 
 ```{include} syllabus_bits/passing_requirement.md
 ```
+
+(late-missing-policy)=
+## Late or Missed Assignments and/or Exams
+
+```{include} syllabus_bits/late_policy.md
+```
+
 
 <!--
 ## Learning Intentions
@@ -89,12 +96,6 @@ All course content, references, and resources provided in this course are free a
 ## How do I do well in this course?
 
 ```{include} unsyllabus_bits/doing_well_cpsc.md
-```
-
-(missed-things)=
-## Missed things
-
-```{include} unsyllabus_bits/missed_things.md
 ```
 
 <div class="page_break"> </div>

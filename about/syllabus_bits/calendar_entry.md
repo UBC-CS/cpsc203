@@ -11,5 +11,5 @@ The [UBC calendar description](https://vancouver.calendar.ubc.ca/course-descript
 > *Corequisite*: {{ COREQS }}
 
 ```{warning}
-If there is a lab and/or tutorial listed on the SSC for this course, You **must** register for all course elements without conflicts, otherwise the department will remove you from the course! There are usually lab or tutorial exemptions for some students (i.e. those repeating the course) and instructions for that will be in this syllabus.
+**If** there is a lab and/or tutorial listed for this course, you **must** register for all course elements without conflicts, otherwise you may be automatically removed from the course! There are usually lab or tutorial exemptions for some students (i.e. those repeating the course) and instructions for that will be in this syllabus.  There may also be terms in which no official lab and/or tutorials are scheduled.
 ```

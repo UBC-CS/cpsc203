@@ -94,15 +94,15 @@ sphinx:
       W_DATE_1: "11:59 PDT on Friday, January 17, 2025"
       W_DATE_2: "11:59 PDT on Friday, March 7, 2025"
       W_DATE_3: "11:59 PDT on Friday, March 7, 2025"
-      EXAM_PERIOD: "Saturday April 12th - Sunday, April 27"
+      EXAM_PERIOD: "Saturday April 12th - Sunday, April 27, 2025"
 
       # Course Policies
       GRACE_PERIOD: "48 hours"
 
       # TA Names
       TA1: "Minh Anh Nguyen"
-      TA1pronounce: "Ming Ang"
+      TA1pronounce: "ming ang"
       TA2: "Aryan Ballani"
-      TA2pronounce: "Ar-yan"
+      TA2pronounce: "ar-yan"
       #TA3: "Minh Anh Nguyen"
       #TA3pronounce: "Ming Ang"

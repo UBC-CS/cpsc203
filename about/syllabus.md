@@ -29,14 +29,14 @@ For information on how to contact your course instructor, including office hours
 
 For information on this, see the {{ '[course website]({link})'.format(link=COURSE_LINK)}}.
 
+<!--
 ## Learning Outcomes
 
 The Learning Outcomes for this course are: 
 
 ```{include} syllabus_bits/course_LOs.md
 ```
-
-More details about the course can be found on the {{ '[course website]({link})'.format(link=CANVAS_LINK.replace('CANVAS_ID',CANVAS_ID))}}.
+-->
 
 ## Schedule of Topics
 
@@ -60,7 +60,7 @@ Resources and materials for this course can be found on the {{ '[course website]
 
 ## Assessments of Learning
 
-```{include} syllabus_bits/grading_practices_simple.md
+```{include} syllabus_bits/grading_practices_detailed.md
 ```
 
 ## Passing Criteria
@@ -68,13 +68,12 @@ Resources and materials for this course can be found on the {{ '[course website]
 ```{include} syllabus_bits/passing_requirement.md
 ```
 
-## Late Policy and Missed Assignments and Exams
+## Policy on Late or Missed Assignments / Exams
 
-Due dates in this course have a generous no-penalty {{ GRACE_PERIOD }} grace period so late submissions are not generally accepted.
-Missed Tests and Exams will be given a score of 0 unless prior arrangements are made with the course instructor.
-To contact the instructor for this course, use {{ FORUM_LINK }}.
-Details on due dates and other course policies can be found on the {{ '[course website]({link})'.format(link=CANVAS_LINK.replace('CANVAS_ID',CANVAS_ID))}}.
+```{include} syllabus_bits/late_policy.md
+```
 
+<!--
 ## Learning Analytics
 
 ```{include} syllabus_bits/learning_analytics.md
@@ -84,5 +83,8 @@ Details on due dates and other course policies can be found on the {{ '[course w
 
 For information on this, see the {{ '[course website]({link})'.format(link=COURSE_LINK)}}.
 
+-->
+
+<!-- This is a bunch of university level boilerplate from Firas. -->
 ```{include} syllabus_bits/policies.md
 ```

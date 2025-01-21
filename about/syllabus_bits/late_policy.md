@@ -1,6 +1,18 @@
+### Late Policy
+
+```{attention}
+Many assessments in the "Homework" category may be submitted after the original deadline for partial credit.  The amount of partial credit and the corresponding deadlines can be found in PrairieLearn.
+
+Assessments in the "Exam" category **must** be completed in the time window specified for that particular assessment.
+```
+
+```{note}
+Please refer to the [UBC Calendar](https://students.ubc.ca/enrolment/exams/exam-clashes-hardships-cancellations) for details on exam clashes, hardships, and cancellations.
+```
+
 ### What if I miss labs, tests, or the exam due to an illness, health, or other personal situations?
 
-Normally, most due dates in this course have a generous grace period, which should suffice to account for unexpected but short-term absences.
+Normally, most assessments in this course have multi-day window or a generous grace period, which should suffice to account for unexpected but short-term absences.
 
 For longer term absences (a week or more), please contact the instructor to discuss options.
 
