@@ -4,7 +4,7 @@
 | Course            | {{ COURSE_CODE }}               |
 | Term              | {{ TERM }}                      |
 | Instructor        | {{ INSTRUCTOR }}                |
-| Lectures          | {{ MEETING_TIMES }}: {{ ROOM }} |
+| Lectures          | {{ MEETING_TIMES }} in {{ ROOM }} |
 | Mode of Delivery  | In-person: All course activities and assessments, including the Final Exam, will be conducted in-person |
 | Canvas URL        | {{ CANVAS_LINK.replace('CANVAS_ID',CANVAS_ID) }}                                                                                                   |
 | Course Discussion | To ask any course-related questions, use private (personal, not useful for anyone else) or public (helpful for other) messages on {{ FORUM_LINK }} |

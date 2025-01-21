@@ -1,10 +1,8 @@
 **{{ COURSE_CODE }} ({{ CREDITS }}) {{ TITLE }}**
 
-The [UBC calendar description](https://vancouver.calendar.ubc.ca/course-descriptions/subject/phys) of this course is: 
+The [UBC calendar description](https://vancouver.calendar.ubc.ca/course-descriptions/courses/cpscv-203-programming-problem-solving-and-algorithms) of this course is: 
 
-> Introduction to mechanics primarily for students majoring in the physical sciences (e.g. physics, chemistry, mathematics, computer science, geology, physical geography) or engineering.
-> Particle kinematics and dynamics, work and energy, momentum, gravitation, rigid body motion, fluid statics and dynamics with applications to the physical sciences.
-> Credit will be granted for only one of PHYS 111 and PHYS 112. Students with Physics 12 may apply for a tutorial exemption. [3-3-1]
+> Analysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search. Not for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221. [3-0-1]
 > 
 > *Prerequisite*: {{ PREREQS }}
 > 
