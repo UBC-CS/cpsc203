@@ -1,6 +1,6 @@
 # Class Meeting 1B
 
-Today we will be learning about the Terminal!
+Today we will be learning about the Terminal!  If you have not yet set up your local software stack, look in PrairieLearn for [Class Activity 1B](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495511).  Each of the questions there allow you to open a workspace in which you can play around with a cloud-based terminal.
 
 <div>
 <iframe src="../../Lec02Terminal.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
