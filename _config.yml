@@ -60,7 +60,7 @@ sphinx:
 
     myst_substitutions:
       # Instructor information
-      INSTRUCTOR: "Prof. Ian M. Mitchell (he/his/him)"
+      INSTRUCTOR: "Ian M. Mitchell (he/his/him)"
       PRONOUNCE: "ee-en mitch-ell"
       OFFICE: "ICCS 223"
       PHONE: "N/A"
