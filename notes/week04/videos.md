@@ -34,6 +34,7 @@ Below are the assigned videos for this week.
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/907131240" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
+### Videos before Thursday's class
 
 ```{dropdown} 2. Introduction to Pandas
     :class-container: sd-shadow-lg
@@ -42,27 +43,5 @@ Below are the assigned videos for this week.
 
 <div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/907139342" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-### Videos before Thursday's class
-
-```{dropdown} 3. Data, Internet, and Billboard 100
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/907137178" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-```{dropdown} 4. Beautiful Soup
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/907137714" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```

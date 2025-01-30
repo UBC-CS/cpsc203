@@ -1,12 +1,15 @@
 # Class Meeting 4B
 
-We're going to change things up for today and switch today's class to a Review and catch-up class with no new content.
+Below are the slides from today's class embedded.  We worked on the various data classes to manipulate blocks in a handcraft in the [Class Activity 4A](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495516) workspace.
 
 <div>
-<iframe src="../../Lec08_Review.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec08pandas.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec08_Review.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec08pandas.pdf)
+
+We recommend that you download (and likely print) a copy of the [pandas cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
+
 
 ## Optional links for today
 
@@ -17,7 +20,3 @@ We're going to change things up for today and switch today's class to a Review a
 - [PrairieLearn](https://canvas.ubc.ca/courses/130127/external_tools/48751)
 - [Markdown Tutorial](https://commonmark.org/help/tutorial/)
 -->
-
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.

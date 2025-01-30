@@ -1,6 +1,6 @@
 # Class Meeting 4A
 
-Below are the slides from today's class embedded.  We worked on the various data classes to define a handcraft in the [Class Activity 3B](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495515) and [Class Activity 4A](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495516) workspaces.
+Below are the slides from today's class embedded.  We worked on the various data classes to define a handcraft in the [Class Activity 3B](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495515) (you should finish working through these on your own) and [Class Activity 4A](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495516) workspaces (we will pick up on these next class).
 
 <div>
 <iframe src="../../Lec07knitting2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
