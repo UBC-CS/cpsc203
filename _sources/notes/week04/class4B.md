@@ -8,13 +8,13 @@ Below are the slides from today's class embedded.  We worked on the various data
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec08pandas.pdf)
 
-We recommend that you download (and likely print) a copy of the [pandas cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
+## Links for today
 
-
-## Optional links for today
+- We recommend that you download (and likely print) a copy of the [pandas cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
 
 <!--
 ## Important links for today:
+
 
 - [Canvas](https://canvas.ubc.ca/courses/130127)
 - [PrairieLearn](https://canvas.ubc.ca/courses/130127/external_tools/48751)

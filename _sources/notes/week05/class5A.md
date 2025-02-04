@@ -10,9 +10,9 @@ We will leave the website open even after the course is over for a reasonable nu
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec09_WebAsData.pdf)
 
-## Optional links for today
+## Links for today
 
-- [LOTS More on Pandas!]https://firas.moosvi.com/courses/data301/2022_WT2/notes/week05/Class5A/Class5A.html
+- [LOTS More on Pandas](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week05/Class5A/Class5A.html) (courtesy of Dr. Moosvi's former DATA 301 course at UBC-O).
 
 <!--
 ## Important links for today:
@@ -21,7 +21,3 @@ We will leave the website open even after the course is over for a reasonable nu
 - [PrairieLearn](https://canvas.ubc.ca/courses/130127/external_tools/48751)
 - [Markdown Tutorial](https://commonmark.org/help/tutorial/)
 -->
-
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.

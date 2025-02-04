@@ -12,11 +12,11 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week05_video2" class="box"> <label> Beautiful Soup</input></label>
 
-<!-- 
-<input type="checkbox" id="week05_video3" class="box"> <label> Data, Internet, and Billboard 100</input></label>
+<input type="checkbox" id="week05_video3" class="box"> <label> Dataframe Filtering</input></label>
 
-<input type="checkbox" id="week05_video4" class="box"> <label> Beautiful Soup</input></label> 
--->
+<input type="checkbox" id="week05_video4" class="box"> <label> Pandas and Dates</input></label> 
+
+<input type="checkbox" id="week05_video4" class="box"> <label> Plotting with Pandas</input></label> 
 
 ```
 ````
