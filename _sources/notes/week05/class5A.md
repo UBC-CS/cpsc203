@@ -12,6 +12,8 @@ We will leave the website open even after the course is over for a reasonable nu
 
 ## Links for today
 
+- [beautifulsoup library](https://pypi.org/project/beautifulsoup4/) and [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+- [billboard library](https://github.com/guoguo12/billboard-charts).
 - [LOTS More on Pandas](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week05/Class5A/Class5A.html) (courtesy of Dr. Moosvi's former DATA 301 course at UBC-O).
 
 <!--
