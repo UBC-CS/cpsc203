@@ -543,19 +543,35 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-meeting-5a">
 <h1>Class Meeting 5A<a class="headerlink" href="#class-meeting-5a" title="Permalink to this heading">#</a></h1>
-<p>Below are the slides from today’s class embedded.
-Feel free to download them to keep them locally, or leave them archived here and just bookmark them.
-We will leave the website open even after the course is over for a reasonable number of years.</p>
+<p>Due to a weather disruption, today’s class was presented remotely via zoom.  <a class="reference external" href="https://ubc.zoom.us/rec/share/xfO_r8AAmjtVhAdAuCTZJrJwpozieJMpxeFOeiKZ2XTqPAkWQexp3qypifZOxtYc.w0hkvsDLdlRNdkW7">Link to zoom recording</a> and you will need passcode <code class="docutils literal notranslate"><span class="pre">n4vvf$WB</span></code> to access it.  <em>Note:</em> There is no Panopto recording for today’s lecture.</p>
+<p>Below are the slides from today’s class embedded.</p>
 <div>
 <iframe src="../../Lec09_WebAsData.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 <p><a class="reference external" href="https://github.com/ubc-cs/cpsc203/raw/main/files/Lec09_WebAsData.pdf">Download the Slides from today</a></p>
+<p>During the lecture we played around with the <code class="docutils literal notranslate"><span class="pre">ChartData</span></code> and <code class="docutils literal notranslate"><span class="pre">ChartEntry</span></code> classes from the <code class="docutils literal notranslate"><span class="pre">billboard</span></code> module.  I wrote and deleted a lot of code as we explored the VSCode environment and these classes, but here is the final version of the code.  It should print one line for each entry in the Hot-100 list showing the current position and the position for the previous week.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">billboard</span>
+
+<span class="c1"># We will write some code to get the billboard 100 for last week using the billboard.py package</span>
+<span class="n">chart</span> <span class="o">=</span> <span class="n">billboard</span><span class="o">.</span><span class="n">ChartData</span><span class="p">(</span><span class="s1">&#39;hot-100&#39;</span><span class="p">,</span><span class="s1">&#39;2025-01-04&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chart</span><span class="o">.</span><span class="n">entries</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;position &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, last week: &quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lastPos</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Your task to complete <em>before</em> Thursday’s lecture is:</p>
+<ul class="simple">
+<li><p>Start with the data in <code class="docutils literal notranslate"><span class="pre">chart.entries:</span> <span class="pre">List[ChartEntry]</span></code>, which has one <code class="docutils literal notranslate"><span class="pre">ChartEntry</span></code> object for each song in the Hot-100 list.</p></li>
+<li><p>Create a variable <code class="docutils literal notranslate"><span class="pre">chart_songs:</span> <span class="pre">List[Dict]</span></code> with one dictionary for each song in the Hot-100 list.</p></li>
+<li><p>Each dictionary should have one key for each attribute of the corresponding <code class="docutils literal notranslate"><span class="pre">ChartEntry</span></code> object: <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">artist</span></code>, <code class="docutils literal notranslate"><span class="pre">peakPos</span></code>, <code class="docutils literal notranslate"><span class="pre">lastPos</span></code>, <code class="docutils literal notranslate"><span class="pre">weeks</span></code>, <code class="docutils literal notranslate"><span class="pre">rank</span></code>, <code class="docutils literal notranslate"><span class="pre">isNew</span></code>.  The value for each key should be the value for the corresponding attribute for that song.</p></li>
+</ul>
+<p>In other words, you are coverting from <code class="docutils literal notranslate"><span class="pre">ChartEntry</span></code> objects to dictionary objects.  On Thursday we will load those dictionaries into a Pandas dataframe and then play around with the data.</p>
 <section id="links-for-today">
 <h2>Links for today<a class="headerlink" href="#links-for-today" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/beautifulsoup4/">beautifulsoup library</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup documentation</a>.</p></li>
-<li><p><a class="reference external" href="https://github.com/guoguo12/billboard-charts">billboard library</a>.</p></li>
-<li><p><a class="reference external" href="https://firas.moosvi.com/courses/data301/2022_WT2/notes/week05/Class5A/Class5A.html">LOTS More on Pandas</a> (courtesy of Dr. Moosvi’s former DATA 301 course at UBC-O).</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/beautifulsoup4/">beautifulsoup library</a> (and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup documentation</a>).</p></li>
+<li><p><a class="reference external" href="https://github.com/guoguo12/billboard-charts">billboard library</a> (and <a class="reference external" href="https://pypi.org/project/billboard.py/">The Python Package Index version</a>)</p></li>
 </ul>
 <!--
 ## Important links for today:

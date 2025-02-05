@@ -10,7 +10,8 @@ We will leave the website open even after the course is over for a reasonable nu
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec10_Plotting_DataFrames.pdf)
 
-## Optional links for today
+## Links for today
+- [LOTS More on Pandas](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week05/Class5A/Class5A.html) (courtesy of Dr. Moosvi's former DATA 301 course at UBC-O).
 
 <!--
 ## Important links for today:
