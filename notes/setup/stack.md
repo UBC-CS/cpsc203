@@ -7,10 +7,10 @@ myst:
 Tech Stack
 =======================
 
-For any computer science (or data science) course, several tools and software packages are needed for this course.
-These tools are not usually included on your computer, and if they are, some configuration is necessary.
-This page links out to a guide (depending on your operating system) to install the "Tech Stack" for {{ COURSE_CODE }}.
-A "Tech Stack" is the complete set of tools and technologies needed to accomplish a particular task, in this case, Data Analytics.
+As with any computer science or data science course, several tools and software packages are needed for this course.
+These tools are not used by the typical consumer, so most Windows or macOS installations will not include them.  Even on machines which do include them (such as many Linux distributions), they may still need some configuration.
+Below you will find guides to install the "Tech Stack" for {{ COURSE_CODE }}, with different guides for different operating systems.
+A "Tech Stack" is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in {{ COURSE_CODE }}.
 
 As you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer.
 Be patient, read things carefully, do not be afraid to try things, it's unlikely you will do anything to irreversibly break your computer! 
@@ -20,11 +20,13 @@ This is an exciting time for you as you begin your Software Development journey!
 
 ## Install the Software Stack
 
-Below are links to the software installation guide used for {{ COURSE_CODE }} for the three operating systems that are currently supported.
+Below are links to the software installation guide used for {{ COURSE_CODE }} for the operating systems that are currently supported.
 
 - [macOS](page_install_macOS)
 - [Windows](page_install_windows)
+<!-- 
 - [Ubuntu](page_install_ubuntu)
+-->
 
 ## Attribution
 

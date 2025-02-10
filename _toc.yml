@@ -20,7 +20,7 @@ parts:
     sections:
     - file: notes/setup/install_macOS
     - file: notes/setup/install_windows
-  #   - file: notes/setup/install_ubuntu
+    #- file: notes/setup/install_ubuntu
 
 # - caption: Demo section
 #   chapters:
