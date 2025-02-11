@@ -21,9 +21,12 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 ````
 ## Required Videos
 
+<!-- We ended up doing git on Thursday, so it was not so critical to watch these before Tuesday.
 ```{attention}
 To get the most benefit from class on Tuesday, ou will definitely need to have watched these videos BEFORE class on Tuesday!
 ```
+-->
+
 
 ```{dropdown} Why Use Git?
     :class-container: sd-shadow-lg

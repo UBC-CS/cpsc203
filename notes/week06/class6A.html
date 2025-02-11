@@ -36,9 +36,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -506,9 +506,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -524,28 +522,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-with-git">Version Control with Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-git">Why Git</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-git">What is Git?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-git-branching">Learn Git Branching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-for-volunteers">Request for Volunteers !</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-activity-1-intro-to-git-and-github">Guided Activity 1: Intro to Git and GitHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-activity-2-code-reviews">Guided Activity 2: Code Reviews</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-git-commands">Useful Git Commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-links-for-today">Important links for today:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -557,98 +533,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-meeting-6a">
 <h1>Class Meeting 6A<a class="headerlink" href="#class-meeting-6a" title="Permalink to this heading">#</a></h1>
-<p>Below are the slides from today’s class embedded.
-Feel free to download them to keep them locally, or leave them archived here and just bookmark them.
-We will leave the website open even after the course is over for a reasonable number of years.</p>
-<p>Today in class we will be doing a few demos of practical uses of git and version control.
-For a good experience, you should come to class with your group mates, and sit close together.</p>
+<p>There were no slides for today’s lecture.</p>
+<p>We continued our exploration of Pandas in <a class="reference external" href="https://us.prairielearn.com/pl/course_instance/172874/assessment/2495518">Class Activity 5B</a>.</p>
 <div>
-<iframe src="../../Lec11_Git_VersionControl.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
-<p><a class="reference external" href="https://github.com/ubc-cs/cpsc203/raw/main/files/Lec11_Git_VersionControl.pdf">Download the Slides from today</a></p>
-<section id="version-control-with-git">
-<h2>Version Control with Git<a class="headerlink" href="#version-control-with-git" title="Permalink to this heading">#</a></h2>
-<a class="reference internal image-reference" href="../../_images/git.jpeg"><img alt="../../_images/git.jpeg" src="../../_images/git.jpeg" style="width: 30%;" /></a>
-<ul class="simple">
-<li><p>Why git? (3 mins)</p></li>
-<li><p>The GitHub flow (5 mins)</p></li>
-<li><p>Introduction to Branches and Pull Requests (10 mins)</p></li>
-<li><p>Guided Activity 1: Intro to Git and GitHub (25 mins)</p></li>
-<li><p>Guided Activity 2: Code Reviews (10 mins)</p></li>
-<li><p>Git Summary and Review (15 mins)</p></li>
-</ul>
-<section id="why-git">
-<h3>Why Git<a class="headerlink" href="#why-git" title="Permalink to this heading">#</a></h3>
-<img alt="http://www.phdcomics.com/comics/archive/phd101212s.gif" src="http://www.phdcomics.com/comics/archive/phd101212s.gif" />
-</section>
-<section id="what-is-git">
-<h3>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this heading">#</a></h3>
-<img alt="https://www.nobledesktop.com/image/blog/git-branches-merge.png" src="https://www.nobledesktop.com/image/blog/git-branches-merge.png" />
-<p>Image Source: <a class="reference external" href="https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it">Noble Desktop</a>.</p>
-</section>
-</section>
-<section id="learn-git-branching">
-<h2>Learn Git Branching<a class="headerlink" href="#learn-git-branching" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/learn_git_branching.png" src="../../_images/learn_git_branching.png" />
-</section>
-<section id="request-for-volunteers">
-<h2>Request for Volunteers !<a class="headerlink" href="#request-for-volunteers" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>You don’t need to have any prior experience, nor do you have to be a computer pro.</p></li>
-<li><p>Probably will just ask you to share your screen and follow directions.</p></li>
-<li><p>I’ll walk you through what you have to type and click and hopefully it’s illustrative what needs to be done.</p></li>
-<li><p>You don’t need to be a computer or git expert!</p></li>
-</ul>
-</section>
-<section id="guided-activity-1-intro-to-git-and-github">
-<h2>Guided Activity 1: Intro to Git and GitHub<a class="headerlink" href="#guided-activity-1-intro-to-git-and-github" title="Permalink to this heading">#</a></h2>
-<p>You will need to get into a group of 3 for this activity, and it would be best if you all sat together.</p>
-<ul class="simple">
-<li><p>Contributor 1</p></li>
-<li><p>Contributor 2</p></li>
-<li><p>Contributor 3</p></li>
-</ul>
-<section id="tasks">
-<h3>Tasks:<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Get into groups of 3</p></li>
-<li><p>Accept a <a class="reference external" href="https://classroom.github.com/a/-GA1rFkW"><strong>group</strong> GitHub Classroom assignment</a>.</p></li>
-<li><p>Clone the repo locally using the Terminal.</p></li>
-<li><p>Open the repo in VS Code.</p></li>
-<li><p>Contributor 1,2,3 all independently make changes to fix their functions in VS Code</p></li>
-<li><p>Contributor 1,2,3 all commit to their repos BUT DO NOT PUSH!</p></li>
-</ul>
-</section>
-</section>
-<section id="guided-activity-2-code-reviews">
-<h2>Guided Activity 2: Code Reviews<a class="headerlink" href="#guided-activity-2-code-reviews" title="Permalink to this heading">#</a></h2>
-<p>We’ll now do a demo on how to submit a Pull Request, and do a code review.</p>
-</section>
-<section id="useful-git-commands">
-<h2>Useful Git Commands<a class="headerlink" href="#useful-git-commands" title="Permalink to this heading">#</a></h2>
-<p>Here are some command sequences that might be useful:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">...</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-c</span> <span class="pre">'person1'</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-c</span> <span class="pre">'person2'</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
-</ul>
-</section>
-<section id="important-links-for-today">
-<h2>Important links for today:<a class="headerlink" href="#important-links-for-today" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/git-guides">GitHub Guide</a></p></li>
-<li><p><a class="reference external" href="https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf">Git Cheatsheet</a></p></li>
-<li><p><a class="reference external" href="https://https://learngitbranching.js.org">LearnGitBranching</a></p></li>
-</ul>
-</section>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
-<p>Slides for CPSC 203 were developed and created by <a class="reference external" href="https://www.cs.ubc.ca/people/cinda-heeren">Dr. Cinda Heeren</a>. The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -705,35 +594,6 @@ For a good experience, you should come to class with your group mates, and sit c
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-with-git">Version Control with Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-git">Why Git</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-git">What is Git?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-git-branching">Learn Git Branching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-for-volunteers">Request for Volunteers !</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-activity-1-intro-to-git-and-github">Guided Activity 1: Intro to Git and GitHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-activity-2-code-reviews">Guided Activity 2: Code Reviews</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-git-commands">Useful Git Commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-links-for-today">Important links for today:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
