@@ -79,6 +79,7 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 </div>
 ```
 
+<!--
 ### Optional Videos
 
 This will be a required video next week (Week 9).
@@ -91,3 +92,4 @@ This will be a required video next week (Week 9).
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626910" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
+-->

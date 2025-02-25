@@ -1,11 +1,13 @@
 # Class Meeting 6B
 
-There were no slides for today's lecture.  
+There were no slides for today's lecture.
 
+<!--
 Today we practiced a basic git workflow:
 - Cloning a github repo.
 - Multiple local edits with commits.
 - Reviewing and merging pull requests.
+-->
 
 <div>
 <iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
@@ -20,12 +22,15 @@ Today we practiced a basic git workflow:
 
 <img src="images/git.jpeg" width=30%>
 
-- Why git? (3 mins)
-- The GitHub flow (5 mins)
+- Why git?
+- The GitHub flow.
+- The evolution of version control, aka "why is git so complicated?"
+<!--
 - Introduction to Branches and Pull Requests (10 mins)
 - Guided Activity 1: Intro to Git and GitHub (25 mins)
 - Guided Activity 2: Code Reviews (10 mins)
 - Git Summary and Review (15 mins)
+-->
 
 ### Why Git
 
@@ -37,11 +42,17 @@ Today we practiced a basic git workflow:
 
 Image Source: [Noble Desktop](https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it).
 
+### Why is Git so complicated?
+
+Each feature of Git is designed to solve particular issues that arise when managing versions of potentially large, distributed, and long-term projects, and understanding how to use Git may be made easier if you think about the issue you are trying to solve first.
+
+*Ian needs to create a list / table outlining the common issues and which git command / workflow is used to resolve them.*
+
 ## Learn Git Branching
 
 <img src="images/learn_git_branching.png">
 
-
+<!--
 ## Guided Activity 1: Intro to Git and GitHub
 
 You will need to get into a group of 3 for this activity, and it would be best if you all sat together.
@@ -68,6 +79,7 @@ Tasks to be completed by all members unless otherwise specified.
 
 We'll now do a demo on how to submit a Pull Request, and do a code review.
 
+-->
 
 ## Useful Git Commands
 
@@ -86,12 +98,3 @@ Here are some command sequences that might be useful:
 - [GitHub Guide](https://github.com/git-guides)
 - [Git Cheatsheet](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
 - [LearnGitBranching](https://https://learngitbranching.js.org)
-
-<!--
-## Important links for today:
-
-- [Canvas](https://canvas.ubc.ca/courses/130127)
-- [PrairieLearn](https://canvas.ubc.ca/courses/130127/external_tools/48751)
-- [Markdown Tutorial](https://commonmark.org/help/tutorial/)
--->
-
