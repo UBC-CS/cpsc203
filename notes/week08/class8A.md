@@ -1,10 +1,16 @@
 # Class Meeting 8A
 
+There were no slides for today's lecture.
+
 <div>
-<iframe src="../../Lec12_DataStructures.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec12_DataStructures.pdf)
+Topics for today's lecture:
+
+- Review of basic Python data structures that we have seen.
+- Queues
+- Discussion and demonstration of execution speed of various operations on Python lists and dequeues.
 
 ## Links for today
 
