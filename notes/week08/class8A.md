@@ -9,8 +9,16 @@ There were no slides for today's lecture.
 Topics for today's lecture:
 
 - Review of basic Python data structures that we have seen.
-- Queues
-- Discussion and demonstration of execution speed of various operations on Python lists and dequeues.
+  - Lists, dictionaries, sets, tuples, frozensets, strings, and the various additional data types in the `collections` module can all operate as the "arbitrary-sized" data type that you encountered in CPSC 103 or CPSC 110: You can pass through every element of the collection (using a `for` loop) and and use accumulator(s) to perform some operation (such as a filter, map, and/or reduction).  Furthermore, looping through a collection in this manner is essentially the same speed no matter which type of collection you use.
+  - But each type of collection has its own useful features; for example, a list is ordered, the keys in a dictionary can be any (immutable) data, a set will never have duplicate elements...
+  - Even though looping through its elements is the most common operation on a collection, we generally choose a particular type of collection based on the other operations we wish to perform.
+  - We will build data structures for more complex information from these basic Python data structures.  In order to make wise choices, we will need to think about the types of operations we wish to perform on both the more complex data structure and the more basic ones from which it is built.
+- Queues, which operate on data in a First In First Out (FIFO) manner.
+  - We will see an application of queues on Thursday.
+  - Queues can be built on top of Python lists, but it turns out to be inefficient.
+  - A more efficient approach is to use the deque data structure from the `collections` module.
+- Discussion and demonstration of execution speed of various operations on Python lists and deques.
+  - Mostly in JupyterLab using `%%timeit`, but also example in regular Python file using `time` module.
 
 ## Links for today
 
