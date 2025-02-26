@@ -25,6 +25,8 @@ Topics for today's lecture:
 - [Guide to python data structures](https://www.geeksforgeeks.org/python-data-structures/)
 - [Deque](https://www.geeksforgeeks.org/deque-in-python/)
 
+*Warning:* https://www.geeksforgeeks.org/ has great content, but I find that -- at least on my platform (aging Dell laptop with Windows 11 + Firefox or MS Edge) -- opening any of their pages tends to send my CPU and memory usage skyrocketing to the point that it is hard to do anything on the laptop other than browse that page.  The good news is that closing the page appears to resolve the issue quickly, so my workaround is just to close their page(s) whenever I'm not actively reading, and reopen if need be.  Your mileage may vary...
+
 ## Logistics
 
 ### Jupyter Lab
