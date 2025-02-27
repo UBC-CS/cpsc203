@@ -36,9 +36,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -97,8 +97,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/week09/videos';</script>
-    <script src="../../_static/save_state.js"></script>
     <script src="../../_static/plausible_cpsc203.js"></script>
+    <script src="../../_static/save_state.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Meeting 9A" href="class9A.html" />
@@ -550,76 +550,44 @@ document.write(`
 <p>Below are the assigned videos for this week.
 The videos are collapsible so once you’re done with one, you can move to the next one.
 In the sidebar on the right, you can use the checklists to keep track of what’s done.</p>
-<!-- 
-
-````{margin}
-```{admonition} Checklist of items
-:class: tip sticky
-
-<input type="checkbox" id="week09_video1" class="box"> <label>What are Data Structures</input></label>
-
-<input type="checkbox" id="week09_video2" class="box"> <label>Introduction to Queues</input></label>
-
-<input type="checkbox" id="week09_video3" class="box"> <label>Computing Voronoi Diagrams</input></label>
-
-<input type="checkbox" id="week09_video4" class="box"> <label>Motivating Voronoi Diagrams</input></label>
-
-<input type="checkbox" id="week09_video5" class="box"> <label>Queues and Voronoi Diagrams</input></label>
-
-```
-````
- -->
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="tip sticky admonition">
+<p class="admonition-title">Checklist of items</p>
+<p><input type="checkbox" id="week09_video1" class="box"> <label>Queues and Voronoi Diagrams</input></label></p>
+<p><input type="checkbox" id="week09_video2" class="box"> <label>Directed Graphs</input></label></p>
+<p><input type="checkbox" id="week09_video3" class="box"> <label>Graph Exploration</input></label></p>
+</div>
+</aside>
 <section id="required-videos">
 <h2>Required Videos<a class="headerlink" href="#required-videos" title="Permalink to this heading">#</a></h2>
 <section id="tuesday-s-class">
 <h3>Tuesday’s Class<a class="headerlink" href="#tuesday-s-class" title="Permalink to this heading">#</a></h3>
-<p>None!</p>
-</section>
-<section id="thursday-s-class">
-<h3>Thursday’s class<a class="headerlink" href="#thursday-s-class" title="Permalink to this heading">#</a></h3>
-<p>More videos coming soon…</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-lg" open="open">
 <summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
-<span class="sd-summary-text">1. Directed Graphs</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">1. Queues and Voronoi Diagrams</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="container youtube">
+<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916620754" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+</details></section>
+<section id="thursday-s-class">
+<h3>Thursday’s class<a class="headerlink" href="#thursday-s-class" title="Permalink to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-lg" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-text">2. Directed Graphs</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/919934168" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-lg" open="open">
 <summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
-<span class="sd-summary-text">2. Graph Exploration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">3. Graph Exploration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="container youtube">
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/920172396" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
-</details><!--
-
-```{dropdown} 3. Queues and Voronoi Diagrams
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916620754" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-### Optional Videos
-
-This will be a required video next week (Week 9).
-
-```{dropdown} 4. Pointilism
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626910" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-
--->
-</section>
+</details></section>
 </section>
 </section>
 
