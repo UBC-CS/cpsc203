@@ -6,7 +6,7 @@ There were no slides for today's lecture.
 <iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-Topics for today's lecture:
+## Topics for today's lecture
 
 - Review of basic Python data structures that we have seen.
   - Lists, dictionaries, sets, tuples, frozensets, strings, and the various additional data types in the `collections` module can all operate as the "arbitrary-sized" data type that you encountered in CPSC 103 or CPSC 110: You can pass through every element of the collection (using a `for` loop) and and use accumulator(s) to perform some operation (such as a filter, map, and/or reduction).  Furthermore, looping through a collection in this manner is essentially the same speed no matter which type of collection you use.
@@ -25,7 +25,7 @@ Topics for today's lecture:
 - [Guide to python data structures](https://www.geeksforgeeks.org/python-data-structures/)
 - [Deque](https://www.geeksforgeeks.org/deque-in-python/)
 
-*Warning:* https://www.geeksforgeeks.org/ has great content, but I find that -- at least on my platform (aging Dell laptop with Windows 11 + Firefox or MS Edge) -- opening any of their pages tends to send my CPU and memory usage skyrocketing to the point that it is hard to do anything on the laptop other than browse that page.  The good news is that closing the page appears to resolve the issue quickly, so my workaround is just to close their page(s) whenever I'm not actively reading, and reopen if need be.  Your mileage may vary...
+*Warning:* [Geeks for Geeks](https://www.geeksforgeeks.org/) has great content, but I find that -- at least on my platform (aging Dell laptop with Windows 11 + Firefox or MS Edge) -- opening any of their pages tends to send my CPU and memory usage skyrocketing to the point that it is hard to do anything on the laptop other than browse that page.  The good news is that closing the page appears to resolve the issue quickly, so my workaround is just to close their page(s) whenever I'm not actively reading, and reopen if need be.  Your mileage may vary...
 
 ## Logistics
 

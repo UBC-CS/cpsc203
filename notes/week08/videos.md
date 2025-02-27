@@ -1,6 +1,6 @@
 # Videos
 
-Below are the assigned videos for this week. 
+Below are the assigned videos for this week.
 The videos are collapsible so once you're done with one, you can move to the next one.
 In the sidebar on the right, you can use the checklists to keep track of what's done.
 
@@ -16,14 +16,14 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week08_video4" class="box"> <label>Motivating Voronoi Diagrams</input></label>
 
-<input type="checkbox" id="week08_video5" class="box"> <label>Queues and Voronoi Diagrams</input></label>
+<input type="checkbox" id="week08_video5" class="box"> <label>Pointillism</input></label>
 
 ```
 ````
+
 ## Required Videos
 
 ### Tuesday's Class
-
 
 ```{dropdown} 1. What are Data Structures?
     :class-container: sd-shadow-lg
@@ -35,7 +35,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 </div>
 ```
 
-
 ```{dropdown} 2. Introduction to Queues
     :class-container: sd-shadow-lg
     :color: primary
@@ -45,7 +44,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/916622482" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
-
 
 ### Thursday's class
 
@@ -69,22 +67,7 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 </div>
 ```
 
-```{dropdown} 3. Queues and Voronoi Diagrams
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916620754" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-<!--
-### Optional Videos
-
-This will be a required video next week (Week 9).
-
-```{dropdown} 4. Pointilism
+```{dropdown} 3. Pointillism
     :class-container: sd-shadow-lg
     :color: primary
 
@@ -92,4 +75,3 @@ This will be a required video next week (Week 9).
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626910" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
--->
