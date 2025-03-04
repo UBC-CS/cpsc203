@@ -8,29 +8,39 @@ Today we will be wrapping up our Voronoi Art code and finishing it up.
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec14_Voronoi2_Graphs.pdf)
 
-## Important links for today:
+- Analyzing the complexity of our Voronoi image generator.  (Hint: It is disappointingly slow.)
+- Describing a faster algorithm: Building outwards from the centers.
+- Implementing the faster algorithm with a queue and a Python `deque`.
+- Analyzing the complexity of faster algorithm.
+- Intro to [graphs](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))(?)
+
+## Links for today
 
 - [Deque](https://www.geeksforgeeks.org/deque-in-python/)
-- [Math Pre-requisite Graph](https://ubcmath.github.io/coursemap/)
-
-<!-- 
-## Optional links for today
--->
 
 ## Logistics
 
-1. Clone the Class Activity Repository
+As discussed in the previous lecture, you have two choices for how to work with the class activity code:
 
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
+If you want to keep a repository on GitHub of my personal changes to the code:
 
-You can do that by [clicking here](https://classroom.github.com/a/9O9S8RgF).
+  1. Make a copy of the class activity repository.
+  2. Clone your personal copy to your laptop.
 
-Then, clone the `classActivity0XY` repository by running the following line in your Terminal:
+If you are happy to keep your personal changes only on your laptop: You can directly clone the class activity repository.
 
+Here is the [Template repository for class activity 09A](https://github.com/ubc-cpsc203-2023W2/class-activity-09A).  You have only read access to the template repository, so you will not be able to push any changes back to it.
+
+### How to Copy the Class Activity Repository
+
+If you make a copy of the template repository on GitHub, then you can push your changes to the code back up to your copy on GitHub any time you want.  To copy the template repository, follow the instructions at [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+
+### Clone the appropriate repository
+
+Follow the standard Git procedure to clone the appropriate repository onto your laptop:
+
+```terminal
+git clone <URL-of-repository>
 ```
-git clone <your_clone_url>
-```
 
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.
+Note that you can work on your local repository on your laptop (commit, branch, switch, restore, etc.) whether you cloned the template repository or your own copy.  But you can only push changes back up to GitHub if you made your own copy on GitHub of the template repository.
