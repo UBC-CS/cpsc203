@@ -1,12 +1,12 @@
 # Class Meeting 9A
 
-Today we will be wrapping up our Voronoi Art code and finishing it up.
+Today we will be wrapping up our Voronoi Art code.
 
 <div>
-<iframe src="../../Lec14_Voronoi2_Graphs.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec14_Voronoi2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec14_Voronoi2_Graphs.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec14_Voronoi2.pdf)
 
 - Analyzing the complexity of our Voronoi image generator.  (Hint: It is disappointingly slow.)
 - Describing a faster algorithm: Building outwards from the centers.
