@@ -8,6 +8,8 @@ Today we will be wrapping up our Voronoi Art code.
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec14_Voronoi2.pdf)
 
+## Topics for today's lecture
+
 - Analyzing the complexity of our Voronoi image generator.  (Hint: It is disappointingly slow.)
 - Describing a faster algorithm: Building outwards from the centers.
 - Implementing the faster algorithm with a queue and a Python `deque`.

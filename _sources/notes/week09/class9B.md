@@ -1,38 +1,26 @@
 # Class Meeting 9B
 
-Today we will be continuing our discussion on Graphs
+Today we will be discussing a new data structure: Graphs.  We are using the slides from Class Meeting 9A, plus the links below.
 
 <div>
-<iframe src="../../Lec15_Graph_Exploration.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec15_Graph_Exploration.pdf)
+## Topics for today's lecture
 
-## Important links for today:
+- What does it mean to be a "neighbour" in our Voronoi blobification algorithm?
+  - Effect of different choices on the meaning of distance.
+  - Can we replicate our traditional (Euclidean) meaning of distance?
+- Intro to [graphs](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)).
+  - Some graph vocabulary.
+  - Some examples of graphs.
+  - Constructing a template for processing graphs with stacks / queues.
 
-- [Graphs Tutorial](https://www.geeksforgeeks.org/introduction-to-graphs-data-structure-and-algorithm-tutorials/?ref=gcse)
+## Links for today:
 
-<!-- 
-## Optional links for today
--->
+- [Introduction to Graphs](https://www.geeksforgeeks.org/introduction-to-graphs-data-structure-and-algorithm-tutorials/?ref=gcse)
+
 
 ## Logistics
 
-Nothing to clone for today - I think!
-
-<!-- 
-1. Clone the Class Activity Repository
-
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
-
-You can do that by [clicking here](https://classroom.github.com/a/9O9S8RgF).
-
-Then, clone the `classActivity0XY` repository by running the following line in your Terminal:
-
-```
-git clone <your_clone_url>
-``` -->
-
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.
+Nothing to clone for today.
