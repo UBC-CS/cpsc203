@@ -85,13 +85,17 @@ We'll now do a demo on how to submit a Pull Request, and do a code review.
 
 Here are some command sequences that might be useful:
 
+- `git clone`
 - `git status`
-- `git clone ...`
-- `git add .` or `git add -A`
-- `git commit -m`
-- `git switch -c 'person1'`
-- `git switch -c 'person2'`
-- `git add`, `git commit`, `git push`
+- `git switch`
+- `git add`, `git add .`, or `git add -A`
+- `git commit` or `git commit -m`
+- `git push`
+- `git pull`
+- `git fetch`
+- `git merge`
+- `git rebase`
+- `git branch`
 
 ## Links for today:
 
