@@ -129,6 +129,8 @@ parts:
       - file: notes/week09/videos
       - file: notes/week09/class9A
       - file: notes/week09/class9B
+  - file: notes/week10/week10_summary
+    title: Week 10 - Catch-up Week
   - file: notes/week11/week11_summary
     title: Week 11 - MHall
     sections:

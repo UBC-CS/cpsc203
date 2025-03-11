@@ -2,22 +2,10 @@
 Week 10 Summary
 =======================
 
-## List of things to do this week
+This week there is no new lecture content.  Instead, take the time to catch your breath and catch up on anything from the last few weeks that you didn't have time to grasp or go through.  This may include test questions, missed POTW questions, videos that you didn't watch, activities you didn't finish, or anything else left over.
 
-Below is a list of things you need to do this week, links to where you can do them, as well as roughly the order you should do it.
-Note that these are just SUGGESTIONS and you are by no means required to them this way. 
-I have put the labs at the end, but if your lab section is earlier in the week, you may want to shift things around to accommodate that.
+You can also get started on (and maybe finished with?) [Project 2: Game of Life](https://us.prairielearn.com/pl/course_instance/172874/assessment/2495568).
 
-<label><input type="checkbox" id="week10_task1" class="box"> [**Read/skim the assigned textbook chapter**](./readings.md)</input></label>
+There are no formal lectures this week, but the instructor will be available in the lecture hall during the usual lecture period to answer questions about CPSC 203.
 
-<label><input type="checkbox" id="week10_task2" class="box"> [**Watch the lecture videos**](./videos.md) </input></label>
-
-<label><input type="checkbox" id="week10_task3" class="box"> [**Complete the MasteringPhysics homework**](./homework.md) </input></label>
-
-<label><input type="checkbox" id="week10_task4" class="box"> [**Attend yor tutorial section to get help**](https://canvas.ubc.ca/courses/63995/external_tools/5284) </input></label>
-
-<label><input type="checkbox" id="week10_task5" class="box"> [**Write bonus test 01 (60 mins)**](./test.md) </input></label>
-
-<label><input type="checkbox" id="week10_task6" class="box"> [**Complete the lab**](./lab.md) </input></label>
-
-<label><input type="checkbox" id="week10_task7" class="box"> [**Complete your Learning Log assignment**](./learninglogs.md) </input></label>
+Though you don't *have to* use this break for CPSC 203, I encourage you to make sure you are actually caught up before re-purposing that time for other courses.
