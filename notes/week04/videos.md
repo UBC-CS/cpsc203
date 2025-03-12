@@ -11,11 +11,6 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 <input type="checkbox" id="week04_video1" class="box"> <label>Knitting Functions</input></label>
 
 <input type="checkbox" id="week04_video2" class="box"> <label> Introduction to Pandas</input></label>
-
-<input type="checkbox" id="week04_video3" class="box"> <label> Data, Internet, and Billboard 100</input></label>
-
-<input type="checkbox" id="week04_video4" class="box"> <label> Beautiful Soup</input></label>
-
 ```
 ````
 
