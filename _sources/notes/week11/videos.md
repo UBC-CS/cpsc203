@@ -12,11 +12,11 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 <input type="checkbox" id="week11_video1" class="box"> <label>Music Generation</input></label>
 
-<input type="checkbox" id="week11_video2" class="box"> <label>Introduction to Project 2</input></label>
-
-
 ```
 ````
+<!--
+<input type="checkbox" id="week11_video2" class="box"> <label>Introduction to Project 2</input></label>
+-->
 
 
 ## Required Videos
@@ -35,6 +35,7 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 
 ### Thursday's class
 
+<!--
 ```{dropdown} 1. Introduction to Project 2
     :class-container: sd-shadow-lg
     :color: primary
@@ -44,6 +45,8 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 <iframe class="responsive-iframe" src="https://player.vimeo.com/video/925699308" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 ```
+
+-->
 
 <!-- 
 ```{dropdown} 2. Graph Exploration
@@ -56,30 +59,3 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 </div>
 ``` -->
 
-<!--
-
-```{dropdown} 3. Queues and Voronoi Diagrams
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916620754" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-### Optional Videos
-
-This will be a required video next week (Week 9).
-
-```{dropdown} 4. Pointilism
-    :class-container: sd-shadow-lg
-    :color: primary
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/916626910" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
-
--->
