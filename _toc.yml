@@ -132,7 +132,7 @@ parts:
   - file: notes/week10/week10_summary
     title: Week 10 - Catch-up Week
   - file: notes/week11/week11_summary
-    title: Week 11 - MHall
+    title: Week 11 - MHaLL
     sections:
       - file: notes/week11/videos
       - file: notes/week11/class11A
