@@ -28,7 +28,7 @@ If you want to keep a repository on GitHub of my personal changes to the code:
 
 If you are happy to keep your personal changes only on your laptop: You can directly clone the class activity repository.
 
-Here is the [Template repository for class activity 09A](https://github.com/ubc-cpsc203-2023W2/class-activity-11A).  You have only read access to the template repository, so you will not be able to push any changes back to it.
+Here is the [Template repository for class activity 11A](https://github.com/ubc-cpsc203-2023W2/class-activity-11A).  You have only read access to the template repository, so you will not be able to push any changes back to it.
 
 ### How to Copy the Class Activity Repository
 
