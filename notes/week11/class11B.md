@@ -1,37 +1,22 @@
 # Class Meeting 11B
 
-TBA
+Today we will continue with the *Mary had a little lamb* example.
 
-<!--
-Today's class is cancelled so you have some time to get started on Project 2.
-One of our TAs, Minh, has made a video to help you get started if you're stuck.
-
-```{dropdown} 1. Introduction to Project 2
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/925699308" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+<div>
+<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
-```
 
+## Topics for today's lecture
+
+TBA.
+
+## Links for today
+
+TBA.
 
 ## Logistics
 
-Nothing to clone for today - I think!
+I made significant changes to the starter file `demoA.py`, so I recommend that you get the new copy from the [Template repository for class activity 11A](https://github.com/ubc-cpsc203-2023W2/class-activity-11A).
 
--->
-
-<!-- 
-1. Clone the Class Activity Repository
-
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
-
-You can do that by [clicking here](https://classroom.github.com/a/9O9S8RgF).
-
-Then, clone the `classActivity0XY` repository by running the following line in your Terminal:
-
-```
-git clone <your_clone_url>
-``` -->
+- If you just cloned the original repository, you can `git pull` the changes.
+- If you made a copy of the original repository, you will have to get the changes and merge them into your own copy.
