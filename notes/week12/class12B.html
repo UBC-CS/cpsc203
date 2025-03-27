@@ -530,9 +530,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-links-for-today">Important links for today:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-for-today-s-lecture">Topics for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-for-today">Links for today</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
             </nav>
         </div>
@@ -546,43 +546,50 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-meeting-12b">
 <h1>Class Meeting 12B<a class="headerlink" href="#class-meeting-12b" title="Permalink to this heading">#</a></h1>
-<p>Today we will be try to find the shortest path through some graphs.</p>
+<p>Today we will finish off our discussion of depth first search to solve Sudoku puzzles.  Then we will talk about shortest path search using Dijkstra’s algorithm and priority queues.</p>
 <div>
 <iframe src="../../Lec18_Maps.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 <p><a class="reference external" href="https://github.com/ubc-cs/cpsc203/raw/main/files/Lec18_Maps.pdf">Download the Slides from today</a></p>
-<section id="important-links-for-today">
-<h2>Important links for today:<a class="headerlink" href="#important-links-for-today" title="Permalink to this heading">#</a></h2>
+<section id="topics-for-today-s-lecture">
+<h2>Topics for today’s lecture<a class="headerlink" href="#topics-for-today-s-lecture" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://algo-dijkstra.vercel.app/index.html">Solving Dijkstra’s Algorithm</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s Algorithm</a></p></li>
-<li><p><a class="reference external" href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/">Graphical explanation of Dijkstra’s algorithm</a></p></li>
-<li><p><a class="reference external" href="https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/">Another graphical explanation of Dijkstra’s algorithm</a></p></li>
+<li><p>TBA</p></li>
 </ul>
-<!-- 
-## Optional links for today
--->
+</section>
+<section id="links-for-today">
+<h2>Links for today<a class="headerlink" href="#links-for-today" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s Algorithm</a>.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/">Graphical explanation of Dijkstra’s algorithm</a>.</p></li>
+<li><p><a class="reference external" href="https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/">Another graphical explanation of Dijkstra’s algorithm</a>.</p></li>
+<li><p><a class="reference external" href="https://algo-dijkstra.vercel.app/index.html">Build your own grid and run Dijkstra’s algorithm</a></p></li>
+</ul>
+</li>
+<li><p>Python’s <a class="reference external" href="https://docs.python.org/3/library/heapq.html"><code class="docutils literal notranslate"><span class="pre">heapq</span></code> module</a> provides an implementation of a priority queue.</p>
+<ul>
+<li><p>There is also the <code class="docutils literal notranslate"><span class="pre">PriorityQueue</span></code> in the <a class="reference external" href="https://docs.python.org/3/library/queue.html"><code class="docutils literal notranslate"><span class="pre">queue</span></code> module</a>, but that is unnecessarily fancy for our simple Dijkstra’s algorithm.  (It allows multiple threads to access the queue at once, which is necessary for parallel programming but not for our single threaded serial program.)</p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/tutorial/dijkstra-algorithm-in-python">Tutorial implementing Dijkstra’s algorithm using <code class="docutils literal notranslate"><span class="pre">heapq</span></code></a>.  Because there is no way to remove or update an entry in <code class="docutils literal notranslate"><span class="pre">heapq</span></code>, we may end up removing a node from the queue multiple times; however, that is okay since the first removal will represent the minimum distance / shortest path so subsequent removals can be ignored.</p></li>
+</ul>
+</li>
+<li><p>Mapping</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=wsSEKm-rU6U">Video Intro to Geographic Information Systems (GIS) and Python mapping modules</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap (OSM)</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/OpenStreetMap">an explanation of OSM</a>.</p>
+<ul>
+<li><p>Python package <a class="reference external" href="https://osmnx.readthedocs.io/en/stable/">OSMnx</a> for accessing OSM data.</p></li>
+<li><p><a class="reference external" href="https://github.com/gboeing/osmnx-examples/tree/master/notebooks">Lots of OSMnx examples</a>.</p></li>
+<li><p><a class="reference external" href="https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07">An OSMnx Tutorial</a>.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="logistics">
 <h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h2>
 <p>There is no repo to clone today!</p>
-<!--
- 1. Clone the Class Activity Repository
-
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
-
-You can do that by [clicking here](https://classroom.github.com/a/ZEaSSumI).
-
-Then, clone the `classActivity1XY` repository by running the following line in your Terminal:
-
-```
-git clone <your_clone_url>
-``` 
--->
-</section>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
-<p>Slides for CPSC 203 were developed and created by <a class="reference external" href="https://www.cs.ubc.ca/people/cinda-heeren">Dr. Cinda Heeren</a>. The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.</p>
 </section>
 </section>
 
@@ -650,9 +657,9 @@ git clone <your_clone_url>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-links-for-today">Important links for today:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-for-today-s-lecture">Topics for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-for-today">Links for today</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
   </nav></div>
 
