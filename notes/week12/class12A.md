@@ -6,7 +6,7 @@ Today we will be working on understanding and exploring the Depth-first algorith
 <iframe src="../../Lec17_StateSpace.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec18_StateSpaces.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec17_StateSpaces.pdf)
 
 ## Topics for today's lecture
 
