@@ -1,6 +1,6 @@
 # Videos
 
-Below are the assigned videos for this week. 
+Below are the assigned videos for this week.
 The videos are collapsible so once you're done with one, you can move to the next one.
 In the sidebar on the right, you can use the checklists to keep track of what's done.
 
@@ -9,6 +9,8 @@ In the sidebar on the right, you can use the checklists to keep track of what's 
 :class: tip sticky
 
 <input type="checkbox" id="week12_video1" class="box"> <label>1. Geographical Applications of Maps</input></label>
+
+<input type="checkbox" id="week12_video2" class="box"> <label>2. Travelling Salesperson problem</input></label>
 
 ```
 ````

@@ -21,12 +21,6 @@ Today we will finish off our discussion of depth first search to solve Sudoku pu
 - Python's [`heapq` module](https://docs.python.org/3/library/heapq.html) provides an implementation of a priority queue.
   - There is also the `PriorityQueue` in the [`queue` module](https://docs.python.org/3/library/queue.html), but that is unnecessarily fancy for our simple Dijkstra's algorithm.  (It allows multiple threads to access the queue at once, which is necessary for parallel programming but not for our single threaded serial program.)
   - [Tutorial implementing Dijkstra's algorithm using `heapq`](https://www.datacamp.com/tutorial/dijkstra-algorithm-in-python).  Because there is no way to remove or update an entry in `heapq`, we may end up removing a node from the queue multiple times; however, that is okay since the first removal will represent the minimum distance / shortest path so subsequent removals can be ignored.
-- Mapping
-  - [Video Intro to Geographic Information Systems (GIS) and Python mapping modules](https://www.youtube.com/watch?v=wsSEKm-rU6U).
-- [OpenStreetMap (OSM)](https://www.openstreetmap.org/) and [an explanation of OSM](https://en.wikipedia.org/wiki/OpenStreetMap).
-  - Python package [OSMnx](https://osmnx.readthedocs.io/en/stable/) for accessing OSM data.
-  - [Lots of OSMnx examples](https://github.com/gboeing/osmnx-examples/tree/master/notebooks).
-  - [An OSMnx Tutorial](https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07).
 
 ## Logistics
 

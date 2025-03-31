@@ -1,6 +1,6 @@
 # Class Meeting 13A
 
-Today we will be working on using Maps.
+Today we will be working on geographic maps.
 
 <div>
 <iframe src="../../Lec19_Maps2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
@@ -8,41 +8,48 @@ Today we will be working on using Maps.
 
 [Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec19_Maps2.pdf)
 
-## Important links for today:
+## Links for today
 
-- [Solve a Sudoku puzzle](https://www.sudokuonline.io/kids/numbers-4-4)
-- [Mathematics of Sudoku](https://en.wikipedia.org/wiki/Mathematics_of_Sudoku)
-
-<!-- 
-## Optional links for today
--->
+- Mapping
+  - [Video Intro to Geographic Information Systems (GIS) and Python mapping modules](https://www.youtube.com/watch?v=wsSEKm-rU6U).
+- [OpenStreetMap (OSM)](https://www.openstreetmap.org/) and [an explanation of OSM](https://en.wikipedia.org/wiki/OpenStreetMap).
+  - Python package [OSMnx](https://osmnx.readthedocs.io/en/stable/) for accessing OSM data.
+    - [Lots of OSMnx examples](https://github.com/gboeing/osmnx-examples/tree/master/notebooks).
+    - An [OSMnx Tutorial](https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07).
+  - Python package [NetworkX](https://networkx.org/) for representing and manipulating graphs.
+    - A [NetworkX Tutorial](https://networkx.org/documentation/stable/tutorial.html).
 
 ## Logistics
 
 ### Installing packages
 
-You will probably need to install some packages for today's class:
+You will probably need to install some package(s) for today's class:
 
-- `conda install osmnx`
-- `conda install networkx`
-- `conda install folium`
-- `conda install scikit-learn`
-- `conda install mapclassify`
+- `conda install osmnx` (which should also install `networkx`)
 
-### Cloning a repository
+### Getting the class activity starter code
 
-1. Clone the Class Activity Repository
+You have two choices for how to work with the class activity code:
 
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
+If you want to keep a repository on GitHub of my personal changes to the code:
 
-You can do that by [clicking here](https://classroom.github.com/a/qYP0az4U).
+  1. Make a copy of the class activity repository.
+  2. Clone your personal copy to your laptop.
 
-Then, clone the `classActivity1XY` repository by running the following line in your Terminal:
+If you are happy to keep your personal changes only on your laptop: You can directly clone the class activity repository.
 
+Here is the [Template repository for class activity 13A](https://github.com/ubc-cpsc203-2023W2/class-activity-13A).  You have only read access to the template repository, so you will not be able to push any changes back to it.
+
+### How to Copy the Class Activity Repository
+
+If you make a copy of the template repository on GitHub, then you can push your changes to the code back up to your copy on GitHub any time you want.  To copy the template repository, follow the instructions at [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+
+### Clone the appropriate repository
+
+Follow the standard Git procedure to clone the appropriate repository onto your laptop:
+
+```terminal
+git clone <URL-of-repository>
 ```
-git clone <your_clone_url>
-```
 
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.
+Note that you can work on your local repository on your laptop (commit, branch, switch, restore, etc.) whether you cloned the template repository or your own copy.  But you can only push changes back up to GitHub if you made your own copy on GitHub of the template repository.
