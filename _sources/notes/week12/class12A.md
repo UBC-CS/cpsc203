@@ -19,7 +19,7 @@ Today we will be working on understanding and exploring the Depth-first algorith
 
 ## Logistics
 
-As discussed in the previous lecture, you have two choices for how to work with the class activity code:
+You have two choices for how to work with the class activity code:
 
 If you want to keep a repository on GitHub of my personal changes to the code:
 
