@@ -530,8 +530,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-for-today">Links for today:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-class-activity-starter-code">Getting the class activity starter code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-copy-the-class-activity-repository">How to Copy the Class Activity Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-appropriate-repository">Clone the appropriate repository</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -545,33 +550,39 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-meeting-13b">
 <h1>Class Meeting 13B<a class="headerlink" href="#class-meeting-13b" title="Permalink to this heading">#</a></h1>
-<p>Today we will be working on the Travelling Salesperson problem (the slides are the same as 13A).</p>
+<p>Today we will be working on the Travelling Salesperson problem.</p>
 <div>
-<iframe src="../../Lec19_Maps2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec19_TSP.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
-<p><a class="reference external" href="https://github.com/ubc-cs/cpsc203/raw/main/files/Lec19_Maps2.pdf">Download the Slides from today</a></p>
-<!-- 
-## Important links for today:
-
-- [Solving Dijkstra's Algorithm](https://algo-dijkstra.vercel.app/index.html)
-
-## Optional links for today
--->
+<p><a class="reference external" href="https://github.com/ubc-cs/cpsc203/raw/main/files/Lec19_TSP.pdf">Download the Slides from today</a></p>
+<section id="links-for-today">
+<h2>Links for today:<a class="headerlink" href="#links-for-today" title="Permalink to this heading">#</a></h2>
+</section>
 <section id="logistics">
 <h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h2>
+<section id="getting-the-class-activity-starter-code">
+<h3>Getting the class activity starter code<a class="headerlink" href="#getting-the-class-activity-starter-code" title="Permalink to this heading">#</a></h3>
+<p>You have two choices for how to work with the class activity code:</p>
+<p>If you want to keep a repository on GitHub of my personal changes to the code:</p>
 <ol class="arabic simple">
-<li><p>Clone the Class Activity Repository</p></li>
+<li><p>Make a copy of the class activity repository.</p></li>
+<li><p>Clone your personal copy to your laptop.</p></li>
 </ol>
-<p>You will first need to “accept” the GitHub Classroom assignment to get a copy of the starter code.</p>
-<p>You can do that by <a class="reference external" href="https://classroom.github.com/a/LXKH9ZuB">clicking here</a>.</p>
-<p>Then, clone the <code class="docutils literal notranslate"><span class="pre">classActivity1XY</span></code> repository by running the following line in your Terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">your_clone_url</span><span class="o">&gt;</span>
+<p>If you are happy to keep your personal changes only on your laptop: You can directly clone the class activity repository.</p>
+<p>Here is the <a class="reference external" href="https://github.com/ubc-cpsc203-2023W2/class-activity-13B">Template repository for class activity 13B</a>.  You have only read access to the template repository, so you will not be able to push any changes back to it.</p>
+</section>
+<section id="how-to-copy-the-class-activity-repository">
+<h3>How to Copy the Class Activity Repository<a class="headerlink" href="#how-to-copy-the-class-activity-repository" title="Permalink to this heading">#</a></h3>
+<p>If you make a copy of the template repository on GitHub, then you can push your changes to the code back up to your copy on GitHub any time you want.  To copy the template repository, follow the instructions at <a class="reference external" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">Creating a repository from a template</a>.</p>
+</section>
+<section id="clone-the-appropriate-repository">
+<h3>Clone the appropriate repository<a class="headerlink" href="#clone-the-appropriate-repository" title="Permalink to this heading">#</a></h3>
+<p>Follow the standard Git procedure to clone the appropriate repository onto your laptop:</p>
+<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git clone &lt;URL-of-repository&gt;
 </pre></div>
 </div>
+<p>Note that you can work on your local repository on your laptop (commit, branch, switch, restore, etc.) whether you cloned the template repository or your own copy.  But you can only push changes back up to GitHub if you made your own copy on GitHub of the template repository.</p>
 </section>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
-<p>Slides for CPSC 203 were developed and created by <a class="reference external" href="https://www.cs.ubc.ca/people/cinda-heeren">Dr. Cinda Heeren</a>. The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.</p>
 </section>
 </section>
 
@@ -639,8 +650,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links-for-today">Links for today:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-class-activity-starter-code">Getting the class activity starter code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-copy-the-class-activity-repository">How to Copy the Class Activity Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-appropriate-repository">Clone the appropriate repository</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
