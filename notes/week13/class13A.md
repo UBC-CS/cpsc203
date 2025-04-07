@@ -1,12 +1,10 @@
 # Class Meeting 13A
 
-Today we will be working on geographic maps.
+Today we will be working on Python code for geographic maps.
 
 <div>
-<iframe src="../../Lec19_Maps2.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
-
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec19_Maps2.pdf)
 
 ## Links for today
 
@@ -18,6 +16,8 @@ Today we will be working on geographic maps.
     - An [OSMnx Tutorial](https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07).
   - Python package [NetworkX](https://networkx.org/) for representing and manipulating graphs.
     - A [NetworkX Tutorial](https://networkx.org/documentation/stable/tutorial.html).
+  - Python package [GeoPandas](https://geopandas.org/en/stable/) that extends ideas from [Pandas](http://pandas.pydata.org/) to geospatial data.
+    - In particular, we will be working with the [`GeoDataFrame`](https://geopandas.org/en/stable/docs/reference/geodataframe.html#geodataframe) data structure (which extends Pandas' [`DataFrame`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to geospatial data) and [`GeoDataFrame.explore`](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html#geopandas.GeoDataFrame.explore) for creating interactive map visualizations.
 
 ## Logistics
 
