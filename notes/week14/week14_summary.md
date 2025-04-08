@@ -2,4 +2,4 @@
 Week 14 Summary
 =======================
 
-This week we will be demoing some cool examples of Graph Applications.
+Course summary and where can you go from here?
