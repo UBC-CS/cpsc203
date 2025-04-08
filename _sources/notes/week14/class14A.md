@@ -1,44 +1,27 @@
 # Class Meeting 14A
 
-Today we will be working on visualizing literature
+We will summarize the contents of the course and -- for those of you interested in learning more about computer and/or data science -- suggest some directions in which you might go.
 
 <div>
-<iframe src="../../Lec20_LitViz.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
+<iframe src="../../Lec20_Summary.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
 </div>
 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec20_LitViz.pdf)
+[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec20_Summary.pdf)
 
-## Important links for today:
+## Links for today
 
-- [Solve a Sudoku puzzle](https://www.sudokuonline.io/kids/numbers-4-4)
-- [Mathematics of Sudoku](https://en.wikipedia.org/wiki/Mathematics_of_Sudoku)
-
-<!-- 
-## Optional links for today
--->
+- If you are continuing at UBC next year, then browse through these lists for computer science and/or data science related courses that you can take after CPSC 203:
+  - [CPSC course descriptions](https://vancouver.calendar.ubc.ca/course-descriptions/subject/cpscv).
+  - [DSCI course descriptions](https://vancouver.calendar.ubc.ca/course-descriptions/subject/dsciv).
+- Data science programs for undergraduates at UBC Vancouver:
+  - The [minor](https://datascience.ubc.ca/minor).
+  - The (brand new!) [major](https://datascience.ubc.ca/major).
+- Programs for students who have completed or are about to complete an undergraduate degree:
+  - The [Bachelors of Computer Science (BCS)](https://www.cs.ubc.ca/students/undergrad/degree-programs/bcs-program-second-degree), which is a two-year, second degree program for students who wish they had chosen computer science the first time.
+  - The [Masters of Data Science (MDS)](https://masterdatascience.ubc.ca/), which is a one-year professional program for students wishing to find industry careers in data science.
+- [xkcd comics](https://xkcd.com).
+  - Matplotlib extension for [xkcd-like plots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xkcd.html).
 
 ## Logistics
 
-### Installing packages
-
-You will probably need to install some packages for today's class:
-
-- `conda install nltk`
-
-### Cloning a repository
-
-1. Clone the Class Activity Repository
-
-You will first need to "accept" the GitHub Classroom assignment to get a copy of the starter code.
-
-You can do that by [clicking here](https://classroom.github.com/a/QOTyz_JX).
-
-Then, clone the `classActivity1XY` repository by running the following line in your Terminal:
-
-```
-git clone <your_clone_url>
-```
-
-## Acknowledgements
-
-Slides for {{ COURSE_CODE }} were developed and created by [Dr. Cinda Heeren](https://www.cs.ubc.ca/people/cinda-heeren). The current iteration of the course resulted in minor adaptations and updates, but by in large, full credit of these slides belongs to Dr. Cinda Heeren.
+No (new) code for today.

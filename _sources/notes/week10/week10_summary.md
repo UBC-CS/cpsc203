@@ -9,3 +9,7 @@ You can also get started on (and maybe finished with?) [Project 2: Game of Life]
 There are no formal lectures this week, but the instructor will be available in the lecture hall during the usual lecture period to answer questions about CPSC 203.
 
 Though you don't *have to* use this break for CPSC 203, I encourage you to make sure you are actually caught up before re-purposing that time for other courses.
+
+<!--
+In the future, definitely skip this catch up week.  That would provide time to do LLMs at the end, or maybe even just extend the MC stuff in week 11.
+-->
