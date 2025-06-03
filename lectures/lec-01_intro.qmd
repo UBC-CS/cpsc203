@@ -10,7 +10,7 @@ date: 2023-01-08
 
 ## You? {.smaller}
 
-Let’s play a game
+Let's play a game
 
 **Goal – join everyone together via a small \# of introductions.**
 
@@ -37,8 +37,8 @@ Icebreaker game
 
 Questions:
 
-1. What’s an ideal factoid? One that...                                                                   
-2. What’s the least number of questions we can hope for?
+1. What's an ideal factoid? One that...                                                                   
+2. What's the least number of questions we can hope for?
 
 [Why did we do this?]{.fragment}
 

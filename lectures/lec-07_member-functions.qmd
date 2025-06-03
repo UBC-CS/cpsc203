@@ -13,7 +13,7 @@ date: 2024-01-01
 ::: columns
 ::: {.column width="50%"}
 Creating blocks is an arduous task.
-We’d like a way to make new blocks out of old ones!
+We'd like a way to make new blocks out of old ones!
 How many different kinds of blocks are found in this image?
 How are they related to one another?
 :::
