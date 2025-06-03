@@ -118,7 +118,7 @@ For further reading: <https://www.smithsonianmag.com/arts-culture/how-steve-jobs
 :::
 
 ::: notes
-1)  INGENUITY --- The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.
+1)  INGENUITY --- The problems themselves are no longer straightforward examples of things we've seen before. Class is about creating a larger set of tools and the confident deployment of them.
 2)  SIMPLICITY --- Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).
 :::
 
@@ -256,7 +256,7 @@ Discussion:
 First blank: or write an algorithm
 
 1.  In this example we choose to label $n$ as the side-length
-2.  We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3$n$ x $n$ takes time 3$n^2$ to knit, we ignore the 3 when we’re talking about algorithms.
+2.  We don't care so much about units, so we communicate using the largest order term so a scarf which is always 3$n$ x $n$ takes time 3$n^2$ to knit, we ignore the 3 when we're talking about algorithms.
 It's the squared part that really determines how long we'll have to wait.
 We say that the variable term "dominates".
 3.  Sometimes we have more than one parameter
@@ -288,7 +288,7 @@ Annotate:
 Choose one to illustrate if our rag/data size is 1000, and we need to compute n^3^ steps/stitches (like knitting a cube!!), then the total time is 1000^3^/10^12^ = 10^-3^ a thousandth of a second.
 Nbd.
 
-BUT let’s look at bigger data.
+BUT let's look at bigger data.
 10^12^ (\~128gb pretty big) 10^12^ mm = 1M km, 384,400 km to the moon.
 149M km to the sun.
 So knitting something that big would take 10^12^ s = \~32000 years.
@@ -296,7 +296,7 @@ The sun will long since have burnt out by 10^18^ s
 
 Punchline---we don't want to do $2^n$ amount of computation, and we need creative approaches for big data.
 
-Recap---we’ve seen a problem whose size we characterize by $n^2$, we’ll see problems whose time we characterize by $n$, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by $2^n$.
+Recap---we've seen a problem whose size we characterize by $n^2$, we'll see problems whose time we characterize by $n$, for sure, and later in the term, we'll see a problem which is very simply stated, whose size we characterize by $2^n$.
 🙁
 
 NOTE: $\log$ is $\log_2$.

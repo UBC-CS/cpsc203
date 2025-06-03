@@ -6,7 +6,7 @@ date: 2023-01-08
 
 ## Test 1
 
--   Don’t stress! This is mostly to get you familiar with the testing environment and reservation process
+-   Don't stress! This is mostly to get you familiar with the testing environment and reservation process
 -   There will be \~ 10 questions on this quiz
     -   Markdown Syntax (40%)
     -   Questions from the Syllabus (20%)
