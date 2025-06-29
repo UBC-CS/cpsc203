@@ -124,3 +124,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Quarto project files
+/.quarto/
+
+# Jupyter Book and Quarto outputs
+/_build/
+/_site/
+
+/.luarc.json

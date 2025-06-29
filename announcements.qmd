@@ -1,0 +1,11 @@
+---
+title: "Announcements"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  feed: true
+  categories: true
+  fields: [title, subtitle, description, date, image, reading-time]
+comments: false
+---

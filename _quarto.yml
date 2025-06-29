@@ -1,0 +1,96 @@
+project:
+  preview:
+    port: 4200
+  type: website
+  output-dir: _site
+
+  # post-render:
+  #   - R/combine-pdfs.R
+
+website:
+  title: "{{< var course.full-title >}}"
+  description: >
+    Course website for {{< var course.code >}} of the Department of Computer Science at the
+    University of British Columbia
+  open-graph: true
+  twitter-card: true
+  site-url: "https://ubc-cs.github.io/cpsc203"
+  repo-url: "https://github.com/UBC-CS/cpsc203"
+  repo-actions: [source, edit, issue]
+  bread-crumbs: false
+
+  page-footer:
+    left: >
+      Unless specified otherwise, all content of this site is licensed under
+      [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+      {{< iconify fa6-brands creative-commons >}}
+      {{< iconify fa6-brands creative-commons-by >}}
+      {{< iconify fa6-brands creative-commons-sa >}}
+    right: >
+      UBC's Point Grey Campus is located on the traditional, ancestral, and
+      unceded territory of the [xʷməθkʷəy̓ə
+      (Musqueam)](https://www.musqueam.bc.ca/) people.
+
+  search:
+    location: sidebar
+    type: overlay
+
+  sidebar:
+    style: floating
+    search: true
+    contents:
+      - section: "Course information"
+        contents:
+          - href: announcements.qmd
+            text: "Announcements"
+          - href: syllabus.qmd
+            text: "Syllabus"
+          - href: index.qmd
+            text: "Schedule"
+      - section: "Resources"
+        contents:
+          - href: formatting.qmd
+            text: "Formatting"
+          - href: "https://canvas.ubc.ca/courses/170624"
+            text: "Canvas"
+          - href: "https://piazza.com/ubc.ca/winterterm12025/cpsc203"
+            text: "Piazza"
+          - href: "https://us.prairielearn.com/pl/course_instance/193300"
+            text: "PrairieLearn"
+          - href: "https://us.prairietest.com"
+            text: "PrairieTest"
+          - href: "https://cbtf.ubc.ca/students/"
+            text: "CBTF"
+      - href: about.qmd
+        text: About
+
+  # comments:
+  #   giscus:
+  #     repo: UBC-CS/cpsc203
+  #     repo-id:
+  #     category: announcements
+  #     category-id:
+  #     mapping: title
+  #     reactions-enabled: true
+  #     loading: lazy
+
+format:
+  html:
+    toc: true
+    highlight-style: ayu
+    css: styles/styles.css
+    theme:
+      light: [flatly, styles/theme.scss]
+      dark:  [darkly, styles/theme.scss]
+    respect-user-color-scheme: true
+    citation-hover: true
+    footnotes-hover: true
+
+editor_options:
+  markdown:
+    wrap: sentence
+    canonical: true
+
+bibliography: references.bib
+
+freeze: auto

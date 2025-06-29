@@ -1,0 +1,5 @@
+> The overriding design goal for Markdown's formatting syntax is to make it as readable as possible.
+> \[...\] To this end, Markdown's syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean.
+> E.g., asterisks around a word actually look like \*emphasis\*.
+>
+> [--- John Gruber @ [Daring Fireball](https://daringfireball.net/projects/markdown/)]{style="float:right"}
