@@ -1,0 +1,14 @@
+title: "{{< var course.title >}}"
+subtitle: "{{< var course.code >}}, {{< var course.term >}}"
+date-format: long
+
+format:
+  live-revealjs:
+    theme: theme.scss
+    chalkboard: true
+    controls: true
+    revealjs-plugins:
+      - drop
+    drop:
+      engine: pyodide
+    auto-play-media: false

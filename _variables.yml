@@ -1,0 +1,24 @@
+course:
+  code: "CPSC 203"
+  title: "Programming, problem solving, and algorithms"
+  full-title: "{{< var course.code >}}: {{< var course.title >}}"
+  term: "2025 W1"
+  term-end-date: "2025-12-05"
+  time: "Tuesdays and Thursdays, 3.30--5 p.m."
+  location: >
+    HR MacMillan Building (MCML, [Wayfinding at UBC](https://maps.ubc.ca/?code=MCML),
+    [Google Maps](https://maps.app.goo.gl/ygAdaiBoed4kAvDq7)), Rm 360
+  website: "https://ubc-cs.github.io/cpsc203"
+  repo: "https://github.com/UBC-CS/cpsc203"
+  lms: "https://canvas.ubc.ca/courses/170624"
+  prairielearn: "https://us.prairielearn.com/pl/course_instance/193300"
+instructor:
+  name: "Dr. Cinda Heeren"
+  pronouns: "She, Her"
+icon:
+  advice: "{{< iconify fa6-solid comments >}}"
+  computer-activity: "{{< iconify fa6-solid laptop-code >}}"
+  lms: "{{< iconify simple-icons:canvas >}}"
+  resource: "{{< iconify fa6-solid bookmark >}}"
+  task: "{{< iconify fa6-solid list-check >}}"
+  video-activity: "{{< iconify fa6-solid circle-play >}}"

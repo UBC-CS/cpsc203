@@ -1,0 +1,174 @@
+---
+title: "{{< var course.full-title >}}"
+subtitle: "{{< var instructor.name >}}"
+listing:
+  id: most-recent-announcement
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 1
+  fields: [title, subtitle, description, date, image, reading-time]
+execute:
+  freeze: false
+---
+
+:::::: columns
+::: {.column width="75%"}
+Welcome to the webpage for {{< var course.code >}}!
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="20%"}
+{{< qrcode https://ubc-cs.github.io/cpsc203 >}}
+:::
+::::::
+
+## Course information
+
+**Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
+**Time:** {{< var course.time >}}\
+**Location:** {{< var course.location >}}
+
+## Most recent announcement
+
+::: {#most-recent-announcement}
+:::
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+
+library(conflicted)
+library(dplyr)
+library(fontawesome)
+library(fs)
+library(gt)
+library(gtExtras)
+library(here)
+library(lubridate)
+library(readr)
+library(stringr)
+library(tidyr)
+
+# Generate ids for each link to join into schedule
+resources_paths <-
+  c(
+    path("pre-activities"),
+    path("slides"),
+    path("activities"),
+    path("labs")
+  )
+
+resources <-
+  tibble(
+    path = dir_ls(resources_paths, glob = "*.qmd"),
+    id = path |> path_file() |> str_extract("(\\d+).*$", group = 1),
+    type = path |> path_dir() |> str_replace("-", "_")
+  ) |>
+  pivot_wider(names_from = type, values_from = path)
+
+schedule <-
+  read_csv(
+    here("data", "schedule.csv"),
+    show_col_types = FALSE
+  ) |>
+  mutate(wday = wday(date, label = TRUE, abbr = TRUE), .after = date) |>
+  left_join(resources, by = join_by(id), na_matches = "never")
+```
+
+```{r}
+#| label: schedule
+#| echo: false
+
+schedule |>
+  relocate(
+    pre_activities,
+    slides,
+    activities,
+    workspace,
+    labs,
+    .after = topic
+  ) |>
+  gt(groupname_col = "part") |>
+  fmt_date(
+    date,
+    date_style = "MMMd"
+  ) |>
+  sub_missing(
+    missing_text = ""
+  ) |>
+  fmt_url(
+    columns = pre_activities,
+    label = fa("list-check")
+  ) |>
+  sub_missing(
+    columns = pre_activities,
+    missing_text = fa("list-check", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = slides,
+    label = fa("window-maximize")
+  ) |>
+  sub_missing(
+    columns = slides,
+    missing_text = fa("window-maximize", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = labs,
+    label = fa("laptop-code")
+  ) |>
+  sub_missing(
+    columns = labs,
+    missing_text = fa("laptop-code", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = activities,
+    label = fa("file-alt")
+  ) |>
+  sub_missing(
+    columns = activities,
+    missing_text = fa("file-alt", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = social,
+    label = fa("padlet")
+  ) |>
+  sub_missing(
+    columns = social,
+    missing_text = fa("padlet", fill_opacity = 0.1)
+  ) |>
+  cols_hide(
+    columns = c(id, workspace)
+  ) |>
+  cols_label(
+    module = "Module",
+    date = "Date",
+    wday = "Day",
+    topic = "Topic",
+    pre_activities = "Pre",
+    slides = "Slides",
+    labs = "Lab",
+    activities = "Activity",
+    social = "Social"
+  ) |>
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = list(
+      cells_row_groups(),
+      cells_stubhead(),
+      cells_column_labels()
+    )
+  ) |>
+  gt_highlight_rows(
+    row = date == "2023-11-30",
+    fill = "#ccefff"
+  ) |>
+  tab_options(
+    quarto.disable_processing = TRUE
+  )
+```
