@@ -1,5 +1,11 @@
-(page_topic12)=
-Week 12 Summary
-=======================
+---
+title: "Week 12"
+description: State spaces and more on graphs
+author: "{{< var instructor.name >}}"
+date: 2026-03-23
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we will are talking about State Spaces, and diving deeper into Graphs.
+This week we will are talking about state spaces, and diving deeper into graphs.

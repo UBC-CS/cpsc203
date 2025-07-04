@@ -1,0 +1,14 @@
+---
+title: "{{< var icon.video-activity >}} Pre-activity: Dijkstra's algorithm"
+subtitle: "Due: Mar 26, 2026"
+---
+
+## Required videos
+
+### Single source shortest path
+
+{{< video https://vimeo.com/927840623 >}}
+
+### Dijkstra's algorithm
+
+{{< video https://vimeo.com/927565362 >}}

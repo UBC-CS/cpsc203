@@ -1,0 +1,10 @@
+---
+title: "{{< var icon.video-activity >}} Pre-activity: pandas"
+subtitle: "Due: Feb 1, 2026"
+---
+
+## Required videos
+
+### Introduction to pandas
+
+{{< video https://vimeo.com/907139342 >}}

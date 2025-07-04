@@ -1,5 +1,11 @@
-(page_topic5)=
-Week 5 Summary
-=======================
+---
+title: "Week 5"
+description: "Web scraping and data wrangling"
+author: "{{< var instructor.name >}}"
+date: 2026-02-02
+categories:
+  - "weekly announcement"
+draft: false
+---
 
 This week we will start working with some data, using the BeautifulSoup, and parsing data from the internet!

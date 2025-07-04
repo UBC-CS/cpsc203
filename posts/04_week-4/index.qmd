@@ -1,5 +1,13 @@
-(page_topic4)=
-Week 4 Summary
-=======================
+---
+title: "Week 4"
+description: >
+  More on {{< iconify fa6-brands python >}} Python classes and an introduction
+  {{< iconify simple-icons:pandas >}} pandas
+author: "{{< var instructor.name >}}"
+date: 2026-01-26
+categories:
+  - "weekly announcement"
+draft: false
+---
 
 This week we will be continuing knitting and learning about Python classes, and then learning about Pandas.

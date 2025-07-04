@@ -1,0 +1,18 @@
+---
+title: "{{< var icon.video-activity >}} Pre-activity: Voronoi & pointillism"
+subtitle: "Due: Feb 26, 2026"
+---
+
+## Required Videos
+
+### Motivating Voronoi diagrams
+
+{{< video https://vimeo.com/908509998 >}}
+
+### Computing Voronoi diagrams
+
+{{< video https://vimeo.com/916626365 >}}
+
+### Pointillism
+
+{{< video https://vimeo.com/916626910 >}}

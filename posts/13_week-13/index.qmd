@@ -1,5 +1,11 @@
-(page_topic13)=
-Week 13 Summary
-=======================
+---
+title: "Week 13"
+description: Maps data
+author: "{{< var instructor.name >}}"
+date: 2026-03-30
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we will be working with Maps data, a natural application of Graphs.
+This week we will be working with maps data, a natural application of Graphs.

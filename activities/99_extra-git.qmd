@@ -1,509 +1,132 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "metadata": {
-    "slideshow": {
-     "slide_type": "skip"
-    },
-    "tags": [
-     "remove-cell"
-    ]
-   },
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<style>/* ---------- markdown cells\n",
-       " */\n",
-       "body.rise-enabled div.inner_cell>div.text_cell_render.rendered_html {\n",
-       "    font-size: 120%;\n",
-       "}\n",
-       "\n",
-       "\n",
-       "/* ---------- code blocks inside markdown\n",
-       "   i.e. within ``` lines, or 4-space indented\n",
-       " */\n",
-       "div.inner_cell>div.text_cell_render.rendered_html>pre {\n",
-       "    margin: 0px;\n",
-       "}\n",
-       "\n",
-       "/* ----------- code to remove space above markdown headers\n",
-       " */\n",
-       "div.inner_cell>div.text_cell_render.rendered_html h1 {\n",
-       "    margin-top: 0px;\n",
-       "}\n",
-       "div.inner_cell>div.text_cell_render.rendered_html h2 {\n",
-       "    margin-top: 0px;\n",
-       "}\n",
-       "div.inner_cell>div.text_cell_render.rendered_html h3 {\n",
-       "    margin-top: 0px;\n",
-       "}\n",
-       "div.inner_cell>div.text_cell_render.rendered_html h4 {\n",
-       "    margin-top: 0px;\n",
-       "}\n",
-       "\n",
-       "div.inner_cell>div.text_cell_render.rendered_html>pre>code {\n",
-       "    font-size: 70%;\n",
-       "}\n",
-       "\n",
-       "/* ---------- tables (from SO)\n",
-       " */\n",
-       ".rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {\n",
-       "     font-size: 120%;\n",
-       "}\n",
-       "\n",
-       "/* ---------- Left part of code cells\n",
-       "    from this SO answer: https://stackoverflow.com/a/47263575;\n",
-       " /* Narrow the prompts */\n",
-       "div.prompt_container {\n",
-       "    min-width: 5ex;\n",
-       "}\n",
-       "/* Hide prompts altogether for non-code cells */\n",
-       ".cell:not(.code_cell) .prompt {\n",
-       "    display: none;\n",
-       "}\n",
-       "/* ---------- Width of cells\n",
-       " */\n",
-       ".container {\n",
-       "    width:95% !important;\n",
-       "}\n",
-       "\n",
-       "\n",
-       "/* ---------- Vertical Whitespace\n",
-       " */\n",
-       ".vspace {\n",
-       "    margin-top:50px;\n",
-       "}\n",
-       "/* \n",
-       "div.cell.code_cell.rendered.selected, {\n",
-       "    border-width:10px;\n",
-       "    border-style:solid;\n",
-       "    border-color:red;    \n",
-       "} */\n",
-       "\n",
-       "\n",
-       "/* Removes the border of cells */\n",
-       "\n",
-       "div.cell {\n",
-       "    border-width:0px;\n",
-       "}\n",
-       "\n",
-       "/* Increases the thickness of the blue and green (whether or not the cell is selected */\n",
-       "\n",
-       "div.cell.selected:before; .edit_mode div.cell.selected:before {\n",
-       "    width: 20px;\n",
-       "}\n",
-       "</style>"
-      ],
-      "text/plain": [
-       "<IPython.core.display.HTML object>"
-      ]
-     },
-     "execution_count": 1,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "from IPython.display import IFrame\n",
-    "from IPython.display import Markdown\n",
-    "\n",
-    "# Additional styling ; should be moved into helpers\n",
-    "from IPython.display import display, HTML\n",
-    "\n",
-    "HTML(\"<style>{}</style>\".format(open(\"rise.css\").read()))"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "# Class 8C. Version Control with Git\n",
-    "\n",
-    "<img src=\"images/git.jpeg\" width=30%>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Lecture Outline"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "**1. Announcements (2 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**2.Version Control with git? (3 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**3. The GitHub flow (5 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**4. Introduction to Branches and Pull Requests (10 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**5. Guided Activity: Create a Branch, submit a Pull Request (25 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Request for Volunteers !\n",
-    "\n",
-    "- You don't need to have any prior experience, nor do you have to be a computer pro.\n",
-    "- Probably will just ask you to share your screen and follow directions.\n",
-    "- I'll walk you through what you have to type and click and hopefully it's illustrative what needs to be done.\n",
-    "- You don't need to be a computer or git expert!\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## 2. Version Control with Git"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "### Why Git?\n",
-    "\n",
-    "<img src=\"http://www.phdcomics.com/comics/archive/phd101212s.gif\">"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## What is Git?\n",
-    "\n",
-    "<img src=\"https://www.nobledesktop.com/image/blog/git-branches-merge.png\">\n",
-    "\n",
-    "Image Source: [Noble Desktop](https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it)."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Revisiting Learn Git Branching\n",
-    "\n",
-    "<img src=\"images/learn_git_branching.png\">"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## The GitHub Flow"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    },
-    "tags": [
-     "hide-input"
-    ]
-   },
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "\n",
-       "        <iframe\n",
-       "            width=\"1200\"\n",
-       "            height=\"800\"\n",
-       "            src=\"https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf\"\n",
-       "            frameborder=\"0\"\n",
-       "            allowfullscreen\n",
-       "            \n",
-       "        ></iframe>\n",
-       "        "
-      ],
-      "text/plain": [
-       "<IPython.lib.display.IFrame at 0x105bafe50>"
-      ]
-     },
-     "execution_count": 2,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "IFrame(\n",
-    "    \"https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf\",\n",
-    "    width=1200,\n",
-    "    height=800,\n",
-    ")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "## GitHub Guides\n",
-    "\n",
-    "See this link for lots more about using GitHub: https://github.com/git-guides"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Guided Activity: Create and resolve a merge conflict\n",
-    "\n",
-    "1. Message your group mates and get in touch with them\n",
-    "\n",
-    "2. ONE PERSON IN EACH ROOM, will fork this repository onto your own GitHub account\n",
-    "\n",
-    "3. Clone that fork onto your computer\n",
-    "\n",
-    "4. Add your teammates to the repository\n",
-    "\n",
-    "5. Teammates clone onto computer\n",
-    "\n",
-    "6. Try to create and resolve a merge conflict."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Lecture Outline"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**1. Announcements and Recap (5 mins)**"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Part 1. Announcements (5 mins)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Part 2. Introduction to Branches and Pull Requests (20 mins)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "### Create and switch to a new branch\n",
-    "\n",
-    "To checkout a new branch that **doesn't already exist**, use:\n",
-    "\n",
-    "```\n",
-    "git switch -c new_branch_name\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "### Switch to an existing branch\n",
-    "\n",
-    "To switch to a new branch that **already exists**, use:\n",
-    "\n",
-    "```\n",
-    "git switch branch_name\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "## Part 3. Guided Activity: Create a Branch, submit a Pull Request (20 mins)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "**- Important! Use your Group Project repo**\n",
-    "\n",
-    "Partner 1: \"Contributor 1\"\n",
-    "\n",
-    "Partner 2: \"Contributor 2\"\n",
-    "\n",
-    "Partner 3: Contributor 3\"\n",
-    "\n",
-    "- Partner 1 Creates and switches to a new branch:\n",
-    "\t- git switch -c newchange1\n",
-    "\n",
-    "- Partner 2 Creates and switches to a new branch:\n",
-    "\t- git switch -c newchange2\n",
-    "\n",
-    "- Partner 3 Creates and switches to a new branch:\n",
-    "\t- git switch -c newchange3\n",
-    "    \n",
-    "- All partners make sure the branch is switched:\n",
-    "\t- git status\n",
-    "\n",
-    "- Partner 2 creates a new md file:\n",
-    "\t- code newfile.md\n",
-    "\t- Write a bunch of stuff\n",
-    "\t- Save\n",
-    "\t- git add .\n",
-    "\t- git commit -m \"new change\"\n",
-    "\t- git push\n",
-    "\n",
-    "- Partner 2 goes to the Github.com repo,\n",
-    "\t- Click \"Compare and Pull Request\"\n",
-    "\t- Request a review from Partner 1 and Partner 3\n",
-    "\t- Submit Pull Request\n",
-    "    \n",
-    "- Partner 3 does the same thing as above"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "fragment"
-    }
-   },
-   "source": [
-    "### Tips\n",
-    "Here are some command sequences that might be useful:\n",
-    "\n",
-    "```\n",
-    "- git switch -c 'person1'\n",
-    "- git switch -c 'person2'\n",
-    "- edit the file\n",
-    "- add, commit, push\n",
-    "- deal with the Pull Request(PR) on GitHub\n",
-    "```"
-   ]
-  }
- ],
- "metadata": {
-  "celltoolbar": "Slideshow",
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.10.2"
-  },
-  "vscode": {
-   "interpreter": {
-    "hash": "4a3006030bc8f073e17f416a7c98291111bc2dc23e3286a5e86c679c75d3e5ba"
-   }
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
+---
+title: Class 8C. Version Control with Git
+---
+
+![](/images/git.jpg)
+
+## Lecture Outline
+
+**1. Announcements (2 mins)**
+
+**2.Version Control with git? (3 mins)**
+
+**3. The GitHub flow (5 mins)**
+
+**4. Introduction to Branches and Pull Requests (10 mins)**
+
+**5. Guided Activity: Create a Branch, submit a Pull Request (25 mins)**
+
+## Request for Volunteers !
+
+-   You don't need to have any prior experience, nor do you have to be a computer pro.
+-   Probably will just ask you to share your screen and follow directions.
+-   I'll walk you through what you have to type and click and hopefully it's illustrative what needs to be done.
+-   You don't need to be a computer or git expert!
+
+## Version Control with Git
+
+### Why Git?
+
+![](http://www.phdcomics.com/comics/archive/phd101212s.gif)
+
+## What is Git?
+
+![](https://www.nobledesktop.com/image/blog/git-branches-merge.png)
+
+Image Source: [Noble Desktop](https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it).
+
+## Revisiting Learn Git Branching
+
+<img src="images/learn_git_branching.png"/>
+
+## The GitHub Flow
+
+![](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
+
+## GitHub Guides
+
+See this link for lots more about using GitHub: https://github.com/git-guides
+
+## Guided Activity: Create and resolve a merge conflict
+
+1.  Message your group mates and get in touch with them
+
+2.  ONE PERSON IN EACH ROOM, will fork this repository onto your own GitHub account
+
+3.  Clone that fork onto your computer
+
+4.  Add your teammates to the repository
+
+5.  Teammates clone onto computer
+
+6.  Try to create and resolve a merge conflict.
+
+## Lecture Outline
+
+**1. Announcements and Recap (5 mins)**
+
+## Part 1. Announcements (5 mins)
+
+## Part 2. Introduction to Branches and Pull Requests (20 mins)
+
+### Create and switch to a new branch
+
+To checkout a new branch that **doesn't already exist**, use:
+
+``` bash
+git switch -c new_branch_name
+```
+
+### Switch to an existing branch
+
+To switch to a new branch that **already exists**, use:
+
+```         
+git switch branch_name
+```
+
+## Guided Activity: Create a Branch, submit a Pull Request (20 mins)
+
+**- Important! Use your Group Project repo**
+
+```         
+Partner 1: "Contributor 1"
+
+Partner 2: "Contributor 2"
+
+Partner 3: Contributor 3"
+```
+
+-   Partner 1 Creates and switches to a new branch:
+    -   git switch -c newchange1
+-   Partner 2 Creates and switches to a new branch:
+    -   git switch -c newchange2
+-   Partner 3 Creates and switches to a new branch:
+    -   git switch -c newchange3
+-   All partners make sure the branch is switched:
+    -   git status
+-   Partner 2 creates a new md file:
+    -   code newfile.md
+    -   Write a bunch of stuff
+    -   Save
+    -   git add .
+    -   git commit -m "new change"
+    -   git push
+-   Partner 2 goes to the Github.com repo,
+    -   Click "Compare and Pull Request"
+    -   Request a review from Partner 1 and Partner 3
+    -   Submit Pull Request
+-   Partner 3 does the same thing as above
+
+### Tips
+
+Here are some command sequences that might be useful:
+
+``` bash
+- git switch -c 'person1'
+- git switch -c 'person2'
+- edit the file
+- add, commit, push
+- deal with the Pull Request(PR) on GitHub
+```
+

@@ -1,0 +1,14 @@
+---
+title: "{{< var icon.video-activity >}} Pre-activity: Queues and Voronoi Diagrams"
+subtitle: "Due: Mar 5, 2026"
+---
+
+## Required videos
+
+### Directed graphs
+
+{{< video https://vimeo.com/919934168 >}}
+
+### Graph exploration
+
+{{< video https://vimeo.com/920172396 >}}

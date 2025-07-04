@@ -1,5 +1,11 @@
-(page_topic14)=
-Week 14 Summary
-=======================
+---
+title: "Week 14"
+description: Course summary and next steps
+author: "{{< var instructor.name >}}"
+date: 2026-04-06
+categories:
+  - "weekly announcement"
+draft: false
+---
 
 Course summary and where can you go from here?

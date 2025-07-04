@@ -1,5 +1,14 @@
-(page_topic6)=
-Week 6 Summary
-=======================
+---
+title: "Week 6"
+description: >
+  Version control with {{< iconify fa6-brands git-alt >}} Git and
+  {{< iconify fa6-brands github >}} GitHub
+author: "{{< var instructor.name >}}"
+date: 2026-02-09
+categories:
+  - "weekly announcement"
+draft: false
+---
 
 This week we will start introducing a new tool in our course, Git and GitHub!
+
