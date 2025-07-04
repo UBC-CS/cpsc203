@@ -1,6 +1,12 @@
-(page_topic7)=
-Week 7 Summary
-=======================
+---
+title: "Week 7"
+description: Reading week!
+author: "{{< var instructor.name >}}"
+date: 2026-02-16
+categories:
+  - "weekly announcement"
+draft: false
+---
 
 This week there is no new content in this course - it's Reading week!
 This week, you'll have an opportunity to catch your breath and catch up on anything from the last few weeks that you didn't have time to grasp or go through.
@@ -9,14 +15,8 @@ Though you don't *have to* use this break for CPSC 203, I encourage you to make 
 
 Here's a fun video from a game I enjoyed playing a lot!
 
-```{dropdown} Portal
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
+## Portal
 
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://www.youtube-nocookie.com/embed/TluRVBhmf8w" frameborder="0" allow="accelerometer; autoplay="0"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+{{< video https://www.youtube-nocookie.com/embed/TluRVBhmf8w >}}
 
 [Link to the game](https://store.steampowered.com/app/400/Portal)
-```

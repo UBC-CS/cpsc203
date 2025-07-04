@@ -1,5 +1,11 @@
-(page_topic3)=
-Week 3
-=======================
+---
+title: "Week 3"
+description: "{{< iconify fa6-brands python >}} Python classes"
+author: "{{< var instructor.name >}}"
+date: 2026-01-19
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we be learning about Python classes, knitting, the `dataclass`, and other fun things!
+This week we will be learning about Python classes, including the `dataclass`, knitting and other fun things!

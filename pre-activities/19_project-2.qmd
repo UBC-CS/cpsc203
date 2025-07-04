@@ -1,61 +1,22 @@
-# Videos
+---
+title: "{{< var icon.video-activity >}} Pre-activity: Music generation"
+subtitle: "Due: Mar 17, 2026"
+---
 
-Below are the assigned videos for this week. 
-The videos are collapsible so once you're done with one, you can move to the next one.
-In the sidebar on the right, you can use the checklists to keep track of what's done.
+## Required videos
 
+### Music generation
 
+{{< video https://vimeo.com/923209284 >}}
 
-````{margin}
-```{admonition} Checklist of items
-:class: tip sticky
-
-<input type="checkbox" id="week11_video1" class="box"> <label>Music Generation</input></label>
-
-```
-````
+```{=html}
 <!--
-<input type="checkbox" id="week11_video2" class="box"> <label>Introduction to Project 2</input></label>
+### Introduction to project 2
+
+{{< video https://vimeo.com/925699308 >}}
+
+### Graph exploration
+
+{{< video https://vimeo.com/920172396 >}}
 -->
-
-
-## Required Videos
-
-### Tuesday's Class
-
-```{dropdown} 1. Music Generation
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/923209284" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
 ```
-
-### Thursday's class
-
-<!--
-```{dropdown} 1. Introduction to Project 2
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/925699308" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-```
-
--->
-
-<!-- 
-```{dropdown} 2. Graph Exploration
-    :class-container: sd-shadow-lg
-    :color: primary
-    :open:
-
-<div class="container youtube">
-<iframe class="responsive-iframe" src="https://player.vimeo.com/video/920172396" frameborder="0" allow="accelerometer; autoplay="0"; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-</div>
-``` -->
-

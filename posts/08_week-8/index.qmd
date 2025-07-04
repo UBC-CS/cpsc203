@@ -1,5 +1,11 @@
-(page_topic8)=
-Week 8 Summary
-=======================
+---
+title: "Week 8"
+description: More data structures
+author: "{{< var instructor.name >}}"
+date: 2026-02-23
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we will talk about some new Data Structures and formalize a language for all the data structures we've seen (and will see)!
+This week we will talk about some new data structures and formalize a language for all the data structures we've seen (and will see)!

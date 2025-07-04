@@ -1,10 +1,15 @@
-(page_topic1)=
-Week 1
-=======================
+---
+title: "Week 1"
+description: >
+  Course organisation and website,
+  {{< iconify fa6-brands markdown >}} Markdown and the
+  {{< iconify fa6-solid terminal >}} command-line interface
+author: "{{< var instructor.name >}}"
+date: 2026-01-05
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we will be doing course introductions, I will be showing you how to navigate the course website, and how the course is set up. 
+This week we will be doing course introductions, I will be showing you how to navigate the course website, and how the course is set up.
 In terms of content, we will learn Markdown together, and then start getting familiar with some course tools.
-
-## Course Introductions!
-
-Hello, my name is {{ INSTRUCTOR }} and I am your instructor for {{ COURSE_CODE }}! 

@@ -1,6 +1,12 @@
-(page_topic2)=
-Week 2
-=======================
+---
+title: "Week 2"
+description: "Introduction to {{< iconify fa6-brands python >}} Python"
+author: "{{< var instructor.name >}}"
+date: 2026-01-12
+categories:
+  - "weekly announcement"
+draft: false
+---
 
-This week we will be doing a Python Introduction so that we're all on the same page before we start getting to some programming and design.
+This week we will be doing a Python introduction so that we're all on the same page before we start getting to some programming and design.
 In terms of content, we'll learn about Python dataypes, conditionals, loops, functions, and error handling.

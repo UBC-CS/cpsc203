@@ -9,7 +9,7 @@ If you have not yet set up your local software stack, look in PrairieLearn for [
 
 ![](https://gitforwindows.org/img/gw1.png){fig-alt="CommandPrompt"}
 
-## Introduction to the Terminal (Command Line)
+## Introduction to the {{< iconify fa6-solid terminal >}} Terminal (Command Line)
 
 If you would like some additional notes and a much deeper explanation of the command line (also known as the Terminal), I suggest the notes from [Software Carpentry](https://swcarpentry.github.io/shell-novice/)!
 They are excellent.

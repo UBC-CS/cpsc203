@@ -1,57 +1,57 @@
-# Class Meeting 6B
+---
+title: >
+  {{< var icon.computer-activity >}} An introduction to Git
+---
 
 There were no slides for today's lecture.
 
+```{=html}
 <!--
 Today we practiced a basic git workflow:
 - Cloning a github repo.
 - Multiple local edits with commits.
 - Reviewing and merging pull requests.
 -->
-
-<div>
-<iframe src="../../LecNoSlides.pdf" width="100%" height="600px" frameBorder="0"> </iframe>
-</div>
-
-<!-- 
-[Download the Slides from today](https://github.com/ubc-cs/cpsc203/raw/main/files/Lec10_Plotting_DataFrames.pdf)
--->
-
+```
 
 ## Version Control with Git
 
-<img src="images/git.jpeg" width=30%>
+![](/images/git.jpg)
 
-- Why git?
-- The GitHub flow.
-- The evolution of version control, aka "why is git so complicated?"
+-   Why Git?
+-   The GitHub flow.
+-   The evolution of version control, aka "why is git so complicated?"
+
+```{=html}
 <!--
 - Introduction to Branches and Pull Requests (10 mins)
 - Guided Activity 1: Intro to Git and GitHub (25 mins)
 - Guided Activity 2: Code Reviews (10 mins)
 - Git Summary and Review (15 mins)
 -->
+```
 
 ### Why Git
 
-<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif">
+![](http://www.phdcomics.com/comics/archive/phd101212s.gif) \### What is Git?
 
-### What is Git?
-
-<img src="https://www.nobledesktop.com/image/blog/git-branches-merge.png">
-
-Image Source: [Noble Desktop](https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it).
+![Image Source: [Noble Desktop](https://www.nobledesktop.com/blog/what-is-git-and-why-should-you-use-it)](https://www.nobledesktop.com/image/blog/git-branches-merge.png)
 
 ### Why is Git so complicated?
 
 Each feature of Git is designed to solve particular issues that arise when managing versions of potentially large, distributed, and long-term projects, and understanding how to use Git may be made easier if you think about the issue you are trying to solve first.
 
+```{=html}
+<!--
 *Ian needs to create a list / table outlining the common issues and which git command / workflow is used to resolve them.*
+-->
+```
 
 ## Learn Git Branching
 
-<img src="images/learn_git_branching.png">
+![](/images/learn_git_branching.png)
 
+```{=html}
 <!--
 ## Guided Activity 1: Intro to Git and GitHub
 
@@ -78,27 +78,27 @@ Tasks to be completed by all members unless otherwise specified.
 ## Guided Activity 2: Code Reviews
 
 We'll now do a demo on how to submit a Pull Request, and do a code review.
-
 -->
+```
 
 ## Useful Git Commands
 
 Here are some command sequences that might be useful:
 
-- `git clone`
-- `git status`
-- `git switch`
-- `git add`, `git add .`, or `git add -A`
-- `git commit` or `git commit -m`
-- `git push`
-- `git pull`
-- `git fetch`
-- `git merge`
-- `git rebase`
-- `git branch`
+-   `git clone`
+-   `git status`
+-   `git switch`
+-   `git add`, `git add .`, or `git add -A`
+-   `git commit` or `git commit -m`
+-   `git push`
+-   `git pull`
+-   `git fetch`
+-   `git merge`
+-   `git rebase`
+-   `git branch`
 
-## Links for today:
+## {{< var icon.resource >}} Resources
 
-- [GitHub Guide](https://github.com/git-guides)
-- [Git Cheatsheet](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
-- [LearnGitBranching](https://https://learngitbranching.js.org)
+-   [GitHub Guide](https://github.com/git-guides)
+-   [GitHub Flow cheatsheet](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
+-   [Learn Git Branching](https://learngitbranching.js.org/)
