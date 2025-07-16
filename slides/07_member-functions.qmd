@@ -210,8 +210,20 @@ Great resource on the Python `@dataclass` decorator: <https://realpython.com/pyt
 
 ##  {background-image="/images/vs-code-select-interpreter.png" background-size="contain" data-menu-title="Select interpreter"}
 
+::: sr-only
+You can choose the active interpreter by clicking on the right side of the status bar at the bottom of VS Code.
+:::
+
 ##  {background-image="/images/vs-code-new-terminal.png" background-size="contain" data-menu-title="Open new terminal"}
 
+::: sr-only
+Open a new terminal by selecting Terminal > New Terminal from the menu.
+:::
+
 ##  {background-image="/images/vs-code-conda-install-package.png" background-size="contain" data-menu-title="conda install package in terminal"}
+
+::: sr-only
+Install the package pandas using conda with the command `conda install -c conda-forge pandas`.
+:::
 
 # Demo of pandas

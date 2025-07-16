@@ -48,6 +48,10 @@ Canvas: <https://canvas.ubc.ca/courses/130127>
 
 ##  {background-image="/images/how-learning-works.png" background-size="contain" data-menu-title="Elements of mastery"}
 
+::: sr-only
+The stages of skill mastery: acquiring skills, practicing and integrating skills, and knowing when to apply skills.
+:::
+
 ##  {background-iframe="https://ubc-cs.github.io/cpsc203/" background-interactive="true" data-menu-title="Course Website"}
 
 ## About This Course
