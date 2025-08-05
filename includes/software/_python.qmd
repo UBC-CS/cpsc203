@@ -1,0 +1,171 @@
+### Python
+
+We are now ready to install Python!
+
+#### Installing `conda` and Python
+
+We will be using Python for a large part of the course, and `conda` will be our Python package manager.
+We will be using the [Miniconda installer (read more here)](https://docs.conda.io/en/latest/miniconda.html) to install both Python and conda at the same time.
+Miniconda also provides us with a minimum number of useful packages so installation is quick, and relatively painless.
+You can [download the Miniconda installer here for your OS](https://www.anaconda.com/download/success).
+
+:::: {.panel-tabset group="os"}
+## Windows
+
+After the download has finished, run the installer and accept the default configuration on all pages.
+
+::: callout-warning
+Make sure to check the box to add Miniconda to the `PATH`.
+There is a big scary warning that says this is "Not Recommended" ; you can ignore that warning, and make sure that checkbox is clicked!
+:::
+
+After the installation is complete, open the Start Menu and search for the program called "Anaconda Prompt (miniconda3)".
+When this opens you will see a prompt similar to `(base) C:\Users\your_name`.
+Type the following to check that your Python installation is working:
+
+{{< contents check-python-version >}}
+
+#### Integrating Python with the Git Bash terminal
+
+::: callout-warning
+This part is very important!!!
+:::
+
+To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git BASH) terminal, which is what we will be using most of the time.
+To set this up, open the "Anaconda Prompt (miniconda3)" again and type:
+
+``` bash
+conda init bash
+```
+
+You will see that this modified a few configuration files, which makes `conda` visible to the terminal.
+Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word `(base)` as in the screenshot below:
+
+![](/images/add-conda-env-to-ps1.png)
+
+If you type
+
+``` bash
+python --version
+```
+
+you should now see the same output as above:
+
+```         
+Python {{< var software.python >}}
+```
+
+::: callout-note
+If you want to run Python interactively from the Git BASH terminal, you need to prepend the `winpty` command, so the full command would be `winpty python` (if you run this, note that you can exit the Python prompt by typing `exit()`).
+Running just `python` works on other setups, but will freeze the Git BASH terminal.
+:::
+
+{{< contents check-conda-version >}}
+
+::: callout-tip
+*Optional* One annoyance with our current terminal setup is that the word `(base)` is not on the same row as the rest of the prompt string (the part with `your_name@your_computer`).
+To fix this we can edit the `.bash_profile` configuration file to indicate that we do not want a newline at the beginning of the prompt string.
+Open up the configuration file using VS Code by typing the following command into a terminal:
+
+``` bash
+code "/c/Program Files/Git/etc/profile.d/git-prompt.sh"
+```
+
+Delete the line that reads the following (it should be line 13):
+
+``` bash
+PS1="$PS1"'\n'       # new line
+```
+
+Click to save the file, when VS Code prompts you that the saving failed, click "Retry as Admin" and then "Yes".
+That's it!
+Now if you launch a new terminal instance, you will see `(base)` on the same line as the rest of the prompt string as in the screenshot below.
+
+![](/images/remove-newline-from-ps1.png){fig-alt="After updating `.bash_profile`, `(base)` is on the same line as the rest of the prompt string."}
+:::
+
+## macOS
+
+After installation, restart the terminal. If the installation was successful, you will see `(base)` prepending to your prompt string.
+
+{{< contents check-conda-version >}}
+
+::: callout-note
+Note: If you see `zsh: command not found: conda`, try the following>: Open a new Terminal (it should be zsh), then type: `source /Users/YOURUSERNAME/miniconda3/bin/activate` OR `source ~/miniconda3/bin/activate` depending on whether you installed for all users, or just your user (make sure to also change YOURUSERNAME to your username). Then enter the following command `conda init zsh`. The error should now be fixed.
+:::
+
+Next, type the following to ask for the version of Python:
+
+{{< contents check-python-version >}}
+::::
+
+#### Essential Python packages
+
+`conda` installs Python packages from different online repositories which are called "channels".
+A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall.
+There is a community-driven effort called the [`conda-forge` (read more here)](https://conda-forge.org/), which provides more up-to-date packages.
+To enable us to access the most recent versions of the Python packages we are going to use, we will add this channel.
+To add the `conda-forge` channel type the following in a terminal window:
+
+``` bash
+conda config --add channels conda-forge
+```
+
+To install packages individually, we need to use the following command: `conda install -c conda-forge "<package-name>"`.
+The part about `conda install` tells the `conda` package manager to install a particular package, and the `-c` part is an extra "option" that tells `conda` to look in the `conda-forge` channel (which usually has the latest updated packages).
+We are specifying that we should use the `conda-forge` source because it typically has more recent and updated package versions.
+
+Let's install the key packages needed (you will note that we're also specifying certain versions of the package with `= X.Y`).
+You should copy and paste each line below in your terminal to install the following packages:
+
+``` bash
+conda install -c conda-forge "black"
+conda install -c conda-forge "pandas"
+conda install -c conda-forge "seaborn"
+conda install -c conda-forge "pre-commit"
+```
+
+`conda` will show you the packages that will be downloaded, and you may need to press `enter` or `Y` (for yes) to proceed with the installation.
+This may take a while to complete.
+
+::: callout-tip
+We will be installing more Python packages as we go through the course!
+:::
+
+````{=html}
+<!--
+Quarto content divs (https://quarto.org/docs/authoring/contents.html)
+-->
+````
+
+:::: {#check-python-version}
+``` bash
+python --version
+```
+
+which should return something like this:
+
+```         
+Python {{< var software.python >}}
+```
+
+::: callout-important
+If instead you see `Python 2.7.X` you installed the wrong version.
+Follow [these instructions](https://docs.anaconda.com/anaconda/install/uninstall) to delete this installation and try the installation again, selecting **Python** {{< var software.python >}} (or higher).
+:::
+::::
+
+:::: {#check-conda-version}
+Let's check the version of the `conda` package manager.
+If you type
+
+``` bash
+conda --version
+```
+
+you should see something like this
+
+```         
+conda {{< var software.conda >}}
+```
+::::

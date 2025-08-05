@@ -1,0 +1,34 @@
+### `tree`
+
+::: {.panel-tabset group="os"}
+## Windows
+
+From the [tree for Windows](http://gnuwin32.sourceforge.net/packages/tree.htm) page, "`tree` is a recursive directory listing program that produces a depth indented listing of files." This is very useful to explore your directory and file structure to figure out which files are where.
+
+Unfortunately, `tree` is not trivial to install on Windows, but it is definitely worth the 2--3 minutes it takes to install it.
+The steps [in detail are outlined here (with screenshots)](https://dev.to/flyingduck92/add-tree-to-git-bash-on-windows-10-1eb1).
+
+In brief, the steps are:
+
+1.  Download the [`tree` binaries](http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-bin.zip)
+
+2.  Unzip the file, and navigate to the `bin` directory, and find `tree.exe`.
+
+3.  Move or copy the `tree.exe` file to this location: `C:\Program Files\Git\usr\bin`.
+
+4.  Restart Git BASH and type in `tree`.
+
+If things work, then you're all done!
+
+## macOS
+
+"`tree` is a recursive directory listing program that produces a depth indented listing of files." This is very useful to explore your directory and file structure to figure out which files are where.
+
+You can install the `tree` package using this command:
+
+``` bash
+conda install -c conda-forge tree
+```
+
+After this, you're all done!
+:::

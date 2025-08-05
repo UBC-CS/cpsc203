@@ -461,7 +461,7 @@ Practice exercises for next week's examlet available Sunday.
 
 # Tech stack
 
-##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/notes/setup/stack.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" background-interactive="true" data-menu-title="Tech stack instructions"}
 
 # Type hints in Python
 

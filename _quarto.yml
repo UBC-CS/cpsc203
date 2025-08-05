@@ -49,6 +49,8 @@ website:
             text: "Schedule"
       - section: "Resources"
         contents:
+          - href: setup.qmd
+            text: "Setup"
           - href: formatting.qmd
             text: "Formatting"
           - href: "https://canvas.ubc.ca/courses/170624"
