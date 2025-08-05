@@ -15,6 +15,15 @@ course:
 instructor:
   name: "Dr. Cinda Heeren"
   pronouns: "She, Her"
+software:
+  bash: "5.3.3(1)"
+  bash-year: "2025"
+  conda: "25.5.1"
+  git: "2.50.1"
+  macos: "Sequoia 15.5"
+  python: "3.13.6"
+  windows: "24H2 (build 26100.4656)"
+  zoom: "6.5.5 (8927)"
 icon:
   advice: "{{< iconify fa6-solid comments >}}"
   computer-activity: "{{< iconify fa6-solid laptop-code >}}"

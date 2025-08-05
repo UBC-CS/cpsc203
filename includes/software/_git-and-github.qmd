@@ -1,0 +1,123 @@
+### Git and GitHub
+
+::: {.panel-tabset group="os"}
+## Windows
+
+Git is installed as part of the [terminal/Git BASH](#terminal).
+
+## macOS
+
+We will be using the command line version of Git.
+Some of the Git commands we will use are only available since Git 2.23, so if your Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.
+
+Open your terminal and type the following command to install Xcode command line tools:
+
+``` bash
+xcode-select --install
+```
+:::
+
+In the terminal type the following to check the Git version:
+
+``` bash
+git --version
+```
+
+You should see something like this if everything is working correctly:
+
+```         
+git version {{< var software.git >}}
+```
+
+::: callout-note
+If you run into trouble, post your error message in the discussion below and ask for help!
+:::
+
+#### GitHub.com account
+
+Sign up for a free account at [GitHub.com](https://github.com/) if you don't have one already.
+Your GitHub.com username is important, so here some [advice on picking a username](https://happygitwithr.com/github-acct#username-advice) and below an image on how to find it again.
+
+![](/images/github-account.png){fig-alt="Pointing to the top right once you log into GitHub.com to identify your username."}
+
+#### Configuring Git user info
+
+Next, we need to configure Git by telling it your name and email.
+To do this type the following into the terminal (the same ones you used to sign up for GitHub):
+
+``` bash
+git config --global user.name "<your-github-name>"
+git config --global user.email "<your-github-email>"
+```
+
+::: callout-note
+To ensure that you haven't made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command `code ~/.gitconfig`) or by typing `git config --list --global`.
+You can quit this view by just pressing the `q` key on your keyboard.
+:::
+
+#### Create your GitHub "Personal Access Token"
+
+This is a bit tricky, so please make sure you follow these directions carefully.
+
+-   Start creating a personal access token (PAT) on GitHub.com either by
+
+    1.  Clicking this link: <https://github.com/settings/tokens/new>
+
+    2.  Navigating to your tokens by following these steps:
+
+        -   Log in to GitHub.com
+        -   Click your picture in the top right and select "Settings"
+        -   Click on "Developer Settings"
+        -   Click on "Personal access tokens" and then on "Tokens (classic)"
+        -   Click "Generate new token"
+
+-   Give the token a name in the note field, for example, `{{< var course.code >}}`
+
+-   Choose for expiration "Custom" and set the date to the end of this term: {{< var course.term-end-date >}}
+
+-   Set the scope of the token to the "repo" level (see image below):
+
+    ![Personal access token settings](/images/github-pat-repo-settings.png)
+
+-   Click "Generate new token"
+
+-   Copy the token that is shown to you.
+    It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a **private** repository to your computer).
+    Treat this password like any other of your other passwords, so **don't share your token with anyone**.
+
+-   Save this token somewhere safe on your computer, such as a password manager.
+    You will not be able to come back to this page to get your token.
+    If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: <https://github.com/settings/tokens>
+
+![](/images/create-github-pat.gif){fig-alt="Navigating GitHub.com to create a personal access token with the repo permission level."}
+
+#### Clone your first repository on your computer
+
+Open a terminal window, and then run the following command:
+
+``` bash
+git clone https://github.com/firasm/test.git
+```
+
+Hopefully, if things work, you should be able to see a new folder created at that location.
+We will be talking more about what exactly you did over the next week and a bit, don't worry!
+
+::: callout-tip
+If after running the code above, you see the error message:
+
+```         
+fatal: destination path 'test' already exists and is not an empty directory. 
+```
+
+It means that you already attempted a clone before, and there is already a directory called `test` where you are trying to clone this repository.
+You will first need to delete that directory to try again.
+Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the `test` directory and delete it.
+Alternatively, from the command line you can try:
+
+``` bash
+rm -rf test
+```
+
+which will "remove" (using the `rm` command) the directory called `test`.
+The`-` is to specify additional options: `r` means "recursively" for all the files in the directory, and `f` means "force" which means don't ask me for confirmation after deleting each file and folder.
+:::

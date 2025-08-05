@@ -1,0 +1,33 @@
+### Operating system (OS)
+
+We strongly suggest to run the latest version of the operating system (OS) available for your laptop.
+
+::: callout-warning
+If you update or upgrade your OS you do so on your own risk!
+:::
+
+In general, there are many good reasons to update your OS.
+Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions.
+Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.
+
+There a two main reasons that would prevent you from updating your OS:
+
+1.  Your hardware would not support the updated OS.
+2.  Some of your software you depend on might not work on a newer OS.
+
+::: {.panel-tabset group="os"}
+## Windows
+
+The latest version of Windows 11 available is {{< var software.windows >}}.
+[See here](https://support.microsoft.com/en-us/windows/update-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a) on how to update your Windows 11 machine to the latest version.
+If you do not own Windows 11, currently enrolled UBC students with a valid CWL account [qualify for one license of Windows 11 Education](https://it.ubc.ca/services/desktop-print-services/software-licensing/windows-education).
+
+## macOS
+
+The latest version of macOS is {{< var software.macos >}}.
+Check your [current version of macOS](https://support.apple.com/en-ca/HT201260).
+If you do not have the latest version, follow the upgrade instructions on the [Apple support page](https://support.apple.com/en-us/HT201475).
+
+If you cannot upgrade to the latest version, follow [these instructions](https://support.apple.com/en-us/HT211683) to find the system requirements and upgrade to latest versions available to you.
+If you need to maintain [32-bit compatibility](https://support.apple.com/en-us/HT208436) for any of your software, then upgrade to no higher than macOS 10.14 Mojave.
+:::

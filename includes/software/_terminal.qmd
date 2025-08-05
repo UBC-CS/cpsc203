@@ -1,0 +1,189 @@
+### Terminal {#terminal}
+
+:::: {.panel-tabset group="os"}
+## Windows
+
+Unfortunately, one of the major problems with using the Windows operating system is that the "Command Prompt" that comes with the operating system is severely deficient.
+No worries though, luckily most of the tools we use in this course are open source, so the community has worked hard to shore up deficiencies in the Microsoft ecosystem.
+
+The replacement for the Command Prompt we will use in this course is called "Git BASH".
+The latest version of Git BASH for Windows is {{< var software.git >}}.
+
+::: callout-important
+"Git BASH" is relatively old software, but it is very reliable and works very well.
+If you are feeling brave and want to setup `zsh` (the next generation shell, with many improvements) on Windows, you can [try these instructions here](https://dev.to/zinox9/installing-zsh-on-windows-37em).
+Note that these instructions are experimental and support from the teaching team is limited.
+But if you can get it to work or run into any issues, let me know!
+I hope to adopt zsh on windows fully next time I teach this course.
+:::
+
+Briefly, we will be using the Bash shell to interact with our computers via a command line interface, and Git to keep a version history of our files and upload to/download from to GitHub.
+
+[Download the windows version of Git BASH](https://git-scm.com/download/win), run the installer and **accept the default configuration for all pages except for the following**:
+
+-   On the **Choosing the default editor used by Git** page, select "Use Visual Studio Code as Git's default editor" from the drop-down menu.
+-   *Optional*: On the **Select Components** page, check "On the Desktop" under "Additional icons" to create a shortcut for Git BASH on your Desktop.
+
+![](/images/vscode-as-git-editor.png){fig-alt="Choosing 'Use Visual Studio Code as Git's default editor' from the drop-down menu"}
+
+::: callout-note
+If you wish to pin Git BASH to the taskbar, you need to search for the program in the start menu, right click the entry and select "Pin to taskbar".
+If you instead first launch the program and pin it by right clicking on the taskbar icon, Git BASH will open with the wrong home directory (`/` instead of `/c/users/$USERNAME`.
+:::
+
+::: callout-note
+After installation, test if you were successful by opening the Git BASH program.
+
+![](/images/git-bash.png){fig-alt="Git BASH icon on the Desktop and an open instance of Git BASH."}
+
+Going forward we will refer Git BASH just as the "terminal" and all commands should be entered there (not Anaconda Command Prompt, Command Prompt or PowerShell, etc.).
+:::
+
+In the terminal, type the following to check which version of Bash you just installed:
+
+``` bash
+bash --version
+```
+
+The output should look similar to this:
+
+```         
+GNU bash, version {{< var software.bash >}}-release (x86_64-pc-sys)
+Copyright (C) {{< var software.bash-year >}} Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+
+::: callout-tip
+If you tried to paste the above into Git BASH, you will have noticed that {{< kbd Control-V >}} does not work in Git BASH. Instead you need to right click and select "Paste" or use the {{< kbd Shift-Insert >}} shortcut.
+To copy from the Git BASH terminal you simply select the text you want and it is copied automatically.
+:::
+
+::: callout-tip
+Via right click you can also reach the settings menu where you can configure Git BASH to your preferences, a couple of tips would be to check "Mouse \> Clicks place command line cursor" and change the font to something more legible, e.g.
+Consolas ("Text \> Select").
+:::
+
+#### Launch VS Code from Git BASH
+
+You can launch many windows programs from the Bash terminal, e.g. to launch VS Code that we installed previously, you would type in `code`, let's use this to check the version of vscode that we installed:
+
+``` bash
+code --version
+```
+
+```         
+1.71
+e4503b30fc78200f846c62cf8091b76ff5547662
+x64
+```
+
+#### Setting VS Code as the default editor
+
+To make programs run from the terminal (such as `git`) use VS Code by default, we will modify `~/.bash_profile`.
+First, open this file using VS Code by typing into the terminal:
+
+``` bash
+code ~/.bash_profile
+```
+
+::: callout-note
+If you see any existing lines in your `~/.bash_profile` related to a previous Python or R installation, please remove these.
+:::
+
+{{< contents set-terminal-editor >}}
+
+## macOS
+
+A terminal app comes preinstalled with macOS.
+You can find the terminal app in Applications \> Utilities \> Terminal or by activating Spotlight with {{< kbd Command-Space >}}, typing in terminal and then pressing {{< kbd Enter >}}.
+You will need to do this several times in these instructions.
+
+You can proceed to spice up your terminal a bit!
+
+#### Oh My Zsh to configure the terminal
+
+Install "Oh My Zsh" to add terminal colours, highlighting and other cool features by running the following command in your terminal:
+
+``` bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+You may now customize your terminal with themes (see [screenshots of themes here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)) by [following the directions here](https://github.com/ohmyzsh/ohmyzsh#selecting-a-theme).
+Selecting a theme is optional, the default one is pretty good as it is!
+
+#### Configure VS Code to launch from the terminal
+
+1.  Launch VS Code
+2.  Open the Command Palette {{< kbd Shift-Command-P >}}
+3.  Type `shell command` to find the "Shell Command: Install 'code' command in PATH" command
+4.  Hit {{< kbd Enter >}}
+5.  Restart the terminal for the new `$PATH` value to take effect
+
+Now you can open files in VS Code from the terminal!
+Alternatively, just type `code .` in any folder to start editing files in that folder.
+
+You can test that VS Code is installed and can be opened from terminal by restarting Terminal and typing the following command in a Terminal:
+
+``` bash
+code --version
+```
+
+you should see something like this if you were successful:
+
+```         
+1.85.2
+8b3775030ed1a69b13e4f4c628c612102e30a681
+arm64
+```
+
+If this does **not** work for you, try it again:
+
+1.  Restart VS Code.
+2.  Open the Command Palette {{< kbd Shift-Command-P >}}.
+3.  Type `shell command` to find the "Shell Command: Uninstall 'code' command from PATH".
+4.  Hit Enter.
+5.  Type `shell command` to find the "Shell Command: Install 'code' command from PATH".
+6.  You might need to enter in your Mac's admin password.
+
+If this *still* does not work, then you should ask a TA for help, but if you're feeling brave, [manual install instructions are here - remember to use the `zsh` files](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) steps as well.
+
+#### Setting VS Code as the default editor
+
+To make programs run from the Terminal (such as `git`) use VS Code by default, we will modify `~/.z_profile`.
+First, open it using VS Code:
+
+``` bash
+code ~/.z_profile
+```
+
+::: callout-note
+If you see any existing lines in your `~/.z_profile` related to a previous Python installation, please remove them.
+:::
+
+{{< contents set-terminal-editor >}}
+::::
+
+````{=html}
+<!--
+Quarto content divs (https://quarto.org/docs/authoring/contents.html)
+-->
+````
+
+:::: {#set-terminal-editor}
+Append the following lines:
+
+``` bash
+# Set the default editor for programs launch from terminal
+EDITOR="code --wait"
+VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above
+```
+
+Then save the file and exit VS Code.
+
+::: callout-note
+Most terminal programs will read the `EDITOR` environmental variable when determining which editor to use, but some read `VISUAL`, so we're setting both to the same value.
+:::
+::::

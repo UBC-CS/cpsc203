@@ -1,0 +1,38 @@
+### Visual Studio Code
+
+::: {.panel-tabset group="os"}
+## Windows
+
+[The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE (integrated development environment), which we will use for more complex analysis. You can [download VS Code](https://code.visualstudio.com/download) from its website.]{#vs-code}
+{{< contents vs-code >}} Once the download is finished, double click it to open and follow the installation instructions.
+
+## macOS
+
+{{< contents vs-code >}} Once the download is finished, click "Open with Archive utility", and move the extracted VS Code application from "Downloads" to "Applications".
+:::
+
+Make sure you are able to open VS Code by clicking on the application.
+
+#### VS Code extensions
+
+The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow.
+We will install some VS Code extensions to help us with our workflows.
+From within VS Code you can open up the [Extension Marketplace (read more here)](https://code.visualstudio.com/docs/editor/extension-gallery) to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.
+
+![](/images/vscode.png){fig-alt="Pointing to the left sidebar to where extensions can be installed."}
+
+To install an extension, you simply search for it in the search bar, click the extension you want, and then click "Install".
+There are extensions available to make almost any workflow or task you are interested in more efficient!
+Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:
+
+-   **Python** (by Microsoft)
+-   **Python Debugger** (by Microsoft)
+-   **autoDocString** (by Nils Werner)
+-   **Python Indent** (by Kevin Rose)
+-   **Black Formatter** (for formatting, linting)
+-   **Markdown Table Formatter** (helps format markdown tables)
+-   **Rainbow CSV** (for colouring columns in CSV files)
+-   **indent-rainbow** (for helping you see indents)
+-   **markdownlint** (markdown linting and style checking extension)
+
+![](/images/vscode_python.png){fig-alt="Pointing to the Python extension by Microsoft in the list of extensions. Click 'Install'"}

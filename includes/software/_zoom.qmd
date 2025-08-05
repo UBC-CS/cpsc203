@@ -1,0 +1,14 @@
+### Zoom
+
+We will be using Zoom in this course for all the student hours and you should install the Zoom client locally on your machine.
+It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions.
+
+The latest version of Zoom is {{< var software.zoom >}}.
+You can ensure you have the latest version of Zoom by clicking "Check for Updates" as shown in the screenshot below.
+
+![](/images/zoom.png){fig-alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."}
+
+::: callout-important
+Please note that if you have been relying on the "web version" of Zoom that works only in a browser, this will not work for this course!
+Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.
+:::
