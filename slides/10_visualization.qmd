@@ -33,7 +33,7 @@ dayspostsat =
 Use modular arithmetic.
 :::
 
-## Pandas and data frames
+## pandas and data frames
 
 `import pandas`
 
@@ -69,7 +69,7 @@ To implement: `df = pd.read_csv('file.csv')`
 
 ::::: columns
 ::: {.column width="40%"}
-![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in Pandas DataFrames."}
+![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in pandas data frames."}
 :::
 
 ::: {.column width="60%"}
@@ -259,7 +259,7 @@ print(df.loc[df['gradient'].abs().idxmax()])
 Sketch Cartesian coordinate system.
 :::
 
-## Plotting with Pandas
+## Plotting with pandas
 
 ::: notes
 :::
@@ -274,4 +274,4 @@ Sketch Cartesian coordinate system.
 
 <https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
 
-# Pandas and plotting demo
+# pandas and plotting demo

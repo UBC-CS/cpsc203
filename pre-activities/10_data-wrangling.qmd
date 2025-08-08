@@ -19,7 +19,7 @@ subtitle: "Due: Feb 5, 2026"
 
 ## Optional videos
 
-### Pandas in data science tutorial
+### pandas in data science tutorial
 
 Some of you have asked me for advanced pandas tutorials for your own side-projects and other courses.
 Though much of this content is beyond the scope of this course, here is a nice video that I assign to students in one of my other data science courses that might be useful for you.
@@ -28,9 +28,9 @@ You can download the [`pokemon.csv` dataset here](https://github.com/firasm/bits
 
 {{< video https://www.youtube-nocookie.com/embed/vmEHCJofslg >}}
 
-## Seaborn
+## seaborn
 
-Seaborn is a Python library for plotting data.
+seaborn is a Python library for plotting data.
 You can see the associated [Jupyter Notebook for the video here](https://firas.moosvi.com/courses/data301/2022_WT2/notes/week06/Class6B/Class6B.html).
 
 {{< video https://www.youtube-nocookie.com/embed/6GUZXDef2U0 >}}

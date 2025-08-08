@@ -60,7 +60,7 @@ This course will teach you a bajillion different things!
 
 -   Tools: Terminal, Markdown, Git, Visual Studio Code, PrairieLearn
 -   Computer science: Python (!!!), efficiency, web scraping, graphs
--   Data science: Pandas, DataFrames, visualizations
+-   Data science: pandas, data frames, visualizations
 -   Algorithms: many algorithms!
 -   Art and creativity: lots of examples!
 
