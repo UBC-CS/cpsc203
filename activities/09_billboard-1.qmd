@@ -25,7 +25,7 @@ Your task to complete *before* Thursday's lecture is:
 -   Each dictionary should have one key for each attribute of the corresponding `ChartEntry` object: `title`, `artist`, `peakPos`, `lastPos`, `weeks`, `rank`, `isNew`. The value for each key should be the value for the corresponding attribute for that song.
 
 In other words, you are coverting from `ChartEntry` objects to dictionary objects.
-On Thursday we will load those dictionaries into a Pandas dataframe and then play around with the data.
+On Thursday we will load those dictionaries into a pandas DataFrame and then play around with the data.
 
 ## {{< var icon.resource >}} Resources
 
