@@ -6,6 +6,34 @@
 Unfortunately, one of the major problems with using the Windows operating system is that the "Command Prompt" that comes with the operating system is severely deficient.
 No worries though, luckily most of the tools we use in this course are open source, so the community has worked hard to shore up deficiencies in the Microsoft ecosystem.
 
+A very common tool found on Unix-like systems (like macOS and Linux distirbutions), is called bash, and the best way to make it available to Widows is to install Linux. Luckily, there is a tool that allows us to run Linux alongside Windows (as something called a virtual machine) called Windows Subsystem for Linux (WSL). To set it up, we first start the Windows Terminal by opening the Windows Start menu, typing "terminal" in search bar and opening it. The Terminal will open in something called PowerShell:
+
+```
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\<user-name>>
+```
+
+Now type the following to install Ubuntu via WSL:
+
+``` powershell
+wsl --install
+```
+
+After the install <do we need to start Ubuntu manually?>, you will be prompted to create a username and password for Ubuntu, keep this information in a safe place like a password manager.
+
+If you encounter any problems, reach out on Giscus to us.
+
+Resources:
+
+-   [Install WSL](aka.ms/wsl2-install)
+-   [Set up a WSL development environment](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
+-   [Get started using Git on WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+-   [Troubleshooting Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting)
+
 The replacement for the Command Prompt we will use in this course is called "Git BASH".
 The latest version of Git BASH for Windows is {{< var software.git >}}.
 
