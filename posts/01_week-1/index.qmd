@@ -5,10 +5,10 @@ description: >
   {{< iconify fa6-brands markdown >}} Markdown and the
   {{< iconify fa6-solid terminal >}} command-line interface
 author: "{{< var instructor.name >}}"
-date: 2026-01-05
+date: 2025-09-04
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week we will be doing course introductions, I will be showing you how to navigate the course website, and how the course is set up.

@@ -2,10 +2,10 @@
 title: "Week 2"
 description: "Introduction to {{< iconify fa6-brands python >}} Python"
 author: "{{< var instructor.name >}}"
-date: 2026-01-12
+date: 2025-09-08
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week we will be doing a Python introduction so that we're all on the same page before we start getting to some programming and design.

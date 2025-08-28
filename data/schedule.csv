@@ -1,31 +1,15 @@
-part,module,week,date,id,topic,workspace,social
-Introductions,Introductions and Markdown,1,2026-01-06,01,,,
-Introductions,Command-line interface,1,2026-01-08,02,,https://skng.de/mbim/td-padlet,https://skng.io/mbim/td-padlet
-Introductions,Python review,2,2026-01-13,03,,,
-Introductions,Python review,2,2026-01-15,04,,,
-Dataclass in Python,Efficiency and dataclass,3,2026-01-20,05,,,
-Dataclass in Python,Efficiency and dataclass,3,2026-01-22,06,,,
-Dataclass in Python,Dataclass cont'd,4,2026-01-27,07,,,
-Dataclass in Python,Dataclass cont'd,4,2026-01-29,08,,,
-Working with data,Web scraping,5,2026-02-03,09,,,
-Working with data,Web scraping,5,2026-02-05,10,,,
-Working with data,Git and version control,6,2026-02-10,11,,,
-Working with data,Git and version control,6,2026-02-12,12,,,
-Working with data,Reading weak,7,2026-02-17,,,,
-Working with data,Reading weak,7,2026-02-19,,,,
-Algorithms and data structures,Data structures,8,2026-02-24,13,,,
-Algorithms and data structures,Data structures,8,2026-02-26,14,,,
-Algorithms and data structures,Graphs,9,2026-03-03,15,,,
-Algorithms and data structures,Graphs,9,2026-03-05,16,,,
-Algorithms and data structures,Catch up week,10,2026-03-10,,,,
-Algorithms and data structures,Catch up week,10,2026-03-12,,,,
-Algorithms and data structures,MHall,11,2026-03-17,19,,,
-Algorithms and data structures,MHall,11,2026-03-19,20,,,
-Algorithms and data structures,State spaces,12,2026-03-24,21,,,
-Algorithms and data structures,State spaces,12,2026-03-26,22,,,
-Algorithms and data structures,Maps,13,2026-03-31,23,,,
-Algorithms and data structures,Maps,13,2026-04-02,24,,,
-Algorithms and data structures,Natural language processing,14,2026-04-07,25,,,
-Algorithms and data structures,Natural language processing,14,2026-04-09,26,,,
-Algorithms and data structures,Summary,,,,,,
-Algorithms and data structures,Summary,,,,,,
+part,week,date,tue_activity,tue_video,thu_activity,thu_video,lab,potw,exam,exam_due,exam_practice
+TBD,01,2025-09-01,,,,,,,,,
+TBD,02,2025-09-08,,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122,,,
+TBD,03,2025-09-15,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580136,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580124,EX1,2025-09-20,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580257
+TBD,04,2025-09-22,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580137/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580125,,,
+TBD,05,2025-09-29,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580138/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580126,EX2,2025-10-04,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580258
+TBD,06,2025-10-06,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580139/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580127,,,
+TBD,07,2025-10-13,,,,,,,,,
+TBD,08,2025-10-20,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580140/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580128,EX3,2025-10-25,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580259
+TBD,09,2025-10-27,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580141/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580129,,,
+TBD,10,2025-11-03,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580142/,,EX4,2025-11-08,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580260
+TBD,11,2025-11-10,,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580130,,,
+TBD,12,2025-11-17,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580143/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580131,,,
+TBD,13,2025-11-24,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580144/,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580123,EX5,2025-11-29,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580261
+TBD,14,2025-12-01,,,,,https://us.prairielearn.com/pl/course_instance/193300/assessment/2580145/,,,,

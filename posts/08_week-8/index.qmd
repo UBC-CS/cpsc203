@@ -2,10 +2,10 @@
 title: "Week 8"
 description: More data structures
 author: "{{< var instructor.name >}}"
-date: 2026-02-23
+date: 2025-10-20
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week we will talk about some new data structures and formalize a language for all the data structures we've seen (and will see)!

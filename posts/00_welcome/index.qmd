@@ -2,11 +2,11 @@
 title: "Welcome to {{< var course.code >}}!"
 description: "Getting your bearings in {{< var course.code >}}"
 author: "{{< var instructor.name >}}"
-date: 2026-01-01
+date: 2025-09-01
 categories:
   - orientation
   - resource
-draft: false
+draft: true
 ---
 
 I am excited to welcome you to {{< var course.code >}}!
