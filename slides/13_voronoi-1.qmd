@@ -1,0 +1,68 @@
+---
+date: 2024-01-01
+---
+
+## Announcements
+
+# Slides from assigned videos
+
+##  {background-iframe="https://player.vimeo.com/video/908509998" data-menu-title="Motivating Voronoi diagrams"}
+
+## Everyone needs a Tim Horton
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Every address in Vancouver has a nearest TH.
+
+Partition Vancouver into regions so that points are in the same region if they have the same nearest TH.
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+## Voronoi diagrams
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Given a (finite) set of "centres" $c_{1}, c_{2}, \ldots, c_{k}$, a Voronoi region, $R_{j}$ consists of the set of points nearer to centre $c_{j}$, than to any other centre.
+
+Together, the $R_{j}$ regions compose the Voronoi diagram of a plane.
+
+The applications of this structure go far beyond our coffee fix!!
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+::: notes
+Every point in plane is in some region and no point is in 2 regions.
+:::
+
+##  {background-image="/images/aerial-view-of-trees.png" background-size="cover" data-menu-title="Aerial view of tree tops"}
+
+::: sr-only
+Aerial view of trees illustrating how the tree tops resemble and can be modeled as Voronoi diagram.
+:::
+
+::: fragment
+![](/images/voronoi-diagram-of-trees.jpg){.absolute bottom="=" right="0" height="50%" fig-alt="Voronoi diagram of trees showing their centres and regions."}
+:::
+
+::: {.footer style="background-color:rgba(256,256,256,0.6)"}
+[From @abellanas2016]{.smaller .absolute bottom="0" right="0"}
+:::
+
+::: notes
+Mention that there were actually 3D models.
+Also, **weighted** Voronoi diagrams...
+:::
+
+## References
