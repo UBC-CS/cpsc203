@@ -2,10 +2,10 @@
 title: "Week 7"
 description: Reading week!
 author: "{{< var instructor.name >}}"
-date: 2026-02-16
+date: 2025-10-13
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week there is no new content in this course - it's Reading week!

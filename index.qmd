@@ -43,8 +43,10 @@ Welcome to the webpage for {{< var course.code >}}!
 
 library(conflicted)
 library(dplyr)
+conflicts_prefer(dplyr::filter)
 library(fontawesome)
 library(fs)
+library(glue)
 library(gt)
 library(gtExtras)
 library(here)
@@ -56,43 +58,72 @@ library(tidyr)
 # Generate ids for each link to join into schedule
 resources_paths <-
   c(
-    path("pre-activities"),
-    path("slides"),
-    path("activities"),
-    path("labs")
+    path("slides")
   )
 
 resources <-
   tibble(
     path = dir_ls(resources_paths, glob = "*.qmd"),
-    id = path |> path_file() |> str_extract("(\\d+).*$", group = 1),
-    type = path |> path_dir() |> str_replace("-", "_")
+    week = path |> path_file() |> str_extract("^(\\d+).*$", group = 1),
+    day = path |>
+      path_file() |>
+      str_extract("\\d+_([:alpha:]+)_.*$", group = 1),
+    type = path |> path_dir()
   ) |>
-  pivot_wider(names_from = type, values_from = path)
+  # Remove unassigned resources indicated by "tbd"
+  filter(!str_detect(path, "tbd")) |>
+  select(week, type, day, path) |>
+  pivot_wider(names_from = c(day, type), names_sep = "_", values_from = path)
 
-schedule <-
-  read_csv(
-    here("data", "schedule.csv"),
-    show_col_types = FALSE
-  ) |>
-  mutate(wday = wday(date, label = TRUE, abbr = TRUE), .after = date) |>
-  left_join(resources, by = join_by(id), na_matches = "never")
+schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
+  left_join(resources, by = join_by(week), na_matches = "never") |>
+  relocate(tue_slides, .before = tue_activity) |>
+  relocate(thu_slides, .before = thu_activity)
 ```
 
 ```{r}
 #| label: schedule
 #| echo: false
 
+current_date <- today()
+
+monday_of_current_week <-
+  max(
+    min(schedule$date, na.rm = TRUE),
+    schedule$date[schedule$date <= current_date],
+    na.rm = TRUE
+  )
+
+next_exam_within_12_days <-
+  max(
+    min(schedule$date, na.rm = TRUE),
+    schedule$exam_due[schedule$exam_due <= current_date + days(12)],
+    na.rm = TRUE
+  )
+
 schedule |>
-  relocate(
-    pre_activities,
-    slides,
-    activities,
-    workspace,
-    labs,
-    .after = topic
+  mutate(
+    # Show only resources for exams within 12 days or earlier
+    exam = if_else(
+      exam_due <= next_exam_within_12_days,
+      glue("[{exam}](https://us.prairietest.com)", .na = NULL),
+      exam
+    ),
+    exam_practice = if_else(
+      exam_due <= next_exam_within_12_days,
+      exam_practice,
+      NA
+    ),
+    # Remove any resources from future weeks
+    across(
+      starts_with(c("tue", "thu", "lab", "potw")),
+      \(column) if_else(date <= monday_of_current_week, column, NA)
+    )
   ) |>
-  gt(groupname_col = "part") |>
+  select(!c(part)) |>
+  gt(
+    # groupname_col = "part"
+  ) |>
   fmt_date(
     date,
     date_style = "MMMd"
@@ -101,58 +132,92 @@ schedule |>
     missing_text = ""
   ) |>
   fmt_url(
-    columns = pre_activities,
-    label = fa("list-check")
-  ) |>
-  sub_missing(
-    columns = pre_activities,
-    missing_text = fa("list-check", fill_opacity = 0.1)
-  ) |>
-  fmt_url(
-    columns = slides,
+    columns = ends_with("slides"),
     label = fa("window-maximize")
   ) |>
   sub_missing(
-    columns = slides,
+    columns = ends_with("slides"),
     missing_text = fa("window-maximize", fill_opacity = 0.1)
   ) |>
   fmt_url(
-    columns = labs,
-    label = fa("laptop-code")
-  ) |>
-  sub_missing(
-    columns = labs,
-    missing_text = fa("laptop-code", fill_opacity = 0.1)
-  ) |>
-  fmt_url(
-    columns = activities,
+    columns = ends_with("activitiy"),
     label = fa("file-alt")
   ) |>
   sub_missing(
-    columns = activities,
+    columns = ends_with("activity"),
     missing_text = fa("file-alt", fill_opacity = 0.1)
   ) |>
   fmt_url(
-    columns = social,
-    label = fa("padlet")
+    columns = ends_with("video"),
+    label = fa("circle-play")
   ) |>
   sub_missing(
-    columns = social,
-    missing_text = fa("padlet", fill_opacity = 0.1)
+    columns = ends_with("video"),
+    missing_text = fa("circle-play", fill_opacity = 0.1)
   ) |>
-  cols_hide(
-    columns = c(id, workspace)
+  fmt_url(
+    columns = lab,
+    label = fa("laptop-code")
+  ) |>
+  sub_missing(
+    columns = lab,
+    missing_text = fa("laptop-code", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = potw,
+    label = fa("calendar-week")
+  ) |>
+  sub_missing(
+    columns = potw,
+    missing_text = fa("calendar-week", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = exam,
+    rows = exam_due <= next_exam_within_12_days,
+    show_underline = FALSE
+  ) |>
+  fmt_date(
+    exam_due,
+    date_style = "MMMd"
+  ) |>
+  fmt_url(
+    columns = exam_practice,
+    label = fa("pen-to-square")
+  ) |>
+  sub_missing(
+    columns = exam_practice,
+    missing_text = fa("pen-to-square", fill_opacity = 0.1)
   ) |>
   cols_label(
-    module = "Module",
-    date = "Date",
-    wday = "Day",
-    topic = "Topic",
-    pre_activities = "Pre",
-    slides = "Slides",
-    labs = "Lab",
-    activities = "Activity",
-    social = "Social"
+    week = "Week",
+    date = "Mon",
+    tue_slides = "S",
+    tue_activity = "A",
+    tue_video = "V",
+    thu_slides = "S",
+    thu_activity = "A",
+    thu_video = "V",
+    lab = "Lab",
+    potw = "POTW",
+    exam = "Book",
+    exam_due = "Due",
+    exam_practice = "Practice"
+  ) |>
+  tab_spanner(
+    label = "Tue",
+    columns = starts_with("tue")
+  ) |>
+  tab_spanner(
+    label = "Thu",
+    columns = starts_with("thu")
+  ) |>
+  tab_spanner(
+    label = "Examlet",
+    columns = c(exam, exam_due, exam_practice)
+  ) |>
+  cols_align(
+    align = "center",
+    columns = c(lab, potw, exam_practice)
   ) |>
   tab_style(
     style = list(
@@ -161,14 +226,16 @@ schedule |>
     locations = list(
       cells_row_groups(),
       cells_stubhead(),
-      cells_column_labels()
+      cells_column_labels(),
+      cells_column_spanners()
     )
   ) |>
   gt_highlight_rows(
-    row = date == "2023-11-30",
+    row = date == monday_of_current_week,
     fill = "#ccefff"
   ) |>
   tab_options(
-    quarto.disable_processing = TRUE
+    quarto.disable_processing = TRUE,
+    table.width = "100%"
   )
 ```

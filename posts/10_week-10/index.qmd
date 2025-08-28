@@ -2,10 +2,10 @@
 title: "Week 10"
 description: Catch up week
 author: "{{< var instructor.name >}}"
-date: 2026-03-09
+date: 2025-11-03
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week there is no new lecture content.

@@ -2,10 +2,10 @@
 title: "Week 13"
 description: Maps data
 author: "{{< var instructor.name >}}"
-date: 2026-03-30
+date: 2025-11-24
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week we will be working with maps data, a natural application of Graphs.

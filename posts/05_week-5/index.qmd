@@ -2,10 +2,10 @@
 title: "Week 5"
 description: "Web scraping and data wrangling"
 author: "{{< var instructor.name >}}"
-date: 2026-02-02
+date: 2025-09-29
 categories:
   - "weekly announcement"
-draft: false
+draft: true
 ---
 
 This week we will start working with some data, using the BeautifulSoup, and parsing data from the internet!
