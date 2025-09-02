@@ -452,7 +452,7 @@
     "href": "slides/01_thu_intro.html#the-flashlight-game",
     "title": "Programming, problem solving, and algorithms",
     "section": "The Flashlight Game 🔦",
-    "text": "The Flashlight Game 🔦\nRules:\n- Everyone starts in play\n- Each turn, a student poses a yes/no question\n- YES = turn on your phone flashlight\n- NO = keep it dark\n- YES people are now on vacation 🌴\n(lights stay off from now on — relax and enjoy!)\nConstraints:\n- Each question must put at least 5 people on vacation\n- And no more than half of the current group\nEnd of Game: - We stop when 10 or fewer people remain in play\n- Everyone else is happily on vacation 🌴"
+    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(lights stay off from now on — relax and enjoy!)\n\nConstraints on each question:\n- Must put at least 5 people on vacation, - And no more than half of the current group\nEnd of Game: - We stop when 10 or fewer people remain in play - Everyone else is happily on vacation 🌴"
   },
   {
     "objectID": "slides/01_thu_intro.html#debrief",
