@@ -445,21 +445,28 @@
     "href": "slides/01_thu_intro.html#you",
     "title": "Programming, problem solving, and algorithms",
     "section": "You?",
-    "text": "You?\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n- Coke or Pepsi?\n- Spaghetti or Sushi?\n- Morning person or Night owl?"
+    "text": "You?\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n* Coke or Pepsi?\n* Spaghetti or Sushi?\n* Morning person or Night owl?"
   },
   {
     "objectID": "slides/01_thu_intro.html#the-flashlight-game",
     "href": "slides/01_thu_intro.html#the-flashlight-game",
     "title": "Programming, problem solving, and algorithms",
     "section": "The Flashlight Game 🔦",
-    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(lights stay off from now on — relax and enjoy!)\n\nConstraints on each question:\n- Must put at least 5 people on vacation, - And no more than half of the current group\nEnd of Game: - We stop when 10 or fewer people remain in play - Everyone else is happily on vacation 🌴"
+    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game: - We stop when 10 or fewer people remain in play - Everyone else is happily on vacation 🌴"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#how-to-count",
+    "href": "slides/01_thu_intro.html#how-to-count",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "How to Count",
+    "text": "How to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again"
   },
   {
     "objectID": "slides/01_thu_intro.html#debrief",
     "href": "slides/01_thu_intro.html#debrief",
     "title": "Programming, problem solving, and algorithms",
     "section": "Debrief 💡",
-    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least ____________ questions.\nWe know we will need no more than ____________ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?"
+    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least \\({\\hline{12em}}\\) questions.\nWe know we will need no more than \\({\\hline{12em}}\\) questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
   },
   {
     "objectID": "slides/01_thu_intro.html#where-to-start",
