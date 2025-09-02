@@ -263,7 +263,7 @@
     "href": "slides/02_tue_efficiency.html#your-turn-colourcultural-interpretations",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Colour—cultural interpretations",
-    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the group (briefly).\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nBig design implications for data visualization"
+    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the group (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nBig design implications for data visualization"
   },
   {
     "objectID": "slides/02_tue_efficiency.html#colourrepresentation",
@@ -291,14 +291,14 @@
     "href": "slides/02_tue_efficiency.html#colourrepresentation-3",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use integers to represent colors?\nRGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==\nFun calculator for color values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
+    "text": "Colour—representation\nCan we use integers to represent colors?\nRGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for color values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
   },
   {
     "objectID": "slides/02_tue_efficiency.html#colourrepresentation-4",
     "href": "slides/02_tue_efficiency.html#colourrepresentation-4",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
-    "text": "Colour—representation\nWhat color is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7\n\nHex = base 16"
+    "text": "Colour—representation\nWhat color is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
   },
   {
     "objectID": "slides/02_tue_efficiency.html#colourrepresentation-aside",
