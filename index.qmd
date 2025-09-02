@@ -1,6 +1,5 @@
 ---
 title: "{{< var course.full-title >}}"
-subtitle: "{{< var instructor.name >}}"
 listing:
   id: most-recent-announcement
   contents: posts
@@ -12,26 +11,13 @@ execute:
   freeze: false
 ---
 
-:::::: columns
-::: {.column width="75%"}
-Welcome to the webpage for {{< var course.code >}}!
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="20%"}
-{{< qrcode https://ubc-cs.github.io/cpsc203 >}}
-:::
-::::::
-
 ## Course information
 
 **Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
 **Time:** {{< var course.time >}}\
 **Location:** {{< var course.location >}}
 
-## Most recent announcement
+## Weekly announcement
 
 ::: {#most-recent-announcement}
 :::
