@@ -9,14 +9,20 @@ date: 2024-01-01
 ::: notes
 **Summary**
 
-In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it's important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists -- our first data structure!
+In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency.
+We continue our exploration of the idea of elegance, making connections to problem solving and code.
+Then, we learn a mechanism for measuring efficiency, and talk briefly about why it's important to consider.
+The discussion about efficiency is followed by a diversion into color representation.
+Finally, we look at some code!
+The day concludes with a sequence of Python examples designed to clear the cobwebs on lists -- our first data structure!
 :::
 
 ## Learning outcomes
 
-1. The time it takes to solve a problem can be parameterized by the size of the problem. In many cases we can use a simple mathematical function to describe that time.
+1.  The time it takes to solve a problem can be parameterized by the size of the problem.
+    In many cases we can use a simple mathematical function to describe that time.
 
-2. Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually *anything*!
+2.  Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually *anything*!
 
 ## When to do what in CPSC 203
 
