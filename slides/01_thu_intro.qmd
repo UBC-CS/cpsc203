@@ -10,61 +10,60 @@ date: 2025-09-04
 
 ## You? {.smaller}
 
-- Turn to your neighbor and introduce yourself 👋  
-- Together, come up with **one binary question**  
+* Turn to your neighbor and introduce yourself 👋  
+* Together, come up with **one binary question**  
   that you think will divide the class **about in half**  
 
 Examples:  
-- Coke or Pepsi?  
-- Spaghetti or Sushi?  
-- Morning person or Night owl?  
+* Coke or Pepsi?  
+* Spaghetti or Sushi?  
+* Morning person or Night owl?  
 
 ## The Flashlight Game 🔦 {.smaller}
 
 **Rules:**
 
-- Everyone starts **in play**  
-- Each turn, a student poses a yes/no question  
+* Everyone starts **in play**  
+* Each turn, a student poses a _valid_ yes/no question  
   + **YES** = turn on your phone flashlight  
   + **NO** = keep it dark  
-- **YES** people are now on vacation 🌴  
-  (lights stay off from now on — relax and enjoy!)  
+* **YES** people are now on vacation 🌴  
+  (light stays off from now on — relax and enjoy!)  
 
-Constraints on each question:  
-- Must put **at least 5** people on vacation,
-- And **no more than half** of the current group  
+A question is _valid_ if it puts at least 5 and 
+no more than half of the current group on vacation.
 
 End of Game:
 - We stop when **10 or fewer people** remain in play
 - Everyone else is happily **on vacation** 🌴  
 
-<!--
+::: notes
 ## How to Count
 
 - I only need to count the lights (YES)  
 - The rest (dark screens) = NO  
 - Eliminated = never light up again  
--->
+:::
 
 ## Debrief 💡
 
 Punchline questions:  
 
-1. We know we will need at least ____________ questions.
+1. We know we will need at least ${\hline{12em}}$ questions.
 
-2. We know we will need no more than ____________ questions.
+2. We know we will need no more than ${\hline{12em}}$ questions.
 
 3. Why did we stop at 10 instead of 1?  
 
 4. Why did we do this?
 
 
-<!--
+::: notes
 - Best case: keep halving ⇒ about **log₂(150/10) ≈ 4 rounds**  
 - Worst case: only 5 eliminated each round ⇒ ~28 rounds  
 - Stopping at 10 = “small enough to brute force”  
   → common strategy in algorithms  
--->
+:::
 
 ## Where to start? {.center}
 
