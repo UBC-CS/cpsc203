@@ -452,14 +452,14 @@
     "href": "slides/01_thu_intro.html#the-flashlight-game",
     "title": "Programming, problem solving, and algorithms",
     "section": "The Flashlight Game 🔦",
-    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game: - We stop when 10 or fewer people remain in play - Everyone else is happily on vacation 🌴"
+    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game: * We stop when 10 or fewer people remain in play * Everyone else is happily on vacation 🌴"
   },
   {
     "objectID": "slides/01_thu_intro.html#how-to-count",
     "href": "slides/01_thu_intro.html#how-to-count",
     "title": "Programming, problem solving, and algorithms",
     "section": "How to Count",
-    "text": "How to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again"
+    "text": "How to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again\n\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
   },
   {
     "objectID": "slides/01_thu_intro.html#debrief",
@@ -473,7 +473,7 @@
     "href": "slides/01_thu_intro.html#where-to-start",
     "title": "Programming, problem solving, and algorithms",
     "section": "Where to start?",
-    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/170624"
+    "text": "Where to start?\nCourse Website: https://ubc-cs.github.io/cpsc203/ Canvas: https://canvas.ubc.ca/courses/170624"
   },
   {
     "objectID": "slides/01_thu_intro.html#section",
