@@ -656,7 +656,29 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\n\n\n\n\n\nLearning Outcomes for CPSC203\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#introduction",
+    "href": "syllabus.html#introduction",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#instructor-information",
+    "href": "syllabus.html#instructor-information",
+    "title": "Syllabus",
+    "section": "Instructor information",
+    "text": "Instructor information",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -666,8 +688,74 @@
     "objectID": "syllabus.html#course-description-and-learning-objectives",
     "href": "syllabus.html#course-description-and-learning-objectives",
     "title": "Syllabus",
-    "section": "",
-    "text": "Learning Outcomes for CPSC203\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
+    "section": "Course description and learning objectives",
+    "text": "Course description and learning objectives\nLearning Outcomes for CPSC203\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#lecture-material",
+    "href": "syllabus.html#lecture-material",
+    "title": "Syllabus",
+    "section": "Lecture material",
+    "text": "Lecture material",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-requirements",
+    "href": "syllabus.html#course-requirements",
+    "title": "Syllabus",
+    "section": "Course requirements",
+    "text": "Course requirements",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-content",
+    "href": "syllabus.html#course-content",
+    "title": "Syllabus",
+    "section": "Course content",
+    "text": "Course content",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-and-exam-policies",
+    "href": "syllabus.html#grading-and-exam-policies",
+    "title": "Syllabus",
+    "section": "Grading and exam policies",
+    "text": "Grading and exam policies",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#accessibility",
+    "href": "syllabus.html#accessibility",
+    "title": "Syllabus",
+    "section": "Accessibility",
+    "text": "Accessibility",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#academic-misconduct",
+    "href": "syllabus.html#academic-misconduct",
+    "title": "Syllabus",
+    "section": "Academic misconduct",
+    "text": "Academic misconduct",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -677,8 +765,8 @@
     "objectID": "syllabus.html#land-acknowledgement",
     "href": "syllabus.html#land-acknowledgement",
     "title": "Syllabus",
-    "section": "",
-    "text": "UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
+    "section": "Land Acknowledgement",
+    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
     "crumbs": [
       "Course information",
       "Syllabus"
