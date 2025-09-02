@@ -19,7 +19,7 @@ Examples:
 - Spaghetti or Sushi?  
 - Morning person or Night owl?  
 
-## The Flashlight Game 🔦
+## The Flashlight Game 🔦 {.smaller}
 
 **Rules:**
 
