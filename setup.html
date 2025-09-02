@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5082c1b048a9243e4e9bba654cb201bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4aebb4ef4a0cb3b62dfbe1f3bc120538.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5082c1b048a9243e4e9bba654cb201bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d7b3551ac17a5c09240aa8cdf2c3c5ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-538432f77a1fd3e3b5ecbee43f06b70a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d7b3551ac17a5c09240aa8cdf2c3c5ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles/styles.css">
+<meta property="og:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
+<meta property="og:site_name" content="{{< var course.full-title >}}">
+<meta property="og:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
+<meta property="og:image:height" content="1368">
+<meta property="og:image:width" content="1924">
+<meta name="twitter:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
+<meta name="twitter:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
+<meta name="twitter:image-height" content="1368">
+<meta name="twitter:image-width" content="1924">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Setup: Tech stack</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./formatting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formatting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/170624" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/193300" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hardware" id="toc-hardware" class="nav-link active" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <ul class="collapse">
+  <li><a href="#operating-system-os" id="toc-operating-system-os" class="nav-link" data-scroll-target="#operating-system-os">Operating system (OS)</a></li>
+  <li><a href="#web-browser" id="toc-web-browser" class="nav-link" data-scroll-target="#web-browser">Web browser</a></li>
+  <li><a href="#zoom" id="toc-zoom" class="nav-link" data-scroll-target="#zoom">Zoom</a></li>
+  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code">Visual Studio Code</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#tree" id="toc-tree" class="nav-link" data-scroll-target="#tree"><code>tree</code></a></li>
+  </ul></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/setup.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Setup: Tech stack</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--
+Any Quarto includes (https://quarto.org/docs/authoring/includes.html) with specific OS instructions should use the following tabset group (https://quarto.org/docs/output-formats/html-basics.html#tabset-groups):
+
+```
+::: {.panel-tabset group="os"}
+## Windows
+
+<windows-specific-instructions>
+
+## macOS
+
+<macos-specific-instructions>
+:::
+```
+-->
+<p>As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the <em>tech stack</em> for CPSC 203, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in CPSC 203.</p>
+<p>As you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).</p>
+<p>This is an exciting time for you as you begin your Software Development journey!</p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<p>Before starting, ensure that your laptop meets the minimum requirements:</p>
+<ul>
+<li>Can connect to networks via a wireless connection.</li>
+<li>Has at least 25 GB disk space available.</li>
+<li>Has at least 4 GB of RAM (more is recommended).</li>
+<li>Uses a 64-bit CPU.</li>
+<li>Is at most 6 years old at the start of the course (4 years old or newer is recommended).</li>
+<li>Student user has full administrative access to the computer.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.</p>
+</div>
+</div>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These installation notes assume you are starting with a fresh install, without any custom setups. If you have previously installed Python and any related packages, we <strong>strongly</strong> recommend uninstalling them. Be sure to remove any user configuration files and back them up if desired. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.</p>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p> <span id="intel-versions">In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application <strong>always</strong> choose the 64-bit version.</span></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><span id="intel-versions">In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application <strong>always</strong> choose the 64-bit version.</span> If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.</p>
+</div>
+</div>
+</div>
+<!--
+Quarto includes for software should start with a level 3 heading `### <software-name>`
+-->
+<section id="operating-system-os" class="level3">
+<h3 class="anchored" data-anchor-id="operating-system-os">Operating system (OS)</h3>
+<p>We strongly suggest to run the latest version of the operating system (OS) available for your laptop.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you update or upgrade your OS you do so on your own risk!</p>
+</div>
+</div>
+<p>In general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.</p>
+<p>There a two main reasons that would prevent you from updating your OS:</p>
+<ol type="1">
+<li>Your hardware would not support the updated OS.</li>
+<li>Some of your software you depend on might not work on a newer OS.</li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>The latest version of Windows 11 available is 24H2 (build 26100.4656). <a href="https://support.microsoft.com/en-us/windows/update-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a">See here</a> on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account <a href="https://it.ubc.ca/services/desktop-print-services/software-licensing/windows-education">qualify for one license of Windows 11 Education</a>.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>The latest version of macOS is Sequoia 15.5. Check your <a href="https://support.apple.com/en-ca/HT201260">current version of macOS</a>. If you do not have the latest version, follow the upgrade instructions on the <a href="https://support.apple.com/en-us/HT201475">Apple support page</a>.</p>
+<p>If you cannot upgrade to the latest version, follow <a href="https://support.apple.com/en-us/HT211683">these instructions</a> to find the system requirements and upgrade to latest versions available to you. If you need to maintain <a href="https://support.apple.com/en-us/HT208436">32-bit compatibility</a> for any of your software, then upgrade to no higher than macOS 10.14 Mojave.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="web-browser" class="level3">
+<h3 class="anchored" data-anchor-id="web-browser">Web browser</h3>
+<p>You are welcome to use most modern browsers that have a WebKit or Gecko backend. <a href="https://www.apple.com/ca/safari/">Safari (Mac only)</a>, <a href="https://www.mozilla.org/en-CA/firefox/new/?redirect_source=firefox-com">Firefox</a>, <a href="https://vivaldi.com">Vivaldi</a>, <a href="https://brave.com">Brave</a>, <a href="https://www.microsoft.com/en-us/edge">Edge</a> are all recommended. Google Chrome is not recommended because of the <a href="https://www.forbes.com/sites/zakdoffman/2021/03/20/stop-using-google-chrome-on-apple-iphone-12-pro-max-ipad-and-macbook-pro/">well-documented privacy and tracking issues with Google</a>.</p>
+</section>
+<section id="zoom" class="level3">
+<h3 class="anchored" data-anchor-id="zoom">Zoom</h3>
+<p>We will be using Zoom in this course for all the student hours and you should install the Zoom client locally on your machine. It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions.</p>
+<p>The latest version of Zoom is 6.5.5 (8927). You can ensure you have the latest version of Zoom by clicking “Check for Updates” as shown in the screenshot below.</p>
+<p><img src="./images/zoom.png" class="img-fluid" alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.</p>
+</div>
+</div>
+</section>
+<section id="visual-studio-code" class="level3">
+<h3 class="anchored" data-anchor-id="visual-studio-code">Visual Studio Code</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p> <span id="vs-code">The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE (integrated development environment), which we will use for more complex analysis. You can <a href="https://code.visualstudio.com/download">download VS Code</a> from its website.</span> Once the download is finished, double click it to open and follow the installation instructions.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><span id="vs-code">The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE (integrated development environment), which we will use for more complex analysis. You can <a href="https://code.visualstudio.com/download">download VS Code</a> from its website.</span> Once the download is finished, click “Open with Archive utility”, and move the extracted VS Code application from “Downloads” to “Applications”.</p>
+</div>
+</div>
+</div>
+<p>Make sure you are able to open VS Code by clicking on the application.</p>
+<section id="vs-code-extensions" class="level4">
+<h4 class="anchored" data-anchor-id="vs-code-extensions">VS Code extensions</h4>
+<p>The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. We will install some VS Code extensions to help us with our workflows. From within VS Code you can open up the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">Extension Marketplace (read more here)</a> to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.</p>
+<p><img src="./images/vscode.png" class="img-fluid" alt="Pointing to the left sidebar to where extensions can be installed."></p>
+<p>To install an extension, you simply search for it in the search bar, click the extension you want, and then click “Install”. There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:</p>
+<ul>
+<li><strong>Python</strong> (by Microsoft)</li>
+<li><strong>Python Debugger</strong> (by Microsoft)</li>
+<li><strong>autoDocString</strong> (by Nils Werner)</li>
+<li><strong>Python Indent</strong> (by Kevin Rose)</li>
+<li><strong>Black Formatter</strong> (for formatting, linting)</li>
+<li><strong>Markdown Table Formatter</strong> (helps format markdown tables)</li>
+<li><strong>Rainbow CSV</strong> (for colouring columns in CSV files)</li>
+<li><strong>indent-rainbow</strong> (for helping you see indents)</li>
+<li><strong>markdownlint</strong> (markdown linting and style checking extension)</li>
+</ul>
+<p><img src="./images/vscode_python.png" class="img-fluid" alt="Pointing to the Python extension by Microsoft in the list of extensions. Click 'Install'"></p>
+</section>
+</section>
+<section id="terminal" class="level3">
+<h3 class="anchored" data-anchor-id="terminal">Terminal</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Unfortunately, one of the major problems with using the Windows operating system is that the “Command Prompt” that comes with the operating system is severely deficient. No worries though, luckily most of the tools we use in this course are open source, so the community has worked hard to shore up deficiencies in the Microsoft ecosystem.</p>
+<p>A very common tool found on Unix-like systems (like macOS and Linux distirbutions), is called bash, and the best way to make it available to Widows is to install Linux. Luckily, there is a tool that allows us to run Linux alongside Windows (as something called a virtual machine) called Windows Subsystem for Linux (WSL). To set it up, we first start the Windows Terminal by opening the Windows Start menu, typing “terminal” in search bar and opening it. The Terminal will open in something called PowerShell:</p>
+<pre><code>Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\&lt;user-name&gt;&gt;</code></pre>
+<p>Now type the following to install Ubuntu via WSL:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After the install &lt;do we need to start Ubuntu manually?&gt;, you will be prompted to create a username and password for Ubuntu, keep this information in a safe place like a password manager.</p>
+<p>If you encounter any problems, reach out on Giscus to us.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="aka.ms/wsl2-install">Install WSL</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password">Set up a WSL development environment</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Get started using Git on WSL</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting">Troubleshooting Windows Subsystem for Linux</a></li>
+</ul>
+<p>The replacement for the Command Prompt we will use in this course is called “Git BASH”. The latest version of Git BASH for Windows is 2.50.1.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Git BASH” is relatively old software, but it is very reliable and works very well. If you are feeling brave and want to setup <code>zsh</code> (the next generation shell, with many improvements) on Windows, you can <a href="https://dev.to/zinox9/installing-zsh-on-windows-37em">try these instructions here</a>. Note that these instructions are experimental and support from the teaching team is limited. But if you can get it to work or run into any issues, let me know! I hope to adopt zsh on windows fully next time I teach this course.</p>
+</div>
+</div>
+<p>Briefly, we will be using the Bash shell to interact with our computers via a command line interface, and Git to keep a version history of our files and upload to/download from to GitHub.</p>
+<p><a href="https://git-scm.com/download/win">Download the windows version of Git BASH</a>, run the installer and <strong>accept the default configuration for all pages except for the following</strong>:</p>
+<ul>
+<li>On the <strong>Choosing the default editor used by Git</strong> page, select “Use Visual Studio Code as Git’s default editor” from the drop-down menu.</li>
+<li><em>Optional</em>: On the <strong>Select Components</strong> page, check “On the Desktop” under “Additional icons” to create a shortcut for Git BASH on your Desktop.</li>
+</ul>
+<p><img src="./images/vscode-as-git-editor.png" class="img-fluid" alt="Choosing 'Use Visual Studio Code as Git's default editor' from the drop-down menu"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you wish to pin Git BASH to the taskbar, you need to search for the program in the start menu, right click the entry and select “Pin to taskbar”. If you instead first launch the program and pin it by right clicking on the taskbar icon, Git BASH will open with the wrong home directory (<code>/</code> instead of <code>/c/users/$USERNAME</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After installation, test if you were successful by opening the Git BASH program.</p>
+<p><img src="./images/git-bash.png" class="img-fluid" alt="Git BASH icon on the Desktop and an open instance of Git BASH."></p>
+<p>Going forward we will refer Git BASH just as the “terminal” and all commands should be entered there (not Anaconda Command Prompt, Command Prompt or PowerShell, etc.).</p>
+</div>
+</div>
+<p>In the terminal, type the following to check which version of Bash you just installed:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output should look similar to this:</p>
+<pre><code>GNU bash, version 5.3.3(1)-release (x86_64-pc-sys)
+Copyright (C) 2025 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you tried to paste the above into Git BASH, you will have noticed that <kbd aria-hidden="true">Control-V</kbd><span class="visually-hidden">Control-V</span> does not work in Git BASH. Instead you need to right click and select “Paste” or use the <kbd aria-hidden="true">Shift-Insert</kbd><span class="visually-hidden">Shift-Insert</span> shortcut. To copy from the Git BASH terminal you simply select the text you want and it is copied automatically.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Via right click you can also reach the settings menu where you can configure Git BASH to your preferences, a couple of tips would be to check “Mouse &gt; Clicks place command line cursor” and change the font to something more legible, e.g. Consolas (“Text &gt; Select”).</p>
+</div>
+</div>
+<section id="launch-vs-code-from-git-bash" class="level4">
+<h4 class="anchored" data-anchor-id="launch-vs-code-from-git-bash">Launch VS Code from Git BASH</h4>
+<p>You can launch many windows programs from the Bash terminal, e.g.&nbsp;to launch VS Code that we installed previously, you would type in <code>code</code>, let’s use this to check the version of vscode that we installed:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>1.71
+e4503b30fc78200f846c62cf8091b76ff5547662
+x64</code></pre>
+</section>
+<section id="setting-vs-code-as-the-default-editor" class="level4">
+<h4 class="anchored" data-anchor-id="setting-vs-code-as-the-default-editor">Setting VS Code as the default editor</h4>
+<p>To make programs run from the terminal (such as <code>git</code>) use VS Code by default, we will modify <code>~/.bash_profile</code>. First, open this file using VS Code by typing into the terminal:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you see any existing lines in your <code>~/.bash_profile</code> related to a previous Python or R installation, please remove these.</p>
+</div>
+</div>
+<div id="set-terminal-editor">
+<p>Append the following lines:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the default editor for programs launch from terminal</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span><span class="st">"code --wait"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">VISUAL</span><span class="op">=</span><span class="va">$EDITOR</span>  <span class="co"># Use the same value as for "EDITOR" in the line above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then save the file and exit VS Code.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most terminal programs will read the <code>EDITOR</code> environmental variable when determining which editor to use, but some read <code>VISUAL</code>, so we’re setting both to the same value.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>A terminal app comes preinstalled with macOS. You can find the terminal app in Applications &gt; Utilities &gt; Terminal or by activating Spotlight with <kbd aria-hidden="true">Command-Space</kbd><span class="visually-hidden">Command-Space</span>, typing in terminal and then pressing <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>. You will need to do this several times in these instructions.</p>
+<p>You can proceed to spice up your terminal a bit!</p>
+<section id="oh-my-zsh-to-configure-the-terminal" class="level4">
+<h4 class="anchored" data-anchor-id="oh-my-zsh-to-configure-the-terminal">Oh My Zsh to configure the terminal</h4>
+<p>Install “Oh My Zsh” to add terminal colours, highlighting and other cool features by running the following command in your terminal:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may now customize your terminal with themes (see <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">screenshots of themes here</a>) by <a href="https://github.com/ohmyzsh/ohmyzsh#selecting-a-theme">following the directions here</a>. Selecting a theme is optional, the default one is pretty good as it is!</p>
+</section>
+<section id="configure-vs-code-to-launch-from-the-terminal" class="level4">
+<h4 class="anchored" data-anchor-id="configure-vs-code-to-launch-from-the-terminal">Configure VS Code to launch from the terminal</h4>
+<ol type="1">
+<li>Launch VS Code</li>
+<li>Open the Command Palette <kbd aria-hidden="true">Shift-Command-P</kbd><span class="visually-hidden">Shift-Command-P</span></li>
+<li>Type <code>shell command</code> to find the “Shell Command: Install ‘code’ command in PATH” command</li>
+<li>Hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span></li>
+<li>Restart the terminal for the new <code>$PATH</code> value to take effect</li>
+</ol>
+<p>Now you can open files in VS Code from the terminal! Alternatively, just type <code>code .</code> in any folder to start editing files in that folder.</p>
+<p>You can test that VS Code is installed and can be opened from terminal by restarting Terminal and typing the following command in a Terminal:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>you should see something like this if you were successful:</p>
+<pre><code>1.85.2
+8b3775030ed1a69b13e4f4c628c612102e30a681
+arm64</code></pre>
+<p>If this does <strong>not</strong> work for you, try it again:</p>
+<ol type="1">
+<li>Restart VS Code.</li>
+<li>Open the Command Palette <kbd aria-hidden="true">Shift-Command-P</kbd><span class="visually-hidden">Shift-Command-P</span>.</li>
+<li>Type <code>shell command</code> to find the “Shell Command: Uninstall ‘code’ command from PATH”.</li>
+<li>Hit Enter.</li>
+<li>Type <code>shell command</code> to find the “Shell Command: Install ‘code’ command from PATH”.</li>
+<li>You might need to enter in your Mac’s admin password.</li>
+</ol>
+<p>If this <em>still</em> does not work, then you should ask a TA for help, but if you’re feeling brave, <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line">manual install instructions are here - remember to use the <code>zsh</code> files</a> steps as well.</p>
+</section>
+<section id="setting-vs-code-as-the-default-editor-1" class="level4">
+<h4 class="anchored" data-anchor-id="setting-vs-code-as-the-default-editor-1">Setting VS Code as the default editor</h4>
+<p>To make programs run from the Terminal (such as <code>git</code>) use VS Code by default, we will modify <code>~/.z_profile</code>. First, open it using VS Code:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.z_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you see any existing lines in your <code>~/.z_profile</code> related to a previous Python installation, please remove them.</p>
+</div>
+</div>
+<div id="set-terminal-editor">
+<p>Append the following lines:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the default editor for programs launch from terminal</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span><span class="st">"code --wait"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">VISUAL</span><span class="op">=</span><span class="va">$EDITOR</span>  <span class="co"># Use the same value as for "EDITOR" in the line above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then save the file and exit VS Code.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most terminal programs will read the <code>EDITOR</code> environmental variable when determining which editor to use, but some read <code>VISUAL</code>, so we’re setting both to the same value.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!--
+Quarto content divs (https://quarto.org/docs/authoring/contents.html)
+-->
+</section>
+<section id="git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Git is installed as part of the <a href="#terminal">terminal/Git BASH</a>.</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>We will be using the command line version of Git. Some of the Git commands we will use are only available since Git 2.23, so if your Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.</p>
+<p>Open your terminal and type the following command to install Xcode command line tools:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>In the terminal type the following to check the Git version:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see something like this if everything is working correctly:</p>
+<pre><code>git version 2.50.1</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you run into trouble, post your error message in the discussion below and ask for help!</p>
+</div>
+</div>
+<section id="github.com-account" class="level4">
+<h4 class="anchored" data-anchor-id="github.com-account">GitHub.com account</h4>
+<p>Sign up for a free account at <a href="https://github.com/">GitHub.com</a> if you don’t have one already. Your GitHub.com username is important, so here some <a href="https://happygitwithr.com/github-acct#username-advice">advice on picking a username</a> and below an image on how to find it again.</p>
+<p><img src="./images/github-account.png" class="img-fluid" alt="Pointing to the top right once you log into GitHub.com to identify your username."></p>
+</section>
+<section id="configuring-git-user-info" class="level4">
+<h4 class="anchored" data-anchor-id="configuring-git-user-info">Configuring Git user info</h4>
+<p>Next, we need to configure Git by telling it your name and email. To do this type the following into the terminal (the same ones you used to sign up for GitHub):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-github-name&gt;"</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command <code>code ~/.gitconfig</code>) or by typing <code>git config --list --global</code>. You can quit this view by just pressing the <code>q</code> key on your keyboard.</p>
+</div>
+</div>
+</section>
+<section id="create-your-github-personal-access-token" class="level4">
+<h4 class="anchored" data-anchor-id="create-your-github-personal-access-token">Create your GitHub “Personal Access Token”</h4>
+<p>This is a bit tricky, so please make sure you follow these directions carefully.</p>
+<ul>
+<li><p>Start creating a personal access token (PAT) on GitHub.com either by</p>
+<ol type="1">
+<li><p>Clicking this link: <a href="https://github.com/settings/tokens/new" class="uri">https://github.com/settings/tokens/new</a></p></li>
+<li><p>Navigating to your tokens by following these steps:</p>
+<ul>
+<li>Log in to GitHub.com</li>
+<li>Click your picture in the top right and select “Settings”</li>
+<li>Click on “Developer Settings”</li>
+<li>Click on “Personal access tokens” and then on “Tokens (classic)”</li>
+<li>Click “Generate new token”</li>
+</ul></li>
+</ol></li>
+<li><p>Give the token a name in the note field, for example, <code>CPSC 203</code></p></li>
+<li><p>Choose for expiration “Custom” and set the date to the end of this term: 2025-12-05</p></li>
+<li><p>Set the scope of the token to the “repo” level (see image below):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/github-pat-repo-settings.png" class="img-fluid figure-img"></p>
+<figcaption>Personal access token settings</figcaption>
+</figure>
+</div></li>
+<li><p>Click “Generate new token”</p></li>
+<li><p>Copy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a <strong>private</strong> repository to your computer). Treat this password like any other of your other passwords, so <strong>don’t share your token with anyone</strong>.</p></li>
+<li><p>Save this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a></p></li>
+</ul>
+<p><img src="./images/create-github-pat.gif" class="img-fluid" alt="Navigating GitHub.com to create a personal access token with the repo permission level."></p>
+</section>
+<section id="clone-your-first-repository-on-your-computer" class="level4">
+<h4 class="anchored" data-anchor-id="clone-your-first-repository-on-your-computer">Clone your first repository on your computer</h4>
+<p>Open a terminal window, and then run the following command:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If after running the code above, you see the error message:</p>
+<pre><code>fatal: destination path 'test' already exists and is not an empty directory. </code></pre>
+<p>It means that you already attempted a clone before, and there is already a directory called <code>test</code> where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the <code>test</code> directory and delete it. Alternatively, from the command line you can try:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which will “remove” (using the <code>rm</code> command) the directory called <code>test</code>. The<code>-</code> is to specify additional options: <code>r</code> means “recursively” for all the files in the directory, and <code>f</code> means “force” which means don’t ask me for confirmation after deleting each file and folder.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<p>We are now ready to install Python!</p>
+<section id="installing-conda-and-python" class="level4">
+<h4 class="anchored" data-anchor-id="installing-conda-and-python">Installing <code>conda</code> and Python</h4>
+<p>We will be using Python for a large part of the course, and <code>conda</code> will be our Python package manager. We will be using the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda installer (read more here)</a> to install both Python and conda at the same time. Miniconda also provides us with a minimum number of useful packages so installation is quick, and relatively painless. You can <a href="https://www.anaconda.com/download/success">download the Miniconda installer here for your OS</a>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>After the download has finished, run the installer and accept the default configuration on all pages.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure to check the box to add Miniconda to the <code>PATH</code>. There is a big scary warning that says this is “Not Recommended” ; you can ignore that warning, and make sure that checkbox is clicked!</p>
+</div>
+</div>
+<p>After the installation is complete, open the Start Menu and search for the program called “Anaconda Prompt (miniconda3)”. When this opens you will see a prompt similar to <code>(base) C:\Users\your_name</code>. Type the following to check that your Python installation is working:</p>
+<div id="check-python-version">
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which should return something like this:</p>
+<pre><code>Python 3.13.6</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If instead you see <code>Python 2.7.X</code> you installed the wrong version. Follow <a href="https://docs.anaconda.com/anaconda/install/uninstall">these instructions</a> to delete this installation and try the installation again, selecting <strong>Python</strong> 3.13.6 (or higher).</p>
+</div>
+</div>
+</div>
+<section id="integrating-python-with-the-git-bash-terminal" class="level4">
+<h4 class="anchored" data-anchor-id="integrating-python-with-the-git-bash-terminal">Integrating Python with the Git Bash terminal</h4>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This part is very important!!!</p>
+</div>
+</div>
+<p>To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git BASH) terminal, which is what we will be using most of the time. To set this up, open the “Anaconda Prompt (miniconda3)” again and type:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see that this modified a few configuration files, which makes <code>conda</code> visible to the terminal. Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word <code>(base)</code> as in the screenshot below:</p>
+<p><img src="./images/add-conda-env-to-ps1.png" class="img-fluid"></p>
+<p>If you type</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>you should now see the same output as above:</p>
+<pre><code>Python 3.13.6</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to run Python interactively from the Git BASH terminal, you need to prepend the <code>winpty</code> command, so the full command would be <code>winpty python</code> (if you run this, note that you can exit the Python prompt by typing <code>exit()</code>). Running just <code>python</code> works on other setups, but will freeze the Git BASH terminal.</p>
+</div>
+</div>
+<div id="check-conda-version">
+<p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>you should see something like this</p>
+<pre><code>conda 25.5.1</code></pre>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Optional</em> One annoyance with our current terminal setup is that the word <code>(base)</code> is not on the same row as the rest of the prompt string (the part with <code>your_name@your_computer</code>). To fix this we can edit the <code>.bash_profile</code> configuration file to indicate that we do not want a newline at the beginning of the prompt string. Open up the configuration file using VS Code by typing the following command into a terminal:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Delete the line that reads the following (it should be line 13):</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">"</span><span class="va">$PS1</span><span class="st">"'\n'</span>       <span class="co"># new line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Click to save the file, when VS Code prompts you that the saving failed, click “Retry as Admin” and then “Yes”. That’s it! Now if you launch a new terminal instance, you will see <code>(base)</code> on the same line as the rest of the prompt string as in the screenshot below.</p>
+<p><img src="./images/remove-newline-from-ps1.png" class="img-fluid" alt="After updating `.bash_profile`, `(base)` is on the same line as the rest of the prompt string."></p>
+</div>
+</div>
+</section>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>After installation, restart the terminal. If the installation was successful, you will see <code>(base)</code> prepending to your prompt string.</p>
+<div id="check-conda-version">
+<p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>you should see something like this</p>
+<pre><code>conda 25.5.1</code></pre>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note: If you see <code>zsh: command not found: conda</code>, try the following&gt;: Open a new Terminal (it should be zsh), then type: <code>source /Users/YOURUSERNAME/miniconda3/bin/activate</code> OR <code>source ~/miniconda3/bin/activate</code> depending on whether you installed for all users, or just your user (make sure to also change YOURUSERNAME to your username). Then enter the following command <code>conda init zsh</code>. The error should now be fixed.</p>
+</div>
+</div>
+<p>Next, type the following to ask for the version of Python:</p>
+<div id="check-python-version">
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which should return something like this:</p>
+<pre><code>Python 3.13.6</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If instead you see <code>Python 2.7.X</code> you installed the wrong version. Follow <a href="https://docs.anaconda.com/anaconda/install/uninstall">these instructions</a> to delete this installation and try the installation again, selecting <strong>Python</strong> 3.13.6 (or higher).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="essential-python-packages" class="level4">
+<h4 class="anchored" data-anchor-id="essential-python-packages">Essential Python packages</h4>
+<p><code>conda</code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a href="https://conda-forge.org/"><code>conda-forge</code> (read more here)</a>, which provides more up-to-date packages. To enable us to access the most recent versions of the Python packages we are going to use, we will add this channel. To add the <code>conda-forge</code> channel type the following in a terminal window:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To install packages individually, we need to use the following command: <code>conda install -c conda-forge "&lt;package-name&gt;"</code>. The part about <code>conda install</code> tells the <code>conda</code> package manager to install a particular package, and the <code>-c</code> part is an extra “option” that tells <code>conda</code> to look in the <code>conda-forge</code> channel (which usually has the latest updated packages). We are specifying that we should use the <code>conda-forge</code> source because it typically has more recent and updated package versions.</p>
+<p>Let’s install the key packages needed (you will note that we’re also specifying certain versions of the package with <code>= X.Y</code>). You should copy and paste each line below in your terminal to install the following packages:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"black"</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pandas"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"seaborn"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pre-commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>conda</code> will show you the packages that will be downloaded, and you may need to press <code>enter</code> or <code>Y</code> (for yes) to proceed with the installation. This may take a while to complete.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will be installing more Python packages as we go through the course!</p>
+</div>
+</div>
+<!--
+Quarto content divs (https://quarto.org/docs/authoring/contents.html)
+-->
+</section>
+</section>
+<section id="tree" class="level3">
+<h3 class="anchored" data-anchor-id="tree"><code>tree</code></h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>From the <a href="http://gnuwin32.sourceforge.net/packages/tree.htm">tree for Windows</a> page, “<code>tree</code> is a recursive directory listing program that produces a depth indented listing of files.” This is very useful to explore your directory and file structure to figure out which files are where.</p>
+<p>Unfortunately, <code>tree</code> is not trivial to install on Windows, but it is definitely worth the 2–3 minutes it takes to install it. The steps <a href="https://dev.to/flyingduck92/add-tree-to-git-bash-on-windows-10-1eb1">in detail are outlined here (with screenshots)</a>.</p>
+<p>In brief, the steps are:</p>
+<ol type="1">
+<li><p>Download the <a href="http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-bin.zip"><code>tree</code> binaries</a></p></li>
+<li><p>Unzip the file, and navigate to the <code>bin</code> directory, and find <code>tree.exe</code>.</p></li>
+<li><p>Move or copy the <code>tree.exe</code> file to this location: <code>C:\Program Files\Git\usr\bin</code>.</p></li>
+<li><p>Restart Git BASH and type in <code>tree</code>.</p></li>
+</ol>
+<p>If things work, then you’re all done!</p>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>“<code>tree</code> is a recursive directory listing program that produces a depth indented listing of files.” This is very useful to explore your directory and file structure to figure out which files are where.</p>
+<p>You can install the <code>tree</code> package using this command:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After this, you’re all done!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="attribution" class="level2">
+<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
+<p>These instructions have been adapted and remixed from the original version provided by the UBC-Vancouver <a href="https://ubc-mds.github.io/resources_pages/installation_instructions/">MDS Install stack</a> under a CC-BY-SA 4.0 license. They were originally written by <a href="https://github.com/Anmol6">Anmol Jawandha</a> but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.</p>
+<ul>
+<li><a href="http://cs109.github.io/2015/">Harvard CS109</a></li>
+<li><a href="http://stat545.com/packages01_system-prep.html#mac-os-system-prep">UBC STAT 545</a> licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/legalcode">CC BY-NC 3.0</a>.</li>
+<li><a href="https://software-carpentry.org/">Software Carpentry</a></li>
+<li><a href="https://www.java.com/en/download/help/path.xml">Oracle - How do I set or change the <code>PATH</code> system variable?</a></li>
+<li><a href="https://clouds.eos.ubc.ca/~phil/numeric/python.html">Numerical Methods - Getting started</a></li>
+<li><a href="https://educe-ubc.github.io/index.html">EDUCE setup instructions</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/setup.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.34">
+
+  <meta name="dcterms.date" content="2024-01-01">
+  <title>{{&lt; var course.full-title &gt;}} – Programming, problem solving, and algorithms</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f2ea9b50adc9fed21b22ebdc19122b64.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="CPSC 203, 2025 W1">
+<meta property="og:site_name" content="{{< var course.full-title >}}">
+<meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="CPSC 203, 2025 W1">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Programming, problem solving, and algorithms</h1>
+  <p class="subtitle">CPSC 203, 2025 W1</p>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">January 1, 2024</p>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<!-- TODO: Add a slide "Why this is important..." -->
+<aside class="notes">
+<p><strong>Summary</strong></p>
+<p>In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning outcomes</h2>
+<ol type="1">
+<li><p>The time it takes to solve a problem can be parameterized by the size of the problem. In many cases we can use a simple mathematical function to describe that time.</p></li>
+<li><p>Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually <em>anything</em>!</p></li>
+</ol>
+</section>
+<section id="when-to-do-what-in-cpsc-203" class="slide level2">
+<h2>When to do what in CPSC 203</h2>
+<div class="small-font-size">
+<table class="caption-top" style="width:100%;">
+<caption><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon>—This week’s content; <iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon>—Last week’s content</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Mon</th>
+<th style="text-align: center;">Tue</th>
+<th style="text-align: center;">Wed</th>
+<th style="text-align: center;">Thu</th>
+<th style="text-align: center;">Fri</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pre-class videos</td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Classes</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Learning Log</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+</tr>
+<tr class="even">
+<td>Problems of the Week</td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+</tr>
+<tr class="odd">
+<td>Labs</td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-solid:xmark" aria-label="Icon xmark from fa6-solid Iconify.design set." title="Icon xmark from fa6-solid Iconify.design set."></iconify-icon></p></td>
+</tr>
+<tr class="even">
+<td>Practice Test and Test</td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"><p><iconify-icon role="img" inline="" icon="fa6-regular:circle" aria-label="Icon circle from fa6-regular Iconify.design set." title="Icon circle from fa6-regular Iconify.design set."></iconify-icon></p></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="small-font-size">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Note:</strong> this is a “suggested” schedule. All due dates are on Friday at 6 PM (with a 48-hour grace period).</p>
+<p>Term projects are not on this schedule as they span multiple weeks.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="software-design-ingenuity-and-simplicity" class="title-slide slide level1 center">
+<h1>Software design: ingenuity and simplicity</h1>
+
+</section>
+<section id="your-turn-elegance" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance</h2>
+<p>Find 2 images, one which exemplifies your definition of elegance, and one which decidedly does not. They should be related to each other…</p>
+<div class="medium-table">
+<table class="caption-top">
+<caption>Naming convention for files</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Naming</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="abbreviation-highlight"><strong>e</strong></span>legant</td>
+<td><code>e&lt;name&gt;.&lt;ext&gt;</code></td>
+<td><code>eKITTY.png</code></td>
+</tr>
+<tr class="even">
+<td><span class="abbreviation-highlight"><strong>not e</strong></span>legant</td>
+<td><code>note&lt;name&gt;.&lt;ext&gt;</code></td>
+<td><code>noteKITTY.png</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Upload your images to this directory:</p>
+<p><a href="https://bit.ly/3QucOO3" class="uri">https://bit.ly/3QucOO3</a></p>
+<div id="timer_0bde4f15131b32d4a17cc5aaa4250fa8ebcee839" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<aside class="notes">
+<p>(Gallery walk)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="elegance-examples" class="slide level2">
+<h2>Elegance: examples</h2>
+<p>Scissors…</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="../images/two-scissors.jpg" alt="A set of scissors."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/non-functional-scissors.jpg" alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/assorted-scissors.png" alt="A variety of scissors in different colours."></p>
+</div></div>
+<aside class="notes">
+<p>Heidi…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-elegancedefinition" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance—definition</h2>
+<p>Gallery: <a href="https://bit.ly/3QucOO3" class="uri">https://bit.ly/3QucOO3</a></p>
+<p>After looking at the images in the gallery, reflect and write a short definition of the word <em>elegance</em>:</p>
+<p><a href="https://forms.gle/1eGK2xnH7quAt2nf8" class="uri">https://forms.gle/1eGK2xnH7quAt2nf8</a></p>
+<p>Elegance: the quality of being <u>____________</u></p>
+<div id="timer_0bde4f15131b32d4a17cc5aaa4250fa8ebcee839" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section>
+<section id="elegance-and-computing" class="slide level2">
+<h2>Elegance and computing</h2>
+<p>How does this apply to the way we solve problems in computing?</p>
+<p>I<span class="fragment" data-fragment-index="1">n</span>g<span class="fragment" data-fragment-index="1">e</span>n<span class="fragment" data-fragment-index="1">u</span>i<span class="fragment" data-fragment-index="1">t</span>y:</p>
+<p><br>
+<br>
+</p>
+<p>S<span class="fragment" data-fragment-index="1">i</span>m<span class="fragment" data-fragment-index="1">p</span>l<span class="fragment" data-fragment-index="1">i</span>c<span class="fragment" data-fragment-index="1">i</span>t<span class="fragment" data-fragment-index="1">y</span>:</p>
+
+<aside class="notes">
+<ol type="1">
+<li>INGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.</li>
+<li>SIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>For further reading: <a href="https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/" class="uri">https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/</a></p>
+</div></aside></section>
+<section id="section" class="slide level2 center" data-background-image="../images/steve-jobs.jpg" data-background-opacity="0.3" data-background-size="contain" data-background-position="bottom right" data-menu-title="Steve Jobs quote">
+<h2></h2>
+<blockquote>
+<p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
+<p>— <strong>Steve Jobs</strong></p>
+</blockquote>
+</section></section>
+<section>
+<section id="slides-from-the-assigned-videos" class="title-slide slide level1 center">
+<h1>Slides from the assigned videos</h1>
+
+</section>
+<section id="handcraft" class="slide level2">
+<h2>Handcraft</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="../images/quilt.jpg" alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."></p>
+<p><img data-src="../images/doily.jpg" alt="A white doily with a spiral pattern on a wooden surface."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/pinecone-pen.jpg" alt="A pen made from pinecone."></p>
+<p><img data-src="../images/shirt.jpg" alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/paper-violin.jpg" alt="A violin made from intricately quilled green paper with a bow."></p>
+<p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colours."></p>
+</div></div>
+<aside class="notes">
+<p>Metaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.</p>
+<ul>
+<li>Quilt—patterns</li>
+<li>Crochet—2 different kinds</li>
+<li>Paper—Friend’s artistry</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="knitting" class="slide level2">
+<h2>Knitting</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>The language used to communicate patterns uses exactly the same fundamental constructs as Python!!!</p>
+</div><div class="column" style="width:66%;">
+<p><img data-src="../images/sherbet-stripes.png" alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."></p>
+</div></div>
+</section>
+<section id="knitting-examples" class="slide level2">
+<h2>Knitting: examples</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="../images/colourful-knitted-striped-dishcloth.jpg" alt="A knitted dishcloth with diagonal stripes in orange, green, yellow, and teal."></p>
+<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/knitted-dishcloth-with-dragon-design.jpg" alt="A green knitted dishcloth featuring a textured dragon design."></p>
+<p><img data-src="../images/knitted-dishcloth-with-diamond-lace-pattern.jpg" alt="A purple knitted dishcloth featuring a diamond lace pattern."></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../images/knitted-dishcloth-with-metroid-power-up-design.jpg" alt="A teal knitted dishcloth featuring a raised power-up design from the video game Metroid."></p>
+<p><img data-src="../images/knitted-dishcloth-with-heart-pattern.jpg" alt="A blue knitted dishcloth featuring a repeating heart pattern."></p>
+</div></div>
+<aside class="notes">
+<p>Show <span class="math inline">\(40 \times 40\)</span>, but then transition into <span class="math inline">\(n \times n\)</span>—“one difference between a knitting project and our problems we solve”</p>
+<p>Axis of algorithmic quality includes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="quantifying-the-task" class="slide level2 smaller">
+<h2>Quantifying the task…</h2>
+<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" class="absolute" style="top: 0px; right: 0px; width: 20%; " alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
+<div class="columns">
+<div class="column" style="width:78%;">
+<ol type="1">
+<li>If we describe one dimension of a square rag by <span class="math inline">\(n\)</span>, how much work is done by the knitter? <u>____________</u></li>
+<li>If we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? <u>____________</u></li>
+<li>If each stitch takes a second, what is the largest rag we could make in one evening? <u>____________</u></li>
+<li>If it takes an evening to make a <span class="math inline">\(40 \times 40\)</span> rag, how long will it take to make an <span class="math inline">\(80 \times 80\)</span> rag? <u>____________</u></li>
+<li>If it takes time <span class="math inline">\(t\)</span> to make an <span class="math inline">\(n\)</span> by <span class="math inline">\(n\)</span> rag, how long will it take to make a <span class="math inline">\(3n \times 3n\)</span> rag? <u>____________</u></li>
+</ol>
+</div></div>
+<p>General idea: quantify the size of the problem (<span class="math inline">\(n\)</span>) and consider the cost of our task <em>as that size increases</em>.</p>
+<aside class="notes">
+<p>Draw the parabola in 4. Point out that quadratic is slower than exponential growth.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="quantifying-the-task-1" class="slide level2">
+<h2>Quantifying the task…</h2>
+<p>If we are solving a problem <u>____________</u> for a given input, we can parameterize the running time of the solution by the size of the input.</p>
+<p>We usually denote this input size using the variable <span class="math inline">\(n\)</span>.</p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img data-src="../images/pixelated-chevron-knitting-pattern.jpg" alt="A pixelated knitting pattern."></p>
+</div><div class="column" style="width:75%;">
+<p>Discussion:</p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div></div>
+<aside class="notes">
+<p>First blank: or write an algorithm</p>
+<ol type="1">
+<li>In this example we choose to label <span class="math inline">\(n\)</span> as the side-length</li>
+<li>We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3<span class="math inline">\(n\)</span> x <span class="math inline">\(n\)</span> takes time 3<span class="math inline">\(n^2\)</span> to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.</li>
+<li>Sometimes we have more than one parameter</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="quantifying-the-task-2" class="slide level2">
+<h2>Quantifying the task…</h2>
+<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+<th>10,000</th>
+<th>10<sup>12</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>1 s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n \log n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-7</sup> s</td>
+<td>40 s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(n^2\)</span></td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-4</sup> s</td>
+<td>10<sup>12</sup> s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n^3\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-3</sup> s</td>
+<td>1 s</td>
+<td>10<sup>24</sup> s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^n\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>18</sup> s</td>
+<td>10<sup>289</sup> s</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of computation we do inside our algorithm actually matters!</p>
+<aside class="notes">
+<p>Why does this matter?</p>
+<p>Annotate:</p>
+<ol type="1">
+<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
+<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
+<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
+</ol>
+<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
+<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
+<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
+<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
+<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colour-interpretation" class="slide level2">
+<h2>Colour interpretation</h2>
+<p>What’s your favorite color? Do you have a sense for <em>why</em> it’s your favorite? Does that color influence your dress/decor/purchases?</p>
+<p>Psychological: <a href="https://www.playbuzz.com/jon10/what-color-matches-your-personality" class="uri">https://www.playbuzz.com/jon10/what-color-matches-your-personality</a></p>
+<p>Cultural: <a href="https://markedbydesign.net/blog/meaning-in-color" class="uri">https://markedbydesign.net/blog/meaning-in-color</a></p>
+</section>
+<section id="your-turn-colourcultural-interpretations" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Colour—cultural interpretations</h2>
+<p>Activity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the group (briefly).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+
+</div></div>
+<div id="timer_0bde4f15131b32d4a17cc5aaa4250fa8ebcee839" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<aside class="notes">
+<p>Big design implications for data visualization</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation" class="slide level2">
+<h2>Colour—representation</h2>
+<p><img data-src="../images/ssd.jpg" class="absolute" style="top: 0px; right: 0px; width: 30%; " alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."></p>
+<p>First, some general questions…</p>
+<p>What does data look like to a computer?</p>
+<p><br>
+<br>
+</p>
+<p>Is that enough?</p>
+<div class="footer">
+<p><a href="https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/" class="uri">https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/</a></p>
+</div>
+<aside class="notes">
+<ol type="1">
+<li>Positive and negative charges interpreted as 1 and 0.</li>
+<li>Binary digits = <em>bits</em></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-1" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use bits to represent integers?</p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>10<sup>3</sup></td>
+<td>10<sup>2</sup></td>
+<td>10<sup>1</sup></td>
+<td>10<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="text-hidden">10<sup>3</sup></span></td>
+<td><span class="text-hidden">10<sup>2</sup></span></td>
+<td><span class="text-hidden">10<sup>1</sup></span></td>
+<td><span class="text-hidden">10<sup>0</sup></span></td>
+</tr>
+<tr class="even">
+<td><span class="text-hidden">2</span><sup>3</sup></td>
+<td><span class="text-hidden">2</span><sup>2</sup></td>
+<td><span class="text-hidden">2</span><sup>1</sup></td>
+<td><span class="text-hidden">2</span><sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Talk about the BASE of the number.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-2" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What’s the highest number we can represent with 4 bits?</p>
+<p><br>
+<br>
+</p>
+<p>What’s the highest number we can represent with 5 bits?</p>
+<p><br>
+<br>
+</p>
+<p>How many bits do we need to express 127?</p>
+<p><br>
+<br>
+</p>
+<aside class="notes">
+<p>Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.</p>
+<p>How does this help us with color?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-3" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use integers to represent colors?</p>
+<p>RGB (red, green, blue), where each “component” is in range 0 through 255.</p>
+<p>ex. (<code>255, 0, 127</code>) ==</p>
+<p>Fun calculator for color values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></p>
+<p>How many bits for 256 values? <code>4  5  6  7  8  9  10</code></p>
+</section>
+<section id="colourrepresentation-4" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What color is</p>
+<div class="small-font-size">
+<p><br>
+</p>
+<p><code>0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1</code></p>
+<p><br>
+</p>
+</div>
+<p>Easier to read if we use <em>hexadecimal</em> representation:</p>
+<p>Each component is represented by 2 hex digits <code>0123456789abcdef</code></p>
+<p>ex. <code>#674ea7</code></p>
+<aside class="notes">
+<p>Hex = base 16</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-aside" class="slide level2">
+<h2>Colour—representation (aside)</h2>
+<p>What do you observe about the following RGB colors?</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Green</th>
+<th style="text-align: center;">Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">178</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">95</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="potd-demo" class="slide level2">
+<h2>POTD demo</h2>
+<p>The “problem of the day” (POTD) programming exercises start next week.</p>
+<p>Navigate to <a href="https://ca.prairielearn.com">ca.prairielearn.com</a>…</p>
+</section>
+<section id="todo-for-next-class" class="slide level2">
+<h2>TODO for next class…</h2>
+<p>POTD</p>
+<p>Play: <a href="https://www.google.com/search?q=color+picker" class="uri">https://www.google.com/search?q=color+picker</a></p>
+<p>Practice exercises for next week’s examlet available Sunday.</p>
+</section></section>
+<section>
+<section id="tech-stack" class="title-slide slide level1 center">
+<h1>Tech stack</h1>
+
+</section>
+<section id="section-1" class="slide level2 centered" data-background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" data-background-interactive="true" data-menu-title="Tech stack instructions">
+<h2></h2>
+</section></section>
+<section id="type-hints-in-python" class="title-slide slide level1 center">
+<h1>Type hints in Python</h1>
+
+</section>
+
+<section id="before-next-class" class="title-slide slide level1 center">
+<h1>Before next class</h1>
+<p>Make sure to finish the setup of the tech stack!</p>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'drop': {"button":true,"shortcut":"`","engine":"pyodide","webr":{"packages":[]},"pyodide":{"packages":[]}},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: false,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealDrop, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W119
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../slides";
+    window._ojs.paths.runtimeToRoot = "../..";
+    window._ojs.paths.docToRoot = "..";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
