@@ -2,7 +2,7 @@
 title: "Syllabus"
 ---
 
-# Introduction
+## Introduction
 
 Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.
 
