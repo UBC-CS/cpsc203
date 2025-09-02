@@ -21,20 +21,21 @@ Examples:
 
 ## The Flashlight Game 🔦
 
-**Rules:**  
+**Rules:**
+
 - Everyone starts **in play**  
 - Each turn, a student poses a yes/no question  
-- **YES** = turn on your phone flashlight  
-- **NO** = keep it dark  
-- **YES people are now *on vacation*** 🌴  
+  + **YES** = turn on your phone flashlight  
+  + **NO** = keep it dark  
+- **YES** people are now on vacation 🌴  
   (lights stay off from now on — relax and enjoy!)  
 
-Constraints:  
-- Each question must put at least **5 people on vacation**  
-- And no more than **half** of the current group  
+Constraints on each question:  
+- Must put **at least 5** people on vacation,
+- And **no more than half** of the current group  
 
 End of Game:
-- We stop when **10 or fewer people remain in play**  
+- We stop when **10 or fewer people** remain in play
 - Everyone else is happily **on vacation** 🌴  
 
 <!--
