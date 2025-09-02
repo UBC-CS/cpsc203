@@ -315,7 +315,9 @@ Psychological: <https://www.playbuzz.com/jon10/what-color-matches-your-personali
 
 Cultural: <https://markedbydesign.net/blog/meaning-in-color>
 
-## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity}
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
+
+## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity .smaller}
 
 Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
 Contradictions are especially interesting.
@@ -323,9 +325,19 @@ Report your findings to the group (briefly).
 
 ::::: columns
 ::: {.column width="50%"}
+[]{.hexagon-red}
+
+[]{.hexagon-orange}
+
+[]{.hexagon-yellow}
 :::
 
 ::: {.column width="50%"}
+[]{.hexagon-green}
+
+[]{.hexagon-blue}
+
+[]{.hexagon-violet}
 :::
 :::::
 
@@ -407,8 +419,7 @@ Can we use integers to represent colors?
 
 RGB (red, green, blue), where each "component" is in range 0 through 255.
 
-ex.
-(`255, 0, 127`) ==
+ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
 
 Fun calculator for color values: <https://colorizer.org>
 
@@ -431,8 +442,7 @@ Easier to read if we use *hexadecimal* representation:
 
 Each component is represented by 2 hex digits `0123456789abcdef`
 
-ex.
-`#674ea7`
+ex. `#674ea7` []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-orange}
 
 ::: notes
 Hex = base 16
