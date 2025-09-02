@@ -515,7 +515,7 @@
     "href": "slides/01_thu_intro.html#evaluation",
     "title": "Programming, problem solving, and algorithms",
     "section": "Evaluation",
-    "text": "Evaluation\n\n\nCourse grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n25% (10 x 2.5%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n15% (3 x 5%)\nThree in the term\n\n\nTests (Examlets)\n40% (5 x 8%)\n~ Bi-weekly\n\n\nFinal Exam\n30%\nTBD"
+    "text": "Evaluation\n\n\nCourse grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n10% (2 x 5%)\nThree in the term\n\n\nTests (Examlets)\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n25%\nTBD"
   },
   {
     "objectID": "slides/01_thu_intro.html#semester-overview",
@@ -529,7 +529,7 @@
     "href": "slides/01_thu_intro.html#course-tools",
     "title": "Programming, problem solving, and algorithms",
     "section": "Course Tools",
-    "text": "Course Tools\nEd Discussion: class discussion forum\nPrairieLearn: platform to help us give you feedback on work you do!\nGitHub: code repository and version control\nVisual Studio Code: developer environment\nCanvas: basically just a place for you to find all the relevant links to things…"
+    "text": "Course Tools\nPiazza class discussion forum\nPrairieLearn: platform to help us give you feedback on work you do!\nGitHub: code repository and version control\nVisual Studio Code: developer environment\nCanvas: basically just a place for you to find all the relevant links to things…"
   },
   {
     "objectID": "slides/01_thu_intro.html#tangrams",
