@@ -30,12 +30,12 @@ Examples:
 * **YES** people are now on vacation 🌴  
   (light stays off from now on — relax and enjoy!)  
 
-A question is _valid_ if it puts at least 5 and 
-no more than half of the current group on vacation.
+A question is _valid_ if it puts **at least 5** and 
+**no more than half of the current group** on vacation.
 
 End of Game:
-- We stop when **10 or fewer people** remain in play
-- Everyone else is happily **on vacation** 🌴  
+* We stop when **10 or fewer people** remain in play
+* Everyone else is happily **on vacation** 🌴  
 
 ::: notes
 ## How to Count
@@ -43,6 +43,9 @@ End of Game:
 - I only need to count the lights (YES)  
 - The rest (dark screens) = NO  
 - Eliminated = never light up again  
+
+Start w 150 (say)
+pose question 1, 5 <= k1 <= 150/2 lights -> 150-k1 remain. pose 2, 5 <= k2 lights <= (150-k1)/2 -> 150-k1-k2 remain. pose question 3, 5 <= k3 <= (150-k1-k2)/2 -> 150-k1-k2-k3 remain. etc. 
 :::
 
 ## Debrief 💡
@@ -67,6 +70,7 @@ Punchline questions:
 
 ## Where to start? {.center}
 
+Course Website: <https://ubc-cs.github.io/cpsc203/>
 Canvas: <https://canvas.ubc.ca/courses/170624>
 
 ##  {background-image="/images/how-learning-works.png" background-size="contain" data-menu-title="Elements of mastery"}
