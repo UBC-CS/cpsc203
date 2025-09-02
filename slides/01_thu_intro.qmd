@@ -1,5 +1,5 @@
 ---
-date: 2026-01-06
+date: 2025-09-04
 ---
 
 # Introductions
@@ -10,37 +10,61 @@ date: 2026-01-06
 
 ## You? {.smaller}
 
-Let's play a game
+- Turn to your neighbor and introduce yourself 👋  
+- Together, come up with **one binary question**  
+  that you think will divide the class **about in half**  
 
-**Goal – join everyone together via a small \# of introductions.**
+Examples:  
+- Coke or Pepsi?  
+- Spaghetti or Sushi?  
+- Morning person or Night owl?  
 
-1.  Designate a first player.
+## The Flashlight Game 🔦
+## The Flashlight Game 🔦
 
-2.  At each turn (🕺🏽 💁 💃 🙅🏿 🤗 ):
+**Rules:**  
+- Everyone starts **in play**  
+- Each turn, a student poses a yes/no question  
+- **YES** = turn on your phone flashlight  
+- **NO** = keep it dark  
+- **YES people are now *on vacation*** 🌴  
+  (lights stay off from now on — relax and enjoy!)  
 
-    a.  Move: Player introduces themselves by telling one factoid about their life, and then poses, and everyone who identifies with the factoid joins by posing like the Player
+Constraints:  
+- Each question must put at least **5 people on vacation**  
+- And no more than **half** of the current group  
 
-    b.  Respond: Joins are invalid and must be reversed if...
+End of Game:
+- We stop when **10 or fewer people remain in play**  
+- Everyone else is happily **on vacation** 🌴  
 
-        i.  ≥ 8 students remain, and more than half of remaining students join, or
-        ii. \< 8 students remain, and fewer than all join.
+<!--
+## How to Count
 
-    c.  If the join is valid, then all who have ever joined take the new pose.
+- I only need to count the lights (YES)  
+- The rest (dark screens) = NO  
+- Eliminated = never light up again  
+-->
 
-    d.  Iterate: Player selects a new player for the next round.
+## Debrief 💡
 
-::: notes
-Icebreaker game
-:::
+Punchline questions:  
 
-## You?
+1. We know we will need at least ____________ questions.
 
-Questions:
+2. We know we will need no more than ____________ questions.
 
-1.  What's an ideal factoid? One that...\
-2.  What's the least number of questions we can hope for?
+3. Why did we stop at 10 instead of 1?  
 
-[Why did we do this?]{.fragment}
+4. Why did we do this?
+
+
+<!--
+- Best case: keep halving ⇒ about **log₂(150/10) ≈ 4 rounds**  
+- Worst case: only 5 eliminated each round ⇒ ~28 rounds  
+- Stopping at 10 = “small enough to brute force”  
+  → common strategy in algorithms  
+-->
 
 ## Where to start? {.center}
 
@@ -88,7 +112,7 @@ This course will teach you a bajillion different things!
 
 **Projects:** 3 total
 
-**Assessments:** 6 tests (examlets) + final
+**Assessments:** 5 tests (examlets) + final
 
 ## Passing Requirements
 
@@ -96,7 +120,7 @@ You must satisfy **ALL** conditions to pass the course:
 
 1.  Earn a grade of at least 50% in the Lab component.
 2.  Achieve a minimum grade of 50% in both the Test and Exam components combined.
-3.  Pass the Final Exam with a minimum grade of 40%.
+3.  Pass the Final Exam with a minimum grade of 50%.
 
 If students do not satisfy the appropriate requirements, the student will be assigned the **lower** of their earned course grade or a maximum overall grade of 45 in the course.
 
@@ -105,21 +129,13 @@ If students do not satisfy the appropriate requirements, the student will be ass
 ::: small-font-size
 | Item                 | Weight          | Due date(s)       |
 |----------------------|-----------------|-------------------|
-| Learning Logs        | 5% (10 x 0.5%)  | Saturdays at 6 PM |
 | Problems of the Week | 25% (10 x 2.5%) | Fridays at 6 PM   |
 | Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
 | Programming Projects | 15% (3 x 5%)    | Three in the term |
-| Tests (Examlets)     | 30% (6 x 5%)    | \~ Bi-weekly      |
-| Final Exam           | 20%             | TBD               |
+| Tests (Examlets)     | 40% (5 x 8%)    | \~ Bi-weekly      |
+| Final Exam           | 30%             | TBD               |
 
-: Course grading scheme: There will be 6 tests in this course in an (approximately) bi-weekly schedule.
-:::
-
-::: callout-important
-## Grace period for due dates
-
-All due dates in this course have an automatic 48-hour grace period after the due dates listed above.
-Any submissions submitted past the grace period will not be graded (with some exceptions).
+: Course grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.
 :::
 
 ## Semester overview {.smaller}
