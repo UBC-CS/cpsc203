@@ -132,11 +132,11 @@ If students do not satisfy the appropriate requirements, the student will be ass
 ::: small-font-size
 | Item                 | Weight          | Due date(s)       |
 |----------------------|-----------------|-------------------|
-| Problems of the Week | 25% (10 x 2.5%) | Fridays at 6 PM   |
+| Problems of the Week | 10% (10 x 1%)   | Fridays at 6 PM   |
 | Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
-| Programming Projects | 15% (3 x 5%)    | Three in the term |
-| Tests (Examlets)     | 40% (5 x 8%)    | \~ Bi-weekly      |
-| Final Exam           | 30%             | TBD               |
+| Programming Projects | 10% (2 x 5%)    | Three in the term |
+| Tests (Examlets)     | 50% (5 x 10%)   | \~ Bi-weekly      |
+| Final Exam           | 25%             | TBD               |
 
 : Course grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.
 :::
@@ -159,7 +159,7 @@ You will emerge from the course with increased proficiency in Python programming
 
 ## Course Tools
 
-**Ed Discussion:** class discussion forum
+**Piazza** class discussion forum
 
 **PrairieLearn:** platform to help us give you feedback on work you do!
 
