@@ -4,9 +4,32 @@ title: "Syllabus"
 
 # Introduction
 
+Course Description (student-friendly)
+Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.
+
 ## Instructor information
 
 ## Course description and learning objectives
+
+Learning Outcomes for CPSC203
+
+By the end of this course, students will be able to:
+
+1. Implement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.
+
+2. Use core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.
+
+3. Leverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.
+
+4. Apply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.
+
+5. Design and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.
+
+6. Evaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.
+
+7. Apply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.
+
+8. Reflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.
 
 ## Lecture material
 
