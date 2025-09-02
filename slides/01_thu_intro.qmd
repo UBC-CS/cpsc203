@@ -70,8 +70,10 @@ Punchline questions:
 
 ## Where to start? {.center}
 
-Course Website: <https://ubc-cs.github.io/cpsc203/>
-Canvas: <https://canvas.ubc.ca/courses/170624>
+Canvas: [{{< var course.lms >}}]({{< var course.lms >}})
+Course Website: [{{< var course.website >}}]({{< var course.website >}})
+PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
+
 
 ##  {background-image="/images/how-learning-works.png" background-size="contain" data-menu-title="Elements of mastery"}
 
