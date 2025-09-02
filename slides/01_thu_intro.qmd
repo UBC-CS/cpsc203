@@ -68,7 +68,7 @@ Punchline questions:
 
 ## Where to start? {.center}
 
-Canvas: <https://canvas.ubc.ca/courses/130127>
+Canvas: <https://canvas.ubc.ca/courses/170624>
 
 ##  {background-image="/images/how-learning-works.png" background-size="contain" data-menu-title="Elements of mastery"}
 
