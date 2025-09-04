@@ -4,17 +4,28 @@ date: 2025-09-04
 
 # Introductions
 
-## About me
+## Teaching Staff
 
-## Our amazing TAs
+- **Prof: Cinda Heeren**
+  📧 [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)
+   ⏰ Mon 2–4pm · 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:20px; vertical-align:middle;"></a>
 
-## You? {.smaller}
+- **TA: Minh Anh Nguyen**
+  📧 [](mailto:)
+  ⏰ TBD · 🏢 TBD
+
+- **TA: Joel Gunawan**
+  📧 [](mailto:)
+  ⏰ TBD · 🏢 TBD
+
+## You! {.smaller}
 
 * Turn to your neighbor and introduce yourself 👋  
 * Together, come up with **one binary question**  
   that you think will divide the class **about in half**  
 
 Examples:  
+
 * Coke or Pepsi?  
 * Spaghetti or Sushi?  
 * Morning person or Night owl?  
@@ -34,27 +45,32 @@ A question is _valid_ if it puts **at least 5** and
 **no more than half of the current group** on vacation.
 
 End of Game:
+
 * We stop when **10 or fewer people** remain in play
 * Everyone else is happily **on vacation** 🌴  
 
 ::: notes
-## How to Count
+
+How to Count
 
 - I only need to count the lights (YES)  
 - The rest (dark screens) = NO  
 - Eliminated = never light up again  
 
 Start w 150 (say)
-pose question 1, 5 <= k1 <= 150/2 lights -> 150-k1 remain. pose 2, 5 <= k2 lights <= (150-k1)/2 -> 150-k1-k2 remain. pose question 3, 5 <= k3 <= (150-k1-k2)/2 -> 150-k1-k2-k3 remain. etc. 
+pose question 1, 5 <= k1 <= 150/2 lights -> 150-k1 remain. 
+pose 2, 5 <= k2 lights <= (150-k1)/2 -> 150-k1-k2 remain. 
+pose question 3, 5 <= k3 <= (150-k1-k2)/2 -> 150-k1-k2-k3 remain. etc. 
+
 :::
 
 ## Debrief 💡
 
 Punchline questions:  
 
-1. We know we will need at least ${\hline{12em}}$ questions.
+1. We know we will need at least ${\underline{\hspace{12em}}}$ questions.
 
-2. We know we will need no more than ${\hline{12em}}$ questions.
+2. We know we will need no more than ${\underline{\hspace{12em}}}$$ questions.
 
 3. Why did we stop at 10 instead of 1?  
 
@@ -62,26 +78,21 @@ Punchline questions:
 
 
 ::: notes
+
 - Best case: keep halving ⇒ about **log₂(150/10) ≈ 4 rounds**  
 - Worst case: only 5 eliminated each round ⇒ ~28 rounds  
 - Stopping at 10 = “small enough to brute force”  
   → common strategy in algorithms  
+
 :::
 
 ## Where to start? {.center}
 
 Canvas: [{{< var course.lms >}}]({{< var course.lms >}})
+
 Course Website: [{{< var course.website >}}]({{< var course.website >}})
+
 PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
-
-
-##  {background-image="/images/how-learning-works.png" background-size="contain" data-menu-title="Elements of mastery"}
-
-::: sr-only
-The stages of skill mastery: acquiring skills, practicing and integrating skills, and knowing when to apply skills.
-:::
-
-##  {background-iframe="https://ubc-cs.github.io/cpsc203/" background-interactive="true" data-menu-title="Course Website"}
 
 ## About This Course
 
@@ -93,41 +104,17 @@ This course will teach you a bajillion different things!
 -   Algorithms: many algorithms!
 -   Art and creativity: lots of examples!
 
-## Course Designer – Dr. Cinda Heeren!
-
-::::: columns
-::: {.column width="60%"}
--   Teaching Professor, at UBC since 2017 (previously at University of Illinois Urbana-Champaign).
-
--   Teaches mid-level required courses for CS specializations (mostly CPSC 221) & a similar course for non-majors!
-:::
-
-::: {.column width="40%"}
-![](/images/cinda-heeren.jpg){fig-alt="Course designer Dr. Cinda Heeren"}
-:::
-:::::
-
 ## Course Components
 
 **Lectures:** in-class activities based on problem solving and design.
 
-**Labs:** practice on lecture material
+**Labs:** details about tools and code!
 
-**Problems of the day (POTD):** one per (week)day, 5/week, \~ 50 / term
+**Problems of the day (POTD):** 5/week, \~ 50 / term
 
 **Projects:** 3 total
 
 **Assessments:** 5 tests (examlets) + final
-
-## Passing Requirements
-
-You must satisfy **ALL** conditions to pass the course:
-
-1.  Earn a grade of at least 50% in the Lab component.
-2.  Achieve a minimum grade of 50% in both the Test and Exam components combined.
-3.  Pass the Final Exam with a minimum grade of 50%.
-
-If students do not satisfy the appropriate requirements, the student will be assigned the **lower** of their earned course grade or a maximum overall grade of 45 in the course.
 
 ## Evaluation
 
@@ -142,6 +129,31 @@ If students do not satisfy the appropriate requirements, the student will be ass
 
 : Course grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.
 :::
+
+## Term Schedule
+
+::::: columns
+::: {.column style="width: 80%; font-size: 50%;"}
+
+| Week | Sunday | T | R | Lab | Examlet |
+|:---:|---|:---:|:---:|:---:|:---:|
+| 1  | 8/31/2025  | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> |   |   |
+| 2  | 9/7/2025   | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> |  |   |
+| 3  | 9/14/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
+| 4  | 9/21/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+| 5  | 9/28/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
+| 6  | 10/5/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+| 7  | 10/12/2025 | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> |   |   |
+| 8  | 10/19/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
+| 9  | 10/26/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+| 10  | 11/2/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
+| 11  | 11/9/2025 | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> |   |   |
+| 12  | 11/16/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+| 13  | 11/23/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
+| 14  | 11/30/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+
+:::
+:::::
 
 ## Semester overview {.smaller}
 
