@@ -427,60 +427,39 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/01_thu_intro.html#about-me",
-    "href": "slides/01_thu_intro.html#about-me",
+    "objectID": "slides/01_thu_intro.html#teaching-staff",
+    "href": "slides/01_thu_intro.html#teaching-staff",
     "title": "Programming, problem solving, and algorithms",
-    "section": "About me",
-    "text": "About me"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#our-amazing-tas",
-    "href": "slides/01_thu_intro.html#our-amazing-tas",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Our amazing TAs",
-    "text": "Our amazing TAs"
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\nProf: Cinda Heeren 📧 cheeren@cs.ubc.ca ⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen 📧  ⏰ TBD · 🏢 TBD\nTA: Joel Gunawan 📧  ⏰ TBD · 🏢 TBD"
   },
   {
     "objectID": "slides/01_thu_intro.html#you",
     "href": "slides/01_thu_intro.html#you",
     "title": "Programming, problem solving, and algorithms",
-    "section": "You?",
-    "text": "You?\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n* Coke or Pepsi?\n* Spaghetti or Sushi?\n* Morning person or Night owl?"
+    "section": "You!",
+    "text": "You!\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n\nCoke or Pepsi?\n\nSpaghetti or Sushi?\n\nMorning person or Night owl?"
   },
   {
     "objectID": "slides/01_thu_intro.html#the-flashlight-game",
     "href": "slides/01_thu_intro.html#the-flashlight-game",
     "title": "Programming, problem solving, and algorithms",
     "section": "The Flashlight Game 🔦",
-    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game: * We stop when 10 or fewer people remain in play * Everyone else is happily on vacation 🌴"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#how-to-count",
-    "href": "slides/01_thu_intro.html#how-to-count",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How to Count",
-    "text": "How to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again\n\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
+    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game:\n\nWe stop when 10 or fewer people remain in play\nEveryone else is happily on vacation 🌴\n\n\nHow to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again\n\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
   },
   {
     "objectID": "slides/01_thu_intro.html#debrief",
     "href": "slides/01_thu_intro.html#debrief",
     "title": "Programming, problem solving, and algorithms",
     "section": "Debrief 💡",
-    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least \\({\\hline{12em}}\\) questions.\nWe know we will need no more than \\({\\hline{12em}}\\) questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
+    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least \\({\\underline{\\hspace{12em}}}\\) questions.\nWe know we will need no more than \\({\\underline{\\hspace{12em}}}\\)$ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
   },
   {
     "objectID": "slides/01_thu_intro.html#where-to-start",
     "href": "slides/01_thu_intro.html#where-to-start",
     "title": "Programming, problem solving, and algorithms",
     "section": "Where to start?",
-    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/170624 Course Website: https://ubc-cs.github.io/cpsc203 PrairieLearn: https://us.prairielearn.com/pl/course_instance/193300"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#section",
-    "href": "slides/01_thu_intro.html#section",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "The stages of skill mastery: acquiring skills, practicing and integrating skills, and knowing when to apply skills."
+    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/170624\nCourse Website: https://ubc-cs.github.io/cpsc203\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/193300"
   },
   {
     "objectID": "slides/01_thu_intro.html#about-this-course",
@@ -490,25 +469,11 @@
     "text": "About This Course\nThis course will teach you a bajillion different things!\n\nTools: Terminal, Markdown, Git, Visual Studio Code, PrairieLearn\nComputer science: Python (!!!), efficiency, web scraping, graphs\nData science: pandas, data frames, visualizations\nAlgorithms: many algorithms!\nArt and creativity: lots of examples!"
   },
   {
-    "objectID": "slides/01_thu_intro.html#course-designer-dr.-cinda-heeren",
-    "href": "slides/01_thu_intro.html#course-designer-dr.-cinda-heeren",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Course Designer – Dr. Cinda Heeren!",
-    "text": "Course Designer – Dr. Cinda Heeren!\n\n\n\nTeaching Professor, at UBC since 2017 (previously at University of Illinois Urbana-Champaign).\nTeaches mid-level required courses for CS specializations (mostly CPSC 221) & a similar course for non-majors!"
-  },
-  {
     "objectID": "slides/01_thu_intro.html#course-components",
     "href": "slides/01_thu_intro.html#course-components",
     "title": "Programming, problem solving, and algorithms",
     "section": "Course Components",
-    "text": "Course Components\nLectures: in-class activities based on problem solving and design.\nLabs: practice on lecture material\nProblems of the day (POTD): one per (week)day, 5/week, ~ 50 / term\nProjects: 3 total\nAssessments: 5 tests (examlets) + final"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#passing-requirements",
-    "href": "slides/01_thu_intro.html#passing-requirements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Passing Requirements",
-    "text": "Passing Requirements\nYou must satisfy ALL conditions to pass the course:\n\nEarn a grade of at least 50% in the Lab component.\nAchieve a minimum grade of 50% in both the Test and Exam components combined.\nPass the Final Exam with a minimum grade of 50%.\n\nIf students do not satisfy the appropriate requirements, the student will be assigned the lower of their earned course grade or a maximum overall grade of 45 in the course."
+    "text": "Course Components\nLectures: in-class activities based on problem solving and design.\nLabs: details about tools and code!\nProblems of the day (POTD): 5/week, ~ 50 / term\nProjects: 3 total\nAssessments: 5 tests (examlets) + final"
   },
   {
     "objectID": "slides/01_thu_intro.html#evaluation",
@@ -516,6 +481,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Evaluation",
     "text": "Evaluation\n\n\nCourse grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n10% (2 x 5%)\nThree in the term\n\n\nTests (Examlets)\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n25%\nTBD"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#term-schedule",
+    "href": "slides/01_thu_intro.html#term-schedule",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Term Schedule",
+    "text": "Term Schedule\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nSunday\nT\nR\nLab\nExamlet\n\n\n\n\n1\n8/31/2025\n    \n🎉\n\n\n\n\n2\n9/7/2025\n🎉\n🎉\n\n\n\n\n3\n9/14/2025\n🎉\n🎉\n🪄\n🤩\n\n\n4\n9/21/2025\n🎉\n🎉\n🪄\n\n\n\n5\n9/28/2025\n🎉\n🎉\n🪄\n🤩\n\n\n6\n10/5/2025\n🎉\n🎉\n🪄\n\n\n\n7\n10/12/2025\n    \n    \n\n\n\n\n8\n10/19/2025\n🎉\n🎉\n🪄\n🤩\n\n\n9\n10/26/2025\n🎉\n🎉\n🪄\n\n\n\n10\n11/2/2025\n🎉\n🎉\n🪄\n🤩\n\n\n11\n11/9/2025\n    \n    \n\n\n\n\n12\n11/16/2025\n🎉\n🎉\n🪄\n\n\n\n13\n11/23/2025\n🎉\n🎉\n🪄\n🤩\n\n\n14\n11/30/2025\n🎉\n🎉\n🪄"
   },
   {
     "objectID": "slides/01_thu_intro.html#semester-overview",
