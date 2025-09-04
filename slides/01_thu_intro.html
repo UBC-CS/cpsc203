@@ -9,8 +9,6 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.34">
 
@@ -198,7 +196,7 @@ that you think will divide the class <strong>about in half</strong></li>
 (light stays off from now on — relax and enjoy!)</li>
 </ul>
 <p>A question is <em>valid</em> if it puts <strong>at least 5</strong> and <strong>no more than half of the current group</strong> on vacation.</p>
-<p>End of Game:</p>
+<p><strong>End of Game:</strong></p>
 <ul>
 <li>We stop when <strong>10 or fewer people</strong> remain in play</li>
 <li>Everyone else is happily <strong>on vacation</strong> 🌴</li>
@@ -229,8 +227,8 @@ that you think will divide the class <strong>about in half</strong></li>
 <h2>Debrief 💡</h2>
 <p>Punchline questions:</p>
 <ol type="1">
-<li><p>We know we will need at least <span class="math inline">\({\underline{\hspace{12em}}}\)</span> questions.</p></li>
-<li><p>We know we will need no more than <span class="math inline">\({\underline{\hspace{12em}}}\)</span>$ questions.</p></li>
+<li><p>We know we will need at least ______ questions.</p></li>
+<li><p>We know we will need no more than ______ questions.</p></li>
 <li><p>Why did we stop at 10 instead of 1?</p></li>
 <li><p>Why did we do this?</p></li>
 </ol>
@@ -263,28 +261,201 @@ that you think will divide the class <strong>about in half</strong></li>
 </section>
 <section id="about-this-course" class="slide level2">
 <h2>About This Course</h2>
-<p>This course will teach you a bajillion different things!</p>
+<p>This course will teach you a bunch of different things!</p>
 <ul>
-<li>Tools: Terminal, Markdown, Git, Visual Studio Code, PrairieLearn</li>
+<li>Tools: Terminal, Markdown, Git, marimo, PrairieLearn</li>
 <li>Computer science: Python (!!!), efficiency, web scraping, graphs</li>
 <li>Data science: pandas, data frames, visualizations</li>
 <li>Algorithms: many algorithms!</li>
 <li>Art and creativity: lots of examples!</li>
 </ul>
 </section>
-<section id="course-components" class="slide level2">
-<h2>Course Components</h2>
-<p><strong>Lectures:</strong> in-class activities based on problem solving and design.</p>
-<p><strong>Labs:</strong> details about tools and code!</p>
-<p><strong>Problems of the day (POTD):</strong> 5/week, ~ 50 / term</p>
-<p><strong>Projects:</strong> 3 total</p>
-<p><strong>Assessments:</strong> 5 tests (examlets) + final</p>
+<section id="term-schedule" class="slide level2">
+<h2>Term Schedule</h2>
+<!-- CSS: include once -->
+<style>
+  .pill{display:inline-block; min-width:28px; padding:2px 6px; border-radius:4px; text-align:center; font-weight:600; line-height:1;}
+  .pill--off{background:#ddd; color:#111;}
+  .pill--class{background:purple; color:#fff;}
+  .pill--lab{background:dodgerblue; color:#fff;}
+  .pill--exam{background:seagreen; color:#fff;}
+  .pill--potw{background:#facc15; color:#111;}      /* yellow */
+  .pill--practice{background:#ef4444; color:#fff;}  /* red */
+</style>
+<div class="columns">
+<div class="column" style="width: 80%; font-size: 50%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Week</th>
+<th>Sunday</th>
+<th style="text-align: center;">T</th>
+<th style="text-align: center;">R</th>
+<th style="text-align: center;">Lab</th>
+<th style="text-align: center;">Examlet</th>
+<th style="text-align: center;">POTW</th>
+<th style="text-align: center;">Practice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>8/31/2025</td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>9/7/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>9/14/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>9/21/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>9/28/2025</td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td>10/5/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td>10/12/2025</td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td>10/19/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td>10/26/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td>11/2/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td>11/9/2025</td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"><span class="pill pill--off" title="No class">&nbsp;</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td>11/16/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td>11/23/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
+<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td>11/30/2025</td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
+<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
+</tr>
+</tbody>
+</table>
+</div></div>
 </section>
 <section id="evaluation" class="slide level2">
 <h2>Evaluation</h2>
 <div class="small-font-size">
 <table class="caption-top">
-<caption>Course grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.</caption>
 <thead>
 <tr class="header">
 <th>Item</th>
@@ -305,162 +476,76 @@ that you think will divide the class <strong>about in half</strong></li>
 </tr>
 <tr class="odd">
 <td>Programming Projects</td>
-<td>10% (2 x 5%)</td>
+<td>9% (3 x 3%)</td>
 <td>Three in the term</td>
 </tr>
 <tr class="even">
-<td>Tests (Examlets)</td>
+<td>Examlets.</td>
 <td>50% (5 x 10%)</td>
 <td>~ Bi-weekly</td>
 </tr>
 <tr class="odd">
 <td>Final Exam</td>
-<td>25%</td>
+<td>26%</td>
 <td>TBD</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="term-schedule" class="slide level2">
-<h2>Term Schedule</h2>
-<div class="columns">
-<div class="column" style="width: 80%; font-size: 50%;">
+<section id="communications" class="slide level2">
+<h2>Communications</h2>
+<div style="font-size: 80%;">
+<ul>
+<li><p>📧 <strong>Email</strong> <a href="mailto:cheeren@cs.ubc.ca">cheeren@cs.ubc.ca</a><br>
+Checked daily. Please place “CPSC203” in subject!</p></li>
+<li><p><a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203"> <img src="https://tse2.mm.bing.net/th/id/OIP.usjgslq1FEPq7pholcHorQD6D6?pid=Api" alt="Piazza" style="height:20px; vertical-align:middle;"> </a> <strong>Piazza</strong> <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203">piazza.com/ubc.ca/winterterm12025/cpsc203</a><br>
+Post questions for quick response.</p></li>
+<li><p>🏫 <strong>Office Hours</strong></p></li>
+</ul>
+<div style="margin:auto; width:fit-content;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 35%">
+<col style="width: 45%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Week</th>
-<th>Sunday</th>
-<th style="text-align: center;">T</th>
-<th style="text-align: center;">R</th>
-<th style="text-align: center;">Lab</th>
-<th style="text-align: center;">Examlet</th>
+<th>Name</th>
+<th>Time</th>
+<th>Location &amp; Zoom</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
-<td>8/31/2025</td>
-<td style="text-align: center;"><span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td>Cinda</td>
+<td>Mon 2–4pm</td>
+<td>🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:16px; vertical-align:middle;"></a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
-<td>9/7/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td>Minh Anh</td>
+<td>TBD</td>
+<td>🏢 TBD</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td>9/14/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"><span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span></td>
+<td>Joel</td>
+<td>TBD</td>
+<td>🏢 TBD</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">4</td>
-<td>9/21/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td>9/28/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"><span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td>10/5/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td>10/12/2025</td>
-<td style="text-align: center;"><span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-<td style="text-align: center;"><span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td>10/19/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"><span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td>10/26/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td>11/2/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"><span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">11</td>
-<td>11/9/2025</td>
-<td style="text-align: center;"><span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-<td style="text-align: center;"><span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">12</td>
-<td>11/16/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">13</td>
-<td>11/23/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"><span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">14</td>
-<td>11/30/2025</td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span></td>
-<td style="text-align: center;"><span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span></td>
-<td style="text-align: center;"></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>🏢 TBD</td>
 </tr>
 </tbody>
 </table>
-</div></div>
+</div>
+<ul>
+<li>🌐 <strong>Course Website</strong> <a href="https://ubc-cs.github.io/cpsc203/">https://ubc-cs.github.io/cpsc203/</a><br>
+Syllabus, schedule, resources</li>
+</ul>
+</div>
 </section>
 <section id="semester-overview" class="slide level2 smaller">
 <h2>Semester overview</h2>
@@ -504,30 +589,6 @@ that you think will divide the class <strong>about in half</strong></li>
 </table>
 <p>This course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving.</p>
 </section>
-<section id="course-tools" class="slide level2">
-<h2>Course Tools</h2>
-<p><strong>Piazza</strong> class discussion forum</p>
-<p><strong>PrairieLearn:</strong> platform to help us give you feedback on work you do!</p>
-<p><strong>GitHub:</strong> code repository and version control</p>
-<p><strong>Visual Studio Code:</strong> developer environment</p>
-<p><strong>Canvas:</strong> basically just a place for you to find all the relevant links to things…</p>
-</section></section>
-<section id="any-questions-before-we-continue" class="title-slide slide level1 center">
-<h1>Any questions before we continue?</h1>
-
-</section>
-
-<section>
-<section id="break" class="title-slide slide level1 center">
-<h1>Break</h1>
-<div id="timer_44aa261f6cfa00591a32cd9cdb3ac0475144617d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
 <section id="tangrams" class="slide level2">
 <h2>Tangrams</h2>
 <div class="quarto-layout-panel" data-layout="[35.7,5,59.3]">
@@ -552,37 +613,6 @@ that you think will divide the class <strong>about in half</strong></li>
 <li><p>Solve as many as you’d like, together</p></li>
 <li><p>Speculate together on why you’re doing this!!</p></li>
 </ol>
-<div id="timer_44aa261f6cfa00591a32cd9cdb3ac0475144617d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section></section>
-<section>
-<section id="lets-learn-markdown" class="title-slide slide level1 center">
-<h1>Let’s learn <br> <iconify-icon role="img" inline="" icon="fa6-brands:markdown" aria-label="Icon markdown from fa6-brands Iconify.design set." title="Icon markdown from fa6-brands Iconify.design set."></iconify-icon> Markdown</h1>
-<div id="timer_44aa261f6cfa00591a32cd9cdb3ac0475144617d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="your-turn-time-to-practice-markdown" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: time to practice Markdown!</h2>
-<div id="timer_44aa261f6cfa00591a32cd9cdb3ac0475144617d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section></section>
-<section id="the-magic-number-for-today-______-see-you-thursday" class="title-slide slide level1 center" style="text-align: center;">
-<h1>The Magic Number for today <br> <br> ______ <br> <br> See you Thursday!</h1>
 
 
 <script type="ojs-module-contents">
@@ -599,7 +629,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

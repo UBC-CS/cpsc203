@@ -452,7 +452,7 @@
     "href": "slides/01_thu_intro.html#debrief",
     "title": "Programming, problem solving, and algorithms",
     "section": "Debrief 💡",
-    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least \\({\\underline{\\hspace{12em}}}\\) questions.\nWe know we will need no more than \\({\\underline{\\hspace{12em}}}\\)$ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
+    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least ______ questions.\nWe know we will need no more than ______ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
   },
   {
     "objectID": "slides/01_thu_intro.html#where-to-start",
@@ -466,28 +466,28 @@
     "href": "slides/01_thu_intro.html#about-this-course",
     "title": "Programming, problem solving, and algorithms",
     "section": "About This Course",
-    "text": "About This Course\nThis course will teach you a bajillion different things!\n\nTools: Terminal, Markdown, Git, Visual Studio Code, PrairieLearn\nComputer science: Python (!!!), efficiency, web scraping, graphs\nData science: pandas, data frames, visualizations\nAlgorithms: many algorithms!\nArt and creativity: lots of examples!"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#course-components",
-    "href": "slides/01_thu_intro.html#course-components",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Course Components",
-    "text": "Course Components\nLectures: in-class activities based on problem solving and design.\nLabs: details about tools and code!\nProblems of the day (POTD): 5/week, ~ 50 / term\nProjects: 3 total\nAssessments: 5 tests (examlets) + final"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#evaluation",
-    "href": "slides/01_thu_intro.html#evaluation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Evaluation",
-    "text": "Evaluation\n\n\nCourse grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n10% (2 x 5%)\nThree in the term\n\n\nTests (Examlets)\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n25%\nTBD"
+    "text": "About This Course\nThis course will teach you a bunch of different things!\n\nTools: Terminal, Markdown, Git, marimo, PrairieLearn\nComputer science: Python (!!!), efficiency, web scraping, graphs\nData science: pandas, data frames, visualizations\nAlgorithms: many algorithms!\nArt and creativity: lots of examples!"
   },
   {
     "objectID": "slides/01_thu_intro.html#term-schedule",
     "href": "slides/01_thu_intro.html#term-schedule",
     "title": "Programming, problem solving, and algorithms",
     "section": "Term Schedule",
-    "text": "Term Schedule\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nSunday\nT\nR\nLab\nExamlet\n\n\n\n\n1\n8/31/2025\n    \n🎉\n\n\n\n\n2\n9/7/2025\n🎉\n🎉\n\n\n\n\n3\n9/14/2025\n🎉\n🎉\n🪄\n🤩\n\n\n4\n9/21/2025\n🎉\n🎉\n🪄\n\n\n\n5\n9/28/2025\n🎉\n🎉\n🪄\n🤩\n\n\n6\n10/5/2025\n🎉\n🎉\n🪄\n\n\n\n7\n10/12/2025\n    \n    \n\n\n\n\n8\n10/19/2025\n🎉\n🎉\n🪄\n🤩\n\n\n9\n10/26/2025\n🎉\n🎉\n🪄\n\n\n\n10\n11/2/2025\n🎉\n🎉\n🪄\n🤩\n\n\n11\n11/9/2025\n    \n    \n\n\n\n\n12\n11/16/2025\n🎉\n🎉\n🪄\n\n\n\n13\n11/23/2025\n🎉\n🎉\n🪄\n🤩\n\n\n14\n11/30/2025\n🎉\n🎉\n🪄"
+    "text": "Term Schedule\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nSunday\nT\nR\nLab\nExamlet\nPOTW\nPractice\n\n\n\n\n1\n8/31/2025\n \n🎉\n\n\n\n\n\n\n2\n9/7/2025\n🎉\n🎉\n\n\n🏎️\n🏋️\n\n\n3\n9/14/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n4\n9/21/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n5\n9/28/2025\n \n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n6\n10/5/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n7\n10/12/2025\n \n \n\n\n\n\n\n\n8\n10/19/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n9\n10/26/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n10\n11/2/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n11\n11/9/2025\n \n \n\n\n\n\n\n\n12\n11/16/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n13\n11/23/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n14\n11/30/2025\n🎉\n🎉\n🪄\n\n\n🏋️"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#evaluation",
+    "href": "slides/01_thu_intro.html#evaluation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Evaluation",
+    "text": "Evaluation\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#communications",
+    "href": "slides/01_thu_intro.html#communications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Communications",
+    "text": "Communications\n\n\n📧 Email cheeren@cs.ubc.ca\nChecked daily. Please place “CPSC203” in subject!\n   Piazza piazza.com/ubc.ca/winterterm12025/cpsc203\nPost questions for quick response.\n🏫 Office Hours\n\n\n\n\n\n\n\n\n\n\nName\nTime\nLocation & Zoom\n\n\n\n\nCinda\nMon 2–4pm\n🏢 ICCS 233 · \n\n\nMinh Anh\nTBD\n🏢 TBD\n\n\nJoel\nTBD\n🏢 TBD\n\n\nTBD\nTBD\n🏢 TBD\n\n\n\n\n\n🌐 Course Website https://ubc-cs.github.io/cpsc203/\nSyllabus, schedule, resources"
   },
   {
     "objectID": "slides/01_thu_intro.html#semester-overview",
@@ -495,13 +495,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Semester overview",
     "text": "Semester overview\n\n\n\n\n\n\n\n\n\n\n\nHandcraft\nBillboard Hot 100\nThe Overstory and Pointillism\nArtificial Music Composition\nRoad Trip Planning\nSpiderman’s Social Network\n\n\n\n\nDesign\nObjects\nIteration\nWeb Scraping\nData Frames\nMatPlotLib\nVoronoi Diagrams\nEfficiency\nMarkov Chains\nRandom Numbers\nGraphs\nTraveling Salesperson\nIntractable Problems\nNatural Language\n\n\n\nThis course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#course-tools",
-    "href": "slides/01_thu_intro.html#course-tools",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Course Tools",
-    "text": "Course Tools\nPiazza class discussion forum\nPrairieLearn: platform to help us give you feedback on work you do!\nGitHub: code repository and version control\nVisual Studio Code: developer environment\nCanvas: basically just a place for you to find all the relevant links to things…"
   },
   {
     "objectID": "slides/01_thu_intro.html#tangrams",
@@ -515,14 +508,7 @@
     "href": "slides/01_thu_intro.html#your-turn-tangrams",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: tangrams",
-    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!\n\n\n  \n    −\n    +\n \n 10:00"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#your-turn-time-to-practice-markdown",
-    "href": "slides/01_thu_intro.html#your-turn-time-to-practice-markdown",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: time to practice Markdown!",
-    "text": "Your turn: time to practice Markdown!\n\n  \n    −\n    +\n \n 20:00"
+    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!"
   },
   {
     "objectID": "index.html",
