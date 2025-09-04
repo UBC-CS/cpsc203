@@ -44,7 +44,7 @@ Examples:
 A question is _valid_ if it puts **at least 5** and 
 **no more than half of the current group** on vacation.
 
-End of Game:
+**End of Game:**
 
 * We stop when **10 or fewer people** remain in play
 * Everyone else is happily **on vacation** 🌴  
@@ -68,9 +68,9 @@ pose question 3, 5 <= k3 <= (150-k1-k2)/2 -> 150-k1-k2-k3 remain. etc.
 
 Punchline questions:  
 
-1. We know we will need at least ${\underline{\hspace{12em}}}$ questions.
+1. We know we will need at least \_\_\_\_\_\_ questions.
 
-2. We know we will need no more than ${\underline{\hspace{12em}}}$$ questions.
+2. We know we will need no more than \_\_\_\_\_\_ questions.
 
 3. Why did we stop at 10 instead of 1?  
 
@@ -96,25 +96,51 @@ PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}}
 
 ## About This Course
 
-This course will teach you a bajillion different things!
+This course will teach you a bunch of different things!
 
--   Tools: Terminal, Markdown, Git, Visual Studio Code, PrairieLearn
+-   Tools: Terminal, Markdown, Git, marimo, PrairieLearn
 -   Computer science: Python (!!!), efficiency, web scraping, graphs
 -   Data science: pandas, data frames, visualizations
 -   Algorithms: many algorithms!
 -   Art and creativity: lots of examples!
 
-## Course Components
 
-**Lectures:** in-class activities based on problem solving and design.
+## Term Schedule
 
-**Labs:** details about tools and code!
+<!-- CSS: include once -->
+<style>
+  .pill{display:inline-block; min-width:28px; padding:2px 6px; border-radius:4px; text-align:center; font-weight:600; line-height:1;}
+  .pill--off{background:#ddd; color:#111;}
+  .pill--class{background:purple; color:#fff;}
+  .pill--lab{background:dodgerblue; color:#fff;}
+  .pill--exam{background:seagreen; color:#fff;}
+  .pill--potw{background:#facc15; color:#111;}      /* yellow */
+  .pill--practice{background:#ef4444; color:#fff;}  /* red */
+</style>
 
-**Problems of the day (POTD):** 5/week, \~ 50 / term
+::::: columns
+::: {.column style="width: 80%; font-size: 50%;"}
 
-**Projects:** 3 total
+| Week | Sunday     | T                                      | R                                      | Lab                                    | Examlet                                | POTW                                  | Practice                             |
+|:---:|------------|:---------------------------------------:|:---------------------------------------:|:--------------------------------------:|:--------------------------------------:|:-------------------------------------:|:------------------------------------:|
+|  1  | 8/31/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--class" title="Lecture">🎉</span> |                                        |                                        |                                       |                                      |
+|  2  | 9/7/2025   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> |                                        |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  3  | 9/14/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  4  | 9/21/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  5  | 9/28/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  6  | 10/5/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  7  | 10/12/2025 | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--off"  title="No class">&nbsp;</span> |                                        |                                        |                                       |                                      |
+|  8  | 10/19/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+|  9  | 10/26/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+| 10  | 11/2/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+| 11  | 11/9/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--off"  title="No class">&nbsp;</span> |                                        |                                        |                                       |                                      |
+| 12  | 11/16/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+| 13  | 11/23/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
+| 14  | 11/30/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        |                                       | <span class="pill pill--practice" title="Practice">🏋️</span> |
 
-**Assessments:** 5 tests (examlets) + final
+
+:::
+:::::
 
 ## Evaluation
 
@@ -123,37 +149,42 @@ This course will teach you a bajillion different things!
 |----------------------|-----------------|-------------------|
 | Problems of the Week | 10% (10 x 1%)   | Fridays at 6 PM   |
 | Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
-| Programming Projects | 10% (2 x 5%)    | Three in the term |
-| Tests (Examlets)     | 50% (5 x 10%)   | \~ Bi-weekly      |
-| Final Exam           | 25%             | TBD               |
-
-: Course grading scheme: There will be 5 tests in this course in an (approximately) bi-weekly schedule.
-:::
-
-## Term Schedule
-
-::::: columns
-::: {.column style="width: 80%; font-size: 50%;"}
-
-| Week | Sunday | T | R | Lab | Examlet |
-|:---:|---|:---:|:---:|:---:|:---:|
-| 1  | 8/31/2025  | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> |   |   |
-| 2  | 9/7/2025   | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> |  |   |
-| 3  | 9/14/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
-| 4  | 9/21/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
-| 5  | 9/28/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
-| 6  | 10/5/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
-| 7  | 10/12/2025 | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> |   |   |
-| 8  | 10/19/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
-| 9  | 10/26/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
-| 10  | 11/2/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
-| 11  | 11/9/2025 | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> | <span style="background:#ddd; padding:2px 6px; border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> |   |   |
-| 12  | 11/16/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
-| 13  | 11/23/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> | <span style="background:seagreen; color:white; padding:2px 6px; border-radius:4px;">🤩</span> |
-| 14  | 11/30/2025  | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:purple; color:white; padding:2px 6px; border-radius:4px;">🎉</span> | <span style="background:dodgerblue; color:white; padding:2px 6px; border-radius:4px;">🪄</span> |   |
+| Programming Projects | 9% (3 x 3%)     | Three in the term |
+| Examlets.            | 50% (5 x 10%)   | \~ Bi-weekly      |
+| Final Exam           | 26%             | TBD               |
 
 :::
-:::::
+
+## Communications
+
+::: {style="font-size: 80%;"}
+
+- 📧 **Email** [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)  
+  Checked daily. Please place "CPSC203" in subject!
+
+- <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.usjgslq1FEPq7pholcHorQD6D6?pid=Api"
+         alt="Piazza" style="height:20px; vertical-align:middle;">
+  </a> **Piazza** [piazza.com/ubc.ca/winterterm12025/cpsc203](https://piazza.com/ubc.ca/winterterm12025/cpsc203)  
+  Post questions for quick response.  
+
+- 🏫 **Office Hours**
+
+<div style="margin:auto; width:fit-content;">
+
+| Name  | Time        | Location & Zoom |
+|-------|-------------|-----------------|
+| Cinda | Mon 2–4pm   | 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:16px; vertical-align:middle;"></a> |
+| Minh Anh   | TBD | 🏢 TBD |
+| Joel       | TBD | 🏢 TBD |
+| TBD        | TBD | 🏢 TBD |
+
+</div>
+
+- 🌐 **Course Website** [https://ubc-cs.github.io/cpsc203/](https://ubc-cs.github.io/cpsc203/)  
+  Syllabus, schedule, resources 
+
+:::
 
 ## Semester overview {.smaller}
 
@@ -171,23 +202,6 @@ This course consists of a sequence of six explorations, assembled to provide a t
 Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging.
 You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving.
 
-## Course Tools
-
-**Piazza** class discussion forum
-
-**PrairieLearn:** platform to help us give you feedback on work you do!
-
-**GitHub:** code repository and version control
-
-**Visual Studio Code:** developer environment
-
-**Canvas:** basically just a place for you to find all the relevant links to things…
-
-# Any questions before we continue?
-
-# Break
-
-{{< countdown minutes=5 >}}
 
 ## Tangrams
 
@@ -209,14 +223,3 @@ You will emerge from the course with increased proficiency in Python programming
 
 4.  Speculate together on why you're doing this!!
 
-{{< countdown minutes=10 >}}
-
-# Let's learn <br> {{< iconify fa6-brands markdown >}} Markdown
-
-{{< countdown minutes=20 >}}
-
-## {{< var icon.computer-activity >}} Your turn: time to practice Markdown! {.activity}
-
-{{< countdown minutes=20 >}}
-
-# The Magic Number for today <br> <br> \_\_\_\_\_\_ <br> <br> See you Thursday! {style="text-align: center;"}
