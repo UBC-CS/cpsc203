@@ -1,5 +1,5 @@
 ---
-title: "Syllabus"
+title: "Syllabus INCOMPLETE"
 ---
 
 ## Introduction
@@ -34,9 +34,33 @@ By the end of this course, students will be able to:
 
 ## Course requirements
 
+Deliverables for the course include the following components:
+
+1. Problem of the Week (POTW) -- You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day. 
+
+2. Classroom Meetings -- Class meets Tue/Thu, 3:30-5p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the presentation, nor do we try very hard to replicate the in-class experience for online participants. 
+
+3. Lab -- The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are asynchronous video instruction together with PrairieLearn exercises. There are 10 over the term, beginning in week 3. 
+
+4. Examlets -- Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions. 
+
+5. Projects -- Most of the coding in the course will occur within three significan coding projects. Though we place no constraints on your use of outside resources for completing these exercises, all of the algorithms and problem solving they contain may appear on examlets. 
+
+6. Final Exam -- Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window -- approximately 5 days -- will be posted later in the term.
+
 ## Course content
 
 ## Grading and exam policies
+
+| Item                 | Weight          | Due date(s)       |
+|----------------------|-----------------|-------------------|
+| Problems of the Week | 10% (10 x 1%)   | Fridays at 6 PM   |
+| Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
+| Programming Projects | 9% (3 x 3%)     | Three in the term |
+| Examlets.            | 50% (5 x 10%)   | \~ Bi-weekly      |
+| Final Exam           | 26%             | TBD               |
+
+You must pass the final exam (50%) to pass the course. 
 
 ## Accessibility
 
