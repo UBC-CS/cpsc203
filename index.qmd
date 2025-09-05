@@ -13,6 +13,8 @@ execute:
 
 ## THIS WEBSITE IS A DRAFT!! COMPLETION SOON!!
 
+**Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
+
 :::::: columns
 ::: {.column width="50%"}
 **Contact**\
