@@ -8,9 +8,9 @@ project:
   #   - R/combine-pdfs.R
 
 website:
-  title: "{{< var course.full-title >}}"
+  title: "CPSC 203: Programming, problem solving, and algorithms"
   description: >
-    Course website for {{< var course.code >}} of the Department of Computer Science at the
+    Course website for CPSC 203 of the Department of Computer Science at the
     University of British Columbia
   open-graph: true
   twitter-card: true

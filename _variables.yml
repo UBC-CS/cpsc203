@@ -1,7 +1,7 @@
 course:
   code: "CPSC 203"
   title: "Programming, problem solving, and algorithms"
-  full-title: "{{< var course.code >}}: {{< var course.title >}}"
+  full-title: "CPSC 203: Programming, problem solving, and algorithms"
   term: "2025 W1"
   term-end-date: "2025-12-05"
   time: "Tuesdays and Thursdays, 3.30--5 p.m."
