@@ -158,7 +158,7 @@
     "href": "slides/02_tue_efficiency.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nWebsite getting closer\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122\nFirst examlet signup soon!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+    "text": "Announcements\n\nWebsite getting closer – Only setup is wrong (I think)\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com/pt/student/course/12360/enroll/172611186041\nFirst examlet signup available!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
   },
   {
     "objectID": "slides/02_tue_efficiency.html#learning-outcomes",
@@ -228,7 +228,7 @@
     "href": "slides/02_tue_efficiency.html#quantifying-the-task",
     "title": "Programming, problem solving, and algorithms",
     "section": "Quantifying the Task",
-    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
+    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n  \n    −\n    +\n \n 05:00\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
   },
   {
     "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
@@ -242,7 +242,7 @@
     "href": "slides/02_tue_efficiency.html#handcraft-and-code",
     "title": "Programming, problem solving, and algorithms",
     "section": "Handcraft and Code",
-    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)"
+    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\ndef knit_square_print(n): for r in range(n): row = “” for c in range(n):\nrow += ‘X’\nprint(row)\nscript: walk through existing code. counting stitches is the same as counting time.\nwhich line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?\nlet’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.\nhave we done more work? a little, but the most frequent line happens the same number of times."
   },
   {
     "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
