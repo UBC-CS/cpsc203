@@ -52,8 +52,6 @@ Let me know first and we can discuss alternate possibilities so you can still ta
 
 ::: callout-tip
 These installation notes assume you are starting with a fresh install, without any custom setups.
-If you have previously installed Python and any related packages, we **strongly** recommend uninstalling them.
-Be sure to remove any user configuration files and back them up if desired.
 Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.
 :::
 

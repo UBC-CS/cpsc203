@@ -1,0 +1,204 @@
+---
+date: 2025-09-11
+---
+
+## Announcements {.smaller}
+
+* Website getting closer
+
+* POTW starts today! <https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122>
+
+* First examlet signup soon!
+
+::: notes
+**Summary**
+
+In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency.
+We continue our exploration of the idea of elegance, making connections to problem solving and code.
+Then, we learn a mechanism for measuring efficiency, and talk briefly about why it's important to consider.
+The discussion about efficiency is followed by a diversion into color representation.
+Finally, we look at some code!
+The day concludes with a sequence of Python examples designed to clear the cobwebs on lists -- our first data structure!
+:::
+
+## Learning outcomes
+
+1.  Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually *anything*!
+
+
+# Representation
+
+## Colour interpretation
+
+What's your favorite color?
+Do you have a sense for *why* it's your favorite?
+Does that color influence your dress/decor/purchases?
+
+Psychological: <https://www.playbuzz.com/jon10/what-color-matches-your-personality>
+
+Cultural: <https://markedbydesign.net/blog/meaning-in-color>
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
+
+## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity .smaller}
+
+Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
+Contradictions are especially interesting.
+Report your findings to the group (briefly).
+
+::::: columns
+::: {.column width="50%"}
+[]{.hexagon-red}
+
+[]{.hexagon-orange}
+
+[]{.hexagon-yellow}
+:::
+
+::: {.column width="50%"}
+[]{.hexagon-green}
+
+[]{.hexagon-blue}
+
+[]{.hexagon-violet}
+:::
+:::::
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Big design implications for data visualization
+:::
+
+## Colour---representation
+
+![](/images/ssd.jpg){.absolute top="0px" right="0px" width="30%" fig-alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."}
+
+First, some general questions…
+
+What does data look like to a computer?
+
+\
+\
+
+Is that enough?
+
+::: footer
+<https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/>
+:::
+
+::: notes
+1.  Positive and negative charges interpreted as 1 and 0.
+2.  Binary digits = *bits*
+:::
+
+## Colour---representation
+
+Can we use bits to represent integers?
+
+|       |       |       |       |
+|-------|-------|-------|-------|
+| 3     | 1     | 5     | 7     |
+| 10^3^ | 10^2^ | 10^1^ | 10^0^ |
+
+|  |  |  |  |
+|----|----|----|----|
+| [10^3^]{.text-hidden} | [10^2^]{.text-hidden} | [10^1^]{.text-hidden} | [10^0^]{.text-hidden} |
+| [2]{.text-hidden}^3^ | [2]{.text-hidden}^2^ | [2]{.text-hidden}^1^ | [2]{.text-hidden}^0^ |
+
+::: notes
+Talk about the BASE of the number.
+:::
+
+## Colour---representation
+
+What's the highest number we can represent with 4 bits?
+
+\
+\
+
+What's the highest number we can represent with 5 bits?
+
+\
+\
+
+How many bits do we need to express 127?
+
+\
+\
+
+::: notes
+Can we represent any integer this way?
+YES!
+Until we run out of memory.
+But we have more memory than we can even conceive of.
+
+How does this help us with color?
+:::
+
+## Colour---representation
+
+Can we use integers to represent colors?
+
+RGB (red, green, blue), where each "component" is in range 0 through 255.
+
+ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
+
+Fun calculator for color values: <https://colorizer.org>
+
+How many bits for 256 values?
+`4  5  6  7  8  9  10`
+
+## Colour---representation
+
+What color is
+
+::: small-font-size
+\
+
+`0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1`
+
+\
+:::
+
+Easier to read if we use *hexadecimal* representation:
+
+Each component is represented by 2 hex digits `0123456789abcdef`
+
+ex. `#674ea7` []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-orange}
+
+::: notes
+Hex = base 16
+:::
+
+## Colour---representation (aside)
+
+What do you observe about the following RGB colors?
+
+| Red | Green | Blue |
+|:---:|:-----:|:----:|
+| 255 |   0   |  0   |
+| 17  |   0   | 178  |
+| 45  |   0   |  13  |
+| 200 |   0   | 220  |
+| 62  |   0   |  37  |
+| 130 |   0   |  95  |
+
+
+## TODO for next class...
+
+POTD
+
+Play: <https://www.google.com/search?q=color+picker>
+
+Practice exercises for next week's examlet available Sunday.
+
+# Tech stack
+
+##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+
+# Type hints in Python
+
+# Before next class
+
+Make sure to finish the setup of the tech stack!

@@ -1,5 +1,5 @@
 ---
-title: "Syllabus INCOMPLETE"
+title: "Syllabus"
 ---
 
 ## Introduction
@@ -7,6 +7,23 @@ title: "Syllabus INCOMPLETE"
 Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.
 
 ## Instructor information
+
+
+- **Prof: Cinda Heeren**  
+  📧 [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)  
+   ⏰ Mon 2–4pm · 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:20px; vertical-align:middle;"></a>
+
+- **TA: Minh Anh Nguyen**  
+  📧 [](mailto:)  
+  ⏰ TBD · 🏢 TBD 
+
+- **TA: Joel Gunawan**
+  📧 [](mailto:)  
+  ⏰ TBD · 🏢 TBD 
+
+- **TA: Timothy Solnyshkin**
+  📧 [](mailto:)  
+  ⏰ TBD · 🏢 TBD 
 
 ## Course description and learning objectives
 
@@ -30,7 +47,15 @@ By the end of this course, students will be able to:
 
 8. Reflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.
 
-## Lecture material
+## Lecture Material and Course Content
+
+The CPSC203 class meetings will be a mixture of guided exploration, theoretical narrative and exercises, and individual problem solving. 
+
+You will learn about computational efficiency and algorithmic design, applying both to problems that arise from 
+arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, 
+novels, and images. 
+
+This course is a natural followon to an introductory programming course -- it provides an answer to "now that I've learned to code, what can I DO with it?"
 
 ## Course requirements
 
@@ -38,9 +63,9 @@ Deliverables for the course include the following components:
 
 1. Problem of the Week (POTW) -- You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day. 
 
-2. Classroom Meetings -- Class meets Tue/Thu, 3:30-5p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the presentation, nor do we try very hard to replicate the in-class experience for online participants. 
+2. Classroom Meetings -- Class meets Tue/Thu, 3:30-5p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants. 
 
-3. Lab -- The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are asynchronous video instruction together with PrairieLearn exercises. There are 10 over the term, beginning in week 3. 
+3. Lab -- The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are **asynchronous** video instruction, together with PrairieLearn exercises. There are 10 over the term, beginning in week 3. 
 
 4. Examlets -- Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions. 
 
@@ -48,7 +73,6 @@ Deliverables for the course include the following components:
 
 6. Final Exam -- Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window -- approximately 5 days -- will be posted later in the term.
 
-## Course content
 
 ## Grading and exam policies
 
@@ -64,7 +88,22 @@ You must pass the final exam (50%) to pass the course.
 
 ## Accessibility
 
+If you have a disability or ongoing medical condition that may 
+require accommodations, please contact the UBC Centre for 
+Accessibility [accessibility@ubc.ca](mailto:accessibility@ubc.ca) to 
+determine your eligibility and 
+receive an accommodation letter.
+
+If you have a specific concern about accessing course materials or if you 
+would like to suggest improvements to the accessibility of this course, 
+please do not hesitate to speak with me.
+
 ## Academic misconduct
+
+All instances of academic misconduct will be handled in a manner consistent with
+UBC policies. This includes reporting to the CS Department's Associate Head of Undergraduate Affairs, and Faculty of Science Associate Dean of Students. No credit
+will be given for any assignment which was completed with inappropriate 
+collaboration. 
 
 ## Land Acknowledgement
 

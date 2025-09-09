@@ -1,10 +1,14 @@
 ---
-date: 2024-01-01
+date: 2025-09-09
 ---
 
-## Announcements
+## Announcements {.smaller}
 
-<!-- TODO: Add a slide "Why this is important..." -->
+* Website getting closer
+
+* POTW starts today! <https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122>
+
+* First examlet signup soon!
 
 ::: notes
 **Summary**
@@ -19,54 +23,28 @@ The day concludes with a sequence of Python examples designed to clear the cobwe
 
 ## Learning outcomes
 
-1.  The time it takes to solve a problem can be parameterized by the size of the problem.
-    In many cases we can use a simple mathematical function to describe that time.
+1. We connect the idea of "elegance" to common items and to software design!
 
-2.  Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually *anything*!
+2. The *time* it takes to solve a problem is one way of measuring the size of a 
+problem. That time can often be described by simple mathematical function. 
 
-## When to do what in CPSC 203
+# Software design
 
-::: small-font-size
-|   | Mon | Tue | Wed | Thu | Fri |
-|----|:--:|:--:|:--:|:--:|:--:|
-| Pre-class videos | {{< iconify fa6-regular circle >}} |  | {{< iconify fa6-solid xmark >}} |  |  |
-| Classes |  | {{< iconify fa6-solid xmark >}} |  | {{< iconify fa6-solid xmark >}} |  |
-| Learning Log |  |  |  |  | {{< iconify fa6-solid xmark >}} |
-| Problems of the Week | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} | {{< iconify fa6-solid xmark >}} |
-| Labs | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} |  |  | {{< iconify fa6-solid xmark >}} |
-| Practice Test and Test | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} | {{< iconify fa6-regular circle >}} |  |
+## {{< iconify fa6-solid laptop-code >}} Elegance  {.activity .smaller}
 
-: {{< iconify fa6-solid xmark >}}---This week's content; {{< iconify fa6-regular circle >}}---Last week's content
-:::
+Find 2 images, one which exemplifies your definition of
+elegance, and another, of the same type of subject, which
+decidedly does not.
 
-:::: small-font-size
-::: callout-note
-**Note:** this is a "suggested" schedule.
-All due dates are on Friday at 6 PM (with a 48-hour grace period).
+1. Navigate to the Elegance Gallery: <https://tinyurl.com/elegancegallery>
 
-Term projects are not on this schedule as they span multiple weeks.
-:::
-::::
+2. Claim an available slide by entering a title.
 
-# Software design: ingenuity and simplicity
+3. Upload your images, and then you're done!
 
-## {{< var icon.computer-activity >}} Your turn: Elegance {.activity}
+4. I will move slides to the COMPLETED section of the gallery. 
 
-Find 2 images, one which exemplifies your definition of elegance, and one which decidedly does not.
-They should be related to each other...
 
-::: medium-table
-|   | Naming | Example |
-|----|----|----|
-| [**e**]{.abbreviation-highlight}legant | `e<name>.<ext>` | `eKITTY.png` |
-| [**not e**]{.abbreviation-highlight}legant | `note<name>.<ext>` | `noteKITTY.png` |
-
-: Naming convention for files
-:::
-
-Upload your images to this directory:
-
-<https://bit.ly/3QucOO3>
 
 {{< countdown minutes=10 >}}
 
@@ -76,7 +54,7 @@ Upload your images to this directory:
 
 ## Elegance: examples
 
-Scissors...
+Scissors
 
 :::::: columns
 ::: {.column width="33%"}
@@ -92,21 +70,16 @@ Scissors...
 :::
 ::::::
 
-::: notes
-Heidi...
-:::
 
-## {{< var icon.computer-activity >}} Your turn: Elegance---definition {.activity}
+## {{< iconify fa6-solid laptop-code >}} Your turn: Elegance---definition {.activity}
 
-Gallery: <https://bit.ly/3QucOO3>
+Gallery: <https://tinyurl.com/elegancegallery>
 
 After looking at the images in the gallery, reflect and write a short definition of the word *elegance*:
 
-<https://forms.gle/1eGK2xnH7quAt2nf8>
+<https://forms.gle/GL3yNZn7i7DT5qxW9>
 
-Elegance: the quality of being [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
-
-{{< countdown minutes=10 >}}
+{{< countdown minutes=5 >}}
 
 ## Elegance and computing
 
@@ -139,7 +112,7 @@ For further reading: <https://www.smithsonianmag.com/arts-culture/how-steve-jobs
 >
 > --- **Steve Jobs**
 
-# Slides from the assigned videos
+# Handcraft
 
 ## Handcraft
 
@@ -213,7 +186,7 @@ Show $40 \times 40$, but then transition into $n \times n$---"one difference bet
 Axis of algorithmic quality includes
 :::
 
-## Quantifying the task... {.smaller}
+## Quantifying the Task {.activity .smaller}
 
 ![](/images/knitted-dishcloth-with-eyelets.jpg){.absolute top="0px" right="0px" width="20%" fig-alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."}
 
@@ -234,7 +207,7 @@ Draw the parabola in 4.
 Point out that quadratic is slower than exponential growth.
 :::
 
-## Quantifying the task...
+## Quantifying the Task
 
 If we are solving a problem [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline} for a given input, we can parameterize the running time of the solution by the size of the input.
 
@@ -264,13 +237,53 @@ First blank: or write an algorithm
 3.  Sometimes we have more than one parameter
 :::
 
-## Quantifying the task...
+## Handcraft and Code {.smaller}
+
+**Knitting model:**
+
+::::: columns
+::: {.column }
+
+- Side length is $n$
+
+- One stitch is a unit of work
+
+:::
+::: {.column }
+
+- $n$ rows, $n$ stitches per row
+
+- Total work is $n^2$
+
+:::
+::::: 
+
+```{pyodide}
+def knit_square_count(n):
+    stitches = 0
+    for row in range(n):          # n rows
+        for col in range(n):      # n stitches per row
+            stitches += 1         # unit work
+    return stitches               # = n*n
+
+def knit_square_print(n):
+    for r in range(n): 
+        row = ""
+        for c in range(n):      
+            row += 'X'    
+        print(row)    
+            
+```
+
+
+
+## Quantifying the Task
 
 Suppose we can knit 10^12^ stitches per second...
 
 |            | 10        | 100       | 1000      | 10,000   | 10^12^   |
 |------------|-----------|-----------|-----------|----------|----------|
-| $n$        | 10^-11^ s | 10^-10^ s | 10^-9^ s  | 10^-8^ s | 1 s      |
+| $n$        | 10^-11^s | 10^-10^ s | 10^-9^ s  | 10^-8^ s | 1 s      |
 | $n \log n$ | 10^-11^ s | 10^-9^ s  | 10^-8^ s  | 10^-7^ s | 40 s     |
 | $n^2$      | 10^-10^ s | 10^-8^ s  | 10^-6^ s  | 10^-4^ s | 10^12^ s |
 | $n^3$      | 10^-9^ s  | 10^-6^ s  | 10^-3^ s  | 1 s      | 10^24^ s |
@@ -305,182 +318,12 @@ NOTE: $\log$ is $\log_2$.
 And $\log 1000 = 10$.
 :::
 
-## Colour interpretation
+## Words and Ideas
 
-What's your favorite color?
-Do you have a sense for *why* it's your favorite?
-Does that color influence your dress/decor/purchases?
+* Elegance
 
-Psychological: <https://www.playbuzz.com/jon10/what-color-matches-your-personality>
+* Growth of simple functions over time
 
-Cultural: <https://markedbydesign.net/blog/meaning-in-color>
+* Representing complexity of a problem using time
 
-[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
-
-## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity .smaller}
-
-Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
-Contradictions are especially interesting.
-Report your findings to the group (briefly).
-
-::::: columns
-::: {.column width="50%"}
-[]{.hexagon-red}
-
-[]{.hexagon-orange}
-
-[]{.hexagon-yellow}
-:::
-
-::: {.column width="50%"}
-[]{.hexagon-green}
-
-[]{.hexagon-blue}
-
-[]{.hexagon-violet}
-:::
-:::::
-
-{{< countdown minutes=2 >}}
-
-::: notes
-Big design implications for data visualization
-:::
-
-## Colour---representation
-
-![](/images/ssd.jpg){.absolute top="0px" right="0px" width="30%" fig-alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."}
-
-First, some general questions…
-
-What does data look like to a computer?
-
-\
-\
-
-Is that enough?
-
-::: footer
-<https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/>
-:::
-
-::: notes
-1.  Positive and negative charges interpreted as 1 and 0.
-2.  Binary digits = *bits*
-:::
-
-## Colour---representation
-
-Can we use bits to represent integers?
-
-|       |       |       |       |
-|-------|-------|-------|-------|
-| 3     | 1     | 5     | 7     |
-| 10^3^ | 10^2^ | 10^1^ | 10^0^ |
-
-|  |  |  |  |
-|----|----|----|----|
-| [10^3^]{.text-hidden} | [10^2^]{.text-hidden} | [10^1^]{.text-hidden} | [10^0^]{.text-hidden} |
-| [2]{.text-hidden}^3^ | [2]{.text-hidden}^2^ | [2]{.text-hidden}^1^ | [2]{.text-hidden}^0^ |
-
-::: notes
-Talk about the BASE of the number.
-:::
-
-## Colour---representation
-
-What's the highest number we can represent with 4 bits?
-
-\
-\
-
-What's the highest number we can represent with 5 bits?
-
-\
-\
-
-How many bits do we need to express 127?
-
-\
-\
-
-::: notes
-Can we represent any integer this way?
-YES!
-Until we run out of memory.
-But we have more memory than we can even conceive of.
-
-How does this help us with color?
-:::
-
-## Colour---representation
-
-Can we use integers to represent colors?
-
-RGB (red, green, blue), where each "component" is in range 0 through 255.
-
-ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
-
-Fun calculator for color values: <https://colorizer.org>
-
-How many bits for 256 values?
-`4  5  6  7  8  9  10`
-
-## Colour---representation
-
-What color is
-
-::: small-font-size
-\
-
-`0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1`
-
-\
-:::
-
-Easier to read if we use *hexadecimal* representation:
-
-Each component is represented by 2 hex digits `0123456789abcdef`
-
-ex. `#674ea7` []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-orange}
-
-::: notes
-Hex = base 16
-:::
-
-## Colour---representation (aside)
-
-What do you observe about the following RGB colors?
-
-| Red | Green | Blue |
-|:---:|:-----:|:----:|
-| 255 |   0   |  0   |
-| 17  |   0   | 178  |
-| 45  |   0   |  13  |
-| 200 |   0   | 220  |
-| 62  |   0   |  37  |
-| 130 |   0   |  95  |
-
-## POTD demo
-
-The "problem of the day" (POTD) programming exercises start next week.
-
-Navigate to [ca.prairielearn.com](https://ca.prairielearn.com)...
-
-## TODO for next class...
-
-POTD
-
-Play: <https://www.google.com/search?q=color+picker>
-
-Practice exercises for next week's examlet available Sunday.
-
-# Tech stack
-
-##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" background-interactive="true" data-menu-title="Tech stack instructions"}
-
-# Type hints in Python
-
-# Before next class
-
-Make sure to finish the setup of the tech stack!
+* Running time of a Python function

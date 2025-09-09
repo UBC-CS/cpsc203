@@ -51,8 +51,6 @@ website:
         contents:
           - href: setup.qmd
             text: "Setup"
-          - href: formatting.qmd
-            text: "Formatting"
           - href: "https://canvas.ubc.ca/courses/170624"
             text: "Canvas"
           - href: "https://piazza.com/ubc.ca/winterterm12025/cpsc203"
