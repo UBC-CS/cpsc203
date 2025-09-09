@@ -4,11 +4,13 @@ date: 2025-09-09
 
 ## Announcements {.smaller}
 
-* Website getting closer
+* Website getting closer -- Only setup is wrong (I think)
 
 * POTW starts today! <https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122>
 
-* First examlet signup soon!
+* Enroll in CPSC203 on **PrairieTest**: <https://us.prairietest.com/pt/student/course/12360/enroll/172611186041>
+
+* First examlet signup available! 
 
 ::: notes
 **Summary**
@@ -202,6 +204,8 @@ Axis of algorithmic quality includes
 
 General idea: quantify the size of the problem ($n$) and consider the cost of our task *as that size increases*.
 
+{{< countdown minutes=5 >}}
+
 ::: notes
 Draw the parabola in 4.
 Point out that quadratic is slower than exponential growth.
@@ -265,6 +269,10 @@ def knit_square_count(n):
         for col in range(n):      # n stitches per row
             stitches += 1         # unit work
     return stitches               # = n*n
+            
+```
+
+::: notes
 
 def knit_square_print(n):
     for r in range(n): 
@@ -272,8 +280,21 @@ def knit_square_print(n):
         for c in range(n):      
             row += 'X'    
         print(row)    
-            
-```
+
+script: walk through existing code. counting stitches is the same as counting time.
+
+which line is executed most frequently? 
+how many times is outer forloop executed?
+how many times is line (inner for loop) executed?
+
+let's demonstrate the work with ascii art! change code incrementally
+produce one row at a time. (add empty row)
+for each column, add a "stitch"
+row done, so print it out.
+
+have we done more work? a little, but the most frequent line happens the
+same number of times.
+:::
 
 
 
