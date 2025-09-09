@@ -14,7 +14,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.34">
 
-  <meta name="dcterms.date" content="2025-09-09">
+  <meta name="dcterms.date" content="2025-09-11">
   <title>{{&lt; var course.full-title &gt;}} – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -149,7 +149,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 9, 2025</p>
+  <p class="date">September 11, 2025</p>
 </section>
 <section id="announcements" class="slide level2 smaller">
 <h2>Announcements</h2>
@@ -176,33 +176,43 @@
 <section id="learning-outcomes" class="slide level2">
 <h2>Learning outcomes</h2>
 <ol type="1">
-<li><p>We connect the idea of “elegance” to common items and to software design!</p></li>
-<li><p>The <em>time</em> it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function.</p></li>
+<li>Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually <em>anything</em>!</li>
 </ol>
 </section>
 <section>
-<section id="software-design" class="title-slide slide level1 center">
-<h1>Software design</h1>
+<section id="representation" class="title-slide slide level1 center">
+<h1>Representation</h1>
 
 </section>
-<section id="elegance" class="slide level2 activity smaller">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Elegance</h2>
-<p>Find 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.</p>
-<ol type="1">
-<li><p>Navigate to the Elegance Gallery: <a href="https://tinyurl.com/elegancegallery" class="uri">https://tinyurl.com/elegancegallery</a></p></li>
-<li><p>Claim an available slide by entering a title.</p></li>
-<li><p>Upload your images, and then you’re done!</p></li>
-<li><p>I will move slides to the COMPLETED section of the gallery.</p></li>
-</ol>
-<div id="timer_8167e8cb78d9f2b4b2556dc308eb68891cbf664e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<section id="colour-interpretation" class="slide level2">
+<h2>Colour interpretation</h2>
+<p>What’s your favorite color? Do you have a sense for <em>why</em> it’s your favorite? Does that color influence your dress/decor/purchases?</p>
+<p>Psychological: <a href="https://www.playbuzz.com/jon10/what-color-matches-your-personality" class="uri">https://www.playbuzz.com/jon10/what-color-matches-your-personality</a></p>
+<p>Cultural: <a href="https://markedbydesign.net/blog/meaning-in-color" class="uri">https://markedbydesign.net/blog/meaning-in-color</a></p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+</section>
+<section id="your-turn-colourcultural-interpretations" class="slide level2 activity smaller">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Colour—cultural interpretations</h2>
+<p>Activity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the group (briefly).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="hexagon-red"></span></p>
+<p><span class="hexagon-orange"></span></p>
+<p><span class="hexagon-yellow"></span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="hexagon-green"></span></p>
+<p><span class="hexagon-blue"></span></p>
+<p><span class="hexagon-violet"></span></p>
+</div></div>
+<div id="timer_e8fada85b54dc9c8893099881b1032055d96df7a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 <aside class="notes">
-<p>(Gallery walk)</p>
+<p>Big design implications for data visualization</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -215,324 +225,225 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="elegance-examples" class="slide level2">
-<h2>Elegance: examples</h2>
-<p>Scissors</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/two-scissors.jpg" alt="A set of scissors."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/non-functional-scissors.jpg" alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/assorted-scissors.png" alt="A variety of scissors in different colours."></p>
-</div></div>
-</section>
-<section id="your-turn-elegancedefinition" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance—definition</h2>
-<p>Gallery: <a href="https://tinyurl.com/elegancegallery" class="uri">https://tinyurl.com/elegancegallery</a></p>
-<p>After looking at the images in the gallery, reflect and write a short definition of the word <em>elegance</em>:</p>
-<p><a href="https://forms.gle/GL3yNZn7i7DT5qxW9" class="uri">https://forms.gle/GL3yNZn7i7DT5qxW9</a></p>
-<div id="timer_8167e8cb78d9f2b4b2556dc308eb68891cbf664e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="elegance-and-computing" class="slide level2">
-<h2>Elegance and computing</h2>
-<p>How does this apply to the way we solve problems in computing?</p>
-<p>I<span class="fragment" data-fragment-index="1">n</span>g<span class="fragment" data-fragment-index="1">e</span>n<span class="fragment" data-fragment-index="1">u</span>i<span class="fragment" data-fragment-index="1">t</span>y:</p>
+<section id="colourrepresentation" class="slide level2">
+<h2>Colour—representation</h2>
+<p><img data-src="../images/ssd.jpg" class="absolute" style="top: 0px; right: 0px; width: 30%; " alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."></p>
+<p>First, some general questions…</p>
+<p>What does data look like to a computer?</p>
 <p><br>
 <br>
 </p>
-<p>S<span class="fragment" data-fragment-index="1">i</span>m<span class="fragment" data-fragment-index="1">p</span>l<span class="fragment" data-fragment-index="1">i</span>c<span class="fragment" data-fragment-index="1">i</span>t<span class="fragment" data-fragment-index="1">y</span>:</p>
-
-<aside class="notes">
-<ol type="1">
-<li>INGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.</li>
-<li>SIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).</li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<aside><div>
-<p>For further reading: <a href="https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/" class="uri">https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/</a></p>
-</div></aside></section>
-<section id="section" class="slide level2 center" data-background-image="../images/steve-jobs.jpg" data-background-opacity="0.3" data-background-size="contain" data-background-position="bottom right" data-menu-title="Steve Jobs quote">
-<h2></h2>
-<blockquote>
-<p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
-<p>— <strong>Steve Jobs</strong></p>
-</blockquote>
-</section></section>
-<section>
-<section id="handcraft" class="title-slide slide level1 center">
-<h1>Handcraft</h1>
-
-</section>
-<section id="handcraft-1" class="slide level2">
-<h2>Handcraft</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/quilt.jpg" alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."></p>
-<p><img data-src="../images/doily.jpg" alt="A white doily with a spiral pattern on a wooden surface."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/pinecone-pen.jpg" alt="A pen made from pinecone."></p>
-<p><img data-src="../images/shirt.jpg" alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/paper-violin.jpg" alt="A violin made from intricately quilled green paper with a bow."></p>
-<p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colours."></p>
-</div></div>
-<aside class="notes">
-<p>Metaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.</p>
-<ul>
-<li>Quilt—patterns</li>
-<li>Crochet—2 different kinds</li>
-<li>Paper—Friend’s artistry</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="knitting" class="slide level2">
-<h2>Knitting</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p>The language used to communicate patterns uses exactly the same fundamental constructs as Python!!!</p>
-</div><div class="column" style="width:66%;">
-<p><img data-src="../images/sherbet-stripes.png" alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."></p>
-</div></div>
-</section>
-<section id="knitting-examples" class="slide level2">
-<h2>Knitting: examples</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/colourful-knitted-striped-dishcloth.jpg" alt="A knitted dishcloth with diagonal stripes in orange, green, yellow, and teal."></p>
-<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/knitted-dishcloth-with-dragon-design.jpg" alt="A green knitted dishcloth featuring a textured dragon design."></p>
-<p><img data-src="../images/knitted-dishcloth-with-diamond-lace-pattern.jpg" alt="A purple knitted dishcloth featuring a diamond lace pattern."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/knitted-dishcloth-with-metroid-power-up-design.jpg" alt="A teal knitted dishcloth featuring a raised power-up design from the video game Metroid."></p>
-<p><img data-src="../images/knitted-dishcloth-with-heart-pattern.jpg" alt="A blue knitted dishcloth featuring a repeating heart pattern."></p>
-</div></div>
-<aside class="notes">
-<p>Show <span class="math inline">\(40 \times 40\)</span>, but then transition into <span class="math inline">\(n \times n\)</span>—“one difference between a knitting project and our problems we solve”</p>
-<p>Axis of algorithmic quality includes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="quantifying-the-task" class="slide level2 activity smaller">
-<h2>Quantifying the Task</h2>
-<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" class="absolute" style="top: 0px; right: 0px; width: 20%; " alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
-<div class="columns">
-<div class="column" style="width:78%;">
-<ol type="1">
-<li>If we describe one dimension of a square rag by <span class="math inline">\(n\)</span>, how much work is done by the knitter? <u>____________</u></li>
-<li>If we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? <u>____________</u></li>
-<li>If each stitch takes a second, what is the largest rag we could make in one evening? <u>____________</u></li>
-<li>If it takes an evening to make a <span class="math inline">\(40 \times 40\)</span> rag, how long will it take to make an <span class="math inline">\(80 \times 80\)</span> rag? <u>____________</u></li>
-<li>If it takes time <span class="math inline">\(t\)</span> to make an <span class="math inline">\(n\)</span> by <span class="math inline">\(n\)</span> rag, how long will it take to make a <span class="math inline">\(3n \times 3n\)</span> rag? <u>____________</u></li>
-</ol>
-</div></div>
-<p>General idea: quantify the size of the problem (<span class="math inline">\(n\)</span>) and consider the cost of our task <em>as that size increases</em>.</p>
-<aside class="notes">
-<p>Draw the parabola in 4. Point out that quadratic is slower than exponential growth.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="quantifying-the-task-1" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>If we are solving a problem <u>____________</u> for a given input, we can parameterize the running time of the solution by the size of the input.</p>
-<p>We usually denote this input size using the variable <span class="math inline">\(n\)</span>.</p>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img data-src="../images/pixelated-chevron-knitting-pattern.jpg" alt="A pixelated knitting pattern."></p>
-</div><div class="column" style="width:75%;">
-<p>Discussion:</p>
-<ol type="1">
-<li></li>
-<li></li>
-<li></li>
-</ol>
-</div></div>
-<aside class="notes">
-<p>First blank: or write an algorithm</p>
-<ol type="1">
-<li>In this example we choose to label <span class="math inline">\(n\)</span> as the side-length</li>
-<li>We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3<span class="math inline">\(n\)</span> x <span class="math inline">\(n\)</span> takes time 3<span class="math inline">\(n^2\)</span> to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.</li>
-<li>Sometimes we have more than one parameter</li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="handcraft-and-code" class="slide level2 smaller">
-<h2>Handcraft and Code</h2>
-<p><strong>Knitting model:</strong></p>
-<div class="columns">
-<div class="column">
-<ul>
-<li><p>Side length is <span class="math inline">\(n\)</span></p></li>
-<li><p>One stitch is a unit of work</p></li>
-</ul>
-</div><div class="column">
-<ul>
-<li><p><span class="math inline">\(n\)</span> rows, <span class="math inline">\(n\)</span> stitches per row</p></li>
-<li><p>Total work is <span class="math inline">\(n^2\)</span></p></li>
-</ul>
-</div></div>
-<div>
-<div id="pyodide-1" class="exercise-cell">
-
+<p>Is that enough?</p>
+<div class="footer">
+<p><a href="https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/" class="uri">https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/</a></p>
 </div>
-<script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGtuaXRfc3F1YXJlX2NvdW50KG4pOlxuICAgIHN0aXRjaGVzID0gMFxuICAgIGZvciByb3cgaW4gcmFuZ2Uobik6ICAgICAgICAgICMgbiByb3dzXG4gICAgICAgIGZvciBjb2wgaW4gcmFuZ2Uobik6ICAgICAgIyBuIHN0aXRjaGVzIHBlciByb3dcbiAgICAgICAgICAgIHN0aXRjaGVzICs9IDEgICAgICAgICAjIHVuaXQgd29ya1xuICAgIHJldHVybiBzdGl0Y2hlcyAgICAgICAgICAgICAgICMgPSBuKm5cblxuZGVmIGtuaXRfc3F1YXJlX3ByaW50KG4pOlxuICAgIGZvciByIGluIHJhbmdlKG4pOiBcbiAgICAgICAgcm93ID0gXCJcIlxuICAgICAgICBmb3IgYyBpbiByYW5nZShuKTogICAgICBcbiAgICAgICAgICAgIHJvdyArPSAnWCcgICAgXG4gICAgICAgIHByaW50KHJvdykgICAgXG4gICAgICAgICAgICAifQ==
-</script>
-</div>
+<aside class="notes">
+<ol type="1">
+<li>Positive and negative charges interpreted as 1 and 0.</li>
+<li>Binary digits = <em>bits</em></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="quantifying-the-task-2" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
+<section id="colourrepresentation-1" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use bits to represent integers?</p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>10<sup>3</sup></td>
+<td>10<sup>2</sup></td>
+<td>10<sup>1</sup></td>
+<td>10<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="text-hidden">10<sup>3</sup></span></td>
+<td><span class="text-hidden">10<sup>2</sup></span></td>
+<td><span class="text-hidden">10<sup>1</sup></span></td>
+<td><span class="text-hidden">10<sup>0</sup></span></td>
+</tr>
+<tr class="even">
+<td><span class="text-hidden">2</span><sup>3</sup></td>
+<td><span class="text-hidden">2</span><sup>2</sup></td>
+<td><span class="text-hidden">2</span><sup>1</sup></td>
+<td><span class="text-hidden">2</span><sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Talk about the BASE of the number.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-2" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What’s the highest number we can represent with 4 bits?</p>
+<p><br>
+<br>
+</p>
+<p>What’s the highest number we can represent with 5 bits?</p>
+<p><br>
+<br>
+</p>
+<p>How many bits do we need to express 127?</p>
+<p><br>
+<br>
+</p>
+<aside class="notes">
+<p>Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.</p>
+<p>How does this help us with color?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-3" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use integers to represent colors?</p>
+<p>RGB (red, green, blue), where each “component” is in range 0 through 255.</p>
+<p>ex. (<code>255, 0, 127</code>) == <span style="position: relative; top: 11px;"><span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-apricot"></span></span></p>
+<p>Fun calculator for color values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></p>
+<p>How many bits for 256 values? <code>4  5  6  7  8  9  10</code></p>
+</section>
+<section id="colourrepresentation-4" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What color is</p>
+<div class="small-font-size">
+<p><br>
+</p>
+<p><code>0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1</code></p>
+<p><br>
+</p>
+</div>
+<p>Easier to read if we use <em>hexadecimal</em> representation:</p>
+<p>Each component is represented by 2 hex digits <code>0123456789abcdef</code></p>
+<p>ex. <code>#674ea7</code> <span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-orange"></span></p>
+<aside class="notes">
+<p>Hex = base 16</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-aside" class="slide level2">
+<h2>Colour—representation (aside)</h2>
+<p>What do you observe about the following RGB colors?</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th></th>
-<th>10</th>
-<th>100</th>
-<th>1000</th>
-<th>10,000</th>
-<th>10<sup>12</sup></th>
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Green</th>
+<th style="text-align: center;">Blue</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>10<sup>-11</sup>s</td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>1 s</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n \log n\)</span></td>
-<td>10<sup>-11</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-7</sup> s</td>
-<td>40 s</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">178</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(n^2\)</span></td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-4</sup> s</td>
-<td>10<sup>12</sup> s</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n^3\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-3</sup> s</td>
-<td>1 s</td>
-<td>10<sup>24</sup> s</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">220</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(2^n\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>18</sup> s</td>
-<td>10<sup>289</sup> s</td>
-<td></td>
-<td></td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">95</td>
 </tr>
 </tbody>
 </table>
-<p>The amount of computation we do inside our algorithm actually matters!</p>
-<aside class="notes">
-<p>Why does this matter?</p>
-<p>Annotate:</p>
-<ol type="1">
-<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
-<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
-<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
-</ol>
-<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
-<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
-<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
-<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
-<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="words-and-ideas" class="slide level2">
-<h2>Words and Ideas</h2>
-<ul>
-<li><p>Elegance</p></li>
-<li><p>Growth of simple functions over time</p></li>
-<li><p>Representing complexity of a problem using time</p></li>
-<li><p>Running time of a Python function</p></li>
-</ul>
+<section id="todo-for-next-class" class="slide level2">
+<h2>TODO for next class…</h2>
+<p>POTD</p>
+<p>Play: <a href="https://www.google.com/search?q=color+picker" class="uri">https://www.google.com/search?q=color+picker</a></p>
+<p>Practice exercises for next week’s examlet available Sunday.</p>
+</section></section>
+<section>
+<section id="tech-stack" class="title-slide slide level1 center">
+<h1>Tech stack</h1>
+
+</section>
+<section id="section" class="slide level2 centered" data-background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" data-background-interactive="true" data-menu-title="Tech stack instructions">
+<h2></h2>
+</section></section>
+<section id="type-hints-in-python" class="title-slide slide level1 center">
+<h1>Type hints in Python</h1>
+
+</section>
+
+<section id="before-next-class" class="title-slide slide level1 center">
+<h1>Before next class</h1>
+<p>Make sure to finish the setup of the tech stack!</p>
 
 
-<script type="pyodide-data">
-eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
-</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+eyJjb250ZW50cyI6W119
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -545,7 +456,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
