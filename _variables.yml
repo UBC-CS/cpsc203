@@ -24,7 +24,7 @@ software:
   macos: "Sequoia 15.5"
   python: "3.13.6"
   windows: "24H2 (build 26100.4656)"
-  zoom: "6.5.5 (8927)"
+  zoom: "6.5.12 (63499)"
 icon:
   advice: "{{< iconify fa6-solid comments >}}"
   computer-activity: "{{< iconify fa6-solid laptop-code >}}"
