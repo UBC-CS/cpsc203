@@ -125,10 +125,6 @@ If you see any existing lines in your `~/.bash_profile` related to a previous Py
 
 ## macOS
 
-A terminal app comes preinstalled with macOS.
-You can find the terminal app in Applications \> Utilities \> Terminal or by activating Spotlight with {{< kbd Command-Space >}}, typing in terminal and then pressing {{< kbd Enter >}}.
-You will need to do this several times in these instructions.
-
 You can proceed to spice up your terminal a bit!
 
 #### Oh My Zsh to configure the terminal

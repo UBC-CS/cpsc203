@@ -1,0 +1,18 @@
+### Terminal
+
+A terminal program allows you to interact with many different programs using a command line interface.
+Instead of using graphical elements like in a graphical user interface, you type in commands descibing what program you want to use and how you want to use it.
+
+::: {.panel-tabset group="os"}
+## Windows
+
+The terminal app *Terminal* comes preinstalled with Windows.
+Activate the Windows Start menu, start typing "terminal" and select the Terminal app by pressing {{< kbd Enter >}}.
+
+## macOS
+
+The terminal app *Terminal* comes preinstalled with macOS.
+Activate Spotlight with {{< kbd Command-Space >}}, start typing "terminal" and select the Terminal app by pressing {{< kbd Enter >}}.
+:::
+
+You will need to open the terminal several times in these instructions to install other programs.
