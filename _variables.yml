@@ -18,6 +18,7 @@ instructor:
 software:
   bash: "5.3.3(1)"
   bash-year: "2025"
+  brew: "4.6.9"
   conda: "25.5.1"
   git: "2.50.1"
   macos: "Sequoia 15.5"

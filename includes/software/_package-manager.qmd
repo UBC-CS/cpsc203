@@ -1,0 +1,88 @@
+### Package manager
+
+A package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS.
+The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.
+
+:::: {.panel-tabset group="os"}
+## Windows
+
+If you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager *WinGet* available to you.
+When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.
+
+::: callout-important
+If you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.
+:::
+
+#### Resources
+
+-   [Use WinGet to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
+
+## macOS
+
+We will use one of the most popular package managers on macOS called *Homebrew*.
+Open your Terminal, and then enter the following command:
+
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+You will be asked to enter the password for your computer:
+
+```         
+==> Checking for `sudo` access (which may request your password)...
+```
+
+Enter your password (it is normal that the cursor will not move as you enter characters for a password) and hit {{< kbd Enter >}}.
+
+Next, the installation will install the *XCode Command Line Tools*:
+
+```         
+The XCode Command Line Tools will be installed.
+```
+
+A new window will open with the following prompt:
+
+> **The "xcode-select" command requires the command line developer tools. Would you like to install the tools now?**
+>
+> Choose Install to download and install the command line developer tools now." Confirm by clicking on "Install".
+
+Afterwards, back in the terminal, you will be informed what steps will be executed:
+
+```         
+==> This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+/etc/paths.d/homebrew
+
+Press RETURN/ENTER to continue or any other key to abort:
+```
+
+Confirm with {{< kbd Enter >}}.
+When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your `PATH`:
+
+``` bash
+echo >> /Users/stephankoenig/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/stephankoenig/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Now test if Homebrew works:
+
+``` bash
+brew --version
+```
+
+You should see the following:
+
+```         
+Homebrew {{< var software.brew >}}
+```
+
+#### Resources
+
+-   [Homebrew Documentation](https://docs.brew.sh/)
+::::

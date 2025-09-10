@@ -76,13 +76,15 @@ Quarto includes for software should start with a level 3 heading `### <software-
 
 {{< include /includes/software/_os.qmd >}}
 
+{{< include /includes/software/_terminal.qmd >}}
+
+{{< include /includes/software/_package-manager.qmd >}}
+
 {{< include /includes/software/_web-browser.qmd >}}
 
 {{< include /includes/software/_zoom.qmd >}}
 
 {{< include /includes/software/_vs-code.qmd >}}
-
-{{< include /includes/software/_terminal.qmd >}}
 
 {{< include /includes/software/_git-and-github.qmd >}}
 
