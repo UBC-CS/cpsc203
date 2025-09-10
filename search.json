@@ -371,6 +371,13 @@
     "text": "Learning outcomes\n\nComputers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually anything!"
   },
   {
+    "objectID": "slides/02_thu_representation.html#warm-up",
+    "href": "slides/02_thu_representation.html#warm-up",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Warm Up",
+    "text": "Warm Up\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
+  },
+  {
     "objectID": "slides/02_thu_representation.html#colour-interpretation",
     "href": "slides/02_thu_representation.html#colour-interpretation",
     "title": "Programming, problem solving, and algorithms",

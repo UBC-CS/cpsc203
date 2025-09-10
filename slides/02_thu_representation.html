@@ -179,6 +179,89 @@
 <li>Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually <em>anything</em>!</li>
 </ol>
 </section>
+<section id="warm-up" class="slide level2">
+<h2>Warm Up</h2>
+<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+<th>10,000</th>
+<th>10<sup>12</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>10<sup>-11</sup>s</td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>1 s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n \log n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-7</sup> s</td>
+<td>40 s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(n^2\)</span></td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-4</sup> s</td>
+<td>10<sup>12</sup> s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n^3\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-3</sup> s</td>
+<td>1 s</td>
+<td>10<sup>24</sup> s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^n\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>18</sup> s</td>
+<td>10<sup>289</sup> s</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of computation we do inside our algorithm actually matters!</p>
+<aside class="notes">
+<p>Why does this matter?</p>
+<p>Annotate:</p>
+<ol type="1">
+<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
+<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
+<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
+</ol>
+<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
+<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
+<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
+<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
+<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section>
 <section id="representation" class="title-slide slide level1 center">
 <h1>Representation</h1>
@@ -204,7 +287,7 @@
 <p><span class="hexagon-blue"></span></p>
 <p><span class="hexagon-violet"></span></p>
 </div></div>
-<div id="timer_d3b5a0747acd195da33d3f3ecb264c67a99fcaab" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_733d7c5ab30066e2438289012e13dd84ce6619e7" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
