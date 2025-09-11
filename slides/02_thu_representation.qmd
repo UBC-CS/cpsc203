@@ -4,11 +4,11 @@ date: 2025-09-11
 
 ## Announcements {.smaller}
 
-* Setup instructions available.
+-   Setup instructions available.
 
-* Python resources posted to piazza.
+-   Python resources posted to piazza.
 
-* First examlet signup available.
+-   First examlet signup available.
 
 ::: notes
 **Summary**
@@ -16,22 +16,22 @@ date: 2025-09-11
 In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency.
 We continue our exploration of the idea of elegance, making connections to problem solving and code.
 Then, we learn a mechanism for measuring efficiency, and talk briefly about why it's important to consider.
-The discussion about efficiency is followed by a diversion into color representation.
+The discussion about efficiency is followed by a diversion into colour representation.
 Finally, we look at some code!
 The day concludes with a sequence of Python examples designed to clear the cobwebs on lists -- our first data structure!
 :::
 
 ## Learning outcomes
 
-1.  Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colors, which suggests that we can represent virtually *anything*!
+1.  Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually *anything*!
 
-## Warm Up 
+## Warm Up
 
 Suppose we can knit 10^12^ stitches per second...
 
 |            | 10        | 100       | 1000      | 10,000   | 10^12^   |
 |------------|-----------|-----------|-----------|----------|----------|
-| $n$        | 10^-11^s | 10^-10^ s | 10^-9^ s  | 10^-8^ s | 1 s      |
+| $n$        | 10^-11^s  | 10^-10^ s | 10^-9^ s  | 10^-8^ s | 1 s      |
 | $n \log n$ | 10^-11^ s | 10^-9^ s  | 10^-8^ s  | 10^-7^ s | 40 s     |
 | $n^2$      | 10^-10^ s | 10^-8^ s  | 10^-6^ s  | 10^-4^ s | 10^12^ s |
 | $n^3$      | 10^-9^ s  | 10^-6^ s  | 10^-3^ s  | 1 s      | 10^24^ s |
@@ -70,9 +70,9 @@ And $\log 1000 = 10$.
 
 ## Colour interpretation
 
-What's your favorite color?
+What's your favorite colour?
 Do you have a sense for *why* it's your favorite?
-Does that color influence your dress/decor/purchases?
+Does that colour influence your dress/decor/purchases?
 
 Psychological: <https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s>
 
@@ -82,7 +82,7 @@ Cultural: <https://en.wikipedia.org/wiki/Color_symbolism>
 
 ## {{< iconify fa6-solid comments >}} Your turn: Colour---cultural interpretations {.activity .smaller}
 
-Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
+Activity---In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you.
 Contradictions are especially interesting.
 Report your findings to the class (briefly).
 
@@ -142,7 +142,7 @@ Can we use bits to represent integers?
 | 10^3^ | 10^2^ | 10^1^ | 10^0^ |
 
 |  |  |  |  |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | [10^3^]{.text-hidden} | [10^2^]{.text-hidden} | [10^1^]{.text-hidden} | [10^0^]{.text-hidden} |
 | [2]{.text-hidden}^3^ | [2]{.text-hidden}^2^ | [2]{.text-hidden}^1^ | [2]{.text-hidden}^0^ |
 
@@ -173,25 +173,25 @@ YES!
 Until we run out of memory.
 But we have more memory than we can even conceive of.
 
-How does this help us with color?
+How does this help us with colour?
 :::
 
 ## Colour---representation
 
-Can we use integers to represent colors?
+Can we use integers to represent colours?
 
 One way: RGB (red, green, blue), where each "component" is in range 0 through 255.
 
 ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
 
-Fun calculator for color values: <https://colorizer.org>
+Fun calculator for colour values: <https://colorizer.org>
 
 How many bits for 256 values?
 `4  5  6  7  8  9  10`
 
 ## Colour---representation
 
-What color is
+What colour is
 
 ::: small-font-size
 \
@@ -213,7 +213,7 @@ Hex = base 16
 
 ## Colour---representation (aside)
 
-What do you observe about the following RGB colors?
+What do you observe about the following RGB colours?
 
 | Red | Green | Blue |
 |:---:|:-----:|:----:|
@@ -224,21 +224,19 @@ What do you observe about the following RGB colors?
 | 62  |   0   |  37  |
 | 130 |   0   |  95  |
 
-
-## Color and Code {.smaller}
+## colour and Code {.smaller}
 
 Make the poppies pop!
 
 ![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
 
-Examine each pixel. If its red color channel is high (over 200, say), then
-leave it as is. Otherwise, change the pixel to grey by setting all 3 color
-channels to the average of their original values. 
+Examine each pixel.
+If its red colour channel is high (over 200, say), then leave it as is.
+Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.
 
+## colour and Code
 
-## Color and Code
-
-``` {pyodide}
+```{pyodide}
 from typing import Tuple
 import numpy as np
 from skimage import io
@@ -249,11 +247,11 @@ Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
 '''Input: Pixel p
    Output: Pixel
    Function: If the pixel has high red value, then don't change it, otherwise
-   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
    the average of the 3.
 '''
 def boost_red_pixel(p: Pixel) -> Pixel:
-    # setup -- extract the color channels as ints
+    # setup -- extract the colour channels as ints
     red = int(p[0])
     green = int(p[1])
     blue = int(p[2])
@@ -299,6 +297,7 @@ main()
 ```
 
 ::: notes
+``` python
 from typing import Tuple
 import numpy as np
 from skimage import io
@@ -309,11 +308,11 @@ Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
 '''Input: Pixel p
    Output: Pixel
    Function: If the pixel has high red value, then don't change it, otherwise
-   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
    the average of the 3.
 '''
 def boost_red_pixel(p: Pixel) -> Pixel:
-    # setup -- extract the color channels as ints
+    # setup -- extract the colour channels as ints
     red = int(p[0])
     green = int(p[1])
     blue = int(p[2])
@@ -350,4 +349,5 @@ def main() -> None:
     plt.show()
   
 main()
+```
 :::
