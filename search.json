@@ -361,7 +361,7 @@
     "href": "slides/02_thu_representation.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nWebsite getting closer\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122\nFirst examlet signup soon!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+    "text": "Announcements\n\nSetup instructions available.\nPython resources posted to piazza.\nFirst examlet signup available.\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
   },
   {
     "objectID": "slides/02_thu_representation.html#learning-outcomes",
@@ -438,14 +438,14 @@
     "href": "slides/02_thu_representation.html#color-and-code",
     "title": "Programming, problem solving, and algorithms",
     "section": "Color and Code",
-    "text": "Color and Code\nWe can change images by manipulating the colour of the pixels!"
+    "text": "Color and Code\nMake the poppies pop!\n\nExamine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values."
   },
   {
-    "objectID": "slides/02_thu_representation.html#code",
-    "href": "slides/02_thu_representation.html#code",
+    "objectID": "slides/02_thu_representation.html#color-and-code-1",
+    "href": "slides/02_thu_representation.html#color-and-code-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "CODE",
-    "text": "CODE"
+    "section": "Color and Code",
+    "text": "Color and Code\n\n\n\n\n\n\n\nfrom typing import Tuple import numpy as np from skimage import io import matplotlib.pyplot as plt\nPixel = Tuple[np.uint8, np.uint8, np.uint8] # (r, g, b)\n’‘’Input: Pixel p Output: Pixel Function: If the pixel has high red value, then don’t change it, otherwise fade the pixel to grey. Note, to grey a pixel, set all color channels to the average of the 3.’’’ def boost_red_pixel(p: Pixel) -&gt; Pixel: # setup – extract the color channels as ints red = int(p[0]) green = int(p[1]) blue = int(p[2]) # compute grey grey = (red + green + blue)//3\n# conditionally change the pixel to grey\nif red &lt; 200:\n    red = green = blue = grey\n\n# return updated pixel\nreturn (red, green, blue)\ndef fancify(img: np.ndarray) -&gt; np.ndarray: H, W = img.shape[:2] # grab the height and width of the image out = img.copy() # write to a copy\n# traverse every pixel in the image and change it!\nfor row in range(H):\n    for col in range(W):\n        out[row, col] = boost_red_pixel(img[row,col])\n\n# return image with changed pixels\nreturn out\ndef main() -&gt; None:\nimg = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n\nout = fancify(img)\n\nplt.imshow(out)\nplt.axis('off')\nplt.show()\nmain()"
   },
   {
     "objectID": "slides/tbd_tbd_classes.html#announcements",
