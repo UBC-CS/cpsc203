@@ -289,7 +289,7 @@ def fancify(img: np.ndarray) -> np.ndarray:
 
 def main() -> None:
     
-    img = io.imread('/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
     
     out = fancify(img)            # make a new fancy image
 
