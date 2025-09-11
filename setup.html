@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:title" content="Setup: Tech stack OLD DO NOT USE – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
-<meta property="og:site_name" content="{{< var course.full-title >}}">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
 <meta property="og:image:height" content="1368">
 <meta property="og:image:width" content="1924">
@@ -431,13 +431,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
   <ul class="collapse">
   <li><a href="#operating-system-os" id="toc-operating-system-os" class="nav-link" data-scroll-target="#operating-system-os">Operating system (OS)</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
+  <li><a href="#package-manager" id="toc-package-manager" class="nav-link" data-scroll-target="#package-manager">Package manager</a></li>
   <li><a href="#web-browser" id="toc-web-browser" class="nav-link" data-scroll-target="#web-browser">Web browser</a></li>
   <li><a href="#zoom" id="toc-zoom" class="nav-link" data-scroll-target="#zoom">Zoom</a></li>
-  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code">Visual Studio Code</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
   <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a></li>
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#tree" id="toc-tree" class="nav-link" data-scroll-target="#tree"><code>tree</code></a></li>
   </ul></li>
   <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
   </ul>
@@ -573,14 +572,113 @@ Warning
 </div>
 </div>
 </section>
+<section id="terminal" class="level3">
+<h3 class="anchored" data-anchor-id="terminal">Terminal</h3>
+<p>A terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands descibing what program you want to use and how you want to use it.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>The terminal app <em>Terminal</em> comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>The terminal app <em>Terminal</em> comes preinstalled with macOS. Activate Spotlight with <kbd aria-hidden="true">Command-Space</kbd><span class="visually-hidden">Command-Space</span>, start typing “terminal” and select the Terminal app by pressing <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>.</p>
+</div>
+</div>
+</div>
+<p>You will need to open the terminal several times in these instructions to install other programs.</p>
+</section>
+<section id="package-manager" class="level3">
+<h3 class="anchored" data-anchor-id="package-manager">Package manager</h3>
+<p>A package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>If you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager <em>WinGet</em> available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.</p>
+</div>
+</div>
+<section id="resources" class="level4">
+<h4 class="anchored" data-anchor-id="resources">Resources</h4>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">Use WinGet to install and manage applications</a></li>
+</ul>
+</section>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>We will use one of the most popular package managers on macOS called <em>Homebrew</em>. Open your Terminal, and then enter the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will be asked to enter the password for your computer:</p>
+<pre><code>==&gt; Checking for `sudo` access (which may request your password)...</code></pre>
+<p>Enter your password (it is normal that the cursor will not move as you enter characters for a password) and hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>.</p>
+<p>Next, the installation will install the <em>XCode Command Line Tools</em>:</p>
+<pre><code>The XCode Command Line Tools will be installed.</code></pre>
+<p>A new window will open with the following prompt:</p>
+<blockquote class="blockquote">
+<p><strong>The “xcode-select” command requires the command line developer tools. Would you like to install the tools now?</strong></p>
+<p>Choose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.</p>
+</blockquote>
+<p>Afterwards, back in the terminal, you will be informed what steps will be executed:</p>
+<pre><code>==&gt; This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+/etc/paths.d/homebrew
+
+Press RETURN/ENTER to continue or any other key to abort:</code></pre>
+<p>Confirm with <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your <code>PATH</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;&gt;</span> /Users/stephankoenig/.zprofile</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'eval "$(/opt/homebrew/bin/brew shellenv)"'</span> <span class="op">&gt;&gt;</span> /Users/stephankoenig/.zprofile</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">/opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now test if Homebrew works:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see the following:</p>
+<pre><code>Homebrew 4.6.9</code></pre>
+<section id="resources-1" class="level4">
+<h4 class="anchored" data-anchor-id="resources-1">Resources</h4>
+<ul>
+<li><a href="https://docs.brew.sh/">Homebrew Documentation</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
 <section id="web-browser" class="level3">
 <h3 class="anchored" data-anchor-id="web-browser">Web browser</h3>
 <p>You are welcome to use most modern browsers that have a WebKit or Gecko backend. <a href="https://www.apple.com/ca/safari/">Safari (Mac only)</a>, <a href="https://www.mozilla.org/en-CA/firefox/new/?redirect_source=firefox-com">Firefox</a>, <a href="https://vivaldi.com">Vivaldi</a>, <a href="https://brave.com">Brave</a>, <a href="https://www.microsoft.com/en-us/edge">Edge</a> are all recommended. Google Chrome is not recommended because of the <a href="https://www.forbes.com/sites/zakdoffman/2021/03/20/stop-using-google-chrome-on-apple-iphone-12-pro-max-ipad-and-macbook-pro/">well-documented privacy and tracking issues with Google</a>.</p>
 </section>
 <section id="zoom" class="level3">
 <h3 class="anchored" data-anchor-id="zoom">Zoom</h3>
-<p>We will be using Zoom in this course for all the student hours and you should install the Zoom client locally on your machine. It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions.</p>
-<p>The latest version of Zoom is 6.5.5 (8927). You can ensure you have the latest version of Zoom by clicking “Check for Updates” as shown in the screenshot below.</p>
+<p>You might attend office hours using <em>Zoom Workplace</em> and you should install the Zoom client locally on your machine.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>In your terminal, use WinGet to install Zoom:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Zoom<span class="op">.</span><span class="fu">Zoom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>In your terminal, use Homebrew to install Zoom:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> zoom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.5.12 (63499). You can ensure you have the latest version of Zoom by clicking “Check for Updates” as shown in the screenshot below.</p>
 <p><img src="./images/zoom.png" class="img-fluid" alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -596,65 +694,15 @@ Important
 </div>
 </div>
 </section>
-<section id="visual-studio-code" class="level3">
-<h3 class="anchored" data-anchor-id="visual-studio-code">Visual Studio Code</h3>
+<section id="git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h3>
+<p>We will be using the command line version of Git.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p> <span id="vs-code">The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE (integrated development environment), which we will use for more complex analysis. You can <a href="https://code.visualstudio.com/download">download VS Code</a> from its website.</span> Once the download is finished, double click it to open and follow the installation instructions.</p>
-</div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p><span id="vs-code">The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE (integrated development environment), which we will use for more complex analysis. You can <a href="https://code.visualstudio.com/download">download VS Code</a> from its website.</span> Once the download is finished, click “Open with Archive utility”, and move the extracted VS Code application from “Downloads” to “Applications”.</p>
-</div>
-</div>
-</div>
-<p>Make sure you are able to open VS Code by clicking on the application.</p>
-<section id="vs-code-extensions" class="level4">
-<h4 class="anchored" data-anchor-id="vs-code-extensions">VS Code extensions</h4>
-<p>The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. We will install some VS Code extensions to help us with our workflows. From within VS Code you can open up the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">Extension Marketplace (read more here)</a> to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.</p>
-<p><img src="./images/vscode.png" class="img-fluid" alt="Pointing to the left sidebar to where extensions can be installed."></p>
-<p>To install an extension, you simply search for it in the search bar, click the extension you want, and then click “Install”. There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:</p>
-<ul>
-<li><strong>Python</strong> (by Microsoft)</li>
-<li><strong>Python Debugger</strong> (by Microsoft)</li>
-<li><strong>autoDocString</strong> (by Nils Werner)</li>
-<li><strong>Python Indent</strong> (by Kevin Rose)</li>
-<li><strong>Black Formatter</strong> (for formatting, linting)</li>
-<li><strong>Markdown Table Formatter</strong> (helps format markdown tables)</li>
-<li><strong>Rainbow CSV</strong> (for colouring columns in CSV files)</li>
-<li><strong>indent-rainbow</strong> (for helping you see indents)</li>
-<li><strong>markdownlint</strong> (markdown linting and style checking extension)</li>
-</ul>
-<p><img src="./images/vscode_python.png" class="img-fluid" alt="Pointing to the Python extension by Microsoft in the list of extensions. Click 'Install'"></p>
-</section>
-</section>
-<section id="terminal" class="level3">
-<h3 class="anchored" data-anchor-id="terminal">Terminal</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">macOS</a></li></ul>
-<div class="tab-content" data-group="os">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Unfortunately, one of the major problems with using the Windows operating system is that the “Command Prompt” that comes with the operating system is severely deficient. No worries though, luckily most of the tools we use in this course are open source, so the community has worked hard to shore up deficiencies in the Microsoft ecosystem.</p>
-<p>A very common tool found on Unix-like systems (like macOS and Linux distirbutions), is called bash, and the best way to make it available to Widows is to install Linux. Luckily, there is a tool that allows us to run Linux alongside Windows (as something called a virtual machine) called Windows Subsystem for Linux (WSL). To set it up, we first start the Windows Terminal by opening the Windows Start menu, typing “terminal” in search bar and opening it. The Terminal will open in something called PowerShell:</p>
-<pre><code>Windows PowerShell
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
-
-PS C:\Users\&lt;user-name&gt;&gt;</code></pre>
-<p>Now type the following to install Ubuntu via WSL:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>After the install &lt;do we need to start Ubuntu manually?&gt;, you will be prompted to create a username and password for Ubuntu, keep this information in a safe place like a password manager.</p>
-<p>If you encounter any problems, reach out on Giscus to us.</p>
-<p>Resources:</p>
-<ul>
-<li><a href="aka.ms/wsl2-install">Install WSL</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password">Set up a WSL development environment</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Get started using Git on WSL</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting">Troubleshooting Windows Subsystem for Linux</a></li>
-</ul>
-<p>The replacement for the Command Prompt we will use in this course is called “Git BASH”. The latest version of Git BASH for Windows is 2.50.1.</p>
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p><em>Git</em> is installed as part of another specialized terminal app <em>Git BASH</em>. Open your terminal, and install Git Bash with</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Git<span class="op">.</span><span class="fu">Git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -665,239 +713,20 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>“Git BASH” is relatively old software, but it is very reliable and works very well. If you are feeling brave and want to setup <code>zsh</code> (the next generation shell, with many improvements) on Windows, you can <a href="https://dev.to/zinox9/installing-zsh-on-windows-37em">try these instructions here</a>. Note that these instructions are experimental and support from the teaching team is limited. But if you can get it to work or run into any issues, let me know! I hope to adopt zsh on windows fully next time I teach this course.</p>
-</div>
-</div>
-<p>Briefly, we will be using the Bash shell to interact with our computers via a command line interface, and Git to keep a version history of our files and upload to/download from to GitHub.</p>
-<p><a href="https://git-scm.com/download/win">Download the windows version of Git BASH</a>, run the installer and <strong>accept the default configuration for all pages except for the following</strong>:</p>
-<ul>
-<li>On the <strong>Choosing the default editor used by Git</strong> page, select “Use Visual Studio Code as Git’s default editor” from the drop-down menu.</li>
-<li><em>Optional</em>: On the <strong>Select Components</strong> page, check “On the Desktop” under “Additional icons” to create a shortcut for Git BASH on your Desktop.</li>
-</ul>
-<p><img src="./images/vscode-as-git-editor.png" class="img-fluid" alt="Choosing 'Use Visual Studio Code as Git's default editor' from the drop-down menu"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you wish to pin Git BASH to the taskbar, you need to search for the program in the start menu, right click the entry and select “Pin to taskbar”. If you instead first launch the program and pin it by right clicking on the taskbar icon, Git BASH will open with the wrong home directory (<code>/</code> instead of <code>/c/users/$USERNAME</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>After installation, test if you were successful by opening the Git BASH program.</p>
-<p><img src="./images/git-bash.png" class="img-fluid" alt="Git BASH icon on the Desktop and an open instance of Git BASH."></p>
-<p>Going forward we will refer Git BASH just as the “terminal” and all commands should be entered there (not Anaconda Command Prompt, Command Prompt or PowerShell, etc.).</p>
-</div>
-</div>
-<p>In the terminal, type the following to check which version of Bash you just installed:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The output should look similar to this:</p>
-<pre><code>GNU bash, version 5.3.3(1)-release (x86_64-pc-sys)
-Copyright (C) 2025 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
-
-This is free software; you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.</code></pre>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you tried to paste the above into Git BASH, you will have noticed that <kbd aria-hidden="true">Control-V</kbd><span class="visually-hidden">Control-V</span> does not work in Git BASH. Instead you need to right click and select “Paste” or use the <kbd aria-hidden="true">Shift-Insert</kbd><span class="visually-hidden">Shift-Insert</span> shortcut. To copy from the Git BASH terminal you simply select the text you want and it is copied automatically.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Via right click you can also reach the settings menu where you can configure Git BASH to your preferences, a couple of tips would be to check “Mouse &gt; Clicks place command line cursor” and change the font to something more legible, e.g. Consolas (“Text &gt; Select”).</p>
-</div>
-</div>
-<section id="launch-vs-code-from-git-bash" class="level4">
-<h4 class="anchored" data-anchor-id="launch-vs-code-from-git-bash">Launch VS Code from Git BASH</h4>
-<p>You can launch many windows programs from the Bash terminal, e.g.&nbsp;to launch VS Code that we installed previously, you would type in <code>code</code>, let’s use this to check the version of vscode that we installed:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>1.71
-e4503b30fc78200f846c62cf8091b76ff5547662
-x64</code></pre>
-</section>
-<section id="setting-vs-code-as-the-default-editor" class="level4">
-<h4 class="anchored" data-anchor-id="setting-vs-code-as-the-default-editor">Setting VS Code as the default editor</h4>
-<p>To make programs run from the terminal (such as <code>git</code>) use VS Code by default, we will modify <code>~/.bash_profile</code>. First, open this file using VS Code by typing into the terminal:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you see any existing lines in your <code>~/.bash_profile</code> related to a previous Python or R installation, please remove these.</p>
-</div>
-</div>
-<div id="set-terminal-editor">
-<p>Append the following lines:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the default editor for programs launch from terminal</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span><span class="st">"code --wait"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">VISUAL</span><span class="op">=</span><span class="va">$EDITOR</span>  <span class="co"># Use the same value as for "EDITOR" in the line above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then save the file and exit VS Code.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Most terminal programs will read the <code>EDITOR</code> environmental variable when determining which editor to use, but some read <code>VISUAL</code>, so we’re setting both to the same value.</p>
+<p>Whenever you need to use Git in this course, you will need to open Git Bash and enter any Git commands there.</p>
 </div>
 </div>
 </div>
-</section>
-</div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<p>A terminal app comes preinstalled with macOS. You can find the terminal app in Applications &gt; Utilities &gt; Terminal or by activating Spotlight with <kbd aria-hidden="true">Command-Space</kbd><span class="visually-hidden">Command-Space</span>, typing in terminal and then pressing <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>. You will need to do this several times in these instructions.</p>
-<p>You can proceed to spice up your terminal a bit!</p>
-<section id="oh-my-zsh-to-configure-the-terminal" class="level4">
-<h4 class="anchored" data-anchor-id="oh-my-zsh-to-configure-the-terminal">Oh My Zsh to configure the terminal</h4>
-<p>Install “Oh My Zsh” to add terminal colours, highlighting and other cool features by running the following command in your terminal:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You may now customize your terminal with themes (see <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">screenshots of themes here</a>) by <a href="https://github.com/ohmyzsh/ohmyzsh#selecting-a-theme">following the directions here</a>. Selecting a theme is optional, the default one is pretty good as it is!</p>
-</section>
-<section id="configure-vs-code-to-launch-from-the-terminal" class="level4">
-<h4 class="anchored" data-anchor-id="configure-vs-code-to-launch-from-the-terminal">Configure VS Code to launch from the terminal</h4>
-<ol type="1">
-<li>Launch VS Code</li>
-<li>Open the Command Palette <kbd aria-hidden="true">Shift-Command-P</kbd><span class="visually-hidden">Shift-Command-P</span></li>
-<li>Type <code>shell command</code> to find the “Shell Command: Install ‘code’ command in PATH” command</li>
-<li>Hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span></li>
-<li>Restart the terminal for the new <code>$PATH</code> value to take effect</li>
-</ol>
-<p>Now you can open files in VS Code from the terminal! Alternatively, just type <code>code .</code> in any folder to start editing files in that folder.</p>
-<p>You can test that VS Code is installed and can be opened from terminal by restarting Terminal and typing the following command in a Terminal:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>you should see something like this if you were successful:</p>
-<pre><code>1.85.2
-8b3775030ed1a69b13e4f4c628c612102e30a681
-arm64</code></pre>
-<p>If this does <strong>not</strong> work for you, try it again:</p>
-<ol type="1">
-<li>Restart VS Code.</li>
-<li>Open the Command Palette <kbd aria-hidden="true">Shift-Command-P</kbd><span class="visually-hidden">Shift-Command-P</span>.</li>
-<li>Type <code>shell command</code> to find the “Shell Command: Uninstall ‘code’ command from PATH”.</li>
-<li>Hit Enter.</li>
-<li>Type <code>shell command</code> to find the “Shell Command: Install ‘code’ command from PATH”.</li>
-<li>You might need to enter in your Mac’s admin password.</li>
-</ol>
-<p>If this <em>still</em> does not work, then you should ask a TA for help, but if you’re feeling brave, <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line">manual install instructions are here - remember to use the <code>zsh</code> files</a> steps as well.</p>
-</section>
-<section id="setting-vs-code-as-the-default-editor-1" class="level4">
-<h4 class="anchored" data-anchor-id="setting-vs-code-as-the-default-editor-1">Setting VS Code as the default editor</h4>
-<p>To make programs run from the Terminal (such as <code>git</code>) use VS Code by default, we will modify <code>~/.z_profile</code>. First, open it using VS Code:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.z_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you see any existing lines in your <code>~/.z_profile</code> related to a previous Python installation, please remove them.</p>
-</div>
-</div>
-<div id="set-terminal-editor">
-<p>Append the following lines:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the default editor for programs launch from terminal</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">EDITOR</span><span class="op">=</span><span class="st">"code --wait"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">VISUAL</span><span class="op">=</span><span class="va">$EDITOR</span>  <span class="co"># Use the same value as for "EDITOR" in the line above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then save the file and exit VS Code.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Most terminal programs will read the <code>EDITOR</code> environmental variable when determining which editor to use, but some read <code>VISUAL</code>, so we’re setting both to the same value.</p>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>Open your terminal, and install <em>Git</em> with:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section>
-</div>
-</div>
-</div>
-<!--
-Quarto content divs (https://quarto.org/docs/authoring/contents.html)
--->
-</section>
-<section id="git-and-github" class="level3">
-<h3 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">macOS</a></li></ul>
-<div class="tab-content" data-group="os">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Git is installed as part of the <a href="#terminal">terminal/Git BASH</a>.</p>
-</div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<p>We will be using the command line version of Git. Some of the Git commands we will use are only available since Git 2.23, so if your Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.</p>
-<p>Open your terminal and type the following command to install Xcode command line tools:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>In the terminal type the following to check the Git version:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Git Bash (Windows)/the terminal (macOS), type the following to check the Git version:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see something like this if everything is working correctly:</p>
-<pre><code>git version 2.50.1</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you run into trouble, post your error message in the discussion below and ask for help!</p>
-</div>
-</div>
+<pre><code>git version 2.51.0</code></pre>
 <section id="github.com-account" class="level4">
 <h4 class="anchored" data-anchor-id="github.com-account">GitHub.com account</h4>
 <p>Sign up for a free account at <a href="https://github.com/">GitHub.com</a> if you don’t have one already. Your GitHub.com username is important, so here some <a href="https://happygitwithr.com/github-acct#username-advice">advice on picking a username</a> and below an image on how to find it again.</p>
@@ -905,9 +734,9 @@ Note
 </section>
 <section id="configuring-git-user-info" class="level4">
 <h4 class="anchored" data-anchor-id="configuring-git-user-info">Configuring Git user info</h4>
-<p>Next, we need to configure Git by telling it your name and email. To do this type the following into the terminal (the same ones you used to sign up for GitHub):</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-github-name&gt;"</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into Git Bash (Windows)/the terminal (macOS):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-name&gt;"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -955,8 +784,8 @@ Note
 </section>
 <section id="clone-your-first-repository-on-your-computer" class="level4">
 <h4 class="anchored" data-anchor-id="clone-your-first-repository-on-your-computer">Clone your first repository on your computer</h4>
-<p>Open a terminal window, and then run the following command:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Open Git Bash (Windows)/the terminal (macOS), and then run the following command:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -971,7 +800,7 @@ Tip
 <p>If after running the code above, you see the error message:</p>
 <pre><code>fatal: destination path 'test' already exists and is not an empty directory. </code></pre>
 <p>It means that you already attempted a clone before, and there is already a directory called <code>test</code> where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the <code>test</code> directory and delete it. Alternatively, from the command line you can try:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which will “remove” (using the <code>rm</code> command) the directory called <code>test</code>. The<code>-</code> is to specify additional options: <code>r</code> means “recursively” for all the files in the directory, and <code>f</code> means “force” which means don’t ask me for confirmation after deleting each file and folder.</p>
 </div>
 </div>
@@ -984,9 +813,9 @@ Tip
 <h4 class="anchored" data-anchor-id="installing-conda-and-python">Installing <code>conda</code> and Python</h4>
 <p>We will be using Python for a large part of the course, and <code>conda</code> will be our Python package manager. We will be using the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda installer (read more here)</a> to install both Python and conda at the same time. Miniconda also provides us with a minimum number of useful packages so installation is quick, and relatively painless. You can <a href="https://www.anaconda.com/download/success">download the Miniconda installer here for your OS</a>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
-<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <p>After the download has finished, run the installer and accept the default configuration on all pages.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1003,7 +832,7 @@ Warning
 </div>
 <p>After the installation is complete, open the Start Menu and search for the program called “Anaconda Prompt (miniconda3)”. When this opens you will see a prompt similar to <code>(base) C:\Users\your_name</code>. Type the following to check that your Python installation is working:</p>
 <div id="check-python-version">
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which should return something like this:</p>
 <pre><code>Python 3.13.6</code></pre>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1036,11 +865,11 @@ Warning
 </div>
 </div>
 <p>To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git BASH) terminal, which is what we will be using most of the time. To set this up, open the “Anaconda Prompt (miniconda3)” again and type:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see that this modified a few configuration files, which makes <code>conda</code> visible to the terminal. Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word <code>(base)</code> as in the screenshot below:</p>
 <p><img src="./images/add-conda-env-to-ps1.png" class="img-fluid"></p>
 <p>If you type</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>you should now see the same output as above:</p>
 <pre><code>Python 3.13.6</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1058,7 +887,7 @@ Note
 </div>
 <div id="check-conda-version">
 <p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>you should see something like this</p>
 <pre><code>conda 25.5.1</code></pre>
 </div>
@@ -1073,20 +902,20 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p><em>Optional</em> One annoyance with our current terminal setup is that the word <code>(base)</code> is not on the same row as the rest of the prompt string (the part with <code>your_name@your_computer</code>). To fix this we can edit the <code>.bash_profile</code> configuration file to indicate that we do not want a newline at the beginning of the prompt string. Open up the configuration file using VS Code by typing the following command into a terminal:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Delete the line that reads the following (it should be line 13):</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">"</span><span class="va">$PS1</span><span class="st">"'\n'</span>       <span class="co"># new line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">"</span><span class="va">$PS1</span><span class="st">"'\n'</span>       <span class="co"># new line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Click to save the file, when VS Code prompts you that the saving failed, click “Retry as Admin” and then “Yes”. That’s it! Now if you launch a new terminal instance, you will see <code>(base)</code> on the same line as the rest of the prompt string as in the screenshot below.</p>
 <p><img src="./images/remove-newline-from-ps1.png" class="img-fluid" alt="After updating `.bash_profile`, `(base)` is on the same line as the rest of the prompt string."></p>
 </div>
 </div>
 </section>
 </div>
-<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <p>After installation, restart the terminal. If the installation was successful, you will see <code>(base)</code> prepending to your prompt string.</p>
 <div id="check-conda-version">
 <p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>you should see something like this</p>
 <pre><code>conda 25.5.1</code></pre>
 </div>
@@ -1105,7 +934,7 @@ Note
 </div>
 <p>Next, type the following to ask for the version of Python:</p>
 <div id="check-python-version">
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which should return something like this:</p>
 <pre><code>Python 3.13.6</code></pre>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1129,13 +958,13 @@ Important
 <section id="essential-python-packages" class="level4">
 <h4 class="anchored" data-anchor-id="essential-python-packages">Essential Python packages</h4>
 <p><code>conda</code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a href="https://conda-forge.org/"><code>conda-forge</code> (read more here)</a>, which provides more up-to-date packages. To enable us to access the most recent versions of the Python packages we are going to use, we will add this channel. To add the <code>conda-forge</code> channel type the following in a terminal window:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To install packages individually, we need to use the following command: <code>conda install -c conda-forge "&lt;package-name&gt;"</code>. The part about <code>conda install</code> tells the <code>conda</code> package manager to install a particular package, and the <code>-c</code> part is an extra “option” that tells <code>conda</code> to look in the <code>conda-forge</code> channel (which usually has the latest updated packages). We are specifying that we should use the <code>conda-forge</code> source because it typically has more recent and updated package versions.</p>
 <p>Let’s install the key packages needed (you will note that we’re also specifying certain versions of the package with <code>= X.Y</code>). You should copy and paste each line below in your terminal to install the following packages:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"black"</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pandas"</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"seaborn"</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pre-commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"black"</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pandas"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"seaborn"</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pre-commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>conda</code> will show you the packages that will be downloaded, and you may need to press <code>enter</code> or <code>Y</code> (for yes) to proceed with the installation. This may take a while to complete.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1154,32 +983,6 @@ Tip
 Quarto content divs (https://quarto.org/docs/authoring/contents.html)
 -->
 </section>
-</section>
-<section id="tree" class="level3">
-<h3 class="anchored" data-anchor-id="tree"><code>tree</code></h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">macOS</a></li></ul>
-<div class="tab-content" data-group="os">
-<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>From the <a href="http://gnuwin32.sourceforge.net/packages/tree.htm">tree for Windows</a> page, “<code>tree</code> is a recursive directory listing program that produces a depth indented listing of files.” This is very useful to explore your directory and file structure to figure out which files are where.</p>
-<p>Unfortunately, <code>tree</code> is not trivial to install on Windows, but it is definitely worth the 2–3 minutes it takes to install it. The steps <a href="https://dev.to/flyingduck92/add-tree-to-git-bash-on-windows-10-1eb1">in detail are outlined here (with screenshots)</a>.</p>
-<p>In brief, the steps are:</p>
-<ol type="1">
-<li><p>Download the <a href="http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-bin.zip"><code>tree</code> binaries</a></p></li>
-<li><p>Unzip the file, and navigate to the <code>bin</code> directory, and find <code>tree.exe</code>.</p></li>
-<li><p>Move or copy the <code>tree.exe</code> file to this location: <code>C:\Program Files\Git\usr\bin</code>.</p></li>
-<li><p>Restart Git BASH and type in <code>tree</code>.</p></li>
-</ol>
-<p>If things work, then you’re all done!</p>
-</div>
-<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>“<code>tree</code> is a recursive directory listing program that produces a depth indented listing of files.” This is very useful to explore your directory and file structure to figure out which files are where.</p>
-<p>You can install the <code>tree</code> package using this command:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>After this, you’re all done!</p>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="attribution" class="level2">
