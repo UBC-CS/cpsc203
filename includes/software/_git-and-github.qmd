@@ -1,23 +1,30 @@
 ### Git and GitHub
 
-::: {.panel-tabset group="os"}
+We will be using the command line version of Git.
+
+:::: {.panel-tabset group="os"}
 ## Windows
 
-Git is installed as part of the [terminal/Git BASH](#terminal).
+*Git* is installed as part of another specialized terminal app *Git BASH*. Open your terminal, and install Git Bash with
+
+``` powershell
+winget install -e --id Git.Git
+```
+
+::: callout-important
+Whenever you need to use Git in this course, you will need to open Git Bash and enter any Git commands there.
+:::
 
 ## macOS
 
-We will be using the command line version of Git.
-Some of the Git commands we will use are only available since Git 2.23, so if your Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.
-
-Open your terminal and type the following command to install Xcode command line tools:
+Open your terminal, and install *Git* with:
 
 ``` bash
-xcode-select --install
+brew install git
 ```
-:::
+::::
 
-In the terminal type the following to check the Git version:
+In Git Bash (Windows)/the terminal (macOS), type the following to check the Git version:
 
 ``` bash
 git --version
@@ -29,10 +36,6 @@ You should see something like this if everything is working correctly:
 git version {{< var software.git >}}
 ```
 
-::: callout-note
-If you run into trouble, post your error message in the discussion below and ask for help!
-:::
-
 #### GitHub.com account
 
 Sign up for a free account at [GitHub.com](https://github.com/) if you don't have one already.
@@ -43,10 +46,10 @@ Your GitHub.com username is important, so here some [advice on picking a usernam
 #### Configuring Git user info
 
 Next, we need to configure Git by telling it your name and email.
-To do this type the following into the terminal (the same ones you used to sign up for GitHub):
+To do this, provide your name and GitHub email by typing into Git Bash (Windows)/the terminal (macOS):
 
 ``` bash
-git config --global user.name "<your-github-name>"
+git config --global user.name "<your-name>"
 git config --global user.email "<your-github-email>"
 ```
 
@@ -93,7 +96,7 @@ This is a bit tricky, so please make sure you follow these directions carefully.
 
 #### Clone your first repository on your computer
 
-Open a terminal window, and then run the following command:
+Open Git Bash (Windows)/the terminal (macOS), and then run the following command:
 
 ``` bash
 git clone https://github.com/firasm/test.git

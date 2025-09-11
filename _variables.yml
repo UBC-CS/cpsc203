@@ -20,7 +20,7 @@ software:
   bash-year: "2025"
   brew: "4.6.9"
   conda: "25.5.1"
-  git: "2.50.1"
+  git: "2.51.0"
   macos: "Sequoia 15.5"
   python: "3.13.6"
   windows: "24H2 (build 26100.4656)"
