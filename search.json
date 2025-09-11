@@ -382,14 +382,14 @@
     "href": "slides/02_thu_representation.html#colour-interpretation",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour interpretation",
-    "text": "Colour interpretation\nWhat’s your favorite color? Do you have a sense for why it’s your favorite? Does that color influence your dress/decor/purchases?\nPsychological: https://www.playbuzz.com/jon10/what-color-matches-your-personality\nCultural: https://markedbydesign.net/blog/meaning-in-color"
+    "text": "Colour interpretation\nWhat’s your favorite color? Do you have a sense for why it’s your favorite? Does that color influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
   },
   {
     "objectID": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
     "href": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Colour—cultural interpretations",
-    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the group (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nBig design implications for data visualization"
+    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
   },
   {
     "objectID": "slides/02_thu_representation.html#colourrepresentation",
@@ -410,14 +410,14 @@
     "href": "slides/02_thu_representation.html#colourrepresentation-2",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
-    "text": "Colour—representation\nWhat’s the highest number we can represent with 4 bits?\n\n\n\nWhat’s the highest number we can represent with 5 bits?\n\n\n\nHow many bits do we need to express 127?\n\n\n\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.\nHow does this help us with color?"
+    "text": "Colour—representation\nWhat’s the highest number we can represent with 4 bits?\n\n\n\nWhat’s the highest number we can represent with 5 bits?\n\n\n\nHow many bits do we need to express 120?\n\n\n\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.\nHow does this help us with color?"
   },
   {
     "objectID": "slides/02_thu_representation.html#colourrepresentation-3",
     "href": "slides/02_thu_representation.html#colourrepresentation-3",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use integers to represent colors?\nRGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for color values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
+    "text": "Colour—representation\nCan we use integers to represent colors?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for color values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
   },
   {
     "objectID": "slides/02_thu_representation.html#colourrepresentation-4",
@@ -434,11 +434,18 @@
     "text": "Colour—representation (aside)\nWhat do you observe about the following RGB colors?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95"
   },
   {
-    "objectID": "slides/02_thu_representation.html#todo-for-next-class",
-    "href": "slides/02_thu_representation.html#todo-for-next-class",
+    "objectID": "slides/02_thu_representation.html#color-and-code",
+    "href": "slides/02_thu_representation.html#color-and-code",
     "title": "Programming, problem solving, and algorithms",
-    "section": "TODO for next class…",
-    "text": "TODO for next class…\nPOTD\nPlay: https://www.google.com/search?q=color+picker\nPractice exercises for next week’s examlet available Sunday."
+    "section": "Color and Code",
+    "text": "Color and Code\nWe can change images by manipulating the colour of the pixels!"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#code",
+    "href": "slides/02_thu_representation.html#code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "CODE",
+    "text": "CODE"
   },
   {
     "objectID": "slides/tbd_tbd_classes.html#announcements",
