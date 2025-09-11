@@ -131,5 +131,6 @@ dmypy.json
 # Jupyter Book and Quarto outputs
 /_build/
 /_site/
+/_freeze/
 
 /.luarc.json
