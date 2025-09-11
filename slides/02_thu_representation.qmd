@@ -1,7 +1,5 @@
 ---
 date: 2025-09-11
-resources:
-  - /images/poppyfield.jpg
 ---
 
 ## Announcements {.smaller}
