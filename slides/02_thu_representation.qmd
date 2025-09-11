@@ -239,7 +239,6 @@ channels to the average of their original values.
 ## Color and Code
 
 ``` {pyodide-python}
-
 from typing import Tuple
 import numpy as np
 from skimage import io
@@ -266,12 +265,13 @@ def boost_red_pixel(p: Pixel) -> Pixel:
 
 
     # return updated pixel
-    return (red, green, blue)
+    return Pixel((red, green, blue))
 
 ''' Input: np.ndarray representing an image
-    Output: an image
-    Function: Create a new image by appling the boost_red_pixel function to every 
-    pixel in the original, and saving the result to the copy.
+    Output: an np.ndarray representing an image
+    Function: Create a new image by appling the boost_red_pixel 
+    function to every pixel in the original, and saving the 
+    result to the copy.
 '''
 
 def fancify(img: np.ndarray) -> np.ndarray:
