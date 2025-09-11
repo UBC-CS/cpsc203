@@ -4,11 +4,11 @@ date: 2025-09-11
 
 ## Announcements {.smaller}
 
-* Website getting closer
+* Setup instructions available.
 
-* POTW starts today! <https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122>
+* Python resources posted to piazza.
 
-* First examlet signup soon!
+* First examlet signup available.
 
 ::: notes
 **Summary**
@@ -225,68 +225,130 @@ What do you observe about the following RGB colors?
 | 130 |   0   |  95  |
 
 
+## Color and Code {.smaller}
+
+Make the poppies pop!
+
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
+
+Examine each pixel. If its red color channel is high (over 200, say), then
+leave it as is. Otherwise, change the pixel to grey by setting all 3 color
+channels to the average of their original values. 
+
+
 ## Color and Code
 
-We can change images by manipulating the colour of the pixels!
-
-::::: columns
-::: {.column}
-![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
-:::
-::: {.column}
-:::
-::::: 
-
-## CODE
-
 ``` {pyodide-python}
-#| results: asis
 
-from typing import Tuple, Dict, Callable
+from typing import Tuple
 import numpy as np
-import base64, imageio.v3 as iio
-from pyodide.http import open_url
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the color channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+
+    # compute grey 
 
 
-Pixel = Tuple[int, int, int]  # (r, g, b)
+    # conditionally change the pixel to grey
 
-def load_rgb(path: str) -> np.ndarray:
+
+    # return updated pixel
+    return (red, green, blue)
+
+''' Input: np.ndarray representing an image
+    Output: an image
+    Function: Create a new image by appling the boost_red_pixel function to every 
+    pixel in the original, and saving the result to the copy.
+'''
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy -- easy way to get the size right
+
+    # traverse every pixel in the image and write to the copy!
     
-    """Return an RGB image as uint8 (H, W, 3). Alpha, if any, is ignored."""
-    arr = iio.imread(open_url(https://raw.githubusercontent.com/UBC-CS/dsci220/refs/heads/main/images/poppyfield.jpg))[..., :3]     # keep first 3 channels (RGB)
-    return arr.astype(np.uint8)         # in class, our sample images are already uint8
 
-def clamp_255(v: int) -> int:
-    return 0 if v < 0 else 255 if v > 255 else v
 
-def boost_red_pixel(y: int, x: int, p: Pixel, H: int, W: int) -> Pixel:
-    r, g, b = p
-    grey = (r + g + b)//3;
-    if r < 128:
-        r = g = b = grey
-    return (r, g, b)
-
-def apply_per_pixel(img: np.ndarray) -> np.ndarray:
-    H, W, _ = img.shape
-    src = img                             # read from original
-    out = img.copy()                      # write to copy
-    for y in range(H):
-        for x in range(W):
-            r, g, b = int(src[y, x, 0]), int(src[y, x, 1]), int(src[y, x, 2])
-            R, G, B = boost_red_pixel(y, x, (r,g,b), H, W)
-            out[y, x] = (np.uint8(R), np.uint8(G), np.uint8(B))
-    out = (np.clip(out, 0, 255).astype(np.uint8))[..., :3]
+    # return image with changed pixels
     return out
 
 def main() -> None:
     
-    img = load_rgb("xyz")    
-    #out = apply_per_pixel(img)
-    #iio.imwrite("images/poppoppyfield.jpg", out)
-    #data = iio.imwrite("<bytes>", img, extension=".jpg", quality=90)
-    #b64 = base64.b64encode(data).decode("ascii")
-    #print(f'<img src="data:image/jpeg;base64,{b64}" style="max-width:100%; border-radius:6px;">')
-
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
+    
+    out = fancify(img)            # make a new fancy image
+  
+    plt.imshow(out)               # output the results
+    plt.axis('off')
+    plt.show()
+  
 main()
 
 ```
+
+::: notes
+from typing import Tuple
+import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the color channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+    # compute grey 
+    grey = (red + green + blue)//3
+
+    # conditionally change the pixel to grey
+    if red < 200:
+        red = green = blue = grey
+
+    # return updated pixel
+    return (red, green, blue)
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy
+
+    # traverse every pixel in the image and change it!
+    for row in range(H):
+        for col in range(W):
+            out[row, col] = boost_red_pixel(img[row,col])
+
+    # return image with changed pixels
+    return out
+
+def main() -> None:
+    
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)
+    
+    out = fancify(img)
+  
+    plt.imshow(out)
+    plt.axis('off')
+    plt.show()
+  
+main()
+:::
