@@ -5,15 +5,13 @@ We will be using the command line version of Git.
 :::: {.panel-tabset group="os"}
 ## Windows
 
-*Git* is installed as part of another specialized terminal app *Git BASH*. Open your terminal, and install Git Bash with
+*Git* is installed as part of *Git Bash*. Open your terminal, and install Git Bash with
 
 ``` powershell
 winget install -e --id Git.Git
 ```
 
-::: callout-important
-Whenever you need to use Git in this course, you will need to open Git Bash and enter any Git commands there.
-:::
+Restart your terminal.
 
 ## macOS
 
@@ -24,7 +22,7 @@ brew install git
 ```
 ::::
 
-In Git Bash (Windows)/the terminal (macOS), type the following to check the Git version:
+In the terminal, type the following to check the Git version:
 
 ``` bash
 git --version
@@ -46,7 +44,7 @@ Your GitHub.com username is important, so here some [advice on picking a usernam
 #### Configuring Git user info
 
 Next, we need to configure Git by telling it your name and email.
-To do this, provide your name and GitHub email by typing into Git Bash (Windows)/the terminal (macOS):
+To do this, provide your name and GitHub email by typing into the terminal:
 
 ``` bash
 git config --global user.name "<your-name>"
@@ -96,7 +94,7 @@ This is a bit tricky, so please make sure you follow these directions carefully.
 
 #### Clone your first repository on your computer
 
-Open Git Bash (Windows)/the terminal (macOS), and then run the following command:
+Open the terminal, and then run the following command:
 
 ``` bash
 git clone https://github.com/firasm/test.git
