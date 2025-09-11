@@ -74,9 +74,9 @@ What's your favorite color?
 Do you have a sense for *why* it's your favorite?
 Does that color influence your dress/decor/purchases?
 
-Psychological: <https://www.playbuzz.com/jon10/what-color-matches-your-personality>
+Psychological: <https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s>
 
-Cultural: <https://markedbydesign.net/blog/meaning-in-color>
+Cultural: <https://en.wikipedia.org/wiki/Color_symbolism>
 
 []{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
 
@@ -84,7 +84,7 @@ Cultural: <https://markedbydesign.net/blog/meaning-in-color>
 
 Activity---In pairs, choose a color (primary or secondary) and find something in its cultural symbolism that surprises you.
 Contradictions are especially interesting.
-Report your findings to the group (briefly).
+Report your findings to the class (briefly).
 
 ::::: columns
 ::: {.column width="50%"}
@@ -104,7 +104,7 @@ Report your findings to the group (briefly).
 :::
 :::::
 
-{{< countdown minutes=2 >}}
+{{< countdown minutes=5 >}}
 
 ::: notes
 Big design implications for data visualization
@@ -162,7 +162,7 @@ What's the highest number we can represent with 5 bits?
 \
 \
 
-How many bits do we need to express 127?
+How many bits do we need to express 120?
 
 \
 \
@@ -180,7 +180,7 @@ How does this help us with color?
 
 Can we use integers to represent colors?
 
-RGB (red, green, blue), where each "component" is in range 0 through 255.
+One way: RGB (red, green, blue), where each "component" is in range 0 through 255.
 
 ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
 
@@ -225,20 +225,68 @@ What do you observe about the following RGB colors?
 | 130 |   0   |  95  |
 
 
-## TODO for next class...
+## Color and Code
 
-POTD
+We can change images by manipulating the colour of the pixels!
 
-Play: <https://www.google.com/search?q=color+picker>
+::::: columns
+::: {.column}
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
+:::
+::: {.column}
+:::
+::::: 
 
-Practice exercises for next week's examlet available Sunday.
+## CODE
 
-# Tech stack
+``` {pyodide-python}
+#| results: asis
 
-##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+from typing import Tuple, Dict, Callable
+import numpy as np
+import base64, imageio.v3 as iio
+from pyodide.http import open_url
 
-# Type hints in Python
 
-# Before next class
+Pixel = Tuple[int, int, int]  # (r, g, b)
 
-Make sure to finish the setup of the tech stack!
+def load_rgb(path: str) -> np.ndarray:
+    
+    """Return an RGB image as uint8 (H, W, 3). Alpha, if any, is ignored."""
+    arr = iio.imread(open_url(https://raw.githubusercontent.com/UBC-CS/dsci220/refs/heads/main/images/poppyfield.jpg))[..., :3]     # keep first 3 channels (RGB)
+    return arr.astype(np.uint8)         # in class, our sample images are already uint8
+
+def clamp_255(v: int) -> int:
+    return 0 if v < 0 else 255 if v > 255 else v
+
+def boost_red_pixel(y: int, x: int, p: Pixel, H: int, W: int) -> Pixel:
+    r, g, b = p
+    grey = (r + g + b)//3;
+    if r < 128:
+        r = g = b = grey
+    return (r, g, b)
+
+def apply_per_pixel(img: np.ndarray) -> np.ndarray:
+    H, W, _ = img.shape
+    src = img                             # read from original
+    out = img.copy()                      # write to copy
+    for y in range(H):
+        for x in range(W):
+            r, g, b = int(src[y, x, 0]), int(src[y, x, 1]), int(src[y, x, 2])
+            R, G, B = boost_red_pixel(y, x, (r,g,b), H, W)
+            out[y, x] = (np.uint8(R), np.uint8(G), np.uint8(B))
+    out = (np.clip(out, 0, 255).astype(np.uint8))[..., :3]
+    return out
+
+def main() -> None:
+    
+    img = load_rgb("xyz")    
+    #out = apply_per_pixel(img)
+    #iio.imwrite("images/poppoppyfield.jpg", out)
+    #data = iio.imwrite("<bytes>", img, extension=".jpg", quality=90)
+    #b64 = base64.b64encode(data).decode("ascii")
+    #print(f'<img src="data:image/jpeg;base64,{b64}" style="max-width:100%; border-radius:6px;">')
+
+main()
+
+```
