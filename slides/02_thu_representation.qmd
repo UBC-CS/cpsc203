@@ -1,5 +1,7 @@
 ---
 date: 2025-09-11
+resources:
+  - /images/poppyfield.jpg
 ---
 
 ## Announcements {.smaller}
@@ -238,7 +240,7 @@ channels to the average of their original values.
 
 ## Color and Code
 
-``` {pyodide-python}
+``` {pyodide}
 from typing import Tuple
 import numpy as np
 from skimage import io
@@ -287,16 +289,15 @@ def fancify(img: np.ndarray) -> np.ndarray:
 
 def main() -> None:
     
-    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
+    img = io.imread('/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
     
     out = fancify(img)            # make a new fancy image
-  
+
     plt.imshow(out)               # output the results
     plt.axis('off')
     plt.show()
-  
-main()
 
+main()
 ```
 
 ::: notes

@@ -12,6 +12,3 @@ format:
     drop:
       engine: pyodide
     auto-play-media: false
-filters:
-  - pyodide
-
