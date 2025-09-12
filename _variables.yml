@@ -22,7 +22,9 @@ software:
   conda: "25.5.1"
   git: "2.51.0"
   macos: "Sequoia 15.5"
+  marimo: "0.15.3"
   python: "3.13.6"
+  uv: "0.8.17"
   windows: "24H2 (build 26100.4656)"
   zoom: "6.5.12 (63499)"
 icon:

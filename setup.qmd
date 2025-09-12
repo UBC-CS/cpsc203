@@ -1,5 +1,5 @@
 ---
-title: "Setup: Tech stack OLD DO NOT USE"
+title: "Setup: Tech stack"
 ---
 
 ````{=html}
