@@ -351,3 +351,9 @@ def main() -> None:
 main()
 ```
 :::
+
+## {{< var icon.computer-activity >}} Your turn: Change image or boost {.activity}
+
+Find an online image you would like to boost and use its URL in the code we just wrote.
+
+How can you adjust the code to manipulate the colours in a different way?
