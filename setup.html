@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup: Tech stack OLD DO NOT USE – CPSC 203: Programming, problem solving, and algorithms</title>
+<title>Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,14 +111,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content="Setup: Tech stack OLD DO NOT USE – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
 <meta property="og:image:height" content="1368">
 <meta property="og:image:width" content="1924">
-<meta name="twitter:title" content="Setup: Tech stack OLD DO NOT USE – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
 <meta name="twitter:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
@@ -308,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Setup: Tech stack OLD DO NOT USE</h1>
+          <h1 class="quarto-secondary-nav-title">Setup: Tech stack</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -448,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Setup: Tech stack OLD DO NOT USE</h1>
+<h1 class="title d-none d-lg-block">Setup: Tech stack</h1>
 </div>
 
 
@@ -701,21 +701,9 @@ Important
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<p><em>Git</em> is installed as part of another specialized terminal app <em>Git BASH</em>. Open your terminal, and install Git Bash with</p>
+<p><em>Git</em> is installed as part of <em>Git Bash</em>. Open your terminal, and install Git Bash with</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Git<span class="op">.</span><span class="fu">Git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Whenever you need to use Git in this course, you will need to open Git Bash and enter any Git commands there.</p>
-</div>
-</div>
+<p>Restart your terminal.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Open your terminal, and install <em>Git</em> with:</p>
@@ -723,7 +711,7 @@ Important
 </div>
 </div>
 </div>
-<p>In Git Bash (Windows)/the terminal (macOS), type the following to check the Git version:</p>
+<p>In the terminal, type the following to check the Git version:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see something like this if everything is working correctly:</p>
 <pre><code>git version 2.51.0</code></pre>
@@ -734,7 +722,7 @@ Important
 </section>
 <section id="configuring-git-user-info" class="level4">
 <h4 class="anchored" data-anchor-id="configuring-git-user-info">Configuring Git user info</h4>
-<p>Next, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into Git Bash (Windows)/the terminal (macOS):</p>
+<p>Next, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-name&gt;"</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -784,7 +772,7 @@ Note
 </section>
 <section id="clone-your-first-repository-on-your-computer" class="level4">
 <h4 class="anchored" data-anchor-id="clone-your-first-repository-on-your-computer">Clone your first repository on your computer</h4>
-<p>Open Git Bash (Windows)/the terminal (macOS), and then run the following command:</p>
+<p>Open the terminal, and then run the following command:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -808,180 +796,51 @@ Tip
 </section>
 <section id="python" class="level3">
 <h3 class="anchored" data-anchor-id="python">Python</h3>
-<p>We are now ready to install Python!</p>
-<section id="installing-conda-and-python" class="level4">
-<h4 class="anchored" data-anchor-id="installing-conda-and-python">Installing <code>conda</code> and Python</h4>
-<p>We will be using Python for a large part of the course, and <code>conda</code> will be our Python package manager. We will be using the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda installer (read more here)</a> to install both Python and conda at the same time. Miniconda also provides us with a minimum number of useful packages so installation is quick, and relatively painless. You can <a href="https://www.anaconda.com/download/success">download the Miniconda installer here for your OS</a>.</p>
+<section id="installing-uv" class="level4">
+<h4 class="anchored" data-anchor-id="installing-uv">Installing <code>uv</code></h4>
+<p>We will be using Python for a large part of the course, and <em>uv</em> will be our Python package manager. Instead of installing Python separately on our machine, we will use <code>uv</code> to provision us with Python whenever we need to run it.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>After the download has finished, run the installer and accept the default configuration on all pages.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure to check the box to add Miniconda to the <code>PATH</code>. There is a big scary warning that says this is “Not Recommended” ; you can ignore that warning, and make sure that checkbox is clicked!</p>
-</div>
-</div>
-<p>After the installation is complete, open the Start Menu and search for the program called “Anaconda Prompt (miniconda3)”. When this opens you will see a prompt similar to <code>(base) C:\Users\your_name</code>. Type the following to check that your Python installation is working:</p>
-<div id="check-python-version">
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which should return something like this:</p>
-<pre><code>Python 3.13.6</code></pre>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If instead you see <code>Python 2.7.X</code> you installed the wrong version. Follow <a href="https://docs.anaconda.com/anaconda/install/uninstall">these instructions</a> to delete this installation and try the installation again, selecting <strong>Python</strong> 3.13.6 (or higher).</p>
-</div>
-</div>
-</div>
-<section id="integrating-python-with-the-git-bash-terminal" class="level4">
-<h4 class="anchored" data-anchor-id="integrating-python-with-the-git-bash-terminal">Integrating Python with the Git Bash terminal</h4>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This part is very important!!!</p>
-</div>
-</div>
-<p>To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git BASH) terminal, which is what we will be using most of the time. To set this up, open the “Anaconda Prompt (miniconda3)” again and type:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will see that this modified a few configuration files, which makes <code>conda</code> visible to the terminal. Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word <code>(base)</code> as in the screenshot below:</p>
-<p><img src="./images/add-conda-env-to-ps1.png" class="img-fluid"></p>
-<p>If you type</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>you should now see the same output as above:</p>
-<pre><code>Python 3.13.6</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you want to run Python interactively from the Git BASH terminal, you need to prepend the <code>winpty</code> command, so the full command would be <code>winpty python</code> (if you run this, note that you can exit the Python prompt by typing <code>exit()</code>). Running just <code>python</code> works on other setups, but will freeze the Git BASH terminal.</p>
-</div>
-</div>
-<div id="check-conda-version">
-<p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>you should see something like this</p>
-<pre><code>conda 25.5.1</code></pre>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Optional</em> One annoyance with our current terminal setup is that the word <code>(base)</code> is not on the same row as the rest of the prompt string (the part with <code>your_name@your_computer</code>). To fix this we can edit the <code>.bash_profile</code> configuration file to indicate that we do not want a newline at the beginning of the prompt string. Open up the configuration file using VS Code by typing the following command into a terminal:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Delete the line that reads the following (it should be line 13):</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">"</span><span class="va">$PS1</span><span class="st">"'\n'</span>       <span class="co"># new line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Click to save the file, when VS Code prompts you that the saving failed, click “Retry as Admin” and then “Yes”. That’s it! Now if you launch a new terminal instance, you will see <code>(base)</code> on the same line as the rest of the prompt string as in the screenshot below.</p>
-<p><img src="./images/remove-newline-from-ps1.png" class="img-fluid" alt="After updating `.bash_profile`, `(base)` is on the same line as the rest of the prompt string."></p>
-</div>
-</div>
-</section>
+<p>In the terminal, install <code>uv</code> with Winget:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id<span class="op">=</span>astral-sh<span class="op">.</span><span class="fu">uv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>After installation, restart the terminal. If the installation was successful, you will see <code>(base)</code> prepending to your prompt string.</p>
-<div id="check-conda-version">
-<p>Let’s check the version of the <code>conda</code> package manager. If you type</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>you should see something like this</p>
-<pre><code>conda 25.5.1</code></pre>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note: If you see <code>zsh: command not found: conda</code>, try the following&gt;: Open a new Terminal (it should be zsh), then type: <code>source /Users/YOURUSERNAME/miniconda3/bin/activate</code> OR <code>source ~/miniconda3/bin/activate</code> depending on whether you installed for all users, or just your user (make sure to also change YOURUSERNAME to your username). Then enter the following command <code>conda init zsh</code>. The error should now be fixed.</p>
-</div>
-</div>
-<p>Next, type the following to ask for the version of Python:</p>
-<div id="check-python-version">
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which should return something like this:</p>
-<pre><code>Python 3.13.6</code></pre>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If instead you see <code>Python 2.7.X</code> you installed the wrong version. Follow <a href="https://docs.anaconda.com/anaconda/install/uninstall">these instructions</a> to delete this installation and try the installation again, selecting <strong>Python</strong> 3.13.6 (or higher).</p>
+<p>In the terminal install <code>uv</code> with Homebrew:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install uv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+<p>To check if uv installed successfully, type in the terminal:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And you should see something like this</p>
+<pre><code>uv 0.8.17 &lt;some-installer-specific-information&gt;</code></pre>
+<section id="resources-2" class="level5">
+<h5 class="anchored" data-anchor-id="resources-2">Resources</h5>
+<ul>
+<li><a href="https://docs.astral.sh/uv/getting-started/installation/">Installation | uv</a></li>
+</ul>
 </section>
-<section id="essential-python-packages" class="level4">
-<h4 class="anchored" data-anchor-id="essential-python-packages">Essential Python packages</h4>
-<p><code>conda</code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a href="https://conda-forge.org/"><code>conda-forge</code> (read more here)</a>, which provides more up-to-date packages. To enable us to access the most recent versions of the Python packages we are going to use, we will add this channel. To add the <code>conda-forge</code> channel type the following in a terminal window:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To install packages individually, we need to use the following command: <code>conda install -c conda-forge "&lt;package-name&gt;"</code>. The part about <code>conda install</code> tells the <code>conda</code> package manager to install a particular package, and the <code>-c</code> part is an extra “option” that tells <code>conda</code> to look in the <code>conda-forge</code> channel (which usually has the latest updated packages). We are specifying that we should use the <code>conda-forge</code> source because it typically has more recent and updated package versions.</p>
-<p>Let’s install the key packages needed (you will note that we’re also specifying certain versions of the package with <code>= X.Y</code>). You should copy and paste each line below in your terminal to install the following packages:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"black"</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pandas"</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"seaborn"</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="st">"pre-commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>conda</code> will show you the packages that will be downloaded, and you may need to press <code>enter</code> or <code>Y</code> (for yes) to proceed with the installation. This may take a while to complete.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will be installing more Python packages as we go through the course!</p>
-</div>
-</div>
-<!--
-Quarto content divs (https://quarto.org/docs/authoring/contents.html)
--->
+</section>
+<section id="marimo" class="level4">
+<h4 class="anchored" data-anchor-id="marimo">marimo</h4>
+<p>We will be writing our code in a notebook app called <em>marimo</em>. marimo is itself a Python package, so we can use <code>uv</code> to install and run it. In particular, we will use the command <code>uvx</code> which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And you should see:</p>
+<pre><code>0.15.3</code></pre>
+<p>Even better, try this:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo tutorial intro</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And your default browser should open a window showing marimo.</p>
+<p><img src="./images/marimo.png" class="img-fluid"></p>
+<p>For now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.</p>
+<p>Now you are ready to run Python code on your local machine!!!</p>
+<section id="resources-3" class="level5">
+<h5 class="anchored" data-anchor-id="resources-3">Resources</h5>
+<ul>
+<li><a href="https://docs.marimo.io/getting_started/installation/">Installation | marimo</a></li>
+</ul>
+</section>
 </section>
 </section>
 </section>
