@@ -224,7 +224,7 @@ What do you observe about the following RGB colours?
 | 62  |   0   |  37  |
 | 130 |   0   |  95  |
 
-## colour and Code {.smaller}
+## Colour and Code {.smaller}
 
 Make the poppies pop!
 
@@ -234,7 +234,7 @@ Examine each pixel.
 If its red colour channel is high (over 200, say), then leave it as is.
 Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.
 
-## colour and Code
+## Colour and Code
 
 ```{pyodide}
 from typing import Tuple
