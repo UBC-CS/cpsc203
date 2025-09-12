@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5082c1b048a9243e4e9bba654cb201bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4aebb4ef4a0cb3b62dfbe1f3bc120538.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5082c1b048a9243e4e9bba654cb201bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c10b30eb894da51f146a98bd36b89e1d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4a4176c2a757821146007d2a6478b1b5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c10b30eb894da51f146a98bd36b89e1d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d7b3551ac17a5c09240aa8cdf2c3c5ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-538432f77a1fd3e3b5ecbee43f06b70a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d7b3551ac17a5c09240aa8cdf2c3c5ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-18e73b5f920f061ebbebf66f1acfccde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1ad9a3d7ac027c05f437d5a4d8fbffad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-18e73b5f920f061ebbebf66f1acfccde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -117,7 +118,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -336,12 +337,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">CPSC 203: Programming, problem solving, and algorithms</a> 
-        <div class="sidebar-tools-main">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -493,23 +493,23 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="kjfyeglvty" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kjfyeglvty table {
+<div id="hemwhkmsnj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hemwhkmsnj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kjfyeglvty thead, #kjfyeglvty tbody, #kjfyeglvty tfoot, #kjfyeglvty tr, #kjfyeglvty td, #kjfyeglvty th {
+#hemwhkmsnj thead, #hemwhkmsnj tbody, #hemwhkmsnj tfoot, #hemwhkmsnj tr, #hemwhkmsnj td, #hemwhkmsnj th {
   border-style: none;
 }
 
-#kjfyeglvty p {
+#hemwhkmsnj p {
   margin: 0;
   padding: 0;
 }
 
-#kjfyeglvty .gt_table {
+#hemwhkmsnj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -535,12 +535,12 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-left-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_caption {
+#hemwhkmsnj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kjfyeglvty .gt_title {
+#hemwhkmsnj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -552,7 +552,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-bottom-width: 0;
 }
 
-#kjfyeglvty .gt_subtitle {
+#hemwhkmsnj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -564,7 +564,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-top-width: 0;
 }
 
-#kjfyeglvty .gt_heading {
+#hemwhkmsnj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -576,13 +576,13 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-right-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_bottom_border {
+#hemwhkmsnj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_col_headings {
+#hemwhkmsnj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -597,7 +597,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-right-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_col_heading {
+#hemwhkmsnj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -617,7 +617,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   overflow-x: hidden;
 }
 
-#kjfyeglvty .gt_column_spanner_outer {
+#hemwhkmsnj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -629,15 +629,15 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 4px;
 }
 
-#kjfyeglvty .gt_column_spanner_outer:first-child {
+#hemwhkmsnj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kjfyeglvty .gt_column_spanner_outer:last-child {
+#hemwhkmsnj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kjfyeglvty .gt_column_spanner {
+#hemwhkmsnj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -649,11 +649,11 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   width: 100%;
 }
 
-#kjfyeglvty .gt_spanner_row {
+#hemwhkmsnj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kjfyeglvty .gt_group_heading {
+#hemwhkmsnj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -679,7 +679,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   text-align: left;
 }
 
-#kjfyeglvty .gt_empty_group_heading {
+#hemwhkmsnj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -694,15 +694,15 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   vertical-align: middle;
 }
 
-#kjfyeglvty .gt_from_md > :first-child {
+#hemwhkmsnj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kjfyeglvty .gt_from_md > :last-child {
+#hemwhkmsnj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kjfyeglvty .gt_row {
+#hemwhkmsnj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -721,7 +721,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   overflow-x: hidden;
 }
 
-#kjfyeglvty .gt_stub {
+#hemwhkmsnj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -734,7 +734,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 5px;
 }
 
-#kjfyeglvty .gt_stub_row_group {
+#hemwhkmsnj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -748,15 +748,15 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   vertical-align: top;
 }
 
-#kjfyeglvty .gt_row_group_first td {
+#hemwhkmsnj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kjfyeglvty .gt_row_group_first th {
+#hemwhkmsnj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kjfyeglvty .gt_summary_row {
+#hemwhkmsnj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -766,16 +766,16 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 5px;
 }
 
-#kjfyeglvty .gt_first_summary_row {
+#hemwhkmsnj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_first_summary_row.thick {
+#hemwhkmsnj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kjfyeglvty .gt_last_summary_row {
+#hemwhkmsnj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -785,7 +785,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-bottom-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_grand_summary_row {
+#hemwhkmsnj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -795,7 +795,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 5px;
 }
 
-#kjfyeglvty .gt_first_grand_summary_row {
+#hemwhkmsnj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -805,7 +805,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-top-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_last_grand_summary_row_top {
+#hemwhkmsnj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -815,11 +815,11 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-bottom-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_striped {
+#hemwhkmsnj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kjfyeglvty .gt_table_body {
+#hemwhkmsnj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -828,7 +828,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-bottom-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_footnotes {
+#hemwhkmsnj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -842,7 +842,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-right-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_footnote {
+#hemwhkmsnj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -851,7 +851,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 5px;
 }
 
-#kjfyeglvty .gt_sourcenotes {
+#hemwhkmsnj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -865,7 +865,7 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   border-right-color: #D3D3D3;
 }
 
-#kjfyeglvty .gt_sourcenote {
+#hemwhkmsnj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -873,72 +873,72 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
   padding-right: 5px;
 }
 
-#kjfyeglvty .gt_left {
+#hemwhkmsnj .gt_left {
   text-align: left;
 }
 
-#kjfyeglvty .gt_center {
+#hemwhkmsnj .gt_center {
   text-align: center;
 }
 
-#kjfyeglvty .gt_right {
+#hemwhkmsnj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kjfyeglvty .gt_font_normal {
+#hemwhkmsnj .gt_font_normal {
   font-weight: normal;
 }
 
-#kjfyeglvty .gt_font_bold {
+#hemwhkmsnj .gt_font_bold {
   font-weight: bold;
 }
 
-#kjfyeglvty .gt_font_italic {
+#hemwhkmsnj .gt_font_italic {
   font-style: italic;
 }
 
-#kjfyeglvty .gt_super {
+#hemwhkmsnj .gt_super {
   font-size: 65%;
 }
 
-#kjfyeglvty .gt_footnote_marks {
+#hemwhkmsnj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kjfyeglvty .gt_asterisk {
+#hemwhkmsnj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kjfyeglvty .gt_indent_1 {
+#hemwhkmsnj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kjfyeglvty .gt_indent_2 {
+#hemwhkmsnj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kjfyeglvty .gt_indent_3 {
+#hemwhkmsnj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kjfyeglvty .gt_indent_4 {
+#hemwhkmsnj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kjfyeglvty .gt_indent_5 {
+#hemwhkmsnj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kjfyeglvty .katex-display {
+#hemwhkmsnj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kjfyeglvty div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hemwhkmsnj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1231,13 +1231,14 @@ Tuesdays and Thursdays, 3.30–5 p.m.<br>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

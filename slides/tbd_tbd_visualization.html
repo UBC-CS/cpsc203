@@ -6,11 +6,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="dcterms.date" content="2024-01-01">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f2ea9b50adc9fed21b22ebdc19122b64.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -228,10 +228,10 @@
 </section>
 <section id="warm-up-puzzle-whats-the-date-of-last-saturday" class="slide level2">
 <h2>Warm-up Puzzle: What’s the date of last saturday?</h2>
-<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a>today <span class="op">=</span> dt.date.today()</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a>today.weekday()</span>
-<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a>dayspostsat <span class="op">=</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a>dayspostsat <span class="op">=</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
@@ -294,14 +294,14 @@
 <div class="code-with-filename-file">
 <pre><strong>bill_week.csv</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="bill_week.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>,week,title,artist,rank,last_week,peak_pos,weeks_on_chart</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="bill_week.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>,week,title,artist,rank,last_week,peak_pos,weeks_on_chart</span>
 <span id="cb1-2"><a></a>0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19</span>
 <span id="cb1-3"><a></a>1,2019-09-21,Senorita,Shawn Mendes &amp; Camila Cabello,2,2,1,12</span>
 <span id="cb1-4"><a></a>2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10</span>
 <span id="cb1-5"><a></a>3,2019-09-21,Circles,Post Malone,4,7,4,2</span>
 <span id="cb1-6"><a></a>4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24</span>
 <span id="cb1-7"><a></a>5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15</span>
-<span id="cb1-8"><a></a>6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a>6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="section-1" class="slide level2" data-background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" data-background-interactive="true" data-menu-title="pandas cheat sheet">
@@ -350,7 +350,7 @@
 <p><u>_____________________________________________________</u></p></li>
 </ol>
 <aside class="notes">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'bill_week.csv'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'bill_week.csv'</span>)</span>
 <span id="cb2-2"><a></a>df3 <span class="op">=</span> df2[ df2[<span class="st">'weeks_on_chart'</span>] <span class="op">&gt;</span> <span class="dv">10</span> ]</span>
 <span id="cb2-3"><a></a><span class="bu">print</span>(<span class="st">"all:  "</span>)</span>
 <span id="cb2-4"><a></a><span class="bu">print</span>(df2)</span>
@@ -362,7 +362,7 @@
 <span id="cb2-10"><a></a><span class="bu">print</span>(<span class="st">"new count"</span>)</span>
 <span id="cb2-11"><a></a><span class="bu">print</span>(df4)</span>
 <span id="cb2-12"><a></a><span class="bu">print</span>(<span class="st">"peak avg"</span>)</span>
-<span id="cb2-13"><a></a><span class="bu">print</span>(df5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a></a><span class="bu">print</span>(df5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -481,7 +481,7 @@
 </div></div>
 <aside class="notes">
 <p>Filter, apply function, think about output (sometimes means choosing columns, too)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df[df[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>][[<span class="st">'title'</span>, <span class="st">'artist'</span>, <span class="st">'weeks_on_chart'</span>]] .count()[‘title<span class="st">']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df[df[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>][[<span class="st">'title'</span>, <span class="st">'artist'</span>, <span class="st">'weeks_on_chart'</span>]] .count()[‘title<span class="st">']</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -596,7 +596,7 @@
 </table>
 </div></div>
 <aside class="notes">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -711,8 +711,8 @@
 </table>
 </div></div>
 <aside class="notes">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>enduring_peak <span class="op">=</span> df[df[<span class="st">'weeks_on_chart'</span>]<span class="op">&gt;=</span><span class="dv">10</span>][<span class="st">'peak_pos'</span>].mean()</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"enduring avg peak: "</span> <span class="op">+</span> <span class="bu">str</span>(enduring_peak))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>enduring_peak <span class="op">=</span> df[df[<span class="st">'weeks_on_chart'</span>]<span class="op">&gt;=</span><span class="dv">10</span>][<span class="st">'peak_pos'</span>].mean()</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"enduring avg peak: "</span> <span class="op">+</span> <span class="bu">str</span>(enduring_peak))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -827,8 +827,8 @@
 </table>
 </div></div>
 <aside class="notes">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
+<span id="cb6-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1092,7 +1092,7 @@ W10=
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1177,13 +1177,14 @@ W10=
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
