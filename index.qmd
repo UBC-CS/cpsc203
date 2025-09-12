@@ -13,19 +13,20 @@ execute:
 
 **Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
 
-:::::: columns
+::::: columns
 ::: {.column width="50%"}
 **Contact**\
-📧 [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)\
+📧 [cheeren\@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)\
 ⏰ Mon 2–4pm [appointment](https://calendly.com/cheeren-cs/oh-appt)\
 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
+
 ::: {.column width="50%"}
 **Class**\
 {{< var course.time >}}\
 [360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)
 :::
-::::::
+:::::
 
 ## Weekly announcement
 
