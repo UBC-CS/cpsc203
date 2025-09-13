@@ -230,6 +230,8 @@ Make the poppies pop!
 
 ![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
 
+PC: <https://www.epicgardening.com/spring-wildflowers-from-seed/>
+
 Examine each pixel.
 If its red colour channel is high (over 200, say), then leave it as is.
 Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.
