@@ -438,7 +438,7 @@
     "href": "slides/02_thu_representation.html#colour-and-code",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour and Code",
-    "text": "Colour and Code\nMake the poppies pop!\n\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
+    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
   },
   {
     "objectID": "slides/02_thu_representation.html#colour-and-code-1",
