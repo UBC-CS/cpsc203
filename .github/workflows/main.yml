@@ -6,6 +6,8 @@ on:
   push:
     branches:
     - main
+  schedule:
+    - cron: '25 11 * * 1'
 
 jobs:
   build-deploy:
