@@ -1,5 +1,5 @@
 ---
-date: 2023-01-08
+date: 2025-09-15
 ---
 
 ## Announcements
@@ -14,25 +14,27 @@ $1 + 3 + 5 + \ldots + 1337$ = [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
 
 How many terms?
 
-English description: The sum of the first $k$ odd integers is [\_\_\_\_\_\_\_\_]{.underline}
+## Sums continued
+
+English description: 
+
+The sum of the first $k$ odd integers is [\_\_\_\_\_\_\_\_]{.underline}
 
 What about $11 + 13 + \ldots + 23$?
 
 \
 
+\
+
 And $2 + 4 + 6 + \ldots + 1338$?
 
-# Python Demo: Lists
+## Python Demo: Lists {.smaller}
 
-Given code lives at <https://us.prairielearn.com>
+Exploratory code lives at <https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679>
 
-Normally you will work on the exercises on your own machines.
+Don't worry if you haven't set up your own machine. The infrastructure on PL is 
+adequate for most things we'll do.
 
-Today, we have not yet set up your machines!!
-
-# Slides from the assigned videos
-
-##  {background-iframe="https://player.vimeo.com/video/905091212" data-menu-title="Handcraft program design"}
 
 ## Back to handcraft
 
@@ -89,8 +91,6 @@ Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is either "knit" or "purl," and is draw
 Missing words: blocks, blocks, position, rows, stitches, rectangles
 :::
 
-##  {background-iframe="https://player.vimeo.com/video/905092897" data-menu-title="Classes in Python" menu="false"}
-
 ## Classes in Python
 
 Mechanism for creating user-defined types.
@@ -113,8 +113,9 @@ class color:
 
 ::: notes
 Data classes allow us to create substructures to organize data in a way useful to us.
-Attributes are data and the functionality a member functions.
+Attributes are data and the functionality are member functions.
 Attributes can be defined with default values.
+
 :::
 
 ## Design Strategies
@@ -129,18 +130,17 @@ Attributes can be defined with default values.
 
 5.  Run the driver code to test your functionality.
 
-# Class activity
+## Which classes?
 
-{{< countdown minutes=10 >}}
+::: {layout="[2,8]"}
+![](/images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
 
-# Break
+![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
+:::
 
-{{< countdown minutes=5 >}}
+::: notes
+The 8x8 grid illustrates dishcloth.
+Each block has 5 rows of 5 stitches.
+How would you represent a handcraft using Python types?
+:::
 
-# POTD week 1 and 2
-
-{{< countdown minutes=5 >}}
-
-# Review of Python
-
-{{< countdown minutes=30 >}}
