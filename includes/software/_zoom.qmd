@@ -1,6 +1,8 @@
 ### Zoom
 
-You might attend office hours using *Zoom Workplace* and you should install the Zoom client locally on your machine.
+So far, we have been using the package manager to install software development tools.
+We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release.
+For example, you might attend office hours or a livestream using *Zoom Workplace* and you should install the Zoom client locally on your machine.
 
 ::: {.panel-tabset group="os"}
 ## Windows
@@ -22,9 +24,25 @@ brew install --cask zoom
 
 It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions.
 The latest version of Zoom is {{< var software.zoom >}}.
-You can ensure you have the latest version of Zoom by clicking "Check for Updates" as shown in the screenshot below.
+For a lot of software, there is an option to check for updates.
 
 ![](/images/zoom.png){fig-alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."}
+
+A package manager can directly update any software you have installed with it.
+
+::: {.panel-tabset group="os"}
+## Windows
+
+```powershell
+winget upgrade -e --id Zoom.Zoom
+```
+
+## macOS
+
+``` bash
+brew upgrade --cask zoom
+```
+:::
 
 ::: callout-important
 Please note that if you have been relying on the "web version" of Zoom that works only in a browser, this will not work for this course!
