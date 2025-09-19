@@ -80,13 +80,13 @@ Quarto includes for software should start with a level 3 heading `### <software-
 
 {{< include /includes/software/_package-manager.qmd >}}
 
-{{< include /includes/software/_web-browser.qmd >}}
-
-{{< include /includes/software/_zoom.qmd >}}
+{{< include /includes/software/_python.qmd >}}
 
 {{< include /includes/software/_git-and-github.qmd >}}
 
-{{< include /includes/software/_python.qmd >}}
+{{< include /includes/software/_zoom.qmd >}}
+
+{{< include /includes/software/_web-browser.qmd >}}
 
 ## Attribution
 
