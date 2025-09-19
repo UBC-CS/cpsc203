@@ -114,17 +114,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles/styles.css">
 <meta property="og:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/marimo.png">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
-<meta property="og:image:height" content="1368">
-<meta property="og:image:width" content="1924">
+<meta property="og:image:height" content="2334">
+<meta property="og:image:width" content="2144">
 <meta name="twitter:title" content="Setup: Tech stack – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/zoom.png">
-<meta name="twitter:image:alt" content="Zoom 'Check for Updates' showing the latest version of Zoom is installed.">
-<meta name="twitter:image-height" content="1368">
-<meta name="twitter:image-width" content="1924">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/marimo.png">
+<meta name="twitter:image-height" content="2334">
+<meta name="twitter:image-width" content="2144">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -433,10 +431,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#operating-system-os" id="toc-operating-system-os" class="nav-link" data-scroll-target="#operating-system-os">Operating system (OS)</a></li>
   <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
   <li><a href="#package-manager" id="toc-package-manager" class="nav-link" data-scroll-target="#package-manager">Package manager</a></li>
-  <li><a href="#web-browser" id="toc-web-browser" class="nav-link" data-scroll-target="#web-browser">Web browser</a></li>
-  <li><a href="#zoom" id="toc-zoom" class="nav-link" data-scroll-target="#zoom">Zoom</a></li>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a></li>
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github">Git and GitHub</a></li>
+  <li><a href="#zoom" id="toc-zoom" class="nav-link" data-scroll-target="#zoom">Zoom</a></li>
+  <li><a href="#web-browser" id="toc-web-browser" class="nav-link" data-scroll-target="#web-browser">Web browser</a></li>
   </ul></li>
   <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
   </ul>
@@ -641,8 +639,8 @@ Important
 
 Press RETURN/ENTER to continue or any other key to abort:</code></pre>
 <p>Confirm with <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your <code>PATH</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;&gt;</span> /Users/stephankoenig/.zprofile</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'eval "$(/opt/homebrew/bin/brew shellenv)"'</span> <span class="op">&gt;&gt;</span> /Users/stephankoenig/.zprofile</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;&gt;</span> <span class="st">"</span><span class="va">${HOME}</span><span class="st">/.zprofile"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'eval "$(/opt/homebrew/bin/brew shellenv)"'</span> <span class="op">&gt;&gt;</span> <span class="st">"</span><span class="va">${HOME}</span><span class="st">/.zprofile"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">/opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now test if Homebrew works:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -658,41 +656,54 @@ Press RETURN/ENTER to continue or any other key to abort:</code></pre>
 </div>
 </div>
 </section>
-<section id="web-browser" class="level3">
-<h3 class="anchored" data-anchor-id="web-browser">Web browser</h3>
-<p>You are welcome to use most modern browsers that have a WebKit or Gecko backend. <a href="https://www.apple.com/ca/safari/">Safari (Mac only)</a>, <a href="https://www.mozilla.org/en-CA/firefox/new/?redirect_source=firefox-com">Firefox</a>, <a href="https://vivaldi.com">Vivaldi</a>, <a href="https://brave.com">Brave</a>, <a href="https://www.microsoft.com/en-us/edge">Edge</a> are all recommended. Google Chrome is not recommended because of the <a href="https://www.forbes.com/sites/zakdoffman/2021/03/20/stop-using-google-chrome-on-apple-iphone-12-pro-max-ipad-and-macbook-pro/">well-documented privacy and tracking issues with Google</a>.</p>
-</section>
-<section id="zoom" class="level3">
-<h3 class="anchored" data-anchor-id="zoom">Zoom</h3>
-<p>You might attend office hours using <em>Zoom Workplace</em> and you should install the Zoom client locally on your machine.</p>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<section id="installing-uv" class="level4">
+<h4 class="anchored" data-anchor-id="installing-uv">Installing <code>uv</code></h4>
+<p>We will be using Python for a large part of the course, and <em>uv</em> will be our Python package manager. Instead of installing Python separately on our machine, we will use <code>uv</code> to provision us with Python whenever we need to run it.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>In your terminal, use WinGet to install Zoom:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Zoom<span class="op">.</span><span class="fu">Zoom</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In the terminal, install <code>uv</code> with Winget:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id<span class="op">=</span>astral-sh<span class="op">.</span><span class="fu">uv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<p>In your terminal, use Homebrew to install Zoom:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> zoom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In the terminal install <code>uv</code> with Homebrew:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install uv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<p>It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.5.12 (63499). You can ensure you have the latest version of Zoom by clicking “Check for Updates” as shown in the screenshot below.</p>
-<p><img src="./images/zoom.png" class="img-fluid" alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.</p>
-</div>
-</div>
+<p>To check if uv installed successfully, type in the terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And you should see something like this</p>
+<pre><code>uv 0.8.17 &lt;some-installer-specific-information&gt;</code></pre>
+<section id="resources-2" class="level5">
+<h5 class="anchored" data-anchor-id="resources-2">Resources</h5>
+<ul>
+<li><a href="https://docs.astral.sh/uv/getting-started/installation/">Installation | uv</a></li>
+</ul>
+</section>
+</section>
+<section id="marimo" class="level4">
+<h4 class="anchored" data-anchor-id="marimo">marimo</h4>
+<p>We will be writing our code in a notebook app called <em>marimo</em>. marimo is itself a Python package, so we can use <code>uv</code> to install and run it. In particular, we will use the command <code>uvx</code> which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And you should see:</p>
+<pre><code>0.15.3</code></pre>
+<p>Even better, try this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo tutorial intro</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And your default browser should open a window showing marimo.</p>
+<p><img src="./images/marimo.png" class="img-fluid"></p>
+<p>For now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.</p>
+<p>Now you are ready to run Python code on your local machine!!!</p>
+<section id="resources-3" class="level5">
+<h5 class="anchored" data-anchor-id="resources-3">Resources</h5>
+<ul>
+<li><a href="https://docs.marimo.io/getting_started/installation/">Installation | marimo</a></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="git-and-github" class="level3">
 <h3 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h3>
@@ -702,17 +713,17 @@ Important
 <div class="tab-content" data-group="os">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <p><em>Git</em> is installed as part of <em>Git Bash</em>. Open your terminal, and install Git Bash with</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Git<span class="op">.</span><span class="fu">Git</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Git<span class="op">.</span><span class="fu">Git</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Restart your terminal.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Open your terminal, and install <em>Git</em> with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <p>In the terminal, type the following to check the Git version:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see something like this if everything is working correctly:</p>
 <pre><code>git version 2.51.0</code></pre>
 <section id="github.com-account" class="level4">
@@ -723,8 +734,8 @@ Important
 <section id="configuring-git-user-info" class="level4">
 <h4 class="anchored" data-anchor-id="configuring-git-user-info">Configuring Git user info</h4>
 <p>Next, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-name&gt;"</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your-name&gt;"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your-github-email&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -773,7 +784,7 @@ Note
 <section id="clone-your-first-repository-on-your-computer" class="level4">
 <h4 class="anchored" data-anchor-id="clone-your-first-repository-on-your-computer">Clone your first repository on your computer</h4>
 <p>Open the terminal, and then run the following command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/firasm/test.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Hopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -788,60 +799,71 @@ Tip
 <p>If after running the code above, you see the error message:</p>
 <pre><code>fatal: destination path 'test' already exists and is not an empty directory. </code></pre>
 <p>It means that you already attempted a clone before, and there is already a directory called <code>test</code> where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the <code>test</code> directory and delete it. Alternatively, from the command line you can try:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>which will “remove” (using the <code>rm</code> command) the directory called <code>test</code>. The<code>-</code> is to specify additional options: <code>r</code> means “recursively” for all the files in the directory, and <code>f</code> means “force” which means don’t ask me for confirmation after deleting each file and folder.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-<section id="installing-uv" class="level4">
-<h4 class="anchored" data-anchor-id="installing-uv">Installing <code>uv</code></h4>
-<p>We will be using Python for a large part of the course, and <em>uv</em> will be our Python package manager. Instead of installing Python separately on our machine, we will use <code>uv</code> to provision us with Python whenever we need to run it.</p>
+<section id="zoom" class="level3">
+<h3 class="anchored" data-anchor-id="zoom">Zoom</h3>
+<p>So far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using <em>Zoom Workplace</em> and you should install the Zoom client locally on your machine.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href="">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>In the terminal, install <code>uv</code> with Winget:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id<span class="op">=</span>astral-sh<span class="op">.</span><span class="fu">uv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In your terminal, use WinGet to install Zoom:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id Zoom<span class="op">.</span><span class="fu">Zoom</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>In the terminal install <code>uv</code> with Homebrew:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install uv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In your terminal, use Homebrew to install Zoom:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> zoom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<p>To check if uv installed successfully, type in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And you should see something like this</p>
-<pre><code>uv 0.8.17 &lt;some-installer-specific-information&gt;</code></pre>
-<section id="resources-2" class="level5">
-<h5 class="anchored" data-anchor-id="resources-2">Resources</h5>
-<ul>
-<li><a href="https://docs.astral.sh/uv/getting-started/installation/">Installation | uv</a></li>
-</ul>
+<p>It is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.5.12 (63499). For a lot of software, there is an option to check for updates.</p>
+<p><img src="./images/zoom.png" class="img-fluid" alt="Zoom 'Check for Updates' showing the latest version of Zoom is installed."></p>
+<p>A package manager can directly update any software you have installed with it.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>winget upgrade <span class="op">-</span>e <span class="op">--</span>id Zoom<span class="op">.</span><span class="fu">Zoom</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> upgrade <span class="at">--cask</span> zoom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.</p>
+</div>
+</div>
 </section>
-</section>
-<section id="marimo" class="level4">
-<h4 class="anchored" data-anchor-id="marimo">marimo</h4>
-<p>We will be writing our code in a notebook app called <em>marimo</em>. marimo is itself a Python package, so we can use <code>uv</code> to install and run it. In particular, we will use the command <code>uvx</code> which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And you should see:</p>
-<pre><code>0.15.3</code></pre>
-<p>Even better, try this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uvx</span> marimo tutorial intro</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And your default browser should open a window showing marimo.</p>
-<p><img src="./images/marimo.png" class="img-fluid"></p>
-<p>For now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.</p>
-<p>Now you are ready to run Python code on your local machine!!!</p>
-<section id="resources-3" class="level5">
-<h5 class="anchored" data-anchor-id="resources-3">Resources</h5>
-<ul>
-<li><a href="https://docs.marimo.io/getting_started/installation/">Installation | marimo</a></li>
-</ul>
-</section>
-</section>
+<section id="web-browser" class="level3">
+<h3 class="anchored" data-anchor-id="web-browser">Web browser</h3>
+<p>You are welcome to use most modern browsers that have a WebKit or Gecko backend. <a href="https://www.apple.com/ca/safari/">Safari (Mac only)</a>, <a href="https://www.mozilla.org/en-CA/firefox/new/?redirect_source=firefox-com">Firefox</a>, <a href="https://vivaldi.com">Vivaldi</a>, <a href="https://brave.com">Brave</a>, <a href="https://www.microsoft.com/en-us/edge">Edge</a> are all recommended. Google Chrome is not recommended because of the <a href="https://www.forbes.com/sites/zakdoffman/2021/03/20/stop-using-google-chrome-on-apple-iphone-12-pro-max-ipad-and-macbook-pro/">well-documented privacy and tracking issues with Google</a>.</p>
+<p>Optional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<p><a href="https://winget.run/">winget.run | Finding winget packages made simple.</a></p>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<p><a href="https://formulae.brew.sh/">Homebrew Formulae</a></p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="attribution" class="level2">
