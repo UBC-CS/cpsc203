@@ -28,7 +28,7 @@ Open your Terminal, and then enter the following command:
 
 You will be asked to enter the password for your computer:
 
-```         
+```
 ==> Checking for `sudo` access (which may request your password)...
 ```
 
@@ -36,7 +36,7 @@ Enter your password (it is normal that the cursor will not move as you enter cha
 
 Next, the installation will install the *XCode Command Line Tools*:
 
-```         
+```
 The XCode Command Line Tools will be installed.
 ```
 
@@ -48,7 +48,7 @@ A new window will open with the following prompt:
 
 Afterwards, back in the terminal, you will be informed what steps will be executed:
 
-```         
+```
 ==> This script will install:
 /opt/homebrew/bin/brew
 /opt/homebrew/share/doc/homebrew
@@ -65,8 +65,8 @@ Confirm with {{< kbd Enter >}}.
 When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your `PATH`:
 
 ``` bash
-echo >> /Users/stephankoenig/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/stephankoenig/.zprofile
+echo >> "${HOME}/.zprofile"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "${HOME}/.zprofile"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
@@ -78,7 +78,7 @@ brew --version
 
 You should see the following:
 
-```         
+```
 Homebrew {{< var software.brew >}}
 ```
 
