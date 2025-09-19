@@ -13,13 +13,14 @@ $1 + 3 + 5 + \ldots + 1337$ = [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
 \
 
 How many terms?
+
 ::: notes
-always always start this conversation from k=1, not zero.
+Always always start this conversation from k=1, not zero.
 :::
 
 ## Sums continued
 
-English description: 
+English description:
 
 The sum of the first $k$ odd integers is [\_\_\_\_\_\_\_\_]{.underline}
 
@@ -35,9 +36,8 @@ And $2 + 4 + 6 + \ldots + 1338$?
 
 Exploratory code lives at <https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679>
 
-Don't worry if you haven't set up your own machine. The infrastructure on PL is 
-adequate for most things we'll do.
-
+Don't worry if you haven't set up your own machine.
+The infrastructure on PL is adequate for most things we'll do.
 
 ## Back to handcraft
 
@@ -118,7 +118,6 @@ class color:
 Data classes allow us to create substructures to organize data in a way useful to us.
 Attributes are data and the functionality are member functions.
 Attributes can be defined with default values.
-
 :::
 
 ## Design Strategies
@@ -146,4 +145,3 @@ The 8x8 grid illustrates dishcloth.
 Each block has 5 rows of 5 stitches.
 How would you represent a handcraft using Python types?
 :::
-
