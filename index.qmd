@@ -24,7 +24,8 @@ execute:
 ::: {.column width="50%"}
 **Class**\
 {{< var course.time >}}\
-[360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)
+[360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)\
+Livestream <a href="https://canvas.ubc.ca/courses/170624/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
 :::::
 
