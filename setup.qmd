@@ -82,6 +82,10 @@ Quarto includes for software should start with a level 3 heading `### <software-
 
 {{< include /includes/software/_python.qmd >}}
 
+## Optional software
+
+If you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.
+
 {{< include /includes/software/_git-and-github.qmd >}}
 
 {{< include /includes/software/_zoom.qmd >}}
