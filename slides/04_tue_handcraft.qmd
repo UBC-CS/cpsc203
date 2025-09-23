@@ -1,0 +1,143 @@
+---
+date: 2025-09-18
+---
+
+## Announcements
+
+* EX1 in the books. Nice work. A few little bugs in questions, but avg is already 93%. 
+
+* Many office hours this week to help w machine setup. You'll need it for Projects, and
+for your future. 
+
+
+## Back to handcraft
+
+:::::: columns
+::: {.column width="33%"}
+![](/images/quilt.jpg){fig-alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."}
+
+![](/images/doily.jpg){fig-alt="A white doily with a spiral pattern on a wooden surface."}
+:::
+
+::: {.column width="33%"}
+![](/images/pinecone-pen.jpg){fig-alt="A pen made from pinecone."}
+
+![](/images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."}
+:::
+
+::: {.column width="33%"}
+![](/images/paper-violin.jpg){fig-alt="A violin made from intricately quilled green paper with a bow."}
+
+![](/images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colours."}
+:::
+::::::
+
+## Where are we?
+
+::: {layout="[2,8]"}
+![](/images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
+
+![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
+:::
+
+::: notes
+The 8x8 grid illustrates dishcloth.
+Each block has 5 rows of 5 stitches.
+How would you represent a handcraft using Python types?
+:::
+
+## Program design
+
+::: {layout="[1,1,1]"}
+![](/images/pixelated-chevron-knitting-pattern.jpg){fig-alt="A chevron knitting pattern with zigzag lines."}
+
+![](/images/pixelated-diagonal-lines-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+
+![](/images/pixelated-diamond-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+:::
+
+A handcraft is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} has a [\_\_\_\_\_\_\_\_\_\_]{.underline}, and a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is either "knit" or "purl," and is drawn as a [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+
+::: notes
+Missing words: blocks, blocks, position, rows, stitches, rectangles
+:::
+
+
+## Design Strategies
+
+1.  Decompose a problem into classes
+
+2.  List the data associated with each class
+
+3.  Write the "driver" code that illustrates the functionality you expect from each class.
+
+4.  Implement the functions you expect.
+
+5.  Run the driver code to test your functionality.
+
+## Which classes?
+
+::::: columns
+::: {.column style="width: 50%;"}
+![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
+:::
+::: {.column style="width: 50%;"}
+Handcraft:
+
+Block:
+
+Row:
+
+Stitch:
+
+Image:
+:::
+:::::
+
+::: notes
+The 8x8 grid illustrates dishcloth.
+Each block has 5 rows of 5 stitches.
+How would you represent a handcraft using Python types?
+Image is like a canvas... we have to draw on it.
+:::
+
+## Translation 
+
+From stitch coordinates to pixel coordinates
+
+ImageDraw.Rectangle(xy, fill):
+
+- xy is [(x0,y0),(x1,y1)] a bounding box, inclusive.
+- fill is a color
+
+![](/images/graphpaper.png)
+
+## Let's Write {.smaller}
+
+<https://us.prairielearn.com/pl/course_instance/193300/assessment/2590319>
+
+## Interface
+
+A row has a list of stitches:
+
+``` python
+class row:
+  ...
+  stitches: list[stitch]
+  ...
+```
+
+But we want to declare rows like:
+
+``` python
+r1 = row('KKKPPPKP')
+```
+
+To do this, we need a function to translate between string of `K`, `P` and `stitch` objects.
+
+Define `__init__`: special function invoked for you by the system when variable is declared.
+
+
