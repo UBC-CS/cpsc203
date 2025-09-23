@@ -154,554 +154,220 @@
     "text": "Computer-based testing facility (CBTF)"
   },
   {
-    "objectID": "slides/03_tue_lists.html#announcements",
-    "href": "slides/03_tue_lists.html#announcements",
+    "objectID": "slides/04_tue_handcraft.html#announcements",
+    "href": "slides/04_tue_handcraft.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nEX1 in the books. Nice work. A few little bugs in questions, but avg is already 93%.\nMany office hours this week to help w machine setup. You’ll need it for Projects, and for your future."
   },
   {
-    "objectID": "slides/03_tue_lists.html#practice-problems",
-    "href": "slides/03_tue_lists.html#practice-problems",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Practice problems",
-    "text": "Practice problems\n\\(1 + 3 + 5 + \\ldots + 1337\\) = ____________\n\n\nHow many terms?\n\nAlways always start this conversation from k=1, not zero."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#sums-continued",
-    "href": "slides/03_tue_lists.html#sums-continued",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Sums continued",
-    "text": "Sums continued\nEnglish description:\nThe sum of the first \\(k\\) odd integers is ________\nWhat about \\(11 + 13 + \\ldots + 23\\)?\n\n\n\n\nAnd \\(2 + 4 + 6 + \\ldots + 1338\\)?"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#python-demo-lists",
-    "href": "slides/03_tue_lists.html#python-demo-lists",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Python Demo: Lists",
-    "text": "Python Demo: Lists\nExploratory code lives at https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679\nDon’t worry if you haven’t set up your own machine. The infrastructure on PL is adequate for most things we’ll do."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#back-to-handcraft",
-    "href": "slides/03_tue_lists.html#back-to-handcraft",
+    "objectID": "slides/04_tue_handcraft.html#back-to-handcraft",
+    "href": "slides/04_tue_handcraft.html#back-to-handcraft",
     "title": "Programming, problem solving, and algorithms",
     "section": "Back to handcraft",
     "text": "Back to handcraft"
   },
   {
-    "objectID": "slides/03_tue_lists.html#where-are-we",
-    "href": "slides/03_tue_lists.html#where-are-we",
+    "objectID": "slides/04_tue_handcraft.html#where-are-we",
+    "href": "slides/04_tue_handcraft.html#where-are-we",
     "title": "Programming, problem solving, and algorithms",
     "section": "Where are we?",
     "text": "Where are we?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
   },
   {
-    "objectID": "slides/03_tue_lists.html#program-design",
-    "href": "slides/03_tue_lists.html#program-design",
+    "objectID": "slides/04_tue_handcraft.html#program-design",
+    "href": "slides/04_tue_handcraft.html#program-design",
     "title": "Programming, problem solving, and algorithms",
     "section": "Program design",
     "text": "Program design\n\n\n\n\n\n\n\n\n\n\n\n\n\nA handcraft is a collection of __________. Every __________ has a __________, and a collection of __________. Every __________ is a collection of __________. Every __________ is either “knit” or “purl,” and is drawn as a __________.\n\nMissing words: blocks, blocks, position, rows, stitches, rectangles"
   },
   {
-    "objectID": "slides/03_tue_lists.html#classes-in-python",
-    "href": "slides/03_tue_lists.html#classes-in-python",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Classes in Python",
-    "text": "Classes in Python\nMechanism for creating user-defined types.\nUsed to identify attributes with an object. Associates functionality with the relevant objects.\nExample:\n@dataclass\nclass color:\n  \"\"\"\n  color: simply gathers color components\n  \"\"\"\n  red: int = 120\n  green: int = 120\n  blue: int = 120\n\nData classes allow us to create substructures to organize data in a way useful to us. Attributes are data and the functionality are member functions. Attributes can be defined with default values."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#design-strategies",
-    "href": "slides/03_tue_lists.html#design-strategies",
+    "objectID": "slides/04_tue_handcraft.html#design-strategies",
+    "href": "slides/04_tue_handcraft.html#design-strategies",
     "title": "Programming, problem solving, and algorithms",
     "section": "Design Strategies",
     "text": "Design Strategies\n\nDecompose a problem into classes\nList the data associated with each class\nWrite the “driver” code that illustrates the functionality you expect from each class.\nImplement the functions you expect.\nRun the driver code to test your functionality."
   },
   {
-    "objectID": "slides/03_tue_lists.html#which-classes",
-    "href": "slides/03_tue_lists.html#which-classes",
+    "objectID": "slides/04_tue_handcraft.html#which-classes",
+    "href": "slides/04_tue_handcraft.html#which-classes",
     "title": "Programming, problem solving, and algorithms",
     "section": "Which classes?",
-    "text": "Which classes?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
+    "text": "Which classes?\n\n\n\n\nHandcraft:\nBlock:\nRow:\nStitch:\nImage:\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types? Image is like a canvas… we have to draw on it."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#announcements",
-    "href": "slides/02_tue_efficiency.html#announcements",
+    "objectID": "slides/04_tue_handcraft.html#translation",
+    "href": "slides/04_tue_handcraft.html#translation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nWebsite getting closer – Only setup is wrong (I think)\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com/pt/student/course/12360/enroll/172611186041\nFirst examlet signup available!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+    "section": "Translation",
+    "text": "Translation\nFrom stitch coordinates to pixel coordinates\nImageDraw.Rectangle(xy, fill):\n\nxy is [(x0,y0),(x1,y1)] a bounding box, inclusive.\nfill is a color"
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#learning-outcomes",
-    "href": "slides/02_tue_efficiency.html#learning-outcomes",
+    "objectID": "slides/04_tue_handcraft.html#lets-write",
+    "href": "slides/04_tue_handcraft.html#lets-write",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\n\nWe connect the idea of “elegance” to common items and to software design!\nThe time it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function."
+    "section": "Let’s Write",
+    "text": "Let’s Write\nhttps://us.prairielearn.com/pl/course_instance/193300/assessment/2590319"
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#elegance",
-    "href": "slides/02_tue_efficiency.html#elegance",
+    "objectID": "slides/04_tue_handcraft.html#interface",
+    "href": "slides/04_tue_handcraft.html#interface",
     "title": "Programming, problem solving, and algorithms",
-    "section": " Elegance",
-    "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/elegancegallery\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
+    "section": "Interface",
+    "text": "Interface\nA row has a list of stitches:\nclass row:\n  ...\n  stitches: list[stitch]\n  ...\nBut we want to declare rows like:\nr1 = row('KKKPPPKP')\nTo do this, we need a function to translate between string of K, P and stitch objects.\nDefine __init__: special function invoked for you by the system when variable is declared."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#elegance-examples",
-    "href": "slides/02_tue_efficiency.html#elegance-examples",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance: examples",
-    "text": "Elegance: examples\nScissors"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#your-turn-elegancedefinition",
-    "href": "slides/02_tue_efficiency.html#your-turn-elegancedefinition",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Elegance—definition",
-    "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/elegancegallery\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/GL3yNZn7i7DT5qxW9\n\n  \n    −\n    +\n \n 05:00"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#elegance-and-computing",
-    "href": "slides/02_tue_efficiency.html#elegance-and-computing",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance and computing",
-    "text": "Elegance and computing\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#section",
-    "href": "slides/02_tue_efficiency.html#section",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
-    "href": "slides/02_tue_efficiency.html#handcraft-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft",
-    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.\n\nQuilt—patterns\nCrochet—2 different kinds\nPaper—Friend’s artistry"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#knitting",
-    "href": "slides/02_tue_efficiency.html#knitting",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting",
-    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
-    "href": "slides/02_tue_efficiency.html#knitting-examples",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting: examples",
-    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”\nAxis of algorithmic quality includes"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n  \n    −\n    +\n \n 05:00\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\nIf we are solving a problem ____________ for a given input, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\nDiscussion:\n\n\n\n\n\n\n\nFirst blank: or write an algorithm\n\nIn this example we choose to label \\(n\\) as the side-length\nWe don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3\\(n\\) x \\(n\\) takes time 3\\(n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.\nSometimes we have more than one parameter"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
-    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft and Code",
-    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\ndef knit_square_print(n): for r in range(n): row = “” for c in range(n):\nrow += ‘X’\nprint(row)\nscript: walk through existing code. counting stitches is the same as counting time.\nwhich line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?\nlet’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.\nhave we done more work? a little, but the most frequent line happens the same number of times."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#words-and-ideas",
-    "href": "slides/02_tue_efficiency.html#words-and-ideas",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Words and Ideas",
-    "text": "Words and Ideas\n\nElegance\nGrowth of simple functions over time\nRepresenting complexity of a problem using time\nRunning time of a Python function"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#announcements",
-    "href": "slides/tbd_tbd_visualization.html#announcements",
+    "objectID": "slides/tbd_tbd_data-structures.html#announcements",
+    "href": "slides/tbd_tbd_data-structures.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
     "text": "Announcements"
   },
   {
-    "objectID": "slides/tbd_tbd_visualization.html#warm-up-puzzle-whats-the-date-of-last-saturday",
-    "href": "slides/tbd_tbd_visualization.html#warm-up-puzzle-whats-the-date-of-last-saturday",
+    "objectID": "slides/tbd_tbd_data-structures.html#data-structure-queue",
+    "href": "slides/tbd_tbd_data-structures.html#data-structure-queue",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Warm-up Puzzle: What’s the date of last saturday?",
-    "text": "Warm-up Puzzle: What’s the date of last saturday?\nimport datetime as dt\ntoday = dt.date.today()\n1today.weekday()\ndayspostsat =\n\n1\n\nGives the day of the week\n\n\n\n\n\n\n\nSat\nSun\nMon\nTue\nWed\nThu\nFri\n\n\n\n\n5\n6\n0\n1\n2\n3\n4\n\n\n\n\nUse modular arithmetic."
+    "section": "Data structure: Queue",
+    "text": "Data structure: Queue\nTo orchestrate the fill, we’ll use a data structure called a queue.\n\nQueue:\nenqueue(k): Places data k onto the structure at the end\ndequeue(): Removes and returns the “first” element from the structure\n\n\nProgrammatic manifestation of standing in a service line.\nFirst in, First Out"
   },
   {
-    "objectID": "slides/tbd_tbd_visualization.html#pandas-and-data-frames",
-    "href": "slides/tbd_tbd_visualization.html#pandas-and-data-frames",
+    "objectID": "slides/tbd_tbd_data-structures.html#in-python-collections.deque",
+    "href": "slides/tbd_tbd_data-structures.html#in-python-collections.deque",
     "title": "Programming, problem solving, and algorithms",
-    "section": "pandas and data frames",
-    "text": "pandas and data frames\nimport pandas\nImports the pandas library. We will almost always use an abbreviation…\nInstead of saying pandas.read_csv('file.csv')\nwe can say\nThis function returns a DataFrame containing the data from file.csv."
+    "section": "In Python: Collections.deque",
+    "text": "In Python: Collections.deque\nPronounced “deck”\n\nFrom GeeksforGeeks: Deque in Python"
   },
   {
-    "objectID": "slides/tbd_tbd_visualization.html#csv-files",
-    "href": "slides/tbd_tbd_visualization.html#csv-files",
+    "objectID": "slides/tbd_tbd_data-structures.html#documentation",
+    "href": "slides/tbd_tbd_data-structures.html#documentation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "CSV files",
-    "text": "CSV files\nTo implement: df = pd.read_csv('file.csv')\nfile.csv must have field names in row 1, and data beginning in row 2.\n\n\nbill_week.csv\n\n,week,title,artist,rank,last_week,peak_pos,weeks_on_chart\n0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19\n1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12\n2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10\n3,2019-09-21,Circles,Post Malone,4,7,4,2\n4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24\n5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15\n6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14"
+    "section": "Documentation",
+    "text": "Documentation"
   },
   {
-    "objectID": "slides/tbd_tbd_visualization.html#selecting-rows",
-    "href": "slides/tbd_tbd_visualization.html#selecting-rows",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Selecting rows",
-    "text": "Selecting rows\n\n\n\n\n\ndf.nlargest(10,'last_week')\nReturns top 10 hits from last week.\n\n\n\n\ndf[ df['weeks_on_chart'] &gt; 10 ]\nReturns all songs that have been on the charts for more than 10 weeks."
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#adding-a-column",
-    "href": "slides/tbd_tbd_visualization.html#adding-a-column",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding a column",
-    "text": "Adding a column\n\ndf['gradient'] = df['last_week'] - df['rank']\nAdds a column to the DataFrame containing the difference for every row.\n\n\n\n\ndf[ df['gradient'] &gt; 10 ]\nReturns all songs that have moved more than 10 spaces in the last week."
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#some-challenges",
-    "href": "slides/tbd_tbd_visualization.html#some-challenges",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\nGiven last week’s chart:\n\nHow many new songs were there?\nWhat’s the average peak?\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\nWhich song changed the most? Was it rising or falling?\nWrite and answer your own question:\n_____________________________________________________\n\n\ndf2 = pd.read_csv('bill_week.csv')\ndf3 = df2[ df2['weeks_on_chart'] &gt; 10 ]\nprint(\"all:  \")\nprint(df2)\nprint(\"endurance:  \")\nprint(df3)\n\ndf4 = df2[ df2['last_week'] == 101].count()['title']\ndf5 = df3['peak_pos'].mean()\nprint(\"new count\")\nprint(df4)\nprint(\"peak avg\")\nprint(df5)"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-1",
-    "href": "slides/tbd_tbd_visualization.html#some-challenges-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nHow many new songs were there?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nFilter, apply function, think about output (sometimes means choosing columns, too)\ndf[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title']"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-2",
-    "href": "slides/tbd_tbd_visualization.html#some-challenges-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nWhat’s the average peak?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf5 = df3['peak_pos'].mean()"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-3",
-    "href": "slides/tbd_tbd_visualization.html#some-challenges-3",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nenduring_peak = df[df['weeks_on_chart']&gt;=10]['peak_pos'].mean()\nprint(\"enduring avg peak: \" + str(enduring_peak))"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-4",
-    "href": "slides/tbd_tbd_visualization.html#some-challenges-4",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nWhich song moved the most? Did it rise or fall?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf['gradient'] = df['rank'] - df['last_week']\nprint(df.loc[df['gradient'].abs().idxmax()])"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#the-plot-thickens",
-    "href": "slides/tbd_tbd_visualization.html#the-plot-thickens",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Plot Thickens…",
-    "text": "The Plot Thickens…\n\nSketch Cartesian coordinate system."
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#plotting-with-pandas",
-    "href": "slides/tbd_tbd_visualization.html#plotting-with-pandas",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Plotting with pandas",
-    "text": "Plotting with pandas"
-  },
-  {
-    "objectID": "slides/tbd_tbd_visualization.html#resources",
-    "href": "slides/tbd_tbd_visualization.html#resources",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Resources",
-    "text": "Resources\nhttps://pymotw.com/2/datetime/\nhttps://www.dataschool.io/best-python-pandas-resources/\nhttps://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\nhttps://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot"
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#announcements",
-    "href": "slides/02_thu_representation.html#announcements",
+    "objectID": "slides/tbd_tbd_web-as-data.html#announcements",
+    "href": "slides/tbd_tbd_web-as-data.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nSetup instructions available.\nPython resources posted to piazza.\nFirst examlet signup available.\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into colour representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+    "text": "Announcements"
   },
   {
-    "objectID": "slides/02_thu_representation.html#learning-outcomes",
-    "href": "slides/02_thu_representation.html#learning-outcomes",
+    "objectID": "slides/tbd_tbd_web-as-data.html#information-as-data",
+    "href": "slides/tbd_tbd_web-as-data.html#information-as-data",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\n\nComputers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually anything!"
+    "section": "Information as data",
+    "text": "Information as data\n\n\n\n\n\n\nhttps://vanmapp1.vancouver.ca/gmaps/covmap.htm?map=parks_areas\nhttps://www.geocaching.com/play/map?lat=49.23710338135142&lng=-123.1318473815918&zoom=13&asc=true&sort=distance&st=vancouver%2C+British+Columbia"
   },
   {
-    "objectID": "slides/02_thu_representation.html#warm-up",
-    "href": "slides/02_thu_representation.html#warm-up",
+    "objectID": "slides/tbd_tbd_web-as-data.html#cpsc-103-to-203",
+    "href": "slides/tbd_tbd_web-as-data.html#cpsc-103-to-203",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Warm Up",
-    "text": "Warm Up\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
+    "section": "CPSC 103 to 203",
+    "text": "CPSC 103 to 203"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colour-interpretation",
-    "href": "slides/02_thu_representation.html#colour-interpretation",
+    "objectID": "slides/tbd_tbd_web-as-data.html#the-internet",
+    "href": "slides/tbd_tbd_web-as-data.html#the-internet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour interpretation",
-    "text": "Colour interpretation\nWhat’s your favorite colour? Do you have a sense for why it’s your favorite? Does that colour influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
+    "section": "The internet…",
+    "text": "The internet…\n\nChange this into an activity. Have students draw a diagram of how they think the WWW works. THEN discuss. (Use doc cam, bring pencils, etc).\n\nThe end user opens a web browser and types in a URL, which is the name of the website they are wanting to see.\nThe URL request is sent through their LAN to their internet service provider.\nThe internet service provider then sends the URL requested to an external DNS server, which is either hosted by them or by who ever provides their internet access.\nThe external DNS server then matches the URL up with the external IP Address assigned to the LAN hosting that website and the request is then sent on to that network.\nThe network hosting that website accepts the request and then sends it to its own internal DNS server.\nThe internal DNS server matches the URL requested to the internal IP address of the actual web server where the files making up the website are physically stored.\nThe request is then sent to the web server and the web server packages up the files that make up the website requested.\nThe website that is all packaged up now makes the return trip in reverse all the way back to the computer that originally made the request.\nThe web browser on that computer then interprets the text files full of computer code sent to it by the web server hosting the site and displays them as a graphic website."
   },
   {
-    "objectID": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
-    "href": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
+    "objectID": "slides/tbd_tbd_web-as-data.html#billboard-hot-100",
+    "href": "slides/tbd_tbd_web-as-data.html#billboard-hot-100",
     "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Colour—cultural interpretations",
-    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
+    "section": "Billboard Hot 100",
+    "text": "Billboard Hot 100\nNavigate to https://www.billboard.com/charts/hot-100\n\n\nWhat happens to the URL if you load a past week? ______\n\n\nWhat happens to the page if you substitute a different date into the URL?\n________________________________________________\n\n\nWrite one question you would like to ask of this data:\n________________________________________________\n\nURL gets you there, menu items give you new queries you can ask of the website!\nFill in: it changes to a new page; it chooses the closest date"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation",
-    "href": "slides/02_thu_representation.html#colourrepresentation",
+    "objectID": "slides/tbd_tbd_web-as-data.html#anatomy-of-html",
+    "href": "slides/tbd_tbd_web-as-data.html#anatomy-of-html",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\n\nFirst, some general questions…\nWhat does data look like to a computer?\n\n\n\nIs that enough?\n\nhttps://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/\n\n\n\nPositive and negative charges interpreted as 1 and 0.\nBinary digits = bits"
+    "section": "Anatomy of HTML",
+    "text": "Anatomy of HTML\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;The Dormouse's story&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;p class=\"title\"&gt;\n        &lt;b&gt;The Dormouse's story&lt;/b&gt;\n    &lt;/p&gt;\n    &lt;p class=\"story\"&gt;\n        Once upon a time there were two little sisters. Their names were \n        &lt;a href=\"http://example.com/elsie\" class=\"sister\" id=\"link1\"&gt;Elsie&lt;/a&gt;, \n        and &lt;a href=\"http://example.com/lacie\" class=\"sister\" id=\"link2\"&gt;Lacie&lt;/a&gt;, \n        and they lived at the bottom of a well.\n    &lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nWalkthrough of how tags are like parentheses around text elements.\nPython can be used to extract data from the HTML source."
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation-1",
-    "href": "slides/02_thu_representation.html#colourrepresentation-1",
+    "objectID": "slides/tbd_tbd_web-as-data.html#billboard-hot-100-page-source",
+    "href": "slides/tbd_tbd_web-as-data.html#billboard-hot-100-page-source",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
+    "section": "Billboard Hot 100 page source",
+    "text": "Billboard Hot 100 page source\n&lt;div class=\"chart-list-item piano-content-overlay__gated-item\" data-rank=\"49\" data-artist=\"Taylor Swift\" data-title=\"Lover\" data-has-content=\"true\"&gt;\n    &lt;div class=\"chart-list-item__first-row chart-list-item__cursor-pointer\"&gt;\n        &lt;div class=\"chart-list-item__position chart-list-item__position--centered\"&gt;\n            &lt;div class=\"chart-list-item__rank\"&gt;49&lt;/div&gt;\n            &lt;div class=\"chart-list-item__award\"&gt;&lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__image-wrapper\"&gt;\n            &lt;div class=\"chart-list-item__trend-icon\"&gt;\n                &lt;img src=\"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd\"\n                     srcset=\"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down-mobile.svg?df89925e3b37f64521bd 30w, https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd 38w\"\n                     sizes=\"(min-width: 768px) 38px, 30px\"&gt;\n            &lt;/div&gt;\n            &lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==\"\n                 data-src=\"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg\"\n                 data-srcset=\"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg 53w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-106x106.jpg 106w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-87x87.jpg 87w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-174x174.jpg 174w\"\n                 sizes=\"(max-width: 767px) 72px, (min-width: 768px) 86px\"\n                 class=\"chart-list-item__image\"\n                 alt=\"Taylor Swift Lover Billboard Hot 100\"&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__text-wrapper\"&gt;\n            &lt;div class=\"chart-list-item__text\"&gt;\n                &lt;div class=\"chart-list-item__title\"&gt;\n                    &lt;span class=\"chart-list-item__title-text\"&gt;\n                        Lover\n                    &lt;/span&gt;\n                &lt;/div&gt;\n                &lt;div class=\"chart-list-item__artist\"&gt;\n                    &lt;a href=\"/music/taylor-swift\"&gt;\n                        Taylor Swift\n                    &lt;/a&gt;\n                &lt;/div&gt;\n                &lt;div class=\"chart-list-item__lyrics\"&gt;\n                    &lt;a href=\"https://www.billboard.com/articles/news/lyrics/7950218/ready-for-it-taylor-swift-lyrics\"&gt;\n                        &lt;span class=\"hidden-mobile show-expanded-mobile-inline\"&gt;Song &lt;/span&gt;Lyrics\n                    &lt;/a&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__chevron-wrapper\"&gt;\n            &lt;i class=\"fa fa-chevron-down\"&gt;&lt;/i&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"chart-list-item__extra-info\"&gt;\n        &lt;div class=\"chart-list-item__extra-info-shadow\"&gt;&lt;/div&gt;\n        &lt;div class=\"chart-list-item__stats\"&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--first-cell\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__last-week\"&gt;23&lt;/div&gt;\n                LAST WEEK\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__last-week\"&gt;10&lt;/div&gt;\n                TWO WEEKS AGO\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-line-chart\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__weeks-at-one\"&gt;10&lt;/div&gt;\n                PEAK POSITION\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--no-border-right\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-clock-o\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__weeks-on-chart\"&gt;4&lt;/div&gt;\n                WEEKS ON CHART\n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation-2",
-    "href": "slides/02_thu_representation.html#colourrepresentation-2",
+    "objectID": "slides/tbd_tbd_web-as-data.html#beautiful-soup",
+    "href": "slides/tbd_tbd_web-as-data.html#beautiful-soup",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nWhat’s the highest number we can represent with 4 bits?\n\n\n\nWhat’s the highest number we can represent with 5 bits?\n\n\n\nHow many bits do we need to express 120?\n\n\n\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.\nHow does this help us with colour?"
+    "section": "Beautiful Soup",
+    "text": "Beautiful Soup\nReads the HTHL source into a data structure that’s easy to query!\nhttps://www.crummy.com/software/BeautifulSoup/bs4/doc/\n\n\nhtml = simple_get(\"https://www.billboard.com/charts/hot-100\" + '/' + date)\nmydivs = html.findAll(\"div\", {\"class\": \"chart-list-item\"}) // all the data is here!!\n\nfor div in mydivs:\n    s = Song(div.attrs['data-title'], div.attrs['data-artist'], int(div.attrs['data-rank']))\n\n\nStill too messy for us! Remedy? https://github.com/guoguo12/billboard-charts\n\nBeautiful is a library that allows us to create native Python structures (such as lists and dictionaries) from HTML sources. Still requires scrutiny of what we want. Instead use other library that anticipates what information we would like to extract from the Billboard charts."
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation-3",
-    "href": "slides/02_thu_representation.html#colourrepresentation-3",
+    "objectID": "slides/tbd_tbd_review.html#announcements",
+    "href": "slides/tbd_tbd_review.html#announcements",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use integers to represent colours?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for colour values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
+    "section": "Announcements",
+    "text": "Announcements"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation-4",
-    "href": "slides/02_thu_representation.html#colourrepresentation-4",
+    "objectID": "slides/tbd_tbd_git.html#announcements",
+    "href": "slides/tbd_tbd_git.html#announcements",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nWhat colour is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
+    "section": "Announcements",
+    "text": "Announcements"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colourrepresentation-aside",
-    "href": "slides/02_thu_representation.html#colourrepresentation-aside",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation (aside)",
-    "text": "Colour—representation (aside)\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95"
+    "objectID": "labs/02_create-website.html",
+    "href": "labs/02_create-website.html",
+    "title": " Lab: Create your own website!",
+    "section": "",
+    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colour-and-code",
-    "href": "slides/02_thu_representation.html#colour-and-code",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
+    "objectID": "labs/02_create-website.html#basic-structure-of-quarto-document",
+    "href": "labs/02_create-website.html#basic-structure-of-quarto-document",
+    "title": " Lab: Create your own website!",
+    "section": "",
+    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colour-and-code-1",
-    "href": "slides/02_thu_representation.html#colour-and-code-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\n\n\n\n\n\n\n\nfrom typing import Tuple\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the colour channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey \n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n    \n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n    \n    out = fancify(img)\n  \n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n  \nmain()"
+    "objectID": "labs/02_create-website.html#steps",
+    "href": "labs/02_create-website.html#steps",
+    "title": " Lab: Create your own website!",
+    "section": " Steps",
+    "text": "Steps\n\nOpen your workspace: NA.\nCreate index.qmd.\nClick the “Render” button on top.\nDownload the output directory _site.\nOpen Netlify Drop: app.netlify.com/drop.\nDrag and drop the downloaded _site onto Netlify Drop.\nPost the link to your website in the comments below."
   },
   {
-    "objectID": "slides/02_thu_representation.html#your-turn-change-image-or-boost",
-    "href": "slides/02_thu_representation.html#your-turn-change-image-or-boost",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Change image or boost",
-    "text": "Your turn: Change image or boost\nFind an online image you would like to boost and use its URL in the code we just wrote.\nHow can you adjust the code to manipulate the colours in a different way?"
+    "objectID": "labs/02_create-website.html#resources",
+    "href": "labs/02_create-website.html#resources",
+    "title": " Lab: Create your own website!",
+    "section": " Resources",
+    "text": "Resources\n\nDaring Fireball: Markdown\nInteractive Commonmark Markdown tutorial\nQuarto documentation\nGet started with Quarto Workshop including the material and this video:"
   },
   {
-    "objectID": "slides/01_thu_intro.html#teaching-staff",
-    "href": "slides/01_thu_intro.html#teaching-staff",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\nProf: Cinda Heeren 📧 cheeren@cs.ubc.ca ⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen 📧  ⏰ TBD · 🏢 TBD\nTA: Joel Gunawan 📧  ⏰ TBD · 🏢 TBD"
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
-    "objectID": "slides/01_thu_intro.html#you",
-    "href": "slides/01_thu_intro.html#you",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "You!",
-    "text": "You!\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n\nCoke or Pepsi?\n\nSpaghetti or Sushi?\n\nMorning person or Night owl?"
+    "objectID": "about.html#contributors",
+    "href": "about.html#contributors",
+    "title": "About",
+    "section": "",
+    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
   },
   {
-    "objectID": "slides/01_thu_intro.html#the-flashlight-game",
-    "href": "slides/01_thu_intro.html#the-flashlight-game",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Flashlight Game 🔦",
-    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game:\n\nWe stop when 10 or fewer people remain in play\nEveryone else is happily on vacation 🌴\n\n\nHow to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again\n\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#debrief",
-    "href": "slides/01_thu_intro.html#debrief",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Debrief 💡",
-    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least ______ questions.\nWe know we will need no more than ______ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#where-to-start",
-    "href": "slides/01_thu_intro.html#where-to-start",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Where to start?",
-    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/170624\nCourse Website: https://ubc-cs.github.io/cpsc203\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/193300"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#about-this-course",
-    "href": "slides/01_thu_intro.html#about-this-course",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "About This Course",
-    "text": "About This Course\nThis course will teach you a bunch of different things!\n\nTools: Terminal, Markdown, Git, marimo, PrairieLearn\nComputer science: Python (!!!), efficiency, web scraping, graphs\nData science: pandas, data frames, visualizations\nAlgorithms: many algorithms!\nArt and creativity: lots of examples!"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#term-schedule",
-    "href": "slides/01_thu_intro.html#term-schedule",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Term Schedule",
-    "text": "Term Schedule\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nSunday\nT\nR\nLab\nExamlet\nPOTW\nPractice\n\n\n\n\n1\n8/31/2025\n \n🎉\n\n\n\n\n\n\n2\n9/7/2025\n🎉\n🎉\n\n\n🏎️\n🏋️\n\n\n3\n9/14/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n4\n9/21/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n5\n9/28/2025\n \n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n6\n10/5/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n7\n10/12/2025\n \n \n\n\n\n\n\n\n8\n10/19/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n9\n10/26/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n10\n11/2/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n11\n11/9/2025\n \n \n\n\n\n\n\n\n12\n11/16/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n13\n11/23/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n14\n11/30/2025\n🎉\n🎉\n🪄\n\n\n🏋️"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#evaluation",
-    "href": "slides/01_thu_intro.html#evaluation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Evaluation",
-    "text": "Evaluation\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#communications",
-    "href": "slides/01_thu_intro.html#communications",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Communications",
-    "text": "Communications\n\n\n📧 Email cheeren@cs.ubc.ca\nChecked daily. Please place “CPSC203” in subject!\n   Piazza piazza.com/ubc.ca/winterterm12025/cpsc203\nPost questions for quick response.\n🏫 Office Hours\n\n\n\n\n\n\n\n\n\n\nName\nTime\nLocation & Zoom\n\n\n\n\nCinda\nMon 2–4pm\n🏢 ICCS 233 · \n\n\nMinh Anh\nTBD\n🏢 TBD\n\n\nJoel\nTBD\n🏢 TBD\n\n\nTBD\nTBD\n🏢 TBD\n\n\n\n\n\n🌐 Course Website https://ubc-cs.github.io/cpsc203/\nSyllabus, schedule, resources"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#semester-overview",
-    "href": "slides/01_thu_intro.html#semester-overview",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Semester overview",
-    "text": "Semester overview\n\n\n\n\n\n\n\n\n\n\n\nHandcraft\nBillboard Hot 100\nThe Overstory and Pointillism\nArtificial Music Composition\nRoad Trip Planning\nSpiderman’s Social Network\n\n\n\n\nDesign\nObjects\nIteration\nWeb Scraping\nData Frames\nMatPlotLib\nVoronoi Diagrams\nEfficiency\nMarkov Chains\nRandom Numbers\nGraphs\nTraveling Salesperson\nIntractable Problems\nNatural Language\n\n\n\nThis course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#tangrams",
-    "href": "slides/01_thu_intro.html#tangrams",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Tangrams",
-    "text": "Tangrams"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#your-turn-tangrams",
-    "href": "slides/01_thu_intro.html#your-turn-tangrams",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: tangrams",
-    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "",
-    "text": "Instructor: Dr. Cinda Heeren (She, Her)",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "index.html#weekly-announcement",
-    "href": "index.html#weekly-announcement",
-    "title": "CPSC 203: Programming, problem solving, and algorithms",
-    "section": "Weekly announcement",
-    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      \n        Examlet\n      \n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n      Book\n      Due\n      Practice\n    \n  \n  \n    01\nSep 1\n\n\n\n\n\n\n\n\n\n\n\n    02\nSep 8\n\n\n\n\n\n\n\n\n\n\n\n    03\nSep 15\n\n\n\n\n\n\n\n\nEX1\nSep 21\n\n    04\nSep 22\n\n\n\n\n\n\n\n\n\n\n\n    05\nSep 29\n\n\n\n\n\n\n\n\nEX2\nOct 5\n\n    06\nOct 6\n\n\n\n\n\n\n\n\n\n\n\n    07\nOct 13\n\n\n\n\n\n\n\n\n\n\n\n    08\nOct 20\n\n\n\n\n\n\n\n\nEX3\nOct 26\n\n    09\nOct 27\n\n\n\n\n\n\n\n\n\n\n\n    10\nNov 3\n\n\n\n\n\n\n\n\nEX4\nNov 9\n\n    11\nNov 10\n\n\n\n\n\n\n\n\n\n\n\n    12\nNov 17\n\n\n\n\n\n\n\n\n\n\n\n    13\nNov 24\n\n\n\n\n\n\n\n\nEX5\nNov 30\n\n    14\nDec 1",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "announcements.html",
-    "href": "announcements.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "No matching items",
-    "crumbs": [
-      "Course information",
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup: Tech stack",
-    "section": "",
-    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for CPSC 203, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in CPSC 203.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#hardware",
-    "href": "setup.html#hardware",
-    "title": "Setup: Tech stack",
-    "section": "Hardware",
-    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#software",
-    "href": "setup.html#software",
-    "title": "Setup: Tech stack",
-    "section": "Software",
-    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 24H2 (build 26100.6584). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 16.0. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 4.6.11\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.8.18 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.16.0\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#optional-software",
-    "href": "setup.html#optional-software",
-    "title": "Setup: Tech stack",
-    "section": "Optional software",
-    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.51.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, CPSC 203\nChoose for expiration “Custom” and set the date to the end of this term: 2025-12-05\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.6.0 (64511). For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#attribution",
-    "href": "setup.html#attribution",
-    "title": "Setup: Tech stack",
-    "section": "Attribution",
-    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "formatting.html",
-    "href": "formatting.html",
-    "title": "Formatting",
-    "section": "",
-    "text": "In text paragraphs, code is always formatted with a monospace font and surrounded by a box like this. Longer examples of code will be in a separate box.\nFirst line of code\nSecond line of code\n...\nIn many cases, the output for code in these boxes will be below them.\nReplace any placeholder indicated by angular brackets &lt;placeholder&gt; with your own code.\nPressing a KeyKey on the keyboard is formatted like that."
+    "text": "Attribution-ShareAlike 4.0 International\n=======================================================================\nCreative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\nUsing Creative Commons Public Licenses\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n Considerations for licensors: Our public licenses are\n intended for use by those authorized to give the public\n permission to use material in ways otherwise restricted by\n copyright and certain other rights. Our licenses are\n irrevocable. Licensors should read and understand the terms\n and conditions of the license they choose before applying it.\n Licensors should also secure all rights necessary before\n applying our licenses so that the public can reuse the\n material as expected. Licensors should clearly mark any\n material not subject to the license. This includes other CC-\n licensed material, or material used under an exception or\n limitation to copyright. More considerations for licensors:\nwiki.creativecommons.org/Considerations_for_licensors\n\n Considerations for the public: By using one of our public\n licenses, a licensor grants the public permission to use the\n licensed material under specified terms and conditions. If\n the licensor's permission is not necessary for any reason--for\n example, because of any applicable exception or limitation to\n copyright--then that use is not regulated by the license. Our\n licenses grant only permissions under copyright and certain\n other rights that a licensor has authority to grant. Use of\n the licensed material may still be restricted for other\n reasons, including because others have copyright or other\n rights in the material. A licensor may make special requests,\n such as asking that all changes be marked or described.\n Although not required by our licenses, you are encouraged to\n respect those requests where reasonable. More_considerations\n for the public:\nwiki.creativecommons.org/Considerations_for_licensees\n=======================================================================\nCreative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)\n\nnever produces Adapted Material.\n\nDownstream recipients.\n\nOffer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nAdditional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nNo downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\n\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material,\nincluding for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.\nTO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n=======================================================================\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
   },
   {
     "objectID": "syllabus.html",
@@ -814,157 +480,554 @@
     ]
   },
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
+    "objectID": "formatting.html",
+    "href": "formatting.html",
+    "title": "Formatting",
+    "section": "",
+    "text": "In text paragraphs, code is always formatted with a monospace font and surrounded by a box like this. Longer examples of code will be in a separate box.\nFirst line of code\nSecond line of code\n...\nIn many cases, the output for code in these boxes will be below them.\nReplace any placeholder indicated by angular brackets &lt;placeholder&gt; with your own code.\nPressing a KeyKey on the keyboard is formatted like that."
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup: Tech stack",
+    "section": "",
+    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for CPSC 203, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in CPSC 203.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#hardware",
+    "href": "setup.html#hardware",
+    "title": "Setup: Tech stack",
+    "section": "Hardware",
+    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Setup: Tech stack",
+    "section": "Software",
+    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 24H2 (build 26100.6584). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 16.0. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 4.6.11\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.8.18 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.16.0\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#optional-software",
+    "href": "setup.html#optional-software",
+    "title": "Setup: Tech stack",
+    "section": "Optional software",
+    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.51.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, CPSC 203\nChoose for expiration “Custom” and set the date to the end of this term: 2025-12-05\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.6.0 (64511). For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#attribution",
+    "href": "setup.html#attribution",
+    "title": "Setup: Tech stack",
+    "section": "Attribution",
+    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "announcements.html",
+    "href": "announcements.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "No matching items",
+    "crumbs": [
+      "Course information",
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "",
-    "text": "Attribution-ShareAlike 4.0 International\n=======================================================================\nCreative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\nUsing Creative Commons Public Licenses\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n Considerations for licensors: Our public licenses are\n intended for use by those authorized to give the public\n permission to use material in ways otherwise restricted by\n copyright and certain other rights. Our licenses are\n irrevocable. Licensors should read and understand the terms\n and conditions of the license they choose before applying it.\n Licensors should also secure all rights necessary before\n applying our licenses so that the public can reuse the\n material as expected. Licensors should clearly mark any\n material not subject to the license. This includes other CC-\n licensed material, or material used under an exception or\n limitation to copyright. More considerations for licensors:\nwiki.creativecommons.org/Considerations_for_licensors\n\n Considerations for the public: By using one of our public\n licenses, a licensor grants the public permission to use the\n licensed material under specified terms and conditions. If\n the licensor's permission is not necessary for any reason--for\n example, because of any applicable exception or limitation to\n copyright--then that use is not regulated by the license. Our\n licenses grant only permissions under copyright and certain\n other rights that a licensor has authority to grant. Use of\n the licensed material may still be restricted for other\n reasons, including because others have copyright or other\n rights in the material. A licensor may make special requests,\n such as asking that all changes be marked or described.\n Although not required by our licenses, you are encouraged to\n respect those requests where reasonable. More_considerations\n for the public:\nwiki.creativecommons.org/Considerations_for_licensees\n=======================================================================\nCreative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)\n\nnever produces Adapted Material.\n\nDownstream recipients.\n\nOffer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nAdditional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nNo downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\n\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material,\nincluding for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.\nTO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n=======================================================================\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "text": "Instructor: Dr. Cinda Heeren (She, Her)",
     "crumbs": [
-      "About"
+      "Course information",
+      "Schedule"
     ]
   },
   {
-    "objectID": "about.html#contributors",
-    "href": "about.html#contributors",
-    "title": "About",
-    "section": "",
-    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "objectID": "index.html#weekly-announcement",
+    "href": "index.html#weekly-announcement",
+    "title": "CPSC 203: Programming, problem solving, and algorithms",
+    "section": "Weekly announcement",
+    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      \n        Examlet\n      \n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n      Book\n      Due\n      Practice\n    \n  \n  \n    01\nSep 1\n\n\n\n\n\n\n\n\n\n\n\n    02\nSep 8\n\n\n\n\n\n\n\n\n\n\n\n    03\nSep 15\n\n\n\n\n\n\n\n\nEX1\nSep 21\n\n    04\nSep 22\n\n\n\n\n\n\n\n\n\n\n\n    05\nSep 29\n\n\n\n\n\n\n\n\nEX2\nOct 5\n\n    06\nOct 6\n\n\n\n\n\n\n\n\n\n\n\n    07\nOct 13\n\n\n\n\n\n\n\n\n\n\n\n    08\nOct 20\n\n\n\n\n\n\n\n\nEX3\nOct 26\n\n    09\nOct 27\n\n\n\n\n\n\n\n\n\n\n\n    10\nNov 3\n\n\n\n\n\n\n\n\nEX4\nNov 9\n\n    11\nNov 10\n\n\n\n\n\n\n\n\n\n\n\n    12\nNov 17\n\n\n\n\n\n\n\n\n\n\n\n    13\nNov 24\n\n\n\n\n\n\n\n\nEX5\nNov 30\n\n    14\nDec 1",
     "crumbs": [
-      "About"
+      "Course information",
+      "Schedule"
     ]
   },
   {
-    "objectID": "labs/02_create-website.html",
-    "href": "labs/02_create-website.html",
-    "title": " Lab: Create your own website!",
+    "objectID": "slides/01_thu_intro.html#teaching-staff",
+    "href": "slides/01_thu_intro.html#teaching-staff",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\nProf: Cinda Heeren 📧 cheeren@cs.ubc.ca ⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen 📧  ⏰ TBD · 🏢 TBD\nTA: Joel Gunawan 📧  ⏰ TBD · 🏢 TBD"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#you",
+    "href": "slides/01_thu_intro.html#you",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "You!",
+    "text": "You!\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question\nthat you think will divide the class about in half\n\nExamples:\n\nCoke or Pepsi?\n\nSpaghetti or Sushi?\n\nMorning person or Night owl?"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#the-flashlight-game",
+    "href": "slides/01_thu_intro.html#the-flashlight-game",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Flashlight Game 🔦",
+    "text": "The Flashlight Game 🔦\nRules:\n\nEveryone starts in play\n\nEach turn, a student poses a valid yes/no question\n\nYES = turn on your phone flashlight\n\nNO = keep it dark\n\n\nYES people are now on vacation 🌴\n(light stays off from now on — relax and enjoy!)\n\nA question is valid if it puts at least 5 and no more than half of the current group on vacation.\nEnd of Game:\n\nWe stop when 10 or fewer people remain in play\nEveryone else is happily on vacation 🌴\n\n\nHow to Count\n\nI only need to count the lights (YES)\n\nThe rest (dark screens) = NO\n\nEliminated = never light up again\n\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#debrief",
+    "href": "slides/01_thu_intro.html#debrief",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Debrief 💡",
+    "text": "Debrief 💡\nPunchline questions:\n\nWe know we will need at least ______ questions.\nWe know we will need no more than ______ questions.\nWhy did we stop at 10 instead of 1?\nWhy did we do this?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#where-to-start",
+    "href": "slides/01_thu_intro.html#where-to-start",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Where to start?",
+    "text": "Where to start?\nCanvas: https://canvas.ubc.ca/courses/170624\nCourse Website: https://ubc-cs.github.io/cpsc203\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/193300"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#about-this-course",
+    "href": "slides/01_thu_intro.html#about-this-course",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "About This Course",
+    "text": "About This Course\nThis course will teach you a bunch of different things!\n\nTools: Terminal, Markdown, Git, marimo, PrairieLearn\nComputer science: Python (!!!), efficiency, web scraping, graphs\nData science: pandas, data frames, visualizations\nAlgorithms: many algorithms!\nArt and creativity: lots of examples!"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#term-schedule",
+    "href": "slides/01_thu_intro.html#term-schedule",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Term Schedule",
+    "text": "Term Schedule\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nSunday\nT\nR\nLab\nExamlet\nPOTW\nPractice\n\n\n\n\n1\n8/31/2025\n \n🎉\n\n\n\n\n\n\n2\n9/7/2025\n🎉\n🎉\n\n\n🏎️\n🏋️\n\n\n3\n9/14/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n4\n9/21/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n5\n9/28/2025\n \n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n6\n10/5/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n7\n10/12/2025\n \n \n\n\n\n\n\n\n8\n10/19/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n9\n10/26/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n10\n11/2/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n11\n11/9/2025\n \n \n\n\n\n\n\n\n12\n11/16/2025\n🎉\n🎉\n🪄\n\n🏎️\n🏋️\n\n\n13\n11/23/2025\n🎉\n🎉\n🪄\n🤩\n🏎️\n🏋️\n\n\n14\n11/30/2025\n🎉\n🎉\n🪄\n\n\n🏋️"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#evaluation",
+    "href": "slides/01_thu_intro.html#evaluation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Evaluation",
+    "text": "Evaluation\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#communications",
+    "href": "slides/01_thu_intro.html#communications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Communications",
+    "text": "Communications\n\n\n📧 Email cheeren@cs.ubc.ca\nChecked daily. Please place “CPSC203” in subject!\n   Piazza piazza.com/ubc.ca/winterterm12025/cpsc203\nPost questions for quick response.\n🏫 Office Hours\n\n\n\n\n\n\n\n\n\n\nName\nTime\nLocation & Zoom\n\n\n\n\nCinda\nMon 2–4pm\n🏢 ICCS 233 · \n\n\nMinh Anh\nTBD\n🏢 TBD\n\n\nJoel\nTBD\n🏢 TBD\n\n\nTBD\nTBD\n🏢 TBD\n\n\n\n\n\n🌐 Course Website https://ubc-cs.github.io/cpsc203/\nSyllabus, schedule, resources"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#semester-overview",
+    "href": "slides/01_thu_intro.html#semester-overview",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Semester overview",
+    "text": "Semester overview\n\n\n\n\n\n\n\n\n\n\n\nHandcraft\nBillboard Hot 100\nThe Overstory and Pointillism\nArtificial Music Composition\nRoad Trip Planning\nSpiderman’s Social Network\n\n\n\n\nDesign\nObjects\nIteration\nWeb Scraping\nData Frames\nMatPlotLib\nVoronoi Diagrams\nEfficiency\nMarkov Chains\nRandom Numbers\nGraphs\nTraveling Salesperson\nIntractable Problems\nNatural Language\n\n\n\nThis course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#tangrams",
+    "href": "slides/01_thu_intro.html#tangrams",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Tangrams",
+    "text": "Tangrams"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#your-turn-tangrams",
+    "href": "slides/01_thu_intro.html#your-turn-tangrams",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: tangrams",
+    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#announcements",
+    "href": "slides/02_thu_representation.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nSetup instructions available.\nPython resources posted to piazza.\nFirst examlet signup available.\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into colour representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#learning-outcomes",
+    "href": "slides/02_thu_representation.html#learning-outcomes",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nComputers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually anything!"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#warm-up",
+    "href": "slides/02_thu_representation.html#warm-up",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Warm Up",
+    "text": "Warm Up\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colour-interpretation",
+    "href": "slides/02_thu_representation.html#colour-interpretation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour interpretation",
+    "text": "Colour interpretation\nWhat’s your favorite colour? Do you have a sense for why it’s your favorite? Does that colour influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
+    "href": "slides/02_thu_representation.html#your-turn-colourcultural-interpretations",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Colour—cultural interpretations",
+    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation",
+    "href": "slides/02_thu_representation.html#colourrepresentation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\n\nFirst, some general questions…\nWhat does data look like to a computer?\n\n\n\nIs that enough?\n\nhttps://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/\n\n\n\nPositive and negative charges interpreted as 1 and 0.\nBinary digits = bits"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation-1",
+    "href": "slides/02_thu_representation.html#colourrepresentation-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation-2",
+    "href": "slides/02_thu_representation.html#colourrepresentation-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nWhat’s the highest number we can represent with 4 bits?\n\n\n\nWhat’s the highest number we can represent with 5 bits?\n\n\n\nHow many bits do we need to express 120?\n\n\n\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.\nHow does this help us with colour?"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation-3",
+    "href": "slides/02_thu_representation.html#colourrepresentation-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nCan we use integers to represent colours?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for colour values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation-4",
+    "href": "slides/02_thu_representation.html#colourrepresentation-4",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nWhat colour is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colourrepresentation-aside",
+    "href": "slides/02_thu_representation.html#colourrepresentation-aside",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation (aside)",
+    "text": "Colour—representation (aside)\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colour-and-code",
+    "href": "slides/02_thu_representation.html#colour-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#colour-and-code-1",
+    "href": "slides/02_thu_representation.html#colour-and-code-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\n\n\n\n\n\n\n\nfrom typing import Tuple\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the colour channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey \n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n    \n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n    \n    out = fancify(img)\n  \n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n  \nmain()"
+  },
+  {
+    "objectID": "slides/02_thu_representation.html#your-turn-change-image-or-boost",
+    "href": "slides/02_thu_representation.html#your-turn-change-image-or-boost",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Change image or boost",
+    "text": "Your turn: Change image or boost\nFind an online image you would like to boost and use its URL in the code we just wrote.\nHow can you adjust the code to manipulate the colours in a different way?"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#announcements",
+    "href": "slides/tbd_tbd_visualization.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#warm-up-puzzle-whats-the-date-of-last-saturday",
+    "href": "slides/tbd_tbd_visualization.html#warm-up-puzzle-whats-the-date-of-last-saturday",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Warm-up Puzzle: What’s the date of last saturday?",
+    "text": "Warm-up Puzzle: What’s the date of last saturday?\nimport datetime as dt\ntoday = dt.date.today()\n1today.weekday()\ndayspostsat =\n\n1\n\nGives the day of the week\n\n\n\n\n\n\n\nSat\nSun\nMon\nTue\nWed\nThu\nFri\n\n\n\n\n5\n6\n0\n1\n2\n3\n4\n\n\n\n\nUse modular arithmetic."
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#pandas-and-data-frames",
+    "href": "slides/tbd_tbd_visualization.html#pandas-and-data-frames",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "pandas and data frames",
+    "text": "pandas and data frames\nimport pandas\nImports the pandas library. We will almost always use an abbreviation…\nInstead of saying pandas.read_csv('file.csv')\nwe can say\nThis function returns a DataFrame containing the data from file.csv."
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#csv-files",
+    "href": "slides/tbd_tbd_visualization.html#csv-files",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "CSV files",
+    "text": "CSV files\nTo implement: df = pd.read_csv('file.csv')\nfile.csv must have field names in row 1, and data beginning in row 2.\n\n\nbill_week.csv\n\n,week,title,artist,rank,last_week,peak_pos,weeks_on_chart\n0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19\n1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12\n2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10\n3,2019-09-21,Circles,Post Malone,4,7,4,2\n4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24\n5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15\n6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#selecting-rows",
+    "href": "slides/tbd_tbd_visualization.html#selecting-rows",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Selecting rows",
+    "text": "Selecting rows\n\n\n\n\n\ndf.nlargest(10,'last_week')\nReturns top 10 hits from last week.\n\n\n\n\ndf[ df['weeks_on_chart'] &gt; 10 ]\nReturns all songs that have been on the charts for more than 10 weeks."
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#adding-a-column",
+    "href": "slides/tbd_tbd_visualization.html#adding-a-column",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding a column",
+    "text": "Adding a column\n\ndf['gradient'] = df['last_week'] - df['rank']\nAdds a column to the DataFrame containing the difference for every row.\n\n\n\n\ndf[ df['gradient'] &gt; 10 ]\nReturns all songs that have moved more than 10 spaces in the last week."
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#some-challenges",
+    "href": "slides/tbd_tbd_visualization.html#some-challenges",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Some challenges…",
+    "text": "Some challenges…\nGiven last week’s chart:\n\nHow many new songs were there?\nWhat’s the average peak?\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\nWhich song changed the most? Was it rising or falling?\nWrite and answer your own question:\n_____________________________________________________\n\n\ndf2 = pd.read_csv('bill_week.csv')\ndf3 = df2[ df2['weeks_on_chart'] &gt; 10 ]\nprint(\"all:  \")\nprint(df2)\nprint(\"endurance:  \")\nprint(df3)\n\ndf4 = df2[ df2['last_week'] == 101].count()['title']\ndf5 = df3['peak_pos'].mean()\nprint(\"new count\")\nprint(df4)\nprint(\"peak avg\")\nprint(df5)"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-1",
+    "href": "slides/tbd_tbd_visualization.html#some-challenges-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Some challenges…",
+    "text": "Some challenges…\n\n\nHow many new songs were there?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nFilter, apply function, think about output (sometimes means choosing columns, too)\ndf[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title']"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-2",
+    "href": "slides/tbd_tbd_visualization.html#some-challenges-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Some challenges…",
+    "text": "Some challenges…\n\n\nWhat’s the average peak?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf5 = df3['peak_pos'].mean()"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-3",
+    "href": "slides/tbd_tbd_visualization.html#some-challenges-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Some challenges…",
+    "text": "Some challenges…\n\n\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nenduring_peak = df[df['weeks_on_chart']&gt;=10]['peak_pos'].mean()\nprint(\"enduring avg peak: \" + str(enduring_peak))"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#some-challenges-4",
+    "href": "slides/tbd_tbd_visualization.html#some-challenges-4",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Some challenges…",
+    "text": "Some challenges…\n\n\nWhich song moved the most? Did it rise or fall?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf['gradient'] = df['rank'] - df['last_week']\nprint(df.loc[df['gradient'].abs().idxmax()])"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#the-plot-thickens",
+    "href": "slides/tbd_tbd_visualization.html#the-plot-thickens",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Plot Thickens…",
+    "text": "The Plot Thickens…\n\nSketch Cartesian coordinate system."
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#plotting-with-pandas",
+    "href": "slides/tbd_tbd_visualization.html#plotting-with-pandas",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Plotting with pandas",
+    "text": "Plotting with pandas"
+  },
+  {
+    "objectID": "slides/tbd_tbd_visualization.html#resources",
+    "href": "slides/tbd_tbd_visualization.html#resources",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Resources",
+    "text": "Resources\nhttps://pymotw.com/2/datetime/\nhttps://www.dataschool.io/best-python-pandas-resources/\nhttps://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\nhttps://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#announcements",
+    "href": "slides/02_tue_efficiency.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nWebsite getting closer – Only setup is wrong (I think)\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com/pt/student/course/12360/enroll/172611186041\nFirst examlet signup available!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#learning-outcomes",
+    "href": "slides/02_tue_efficiency.html#learning-outcomes",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nWe connect the idea of “elegance” to common items and to software design!\nThe time it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#elegance",
+    "href": "slides/02_tue_efficiency.html#elegance",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Elegance",
+    "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/elegancegallery\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#elegance-examples",
+    "href": "slides/02_tue_efficiency.html#elegance-examples",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance: examples",
+    "text": "Elegance: examples\nScissors"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#your-turn-elegancedefinition",
+    "href": "slides/02_tue_efficiency.html#your-turn-elegancedefinition",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Elegance—definition",
+    "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/elegancegallery\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/GL3yNZn7i7DT5qxW9\n\n  \n    −\n    +\n \n 05:00"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#elegance-and-computing",
+    "href": "slides/02_tue_efficiency.html#elegance-and-computing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance and computing",
+    "text": "Elegance and computing\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#section",
+    "href": "slides/02_tue_efficiency.html#section",
+    "title": "Programming, problem solving, and algorithms",
     "section": "",
-    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
+    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs"
   },
   {
-    "objectID": "labs/02_create-website.html#basic-structure-of-quarto-document",
-    "href": "labs/02_create-website.html#basic-structure-of-quarto-document",
-    "title": " Lab: Create your own website!",
-    "section": "",
-    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
+    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
+    "href": "slides/02_tue_efficiency.html#handcraft-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft",
+    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.\n\nQuilt—patterns\nCrochet—2 different kinds\nPaper—Friend’s artistry"
   },
   {
-    "objectID": "labs/02_create-website.html#steps",
-    "href": "labs/02_create-website.html#steps",
-    "title": " Lab: Create your own website!",
-    "section": " Steps",
-    "text": "Steps\n\nOpen your workspace: NA.\nCreate index.qmd.\nClick the “Render” button on top.\nDownload the output directory _site.\nOpen Netlify Drop: app.netlify.com/drop.\nDrag and drop the downloaded _site onto Netlify Drop.\nPost the link to your website in the comments below."
+    "objectID": "slides/02_tue_efficiency.html#knitting",
+    "href": "slides/02_tue_efficiency.html#knitting",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting",
+    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!"
   },
   {
-    "objectID": "labs/02_create-website.html#resources",
-    "href": "labs/02_create-website.html#resources",
-    "title": " Lab: Create your own website!",
-    "section": " Resources",
-    "text": "Resources\n\nDaring Fireball: Markdown\nInteractive Commonmark Markdown tutorial\nQuarto documentation\nGet started with Quarto Workshop including the material and this video:"
+    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
+    "href": "slides/02_tue_efficiency.html#knitting-examples",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting: examples",
+    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”\nAxis of algorithmic quality includes"
   },
   {
-    "objectID": "slides/tbd_tbd_git.html#announcements",
-    "href": "slides/tbd_tbd_git.html#announcements",
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n  \n    −\n    +\n \n 05:00\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\nIf we are solving a problem ____________ for a given input, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\nDiscussion:\n\n\n\n\n\n\n\nFirst blank: or write an algorithm\n\nIn this example we choose to label \\(n\\) as the side-length\nWe don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3\\(n\\) x \\(n\\) takes time 3\\(n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.\nSometimes we have more than one parameter"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft and Code",
+    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\ndef knit_square_print(n): for r in range(n): row = “” for c in range(n):\nrow += ‘X’\nprint(row)\nscript: walk through existing code. counting stitches is the same as counting time.\nwhich line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?\nlet’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.\nhave we done more work? a little, but the most frequent line happens the same number of times."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#words-and-ideas",
+    "href": "slides/02_tue_efficiency.html#words-and-ideas",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Words and Ideas",
+    "text": "Words and Ideas\n\nElegance\nGrowth of simple functions over time\nRepresenting complexity of a problem using time\nRunning time of a Python function"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#announcements",
+    "href": "slides/03_tue_lists.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
     "text": "Announcements"
   },
   {
-    "objectID": "slides/tbd_tbd_review.html#announcements",
-    "href": "slides/tbd_tbd_review.html#announcements",
+    "objectID": "slides/03_tue_lists.html#practice-problems",
+    "href": "slides/03_tue_lists.html#practice-problems",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
+    "section": "Practice problems",
+    "text": "Practice problems\n\\(1 + 3 + 5 + \\ldots + 1337\\) = ____________\n\n\nHow many terms?\n\nAlways always start this conversation from k=1, not zero."
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#announcements",
-    "href": "slides/tbd_tbd_web-as-data.html#announcements",
+    "objectID": "slides/03_tue_lists.html#sums-continued",
+    "href": "slides/03_tue_lists.html#sums-continued",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
+    "section": "Sums continued",
+    "text": "Sums continued\nEnglish description:\nThe sum of the first \\(k\\) odd integers is ________\nWhat about \\(11 + 13 + \\ldots + 23\\)?\n\n\n\n\nAnd \\(2 + 4 + 6 + \\ldots + 1338\\)?"
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#information-as-data",
-    "href": "slides/tbd_tbd_web-as-data.html#information-as-data",
+    "objectID": "slides/03_tue_lists.html#python-demo-lists",
+    "href": "slides/03_tue_lists.html#python-demo-lists",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Information as data",
-    "text": "Information as data\n\n\n\n\n\n\nhttps://vanmapp1.vancouver.ca/gmaps/covmap.htm?map=parks_areas\nhttps://www.geocaching.com/play/map?lat=49.23710338135142&lng=-123.1318473815918&zoom=13&asc=true&sort=distance&st=vancouver%2C+British+Columbia"
+    "section": "Python Demo: Lists",
+    "text": "Python Demo: Lists\nExploratory code lives at https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679\nDon’t worry if you haven’t set up your own machine. The infrastructure on PL is adequate for most things we’ll do."
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#cpsc-103-to-203",
-    "href": "slides/tbd_tbd_web-as-data.html#cpsc-103-to-203",
+    "objectID": "slides/03_tue_lists.html#back-to-handcraft",
+    "href": "slides/03_tue_lists.html#back-to-handcraft",
     "title": "Programming, problem solving, and algorithms",
-    "section": "CPSC 103 to 203",
-    "text": "CPSC 103 to 203"
+    "section": "Back to handcraft",
+    "text": "Back to handcraft"
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#the-internet",
-    "href": "slides/tbd_tbd_web-as-data.html#the-internet",
+    "objectID": "slides/03_tue_lists.html#where-are-we",
+    "href": "slides/03_tue_lists.html#where-are-we",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The internet…",
-    "text": "The internet…\n\nChange this into an activity. Have students draw a diagram of how they think the WWW works. THEN discuss. (Use doc cam, bring pencils, etc).\n\nThe end user opens a web browser and types in a URL, which is the name of the website they are wanting to see.\nThe URL request is sent through their LAN to their internet service provider.\nThe internet service provider then sends the URL requested to an external DNS server, which is either hosted by them or by who ever provides their internet access.\nThe external DNS server then matches the URL up with the external IP Address assigned to the LAN hosting that website and the request is then sent on to that network.\nThe network hosting that website accepts the request and then sends it to its own internal DNS server.\nThe internal DNS server matches the URL requested to the internal IP address of the actual web server where the files making up the website are physically stored.\nThe request is then sent to the web server and the web server packages up the files that make up the website requested.\nThe website that is all packaged up now makes the return trip in reverse all the way back to the computer that originally made the request.\nThe web browser on that computer then interprets the text files full of computer code sent to it by the web server hosting the site and displays them as a graphic website."
+    "section": "Where are we?",
+    "text": "Where are we?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#billboard-hot-100",
-    "href": "slides/tbd_tbd_web-as-data.html#billboard-hot-100",
+    "objectID": "slides/03_tue_lists.html#program-design",
+    "href": "slides/03_tue_lists.html#program-design",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Billboard Hot 100",
-    "text": "Billboard Hot 100\nNavigate to https://www.billboard.com/charts/hot-100\n\n\nWhat happens to the URL if you load a past week? ______\n\n\nWhat happens to the page if you substitute a different date into the URL?\n________________________________________________\n\n\nWrite one question you would like to ask of this data:\n________________________________________________\n\nURL gets you there, menu items give you new queries you can ask of the website!\nFill in: it changes to a new page; it chooses the closest date"
+    "section": "Program design",
+    "text": "Program design\n\n\n\n\n\n\n\n\n\n\n\n\n\nA handcraft is a collection of __________. Every __________ has a __________, and a collection of __________. Every __________ is a collection of __________. Every __________ is either “knit” or “purl,” and is drawn as a __________.\n\nMissing words: blocks, blocks, position, rows, stitches, rectangles"
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#anatomy-of-html",
-    "href": "slides/tbd_tbd_web-as-data.html#anatomy-of-html",
+    "objectID": "slides/03_tue_lists.html#classes-in-python",
+    "href": "slides/03_tue_lists.html#classes-in-python",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Anatomy of HTML",
-    "text": "Anatomy of HTML\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;The Dormouse's story&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;p class=\"title\"&gt;\n        &lt;b&gt;The Dormouse's story&lt;/b&gt;\n    &lt;/p&gt;\n    &lt;p class=\"story\"&gt;\n        Once upon a time there were two little sisters. Their names were \n        &lt;a href=\"http://example.com/elsie\" class=\"sister\" id=\"link1\"&gt;Elsie&lt;/a&gt;, \n        and &lt;a href=\"http://example.com/lacie\" class=\"sister\" id=\"link2\"&gt;Lacie&lt;/a&gt;, \n        and they lived at the bottom of a well.\n    &lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nWalkthrough of how tags are like parentheses around text elements.\nPython can be used to extract data from the HTML source."
+    "section": "Classes in Python",
+    "text": "Classes in Python\nMechanism for creating user-defined types.\nUsed to identify attributes with an object. Associates functionality with the relevant objects.\nExample:\n@dataclass\nclass color:\n  \"\"\"\n  color: simply gathers color components\n  \"\"\"\n  red: int = 120\n  green: int = 120\n  blue: int = 120\n\nData classes allow us to create substructures to organize data in a way useful to us. Attributes are data and the functionality are member functions. Attributes can be defined with default values."
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#billboard-hot-100-page-source",
-    "href": "slides/tbd_tbd_web-as-data.html#billboard-hot-100-page-source",
+    "objectID": "slides/03_tue_lists.html#design-strategies",
+    "href": "slides/03_tue_lists.html#design-strategies",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Billboard Hot 100 page source",
-    "text": "Billboard Hot 100 page source\n&lt;div class=\"chart-list-item piano-content-overlay__gated-item\" data-rank=\"49\" data-artist=\"Taylor Swift\" data-title=\"Lover\" data-has-content=\"true\"&gt;\n    &lt;div class=\"chart-list-item__first-row chart-list-item__cursor-pointer\"&gt;\n        &lt;div class=\"chart-list-item__position chart-list-item__position--centered\"&gt;\n            &lt;div class=\"chart-list-item__rank\"&gt;49&lt;/div&gt;\n            &lt;div class=\"chart-list-item__award\"&gt;&lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__image-wrapper\"&gt;\n            &lt;div class=\"chart-list-item__trend-icon\"&gt;\n                &lt;img src=\"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd\"\n                     srcset=\"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down-mobile.svg?df89925e3b37f64521bd 30w, https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd 38w\"\n                     sizes=\"(min-width: 768px) 38px, 30px\"&gt;\n            &lt;/div&gt;\n            &lt;img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==\"\n                 data-src=\"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg\"\n                 data-srcset=\"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg 53w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-106x106.jpg 106w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-87x87.jpg 87w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-174x174.jpg 174w\"\n                 sizes=\"(max-width: 767px) 72px, (min-width: 768px) 86px\"\n                 class=\"chart-list-item__image\"\n                 alt=\"Taylor Swift Lover Billboard Hot 100\"&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__text-wrapper\"&gt;\n            &lt;div class=\"chart-list-item__text\"&gt;\n                &lt;div class=\"chart-list-item__title\"&gt;\n                    &lt;span class=\"chart-list-item__title-text\"&gt;\n                        Lover\n                    &lt;/span&gt;\n                &lt;/div&gt;\n                &lt;div class=\"chart-list-item__artist\"&gt;\n                    &lt;a href=\"/music/taylor-swift\"&gt;\n                        Taylor Swift\n                    &lt;/a&gt;\n                &lt;/div&gt;\n                &lt;div class=\"chart-list-item__lyrics\"&gt;\n                    &lt;a href=\"https://www.billboard.com/articles/news/lyrics/7950218/ready-for-it-taylor-swift-lyrics\"&gt;\n                        &lt;span class=\"hidden-mobile show-expanded-mobile-inline\"&gt;Song &lt;/span&gt;Lyrics\n                    &lt;/a&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"chart-list-item__chevron-wrapper\"&gt;\n            &lt;i class=\"fa fa-chevron-down\"&gt;&lt;/i&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"chart-list-item__extra-info\"&gt;\n        &lt;div class=\"chart-list-item__extra-info-shadow\"&gt;&lt;/div&gt;\n        &lt;div class=\"chart-list-item__stats\"&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--first-cell\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__last-week\"&gt;23&lt;/div&gt;\n                LAST WEEK\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__last-week\"&gt;10&lt;/div&gt;\n                TWO WEEKS AGO\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-line-chart\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__weeks-at-one\"&gt;10&lt;/div&gt;\n                PEAK POSITION\n            &lt;/div&gt;\n            &lt;div class=\"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--no-border-right\"&gt;\n                &lt;div class=\"chart-list-item__stats-icon fa fa-clock-o\"&gt;&lt;/div&gt;\n                &lt;div class=\"chart-list-item__weeks-on-chart\"&gt;4&lt;/div&gt;\n                WEEKS ON CHART\n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;"
+    "section": "Design Strategies",
+    "text": "Design Strategies\n\nDecompose a problem into classes\nList the data associated with each class\nWrite the “driver” code that illustrates the functionality you expect from each class.\nImplement the functions you expect.\nRun the driver code to test your functionality."
   },
   {
-    "objectID": "slides/tbd_tbd_web-as-data.html#beautiful-soup",
-    "href": "slides/tbd_tbd_web-as-data.html#beautiful-soup",
+    "objectID": "slides/03_tue_lists.html#which-classes",
+    "href": "slides/03_tue_lists.html#which-classes",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Beautiful Soup",
-    "text": "Beautiful Soup\nReads the HTHL source into a data structure that’s easy to query!\nhttps://www.crummy.com/software/BeautifulSoup/bs4/doc/\n\n\nhtml = simple_get(\"https://www.billboard.com/charts/hot-100\" + '/' + date)\nmydivs = html.findAll(\"div\", {\"class\": \"chart-list-item\"}) // all the data is here!!\n\nfor div in mydivs:\n    s = Song(div.attrs['data-title'], div.attrs['data-artist'], int(div.attrs['data-rank']))\n\n\nStill too messy for us! Remedy? https://github.com/guoguo12/billboard-charts\n\nBeautiful is a library that allows us to create native Python structures (such as lists and dictionaries) from HTML sources. Still requires scrutiny of what we want. Instead use other library that anticipates what information we would like to extract from the Billboard charts."
-  },
-  {
-    "objectID": "slides/tbd_tbd_data-structures.html#announcements",
-    "href": "slides/tbd_tbd_data-structures.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
-  },
-  {
-    "objectID": "slides/tbd_tbd_data-structures.html#data-structure-queue",
-    "href": "slides/tbd_tbd_data-structures.html#data-structure-queue",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Data structure: Queue",
-    "text": "Data structure: Queue\nTo orchestrate the fill, we’ll use a data structure called a queue.\n\nQueue:\nenqueue(k): Places data k onto the structure at the end\ndequeue(): Removes and returns the “first” element from the structure\n\n\nProgrammatic manifestation of standing in a service line.\nFirst in, First Out"
-  },
-  {
-    "objectID": "slides/tbd_tbd_data-structures.html#in-python-collections.deque",
-    "href": "slides/tbd_tbd_data-structures.html#in-python-collections.deque",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "In Python: Collections.deque",
-    "text": "In Python: Collections.deque\nPronounced “deck”\n\nFrom GeeksforGeeks: Deque in Python"
-  },
-  {
-    "objectID": "slides/tbd_tbd_data-structures.html#documentation",
-    "href": "slides/tbd_tbd_data-structures.html#documentation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Documentation",
-    "text": "Documentation"
+    "section": "Which classes?",
+    "text": "Which classes?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
   },
   {
     "objectID": "slides/03_thu_classes.html#announcements",
