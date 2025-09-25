@@ -1,0 +1,160 @@
+---
+date: 2025-09-25
+---
+
+## Announcements
+
+* You should be registered for EX2 next week.
+
+* Post on Piazza if you still need help w machine setup! 
+
+
+# Lab Day!
+
+## Garden
+
+A __________ is a collection of ___________. Every ________ is a collection of __________.
+
+![](/images/UBCfarmflowers.jpg){fig-alt="Messy rows of flowers."}
+
+## Class Flower
+
+We declare a flower:
+```fl1 = Flower(_____,_____,_____)```
+
+What data should a Flower store?
+
+* 
+
+\ 
+
+* 
+
+\
+
+* 
+
+\
+
+## Class Flower
+
+We declare a flower:
+```fl1 = Flower(_____,_____,_____)```
+
+\ 
+
+``` python
+SPECIES = {"rose", "sunflower", "violet", "daisy"}
+
+THEMES: Dict[str, Dict[str, Color]] = {
+  "berry":  {"fill": (214,  76, 118), "border": (128,  33,  65)},
+  "sun":    {"fill": (247, 181,   0),  "border": (168, 123,   0)},
+  "leaf":   {"fill": ( 58, 142,  88), "border": ( 33,  91,  55)},
+  "ocean":  {"fill": ( 84, 156, 241), "border": ( 35,  87, 170)},
+}
+```
+
+Span:
+
+![](/images/rowgrid.png){fig-alt="table of 12 empty cells."}
+
+## Class Flower
+
+### Notes:
+
+* images of flowers are already defined for you using geometry from Image library. 
+* call the functions by referring to the file containing the drawers --  `fl.daisy(pos,span,theme)`, for example.
+* All locations are in terms of CELL coordinates, not pixel coordinates. 
+* Start your exercises by looking at the driver code.
+
+## Finish the Flower Class {.activity}
+
+https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
+
+{{< countdown minutes=15 >}}
+
+If you finish early, draw more flowers!
+
+## Class Row
+
+We declare a row:
+```row1 = Row(_____,_____,_____)```
+
+What data should a Row store?
+
+* 
+
+\ 
+
+* 
+
+\
+
+* 
+
+\
+
+::: notes
+location in the garden, 
+list of flowers, 
+gap between flowers.
+:::
+
+## Class Row
+
+### Drawing a Row:
+
+Given a list of flowers, and a gap:
+
+[f1, f2, f3], gap = 2
+
+Draw the row:
+
+![](/images/rowgrid.png){fig-alt="table of 12 empty cells."}
+
+\ 
+
+Puzzle: How do you know where to draw each flower?
+
+## Finish the Row Class {.activity}
+
+https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
+
+{{< countdown minutes=15 >}}
+
+If you finish early, draw more rows!
+
+## Class Garden
+
+We declare a garden:
+```g1 = Garden(_____)```
+
+What data should a Garden store?
+
+* 
+
+\ 
+
+What functionality should a Garden have?
+
+* 
+
+\ 
+
+* 
+
+\ 
+
+::: notes
+list of rows
+add blocks
+render
+:::
+
+## Finish the Garden Class {.activity}
+
+https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
+
+{{< countdown minutes=15 >}}
+
+If you finish early, make your garden fancy!
