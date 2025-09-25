@@ -1057,7 +1057,7 @@
     "href": "slides/04_thu_garden.html#class-flower-2",
     "title": "Programming, problem solving, and algorithms",
     "section": "Class Flower",
-    "text": "Class Flower\nNotes:\n\nimages of flowers are already defined for you using geometry from Image library.\ncall the functions by referring to the file containing the drawers – fl.daisy(pos,span,theme), for example.\nAll locations are in terms of CELL coordinates, not pixel coordinates.\nStart your exercises by looking at the driver code."
+    "text": "Class Flower\nNotes:\n\nimages of flowers are already defined for you using geometry from Image library.\ncall the functions by referring to the file containing the drawers – fl.daisy(pos,span,theme), for example.\nAll locations are in terms of CELL coordinates, not pixel coordinates.\nStart your exercises by looking at the driver code.\nFlowers don’t need to know anything about how they’re going to be used."
   },
   {
     "objectID": "slides/04_thu_garden.html#finish-the-flower-class",
@@ -1081,6 +1081,13 @@
     "text": "Class Row\nDrawing a Row:\nGiven a list of flowers, and a gap:\n[f1, f2, f3], gap = 2\nDraw the row:\n\n \nPuzzle: How do you know where to draw each flower?"
   },
   {
+    "objectID": "slides/04_thu_garden.html#class-row-2",
+    "href": "slides/04_thu_garden.html#class-row-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Class Row",
+    "text": "Class Row\nNotes:\n\nMost complex part is computing where each flower in the row should be draw.\nRender will simply call flower renderers, with the correct locations.\nAll locations are in terms of CELL coordinates, not pixel coordinates.\nStart your exercises by looking at the driver code.\nRows don’t need to know anything about how they’re going to be used, but they do need to know about Flowers."
+  },
+  {
     "objectID": "slides/04_thu_garden.html#finish-the-row-class",
     "href": "slides/04_thu_garden.html#finish-the-row-class",
     "title": "Programming, problem solving, and algorithms",
@@ -1095,11 +1102,25 @@
     "text": "Class Garden\nWe declare a garden: g1 = Garden(_____)\nWhat data should a Garden store?\n\n\n\n \nWhat functionality should a Garden have?\n\n\n\n \n\n\n\n \n\nlist of rows add blocks render"
   },
   {
+    "objectID": "slides/04_thu_garden.html#class-garden-1",
+    "href": "slides/04_thu_garden.html#class-garden-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Class Garden",
+    "text": "Class Garden\nNotes:\n\nRender will simply call Row renderers; Rows know their locations!\nAll locations are in terms of CELL coordinates, not pixel coordinates.\nStart your exercises by looking at the driver code.\nGardens need to know about Rows, but only indirectly about Flowers."
+  },
+  {
     "objectID": "slides/04_thu_garden.html#finish-the-garden-class",
     "href": "slides/04_thu_garden.html#finish-the-garden-class",
     "title": "Programming, problem solving, and algorithms",
     "section": "Finish the Garden Class",
     "text": "Finish the Garden Class\nhttps://us.prairielearn.com/pl/course_instance/193300/assessment/2591474\n\n  \n    −\n    +\n \n 15:00\n \nIf you finish early, make your garden fancy!"
+  },
+  {
+    "objectID": "slides/04_thu_garden.html#conclusion",
+    "href": "slides/04_thu_garden.html#conclusion",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Conclusion",
+    "text": "Conclusion\nWhat did you accomplish?\n\nIncreased fluency in Python from navigating existing code.\nYou know that a dataclass is a collection of data and functionality, and you have created a few.\nVia examples, you are beginning to understand how to decide upon ownership of application data."
   },
   {
     "objectID": "syllabus.html",

@@ -276,12 +276,13 @@
 <li>call the functions by referring to the file containing the drawers – <code>fl.daisy(pos,span,theme)</code>, for example.</li>
 <li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
 <li>Start your exercises by looking at the driver code.</li>
+<li>Flowers don’t need to know <em>anything</em> about how they’re going to be used.</li>
 </ul>
 </section>
 <section id="finish-the-flower-class" class="slide level2 activity">
 <h2>Finish the Flower Class</h2>
 <p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
-<div id="timer_6e2bd022ae4c16024dc3503e490b6b5fa681f116" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_f9b88b61c4d4d758e5c5581aafb11116f60cf18d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -332,10 +333,21 @@
 <img data-src="../images/rowgrid.png" alt="table of 12 empty cells." class="r-stretch"><p>&nbsp;</p>
 <p>Puzzle: How do you know where to draw each flower?</p>
 </section>
+<section id="class-row-2" class="slide level2">
+<h2>Class Row</h2>
+<h3 id="notes-1">Notes:</h3>
+<ul>
+<li>Most complex part is computing where each flower in the row should be draw.</li>
+<li>Render will simply call flower renderers, with the correct locations.</li>
+<li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
+<li>Start your exercises by looking at the driver code.</li>
+<li>Rows don’t need to know <em>anything</em> about how they’re going to be used, but they do need to know about Flowers.</li>
+</ul>
+</section>
 <section id="finish-the-row-class" class="slide level2 activity">
 <h2>Finish the Row Class</h2>
 <p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
-<div id="timer_6e2bd022ae4c16024dc3503e490b6b5fa681f116" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_f9b88b61c4d4d758e5c5581aafb11116f60cf18d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -375,10 +387,20 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="class-garden-1" class="slide level2">
+<h2>Class Garden</h2>
+<h3 id="notes-2">Notes:</h3>
+<ul>
+<li>Render will simply call Row renderers; Rows know their locations!</li>
+<li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
+<li>Start your exercises by looking at the driver code.</li>
+<li>Gardens need to know about Rows, but only indirectly about Flowers.</li>
+</ul>
+</section>
 <section id="finish-the-garden-class" class="slide level2 activity">
 <h2>Finish the Garden Class</h2>
 <p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
-<div id="timer_6e2bd022ae4c16024dc3503e490b6b5fa681f116" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_f9b88b61c4d4d758e5c5581aafb11116f60cf18d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -386,6 +408,15 @@
  <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 <p>If you finish early, make your garden fancy!</p>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<h3 id="what-did-you-accomplish">What did you accomplish?</h3>
+<ul>
+<li><p>Increased fluency in Python from navigating existing code.</p></li>
+<li><p>You know that a dataclass is a collection of data and functionality, and you have created a few.</p></li>
+<li><p>Via examples, you are beginning to understand how to decide upon ownership of application data.</p></li>
+</ul>
 
 
 <script type="ojs-module-contents">
