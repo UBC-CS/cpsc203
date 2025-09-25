@@ -66,6 +66,7 @@ Span:
 * call the functions by referring to the file containing the drawers --  `fl.daisy(pos,span,theme)`, for example.
 * All locations are in terms of CELL coordinates, not pixel coordinates. 
 * Start your exercises by looking at the driver code.
+* Flowers don't need to know *anything* about how they're going to be used.
 
 ## Finish the Flower Class {.activity}
 
@@ -116,6 +117,16 @@ Draw the row:
 
 Puzzle: How do you know where to draw each flower?
 
+## Class Row
+
+### Notes:
+
+* Most complex part is computing where each flower in the row should be draw. 
+* Render will simply call flower renderers, with the correct locations.
+* All locations are in terms of CELL coordinates, not pixel coordinates. 
+* Start your exercises by looking at the driver code.
+* Rows don't need to know *anything* about how they're going to be used, but they do need to know about Flowers.
+
 ## Finish the Row Class {.activity}
 
 https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
@@ -151,6 +162,15 @@ add blocks
 render
 :::
 
+## Class Garden
+
+### Notes:
+ 
+* Render will simply call Row renderers; Rows know their locations!
+* All locations are in terms of CELL coordinates, not pixel coordinates. 
+* Start your exercises by looking at the driver code.
+* Gardens need to know about Rows, but only indirectly about Flowers. 
+
 ## Finish the Garden Class {.activity}
 
 https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
@@ -158,3 +178,18 @@ https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474
 {{< countdown minutes=15 >}}
 
 If you finish early, make your garden fancy!
+
+## Conclusion
+
+### What did you accomplish?
+
+* Increased fluency in Python from navigating existing code.
+
+* You know that a dataclass is a collection of data and 
+functionality, and you have created a few. 
+
+* Via examples, 
+you are beginning to understand how to decide upon ownership
+of application data. 
+
+
