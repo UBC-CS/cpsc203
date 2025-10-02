@@ -1,14 +1,30 @@
 ---
-date: 2024-01-01
+date: 2025-10-02
+pyodide:
+  - pandas
+  - matplotlib
+  - billboard
+  - datetime
 ---
 
 ## Announcements
 
-# Slides from the assigned videos
+1. POTW will be open indefinitely
+2. EX2 this week
 
-##  {background-iframe="https://player.vimeo.com/video/907137178" data-menu-title="Data, internet and Billboard Hot 100"}
+## What have we done?
 
-## Information as data
+**Overview:**
+
+1. Metaphors for software design. 
+2. Efficiency -- how long do bits of code take to run?
+3. Representation -- binary numbers, colors
+4. Sums (a bit of an aside)
+5. Lists & Dictionaries (intro)
+7. Data Classes
+8. Handcraft/Garden -- putting it together into something bigger
+
+## Information as data {.smaller}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -29,6 +45,20 @@ date: 2024-01-01
 ![](/images/data-flow-simple.png){width="50%" fig-alt="Data from a single CSV file is processed in Python code and visualized with Matplotlib."}
 
 ![](/images/data-flow-complex.png){width="50%" fig-alt="A complex data flow where diverse sources are synthesized and analyzed, resulting in varied outputs."}
+
+## How does the internet work? {.activity}
+
+1. Make a sketch representing the internet. 
+
+\ 
+
+\ 
+
+2. Use the sketch to describe what happens when you load your favourite web page. 
+
+
+
+{{< countdown minutes=5 >}}
 
 ## The internet... {background-image="/images/internet.png" background-size="contain"}
 
@@ -76,7 +106,6 @@ URL gets you there, menu items give you new queries you can ask of the website!
 Fill in: it changes to a new page; it chooses the closest date
 :::
 
-##  {background-iframe="https://player.vimeo.com/video/907137714" data-menu-title="Introduction to HTML and Beautiful Soup"}
 
 ## Anatomy of HTML
 
@@ -179,27 +208,33 @@ Python can be used to extract data from the HTML source.
 </div>
 ```
 
+Using this page source as data is called *scraping* a web page.
+
 ## Beautiful Soup
 
-Reads the HTHL source into a data structure that's easy to query!
+Simplifies Scraping: Reads the HTML source into a python data structure that's easy to query! 
 
 <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
 
 \
 
 ``` python
+from bs4 import BeautifulSoup
+import requests
+
+# assumes requests handled by simple_get function that returns an html document.
 html = simple_get("https://www.billboard.com/charts/hot-100" + '/' + date)
-mydivs = html.findAll("div", {"class": "chart-list-item"}) // all the data is here!!
+soup = BeautifulSoup(html, 'html.parser')
+mydivs = soup.findAll("div", {"class": "chart-list-item"}) // all the data is here!!
 
 for div in mydivs:
+    # assumes we have defined a Song class
     s = Song(div.attrs['data-title'], div.attrs['data-artist'], int(div.attrs['data-rank']))
 ```
 
 \
 
-Still too messy for us!
-Remedy?
-<https://github.com/guoguo12/billboard-charts>
+Still very messy!  Remedy? <https://github.com/guoguo12/billboard-charts>
 
 ::: notes
 Beautiful is a library that allows us to create native Python structures (such as lists and dictionaries) from HTML sources.
@@ -207,4 +242,55 @@ Still requires scrutiny of what we want.
 Instead use other library that anticipates what information we would like to extract from the Billboard charts.
 :::
 
-# Billboard Hot 100 demo
+## Billboard.py API
+
+\
+
+**API:** *Application Programming Interface*
+
+\
+
+Usually a collection of functions you can call from code to allow you to access data contained in
+a web page. 
+
+\
+
+Documentation for Billboard.py is here: <https://pypi.org/project/billboard.py/> 
+
+
+
+## Billboard Hot 100 Demo
+
+
+\
+
+[Link to PL activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+
+
+
+
+## Pandas for Python
+
+**Data Structures:**
+
+1. Series -- 1D collection
+2. Dataframe -- 2D collection of instances x attributes
+
+Why pandas instead of python lists?
+
+* Vectorized -- operations can be applied to entire structures, and chained together.
+
+* Many built-in functions that take advantage of a slight difference...
+
+## Next time
+
+Exploring pandas:
+   
+* Filtering Data
+* Making charts
+* Asking harder questions
+
+
+
+
+
