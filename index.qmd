@@ -80,11 +80,16 @@ schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
   relocate(tue_slides, .before = tue_activity) |>
   relocate(thu_slides, .before = thu_activity) |>
   mutate(
+    saturday_before = floor_date(
+      date,
+      unit = "week",
+      week_start = "Sat"
+    ),
     show_week = case_when(
       # Show at least the first week in schedule
       date == min(date) ~ TRUE,
-      # Show upcoming week on the Monday before
-      date <= current_date ~ TRUE,
+      # Show upcoming week on the Saturday before
+      saturday_before <= current_date ~ TRUE,
       .default = FALSE
     ),
     upcoming_exam_due = exam_due
@@ -124,6 +129,7 @@ schedule |>
   cols_hide(
     c(
       part,
+      saturday_before,
       show_week,
       upcoming_exam_due,
       exam_due_within_12_days
