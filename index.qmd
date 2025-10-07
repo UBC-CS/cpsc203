@@ -73,54 +73,61 @@ resources <-
   select(week, type, day, path) |>
   pivot_wider(names_from = c(day, type), names_sep = "_", values_from = path)
 
+current_date <- today()
+
 schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
   left_join(resources, by = join_by(week), na_matches = "never") |>
   relocate(tue_slides, .before = tue_activity) |>
-  relocate(thu_slides, .before = thu_activity)
+  relocate(thu_slides, .before = thu_activity) |>
+  mutate(
+    show_week = case_when(
+      # Show at least the first week in schedule
+      date == min(date) ~ TRUE,
+      # Show upcoming week on the Monday before
+      date <= current_date ~ TRUE,
+      .default = FALSE
+    ),
+    upcoming_exam_due = exam_due
+  ) |>
+  fill(upcoming_exam_due, .direction = "up") |>
+  mutate(
+    exam_due_within_12_days = upcoming_exam_due <= current_date + days(12)
+  )
 ```
 
 ```{r}
 #| label: schedule
 #| echo: false
 
-current_date <- today()
-
-monday_of_current_week <-
-  max(
-    min(schedule$date, na.rm = TRUE),
-    schedule$date[schedule$date <= current_date],
-    na.rm = TRUE
-  )
-
-next_exam_within_12_days <-
-  max(
-    min(schedule$date, na.rm = TRUE),
-    schedule$exam_due[schedule$exam_due <= current_date + days(12)],
-    na.rm = TRUE
-  )
-
 schedule |>
   mutate(
-    # Show only resources for exams within 12 days or earlier
+    # Show only resources for exams due within 12 days or before
     exam = if_else(
-      exam_due <= next_exam_within_12_days,
+      exam_due_within_12_days,
       glue("[{exam}](https://us.prairietest.com)", .na = NULL),
       exam
     ),
     exam_practice = if_else(
-      exam_due <= next_exam_within_12_days,
+      exam_due_within_12_days,
       exam_practice,
       NA
     ),
     # Remove any resources from future weeks
     across(
       starts_with(c("tue", "thu", "lab", "potw")),
-      \(column) if_else(date <= monday_of_current_week, column, NA)
+      \(column) if_else(show_week, column, NA)
     )
   ) |>
-  select(!c(part)) |>
   gt(
     # groupname_col = "part"
+  ) |>
+  cols_hide(
+    c(
+      part,
+      show_week,
+      upcoming_exam_due,
+      exam_due_within_12_days
+    )
   ) |>
   fmt_date(
     date,
@@ -171,7 +178,7 @@ schedule |>
   ) |>
   fmt_url(
     columns = exam,
-    rows = exam_due <= next_exam_within_12_days,
+    rows = exam_due_within_12_days,
     show_underline = FALSE
   ) |>
   fmt_date(
@@ -229,7 +236,7 @@ schedule |>
     )
   ) |>
   gt_highlight_rows(
-    row = date == monday_of_current_week,
+    row = date == floor_date(current_date, unit = "week", week_start = "Mon"),
     fill = "#ccefff"
   ) |>
   tab_options(
