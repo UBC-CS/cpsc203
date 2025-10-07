@@ -8,6 +8,7 @@ on:
     - main
   schedule:
     - cron: '25 11 * * 1'
+    - cron: '25 11 * * 6'
 
 jobs:
   build-deploy:
