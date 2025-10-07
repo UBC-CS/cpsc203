@@ -183,6 +183,18 @@ schedule |>
     missing_text = fa("calendar-week", fill_opacity = 0.1)
   ) |>
   fmt_url(
+    columns = project,
+    label = fa("list-check")
+  ) |>
+  sub_missing(
+    columns = project,
+    missing_text = fa("clipboard-list", fill_opacity = 0.1)
+  ) |>
+  fmt_date(
+    project_due,
+    date_style = "MMMd"
+  ) |>
+  fmt_url(
     columns = exam,
     rows = exam_due_within_12_days,
     show_underline = FALSE
@@ -210,6 +222,8 @@ schedule |>
     thu_video = "V",
     lab = "Lab",
     potw = "POTW",
+    project = "Guide",
+    project_due = "Due",
     exam = "Book",
     exam_due = "Due",
     exam_practice = "Practice"
@@ -221,6 +235,10 @@ schedule |>
   tab_spanner(
     label = "Thu",
     columns = starts_with("thu")
+  ) |>
+  tab_spanner(
+    label = "Project",
+    columns = starts_with("project")
   ) |>
   tab_spanner(
     label = "Examlet",
