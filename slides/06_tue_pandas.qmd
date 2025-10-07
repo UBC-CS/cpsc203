@@ -1,0 +1,347 @@
+---
+date: 2025-10-07
+pyodide:
+  - pandas
+  - matplotlib
+  - datetime
+---
+
+## Announcements
+
+## Today
+
+Warm Up
+
+Exploring pandas:
+   
+* Filtering Data
+* Making charts
+* Asking harder questions
+
+## Warm Up {.smaller}
+
+**`datetime`**: a Python library that simplifies date computation. 
+
+**Objects we need**
+
+* `date` — a calendar day (year-month-day)
+* `timedelta` — a number of days you can add/subtract 
+
+**Core calls**
+
+* `date.today()`: today’s date 
+* `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
+* `today - timedelta(days=k)`: the date **k days earlier**
+
+::: notes
+**Billboard constraint**
+- The library expects **Saturday** chart dates. We need the **most recent Saturday** at or before today.
+:::
+
+## Last Saturday {.smaller}
+
+Let $w =$ `today.weekday()` $\in \{0,\dots,6\}$ and note **Saturday $= 5$**.
+
+**offset:** How many days to step *back* to reach Saturday.
+
+
+* If today is **Saturday** ($w=5$): offset $=0$  
+* If today is **Sunday** ($w=6$): offset $=1$  
+* If today is **Monday** ($w=0$): offset $=2$  
+* ...
+
+$$
+\texttt{offset} = (w - 5)\bmod 7 
+$$
+
+$$
+\texttt{lastSaturday} = \texttt{today} - \texttt{timedelta(days=offset)}.
+$$
+
+<!-- Inline SVG week strip (Mon=0 … Sun=6; Sat=5 highlighted) -->
+<svg viewBox="0 0 820 120" width="90%" role="img" aria-label="Weekday indices Mon=0 ... Sun=6; Saturday=5">
+  <style>
+    .b { font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; }
+    .d { font: 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; }
+  </style>
+  <!-- boxes -->
+  <g fill="#f7f7f7" stroke="#444">
+    <rect x="10"  y="20" width="100" height="60" rx="10"/>
+    <rect x="120" y="20" width="100" height="60" rx="10"/>
+    <rect x="230" y="20" width="100" height="60" rx="10"/>
+    <rect x="340" y="20" width="100" height="60" rx="10"/>
+    <rect x="450" y="20" width="100" height="60" rx="10"/>
+    <rect x="560" y="20" width="100" height="60" rx="10" fill="#fff8e1" stroke="#b8860b" stroke-width="2"/>
+    <rect x="670" y="20" width="100" height="60" rx="10"/>
+  </g>
+  <!-- labels -->
+  <g class="b" text-anchor="middle" fill="#111">
+    <text x="60"  y="48">Mon</text><text x="60"  y="74" class="d">0</text>
+    <text x="170" y="48">Tue</text><text x="170" y="74" class="d">1</text>
+    <text x="280" y="48">Wed</text><text x="280" y="74" class="d">2</text>
+    <text x="390" y="48">Thu</text><text x="390" y="74" class="d">3</text>
+    <text x="500" y="48">Fri</text><text  x="500" y="74" class="d">4</text>
+    <text x="610" y="48">Sat</text><text  x="610" y="74" class="d">5</text>
+    <text x="720" y="48">Sun</text><text  x="720" y="74" class="d">6</text>
+  </g>
+</svg>
+
+## Code 
+
+``` {pyodide}
+from datetime import date, timedelta
+
+def getLastSaturday(day):
+    w = day.weekday()                        # Mon=0, ..., Sat=5, Sun=6
+    offset = (w - 5) % 7                     # days since the most recent Saturday
+    return day - timedelta(days=offset)      # step back by that many days
+
+today = date.today()
+lastSatDate = getLastSaturday(today)
+print(f"Last Saturday's date was: {lastSatDate}")
+
+```
+
+
+# Data Frames
+
+## pandas and data frames
+
+`import pandas` 
+
+Instead of saying 
+<center>`pandas.read_csv('file.csv')`</center>
+
+we can say
+
+\ 
+
+This function returns a *dataframe* containing the data from `file.csv`.
+
+To give a name to that dataframe, we say:
+
+## CSV files
+
+To implement: `df = pd.read_csv('bill_week.csv')`
+
+`bill_week.csv` must have field names in row 1, and data beginning in row 2.
+
+``` {.default filename="bill_week.csv"}
+,week,title,artist,rank,last_week,peak_pos,weeks_on_chart
+0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19
+1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12
+2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10
+3,2019-09-21,Circles,Post Malone,4,7,4,2
+4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24
+5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15
+6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14
+```
+
+##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
+
+## Selecting rows {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in pandas data frames."}
+:::
+
+::: {.column width="60%"}
+-   `df.nlargest(10,'last_week')`
+
+    Returns top 10 hits from last week.
+
+\
+
+-   `df[ df['weeks_on_chart'] > 10 ]`
+
+    Returns all songs that have been on the charts for more than 10 weeks.
+:::
+:::::
+
+## Adding a column {.smaller}
+
+-   `df['gradient'] = df['last_week'] - df['rank']`
+
+    Adds a column to the DataFrame containing the difference for every row.
+
+\
+
+-   `df[ df['gradient'] > 10 ]`
+
+    Returns all songs that have moved more than 10 spaces in the last week.
+
+## Some challenges...
+
+Given last week's chart:
+
+1.  How many new songs were there?
+
+2.  What's the average peak?
+
+3.  Among those who were on the list for more than 10wk, what's the average peak?
+    (Is it very different than the previous answer?)
+
+4.  Which song changed the most?
+    Was it rising or falling?
+
+5.  Write and answer your own question:
+
+    [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+::: notes
+``` python
+df2 = pd.read_csv('bill_week.csv')
+df3 = df2[ df2['weeks_on_chart'] > 10 ]
+print("all:  ")
+print(df2)
+print("endurance:  ")
+print(df3)
+
+df4 = df2[ df2['last_week'] == 101].count()['title']
+df5 = df3['peak_pos'].mean()
+print("new count")
+print(df4)
+print("peak avg")
+print(df5)
+```
+:::
+
+## Let's Write Code {.activity}
+
+Open CA5.2 Billboard, and load `class_nb.py`.
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+
+## Some challenges...
+
+::::: columns
+::: {.column width="50%"}
+How many new songs are there?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|----|----|----|----|----|----|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::::
+
+::: notes
+Filter, apply function, think about output (sometimes means choosing columns, too)
+
+``` python
+df[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title']
+```
+:::
+
+## Some challenges...
+
+::::: columns
+::: {.column width="50%"}
+What's the average peak?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|----|----|----|----|----|----|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::::
+
+::: notes
+``` python
+df5 = df3['peak_pos'].mean()
+```
+:::
+
+## Some challenges...
+
+::::: columns
+::: {.column width="50%"}
+Among those who were on the list for more than 10wk, what's the average peak?
+(Is it very different than the previous answer?)
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|----|----|----|----|----|----|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::::
+
+::: notes
+``` python
+enduring_peak = df[df['weeks_on_chart']>=10]['peak_pos'].mean()
+print("enduring avg peak: " + str(enduring_peak))
+```
+:::
+
+## Some challenges...
+
+::::: columns
+::: {.column width="50%"}
+Which song moved the most?
+Did it rise or fall?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|----|----|----|----|----|----|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::::
+
+::: notes
+``` python
+df['gradient'] = df['rank'] - df['last_week']
+print(df.loc[df['gradient'].abs().idxmax()])
+```
+:::
+
+
+## Resources
+
+<https://pymotw.com/2/datetime/>
+
+<https://www.dataschool.io/best-python-pandas-resources/>
+
+<https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>
+
+<https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
+
+
+
+
