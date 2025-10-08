@@ -56,7 +56,8 @@ library(tidyr)
 # Generate ids for each link to join into schedule
 resources_paths <-
   c(
-    path("slides")
+    path("slides"),
+    path("summaries")
   )
 
 resources <-
@@ -106,6 +107,11 @@ schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
 
 schedule |>
   mutate(
+    week = if_else(
+      !is.na(weekly_summaries),
+      glue("[{week} {fa('circle-info')}]({weekly_summaries})"),
+      week
+    ),
     # Show only resources for exams due within 12 days or before
     exam = if_else(
       exam_due_within_12_days,
@@ -126,14 +132,10 @@ schedule |>
   gt(
     # groupname_col = "part"
   ) |>
-  cols_hide(
-    c(
-      part,
-      saturday_before,
-      show_week,
-      upcoming_exam_due,
-      exam_due_within_12_days
-    )
+  fmt_url(
+    columns = week,
+    rows = !is.na(weekly_summaries),
+    show_underline = FALSE
   ) |>
   fmt_date(
     date,
@@ -262,6 +264,16 @@ schedule |>
   gt_highlight_rows(
     row = date == floor_date(current_date, unit = "week", week_start = "Mon"),
     fill = "#ccefff"
+  ) |>
+  cols_hide(
+    c(
+      part,
+      weekly_summaries,
+      saturday_before,
+      show_week,
+      upcoming_exam_due,
+      exam_due_within_12_days
+    )
   ) |>
   tab_options(
     quarto.disable_processing = TRUE,
