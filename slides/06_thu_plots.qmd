@@ -1,0 +1,135 @@
+---
+date: 2025-10-07
+pyodide:
+  - pandas
+  - matplotlib
+  - datetime
+---
+
+## Announcements
+
+* next week is a quiet week: no class meetings, no labs, no potw.
+
+## Today
+
+Warm Up -- datetime again
+
+Exploring pandas:
+   
+* Filtering Data
+* Making charts
+* Asking harder questions
+
+## Warm Up {.smaller}
+
+**`datetime`**: a Python library that simplifies date computation. 
+
+**Objects we need**
+
+* `date` — a calendar day (year-month-day)
+* `timedelta` — a number of days you can add/subtract 
+
+**Core calls**
+
+* `today=date.today()`: today’s date 
+* `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
+* `today - timedelta(days=k)`: the date **k days earlier**
+
+## Code 
+
+``` {pyodide}
+from datetime import date, timedelta
+
+def getLastSaturday(day):
+    w = day.weekday()                        # Mon=0, ..., Sat=5, Sun=6
+    offset = (w - 5) % 7                     # days since the most recent Saturday
+    return day - timedelta(days=offset)      # step back by that many days
+
+today = date.today()
+print(f"Last Sat's date was: {getLastSaturday(today)}")
+
+# 2 other ways to initialize dates:
+Hbday = date(2004,10,13)
+print(f"The Sat before H birthday was: {getLastSaturday(Hbday)})
+
+Cbday = "2001-04-20"
+obddate = date.fromisoformat(Cbday)
+print(f"The Sat before C birthday was: {getLastSaturday(Cbday)})
+
+```
+
+
+# Data Frames
+
+##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
+
+## Some challenges...
+
+Given last week's chart:
+
+1.  How many new songs were there?
+
+2.  What's the average peak?
+
+3.  Among those who were on the list for more than 10wk, what's the average peak?
+    (Is it very different than the previous answer?)
+
+4.  Which song changed the most?
+    Was it rising or falling?
+
+5.  Write and answer your own question:
+
+    [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+
+## Let's Write Code {.activity}
+
+Open CA5.2 Billboard, and load `class_nb.py`.
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+
+
+## Some challenges...
+
+::::: columns
+::: {.column width="50%"}
+Which song moved the most?
+Did it rise or fall?
+:::
+
+::: {.column width="50%"}
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+|----|----|----|----|----|----|
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
+:::
+:::::
+
+::: notes
+``` python
+df['gradient'] = df['rank'] - df['last_week']
+print(df.loc[df['gradient'].abs().idxmax()])
+```
+:::
+
+
+## Resources
+
+<https://pymotw.com/2/datetime/>
+
+<https://www.dataschool.io/best-python-pandas-resources/>
+
+<https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>
+
+<https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
+
+
+
+

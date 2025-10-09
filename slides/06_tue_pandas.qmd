@@ -29,7 +29,7 @@ Exploring pandas:
 
 **Core calls**
 
-* `date.today()`: today’s date 
+* `today=date.today()`: today’s date 
 * `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
 * `today - timedelta(days=k)`: the date **k days earlier**
 
