@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <meta name="dcterms.date" content="2024-01-01">
+  <meta name="dcterms.date" content="2025-10-14">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,27 +31,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -167,84 +147,38 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 1, 2024</p>
+  <p class="date">October 14, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section>
-<section id="slides-from-assigned-videos" class="title-slide slide level1 center">
-<h1>Slides from assigned videos</h1>
-
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<p>Exploring pandas:</p>
+<ul>
+<li>Asking harder questions</li>
+</ul>
 </section>
-<section id="section" class="slide level2" data-background-iframe="https://player.vimeo.com/video/908509998" data-menu-title="Motivating Voronoi diagrams">
-<h2></h2>
+<section id="todays-challenge" class="slide level2">
+<h2>Today’s challenge…</h2>
+<p>Given a year of charts,</p>
+<ul>
+<li><p>what do the paths of the number ones look like?</p></li>
+<li><p>Do most songs debut at the top? How fast do they fall?</p></li>
+</ul>
+<p>We can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data.</p>
 </section>
-<section id="everyone-needs-a-tim-horton" class="slide level2">
-<h2>Everyone needs a Tim Horton</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="small-font-size">
-<p>Every address in Vancouver has a nearest TH.</p>
-<p>Partition Vancouver into regions so that points are in the same region if they have the same nearest TH.</p>
-</div>
-</div><div class="column" style="width:67%;">
-<p><img data-src="../images/tim-hortons-map.png" alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."></p>
-</div></div>
+<section id="lets-write-code" class="slide level2 activity">
+<h2>Let’s Write Code</h2>
+<p>Open CA5.2 Billboard, and load <code>classmult_nb.py</code>.</p>
+<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345">PrairieLearn Activity</a></p>
 </section>
-<section id="voronoi-diagrams" class="slide level2">
-<h2>Voronoi diagrams</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="small-font-size">
-<p>Given a (finite) set of “centres” <span class="math inline">\(c_{1}, c_{2}, \ldots, c_{k}\)</span>, a Voronoi region, <span class="math inline">\(R_{j}\)</span> consists of the set of points nearer to centre <span class="math inline">\(c_{j}\)</span>, than to any other centre.</p>
-<p>Together, the <span class="math inline">\(R_{j}\)</span> regions compose the Voronoi diagram of a plane.</p>
-<p>The applications of this structure go far beyond our coffee fix!!</p>
-</div>
-</div><div class="column" style="width:67%;">
-<p><img data-src="../images/tim-hortons-map.png" alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."></p>
-</div></div>
-<aside class="notes">
-<p>Every point in plane is in some region and no point is in 2 regions.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-1" class="slide level2" data-background-image="../images/aerial-view-of-trees.png" data-background-size="cover" data-menu-title="Aerial view of tree tops">
-<h2></h2>
-<div class="sr-only">
-<p>Aerial view of trees illustrating how the tree tops resemble and can be modeled as Voronoi diagram.</p>
-</div>
-<div class="fragment">
-<p><img data-src="../images/voronoi-diagram-of-trees.jpg" class="absolute" style="bottom: =; right: 0px; height: 50%; " alt="Voronoi diagram of trees showing their centres and regions."></p>
-</div>
-<div class="footer" style="background-color:rgba(256,256,256,0.6)">
-<p><span class="smaller absolute" style="bottom: 0px; right: 0px; ">From <span class="citation" data-cites="abellanas2016">Abellanas et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></span></p>
-</div>
-<aside class="notes">
-<p>Mention that there were actually 3D models. Also, <strong>weighted</strong> Voronoi diagrams…</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="references" class="slide level2 smaller scrollable">
-<h2>References</h2>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<p><a href="https://pymotw.com/2/datetime/" class="uri">https://pymotw.com/2/datetime/</a></p>
+<p><a href="https://www.dataschool.io/best-python-pandas-resources/" class="uri">https://www.dataschool.io/best-python-pandas-resources/</a></p>
+<p><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" class="uri">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p>
+<p><a href="https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot" class="uri">https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot</a></p>
 
 
 <script type="ojs-module-contents">
@@ -261,12 +195,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-abellanas2016" class="csl-entry" role="listitem">
-Abellanas, Begoña, Manuel Abellanas, Arne Pommerening, Dolores Lodares, and Simón Cuadros. 2016. <span>“A Forest Simulation Approach Using Weighted Voronoi Diagrams. An Application to Mediterranean Fir Abies Pinsapo Boiss Stands.”</span> <em>Forest Systems</em> 25 (2): e062–62. <a href="https://doi.org/10.5424/fs/2016252-08021">https://doi.org/10.5424/fs/2016252-08021</a>.
-</div>
-</div>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
