@@ -1,0 +1,167 @@
+---
+date: 2025-10-16
+---
+
+## Announcements
+
+# Voronoi Diagrams
+
+## Everyone needs a Tim Horton
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Every address in Vancouver has a nearest TH.
+
+Partition Vancouver into regions so that points are in the same region if they have the same nearest TH.
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+## Voronoi diagrams
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Given a (finite) set of "centres" $c_{1}, c_{2}, \ldots, c_{k}$, a Voronoi region, $R_{j}$ consists of the set of points nearer to centre $c_{j}$, than to any other centre.
+
+Together, the $R_{j}$ regions compose the Voronoi diagram of a plane.
+
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+::: notes
+Every point in plane is in some region and no point is in 2 regions.
+:::
+
+##  {background-image="/images/aerial-view-of-trees.png" background-size="cover" data-menu-title="Aerial view of tree tops"}
+
+::: sr-only
+Aerial view of trees illustrating how the tree tops resemble and can be modeled as Voronoi diagram.
+:::
+
+::: fragment
+![](/images/voronoi-diagram-of-trees.jpg){.absolute bottom="=" right="0" height="50%" fig-alt="Voronoi diagram of trees showing their centres and regions."}
+:::
+
+::: {.footer style="background-color:rgba(256,256,256,0.6)"}
+[From @abellanas2016]{.smaller .absolute bottom="0" right="0"}
+:::
+
+::: notes
+Mention that there were actually 3D models.
+Also, **weighted** Voronoi diagrams...
+:::
+
+
+## More Examples
+
+<https://www.khanacademy.org/partner-content/pixar/pattern/dino/v/patterns2_new>
+
+<center>
+![](/images/Vleg.jpg){fig-alt="A computer generated dinosaur leg with scales."}
+</center>
+
+## Yet More Examples {.smaller}
+
+* Robotics -- Path planning in the presence of obstacles
+
+* Zoology -- Model and analyze the territories of animals
+
+* Astronomy -- Identify clusters of stars and clusters of galaxies 
+
+* Biology, Ecology, Forestry -- Model and analyze plant competition 
+
+* Cartography -- Piece together satellite photographs into large "mosaic" maps
+
+* Geography -- Analyzing patterns of urban settlements
+
+* Marketing -- Model market of US metropolitan areas; 
+
+* Metallurgy -- Modelling "grain growth" in metal films
+
+* Meteorology -- Estimate regional rainfall averages, given data at  discrete rain gauges 
+
+* Physiology -- Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport ("Capillary domains")
+
+* Anthropology and Archeology -- Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.
+
+* Crystallography and Chemistry -- Study chemical properties of metallic sodium); Modelling alloy structures as sphere packings ("Domain of an atom") 
+
+* Geology -- Estimation of ore reserves in a deposit using info obtained from bore holes; modelling crack patterns in basalt due to contraction on cooling
+
+## Computing Voronoi Diagrams {.smaller}
+
+Choice of algorithm depends on the domain of the data. 
+
+\ 
+
+If real valued domain (like Cartesian Coords) then we use geometry, exploiting the fact that the Voronoi edges are perpendicular bisectors of the edge between 2 centers.
+
+\ 
+
+*Our* computation will always be on planar regions represented by images.
+
+\ 
+
+Data for the problem:
+
+1)
+
+2)
+
+Data for the solution:
+
+1)
+
+2)
+
+## Distance Between Pixels
+
+\ 
+
+Find the distance between 2 pixel locations:
+
+![](/images/Vpt1.jpg){fig-alt="A 6x6 grid with 2 colored cells."}
+
+::: notes
+label points p1=(x1,y1) p2=(x2,y2)
+label 0,0
+show distance formula and triangle
+:::
+
+## Distance Between Pixels
+
+Given a point and two centers, determine which is the nearest center...
+
+:::::: columns
+::: {.column width="50%"}
+:![](/images/Vpt1.jpg){fig-alt="A 6x6 grid with 2 colored cells."}
+:::
+
+::: {.column width="50%"}
+![](/images/Vpt2.jpg){fig-alt="A 6x6 grid with 2 colored cells."}
+:::
+::::::
+
+## Design an Algorithm
+
+![](/images/Valgorithmgrid.jpg){fig-alt="A large grid with 3 colored centers."}
+
+## References
+
+
+
+
+
+
+
