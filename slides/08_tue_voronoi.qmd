@@ -1,0 +1,138 @@
+---
+date: 2025-10-21
+---
+
+## Announcements
+
+# Voronoi Diagrams
+
+## Voronoi diagrams
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Given a (finite) set of "centres" $c_{1}, c_{2}, \ldots, c_{k}$, a Voronoi region, $R_{j}$ consists of the set of points nearer to centre $c_{j}$, than to any other centre.
+
+Together, the $R_{j}$ regions compose the Voronoi diagram of a plane.
+
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+::: notes
+Every point in plane is in some region and no point is in 2 regions.
+:::
+
+## Design an Algorithm
+
+![](/images/Valgorithmgrid.jpg){fig-alt="A large grid with 3 colored centers."}
+
+## Pointillism
+
+<center>
+![](/images/SundayinthePark.jpg){fig-alt="The Seurat art piece depicting 1880's park goers."}
+
+[A Sunday on La Grande Jatte](https://artsandculture.google.com/asset/a-sunday-on-la-grande-jatte/twGyqq52R-lYpA?hl=en-GB)
+</center>
+
+## Algorithmic Art {.smaller}
+
+::::: columns
+::: {.column width=30%}
+![](/images/SundayPhoto.jpg)
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%"  role="img" aria-label="Square with thick black border">
+  <rect x="5" y="5" width="190" height="190" fill="white" stroke="black" stroke-width="3pt"/>
+</svg>
+
+:::
+
+::: {.column width=65%}
+
+1) Select a subset of points from the original image.
+2) Use those points, with their colors, as centers in a new image of the same size.
+3) Build the voronoi diagram in the _new_ image, using the center colors from the original image.
+
+The quality of the new image 
+
+depends on \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. 
+
+:::
+:::::
+
+## Planning
+
+\ 
+
+* Point:
+
+* Color:
+
+* Center:
+
+* Centers:
+
+* Image:
+
+## Planning
+
+Data flow:
+
+1)
+
+2)
+
+3)
+
+4)
+
+## Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2603948)
+
+## Analysis
+
+How much work is done? Let $n$ denote the size of the image, $n = width \cdot height$
+
+::::: columns
+::: {.column width=65%}
+
+1. Read image:
+
+2. Choose centers:
+
+3. Build new image:
+
+\ 
+
+4. Write out new image:
+
+:::
+::: {.column width=35%}
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%"  role="img" aria-label="Square with thick black border">
+  <rect x="5" y="5" width="190" height="190" fill="white" stroke="black" stroke-width="3pt"/>
+</svg>
+
+:::
+:::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
