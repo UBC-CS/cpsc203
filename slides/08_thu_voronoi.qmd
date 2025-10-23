@@ -80,7 +80,6 @@ What would be better? \_\_\_\_\_\_\_\_
 
 ## Data Structure: Queue {.smaller}
 
-\ 
 
 To implement the fill we use a datastructure called a QUEUE. 
 
@@ -95,7 +94,6 @@ Queue:
 
 ## Flood Fill {.smaller}
 
-
 ::::: columns
 ::: {.column width=50%}
 
@@ -107,8 +105,6 @@ Queue:
    - for each valid neighbor w of v:
       - process w
       - enqueue w
-
-
 
 :::
 ::: {.column width=50%}
@@ -142,7 +138,6 @@ Queue:
 
 ## Voronoi Art {.smaller}
 
-
 ::::: columns
 ::: {.column width=50%}
 
@@ -154,8 +149,7 @@ Queue:
    - for each valid neighbor w of v:
       - process w
       - enqueue w
-
-
+      
 :::
 ::: {.column width=50%}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="420" height="560" role="img">
