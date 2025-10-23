@@ -1,0 +1,291 @@
+---
+date: 2025-10-23
+---
+
+## Announcements
+
+# Voronoi Diagrams
+
+## Pointillism
+
+<center>
+![](/images/SundayinthePark.jpg){fig-alt="The Seurat art piece depicting 1880's park goers."}
+
+[A Sunday on La Grande Jatte](https://artsandculture.google.com/asset/a-sunday-on-la-grande-jatte/twGyqq52R-lYpA?hl=en-GB)
+</center>
+
+
+## Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2603948)
+
+## Analysis
+
+How much work is done? Let $n$ denote the size of the image, $n = width \cdot height$
+
+::::: columns
+::: {.column width=65%}
+
+1. Read image:
+
+2. Choose centers:
+
+3. Build new image:
+
+\ 
+
+4. Write out new image:
+
+:::
+::: {.column width=35%}
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%"  role="img" aria-label="Square with thick black border">
+  <rect x="5" y="5" width="190" height="190" fill="white" stroke="black" stroke-width="3pt"/>
+</svg>
+
+:::
+:::::
+
+## Can we do better? {.smaller}
+
+\ 
+
+Running time of original algorithm: \_\_\_\_\_\_\_\_
+
+What would be better? \_\_\_\_\_\_\_\_
+
+\ 
+
+::::: columns
+::: {.column width=40%}
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" >
+  <rect x="8" y="8" width="784" height="504" fill="#ffffff" stroke="#000000" stroke-width="8"/>
+  <circle cx="180" cy="170" r="12" fill="#e74c3c" stroke="#000000" stroke-width="4"/>
+  <circle cx="260" cy="330" r="12" fill="#2952ff" stroke="#000000" stroke-width="4"/>
+  <circle cx="540" cy="210" r="12" fill="#8ee36f" stroke="#000000" stroke-width="4"/>
+</svg>
+
+:::
+::: {.column width=60%}
+
+* Orchestrate a fill from each center, growing out at the same rate.
+
+* Each pixel is processed exactly once, not once per center as before.
+
+* This means we can have lots of centers!
+
+:::
+:::::
+
+## Data Structure: Queue {.smaller}
+
+\ 
+
+To implement the fill we use a datastructure called a QUEUE. 
+
+<center>
+![](/images/penguins.jpg)
+</center>
+
+Queue:
+
+|   `enqueue(k)` -- places data `k` onto the structure, at the "end"
+|   `dequeue()` -- removes and returns the "first" element from the structure
+
+## Flood Fill {.smaller}
+
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF1.png)
+
+- enqueue the center
+- while the queue is not empty:
+   - v = dequeue
+   - for each valid neighbor w of v:
+      - process w
+      - enqueue w
+
+
+
+:::
+::: {.column width=50%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="420" height="560" role="img">
+  <defs>
+    <style>
+      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
+      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+  <path id="center"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="outer"/>
+  <path id="edge"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="inner"/>
+</svg>
+
+:::
+:::::
+
+## Voronoi Art {.smaller}
+
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF2.png)
+
+- enqueue the centers
+- while the queue is not empty:
+   - v = dequeue
+   - for each valid neighbor w of v:
+      - process w
+      - enqueue w
+
+
+:::
+::: {.column width=50%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="420" height="560" role="img">
+  <defs>
+    <style>
+      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
+      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+  <path id="center"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="outer"/>
+  <path id="edge"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="inner"/>
+</svg>
+
+:::
+:::::
+
+## Designing a Solution {.smaller}
+
+\ 
+
+1. What should we put on the queue?
+
+\ 
+
+2. We’ll use a Python `deque` as our queue. What deque functions will we use?
+
+\ 
+
+3. Do `deque`s have a way to check for empty?
+
+\ 
+
+4. What are the  "neighbors" of pixel `(x,y)`?
+
+\ 
+
+5. What would be an _invalid_ neighbor?
+  
+  
+## Demo {.activity}
+
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2603948)
+
+## Analysis
+
+How much work is done? Let $n$ denote the size of the image, $n = width \cdot height$
+
+::::: columns
+::: {.column width=50%}
+
+1. Read image:
+
+2. Choose centers:
+
+3. Build new image:
+
+\ 
+
+4. Write out new image:
+
+:::
+::: {.column width=50%}
+
+![](/images/vorart.png)
+
+:::
+:::::
+
+## Graphs: A new model for representing images {.smaller}
+
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF2.png)
+
+
+:::
+::: {.column width=50%}
+
+* A Graph is a collection of _vertices_, and _edges_ between them.  They’re used as a general model for many problems.
+
+
+* In our images every \_\_\_\_\_\_\_\_\_\_\_\_ is a vertex, and every \_\_\_\_\_\_\_\_\_\_\_\_ is an edge. 
+
+:::
+:::::
+
+
+Our fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called _Breadth First Search_.
+
+## Breadth First Search
+
+\ 
+
+Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key'), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (--Wikipedia)
+
+\ 
+
+Simplified description: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
