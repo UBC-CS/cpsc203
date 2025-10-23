@@ -407,7 +407,7 @@
     "href": "slides/08_thu_voronoi.html#data-structure-queue",
     "title": "Programming, problem solving, and algorithms",
     "section": "Data Structure: Queue",
-    "text": "Data Structure: Queue\n \nTo implement the fill we use a datastructure called a QUEUE.\n\n\n\nQueue:\n  enqueue(k) – places data k onto the structure, at the “end”\n  dequeue() – removes and returns the “first” element from the structure"
+    "text": "Data Structure: Queue\nTo implement the fill we use a datastructure called a QUEUE.\n\n\n\nQueue:\n  enqueue(k) – places data k onto the structure, at the “end”\n  dequeue() – removes and returns the “first” element from the structure"
   },
   {
     "objectID": "slides/08_thu_voronoi.html#flood-fill",
