@@ -2,126 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/announcements.html</loc>
-    <lastmod>2025-10-27T11:31:22.735Z</lastmod>
+    <lastmod>2025-10-28T07:02:16.748Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/formatting.html</loc>
-    <lastmod>2025-10-27T11:31:22.780Z</lastmod>
+    <lastmod>2025-10-28T07:02:16.792Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_review.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/05_thu_web-as-data.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/07_thu_voronoi.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/08_tue_voronoi.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/07_tue_plots.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_git.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/04_tue_handcraft.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/08_thu_voronoi.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_data-structures.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/slides/03_thu_classes.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/slides/01_thu_intro.html</loc>
-    <lastmod>2025-10-27T11:31:23.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/setup.html</loc>
-    <lastmod>2025-10-27T11:31:23.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/LICENSE.html</loc>
-    <lastmod>2025-10-27T11:31:22.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/labs/02_create-website.html</loc>
-    <lastmod>2025-10-27T11:31:23.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/index.html</loc>
-    <lastmod>2025-10-27T11:31:23.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/summaries/01_weekly_summary.html</loc>
-    <lastmod>2025-10-27T11:31:23.050Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/about.html</loc>
-    <lastmod>2025-10-27T11:31:22.735Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_terminal.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ubc-cs.github.io/cpsc203/slides/02_tue_efficiency.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_member-functions.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/02_tue_efficiency.html</loc>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_terminal.html</loc>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/about.html</loc>
+    <lastmod>2025-10-28T07:02:16.748Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/summaries/01_weekly_summary.html</loc>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/index.html</loc>
+    <lastmod>2025-10-28T07:02:17.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/labs/02_create-website.html</loc>
+    <lastmod>2025-10-28T07:02:17.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/LICENSE.html</loc>
+    <lastmod>2025-10-28T07:02:16.727Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/setup.html</loc>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/01_thu_intro.html</loc>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/03_thu_classes.html</loc>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_data-structures.html</loc>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-cs.github.io/cpsc203/slides/09_tue_graphs.html</loc>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_python-1.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/03_tue_lists.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/06_tue_pandas.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_python-2.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/06_thu_plots.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/02_thu_representation.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/tbd_tbd_visualization.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/slides/04_thu_garden.html</loc>
-    <lastmod>2025-10-27T11:31:23.049Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.079Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-cs.github.io/cpsc203/syllabus.html</loc>
-    <lastmod>2025-10-27T11:31:23.050Z</lastmod>
+    <lastmod>2025-10-28T07:02:17.080Z</lastmod>
   </url>
 </urlset>

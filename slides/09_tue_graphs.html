@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <meta name="dcterms.date" content="2023-01-08">
+  <meta name="dcterms.date" content="2025-10-28">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -149,64 +147,285 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 8, 2023</p>
+  <p class="date">October 28, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section id="review-of-python" class="title-slide slide level1 center">
-<h1>Review of Python</h1>
-<div id="timer_e3f12ea2f7b9881f55cfa97ba67f9dfbafcf6f3e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">30</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
+<section>
+<section id="voronoi-diagrams-fin" class="title-slide slide level1 center">
+<h1>Voronoi Diagrams Fin</h1>
 
-<section id="class-activity" class="title-slide slide level1 center">
-<h1>Class activity</h1>
-<div id="timer_e3f12ea2f7b9881f55cfa97ba67f9dfbafcf6f3e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
 </section>
-
-<section id="break" class="title-slide slide level1 center">
-<h1>Break</h1>
-<div id="timer_e3f12ea2f7b9881f55cfa97ba67f9dfbafcf6f3e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="pointillism" class="slide level2">
+<h2>Pointillism</h2>
+<center>
+<p><img data-src="../images/SundayinthePark.jpg" alt="The Seurat art piece depicting 1880's park goers."></p>
+<a href="https://artsandculture.google.com/asset/a-sunday-on-la-grande-jatte/twGyqq52R-lYpA?hl=en-GB">A Sunday on La Grande Jatte</a>
+</center>
 </section>
-
-<section id="potd-week-1-and-2" class="title-slide slide level1 center">
-<h1>POTD week 1 and 2</h1>
-<div id="timer_e3f12ea2f7b9881f55cfa97ba67f9dfbafcf6f3e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="voronoi-art" class="slide level2 smaller">
+<h2>Voronoi Art</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="../images/FF2.png"></p>
+<ul>
+<li>enqueue the centers</li>
+<li>while the queue is not empty:
+<ul>
+<li>v = dequeue</li>
+<li>for each valid neighbor w of v:
+<ul>
+<li>process w</li>
+<li>enqueue w</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 800 960" width="420" height="560" role="img">
+<defs>
+<style>
+      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
+      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+</defs> <path id="center" d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880" class="outer"></path> <path id="edge" d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880" class="inner"></path>
+</svg>
+</div></div>
 </section>
+<section id="demo" class="slide level2 activity">
+<h2>Demo</h2>
+<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2603948">PrairieLearn Activity</a></p>
+</section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<p>How much work is done? Let <span class="math inline">\(n\)</span> denote the size of the image, <span class="math inline">\(n = width \cdot height\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><p>Read image:</p></li>
+<li><p>Choose centers:</p></li>
+<li><p>Build new image:</p></li>
+</ol>
+<p>&nbsp;</p>
+<ol start="4" type="1">
+<li>Write out new image:</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/vorart.png"></p>
+</div></div>
+</section>
+<section id="analysis-continued" class="slide level2">
+<h2>Analysis Continued</h2>
+<p>We evaluate algorithms by looking at how their running times change as a function of the input size (n).</p>
+<ul>
+<li><p>Loosely, algorithm A is faster than algorithm B if A’s running time is <em>eventually</em> less than B’s.</p></li>
+<li><p><a href="https://www.desmos.com/calculator" class="uri">https://www.desmos.com/calculator</a></p></li>
+</ul>
+<center>
+<img src="../images/desmos.png" alt="Desmos screenshot" width="50%">
+</center>
+</section>
+<section id="graphs-a-new-model-for-representing-images" class="slide level2 smaller">
+<h2>Graphs: A new model for representing images</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="../images/FF2.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A Graph is a collection of <em>vertices</em>, and <em>edges</em> between them. They’re used as a general model for many problems.</p></li>
+<li><p>In our images every ____________ is a vertex, and every ____________ is an edge.</p></li>
+</ul>
+</div></div>
+<p>Our fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called <em>Breadth First Search</em>.</p>
+</section>
+<section id="breadth-first-search" class="slide level2">
+<h2>Breadth First Search</h2>
+<p>&nbsp;</p>
+<p><strong>Breadth-first search</strong> (<strong>BFS</strong>) is an algorithm for <em>traversing</em> or <em>searching</em> tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (–Wikipedia)</p>
+<p>&nbsp;</p>
+</section></section>
+<section>
+<section id="graphs" class="title-slide slide level1 center">
+<h1>Graphs</h1>
 
-<section id="review-of-python-1" class="title-slide slide level1 center">
-<h1>Review of Python</h1>
-<div id="timer_e3f12ea2f7b9881f55cfa97ba67f9dfbafcf6f3e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">30</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+</section>
+<section id="the-internet-circa-2003" class="slide level2">
+<h2>The Internet, circa 2003</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr1.png"></p>
+</div><div class="column">
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+<p><em>Degree</em> of a vertex:</p>
+</div></div>
+</section>
+<section id="a-conflict-graph" class="slide level2">
+<h2>A Conflict Graph</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr2.png"></p>
+</div><div class="column">
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+<p><br>
+</p>
+<p>Labels:</p>
+<p><br>
+</p>
+<p>Neighbors:</p>
+</div></div>
+<p>What’s special about the vertex labels of this graph?</p>
+</section>
+<section id="a-complete-graph" class="slide level2">
+<h2>A Complete Graph</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr3.png"></p>
+</div><div class="column">
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+<p><br>
+</p>
+<p>A graph is <em>complete</em> if it contains all possible edges.</p>
+<p><br>
+</p>
+<p>How many edges in a complete graph of n vertices?</p>
+</div></div>
+</section>
+<section id="social-network" class="slide level2">
+<h2>Social Network</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/gr4.png"></p>
+</div><div class="column" style="width:30%;">
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+</div></div>
+<p>Connected Graph:</p>
+<p>&nbsp;</p>
+<p>Connected Component:</p>
+</section>
+<section id="rush-hour" class="slide level2">
+<h2>Rush Hour</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr5.png"></p>
+</div><div class="column">
+<p><img src="../images/gr5rh.png" alt="Desmos screenshot" width="30%"></p>
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+<p>Path:</p>
+</div></div>
+</section>
+<section id="state-machine" class="slide level2 smaller">
+<h2>State Machine</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img data-src="../images/gr6.png"></p>
+</div><div class="column" style="width:65%;">
+<p>This graph can be used to quickly calculate whether a given number is divisible by 7.</p>
+<p>Start at the circle node at the top. For each digit <span class="math inline">\(d\)</span> in the given number, follow <span class="math inline">\(d\)</span> blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.</p>
+<p><br>
+</p>
+<p><span style="font-size: 3em;">3703</span></p>
+</div></div>
+</section>
+<section id="the-stanford-bunny" class="slide level2">
+<h2>The Stanford Bunny</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><img data-src="../images/gr7.png"></p>
+</div><div class="column" style="width:35%;">
+<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span>:</li>
+<li><span class="math inline">\(E\)</span>:</li>
+</ul>
+<p>&nbsp;</p>
+<p>Planar Graph:</p>
+</div></div>
+</section>
+<section id="graph-explorations" class="slide level2">
+<h2>Graph Explorations</h2>
+<p>A graph <span class="math inline">\(G\)</span> is defined by a set of vertices <span class="math inline">\(V\)</span>, and a set of edges <span class="math inline">\(E\)</span>.</p>
+<p>Algorithm <em>running time</em> is typically described using the number of <em>vertices</em>, but execution usually depends on the number of <em>edges</em>, so we must understand the relationship between them.</p>
+</section>
+<section id="how-many-edges" class="slide level2">
+<h2>How Many Edges?</h2>
+<p>Suppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?</p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr2.png"></p>
+</div><div class="column">
+<p><em>At least</em> __________ edges because the graph is connected.</p>
+<p>&nbsp;</p>
+<p><em>At most</em> _________ edges which occurs when the graph is complete.</p>
+</div></div>
+</section>
+<section id="handshaking" class="slide level2">
+<h2>Handshaking</h2>
+<p>Suppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?</p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr8.png"></p>
+</div><div class="column">
+<p>The following are equivalent:</p>
+<ul>
+<li>The number of neighbors of a vertex.</li>
+<li>The number of incident edges of a vertex.</li>
+<li>The degree of a vertex.</li>
+</ul>
+</div></div>
+</section>
+<section id="degree-games" class="slide level2">
+<h2>Degree Games</h2>
+<div class="columns">
+<div class="column">
+<p>Suppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?</p>
+</div><div class="column">
+<p>An algorithm for finding a graph, given a degree sequence, is described in the practice problems.</p>
+<p><a href="https://jacquerie.github.io/hh/">Havel-Hakimi</a></p>
+</div></div>
+
+<img data-src="../images/gr9.png" class="r-stretch"></section>
+<section id="pencil-puzzles" class="slide level2">
+<h2>Pencil Puzzles</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr10.png"></p>
+</div><div class="column">
+<p>Trace each graph without lifting your pencil and without revisiting an edge.</p>
+<p>&nbsp;</p>
+<p>Can all graphs be traced?</p>
+<p>&nbsp;</p>
+<p>What characterizes those that cannot?</p>
+</div></div>
 
 
 <script type="ojs-module-contents">
@@ -223,7 +442,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
