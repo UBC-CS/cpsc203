@@ -1,0 +1,378 @@
+---
+date: 2025-10-28
+---
+
+## Announcements
+
+# Voronoi Diagrams Fin
+
+## Pointillism
+
+<center>
+![](/images/SundayinthePark.jpg){fig-alt="The Seurat art piece depicting 1880's park goers."}
+
+[A Sunday on La Grande Jatte](https://artsandculture.google.com/asset/a-sunday-on-la-grande-jatte/twGyqq52R-lYpA?hl=en-GB)
+</center>
+
+
+## Voronoi Art {.smaller}
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF2.png)
+
+- enqueue the centers
+- while the queue is not empty:
+   - v = dequeue
+   - for each valid neighbor w of v:
+      - process w
+      - enqueue w
+      
+:::
+::: {.column width=50%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="420" height="560" role="img">
+  <defs>
+    <style>
+      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
+      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+  <path id="center"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="outer"/>
+  <path id="edge"
+        d="M 60 120
+           C 240 110, 460 130, 660 170
+           C 710 190, 710 300, 660 330
+           C 480 430, 300 390, 160 460
+           C 60 510, 60 690, 170 750
+           C 330 835, 520 820, 690 880"
+        class="inner"/>
+</svg>
+
+:::
+:::::
+
+
+## Demo {.activity}
+
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2603948)
+
+## Analysis
+
+How much work is done? Let $n$ denote the size of the image, $n = width \cdot height$
+
+::::: columns
+::: {.column width=50%}
+
+1. Read image:
+
+2. Choose centers:
+
+3. Build new image:
+
+\ 
+
+4. Write out new image:
+
+:::
+::: {.column width=50%}
+
+![](/images/vorart.png)
+
+:::
+:::::
+
+## Analysis Continued
+
+We evaluate algorithms by looking at how their running times change as a function of the input size (n).  
+
+* Loosely, algorithm A is faster than algorithm B if A’s running time is _eventually_ less than B’s. 
+
+* <https://www.desmos.com/calculator>
+
+<center>
+<img src="/images/desmos.png" alt="Desmos screenshot" width="50%">
+</center>
+
+
+## Graphs: A new model for representing images {.smaller}
+
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF2.png)
+
+
+:::
+::: {.column width=50%}
+
+* A Graph is a collection of _vertices_, and _edges_ between them.  They’re used as a general model for many problems.
+
+
+* In our images every \_\_\_\_\_\_\_\_\_\_\_\_ is a vertex, and every \_\_\_\_\_\_\_\_\_\_\_\_ is an edge. 
+
+:::
+:::::
+
+
+Our fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called _Breadth First Search_.
+
+## Breadth First Search
+
+\ 
+
+**Breadth-first search** (**BFS**) is an algorithm for _traversing_ or _searching_ tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (--Wikipedia)
+
+
+\ 
+
+# Graphs
+
+## The Internet, circa 2003
+
+::::: columns
+::: {.column}
+![](/images/gr1.png)
+:::
+::: {.column}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+_Degree_ of a vertex:
+
+:::
+::::: 
+
+## A Conflict Graph
+
+::::: columns
+::: {.column}
+![](/images/gr2.png)
+:::
+::: {.column}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\
+
+Labels:
+
+\
+
+Neighbors:
+
+:::
+::::: 
+
+What’s special about the vertex labels of this graph?
+
+## A Complete Graph
+
+::::: columns
+::: {.column}
+![](/images/gr3.png)
+:::
+::: {.column}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\
+
+A graph is _complete_ if it contains all possible edges.
+
+\
+
+How many edges in a complete graph of n vertices?
+
+:::
+::::: 
+
+## Social Network
+
+::::: columns
+::: {.column width=70%}
+![](/images/gr4.png)
+:::
+::: {.column width=30%}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+:::
+::::: 
+
+Connected Graph:
+
+\ 
+
+Connected Component:
+
+## Rush Hour
+
+::::: columns
+::: {.column}
+![](/images/gr5.png)
+:::
+::: {.column}
+
+<img src="/images/gr5rh.png" alt="Desmos screenshot" width="30%">
+
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+Path:
+
+:::
+::::: 
+
+## State Machine {.smaller}
+
+::::: columns
+::: {.column width=35%}
+![](/images/gr6.png)
+:::
+::: {.column width=65%}
+This graph can be used to quickly calculate whether a given number is divisible by 7.
+
+Start at the circle node at the top.
+For each digit $d$ in the given number, follow $d$ blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge.
+If you end up back at the circle node, your number is divisible by 7.
+
+\
+
+<span style="font-size: 3em;">3703</span>
+
+:::
+::::: 
+
+## The Stanford Bunny
+
+::::: columns
+::: {.column width=65%}
+![](/images/gr7.png)
+:::
+::: {.column width=35%}
+
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\ 
+
+Planar Graph:
+
+:::
+::::: 
+
+## Graph Explorations
+
+A graph $G$ is defined by a set of vertices $V$, and a set of edges $E$. 
+
+
+Algorithm _running time_ is typically described using the number of _vertices_, but execution usually depends on the number of _edges_, so we must understand the relationship between them.
+
+## How Many Edges?
+
+Suppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?
+
+::::: columns
+::: {.column}
+![](/images/gr2.png)
+:::
+::: {.column} 
+_At least_ __________ edges because the graph is connected.
+
+\ 
+
+_At most_ _________ edges which occurs when the graph is complete. 
+
+
+:::
+::::: 
+
+## Handshaking
+
+Suppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?
+
+::::: columns
+::: {.column}
+![](/images/gr8.png)
+:::
+::: {.column} 
+The following are equivalent:
+
+* The number of neighbors of a vertex.
+* The number of incident edges of a vertex.
+* The degree of a vertex.
+
+:::
+::::: 
+
+## Degree Games
+
+::::: columns
+::: {.column}
+Suppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?
+
+:::
+::: {.column} 
+An algorithm for finding a graph, given a degree sequence, is described in the practice problems. 
+
+[Havel-Hakimi](https://jacquerie.github.io/hh/)
+
+:::
+::::: 
+
+![](/images/gr9.png)
+
+## Pencil Puzzles
+
+::::: columns
+::: {.column}
+![](/images/gr10.png)
+:::
+::: {.column} 
+Trace each graph without lifting your pencil and without revisiting an edge.
+
+\ 
+
+Can all graphs be traced?
+
+\ 
+
+What characterizes those that cannot?
+:::
+::::: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
