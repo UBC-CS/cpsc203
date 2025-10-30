@@ -1,0 +1,164 @@
+---
+date: 2025-10-30
+---
+
+## Announcements
+
+# Graphs
+
+## Rush Hour
+
+::::: columns
+::: {.column}
+![](/images/gr5.png)
+:::
+::: {.column}
+
+<img src="/images/gr5rh.png" alt="Desmos screenshot" width="30%">
+
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+Path:
+
+:::
+::::: 
+
+## State Machine {.smaller}
+
+::::: columns
+::: {.column width=35%}
+![](/images/gr6.png)
+:::
+::: {.column width=65%}
+This graph can be used to quickly calculate whether a given number is divisible by 7.
+
+Start at the circle node at the top.
+For each digit $d$ in the given number, follow $d$ blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge.
+If you end up back at the circle node, your number is divisible by 7.
+
+\
+
+<span style="font-size: 3em;">3703</span>
+
+:::
+::::: 
+
+## The Stanford Bunny
+
+::::: columns
+::: {.column width=65%}
+![](/images/gr7.png)
+:::
+::: {.column width=35%}
+
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\ 
+
+Planar Graph:
+
+:::
+::::: 
+
+## Graph Explorations
+
+\ 
+
+A graph $G$ is defined by a set of vertices $V$, and a set of edges $E$. 
+
+\ 
+
+Algorithm _running time_ is typically described using the number of _vertices_, but execution usually depends on the number of _edges_, so we must understand the relationship between them.
+
+## How Many Edges?
+
+Suppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?
+
+::::: columns
+::: {.column}
+![](/images/gr2.png)
+:::
+::: {.column} 
+_At least_ __________ edges because the graph is connected.
+
+\ 
+
+_At most_ _________ edges which occurs when the graph is complete. 
+
+
+:::
+::::: 
+
+## Handshaking
+
+Suppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?
+
+::::: columns
+::: {.column}
+![](/images/gr8.png)
+:::
+::: {.column} 
+The following are equivalent:
+
+* The number of neighbors of a vertex.
+* The number of incident edges of a vertex.
+* The degree of a vertex.
+
+:::
+::::: 
+
+## Degree Games
+
+::::: columns
+::: {.column}
+Suppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?
+
+:::
+::: {.column} 
+An algorithm for finding a graph, given a degree sequence, is described in the practice problems. 
+
+[Havel-Hakimi](https://jacquerie.github.io/hh/)
+
+:::
+::::: 
+
+![](/images/gr9.png)
+
+## Pencil Puzzles
+
+::::: columns
+::: {.column}
+![](/images/gr10.png)
+:::
+::: {.column} 
+Trace each graph without lifting your pencil and without revisiting an edge.
+
+\ 
+
+Can all graphs be traced?
+
+\ 
+
+What characterizes those that cannot?
+:::
+::::: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
