@@ -1,0 +1,106 @@
+---
+date: 2025-11-04
+---
+
+## Announcements
+
+# The only thing that we could have a little more of the same kind words and the answers are very very important
+
+## Following Ada {.smaller}
+
+::::: columns
+::: {.column width=50%}
+![](/images/ada.png)
+:::
+::: {.column width=50%}
+Supposing, for instance, that the **fundamental relations of** pitched **sounds** in the science of harmony and of musical composition were **susceptible of** such expression and **adaptations**, 
+
+*the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.*
+
+(Ada Lovelace -- 1842)
+:::
+:::::
+
+## Prelude
+
+<center>
+![](/images/mhallnotes.png)
+</center>
+
+## Characterizing Mary
+
+<center>
+![](/images/characterizingmary.png)
+</center>
+
+## Building a Music Generator
+
+<center>
+![](/images/musicgenerator.png)
+</center>
+
+## Building a Song
+
+<center>
+![](/images/buildingsong.png)
+</center>
+
+## Building a Song
+
+<center>
+![](/images/builtsong.png)
+</center>
+
+
+## Demo {.activity}
+    
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2609228)
+
+## Some Technical Details
+
+* You have just learned about a particular type of random process called a *Markov Chain*.
+
+* We modelled it using a transition table, or a *finite state machine*, and we used it as the basis for an algorithm to generate music.
+
+## Graphs? {.smaller}
+
+::::: columns
+::: {.column width=50%}
+![](/images/transition.png)
+:::
+::: {.column width=50%}
+This table can be interpreted as an *adjacency matrix* representation of a graph. 
+
+\ 
+
+Vertices:
+
+\ 
+
+Edges:
+
+\ 
+
+Special characteristics:
+
+:::
+:::::
+
+<http://setosa.io/markov>
+
+# The only thing that we could have a little more of the same kind words and the answers are very very important
+
+## Other Applications
+
+* PageRank:  Google’s first search algorithm
+    * Some pages are likely to “follow” (be linked from) others.
+    * Rank of page is based on the probability that you’ll be there at any moment
+* Natural Language Processing
+    * Some words are more likely to follow others.
+    * “I just ate the whole desert”  probably has a misspelling.
+    * “For dinner I ___ ... ”    next word is probably “ate”
+* DNA matching
+* Chemical reaction simulation
+
+Many others...
+
