@@ -62,7 +62,9 @@ Finally: visualize results using Matplotlib or Folium
 
 3. **Visualizing the data** - matplotlib for static maps, folium for interactive maps. Other alternatives available.
 
-## Introductory Demo 
+## Introductory Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2615102)
 
 What We’ll See in the Demos
 
@@ -202,7 +204,9 @@ Execute Dijkstra's algorithm on this graph:
 :::
 ::::: 
 
-## Final Demo 
+## Final Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2615102)
 
 What We’ll See in the Demos
 
