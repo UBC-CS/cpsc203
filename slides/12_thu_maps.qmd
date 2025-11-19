@@ -1,0 +1,79 @@
+---
+date: 2025-11-20
+---
+
+## Announcements
+
+# Maps
+
+## Geographic Applications {data-background-image="/images/maps1data.png"}
+
+The data we use for computation is separate from the visualization.
+
+## Dijkstra's Algorithm {.smaller}
+
+::::: columns
+::: {.column}
+1. Initialize structure:
+
+   - For all `v`, 
+      - `d[v] = INF`, 
+      - `p[v] = null`
+
+2. Initialize source: `d[s] = 0`
+
+3. Repeat these steps `n` times:
+  - Find minimum `d[]` unlabelled vertex: `v`
+  - Label vertex `v`
+  - For all unlabelled neighbors `w` of `v`, 
+    - If (_________________ < `d[w]`)
+      - `d[w] =` ______________ 
+      - `p[w] = v`
+:::
+::: {.column}
+
+* How is the algorithm similar to BFS/DFS?
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+* How is the algorithm different from BFS/DFS?
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+:::
+::::: 
+
+## Final Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2615102)
+
+What We’ll See in the Demos
+
+* Convert map data to graph
+
+* Identify amenities (Starbucks)
+
+* Compute shortest route between two landmarks
+
+* Visualize everything interactively
+
+## What have we Learned? {.smaller}
+
+| Algorithm	| Data Structure | Costs? | Shortest? |	Frontier |
+|-----------|----------|---------|--------|--------|
+| DFS	| Stack	| ignored |	no	| dive deep |
+| BFS	| Queue	| all equal | 	yes	| explore in layers |
+| Dijkstra	| Priority Queue	| any non-neg |	yes	| explore by shortest known distance
+
+## Resources
+
+* REALLY great example: <https://www.youtube.com/watch?v=wsSEKm-rU6U>
+
+* OSMNX reference: <https://github.com/gboeing/osmnx-examples>
+
+* Tutorial: <https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07> 
+
+* Tags: <https://wiki.openstreetmap.org/wiki/Map_features>
