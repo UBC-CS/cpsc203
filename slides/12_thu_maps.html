@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2023-01-08">
+  <meta name="dcterms.date" content="2025-11-20">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -149,53 +147,122 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 8, 2023</p>
+  <p class="date">November 20, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section id="lab-1" class="title-slide slide level1 center">
-<h1>Lab 1</h1>
-<div id="timer_caa99e3ed3e0ebbd5a2b46e1c6f3abf366dcc04a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
+<section>
+<section id="maps" class="title-slide slide level1 center">
+<h1>Maps</h1>
 
-<section id="potd-week-1-and-2" class="title-slide slide level1 center">
-<h1>POTD week 1 and 2</h1>
-<div id="timer_caa99e3ed3e0ebbd5a2b46e1c6f3abf366dcc04a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
 </section>
-
-<section id="break" class="title-slide slide level1 center">
-<h1>Break</h1>
-<div id="timer_caa99e3ed3e0ebbd5a2b46e1c6f3abf366dcc04a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="geographic-applications" class="slide level2" data-background-image="../images/maps1data.png">
+<h2>Geographic Applications</h2>
+<p>The data we use for computation is separate from the visualization.</p>
 </section>
-
-<section id="review-of-python" class="title-slide slide level1 center">
-<h1>Review of Python</h1>
-<div id="timer_caa99e3ed3e0ebbd5a2b46e1c6f3abf366dcc04a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">50</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="dijkstras-algorithm" class="slide level2 smaller">
+<h2>Dijkstra’s Algorithm</h2>
+<div class="columns">
+<div class="column">
+<ol type="1">
+<li><p>Initialize structure:</p>
+<ul>
+<li>For all <code>v</code>,
+<ul>
+<li><code>d[v] = INF</code>,</li>
+<li><code>p[v] = null</code></li>
+</ul></li>
+</ul></li>
+<li><p>Initialize source: <code>d[s] = 0</code></p></li>
+<li><p>Repeat these steps <code>n</code> times:</p></li>
+</ol>
+<ul>
+<li>Find minimum <code>d[]</code> unlabelled vertex: <code>v</code></li>
+<li>Label vertex <code>v</code></li>
+<li>For all unlabelled neighbors <code>w</code> of <code>v</code>,
+<ul>
+<li>If (_________________ &lt; <code>d[w]</code>)
+<ul>
+<li><code>d[w] =</code> ______________</li>
+<li><code>p[w] = v</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column">
+<ul>
+<li>How is the algorithm similar to BFS/DFS?</li>
+</ul>
+<p>____________________________________ ____________________________________ ____________________________________</p>
+<ul>
+<li>How is the algorithm different from BFS/DFS?</li>
+</ul>
+<p>____________________________________ ____________________________________ ____________________________________</p>
+</div></div>
+</section>
+<section id="final-demo" class="slide level2 activity">
+<h2>Final Demo</h2>
+<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2615102">PrairieLearn Activity</a></p>
+<p>What We’ll See in the Demos</p>
+<ul>
+<li><p>Convert map data to graph</p></li>
+<li><p>Identify amenities (Starbucks)</p></li>
+<li><p>Compute shortest route between two landmarks</p></li>
+<li><p>Visualize everything interactively</p></li>
+</ul>
+</section>
+<section id="what-have-we-learned" class="slide level2 smaller">
+<h2>What have we Learned?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Data Structure</th>
+<th>Costs?</th>
+<th>Shortest?</th>
+<th>Frontier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DFS</td>
+<td>Stack</td>
+<td>ignored</td>
+<td>no</td>
+<td>dive deep</td>
+</tr>
+<tr class="even">
+<td>BFS</td>
+<td>Queue</td>
+<td>all equal</td>
+<td>yes</td>
+<td>explore in layers</td>
+</tr>
+<tr class="odd">
+<td>Dijkstra</td>
+<td>Priority Queue</td>
+<td>any non-neg</td>
+<td>yes</td>
+<td>explore by shortest known distance</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><p>REALLY great example: <a href="https://www.youtube.com/watch?v=wsSEKm-rU6U" class="uri">https://www.youtube.com/watch?v=wsSEKm-rU6U</a></p></li>
+<li><p>OSMNX reference: <a href="https://github.com/gboeing/osmnx-examples" class="uri">https://github.com/gboeing/osmnx-examples</a></p></li>
+<li><p>Tutorial: <a href="https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07" class="uri">https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07</a></p></li>
+<li><p>Tags: <a href="https://wiki.openstreetmap.org/wiki/Map_features" class="uri">https://wiki.openstreetmap.org/wiki/Map_features</a></p></li>
+</ul>
 
 
 <script type="ojs-module-contents">
@@ -212,7 +279,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
