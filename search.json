@@ -795,8 +795,8 @@
     "text": "How many routes\nSuppose you have 6 locations. How many different candidate solutions are there? Generalize to k locations?\n\n\n\n\n________________________\n \n________________________\n \n________________________\n \n________________________\n \n________________________"
   },
   {
-    "objectID": "slides/12_thu_maps.html#travelling-salesperson-problem-tsp",
-    "href": "slides/12_thu_maps.html#travelling-salesperson-problem-tsp",
+    "objectID": "slides/12_thu_maps.html#travelling-salesperson-problem-tsp-1",
+    "href": "slides/12_thu_maps.html#travelling-salesperson-problem-tsp-1",
     "title": "Programming, problem solving, and algorithms",
     "section": "Travelling Salesperson Problem (TSP)",
     "text": "Travelling Salesperson Problem (TSP)\n“Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?”\n\nClassic problem on graphs\nFirst known mention was in 1930\n________________________________________"
