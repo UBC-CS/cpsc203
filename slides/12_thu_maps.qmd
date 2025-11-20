@@ -131,7 +131,6 @@ Suppose you have 6 locations. How many different candidate solutions are there? 
 
 * \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-
 ## Demo Blog
 
 <https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552>
@@ -161,6 +160,10 @@ Steps to assemble our solution:
 4. find minimum route and assemble turn-by-turn for that route
 5. visualize on map
 :::
+
+## A Technical Detail
+
+![](/images/maps9home.png)
 
 ## Demo {.activity}
 
