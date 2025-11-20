@@ -93,7 +93,17 @@ Determine the least cost route through a set of given locations, returning to th
 :::
 :::::
 
-## How many routes
+## Travelling Salesperson Problem (TSP)
+
+"Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?" 
+
+* Classic problem on graphs
+
+* First known mention was in 1930
+
+* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+## How many routes?
 
 Suppose you have 6 locations. How many different candidate solutions are there? Generalize to k locations?
 
@@ -122,16 +132,6 @@ Suppose you have 6 locations. How many different candidate solutions are there? 
 
 :::
 :::::
-
-## Travelling Salesperson Problem (TSP)
-
-"Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?" 
-
-* Classic problem on graphs
-
-* First known mention was in 1930
-
-* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Demo Blog
 
