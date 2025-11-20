@@ -816,6 +816,13 @@
     "text": "Plan for Code\nSteps to assemble our solution:\n \n\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n\n\n\nassemble the graph and errands\ncreate pairwise distances\ncreate all possible permutations of paths\nfind minimum route and assemble turn-by-turn for that route\nvisualize on map"
   },
   {
+    "objectID": "slides/12_thu_maps.html#a-technical-detail",
+    "href": "slides/12_thu_maps.html#a-technical-detail",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Technical Detail",
+    "text": "A Technical Detail"
+  },
+  {
     "objectID": "slides/12_thu_maps.html#demo",
     "href": "slides/12_thu_maps.html#demo",
     "title": "Programming, problem solving, and algorithms",
