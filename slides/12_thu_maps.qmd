@@ -4,7 +4,7 @@ date: 2025-11-20
 
 ## Announcements
 
-# Maps
+# Single Source Shortest Path, Fin
 
 ## Geographic Applications {data-background-image="/images/maps1data.png"}
 
@@ -77,6 +77,8 @@ What We’ll See in the Demos
 * Tutorial: <https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07> 
 
 * Tags: <https://wiki.openstreetmap.org/wiki/Map_features>
+
+# Travelling Salesperson Problem (TSP)
 
 ## Maps: Running Errands
 
