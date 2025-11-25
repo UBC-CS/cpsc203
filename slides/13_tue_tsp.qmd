@@ -140,6 +140,60 @@ There are *lots* of applications:
 
 ![](/images/vis6.png)
 
+
+## Visualizing Literature
+
+- A novel is just a **long sequence of characters**.
+- If we treat it as **data**, we can:
+  - Count and visualize patterns,
+  - Compare books or authors,
+  - Build networks of characters and concepts.
+- Today: turn a novel into **numbers and pictures**.
+
+## What Can We Compute From a Book? {.activity}
+
+If I give you the full text of a novel as a `.txt` file
+
+  - What **questions** could we ask?
+  - What **numbers** or **graphs** could we compute?
+
+Ideas:
+
+## The Text-as-Data Pipeline
+
+Data flow:
+
+1. **Load** the text from a file
+2. **Tokenize**: split into words
+3. **Preprocess**:
+   - lowercase
+   - remove punctuation
+   - remove stopwords
+   - use **lemmas**
+4. **Count** frequencies
+5. **Visualize** as a bar chart
+6. **Interpret**: what do the counts tell us?
+
+## Step 1: Getting the Text into Python
+
+``` {pyodide}
+import requests
+
+url = "https://raw.githubusercontent.com/UBC-CS/cpsc203/main/data/ofk.txt"
+
+resp = requests.get(url)
+resp.raise_for_status()   # optional but good practice
+text = resp.text          # this is your whole file as one big string
+
+print(text[:500])  # peek at the first 500 characters
+```
+
+
+We want to analyze the data by word or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_...  
+
+We can separate the data into any of these using a “tokenizer”
+
+
 ## How do We Start?
 
 `textRaw = open('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/ofk.txt').read()`
@@ -150,7 +204,7 @@ returns a string.
 
 We want to analyze the data by word or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_...  
 
-We can separate the data into any of these using nltk’s “tokenizer”
+We can separate the data into any of these using a “tokenizer”
 
 ## Tokenization
 
