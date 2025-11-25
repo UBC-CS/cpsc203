@@ -1585,11 +1585,39 @@
     "text": "Mapping"
   },
   {
+    "objectID": "slides/13_tue_tsp.html#visualizing-literature-1",
+    "href": "slides/13_tue_tsp.html#visualizing-literature-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Visualizing Literature",
+    "text": "Visualizing Literature\n\nA novel is just a long sequence of characters.\nIf we treat it as data, we can:\n\nCount and visualize patterns,\nCompare books or authors,\nBuild networks of characters and concepts.\n\nToday: turn a novel into numbers and pictures."
+  },
+  {
+    "objectID": "slides/13_tue_tsp.html#what-can-we-compute-from-a-book",
+    "href": "slides/13_tue_tsp.html#what-can-we-compute-from-a-book",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What Can We Compute From a Book?",
+    "text": "What Can We Compute From a Book?\nIf I give you the full text of a novel as a .txt file\n\nWhat questions could we ask?\nWhat numbers or graphs could we compute?\n\nIdeas:"
+  },
+  {
+    "objectID": "slides/13_tue_tsp.html#the-text-as-data-pipeline",
+    "href": "slides/13_tue_tsp.html#the-text-as-data-pipeline",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Text-as-Data Pipeline",
+    "text": "The Text-as-Data Pipeline\nData flow:\n\nLoad the text from a file\nTokenize: split into words\nPreprocess:\n\nlowercase\nremove punctuation\nremove stopwords\nuse lemmas\n\nCount frequencies\nVisualize as a bar chart\nInterpret: what do the counts tell us?"
+  },
+  {
+    "objectID": "slides/13_tue_tsp.html#step-1-getting-the-text-into-python",
+    "href": "slides/13_tue_tsp.html#step-1-getting-the-text-into-python",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 1: Getting the Text into Python",
+    "text": "Step 1: Getting the Text into Python\n\n\n\n\n\n\nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data into any of these using a “tokenizer”"
+  },
+  {
     "objectID": "slides/13_tue_tsp.html#how-do-we-start",
     "href": "slides/13_tue_tsp.html#how-do-we-start",
     "title": "Programming, problem solving, and algorithms",
     "section": "How do We Start?",
-    "text": "How do We Start?\ntextRaw = open('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/ofk.txt').read()\nreturns a string.\n \nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data into any of these using nltk’s “tokenizer”"
+    "text": "How do We Start?\ntextRaw = open('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/ofk.txt').read()\nreturns a string.\n \nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data into any of these using a “tokenizer”"
   },
   {
     "objectID": "slides/13_tue_tsp.html#tokenization",
