@@ -1,5 +1,5 @@
 ---
-date: 2025-11-20
+date: 2025-11-25
 ---
 
 ## Announcements
@@ -189,22 +189,12 @@ print(text[:500])  # peek at the first 500 characters
 ```
 
 
-We want to analyze the data by word or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_...  
-
-We can separate the data into any of these using a “tokenizer”
-
-
-## How do We Start?
-
-`textRaw = open('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/ofk.txt').read()`
-	
-returns a string.
-
-\ 
+## Tokenizer
 
 We want to analyze the data by word or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_ or by \_\_\_\_\_\_\_\_\_\_\_\_...  
 
-We can separate the data into any of these using a “tokenizer”
+We can separate the data (string) into any of these using a “tokenizer”
+
 
 ## Tokenization
 
@@ -216,7 +206,16 @@ Translate: “Astrology. The governess was always\ngetting muddled with her astr
 
 Into: ['Astrology.', 'The', 'governess', 'was', 'always', 'getting', 'muddled', 'with', 'her', 'astrolabe', ',', 'and', 'when', 'she', 'got', 'specially', 'muddled', 'she', 'would', 'take', 'it', 'out', 'of', 'the', 'Wart', 'by', 'rapping', 'his', 'knuckles.', 'She', 'did', 'not', 'rap', 'Kay', "'s", 'knuckles', ',', 'because', 'when', 'Kay', 'grew', 'older']
 
+## Tokenization
 
+Quick, but not very smart:
+
+``` {pyodide}
+
+words = text.split()
+print(words[:20])
+
+```
 
 
 
