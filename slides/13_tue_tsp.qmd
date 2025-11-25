@@ -159,9 +159,9 @@ If I give you the full text of a novel as a `.txt` file
 
 Ideas:
 
-## The Text-as-Data Pipeline
+## The Text-as-Data Pipeline {.smaller}
 
-Data flow:
+**Data flow:**
 
 1. **Load** the text from a file
 2. **Tokenize**: split into words
