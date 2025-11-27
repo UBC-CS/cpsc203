@@ -22,8 +22,6 @@ date: 2025-11-27
 :::::
 
 
-
-
 ## Word Co-occurrence 
 
 ![](/images/vis3.png)
@@ -106,32 +104,247 @@ Translate: “Astrology. The governess was always\ngetting muddled with her astr
 
 Into: ['Astrology.', 'The', 'governess', 'was', 'always', 'getting', 'muddled', 'with', 'her', 'astrolabe', ',', 'and', 'when', 'she', 'got', 'specially', 'muddled', 'she', 'would', 'take', 'it', 'out', 'of', 'the', 'Wart', 'by', 'rapping', 'his', 'knuckles.', 'She', 'did', 'not', 'rap', 'Kay', "'s", 'knuckles', ',', 'because', 'when', 'Kay', 'grew', 'older']
 
-## Tokenization
 
-Quick, but not very smart:
+## Demo
 
-``` {pyodide}
+::::: columns
+::: {.column width=70%}
+![](/images/tokens.png)
+:::
+::: {.column width=30%}
 
-words = text.split()
-print(words[:20])
+\ 
 
-```
+\ 
 
-## SpaCy Tokenizer
+Thirty most common tokens in the mystery text.
+:::
+:::::
 
-``` {pyodide}
-import spacy
-nlp = spacy.load("en_core_web_sm")
+## Pre-processing
 
-doc = nlp(text)
-tokens = [t.text for t in doc]
-print(tokens[:30])
-```
+![](/images/freq1.png)
 
+## A Feasible Sequence
 
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="100" viewBox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+  <rect class="box box-light" x="40" y="20" width="160" height="60" />
+  <text class="label" x="120" y="50">lower case</text>
+  <rect class="box box-mid" x="240" y="20" width="160" height="60" />
+  <text class="label" x="315" y="39">eliminate</text>
+  <text class="label" x="315" y="61">punctuation</text>
+  <rect class="box box-mid" x="440" y="20" width="160" height="60" />
+  <text class="label" x="520" y="39">remove stop</text>
+  <text class="label" x="520" y="61">words</text>
+  <rect class="box box-mid" x="640" y="20" width="80" height="60" />
+  <text class="label" x="680" y="50">lemma</text>
+</svg>
 
+::::: columns
+::: {.column width=70%}
+![](/images/lowercase.png)
+:::
+::: {.column width=30%}
 
+Unify tally for “Valor” and “valor”.
 
+\
+
+Depending on task, may not want to do this.
+
+:::
+:::::
+
+## A Feasible Sequence
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="100" viewBox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+  <rect class="box box-mid" x="40" y="20" width="160" height="60" />
+  <text class="label" x="120" y="50">lower case</text>
+  <rect class="box box-light" x="240" y="20" width="160" height="60" />
+  <text class="label" x="315" y="39">eliminate</text>
+  <text class="label" x="315" y="61">punctuation</text>
+  <rect class="box box-mid" x="440" y="20" width="160" height="60" />
+  <text class="label" x="520" y="39">remove stop</text>
+  <text class="label" x="520" y="61">words</text>
+  <rect class="box box-mid" x="640" y="20" width="80" height="60" />
+  <text class="label" x="680" y="50">lemma</text>
+</svg>
+
+::::: columns
+::: {.column width=70%}
+![](/images/minuspunctuation.png)
+:::
+::: {.column width=30%}
+
+Tokenizer leaves periods at end of sentences: "father."
+
+\ 
+
+Amazingly, it works fine for “Dr.”, “$3.50”, “!”
+
+:::
+:::::
+
+## A Feasible Sequence {.smaller}
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="100" viewBox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+  <rect class="box box-mid" x="40" y="20" width="160" height="60" />
+  <text class="label" x="120" y="50">lower case</text>
+  <rect class="box box-mid" x="240" y="20" width="160" height="60" />
+  <text class="label" x="315" y="39">eliminate</text>
+  <text class="label" x="315" y="61">punctuation</text>
+  <rect class="box box-light" x="440" y="20" width="160" height="60" />
+  <text class="label" x="520" y="39">remove stop</text>
+  <text class="label" x="520" y="61">words</text>
+  <rect class="box box-mid" x="640" y="20" width="80" height="60" />
+  <text class="label" x="680" y="50">lemma</text>
+</svg>
+
+::::: columns
+::: {.column width=70%}
+![](/images/minusstopwords.png)
+:::
+::: {.column width=30%}
+
+List of common, unhelpful words compiled by `spacy` from large corpora.  We keep words that aren’t in that list.
+
+\ 
+
+More sophisticated approach is called tf-idf.
+
+:::
+:::::
+
+## A Feasible Sequence
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="100" viewBox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+  <rect class="box box-mid" x="40" y="20" width="160" height="60" />
+  <text class="label" x="120" y="50">lower case</text>
+  <rect class="box box-mid" x="240" y="20" width="160" height="60" />
+  <text class="label" x="315" y="39">eliminate</text>
+  <text class="label" x="315" y="61">punctuation</text>
+  <rect class="box box-mid" x="440" y="20" width="160" height="60" />
+  <text class="label" x="520" y="39">remove stop</text>
+  <text class="label" x="520" y="61">words</text>
+  <rect class="box box-light" x="640" y="20" width="80" height="60" />
+  <text class="label" x="680" y="50">lemma</text>
+</svg>
+
+::::: columns
+::: {.column width=70%}
+![](/images/lemmas.png)
+:::
+::: {.column width=30%}
+
+goes -> go
+running -> run
+eaten -> eat
+
+:::
+:::::
+
+## Curious?
+
+::::: columns
+::: {.column}
+![](/images/minusstopwords90.png)
+:::
+::: {.column}
+![](/images/lemmas90.png)
+:::
+:::::
+
+## Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732)
 
 
 
