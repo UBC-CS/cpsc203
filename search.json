@@ -207,18 +207,60 @@
     "text": "Tokenization\n \nTranslate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
   },
   {
-    "objectID": "slides/13_thu_vislit.html#tokenization-1",
-    "href": "slides/13_thu_vislit.html#tokenization-1",
+    "objectID": "slides/13_thu_vislit.html#demo",
+    "href": "slides/13_thu_vislit.html#demo",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenization",
-    "text": "Tokenization\nQuick, but not very smart:"
+    "section": "Demo",
+    "text": "Demo\n\n\n\n\n \n \nThirty most common tokens in the mystery text."
   },
   {
-    "objectID": "slides/13_thu_vislit.html#spacy-tokenizer",
-    "href": "slides/13_thu_vislit.html#spacy-tokenizer",
+    "objectID": "slides/13_thu_vislit.html#pre-processing",
+    "href": "slides/13_thu_vislit.html#pre-processing",
     "title": "Programming, problem solving, and algorithms",
-    "section": "SpaCy Tokenizer",
-    "text": "SpaCy Tokenizer"
+    "section": "Pre-processing",
+    "text": "Pre-processing"
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#a-feasible-sequence",
+    "href": "slides/13_thu_vislit.html#a-feasible-sequence",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nUnify tally for “Valor” and “valor”.\n\n\nDepending on task, may not want to do this."
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#a-feasible-sequence-1",
+    "href": "slides/13_thu_vislit.html#a-feasible-sequence-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nTokenizer leaves periods at end of sentences: “father.”\n \nAmazingly, it works fine for “Dr.”, “$3.50”, “!”"
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#a-feasible-sequence-2",
+    "href": "slides/13_thu_vislit.html#a-feasible-sequence-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nList of common, unhelpful words compiled by spacy from large corpora. We keep words that aren’t in that list.\n \nMore sophisticated approach is called tf-idf."
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#a-feasible-sequence-3",
+    "href": "slides/13_thu_vislit.html#a-feasible-sequence-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\ngoes -&gt; go running -&gt; run eaten -&gt; eat"
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#curious",
+    "href": "slides/13_thu_vislit.html#curious",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Curious?",
+    "text": "Curious?"
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#demo-1",
+    "href": "slides/13_thu_vislit.html#demo-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
   },
   {
     "objectID": "slides/12_tue_maps.html#announcements",
@@ -1003,97 +1045,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Why This Matters",
     "text": "Why This Matters\nThere are lots of applications:\n\n📦 UPS/FedEx/Amazon Delivery Millions saved by reducing even 1km per driver per day.\n🍔 UberEats/DoorDash/Skip Multi-stop pickup/delivery with time windows.\n🧬 DNA Sequencing & Genome Assembly Ordering fragments relies on TSP-like reconstruction.\n🚌 School Bus Routing Minimize buses, fuel, and time while meeting constraints.\n🧪 Medical Lab Sample Pipelines Robotic arms schedule efficient multi-station workflows.\n❄️ Snowplow & Garbage Truck Routing Efficiently cover every street in a city.\n🏭 Factory Robots & CNC Machines Optimizing tool paths reduces waste, heat, and wear.\n✈️ Airline Crew Scheduling Complex daily routing: crews must return to base, meet rest rules.\n🌍 City Infrastructure Planning Utility inspections, meter reading, streetlight repair routes.\n🚑 Ambulance & Emergency Routing Minimize response times; life-critical optimization."
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#visualizing-literature",
-    "href": "slides/13_tue_tsp.html#visualizing-literature",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Visualizing Literature",
-    "text": "Visualizing Literature"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#lexical-novelty",
-    "href": "slides/13_tue_tsp.html#lexical-novelty",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Lexical Novelty",
-    "text": "Lexical Novelty\n\n\n\n\n“Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel. In the below visualizations (in which each column represents a chapter and each small block a paragraph of text), I maintain a variable which represents novelty. When a paragraph contains more than 25% new terms (i.e. words that have not been observed thus far) this variable is set at its maximum of 1. Otherwise, the variable decays. The variable is used to colour the paragraph with red being 1.0 and blue being 0. The result is that we can get an idea of the introduction of new ideas in novels.” - Matthew Hurst"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#word-co-occurrence",
-    "href": "slides/13_tue_tsp.html#word-co-occurrence",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Word Co-occurrence",
-    "text": "Word Co-occurrence"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#cross-references",
-    "href": "slides/13_tue_tsp.html#cross-references",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Cross References",
-    "text": "Cross References"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#sentiment-analysis",
-    "href": "slides/13_tue_tsp.html#sentiment-analysis",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Sentiment Analysis",
-    "text": "Sentiment Analysis"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#mapping",
-    "href": "slides/13_tue_tsp.html#mapping",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Mapping",
-    "text": "Mapping"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#visualizing-literature-1",
-    "href": "slides/13_tue_tsp.html#visualizing-literature-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Visualizing Literature",
-    "text": "Visualizing Literature\n\nA novel is just a long sequence of characters.\nIf we treat it as data, we can:\n\nCount and visualize patterns,\nCompare books or authors,\nBuild networks of characters and concepts.\n\nToday: turn a novel into numbers and pictures."
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#what-can-we-compute-from-a-book",
-    "href": "slides/13_tue_tsp.html#what-can-we-compute-from-a-book",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What Can We Compute From a Book?",
-    "text": "What Can We Compute From a Book?\nIf I give you the full text of a novel as a .txt file\n\nWhat questions could we ask?\nWhat numbers or graphs could we compute?\n\nIdeas:"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#the-text-as-data-pipeline",
-    "href": "slides/13_tue_tsp.html#the-text-as-data-pipeline",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Text-as-Data Pipeline",
-    "text": "The Text-as-Data Pipeline\nData flow:\n\nLoad the text from a file\nTokenize: split into words\nPreprocess:\n\nlowercase\nremove punctuation\nremove stopwords\nuse lemmas\n\nCount frequencies\nVisualize as a bar chart\nInterpret: what do the counts tell us?"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#step-1-getting-the-text-into-python",
-    "href": "slides/13_tue_tsp.html#step-1-getting-the-text-into-python",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Step 1: Getting the Text into Python",
-    "text": "Step 1: Getting the Text into Python"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#tokenizer",
-    "href": "slides/13_tue_tsp.html#tokenizer",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenizer",
-    "text": "Tokenizer\nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data (string) into any of these using a “tokenizer”"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#tokenization",
-    "href": "slides/13_tue_tsp.html#tokenization",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenization",
-    "text": "Tokenization\n \nTranslate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
-  },
-  {
-    "objectID": "slides/13_tue_tsp.html#tokenization-1",
-    "href": "slides/13_tue_tsp.html#tokenization-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenization",
-    "text": "Tokenization\nQuick, but not very smart:"
   },
   {
     "objectID": "slides/tbd_tbd_terminal.html#announcements",
