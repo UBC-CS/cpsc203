@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2023-01-08">
+  <meta name="dcterms.date" content="2025-12-02">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -149,64 +147,212 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 8, 2023</p>
+  <p class="date">December 2, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section id="review-of-python" class="title-slide slide level1 center">
-<h1>Review of Python</h1>
-<div id="timer_fca862fd59e4d0c4ff94265030f08ade68d8d105" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">30</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
+<section>
+<section id="text-as-data" class="title-slide slide level1 center">
+<h1>Text as Data</h1>
 
-<section id="class-activity" class="title-slide slide level1 center">
-<h1>Class activity</h1>
-<div id="timer_fca862fd59e4d0c4ff94265030f08ade68d8d105" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
 </section>
-
-<section id="break" class="title-slide slide level1 center">
-<h1>Break</h1>
-<div id="timer_fca862fd59e4d0c4ff94265030f08ade68d8d105" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="the-text-as-data-pipeline" class="slide level2 smaller">
+<h2>The Text-as-Data Pipeline</h2>
+<p><strong>Data flow:</strong></p>
+<ol type="1">
+<li><strong>Load</strong> the text from a file</li>
+<li><strong>Tokenize</strong>: split into words</li>
+<li><strong>Preprocess</strong>:
+<ul>
+<li>lowercase</li>
+<li>remove punctuation</li>
+<li>remove stopwords</li>
+<li>use <strong>lemmas</strong></li>
+</ul></li>
+<li><strong>Count</strong> frequencies</li>
+<li><strong>Visualize</strong> as a bar chart</li>
+<li><strong>Interpret</strong>: what do the counts tell us?</li>
+</ol>
 </section>
-
-<section id="potd-week-1-and-2" class="title-slide slide level1 center">
-<h1>POTD week 1 and 2</h1>
-<div id="timer_fca862fd59e4d0c4ff94265030f08ade68d8d105" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/tokens.png"></p>
+</div><div class="column" style="width:30%;">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Thirty most common tokens in the mystery text.</p>
+</div></div>
 </section>
-
-<section id="review-of-python-1" class="title-slide slide level1 center">
-<h1>Review of Python</h1>
-<div id="timer_fca862fd59e4d0c4ff94265030f08ade68d8d105" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">30</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
+<section id="a-feasible-sequence" class="slide level2">
+<h2>A Feasible Sequence</h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+<rect class="box box-mid" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-mid" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-mid" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-light" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
+</svg>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/lemmas.png"></p>
+</div><div class="column" style="width:30%;">
+<ul>
+<li>goes -&gt; go</li>
+<li>running -&gt; run</li>
+<li>eaten -&gt; eat</li>
+</ul>
+</div></div>
+</section>
+<section id="demo-1" class="slide level2 activity">
+<h2>Demo</h2>
+<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732">PrairieLearn Activity</a></p>
+</section>
+<section id="named-entity-recognition" class="slide level2">
+<h2>Named Entity Recognition</h2>
+<div class="columns">
+<div class="column">
+<p>Essentially: tagging proper nouns</p>
+<p>&nbsp;</p>
+<p>NER used for inferring relationships between entities:</p>
+<ul>
+<li>PERSON <em>lives</em> LOCATION</li>
+<li>LOCATION <em>has</em> ORGANIZATION</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../images/socnet1.png"></p>
+</div></div>
+</section>
+<section id="ner" class="slide level2">
+<h2>NER</h2>
+<ol type="1">
+<li>Underline all of the proper nouns (named entities) in this text:</li>
+</ol>
+<pre><code>Harriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.</code></pre>
+<p>Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program.</p>
+</section>
+<section id="ner-with-spacy" class="slide level2 activity">
+<h2>NER with SpaCy</h2>
+<ol start="2" type="1">
+<li>The PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a> contains a file called <code>ner_nb.py</code>. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.</li>
+</ol>
+<ol type="a">
+<li><p>load a OFK excerpt from <code>ofk_ch1Short.txt</code></p></li>
+<li><p>create a spaCy doc object with <code>doc = nlp(textRaw)</code></p></li>
+</ol>
+</section>
+<section id="ner-with-spacy-1" class="slide level2 activity">
+<h2>NER with SpaCy</h2>
+<ol start="3" type="a">
+<li><p>If <code>doc</code> is the result of part b, What does <code>sents = list(doc.sents)</code> do?</p></li>
+<li><p>If <code>sents</code> is the result of part c, what does <code>sentWords = [[token.text for token in sent] for sent in sents]</code> do?</p></li>
+<li><p>If <code>sents</code> is the result of part c, what does <code>sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]</code> do?</p></li>
+</ol>
+</section>
+<section id="ner-with-spacy-2" class="slide level2 activity">
+<h2>NER with SpaCy</h2>
+<ol start="6" type="a">
+<li><ol start="5" type="a">
+<li>If <code>sents</code> is the result of part c, what does <code>sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]</code> do?</li>
+</ol></li>
+<li><p>If <code>sents</code> is the result of part c, what does <code>ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]</code> do?</p></li>
+<li><p>If <code>doc</code> is the result of part b, what does <code>names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]</code> do?</p></li>
+</ol>
+</section>
+<section id="one-last-project" class="slide level2">
+<h2>One Last Project</h2>
+<p>Suppose we’d like to understand the bonds between pairs of people in a book!</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>How can we infer connections between characters?</li>
+<li>How can we draw a graph?</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../images/gr4.png"></p>
+</div></div>
+</section>
+<section id="friends" class="slide level2">
+<h2>Friends?</h2>
+<p>Given the text from a novel, how can we infer interaction or connections between characters? Discuss this question, and write down your ideas.</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+</section>
+<section id="we-are-not-the-first" class="slide level2 smaller">
+<h2>We Are Not the First</h2>
+<center>
+<a href="https://nicholasdames.org/wp-content/uploads/2013/06/ACL2010-ElsonDamesMcKeown.pdf"><img data-src="../images/socnet2.png"></a>
+</center>
+</section>
+<section id="starting-from-the-goal" class="slide level2">
+<h2>Starting From the Goal</h2>
+<p>&nbsp;</p>
+<p>The social network graph will have…</p>
+<p>&nbsp;</p>
+<p>Vertices:</p>
+<p>&nbsp;</p>
+<p>Edges:</p>
+</section>
+<section id="edges" class="slide level2">
+<h2>Edges</h2>
+<p>We could consider every pair of people and check every paragraph for their presence.</p>
+<ul>
+<li>Do you like this plan?</li>
+</ul>
+<p>OR, we could</p>
+<ol type="1">
+<li></li>
+<li></li>
+</ol>
+</section>
+<section id="edges-1" class="slide level2">
+<h2>Edges</h2>
+<p><code>"I've heard of his family," said Ron darkly. "They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side." He turned to Hermione. "Can we help you with something?"</code></p>
+<ul>
+<li>What names appear?</li>
+<li>What pairs should be tallied?</li>
+<li>General observations:</li>
+</ul>
+</section>
+<section id="moving-to-the-middle" class="slide level2">
+<h2>Moving to the Middle</h2>
+<p>&nbsp;</p>
+<p>Given <code>[[RW, HG, HP], [RW, AD], [H, HP, HG]]</code>,</p>
+<ol type="1">
+<li>Could you create <code>[RW, HG, HP, AD, H]</code>?</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="2" type="1">
+<li>and <code>{(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}</code>?</li>
+</ol>
+</section>
+<section id="demo-2" class="slide level2 activity">
+<h2>Demo</h2>
+<p>In the PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a>, load <code>socnet_nb.py</code>.</p>
 
 
 <script type="ojs-module-contents">
@@ -223,7 +369,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
