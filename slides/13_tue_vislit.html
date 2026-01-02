@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2025-09-09">
+  <meta name="dcterms.date" content="2025-11-27">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -34,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7e745c094e38f47e1e49ac7c09d7c9b4.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,10 +130,10 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:description" content="CPSC 203, 2025 W1">
+<meta property="og:description" content="CPSC 203, 2025 W2">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:description" content="CPSC 203, 2025 W1">
+<meta name="twitter:description" content="CPSC 203, 2025 W2">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
@@ -144,415 +142,279 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Programming, problem solving, and algorithms</h1>
-  <p class="subtitle">CPSC 203, 2025 W1</p>
+  <p class="subtitle">CPSC 203, 2025 W2</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 9, 2025</p>
+  <p class="date">November 27, 2025</p>
 </section>
-<section id="announcements" class="slide level2 smaller">
+<section id="announcements" class="slide level2">
 <h2>Announcements</h2>
-<ul>
-<li><p>Website getting closer – Only setup is wrong (I think)</p></li>
-<li><p>POTW starts today! <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122" class="uri">https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122</a></p></li>
-<li><p>Enroll in CPSC203 on <strong>PrairieTest</strong>: <a href="https://us.prairietest.com/pt/student/course/12360/enroll/172611186041" class="uri">https://us.prairietest.com/pt/student/course/12360/enroll/172611186041</a></p></li>
-<li><p>First examlet signup available!</p></li>
-</ul>
-<aside class="notes">
-<p><strong>Summary</strong></p>
-<p>In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="learning-outcomes" class="slide level2">
-<h2>Learning outcomes</h2>
-<ol type="1">
-<li><p>We connect the idea of “elegance” to common items and to software design!</p></li>
-<li><p>The <em>time</em> it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function.</p></li>
-</ol>
 </section>
 <section>
-<section id="software-design" class="title-slide slide level1 center">
-<h1>Software design</h1>
+<section id="text-as-data" class="title-slide slide level1 center">
+<h1>Text as Data</h1>
 
 </section>
-<section id="elegance" class="slide level2 activity smaller">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Elegance</h2>
-<p>Find 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.</p>
-<ol type="1">
-<li><p>Navigate to the Elegance Gallery: <a href="https://tinyurl.com/elegancegallery" class="uri">https://tinyurl.com/elegancegallery</a></p></li>
-<li><p>Claim an available slide by entering a title.</p></li>
-<li><p>Upload your images, and then you’re done!</p></li>
-<li><p>I will move slides to the COMPLETED section of the gallery.</p></li>
-</ol>
-<div id="timer_11fada7c6f2ad4755189a0669fd5adba0c12280a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-<aside class="notes">
-<p>(Gallery walk)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="elegance-examples" class="slide level2">
-<h2>Elegance: examples</h2>
-<p>Scissors</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/two-scissors.jpg" alt="A set of scissors."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/non-functional-scissors.jpg" alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/assorted-scissors.png" alt="A variety of scissors in different colours."></p>
-</div></div>
-</section>
-<section id="your-turn-elegancedefinition" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance—definition</h2>
-<p>Gallery: <a href="https://tinyurl.com/elegancegallery" class="uri">https://tinyurl.com/elegancegallery</a></p>
-<p>After looking at the images in the gallery, reflect and write a short definition of the word <em>elegance</em>:</p>
-<p><a href="https://forms.gle/GL3yNZn7i7DT5qxW9" class="uri">https://forms.gle/GL3yNZn7i7DT5qxW9</a></p>
-<div id="timer_11fada7c6f2ad4755189a0669fd5adba0c12280a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-<section id="elegance-and-computing" class="slide level2">
-<h2>Elegance and computing</h2>
-<p>How does this apply to the way we solve problems in computing?</p>
-<p>I<span class="fragment" data-fragment-index="1">n</span>g<span class="fragment" data-fragment-index="1">e</span>n<span class="fragment" data-fragment-index="1">u</span>i<span class="fragment" data-fragment-index="1">t</span>y:</p>
-<p><br>
-<br>
-</p>
-<p>S<span class="fragment" data-fragment-index="1">i</span>m<span class="fragment" data-fragment-index="1">p</span>l<span class="fragment" data-fragment-index="1">i</span>c<span class="fragment" data-fragment-index="1">i</span>t<span class="fragment" data-fragment-index="1">y</span>:</p>
+<section id="visualizing-literature" class="slide level2">
+<h2>Visualizing Literature</h2>
 
-<aside class="notes">
-<ol type="1">
-<li>INGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.</li>
-<li>SIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).</li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<aside><div>
-<p>For further reading: <a href="https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/" class="uri">https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/</a></p>
-</div></aside></section>
-<section id="section" class="slide level2 center" data-background-image="../images/steve-jobs.jpg" data-background-opacity="0.3" data-background-size="contain" data-background-position="bottom right" data-menu-title="Steve Jobs quote">
-<h2></h2>
-<blockquote>
-<p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
-<p>— <strong>Steve Jobs</strong></p>
-</blockquote>
-</section></section>
-<section>
-<section id="handcraft" class="title-slide slide level1 center">
-<h1>Handcraft</h1>
-
-</section>
-<section id="handcraft-1" class="slide level2">
-<h2>Handcraft</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/quilt.jpg" alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."></p>
-<p><img data-src="../images/doily.jpg" alt="A white doily with a spiral pattern on a wooden surface."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/pinecone-pen.jpg" alt="A pen made from pinecone."></p>
-<p><img data-src="../images/shirt.jpg" alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/paper-violin.jpg" alt="A violin made from intricately quilled green paper with a bow."></p>
-<p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colours."></p>
-</div></div>
-<aside class="notes">
-<p>Metaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.</p>
-<ul>
-<li>Quilt—patterns</li>
-<li>Crochet—2 different kinds</li>
-<li>Paper—Friend’s artistry</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="knitting" class="slide level2">
-<h2>Knitting</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p>The language used to communicate patterns uses exactly the same fundamental constructs as Python!!!</p>
-</div><div class="column" style="width:66%;">
-<p><img data-src="../images/sherbet-stripes.png" alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."></p>
-</div></div>
-</section>
-<section id="knitting-examples" class="slide level2">
-<h2>Knitting: examples</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/colourful-knitted-striped-dishcloth.jpg" alt="A knitted dishcloth with diagonal stripes in orange, green, yellow, and teal."></p>
-<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/knitted-dishcloth-with-dragon-design.jpg" alt="A green knitted dishcloth featuring a textured dragon design."></p>
-<p><img data-src="../images/knitted-dishcloth-with-diamond-lace-pattern.jpg" alt="A purple knitted dishcloth featuring a diamond lace pattern."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/knitted-dishcloth-with-metroid-power-up-design.jpg" alt="A teal knitted dishcloth featuring a raised power-up design from the video game Metroid."></p>
-<p><img data-src="../images/knitted-dishcloth-with-heart-pattern.jpg" alt="A blue knitted dishcloth featuring a repeating heart pattern."></p>
-</div></div>
-<aside class="notes">
-<p>Show <span class="math inline">\(40 \times 40\)</span>, but then transition into <span class="math inline">\(n \times n\)</span>—“one difference between a knitting project and our problems we solve”</p>
-<p>Axis of algorithmic quality includes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="quantifying-the-task" class="slide level2 activity smaller">
-<h2>Quantifying the Task</h2>
-<p><img data-src="../images/knitted-dishcloth-with-eyelets.jpg" class="absolute" style="top: 0px; right: 0px; width: 20%; " alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
-<div class="columns">
-<div class="column" style="width:78%;">
-<ol type="1">
-<li>If we describe one dimension of a square rag by <span class="math inline">\(n\)</span>, how much work is done by the knitter? <u>____________</u></li>
-<li>If we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? <u>____________</u></li>
-<li>If each stitch takes a second, what is the largest rag we could make in one evening? <u>____________</u></li>
-<li>If it takes an evening to make a <span class="math inline">\(40 \times 40\)</span> rag, how long will it take to make an <span class="math inline">\(80 \times 80\)</span> rag? <u>____________</u></li>
-<li>If it takes time <span class="math inline">\(t\)</span> to make an <span class="math inline">\(n\)</span> by <span class="math inline">\(n\)</span> rag, how long will it take to make a <span class="math inline">\(3n \times 3n\)</span> rag? <u>____________</u></li>
-</ol>
-</div></div>
-<p>General idea: quantify the size of the problem (<span class="math inline">\(n\)</span>) and consider the cost of our task <em>as that size increases</em>.</p>
-<div id="timer_11fada7c6f2ad4755189a0669fd5adba0c12280a" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-<aside class="notes">
-<p>Draw the parabola in 4. Point out that quadratic is slower than exponential growth.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="quantifying-the-task-1" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>If we are solving a problem <u>____________</u> for a given input, we can parameterize the running time of the solution by the size of the input.</p>
-<p>We usually denote this input size using the variable <span class="math inline">\(n\)</span>.</p>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img data-src="../images/pixelated-chevron-knitting-pattern.jpg" alt="A pixelated knitting pattern."></p>
-</div><div class="column" style="width:75%;">
-<p>Discussion:</p>
-<ol type="1">
-<li></li>
-<li></li>
-<li></li>
-</ol>
-</div></div>
-<aside class="notes">
-<p>First blank: or write an algorithm</p>
-<ol type="1">
-<li>In this example we choose to label <span class="math inline">\(n\)</span> as the side-length</li>
-<li>We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3<span class="math inline">\(n\)</span> x <span class="math inline">\(n\)</span> takes time 3<span class="math inline">\(n^2\)</span> to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.</li>
-<li>Sometimes we have more than one parameter</li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="handcraft-and-code" class="slide level2 smaller">
-<h2>Handcraft and Code</h2>
-<p><strong>Knitting model:</strong></p>
+<img data-src="../images/vis1.png" class="r-stretch"></section>
+<section id="lexical-novelty" class="slide level2 smaller">
+<h2>Lexical Novelty</h2>
 <div class="columns">
 <div class="column">
-<ul>
-<li><p>Side length is <span class="math inline">\(n\)</span></p></li>
-<li><p>One stitch is a unit of work</p></li>
-</ul>
+<p><img data-src="../images/vis2.png"></p>
 </div><div class="column">
-<ul>
-<li><p><span class="math inline">\(n\)</span> rows, <span class="math inline">\(n\)</span> stitches per row</p></li>
-<li><p>Total work is <span class="math inline">\(n^2\)</span></p></li>
-</ul>
+<p>“Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel. In the below visualizations (in which each column represents a chapter and each small block a paragraph of text), I maintain a variable which represents novelty. When a paragraph contains more than 25% new terms (i.e.&nbsp;words that have not been observed thus far) this variable is set at its maximum of 1. Otherwise, the variable decays. The variable is used to colour the paragraph with red being 1.0 and blue being 0. The result is that we can get an idea of the introduction of new ideas in novels.” - Matthew Hurst</p>
 </div></div>
+</section>
+<section id="word-co-occurrence" class="slide level2">
+<h2>Word Co-occurrence</h2>
+
+<img data-src="../images/vis3.png" class="r-stretch"></section>
+<section id="cross-references" class="slide level2">
+<h2>Cross References</h2>
+
+<img data-src="../images/vis4.png" class="r-stretch"></section>
+<section id="sentiment-analysis" class="slide level2">
+<h2>Sentiment Analysis</h2>
+
+<img data-src="../images/vis5.png" class="r-stretch"></section>
+<section id="mapping" class="slide level2">
+<h2>Mapping</h2>
+
+<img data-src="../images/vis6.png" class="r-stretch"></section>
+<section id="visualizing-literature-1" class="slide level2">
+<h2>Visualizing Literature</h2>
+<ul>
+<li>A novel is just a <strong>long sequence of characters</strong>.</li>
+<li>If we treat it as <strong>data</strong>, we can:
+<ul>
+<li>Count and visualize patterns,</li>
+<li>Compare books or authors,</li>
+<li>Build networks of characters and concepts.</li>
+</ul></li>
+<li>Today: turn a novel into <strong>numbers and pictures</strong>.</li>
+</ul>
+</section>
+<section id="what-can-we-compute-from-a-book" class="slide level2 activity">
+<h2>What Can We Compute From a Book?</h2>
+<p>If I give you the full text of a novel as a <code>.txt</code> file</p>
+<ul>
+<li>What <strong>questions</strong> could we ask?</li>
+<li>What <strong>numbers</strong> or <strong>graphs</strong> could we compute?</li>
+</ul>
+<p>Ideas:</p>
+</section>
+<section id="the-text-as-data-pipeline" class="slide level2 smaller">
+<h2>The Text-as-Data Pipeline</h2>
+<p><strong>Data flow:</strong></p>
+<ol type="1">
+<li><strong>Load</strong> the text from a file</li>
+<li><strong>Tokenize</strong>: split into words</li>
+<li><strong>Preprocess</strong>:
+<ul>
+<li>lowercase</li>
+<li>remove punctuation</li>
+<li>remove stopwords</li>
+<li>use <strong>lemmas</strong></li>
+</ul></li>
+<li><strong>Count</strong> frequencies</li>
+<li><strong>Visualize</strong> as a bar chart</li>
+<li><strong>Interpret</strong>: what do the counts tell us?</li>
+</ol>
+</section>
+<section id="step-1-getting-the-text-into-python" class="slide level2">
+<h2>Step 1: Getting the Text into Python</h2>
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGtuaXRfc3F1YXJlX2NvdW50KG4pOlxuICAgIHN0aXRjaGVzID0gMFxuICAgIGZvciByb3cgaW4gcmFuZ2Uobik6ICAgICAgICAgICMgbiByb3dzXG4gICAgICAgIGZvciBjb2wgaW4gcmFuZ2Uobik6ICAgICAgIyBuIHN0aXRjaGVzIHBlciByb3dcbiAgICAgICAgICAgIHN0aXRjaGVzICs9IDEgICAgICAgICAjIHVuaXQgd29ya1xuICAgIHJldHVybiBzdGl0Y2hlcyAgICAgICAgICAgICAgICMgPSBuKm5cbiAgICAgICAgICAgICJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHJlcXVlc3RzXG5cbnVybCA9IFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL21haW4vZGF0YS9vZmsudHh0XCJcblxucmVzcCA9IHJlcXVlc3RzLmdldCh1cmwpXG5yZXNwLnJhaXNlX2Zvcl9zdGF0dXMoKSAgICMgb3B0aW9uYWwgYnV0IGdvb2QgcHJhY3RpY2VcbnRleHQgPSByZXNwLnRleHQgICAgICAgICAgIyB0aGlzIGlzIHlvdXIgd2hvbGUgZmlsZSBhcyBvbmUgYmlnIHN0cmluZ1xuXG5wcmludCh0ZXh0Wzo1MDBdKSAgIyBwZWVrIGF0IHRoZSBmaXJzdCA1MDAgY2hhcmFjdGVycyJ9
 </script>
 </div>
-<aside class="notes">
-<p>def knit_square_print(n): for r in range(n): row = “” for c in range(n):<br>
-row += ‘X’<br>
-print(row)</p>
-<p>script: walk through existing code. counting stitches is the same as counting time.</p>
-<p>which line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?</p>
-<p>let’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.</p>
-<p>have we done more work? a little, but the most frequent line happens the same number of times.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="quantifying-the-task-2" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>10</th>
-<th>100</th>
-<th>1000</th>
-<th>10,000</th>
-<th>10<sup>12</sup></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>10<sup>-11</sup>s</td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>1 s</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(n \log n\)</span></td>
-<td>10<sup>-11</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-7</sup> s</td>
-<td>40 s</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(n^2\)</span></td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-4</sup> s</td>
-<td>10<sup>12</sup> s</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(n^3\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-3</sup> s</td>
-<td>1 s</td>
-<td>10<sup>24</sup> s</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(2^n\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>18</sup> s</td>
-<td>10<sup>289</sup> s</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>The amount of computation we do inside our algorithm actually matters!</p>
-<aside class="notes">
-<p>Why does this matter?</p>
-<p>Annotate:</p>
-<ol type="1">
-<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
-<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
-<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
-</ol>
-<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
-<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
-<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
-<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
-<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="tokenizer" class="slide level2">
+<h2>Tokenizer</h2>
+<p>We want to analyze the data by word or by ____________ or by ____________ or by ____________…</p>
+<p>We can separate the data (string) into any of these using a “tokenizer”</p>
 </section>
-<section id="words-and-ideas" class="slide level2">
-<h2>Words and Ideas</h2>
-<ul>
-<li><p>Elegance</p></li>
-<li><p>Growth of simple functions over time</p></li>
-<li><p>Representing complexity of a problem using time</p></li>
-<li><p>Running time of a Python function</p></li>
-</ul>
+<section id="tokenization" class="slide level2">
+<h2>Tokenization</h2>
+<p>&nbsp;</p>
+<p>Translate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”</p>
+<p>&nbsp;</p>
+<p>Into: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]</p>
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/tokens.png"></p>
+</div><div class="column" style="width:30%;">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Thirty most common tokens in the mystery text.</p>
+</div></div>
+</section>
+<section id="pre-processing" class="slide level2">
+<h2>Pre-processing</h2>
+
+<img data-src="../images/freq1.png" class="r-stretch"></section>
+<section id="a-feasible-sequence" class="slide level2">
+<h2>A Feasible Sequence</h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+<rect class="box box-light" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-mid" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-mid" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-mid" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
+</svg>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/lowercase.png"></p>
+</div><div class="column" style="width:30%;">
+<p>Unify tally for “Valor” and “valor”.</p>
+<p><br>
+</p>
+<p>Depending on task, may not want to do this.</p>
+</div></div>
+</section>
+<section id="a-feasible-sequence-1" class="slide level2">
+<h2>A Feasible Sequence</h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+<rect class="box box-mid" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-light" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-mid" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-mid" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
+</svg>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/minuspunctuation.png"></p>
+</div><div class="column" style="width:30%;">
+<p>Tokenizer leaves periods at end of sentences: “father.”</p>
+<p>&nbsp;</p>
+<p>Amazingly, it works fine for “Dr.”, “$3.50”, “!”</p>
+</div></div>
+</section>
+<section id="a-feasible-sequence-2" class="slide level2 smaller">
+<h2>A Feasible Sequence</h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+<rect class="box box-mid" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-mid" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-light" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-mid" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
+</svg>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/minusstopwords.png"></p>
+</div><div class="column" style="width:30%;">
+<p>List of common, unhelpful words compiled by <code>spacy</code> from large corpora. We keep words that aren’t in that list.</p>
+<p>&nbsp;</p>
+<p>More sophisticated approach is called tf-idf.</p>
+</div></div>
+</section>
+<section id="a-feasible-sequence-3" class="slide level2">
+<h2>A Feasible Sequence</h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
+<style>
+    .box {
+      rx: 15;
+      ry: 15;
+      stroke: #5b4c8a;
+      stroke-width: 2;
+    }
+    .box-light {
+      fill: #e3d7ff;
+    }
+    .box-mid {
+      fill: #c5b2ff;
+    }
+    .label {
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #2b2147;
+    }
+  </style>
+<rect class="box box-mid" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-mid" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-mid" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-light" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
+</svg>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="../images/lemmas.png"></p>
+</div><div class="column" style="width:30%;">
+<p>goes -&gt; go running -&gt; run eaten -&gt; eat</p>
+</div></div>
+</section>
+<section id="curious" class="slide level2">
+<h2>Curious?</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/minusstopwords90.png"></p>
+</div><div class="column">
+<p><img data-src="../images/lemmas90.png"></p>
+</div></div>
+</section>
+<section id="demo-1" class="slide level2 activity">
+<h2>Demo</h2>
+<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732">PrairieLearn Activity</a></p>
 
 
 <script type="pyodide-data">
@@ -633,7 +495,7 @@ W10=
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -758,9 +620,9 @@ W10=
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

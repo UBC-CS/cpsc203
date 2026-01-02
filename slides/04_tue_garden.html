@@ -9,10 +9,12 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2025-12-02">
+  <meta name="dcterms.date" content="2025-09-25">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,8 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7e745c094e38f47e1e49ac7c09d7c9b4.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,10 +198,10 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:description" content="CPSC 203, 2025 W1">
+<meta property="og:description" content="CPSC 203, 2025 W2">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:description" content="CPSC 203, 2025 W1">
+<meta name="twitter:description" content="CPSC 203, 2025 W2">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
@@ -142,217 +210,213 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Programming, problem solving, and algorithms</h1>
-  <p class="subtitle">CPSC 203, 2025 W1</p>
+  <p class="subtitle">CPSC 203, 2025 W2</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">December 2, 2025</p>
+  <p class="date">September 25, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
+<ul>
+<li><p>You should be registered for EX2 next week.</p></li>
+<li><p>Post on Piazza if you still need help w machine setup!</p></li>
+</ul>
 </section>
 <section>
-<section id="text-as-data" class="title-slide slide level1 center">
-<h1>Text as Data</h1>
+<section id="lab-day" class="title-slide slide level1 center">
+<h1>Lab Day!</h1>
 
 </section>
-<section id="the-text-as-data-pipeline" class="slide level2 smaller">
-<h2>The Text-as-Data Pipeline</h2>
-<p><strong>Data flow:</strong></p>
-<ol type="1">
-<li><strong>Load</strong> the text from a file</li>
-<li><strong>Tokenize</strong>: split into words</li>
-<li><strong>Preprocess</strong>:
+<section id="garden" class="slide level2">
+<h2>Garden</h2>
+<p>A __________ is a collection of ___________. Every ________ is a collection of __________.</p>
+
+<img data-src="../images/UBCfarmflowers.jpg" alt="Messy rows of flowers." class="r-stretch"></section>
+<section id="class-flower" class="slide level2">
+<h2>Class Flower</h2>
+<p>We declare a flower: <code>fl1 = Flower(_____,_____,_____)</code></p>
+<p>What data should a Flower store?</p>
 <ul>
-<li>lowercase</li>
-<li>remove punctuation</li>
-<li>remove stopwords</li>
-<li>use <strong>lemmas</strong></li>
-</ul></li>
-<li><strong>Count</strong> frequencies</li>
-<li><strong>Visualize</strong> as a bar chart</li>
-<li><strong>Interpret</strong>: what do the counts tell us?</li>
-</ol>
-</section>
-<section id="demo" class="slide level2">
-<h2>Demo</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p><img data-src="../images/tokens.png"></p>
-</div><div class="column" style="width:30%;">
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Thirty most common tokens in the mystery text.</p>
-</div></div>
-</section>
-<section id="a-feasible-sequence" class="slide level2">
-<h2>A Feasible Sequence</h2>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewbox="0 0 900 100">
-<style>
-    .box {
-      rx: 15;
-      ry: 15;
-      stroke: #5b4c8a;
-      stroke-width: 2;
-    }
-    .box-light {
-      fill: #e3d7ff;
-    }
-    .box-mid {
-      fill: #c5b2ff;
-    }
-    .label {
-      font-family: "Helvetica", "Arial", sans-serif;
-      font-size: 18px;
-      text-anchor: middle;
-      dominant-baseline: middle;
-      fill: #2b2147;
-    }
-  </style>
-<rect class="box box-mid" x="40" y="20" width="160" height="60"></rect> <text class="label" x="120" y="50">lower case</text> <rect class="box box-mid" x="240" y="20" width="160" height="60"></rect> <text class="label" x="315" y="39">eliminate</text> <text class="label" x="315" y="61">punctuation</text> <rect class="box box-mid" x="440" y="20" width="160" height="60"></rect> <text class="label" x="520" y="39">remove stop</text> <text class="label" x="520" y="61">words</text> <rect class="box box-light" x="640" y="20" width="80" height="60"></rect> <text class="label" x="680" y="50">lemma</text>
-</svg>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p><img data-src="../images/lemmas.png"></p>
-</div><div class="column" style="width:30%;">
-<ul>
-<li>goes -&gt; go</li>
-<li>running -&gt; run</li>
-<li>eaten -&gt; eat</li>
-</ul>
-</div></div>
-</section>
-<section id="demo-1" class="slide level2 activity">
-<h2>Demo</h2>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732">PrairieLearn Activity</a></p>
-</section>
-<section id="named-entity-recognition" class="slide level2">
-<h2>Named Entity Recognition</h2>
-<div class="columns">
-<div class="column">
-<p>Essentially: tagging proper nouns</p>
-<p>&nbsp;</p>
-<p>NER used for inferring relationships between entities:</p>
-<ul>
-<li>PERSON <em>lives</em> LOCATION</li>
-<li>LOCATION <em>has</em> ORGANIZATION</li>
-</ul>
-</div><div class="column">
-<p><img data-src="../images/socnet1.png"></p>
-</div></div>
-</section>
-<section id="ner" class="slide level2">
-<h2>NER</h2>
-<ol type="1">
-<li>Underline all of the proper nouns (named entities) in this text:</li>
-</ol>
-<pre><code>Harriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.</code></pre>
-<p>Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program.</p>
-</section>
-<section id="ner-with-spacy" class="slide level2 activity">
-<h2>NER with SpaCy</h2>
-<ol start="2" type="1">
-<li>The PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a> contains a file called <code>ner_nb.py</code>. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.</li>
-</ol>
-<ol type="a">
-<li><p>load a OFK excerpt from <code>ofk_ch1Short.txt</code></p></li>
-<li><p>create a spaCy doc object with <code>doc = nlp(textRaw)</code></p></li>
-</ol>
-</section>
-<section id="ner-with-spacy-1" class="slide level2 activity">
-<h2>NER with SpaCy</h2>
-<ol start="3" type="a">
-<li><p>If <code>doc</code> is the result of part b, What does <code>sents = list(doc.sents)</code> do?</p></li>
-<li><p>If <code>sents</code> is the result of part c, what does <code>sentWords = [[token.text for token in sent] for sent in sents]</code> do?</p></li>
-<li><p>If <code>sents</code> is the result of part c, what does <code>sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]</code> do?</p></li>
-</ol>
-</section>
-<section id="ner-with-spacy-2" class="slide level2 activity">
-<h2>NER with SpaCy</h2>
-<ol start="6" type="a">
-<li><ol start="5" type="a">
-<li>If <code>sents</code> is the result of part c, what does <code>sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]</code> do?</li>
-</ol></li>
-<li><p>If <code>sents</code> is the result of part c, what does <code>ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]</code> do?</p></li>
-<li><p>If <code>doc</code> is the result of part b, what does <code>names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]</code> do?</p></li>
-</ol>
-</section>
-<section id="one-last-project" class="slide level2">
-<h2>One Last Project</h2>
-<p>Suppose we’d like to understand the bonds between pairs of people in a book!</p>
-<div class="columns">
-<div class="column">
-<ul>
-<li>How can we infer connections between characters?</li>
-<li>How can we draw a graph?</li>
-</ul>
-</div><div class="column">
-<p><img data-src="../images/gr4.png"></p>
-</div></div>
-</section>
-<section id="friends" class="slide level2">
-<h2>Friends?</h2>
-<p>Given the text from a novel, how can we infer interaction or connections between characters? Discuss this question, and write down your ideas.</p>
-<p>________________________________________</p>
-<p>&nbsp;</p>
-<p>________________________________________</p>
-<p>&nbsp;</p>
-<p>________________________________________</p>
-<p>&nbsp;</p>
-<p>________________________________________</p>
-</section>
-<section id="we-are-not-the-first" class="slide level2 smaller">
-<h2>We Are Not the First</h2>
-<center>
-<a href="https://nicholasdames.org/wp-content/uploads/2013/06/ACL2010-ElsonDamesMcKeown.pdf"><img data-src="../images/socnet2.png"></a>
-</center>
-</section>
-<section id="starting-from-the-goal" class="slide level2">
-<h2>Starting From the Goal</h2>
-<p>&nbsp;</p>
-<p>The social network graph will have…</p>
-<p>&nbsp;</p>
-<p>Vertices:</p>
-<p>&nbsp;</p>
-<p>Edges:</p>
-</section>
-<section id="edges" class="slide level2">
-<h2>Edges</h2>
-<p>We could consider every pair of people and check every paragraph for their presence.</p>
-<ul>
-<li>Do you like this plan?</li>
-</ul>
-<p>OR, we could</p>
-<ol type="1">
 <li></li>
-<li></li>
-</ol>
-</section>
-<section id="edges-1" class="slide level2">
-<h2>Edges</h2>
-<p><code>"I've heard of his family," said Ron darkly. "They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side." He turned to Hermione. "Can we help you with something?"</code></p>
+</ul>
+<p>&nbsp;</p>
 <ul>
-<li>What names appear?</li>
-<li>What pairs should be tallied?</li>
-<li>General observations:</li>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+</section>
+<section id="class-flower-1" class="slide level2">
+<h2>Class Flower</h2>
+<p>We declare a flower: <code>fl1 = Flower(_____,_____,_____)</code></p>
+<p>&nbsp;</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>SPECIES <span class="op">=</span> {<span class="st">"rose"</span>, <span class="st">"sunflower"</span>, <span class="st">"violet"</span>, <span class="st">"daisy"</span>}</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>THEMES: Dict[<span class="bu">str</span>, Dict[<span class="bu">str</span>, Color]] <span class="op">=</span> {</span>
+<span id="cb1-4"><a></a>  <span class="st">"berry"</span>:  {<span class="st">"fill"</span>: (<span class="dv">214</span>,  <span class="dv">76</span>, <span class="dv">118</span>), <span class="st">"border"</span>: (<span class="dv">128</span>,  <span class="dv">33</span>,  <span class="dv">65</span>)},</span>
+<span id="cb1-5"><a></a>  <span class="st">"sun"</span>:    {<span class="st">"fill"</span>: (<span class="dv">247</span>, <span class="dv">181</span>,   <span class="dv">0</span>),  <span class="st">"border"</span>: (<span class="dv">168</span>, <span class="dv">123</span>,   <span class="dv">0</span>)},</span>
+<span id="cb1-6"><a></a>  <span class="st">"leaf"</span>:   {<span class="st">"fill"</span>: ( <span class="dv">58</span>, <span class="dv">142</span>,  <span class="dv">88</span>), <span class="st">"border"</span>: ( <span class="dv">33</span>,  <span class="dv">91</span>,  <span class="dv">55</span>)},</span>
+<span id="cb1-7"><a></a>  <span class="st">"ocean"</span>:  {<span class="st">"fill"</span>: ( <span class="dv">84</span>, <span class="dv">156</span>, <span class="dv">241</span>), <span class="st">"border"</span>: ( <span class="dv">35</span>,  <span class="dv">87</span>, <span class="dv">170</span>)},</span>
+<span id="cb1-8"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Span:</p>
+
+<img data-src="../images/rowgrid.png" alt="table of 12 empty cells." class="r-stretch"></section>
+<section id="class-flower-2" class="slide level2">
+<h2>Class Flower</h2>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li>images of flowers are already defined for you using geometry from Image library.</li>
+<li>call the functions by referring to the file containing the drawers – <code>fl.daisy(pos,span,theme)</code>, for example.</li>
+<li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
+<li>Start your exercises by looking at the driver code.</li>
+<li>Flowers don’t need to know <em>anything</em> about how they’re going to be used.</li>
 </ul>
 </section>
-<section id="moving-to-the-middle" class="slide level2">
-<h2>Moving to the Middle</h2>
-<p>&nbsp;</p>
-<p>Given <code>[[RW, HG, HP], [RW, AD], [H, HP, HG]]</code>,</p>
-<ol type="1">
-<li>Could you create <code>[RW, HG, HP, AD, H]</code>?</li>
-</ol>
-<p>&nbsp;</p>
-<ol start="2" type="1">
-<li>and <code>{(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}</code>?</li>
-</ol>
+<section id="finish-the-flower-class" class="slide level2 activity">
+<h2>Finish the Flower Class</h2>
+<p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
+<div id="timer_5b68908be5da1f90af6d18d49e11495b9329f7a7" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<p>If you finish early, draw more flowers!</p>
 </section>
-<section id="demo-2" class="slide level2 activity">
-<h2>Demo</h2>
-<p>In the PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a>, load <code>socnet_nb.py</code>.</p>
+<section id="class-row" class="slide level2">
+<h2>Class Row</h2>
+<p>We declare a row: <code>row1 = Row(_____,_____,_____)</code></p>
+<p>What data should a Row store?</p>
+<ul>
+<li></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<aside class="notes">
+<p>location in the garden, list of flowers, gap between flowers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="class-row-1" class="slide level2">
+<h2>Class Row</h2>
+<h3 id="drawing-a-row">Drawing a Row:</h3>
+<p>Given a list of flowers, and a gap:</p>
+<p>[f1, f2, f3], gap = 2</p>
+<p>Draw the row:</p>
+
+<img data-src="../images/rowgrid.png" alt="table of 12 empty cells." class="r-stretch"><p>&nbsp;</p>
+<p>Puzzle: How do you know where to draw each flower?</p>
+</section>
+<section id="class-row-2" class="slide level2">
+<h2>Class Row</h2>
+<h3 id="notes-1">Notes:</h3>
+<ul>
+<li>Most complex part is computing where each flower in the row should be draw.</li>
+<li>Render will simply call flower renderers, with the correct locations.</li>
+<li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
+<li>Start your exercises by looking at the driver code.</li>
+<li>Rows don’t need to know <em>anything</em> about how they’re going to be used, but they do need to know about Flowers.</li>
+</ul>
+</section>
+<section id="finish-the-row-class" class="slide level2 activity">
+<h2>Finish the Row Class</h2>
+<p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
+<div id="timer_5b68908be5da1f90af6d18d49e11495b9329f7a7" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<p>If you finish early, draw more rows!</p>
+</section>
+<section id="class-garden" class="slide level2">
+<h2>Class Garden</h2>
+<p>We declare a garden: <code>g1 = Garden(_____)</code></p>
+<p>What data should a Garden store?</p>
+<ul>
+<li></li>
+</ul>
+<p>&nbsp;</p>
+<p>What functionality should a Garden have?</p>
+<ul>
+<li></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li></li>
+</ul>
+<p>&nbsp;</p>
+<aside class="notes">
+<p>list of rows add blocks render</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="class-garden-1" class="slide level2">
+<h2>Class Garden</h2>
+<h3 id="notes-2">Notes:</h3>
+<ul>
+<li>Render will simply call Row renderers; Rows know their locations!</li>
+<li>All locations are in terms of CELL coordinates, not pixel coordinates.</li>
+<li>Start your exercises by looking at the driver code.</li>
+<li>Gardens need to know about Rows, but only indirectly about Flowers.</li>
+</ul>
+</section>
+<section id="finish-the-garden-class" class="slide level2 activity">
+<h2>Finish the Garden Class</h2>
+<p>https://us.prairielearn.com/pl/course_instance/193300/assessment/2591474</p>
+<div id="timer_5b68908be5da1f90af6d18d49e11495b9329f7a7" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<p>If you finish early, make your garden fancy!</p>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<h3 id="what-did-you-accomplish">What did you accomplish?</h3>
+<ul>
+<li><p>Increased fluency in Python from navigating existing code.</p></li>
+<li><p>You know that a dataclass is a collection of data and functionality, and you have created a few.</p></li>
+<li><p>Via examples, you are beginning to understand how to decide upon ownership of application data.</p></li>
+</ul>
 
 
 <script type="ojs-module-contents">
@@ -430,7 +494,7 @@ W10=
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -555,9 +619,9 @@ W10=
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

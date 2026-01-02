@@ -9,10 +9,12 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2025-10-07">
+  <meta name="dcterms.date" content="2025-09-11">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -98,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7e745c094e38f47e1e49ac7c09d7c9b4.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -196,10 +198,10 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:description" content="CPSC 203, 2025 W1">
+<meta property="og:description" content="CPSC 203, 2025 W2">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:description" content="CPSC 203, 2025 W1">
+<meta name="twitter:description" content="CPSC 203, 2025 W2">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
@@ -208,184 +210,23 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Programming, problem solving, and algorithms</h1>
-  <p class="subtitle">CPSC 203, 2025 W1</p>
+  <p class="subtitle">CPSC 203, 2025 W2</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 7, 2025</p>
+  <p class="date">September 11, 2025</p>
 </section>
-<section id="announcements" class="slide level2">
+<section id="announcements" class="slide level2 smaller">
 <h2>Announcements</h2>
 <ul>
-<li>next week is a quiet week: no class meetings, no labs, no potw.</li>
+<li><p>Setup instructions available.</p></li>
+<li><p>Python resources posted to piazza.</p></li>
+<li><p>First examlet signup available.</p></li>
 </ul>
-</section>
-<section id="today" class="slide level2">
-<h2>Today</h2>
-<p>Warm Up – datetime again</p>
-<p>Exploring pandas:</p>
-<ul>
-<li>Filtering Data</li>
-<li>Making charts</li>
-<li>Asking harder questions</li>
-</ul>
-</section>
-<section id="warm-up" class="slide level2 smaller">
-<h2>Warm Up</h2>
-<p><strong><code>datetime</code></strong>: a Python library that simplifies date computation.</p>
-<p><strong>Objects we need</strong></p>
-<ul>
-<li><code>date</code> — a calendar day (year-month-day)</li>
-<li><code>timedelta</code> — a number of days you can add/subtract</li>
-</ul>
-<p><strong>Core calls</strong></p>
-<ul>
-<li><code>today=date.today()</code>: today’s date</li>
-<li><code>today.weekday()</code>: an integer <strong>0..6</strong> with <strong>Mon=0, … , Sun=6</strong></li>
-<li><code>today - timedelta(days=k)</code>: the date <strong>k days earlier</strong></li>
-</ul>
-</section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<div>
-<div id="pyodide-1" class="exercise-cell">
-
-</div>
-<script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZSwgdGltZWRlbHRhXG5cbmRlZiBnZXRMYXN0U2F0dXJkYXkoZGF5KTpcbiAgICB3ID0gZGF5LndlZWtkYXkoKSAgICAgICAgICAgICAgICAgICAgICAgICMgTW9uPTAsIC4uLiwgU2F0PTUsIFN1bj02XG4gICAgb2Zmc2V0ID0gKHcgLSA1KSAlIDcgICAgICAgICAgICAgICAgICAgICAjIGRheXMgc2luY2UgdGhlIG1vc3QgcmVjZW50IFNhdHVyZGF5XG4gICAgcmV0dXJuIGRheSAtIHRpbWVkZWx0YShkYXlzPW9mZnNldCkgICAgICAjIHN0ZXAgYmFjayBieSB0aGF0IG1hbnkgZGF5c1xuXG50b2RheSA9IGRhdGUudG9kYXkoKVxucHJpbnQoZlwiTGFzdCBTYXQncyBkYXRlIHdhczoge2dldExhc3RTYXR1cmRheSh0b2RheSl9XCIpXG5cbiMgMiBvdGhlciB3YXlzIHRvIGluaXRpYWxpemUgZGF0ZXM6XG5IYmRheSA9IGRhdGUoMjAwNCwxMCwxMylcbnByaW50KGZcIlRoZSBTYXQgYmVmb3JlIEggYmlydGhkYXkgd2FzOiB7Z2V0TGFzdFNhdHVyZGF5KEhiZGF5KX0pXG5cbkNiZGF5ID0gXCIyMDAxLTA0LTIwXCJcbm9iZGRhdGUgPSBkYXRlLmZyb21pc29mb3JtYXQoQ2JkYXkpXG5wcmludChmXCJUaGUgU2F0IGJlZm9yZSBDIGJpcnRoZGF5IHdhczoge2dldExhc3RTYXR1cmRheShDYmRheSl9KSJ9
-</script>
-</div>
-</section>
-<section>
-<section id="data-frames" class="title-slide slide level1 center">
-<h1>Data Frames</h1>
-
-</section>
-<section id="section" class="slide level2" data-background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" data-background-interactive="true" data-menu-title="pandas cheat sheet">
-<h2></h2>
-</section>
-<section id="some-challenges" class="slide level2">
-<h2>Some challenges…</h2>
-<p>Given last week’s chart:</p>
-<ol type="1">
-<li><p>How many new songs were there?</p></li>
-<li><p>What’s the average peak?</p></li>
-<li><p>Among those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)</p></li>
-<li><p>Which song changed the most? Was it rising or falling?</p></li>
-<li><p>Write and answer your own question:</p>
-<p><u>_____________________________________________________</u></p></li>
-</ol>
-</section>
-<section id="lets-write-code" class="slide level2 activity">
-<h2>Let’s Write Code</h2>
-<p>Open CA5.2 Billboard, and load <code>class_nb.py</code>.</p>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345">PrairieLearn Activity</a></p>
-</section>
-<section id="some-challenges-1" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Which song moved the most? Did it rise or fall?</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
 <aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
-<span id="cb1-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Summary</strong></p>
+<p>In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into colour representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -398,12 +239,419 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
           display:block!important;
       }</style></aside>
 </section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<p><a href="https://pymotw.com/2/datetime/" class="uri">https://pymotw.com/2/datetime/</a></p>
-<p><a href="https://www.dataschool.io/best-python-pandas-resources/" class="uri">https://www.dataschool.io/best-python-pandas-resources/</a></p>
-<p><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" class="uri">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p>
-<p><a href="https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot" class="uri">https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot</a></p>
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning outcomes</h2>
+<ol type="1">
+<li>Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually <em>anything</em>!</li>
+</ol>
+</section>
+<section id="warm-up" class="slide level2">
+<h2>Warm Up</h2>
+<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+<th>10,000</th>
+<th>10<sup>12</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>10<sup>-11</sup>s</td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>1 s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n \log n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-7</sup> s</td>
+<td>40 s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(n^2\)</span></td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-4</sup> s</td>
+<td>10<sup>12</sup> s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n^3\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-3</sup> s</td>
+<td>1 s</td>
+<td>10<sup>24</sup> s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^n\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>18</sup> s</td>
+<td>10<sup>289</sup> s</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of computation we do inside our algorithm actually matters!</p>
+<aside class="notes">
+<p>Why does this matter?</p>
+<p>Annotate:</p>
+<ol type="1">
+<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
+<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
+<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
+</ol>
+<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
+<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
+<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
+<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
+<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="representation" class="title-slide slide level1 center">
+<h1>Representation</h1>
+
+</section>
+<section id="colour-interpretation" class="slide level2">
+<h2>Colour interpretation</h2>
+<p>What’s your favorite colour? Do you have a sense for <em>why</em> it’s your favorite? Does that colour influence your dress/decor/purchases?</p>
+<p>Psychological: <a href="https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s" class="uri">https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s</a></p>
+<p>Cultural: <a href="https://en.wikipedia.org/wiki/Color_symbolism" class="uri">https://en.wikipedia.org/wiki/Color_symbolism</a></p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+</section>
+<section id="your-turn-colourcultural-interpretations" class="slide level2 activity smaller">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Colour—cultural interpretations</h2>
+<p>Activity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="hexagon-red"></span></p>
+<p><span class="hexagon-orange"></span></p>
+<p><span class="hexagon-yellow"></span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="hexagon-green"></span></p>
+<p><span class="hexagon-blue"></span></p>
+<p><span class="hexagon-violet"></span></p>
+</div></div>
+<div id="timer_2491fc365160b535b2d47dd1562bdea19cf16843" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<aside class="notes">
+<p>Big design implications for data visualization</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation" class="slide level2">
+<h2>Colour—representation</h2>
+<p><img data-src="../images/ssd.jpg" class="absolute" style="top: 0px; right: 0px; width: 30%; " alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."></p>
+<p>First, some general questions…</p>
+<p>What does data look like to a computer?</p>
+<p><br>
+<br>
+</p>
+<p>Is that enough?</p>
+<div class="footer">
+<p><a href="https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/" class="uri">https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/</a></p>
+</div>
+<aside class="notes">
+<ol type="1">
+<li>Positive and negative charges interpreted as 1 and 0.</li>
+<li>Binary digits = <em>bits</em></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-1" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use bits to represent integers?</p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>10<sup>3</sup></td>
+<td>10<sup>2</sup></td>
+<td>10<sup>1</sup></td>
+<td>10<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="text-hidden">10<sup>3</sup></span></td>
+<td><span class="text-hidden">10<sup>2</sup></span></td>
+<td><span class="text-hidden">10<sup>1</sup></span></td>
+<td><span class="text-hidden">10<sup>0</sup></span></td>
+</tr>
+<tr class="even">
+<td><span class="text-hidden">2</span><sup>3</sup></td>
+<td><span class="text-hidden">2</span><sup>2</sup></td>
+<td><span class="text-hidden">2</span><sup>1</sup></td>
+<td><span class="text-hidden">2</span><sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Talk about the BASE of the number.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-2" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What’s the highest number we can represent with 4 bits?</p>
+<p><br>
+<br>
+</p>
+<p>What’s the highest number we can represent with 5 bits?</p>
+<p><br>
+<br>
+</p>
+<p>How many bits do we need to express 120?</p>
+<p><br>
+<br>
+</p>
+<aside class="notes">
+<p>Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.</p>
+<p>How does this help us with colour?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-3" class="slide level2">
+<h2>Colour—representation</h2>
+<p>Can we use integers to represent colours?</p>
+<p>One way: RGB (red, green, blue), where each “component” is in range 0 through 255.</p>
+<p>ex. (<code>255, 0, 127</code>) == <span style="position: relative; top: 11px;"><span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-apricot"></span></span></p>
+<p>Fun calculator for colour values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></p>
+<p>How many bits for 256 values? <code>4  5  6  7  8  9  10</code></p>
+</section>
+<section id="colourrepresentation-4" class="slide level2">
+<h2>Colour—representation</h2>
+<p>What colour is</p>
+<div class="small-font-size">
+<p><br>
+</p>
+<p><code>0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1</code></p>
+<p><br>
+</p>
+</div>
+<p>Easier to read if we use <em>hexadecimal</em> representation:</p>
+<p>Each component is represented by 2 hex digits <code>0123456789abcdef</code></p>
+<p>ex. <code>#674ea7</code> <span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-orange"></span></p>
+<aside class="notes">
+<p>Hex = base 16</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colourrepresentation-aside" class="slide level2">
+<h2>Colour—representation (aside)</h2>
+<p>What do you observe about the following RGB colours?</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Green</th>
+<th style="text-align: center;">Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">178</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">95</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="colour-and-code" class="slide level2 smaller">
+<h2>Colour and Code</h2>
+<p>Make the poppies pop!</p>
+
+<img data-src="../images/poppyfield.jpg" alt="A field of red poppies." class="r-stretch"><p>PC: <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/" class="uri">https://www.epicgardening.com/spring-wildflowers-from-seed/</a></p>
+<p>Examine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.</p>
+</section>
+<section id="colour-and-code-1" class="slide level2">
+<h2>Colour and Code</h2>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSB0eXBpbmcgaW1wb3J0IFR1cGxlXG5pbXBvcnQgbnVtcHkgYXMgbnBcbmZyb20gc2tpbWFnZSBpbXBvcnQgaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuUGl4ZWwgPSBUdXBsZVtucC51aW50OCwgbnAudWludDgsIG5wLnVpbnQ4XSAgIyAociwgZywgYilcblxuJycnSW5wdXQ6IFBpeGVsIHBcbiAgIE91dHB1dDogUGl4ZWxcbiAgIEZ1bmN0aW9uOiBJZiB0aGUgcGl4ZWwgaGFzIGhpZ2ggcmVkIHZhbHVlLCB0aGVuIGRvbid0IGNoYW5nZSBpdCwgb3RoZXJ3aXNlXG4gICBmYWRlIHRoZSBwaXhlbCB0byBncmV5LiAgTm90ZSwgdG8gZ3JleSBhIHBpeGVsLCBzZXQgYWxsIGNvbG91ciBjaGFubmVscyB0b1xuICAgdGhlIGF2ZXJhZ2Ugb2YgdGhlIDMuXG4nJydcbmRlZiBib29zdF9yZWRfcGl4ZWwocDogUGl4ZWwpIC0+IFBpeGVsOlxuICAgICMgc2V0dXAgLS0gZXh0cmFjdCB0aGUgY29sb3VyIGNoYW5uZWxzIGFzIGludHNcbiAgICByZWQgPSBpbnQocFswXSlcbiAgICBncmVlbiA9IGludChwWzFdKVxuICAgIGJsdWUgPSBpbnQocFsyXSlcblxuICAgICMgY29tcHV0ZSBncmV5IFxuXG5cbiAgICAjIGNvbmRpdGlvbmFsbHkgY2hhbmdlIHRoZSBwaXhlbCB0byBncmV5XG5cblxuICAgICMgcmV0dXJuIHVwZGF0ZWQgcGl4ZWxcbiAgICByZXR1cm4gUGl4ZWwoKHJlZCwgZ3JlZW4sIGJsdWUpKVxuXG4nJycgSW5wdXQ6IG5wLm5kYXJyYXkgcmVwcmVzZW50aW5nIGFuIGltYWdlXG4gICAgT3V0cHV0OiBhbiBucC5uZGFycmF5IHJlcHJlc2VudGluZyBhbiBpbWFnZVxuICAgIEZ1bmN0aW9uOiBDcmVhdGUgYSBuZXcgaW1hZ2UgYnkgYXBwbGluZyB0aGUgYm9vc3RfcmVkX3BpeGVsIFxuICAgIGZ1bmN0aW9uIHRvIGV2ZXJ5IHBpeGVsIGluIHRoZSBvcmlnaW5hbCwgYW5kIHNhdmluZyB0aGUgXG4gICAgcmVzdWx0IHRvIHRoZSBjb3B5LlxuJycnXG5cbmRlZiBmYW5jaWZ5KGltZzogbnAubmRhcnJheSkgLT4gbnAubmRhcnJheTpcbiAgICBILCBXID0gaW1nLnNoYXBlWzoyXSAjIGdyYWIgdGhlIGhlaWdodCBhbmQgd2lkdGggb2YgdGhlIGltYWdlXG4gICAgb3V0ID0gaW1nLmNvcHkoKSAgICAgIyB3cml0ZSB0byBhIGNvcHkgLS0gZWFzeSB3YXkgdG8gZ2V0IHRoZSBzaXplIHJpZ2h0XG5cbiAgICAjIHRyYXZlcnNlIGV2ZXJ5IHBpeGVsIGluIHRoZSBpbWFnZSBhbmQgd3JpdGUgdG8gdGhlIGNvcHkhXG4gICAgXG5cblxuICAgICMgcmV0dXJuIGltYWdlIHdpdGggY2hhbmdlZCBwaXhlbHNcbiAgICByZXR1cm4gb3V0XG5cbmRlZiBtYWluKCkgLT4gTm9uZTpcbiAgICBcbiAgICBpbWcgPSBpby5pbXJlYWQoJ2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9VQkMtQ1MvY3BzYzIwMy9yZWZzL2hlYWRzL21haW4vaW1hZ2VzL3BvcHB5ZmllbGQuanBnJylbLi4uLCA6M10gICAgICMgcmVhZCBmcm9tIHdlYnNpdGUsIGtlZXAgZmlyc3QgMyBjaGFubmVscyAoUkdCKVxuICAgIFxuICAgIG91dCA9IGZhbmNpZnkoaW1nKSAgICAgICAgICAgICMgbWFrZSBhIG5ldyBmYW5jeSBpbWFnZVxuXG4gICAgcGx0Lmltc2hvdyhvdXQpICAgICAgICAgICAgICAgIyBvdXRwdXQgdGhlIHJlc3VsdHNcbiAgICBwbHQuYXhpcygnb2ZmJylcbiAgICBwbHQuc2hvdygpXG5cbm1haW4oKSJ9
+</script>
+</div>
+<aside class="notes">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> typing <span class="im">import</span> Tuple</span>
+<span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb1-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>Pixel <span class="op">=</span> Tuple[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="co">'''Input: Pixel p</span></span>
+<span id="cb1-9"><a></a><span class="co">   Output: Pixel</span></span>
+<span id="cb1-10"><a></a><span class="co">   Function: If the pixel has high red value, then don't change it, otherwise</span></span>
+<span id="cb1-11"><a></a><span class="co">   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to</span></span>
+<span id="cb1-12"><a></a><span class="co">   the average of the 3.</span></span>
+<span id="cb1-13"><a></a><span class="co">'''</span></span>
+<span id="cb1-14"><a></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
+<span id="cb1-15"><a></a>    <span class="co"># setup -- extract the colour channels as ints</span></span>
+<span id="cb1-16"><a></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
+<span id="cb1-17"><a></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
+<span id="cb1-18"><a></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
+<span id="cb1-19"><a></a>    <span class="co"># compute grey </span></span>
+<span id="cb1-20"><a></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue)<span class="op">//</span><span class="dv">3</span></span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a>    <span class="co"># conditionally change the pixel to grey</span></span>
+<span id="cb1-23"><a></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
+<span id="cb1-24"><a></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
+<span id="cb1-25"><a></a></span>
+<span id="cb1-26"><a></a>    <span class="co"># return updated pixel</span></span>
+<span id="cb1-27"><a></a>    <span class="cf">return</span> (red, green, blue)</span>
+<span id="cb1-28"><a></a></span>
+<span id="cb1-29"><a></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb1-30"><a></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>] <span class="co"># grab the height and width of the image</span></span>
+<span id="cb1-31"><a></a>    out <span class="op">=</span> img.copy()     <span class="co"># write to a copy</span></span>
+<span id="cb1-32"><a></a></span>
+<span id="cb1-33"><a></a>    <span class="co"># traverse every pixel in the image and change it!</span></span>
+<span id="cb1-34"><a></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
+<span id="cb1-35"><a></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
+<span id="cb1-36"><a></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row,col])</span>
+<span id="cb1-37"><a></a></span>
+<span id="cb1-38"><a></a>    <span class="co"># return image with changed pixels</span></span>
+<span id="cb1-39"><a></a>    <span class="cf">return</span> out</span>
+<span id="cb1-40"><a></a></span>
+<span id="cb1-41"><a></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-42"><a></a>    </span>
+<span id="cb1-43"><a></a>    img <span class="op">=</span> io.imread(<span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span>)[..., :<span class="dv">3</span>]     <span class="co"># keep first 3 channels (RGB)</span></span>
+<span id="cb1-44"><a></a>    </span>
+<span id="cb1-45"><a></a>    out <span class="op">=</span> fancify(img)</span>
+<span id="cb1-46"><a></a>  </span>
+<span id="cb1-47"><a></a>    plt.imshow(out)</span>
+<span id="cb1-48"><a></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb1-49"><a></a>    plt.show()</span>
+<span id="cb1-50"><a></a>  </span>
+<span id="cb1-51"><a></a>main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-change-image-or-boost" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Change image or boost</h2>
+<p>Find an online image you would like to boost and use its URL in the code we just wrote.</p>
+<p>How can you adjust the code to manipulate the colours in a different way?</p>
 
 
 <script type="pyodide-data">
@@ -484,7 +732,7 @@ W10=
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -609,9 +857,9 @@ W10=
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

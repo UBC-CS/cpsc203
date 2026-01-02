@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2025-11-13">
+  <meta name="dcterms.date" content="2025-10-16">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,8 +31,28 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ae3d5caae53fa4640155f23cbb41086.css">
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7e745c094e38f47e1e49ac7c09d7c9b4.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,10 +150,10 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:description" content="CPSC 203, 2025 W1">
+<meta property="og:description" content="CPSC 203, 2025 W2">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:description" content="CPSC 203, 2025 W1">
+<meta name="twitter:description" content="CPSC 203, 2025 W2">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
@@ -142,277 +162,166 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Programming, problem solving, and algorithms</h1>
-  <p class="subtitle">CPSC 203, 2025 W1</p>
+  <p class="subtitle">CPSC 203, 2025 W2</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">November 13, 2025</p>
+  <p class="date">October 16, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
 <section>
-<section id="sudoku" class="title-slide slide level1 center">
-<h1>Sudoku</h1>
+<section id="voronoi-diagrams" class="title-slide slide level1 center">
+<h1>Voronoi Diagrams</h1>
 
 </section>
-<section id="rush-hour" class="slide level2">
-<h2>Rush Hour</h2>
+<section id="everyone-needs-a-tim-horton" class="slide level2">
+<h2>Everyone needs a Tim Horton</h2>
 <div class="columns">
-<div class="column">
-<p><img data-src="../images/gr5.png"></p>
-</div><div class="column">
-<p><img src="../images/gr5rh.png" width="30%"></p>
-<p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
-<ul>
-<li><span class="math inline">\(V\)</span>:</li>
-<li><span class="math inline">\(E\)</span>:</li>
-</ul>
-<p>Path:</p>
+<div class="column" style="width:33%;">
+<div class="small-font-size">
+<p>Every address in Vancouver has a nearest TH.</p>
+<p>Partition Vancouver into regions so that points are in the same region if they have the same nearest TH.</p>
+</div>
+</div><div class="column" style="width:67%;">
+<p><img data-src="../images/tim-hortons-map.png" alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."></p>
 </div></div>
 </section>
-<section id="representing-sudoku" class="slide level2">
-<h2>Representing Sudoku</h2>
-<ul>
-<li>A <em>representation</em> of a system is a model of the system that is useful in analysis.</li>
-<li>A <em>state space</em> is a collection of all possible configurations of a physical system.</li>
-<li>Each configuration is described using its representation, and is called a <em>state</em>.</li>
-</ul>
-<p>How would you represent the game of Sudoku?</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"></section>
-<section id="state-space-graphs" class="slide level2">
-<h2>State Space Graphs</h2>
-<p>Define a graph where every vertex is ________________________, and edge (u,v) means ________________________.</p>
-<p>How many neighbors does this vertex have?</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"></section>
-<section id="tictactoe-state-space-graph" class="slide level2">
-<h2>TicTacToe State Space Graph</h2>
-
-<img data-src="../images/su2tictactoe.png" class="r-stretch"></section>
-<section id="searching-state-space-graphs" class="slide level2">
-<h2>Searching State Space Graphs</h2>
-
-<img data-src="../images/su3many.png" class="r-stretch"></section>
-<section id="depth-first-search" class="slide level2">
-<h2>Depth First Search</h2>
+<section id="voronoi-diagrams-1" class="slide level2">
+<h2>Voronoi diagrams</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="../images/su4ariadne.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../images/su5maze.png"></p>
+<div class="column" style="width:33%;">
+<div class="small-font-size">
+<p>Given a (finite) set of “centres” <span class="math inline">\(c_{1}, c_{2}, \ldots, c_{k}\)</span>, a Voronoi region, <span class="math inline">\(R_{j}\)</span> consists of the set of points nearer to centre <span class="math inline">\(c_{j}\)</span>, than to any other centre.</p>
+<p>Together, the <span class="math inline">\(R_{j}\)</span> regions compose the Voronoi diagram of a plane.</p>
+</div>
+</div><div class="column" style="width:67%;">
+<p><img data-src="../images/tim-hortons-map.png" alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."></p>
 </div></div>
-<p><a href="https://www.youtube.com/watch?v=8qrZ1clEp-Y" class="uri">https://www.youtube.com/watch?v=8qrZ1clEp-Y</a></p>
+<aside class="notes">
+<p>Every point in plane is in some region and no point is in 2 regions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="stacks" class="slide level2">
-<h2>Stacks</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p>Programmatic manifestation of a ________________.</p>
+<section id="section" class="slide level2" data-background-image="../images/aerial-view-of-trees.png" data-background-size="cover" data-menu-title="Aerial view of tree tops">
+<h2></h2>
+<div class="sr-only">
+<p>Aerial view of trees illustrating how the tree tops resemble and can be modeled as Voronoi diagram.</p>
+</div>
+<div class="fragment">
+<p><img data-src="../images/voronoi-diagram-of-trees.jpg" class="absolute" style="bottom: =; right: 0px; height: 50%; " alt="Voronoi diagram of trees showing their centres and regions."></p>
+</div>
+<div class="footer" style="background-color:rgba(256,256,256,0.6)">
+<p><span class="smaller absolute" style="bottom: 0px; right: 0px; ">From <span class="citation" data-cites="abellanas2016">Abellanas et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></span></p>
+</div>
+<aside class="notes">
+<p>Mention that there were actually 3D models. Also, <strong>weighted</strong> Voronoi diagrams…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="more-examples" class="slide level2">
+<h2>More Examples</h2>
+<p><a href="https://www.khanacademy.org/partner-content/pixar/pattern/dino/v/patterns2_new" class="uri">https://www.khanacademy.org/partner-content/pixar/pattern/dino/v/patterns2_new</a></p>
+<center>
+<img data-src="../images/Vleg.jpg" alt="A computer generated dinosaur leg with scales.">
+</center>
+</section>
+<section id="yet-more-examples" class="slide level2 smaller">
+<h2>Yet More Examples</h2>
+<ul>
+<li><p>Robotics – Path planning in the presence of obstacles</p></li>
+<li><p>Zoology – Model and analyze the territories of animals</p></li>
+<li><p>Astronomy – Identify clusters of stars and clusters of galaxies</p></li>
+<li><p>Biology, Ecology, Forestry – Model and analyze plant competition</p></li>
+<li><p>Cartography – Piece together satellite photographs into large “mosaic” maps</p></li>
+<li><p>Geography – Analyzing patterns of urban settlements</p></li>
+<li><p>Marketing – Model market of US metropolitan areas;</p></li>
+<li><p>Metallurgy – Modelling “grain growth” in metal films</p></li>
+<li><p>Meteorology – Estimate regional rainfall averages, given data at discrete rain gauges</p></li>
+<li><p>Physiology – Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport (“Capillary domains”)</p></li>
+<li><p>Anthropology and Archeology – Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.</p></li>
+<li><p>Crystallography and Chemistry – Study chemical properties of metallic sodium); Modelling alloy structures as sphere packings (“Domain of an atom”)</p></li>
+<li><p>Geology – Estimation of ore reserves in a deposit using info obtained from bore holes; modelling crack patterns in basalt due to contraction on cooling</p></li>
+</ul>
+</section>
+<section id="computing-voronoi-diagrams" class="slide level2 smaller">
+<h2>Computing Voronoi Diagrams</h2>
+<p>Choice of algorithm depends on the domain of the data.</p>
 <p>&nbsp;</p>
-<p>Stack functions:</p>
-<ul>
-<li>Insert: <code>push(item)</code></li>
-<li>Remove: <code>pop()</code> <span class="math inline">\(\rightarrow\)</span> <code>item</code></li>
-</ul>
-<p>Deque functions:</p>
-<ul>
-<li>Insert: <code>append(item)</code></li>
-<li>Remove: <code>pop()</code> <span class="math inline">\(\rightarrow\)</span> <code>item</code></li>
-</ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="../images/su6pez.png"></p>
-</div></div>
+<p>If real valued domain (like Cartesian Coords) then we use geometry, exploiting the fact that the Voronoi edges are perpendicular bisectors of the edge between 2 centers.</p>
+<p>&nbsp;</p>
+<p><em>Our</em> computation will always be on planar regions represented by images.</p>
+<p>&nbsp;</p>
+<p>Data for the problem:</p>
+<ol type="1">
+<li></li>
+<li></li>
+</ol>
+<p>Data for the solution:</p>
+<ol type="1">
+<li></li>
+<li></li>
+</ol>
 </section>
-<section id="flood-fill" class="slide level2 smaller">
-<h2>Flood Fill</h2>
+<section id="distance-between-pixels" class="slide level2">
+<h2>Distance Between Pixels</h2>
+<p>&nbsp;</p>
+<p>Find the distance between 2 pixel locations:</p>
+
+<img data-src="../images/Vpt1.jpg" alt="A 6x6 grid with 2 colored cells." class="r-stretch"><aside class="notes">
+<p>label points p1=(x1,y1) p2=(x2,y2) label 0,0 show distance formula and triangle</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="distance-between-pixels-1" class="slide level2">
+<h2>Distance Between Pixels</h2>
+<p>Given a point and two centers, determine which is the nearest center…</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../images/FF1.png"></p>
-<ul>
-<li>enqueue the center</li>
-<li>while the queue is not empty:
-<ul>
-<li>v = dequeue</li>
-<li>for each valid neighbor w of v:
-<ul>
-<li>process w</li>
-<li>enqueue w</li>
-</ul></li>
-</ul></li>
-</ul>
+<p>:<img data-src="../images/Vpt1.jpg" alt="A 6x6 grid with 2 colored cells."></p>
 </div><div class="column" style="width:50%;">
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 800 960" width="420" height="560" role="img">
-<defs>
-<style>
-      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
-      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    </style>
-</defs> <path id="center" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="outer"></path> <path id="edge" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="inner"></path>
-</svg>
+<p><img data-src="../images/Vpt2.jpg" alt="A 6x6 grid with 2 colored cells."></p>
 </div></div>
 </section>
-<section id="depth-first-search-1" class="slide level2 smaller">
-<h2>Depth First Search</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 220" width="400" height="220" role="img" aria-label="Graph with vertices A,B,C,D,E">
-<style>
-    .node { fill:#d9f3f7; stroke:#000; stroke-width:4; }
-    .edge { stroke:#000; stroke-width:4; fill:none; }
-    .label { font: 18px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial;
-             text-anchor:middle; dominant-baseline:middle; }
-  </style>
-<line x1="80" y1="110" x2="200" y2="50" class="edge"></line> <line x1="80" y1="110" x2="200" y2="170" class="edge"></line> <line x1="200" y1="50" x2="200" y2="170" class="edge"></line> <line x1="200" y1="50" x2="260" y2="110" class="edge"></line> <line x1="200" y1="170" x2="260" y2="110" class="edge"></line> <line x1="200" y1="50" x2="340" y2="110" class="edge"></line> <line x1="260" y1="110" x2="340" y2="110" class="edge"></line> <line x1="200" y1="170" x2="340" y2="110" class="edge"></line> <circle cx="200" cy="50" r="22" class="node"></circle> <circle cx="80" cy="110" r="22" class="node"></circle> <circle cx="200" cy="170" r="22" class="node"></circle> <circle cx="260" cy="110" r="22" class="node"></circle> <circle cx="340" cy="110" r="22" class="node"></circle> <text x="200" y="50" class="label">A</text> <text x="80" y="110" class="label">B</text> <text x="200" y="170" class="label">C</text> <text x="260" y="110" class="label">D</text> <text x="340" y="110" class="label">E</text>
-</svg>
-<ul>
-<li>process start vertex</li>
-<li><code>push(start_vertex)</code></li>
-<li>while the <code>stack</code> is not empty:
-<ul>
-<li>v = <code>pop()</code></li>
-<li>for each valid neighbor <code>w</code> of <code>v</code>:
-<ul>
-<li>process w</li>
-<li><code>push(w)</code></li>
-</ul></li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 800 960" width="420" height="560" role="img">
-<defs>
-<style>
-      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
-      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    </style>
-</defs> <path id="center" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="outer"></path> <path id="edge" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="inner"></path>
-</svg>
-</div></div>
-</section>
-<section id="algorithm-planning" class="slide level2">
-<h2>Algorithm Planning</h2>
-<p>Overall strategy:</p>
-<ul>
-<li>Move forward through the states (board configurations) until you can’t go any farther.</li>
-<li>If the board is complete, you win!</li>
-<li>If the board is not complete, then back up and try a new state in the most recent cell possible.</li>
-</ul>
-</section>
-<section id="searching-state-space-graphs-1" class="slide level2">
-<h2>Searching State Space Graphs</h2>
+<section id="design-an-algorithm" class="slide level2">
+<h2>Design an Algorithm</h2>
 
-<img data-src="../images/su3many.png" class="r-stretch"></section>
-<section id="moving-toward-implementation" class="slide level2">
-<h2>Moving toward implementation</h2>
-<p>Need to be able to check whether a candidate entry is <em>valid</em>.</p>
-<div class="columns">
-<div class="column">
-<p>Suppose we have a variable <code>grid</code>, representing the board, and we want to place a value called <code>num</code>, in position (x,y).</p>
-<p>Need to check uniqueness in:</p>
-<ul>
-<li>row</li>
-<li>column</li>
-<li>block</li>
-</ul>
-</div><div class="column">
-<p><img data-src="../images/su7numcheck.png"></p>
-<p>Which conditional checks a row?</p>
-<p>Which conditional checks a column?</p>
-<p>How shall we check a block?</p>
-</div></div>
-</section>
-<section id="block-validity" class="slide level2">
-<h2>Block Validity</h2>
-<p><strong>Python tidbit</strong>: to query a region in a 2d numpy matrix, just define the bounds on the region and use <code>in</code>.</p>
-<p>In the small example below, <code>2 in grid[0:2,0:2]</code> returns <code>True</code>.</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"><p><strong>New puzzle</strong>: given a location (x,y) how do we define its region?</p>
-</section>
-<section id="defining-regions" class="slide level2">
-<h2>Defining Regions</h2>
-<p>Given location <span class="math inline">\((x,y)\)</span>, determine the region in which it lives.</p>
-<div class="columns">
-<div class="column" style="width:80%;">
-<ul>
-<li><p>a region <code>s:t</code> contains <span class="math inline">\(x\)</span> if <span class="math inline">\(s\leq x&lt; t\)</span></p></li>
-<li><p>for a <span class="math inline">\(4\times 4\)</span> grid, the block size is 2</p></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<p><img data-src="../images/su1smallgrid.png"></p>
-</div></div>
-<p><img data-src="../images/su8regions.png"></p>
-</section>
-<section id="generalize" class="slide level2">
-<h2>Generalize</h2>
-<p>Find the region for point <span class="math inline">\((x,y)\)</span> in a <span class="math inline">\(r^2\times r^2\)</span> grid.</p>
-<p>Hint: In python, <code>x//r</code> is the integer part of “<code>x</code> divided by <code>r</code>”.</p>
-</section>
-<section id="another-puzzle" class="slide level2 smaller">
-<h2>Another Puzzle</h2>
-<p>The locations in sudoku are specified by <span class="math inline">\((x,y)\)</span>. As we advance our solution, we can loop over the ranges of <span class="math inline">\(x\)</span> (<span class="math inline">\(W\)</span>) and <span class="math inline">\(y\)</span> (<span class="math inline">\(H\)</span>), but it would be easier if we could just iterate over the values 0 up to <span class="math inline">\(W\times H\)</span>.</p>
-<p>Write a function <code>postup</code> that takes an integer position <code>p</code> as input, and returns an <code>(x,y)</code> position. You may assume that the height and width of the grid is stored in a variable called <code>states</code>.</p>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../images/su1smallgrid.png"></p>
-</div><div class="column" style="width:70%;">
-<div>
-<div id="pyodide-1" class="exercise-cell">
-
-</div>
-<script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3RhdGVzID0gMTBcbmRlZiBwb3N0dXAocCk6XG4gICAgcGFzc1xuXG5wcmludChwb3N0dXAoMjMpKSJ9
-</script>
-</div>
-</div></div>
-</section>
-<section id="demo" class="slide level2 activity">
-<h2>Demo</h2>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2613353">PrairieLearn Activity</a></p>
-</section>
-<section id="a-closing-thought" class="slide level2">
-<h2>A Closing Thought</h2>
-<p>Could we be smarter?</p>
-
-<img data-src="../images/su8grids.png" class="r-stretch"></section>
-<section id="another-closing-thought" class="slide level2">
-<h2>Another Closing Thought</h2>
-<p>Is our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?)</p>
-<ul>
-<li>3: 9x9</li>
-<li>4: 16x16</li>
-<li>5: 25x25</li>
-<li>6: 36x36</li>
-</ul>
-<p>Sudoku is known to be “NP-Complete”.</p>
+<img data-src="../images/Valgorithmgrid.jpg" alt="A large grid with 3 colored centers." class="r-stretch"></section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
 
-<script type="pyodide-data">
-eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
-</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+eyJjb250ZW50cyI6W119
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -425,6 +334,11 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-abellanas2016" class="csl-entry" role="listitem">
+Abellanas, Begoña, Manuel Abellanas, Arne Pommerening, Dolores Lodares, and Simón Cuadros. 2016. <span>“A Forest Simulation Approach Using Weighted Voronoi Diagrams. An Application to Mediterranean Fir Abies Pinsapo Boiss Stands.”</span> <em>Forest Systems</em> 25 (2): e062–62. <a href="https://doi.org/10.5424/fs/2016252-08021">https://doi.org/10.5424/fs/2016252-08021</a>.
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -486,7 +400,7 @@ W10=
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -611,9 +525,9 @@ W10=
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
