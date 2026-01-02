@@ -25,7 +25,7 @@ execute:
 **Class**\
 {{< var course.time >}}\
 [360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)\
-Livestream <a href="https://canvas.ubc.ca/courses/170624/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+Livestream <a href="https://canvas.ubc.ca/courses/176702/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
 :::::
 
@@ -53,6 +53,9 @@ library(readr)
 library(stringr)
 library(tidyr)
 
+# PrairieLearn/PrairieTest URLs
+prairietest_url <- "https://us.prairietest.com"
+
 # Generate ids for each link to join into schedule
 resources_paths <-
   c(
@@ -76,8 +79,30 @@ resources <-
 
 current_date <- today()
 
-schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
+schedule <- read_csv(
+  here("data", "schedule.csv"),
+  col_types = cols(
+    part = col_character(),
+    week = col_character(),
+    date = col_date(),
+    tue_activity = col_character(),
+    thu_activity = col_character(),
+    lab = col_character(),
+    potw = col_character(),
+    project = col_character(),
+    project_due = col_character(),
+    exam = col_character(),
+    exam_available = col_date(),
+    exam_practice = col_character()
+  )
+) |>
   left_join(resources, by = join_by(week), na_matches = "never") |>
+  # Add missing slide columns if they don't exist (no slides yet)
+  mutate(
+    tue_slides = if ("tue_slides" %in% names(pick(everything()))) tue_slides else NA_character_,
+    thu_slides = if ("thu_slides" %in% names(pick(everything()))) thu_slides else NA_character_,
+    weekly_summaries = if ("weekly_summaries" %in% names(pick(everything()))) weekly_summaries else NA_character_
+  ) |>
   relocate(tue_slides, .before = tue_activity) |>
   relocate(thu_slides, .before = thu_activity) |>
   mutate(
@@ -93,11 +118,23 @@ schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
       saturday_before <= current_date ~ TRUE,
       .default = FALSE
     ),
-    upcoming_exam_due = exam_due
-  ) |>
-  fill(upcoming_exam_due, .direction = "up") |>
-  mutate(
-    exam_due_within_12_days = upcoming_exam_due <= current_date + days(12)
+    # Create project display (always visible for planning, but no link until live)
+    project_display = project,
+    # Examlet booking becomes available 2 weeks before
+    # exam_available contains the date when examlet opens for scheduling
+    exam_available_date = as.Date(exam_available),
+    exam_booking_live = !is.na(exam_available_date) &
+      (exam_available_date - days(14)) <= current_date,
+    # Create single examlet column: shows prep icon OR exam link (never both in same week)
+    examlet_display = case_when(
+      # Exam booking (only show as link if booking is live)
+      !is.na(exam) & exam_booking_live ~ glue("[{exam}]({prairietest_url})"),
+      # Exam booking not yet live - show name without link
+      !is.na(exam) ~ as.character(exam),
+      # Practice material (in week before examlet) - no link for now
+      !is.na(exam_practice) ~ as.character(fa("pen-to-square")),
+      .default = NA_character_
+    )
   )
 ```
 
@@ -112,26 +149,14 @@ schedule |>
       glue("[{week} {fa('circle-info')}]({weekly_summaries})"),
       week
     ),
-    # Show only resources for exams due within 12 days or before
-    exam = if_else(
-      exam_due_within_12_days,
-      glue("[{exam}](https://us.prairietest.com)", .na = NULL),
-      exam
-    ),
-    exam_practice = if_else(
-      exam_due_within_12_days,
-      exam_practice,
-      NA
-    ),
     # Remove any resources from future weeks
     across(
       starts_with(c("tue", "thu", "lab", "potw")),
       \(column) if_else(show_week, column, NA)
-    )
+    ),
+    # Always show project names (as cold links) - they're visible for planning
   ) |>
-  gt(
-    # groupname_col = "part"
-  ) |>
+  gt() |>
   fmt_url(
     columns = week,
     rows = !is.na(weekly_summaries),
@@ -153,20 +178,12 @@ schedule |>
     missing_text = fa("window-maximize", fill_opacity = 0.1)
   ) |>
   fmt_url(
-    columns = ends_with("activitiy"),
+    columns = ends_with("activity"),
     label = fa("file-alt")
   ) |>
   sub_missing(
     columns = ends_with("activity"),
     missing_text = fa("file-alt", fill_opacity = 0.1)
-  ) |>
-  fmt_url(
-    columns = ends_with("video"),
-    label = fa("circle-play")
-  ) |>
-  sub_missing(
-    columns = ends_with("video"),
-    missing_text = fa("circle-play", fill_opacity = 0.1)
   ) |>
   fmt_url(
     columns = lab,
@@ -184,71 +201,37 @@ schedule |>
     columns = potw,
     missing_text = fa("calendar-week", fill_opacity = 0.1)
   ) |>
-  fmt_url(
-    columns = project,
-    label = fa("list-check")
+  # Project column (markdown formatted - contains project links)
+  fmt_markdown(
+    columns = project_display
   ) |>
-  sub_missing(
-    columns = project,
-    missing_text = fa("clipboard-list", fill_opacity = 0.1)
-  ) |>
-  fmt_date(
-    project_due,
-    date_style = "MMMd"
-  ) |>
-  fmt_url(
-    columns = exam,
-    rows = exam_due_within_12_days,
-    show_underline = FALSE
-  ) |>
-  fmt_date(
-    exam_due,
-    date_style = "MMMd"
-  ) |>
-  fmt_url(
-    columns = exam_practice,
-    label = fa("pen-to-square")
-  ) |>
-  sub_missing(
-    columns = exam_practice,
-    missing_text = fa("pen-to-square", fill_opacity = 0.1)
+  # Examlet column (markdown formatted - contains prep icon and/or exam link)
+  fmt_markdown(
+    columns = examlet_display
   ) |>
   cols_label(
     week = "Week",
     date = "Mon",
     tue_slides = "S",
     tue_activity = "A",
-    tue_video = "V",
     thu_slides = "S",
     thu_activity = "A",
-    thu_video = "V",
     lab = "Lab",
     potw = "POTW",
-    project = "Guide",
-    project_due = "Due",
-    exam = "Book",
-    exam_due = "Due",
-    exam_practice = "Practice"
+    project_display = "Project",
+    examlet_display = "Examlet"
   ) |>
   tab_spanner(
     label = "Tue",
-    columns = starts_with("tue")
+    columns = c(tue_slides, tue_activity)
   ) |>
   tab_spanner(
     label = "Thu",
-    columns = starts_with("thu")
-  ) |>
-  tab_spanner(
-    label = "Project",
-    columns = starts_with("project")
-  ) |>
-  tab_spanner(
-    label = "Examlet",
-    columns = c(exam, exam_due, exam_practice)
+    columns = c(thu_slides, thu_activity)
   ) |>
   cols_align(
     align = "center",
-    columns = c(lab, potw, exam_practice)
+    columns = c(lab, potw, project_display, examlet_display)
   ) |>
   tab_style(
     style = list(
@@ -271,8 +254,13 @@ schedule |>
       weekly_summaries,
       saturday_before,
       show_week,
-      upcoming_exam_due,
-      exam_due_within_12_days
+      project,
+      project_due,
+      exam,
+      exam_available,
+      exam_available_date,
+      exam_booking_live,
+      exam_practice
     )
   ) |>
   tab_options(

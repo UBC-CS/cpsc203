@@ -1,5 +1,5 @@
 ---
-date: 2025-09-04
+date: 2026-01-06
 ---
 
 # Introductions
@@ -14,7 +14,7 @@ date: 2025-09-04
   📧 [](mailto:)
   ⏰ TBD · 🏢 TBD
 
-- **TA: Joel Gunawan**
+- **TA: Paulette Koronkevich**
   📧 [](mailto:)
   ⏰ TBD · 🏢 TBD
 
@@ -121,22 +121,22 @@ This course will teach you a bunch of different things!
 ::::: columns
 ::: {.column style="width: 80%; font-size: 50%;"}
 
-| Week | Sunday     | T                                      | R                                      | Lab                                    | Examlet                                | POTW                                  | Practice                             |
-|:---:|------------|:---------------------------------------:|:---------------------------------------:|:--------------------------------------:|:--------------------------------------:|:-------------------------------------:|:------------------------------------:|
-|  1  | 8/31/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--class" title="Lecture">🎉</span> |                                        |                                        |                                       |                                      |
-|  2  | 9/7/2025   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> |                                        |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  3  | 9/14/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  4  | 9/21/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  5  | 9/28/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  6  | 10/5/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  7  | 10/12/2025 | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--off"  title="No class">&nbsp;</span> |                                        |                                        |                                       |                                      |
-|  8  | 10/19/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-|  9  | 10/26/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-| 10  | 11/2/2025  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-| 11  | 11/9/2025  | <span class="pill pill--off"  title="No class">&nbsp;</span> | <span class="pill pill--off"  title="No class">&nbsp;</span> |                                        |                                        |                                       |                                      |
-| 12  | 11/16/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-| 13  | 11/23/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |
-| 14  | 11/30/2025 | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        |                                       | <span class="pill pill--practice" title="Practice">🏋️</span> |
+| Week | Monday     | T                                      | R                                      | Lab                                    | Examlet                                | POTW                                  |
+|:---:|------------|:---------------------------------------:|:---------------------------------------:|:--------------------------------------:|:--------------------------------------:|:-------------------------------------:|
+|  1  | 1/5/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> |                                        |                                        |                                       |
+|  2  | 1/12/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> |                                        | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  3  | 1/19/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  4  | 1/26/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  5  | 2/2/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  6  | 2/9/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  7  | 2/16/2026  | <span class="pill pill--off"  title="Reading Week">&nbsp;</span> | <span class="pill pill--off"  title="Reading Week">&nbsp;</span> |                                        |                                        |                                       |
+|  8  | 2/23/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+|  9  | 3/2/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+| 10  | 3/9/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+| 11  | 3/16/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+| 12  | 3/23/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+| 13  | 3/30/2026  | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--exam" title="Examlet">🤩</span> | <span class="pill pill--potw" title="POTW">🏎️</span> |
+| 14  | 4/6/2026   | <span class="pill pill--class" title="Lecture">🎉</span>     | <span class="pill pill--class" title="Lecture">🎉</span> | <span class="pill pill--lab"  title="Lab/Tutorial">🪄</span> | <span class="pill pill--practice" title="Practice">🏋️</span> |                                       |
 
 
 :::
@@ -162,22 +162,21 @@ This course will teach you a bunch of different things!
 - 📧 **Email** [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)  
   Checked daily. Please place "CPSC203" in subject!
 
-- <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203">
+- <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203">
     <img src="https://tse2.mm.bing.net/th/id/OIP.usjgslq1FEPq7pholcHorQD6D6?pid=Api"
          alt="Piazza" style="height:20px; vertical-align:middle;">
-  </a> **Piazza** [piazza.com/ubc.ca/winterterm12025/cpsc203](https://piazza.com/ubc.ca/winterterm12025/cpsc203)  
+  </a> **Piazza** [piazza.com/ubc.ca/winterterm22025/cpsc203](https://piazza.com/ubc.ca/winterterm22025/cpsc203)
   Post questions for quick response.  
 
 - 🏫 **Office Hours**
 
 <div style="margin:auto; width:fit-content;">
 
-| Name  | Time        | Location & Zoom |
-|-------|-------------|-----------------|
-| Cinda | Mon 2–4pm   | 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:16px; vertical-align:middle;"></a> |
-| Minh Anh   | TBD | 🏢 TBD |
-| Joel       | TBD | 🏢 TBD |
-| TBD        | TBD | 🏢 TBD |
+| Name     | Time        | Location & Zoom |
+|----------|-------------|-----------------|
+| Cinda    | Mon 2–4pm   | 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:16px; vertical-align:middle;"></a> |
+| Minh Anh | TBD | 🏢 TBD |
+| Paulette | TBD | 🏢 TBD |
 
 </div>
 

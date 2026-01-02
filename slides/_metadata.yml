@@ -5,8 +5,11 @@ date-format: long
 format:
   live-revealjs:
     theme: theme.scss
+    width: 1280
+    height: 720
     chalkboard: true
     controls: true
+    slide-number: c/t
     revealjs-plugins:
       - drop
     drop:

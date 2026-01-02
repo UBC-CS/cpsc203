@@ -8,31 +8,301 @@
 
 /*-- scss:defaults --*/
 
-// Colours
+// ===========================================
+// FONTS
+// Economica for headers, Open Sans for body
+// ===========================================
+@import url('https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+$font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$presentation-heading-font: 'Economica', $font-family-sans-serif !default;
+$presentation-heading-font-weight: 700 !default;
+
+// ===========================================
+// FONT SIZES
+// Slightly smaller base, better hierarchy
+// ===========================================
+$presentation-font-size-root: 36px !default;
+$presentation-h1-font-size: 1.9em !default;
+$presentation-h2-font-size: 1.5em !default;
+$presentation-h3-font-size: 1.15em !default;
+
+// ===========================================
+// SPACING
+// Half-line feel: more breathing room
+// ===========================================
+$presentation-line-height: 1.45 !default;
+$presentation-block-margin: 0.5em !default;
+
+// ===========================================
+// BASE COLORS
+// ===========================================
+$body-bg: #ffffff !default;
+$body-color: #222222 !default;
+$link-color: #0066cc !default;
+
+// Code styling
+$code-block-bg: #f8f9fa !default;
+$code-color: #c7254e !default;
+
+// Small font size (legacy support)
 $small-font-size: 0.6em;
 
+// ===========================================
+// COLOR PALETTE
+// Vibrant teaching colors for emphasis
+// ===========================================
 $colors: (
+  // Original colors (backwards compatibility)
   "activity": #447099,
   "abbreviation": #4BFF37,
-  "red": #FF0000,
-  "pink": #FF4081,
-  "orange": #FF9900,
-  "apricot": #FFAA2B,
-  "yellow": #FFFF00,
-  "green": #00FF00,
-  "lime": #9DEE00,
-  "cyan": #00E3EE,
-  "blue": #0000FF,
-  "violet": #9900FF,
-  "purple": #674EA7
+
+  // Vibrant teaching palette
+  "red": #d62828,
+  "pink": #e91e8c,
+  "orange": #e85d04,
+  "apricot": #f4a261,
+  "yellow": #f9c74f,
+  "gold": #c9a227,
+  "green": #2a9d2a,
+  "lime": #70e000,
+  "cyan": #00b4d8,
+  "blue": #0077b6,
+  "violet": #7209b7,
+  "purple": #6a4c93,
+  "gray": #6c757d
 );
 
 /*-- scss:mixins --*/
 
 /*-- scss:rules --*/
 
-.reveal .activity {
-  background-color: theme-color("activity");
+// ===========================================
+// COLORED TEXT CLASSES
+// Usage: [important text]{.red} or **word**{.blue}
+// ===========================================
+
+@each $name, $color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+
+  // Bold + color combo
+  .#{$name}-bold {
+    color: $color;
+    font-weight: 700;
+  }
+}
+
+// Highlight backgrounds (for inline spans)
+.highlight-yellow { background-color: #fff3cd; padding: 0.1em 0.3em; border-radius: 3px; }
+.highlight-green { background-color: #d4edda; padding: 0.1em 0.3em; border-radius: 3px; }
+.highlight-blue { background-color: #cce5ff; padding: 0.1em 0.3em; border-radius: 3px; }
+.highlight-red { background-color: #f8d7da; padding: 0.1em 0.3em; border-radius: 3px; }
+.highlight-orange { background-color: #ffe8d6; padding: 0.1em 0.3em; border-radius: 3px; }
+.highlight-purple { background-color: #e8daef; padding: 0.1em 0.3em; border-radius: 3px; }
+
+// ===========================================
+// SIZE CLASSES
+// .medium is between regular and .smaller
+// .smaller is now less aggressive (0.8 vs old 0.7)
+// ===========================================
+
+.reveal .slides section {
+  // Medium - the new "comfortable smaller"
+  &.medium,
+  & .medium {
+    font-size: 0.88em;
+  }
+
+  // Smaller - adjusted to be more readable
+  &.smaller,
+  & .smaller {
+    font-size: 0.78em;
+  }
+
+  // Tiny - when you really need it small
+  &.tiny,
+  & .tiny {
+    font-size: 0.65em;
+  }
+
+  // Large - for emphasis
+  &.large,
+  & .large {
+    font-size: 1.15em;
+  }
+}
+
+// ===========================================
+// SPACING - Half-line feel
+// ===========================================
+
+// List items with half-line gaps
+.reveal .slides ul,
+.reveal .slides ol {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+
+  li {
+    margin-bottom: 0.3em;
+    line-height: 1.35;
+  }
+
+  // Nested lists slightly tighter
+  ul, ol {
+    margin-top: 0.2em;
+    li {
+      margin-bottom: 0.2em;
+    }
+  }
+}
+
+// Paragraphs
+.reveal .slides p {
+  margin-bottom: 0.45em;
+}
+
+// Explicit spacing utilities
+.mt-half { margin-top: 0.5em !important; }
+.mb-half { margin-bottom: 0.5em !important; }
+.mt-1 { margin-top: 1em !important; }
+.mb-1 { margin-bottom: 1em !important; }
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.pt-half { padding-top: 0.5em !important; }
+.pb-half { padding-bottom: 0.5em !important; }
+
+// Compact class for extra-tight spacing
+.compact {
+  ul, ol {
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
+    li { margin-bottom: 0.1em; }
+  }
+  p { margin-bottom: 0.25em; }
+}
+
+// ===========================================
+// HEADINGS
+// ===========================================
+
+.reveal h1, .reveal h2, .reveal h3 {
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+// Slide titles (h2) with subtle underline
+.reveal h2 {
+  border-bottom: 3px solid #0077b6;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.5em;
+}
+
+// Section divider slides (h1)
+.reveal section.title-slide h1,
+.reveal h1 {
+  border-bottom: none;
+}
+
+// Section divider styling - slides with only an h1
+// These get a distinctive look to break up the deck
+.reveal .slides section[data-auto-animate-target] > h1:only-child,
+.reveal .slides section > h1:only-child {
+  font-size: 2.2em;
+  margin-top: 1.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 4px solid #0077b6;
+  display: inline-block;
+}
+
+// Optional: use {.section} class for full-bleed colored sections
+.reveal section.section {
+  background: linear-gradient(135deg, #0077b6 0%, #023e8a 100%);
+
+  h1 {
+    color: white;
+    border: none;
+    font-size: 2.5em;
+    margin-top: 1em;
+  }
+}
+
+// ===========================================
+// CODE BLOCKS
+// ===========================================
+
+.reveal pre {
+  font-size: 0.52em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+// Smaller code in .smaller sections
+.reveal .slides section.smaller pre {
+  font-size: 0.45em;
+}
+
+// Explicit small-code class for pyodide/live code blocks (CodeMirror 6)
+.reveal .slides section.small-code .cm-editor {
+  font-size: 0.7em !important;
+}
+
+.reveal pre code {
+  padding: 0.8em 1em;
+  max-height: 480px;
+  line-height: 1.4;
+}
+
+// Inline code
+.reveal code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  background-color: #f4f4f4;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+// ===========================================
+// CALLOUTS
+// ===========================================
+
+.reveal .callout {
+  margin: 0.5em 0;
+  font-size: 0.82em;
+  border-radius: 6px;
+
+  .callout-title {
+    font-family: $presentation-heading-font;
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+}
+
+// ===========================================
+// TABLES
+// ===========================================
+
+.reveal table {
+  font-size: 0.72em;
+  margin: 0.4em auto;
+  border-collapse: collapse;
+
+  th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+    border-bottom: 2px solid #0077b6;
+  }
+
+  td, th {
+    padding: 0.35em 0.7em;
+    border: 1px solid #dee2e6;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
 }
 
 .medium-table table {
@@ -53,6 +323,63 @@ table caption {
   text-align: left;
 }
 
+// ===========================================
+// COLUMNS
+// ===========================================
+
+.reveal .columns {
+  gap: 1.2em;
+}
+
+// ===========================================
+// FRAGMENT TRANSITIONS
+// ===========================================
+
+.reveal .fragment {
+  transition: opacity 0.15s ease;
+}
+
+// ===========================================
+// LINKS
+// ===========================================
+
+.reveal a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+// ===========================================
+// UTILITIES
+// ===========================================
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
+
+// Subtle de-emphasis
+.muted, .dim {
+  opacity: 0.65;
+}
+
+// Strong emphasis box
+.emphasis-box {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 4px solid #0077b6;
+  padding: 0.6em 0.9em;
+  margin: 0.4em 0;
+  border-radius: 0 6px 6px 0;
+}
+
+// Activity slide background (legacy support)
+.reveal .activity {
+  background-color: theme-color("activity");
+}
+
 .abbreviation-highlight {
   color: theme-color("abbreviation");
 }
@@ -61,9 +388,7 @@ table caption {
   opacity: 0;
 }
 
-// Class for adding screen reader content to slide
-// Class originally from https://kittygiraudel.com/snippets/sr-only-class/
-// Discovered in discussion https://github.com/quarto-dev/quarto-cli/discussions/9914
+// Screen reader only (accessibility)
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -78,7 +403,10 @@ table caption {
   white-space: nowrap !important;
 }
 
-// Generate hexagons
+// ===========================================
+// HEXAGONS & SWATCHES (legacy support)
+// ===========================================
+
 @each $name, $color in $colors {
   .hexagon-#{$name} {
     background: $color;
@@ -90,7 +418,6 @@ table caption {
   }
 }
 
-// Generate swatches
 @each $name, $color in $colors {
   .swatch-#{$name} {
     background-color: $color;

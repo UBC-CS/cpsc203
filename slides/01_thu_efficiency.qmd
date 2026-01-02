@@ -1,14 +1,14 @@
 ---
-date: 2025-09-09
+date: 2026-01-08
 ---
 
 ## Announcements {.smaller}
 
 * Website getting closer -- Only setup is wrong (I think)
 
-* POTW starts today! <https://us.prairielearn.com/pl/course_instance/193300/assessment/2580122>
+* POTW starts today! <https://us.prairielearn.com/pl/course_instance/202804>
 
-* Enroll in CPSC203 on **PrairieTest**: <https://us.prairietest.com/pt/student/course/12360/enroll/172611186041>
+* Enroll in CPSC203 on **PrairieTest**: <https://us.prairietest.com>
 
 * First examlet signup available! 
 
@@ -38,7 +38,7 @@ Find 2 images, one which exemplifies your definition of
 elegance, and another, of the same type of subject, which
 decidedly does not.
 
-1. Navigate to the Elegance Gallery: <https://tinyurl.com/elegancegallery>
+1. Navigate to the Elegance Gallery: <https://tinyurl.com/eleganceGallery2025w2>
 
 2. Claim an available slide by entering a title.
 
@@ -75,11 +75,11 @@ Scissors
 
 ## {{< iconify fa6-solid laptop-code >}} Your turn: Elegance---definition {.activity}
 
-Gallery: <https://tinyurl.com/elegancegallery>
+Gallery: <https://tinyurl.com/eleganceGallery2025w2>
 
 After looking at the images in the gallery, reflect and write a short definition of the word *elegance*:
 
-<https://forms.gle/GL3yNZn7i7DT5qxW9>
+<https://forms.gle/MUkpWeGBdxYfnJT37>
 
 {{< countdown minutes=5 >}}
 
@@ -260,8 +260,10 @@ First blank: or write an algorithm
 - Total work is $n^2$
 
 :::
-::::: 
+:::::
 
+::::: columns
+::: {.column width="60%"}
 ```{pyodide}
 def knit_square_count(n):
     stitches = 0
@@ -269,8 +271,22 @@ def knit_square_count(n):
         for col in range(n):      # n stitches per row
             stitches += 1         # unit work
     return stitches               # = n*n
-            
+
 ```
+:::
+::: {.column width="40%" style="display: flex; justify-content: center; align-items: center;"}
+<table style="border-collapse: collapse; width: 250px; height: 250px;">
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td><td style="border: 1px solid black;"></td></tr>
+</table>
+:::
+:::::
 
 ::: notes
 
