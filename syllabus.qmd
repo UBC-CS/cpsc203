@@ -17,11 +17,11 @@ Welcome to CPSC203, where we treat programming as both a puzzle and a playground
   📧 [](mailto:)  
   ⏰ TBD · 🏢 TBD 
 
-- **TA: Joel Gunawan**
+- **TA: Paulette Koronkevich Gunawan**
   📧 [](mailto:)  
   ⏰ TBD · 🏢 TBD 
 
-- **TA: Timothy Solnyshkin**
+- **TA: TBD**
   📧 [](mailto:)  
   ⏰ TBD · 🏢 TBD 
 
@@ -63,9 +63,9 @@ Deliverables for the course include the following components:
 
 1. Problem of the Week (POTW) -- You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day. 
 
-2. Classroom Meetings -- Class meets Tue/Thu, 3:30-5p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants. 
+2. Classroom Meetings -- Class meets Tue/Thu, 11a-12:30p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants. 
 
-3. Lab -- The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are **asynchronous** video instruction, together with PrairieLearn exercises. There are 10 over the term, beginning in week 3. 
+3. Lab -- The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are presented in physical class meetings where you will work in groups to complete PrairieLearn assessments. There are ~10 over the term, beginning in week 2. 
 
 4. Examlets -- Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions. 
 
@@ -78,8 +78,8 @@ Deliverables for the course include the following components:
 
 | Item                 | Weight          | Due date(s)       |
 |----------------------|-----------------|-------------------|
-| Problems of the Week | 10% (10 x 1%)   | Fridays at 6 PM   |
-| Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
+| Problems of the Week | 10% (10 x 1%)   | Sundays at 11:59 PM   |
+| Labs                 | 5% (10 x 0.5%)  | Sundays at 11:59 PM   |
 | Programming Projects | 9% (3 x 3%)     | Three in the term |
 | Examlets.            | 50% (5 x 10%)   | \~ Bi-weekly      |
 | Final Exam           | 26%             | TBD               |

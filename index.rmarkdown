@@ -1,0 +1,271 @@
+---
+title: "{{< var course.full-title >}}"
+listing:
+  id: most-recent-announcement
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 1
+  fields: [title, subtitle, description, date, image, reading-time]
+execute:
+  freeze: false
+---
+
+**Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
+
+::::: columns
+::: {.column width="50%"}
+**Contact**\
+📧 [cheeren\@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)\
+⏰ Mon 2–4pm [appointment](https://canvas.ubc.ca/calendar)\
+🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+:::
+
+::: {.column width="50%"}
+**Class**\
+{{< var course.time >}}\
+[360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)\
+Livestream <a href="https://canvas.ubc.ca/courses/176702/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+:::
+:::::
+
+## Weekly announcement
+
+::: {#most-recent-announcement}
+:::
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+
+library(conflicted)
+library(dplyr)
+conflicts_prefer(dplyr::filter)
+library(fontawesome)
+library(fs)
+library(glue)
+library(gt)
+library(gtExtras)
+library(here)
+library(lubridate)
+library(readr)
+library(stringr)
+library(tidyr)
+
+# PrairieLearn/PrairieTest URLs
+prairietest_url <- "https://us.prairietest.com"
+
+# Generate ids for each link to join into schedule
+resources_paths <-
+  c(
+    path("slides"),
+    path("summaries")
+  )
+
+resources <-
+  tibble(
+    path = dir_ls(resources_paths, glob = "*.qmd"),
+    week = path |> path_file() |> str_extract("^(\\d+).*$", group = 1),
+    day = path |>
+      path_file() |>
+      str_extract("\\d+_([:alpha:]+)_.*$", group = 1),
+    type = path |> path_dir()
+  ) |>
+  # Remove unassigned resources indicated by "tbd"
+  filter(!str_detect(path, "tbd")) |>
+  select(week, type, day, path) |>
+  pivot_wider(names_from = c(day, type), names_sep = "_", values_from = path)
+
+current_date <- today()
+
+schedule <- read_csv(
+  here("data", "schedule.csv"),
+  col_types = cols(
+    part = col_character(),
+    week = col_character(),
+    date = col_date(),
+    tue_activity = col_character(),
+    thu_activity = col_character(),
+    lab = col_character(),
+    potw = col_character(),
+    project = col_character(),
+    project_due = col_character(),
+    exam = col_character(),
+    exam_available = col_date(),
+    exam_practice = col_character()
+  )
+) |>
+  left_join(resources, by = join_by(week), na_matches = "never") |>
+  # Add missing slide columns if they don't exist (no slides yet)
+  mutate(
+    tue_slides = if ("tue_slides" %in% names(pick(everything()))) tue_slides else NA_character_,
+    thu_slides = if ("thu_slides" %in% names(pick(everything()))) thu_slides else NA_character_,
+    weekly_summaries = if ("weekly_summaries" %in% names(pick(everything()))) weekly_summaries else NA_character_
+  ) |>
+  relocate(tue_slides, .before = tue_activity) |>
+  relocate(thu_slides, .before = thu_activity) |>
+  mutate(
+    saturday_before = floor_date(
+      date,
+      unit = "week",
+      week_start = "Sat"
+    ),
+    show_week = case_when(
+      # Show at least the first week in schedule
+      date == min(date) ~ TRUE,
+      # Show upcoming week on the Saturday before
+      saturday_before <= current_date ~ TRUE,
+      .default = FALSE
+    ),
+    # Create project display (always visible for planning, but no link until live)
+    project_display = project,
+    # Examlet booking becomes available 2 weeks before
+    # exam_available contains the date when examlet opens for scheduling
+    exam_available_date = as.Date(exam_available),
+    exam_booking_live = !is.na(exam_available_date) &
+      (exam_available_date - days(14)) <= current_date,
+    # Create single examlet column: shows prep icon OR exam link (never both in same week)
+    examlet_display = case_when(
+      # Exam booking (only show as link if booking is live)
+      !is.na(exam) & exam_booking_live ~ glue("[{exam}]({prairietest_url})"),
+      # Exam booking not yet live - show name without link
+      !is.na(exam) ~ as.character(exam),
+      # Practice material (in week before examlet) - no link for now
+      !is.na(exam_practice) ~ as.character(fa("pen-to-square")),
+      .default = NA_character_
+    )
+  )
+```
+
+```{r}
+#| label: schedule
+#| echo: false
+
+schedule |>
+  mutate(
+    week = if_else(
+      !is.na(weekly_summaries),
+      glue("[{week} {fa('circle-info')}]({weekly_summaries})"),
+      week
+    ),
+    # Remove any resources from future weeks
+    across(
+      starts_with(c("tue", "thu", "lab", "potw")),
+      \(column) if_else(show_week, column, NA)
+    ),
+    # Always show project names (as cold links) - they're visible for planning
+  ) |>
+  gt() |>
+  fmt_url(
+    columns = week,
+    rows = !is.na(weekly_summaries),
+    show_underline = FALSE
+  ) |>
+  fmt_date(
+    date,
+    date_style = "MMMd"
+  ) |>
+  sub_missing(
+    missing_text = ""
+  ) |>
+  fmt_url(
+    columns = ends_with("slides"),
+    label = fa("window-maximize")
+  ) |>
+  sub_missing(
+    columns = ends_with("slides"),
+    missing_text = fa("window-maximize", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = ends_with("activity"),
+    label = fa("file-alt")
+  ) |>
+  sub_missing(
+    columns = ends_with("activity"),
+    missing_text = fa("file-alt", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = lab,
+    label = fa("laptop-code")
+  ) |>
+  sub_missing(
+    columns = lab,
+    missing_text = fa("laptop-code", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
+    columns = potw,
+    label = fa("calendar-week")
+  ) |>
+  sub_missing(
+    columns = potw,
+    missing_text = fa("calendar-week", fill_opacity = 0.1)
+  ) |>
+  # Project column (markdown formatted - contains project links)
+  fmt_markdown(
+    columns = project_display
+  ) |>
+  # Examlet column (markdown formatted - contains prep icon and/or exam link)
+  fmt_markdown(
+    columns = examlet_display
+  ) |>
+  cols_label(
+    week = "Week",
+    date = "Mon",
+    tue_slides = "S",
+    tue_activity = "A",
+    thu_slides = "S",
+    thu_activity = "A",
+    lab = "Lab",
+    potw = "POTW",
+    project_display = "Project",
+    examlet_display = "Examlet"
+  ) |>
+  tab_spanner(
+    label = "Tue",
+    columns = c(tue_slides, tue_activity)
+  ) |>
+  tab_spanner(
+    label = "Thu",
+    columns = c(thu_slides, thu_activity)
+  ) |>
+  cols_align(
+    align = "center",
+    columns = c(lab, potw, project_display, examlet_display)
+  ) |>
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = list(
+      cells_row_groups(),
+      cells_stubhead(),
+      cells_column_labels(),
+      cells_column_spanners()
+    )
+  ) |>
+  gt_highlight_rows(
+    row = date == floor_date(current_date, unit = "week", week_start = "Mon"),
+    fill = "#ccefff"
+  ) |>
+  cols_hide(
+    c(
+      part,
+      weekly_summaries,
+      saturday_before,
+      show_week,
+      project,
+      project_due,
+      exam,
+      exam_available,
+      exam_available_date,
+      exam_booking_live,
+      exam_practice
+    )
+  ) |>
+  tab_options(
+    quarto.disable_processing = TRUE,
+    table.width = "100%"
+  )
+```
+
