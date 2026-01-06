@@ -154,10 +154,10 @@
 <section id="announcements" class="slide level2 smaller">
 <h2>Announcements</h2>
 <ul>
-<li><p>Website getting closer – Only setup is wrong (I think)</p></li>
-<li><p>POTW starts today! <a href="https://us.prairielearn.com/pl/course_instance/202804" class="uri">https://us.prairielearn.com/pl/course_instance/202804</a></p></li>
+<li><p>Website live – please let me know if you see errors!</p></li>
+<li><p>POTW starts next week! <a href="https://us.prairielearn.com/pl/course_instance/202804" class="uri">https://us.prairielearn.com/pl/course_instance/202804</a></p></li>
+<li><p>Labs start next week. Answer the qualtrics survey!!</p></li>
 <li><p>Enroll in CPSC203 on <strong>PrairieTest</strong>: <a href="https://us.prairietest.com" class="uri">https://us.prairietest.com</a></p></li>
-<li><p>First examlet signup available!</p></li>
 </ul>
 <aside class="notes">
 <p><strong>Summary</strong></p>
@@ -181,10 +181,16 @@
 <li><p>The <em>time</em> it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function.</p></li>
 </ol>
 </section>
-<section>
-<section id="software-design" class="title-slide slide level1 center">
-<h1>Software design</h1>
-
+<section id="elegance-continuing-the-discussion" class="slide level2">
+<h2>Elegance: Continuing the discussion</h2>
+<p>On Tuesday we introduced <strong>elegance</strong> as a conceptual metaphor for software engineering.</p>
+<p>We looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.</p>
+<p>Today, we’re going to dig deeper into this idea:</p>
+<ul>
+<li>What does elegance look like across different contexts?</li>
+<li>How do we define it more precisely?</li>
+<li>How does this apply to the way we solve problems in computing?</li>
+</ul>
 </section>
 <section id="elegance" class="slide level2 activity smaller">
 <h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Elegance</h2>
@@ -195,7 +201,7 @@
 <li><p>Upload your images, and then you’re done!</p></li>
 <li><p>I will move slides to the COMPLETED section of the gallery.</p></li>
 </ol>
-<div id="timer_bec7f5759f55f42e238efa1268d28921a9af4af6" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_e2d21ff832e4faca17678532ff4b653b6aad7b86" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -216,24 +222,12 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="elegance-examples" class="slide level2">
-<h2>Elegance: examples</h2>
-<p>Scissors</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><img data-src="../images/two-scissors.jpg" alt="A set of scissors."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/non-functional-scissors.jpg" alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="../images/assorted-scissors.png" alt="A variety of scissors in different colours."></p>
-</div></div>
-</section>
 <section id="your-turn-elegancedefinition" class="slide level2 activity">
 <h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance—definition</h2>
 <p>Gallery: <a href="https://tinyurl.com/eleganceGallery2025w2" class="uri">https://tinyurl.com/eleganceGallery2025w2</a></p>
 <p>After looking at the images in the gallery, reflect and write a short definition of the word <em>elegance</em>:</p>
 <p><a href="https://forms.gle/MUkpWeGBdxYfnJT37" class="uri">https://forms.gle/MUkpWeGBdxYfnJT37</a></p>
-<div id="timer_bec7f5759f55f42e238efa1268d28921a9af4af6" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_e2d21ff832e4faca17678532ff4b653b6aad7b86" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -241,8 +235,8 @@
  <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 </section>
-<section id="elegance-and-computing" class="slide level2">
-<h2>Elegance and computing</h2>
+<section id="elegance-in-software-design" class="slide level2">
+<h2>Elegance in software design</h2>
 <p>How does this apply to the way we solve problems in computing?</p>
 <p>I<span class="fragment" data-fragment-index="1">n</span>g<span class="fragment" data-fragment-index="1">e</span>n<span class="fragment" data-fragment-index="1">u</span>i<span class="fragment" data-fragment-index="1">t</span>y:</p>
 <p><br>
@@ -275,7 +269,7 @@
 <p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
 <p>— <strong>Steve Jobs</strong></p>
 </blockquote>
-</section></section>
+</section>
 <section>
 <section id="handcraft" class="title-slide slide level1 center">
 <h1>Handcraft</h1>
@@ -364,7 +358,7 @@
 </ol>
 </div></div>
 <p>General idea: quantify the size of the problem (<span class="math inline">\(n\)</span>) and consider the cost of our task <em>as that size increases</em>.</p>
-<div id="timer_bec7f5759f55f42e238efa1268d28921a9af4af6" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_e2d21ff832e4faca17678532ff4b653b6aad7b86" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

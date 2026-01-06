@@ -274,7 +274,7 @@
     "href": "slides/01_tue_intro.html#evaluation",
     "title": "Programming, problem solving, and algorithms",
     "section": "Evaluation",
-    "text": "Evaluation\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD"
+    "text": "Evaluation\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nSundays at 11:59 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 11:59 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD"
   },
   {
     "objectID": "slides/01_tue_intro.html#communications",
@@ -302,7 +302,35 @@
     "href": "slides/01_tue_intro.html#your-turn-tangrams",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: tangrams",
-    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!"
+    "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!\n\n\n  \n    −\n    +\n \n 10:00"
+  },
+  {
+    "objectID": "slides/01_tue_intro.html#tangrams-why",
+    "href": "slides/01_tue_intro.html#tangrams-why",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Tangrams: Why?",
+    "text": "Tangrams: Why?\nKey insight: The pieces never change. You’re learning to see how the same fundamental components can be combined differently to solve different problems.\nThis is exactly how programming works:\n\nDecomposition: Breaking complex problems into simpler pieces\nReusability: The same building blocks (variables, loops, conditionals, functions) solve countless different problems\nComposition: Different arrangements of the same pieces create different solutions\n\nJust like tangram pieces, programming constructs don’t change. What changes is how you arrange them."
+  },
+  {
+    "objectID": "slides/01_tue_intro.html#elegance",
+    "href": "slides/01_tue_intro.html#elegance",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance",
+    "text": "Elegance\nWe’re going to spend some time on another conceptual metaphor…\nA poser: What does it mean for something to be elegant?"
+  },
+  {
+    "objectID": "slides/01_tue_intro.html#elegance-example",
+    "href": "slides/01_tue_intro.html#elegance-example",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance Example?",
+    "text": "Elegance Example?\nScissors\n\n\n\n\n\n\n\n\n\nquestions we leave with… can something be elegant if it’s not functional?"
+  },
+  {
+    "objectID": "slides/01_tue_intro.html#summary",
+    "href": "slides/01_tue_intro.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary",
+    "text": "Summary\nToday we have begun to introduce some of the themes and ideas that we’ll see all term long:\n\nCounting steps: what’s the best that can happen? what’s the worst?\nDesign of Programmatic solutions:\n\ndecomposition\nreusability\ncreativity\n\nElegance?? WHY?"
   },
   {
     "objectID": "slides/10_tue_mhall.html#announcements",
@@ -1799,7 +1827,7 @@
     "href": "slides/01_thu_efficiency.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nWebsite getting closer – Only setup is wrong (I think)\nPOTW starts today! https://us.prairielearn.com/pl/course_instance/202804\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com\nFirst examlet signup available!\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+    "text": "Announcements\n\nWebsite live – please let me know if you see errors!\nPOTW starts next week! https://us.prairielearn.com/pl/course_instance/202804\nLabs start next week. Answer the qualtrics survey!!\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
   },
   {
     "objectID": "slides/01_thu_efficiency.html#learning-outcomes",
@@ -1809,18 +1837,18 @@
     "text": "Learning outcomes\n\nWe connect the idea of “elegance” to common items and to software design!\nThe time it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function."
   },
   {
+    "objectID": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
+    "href": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance: Continuing the discussion",
+    "text": "Elegance: Continuing the discussion\nOn Tuesday we introduced elegance as a conceptual metaphor for software engineering.\nWe looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.\nToday, we’re going to dig deeper into this idea:\n\nWhat does elegance look like across different contexts?\nHow do we define it more precisely?\nHow does this apply to the way we solve problems in computing?"
+  },
+  {
     "objectID": "slides/01_thu_efficiency.html#elegance",
     "href": "slides/01_thu_efficiency.html#elegance",
     "title": "Programming, problem solving, and algorithms",
     "section": " Elegance",
     "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/eleganceGallery2025w2\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#elegance-examples",
-    "href": "slides/01_thu_efficiency.html#elegance-examples",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance: examples",
-    "text": "Elegance: examples\nScissors"
   },
   {
     "objectID": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
@@ -1830,11 +1858,11 @@
     "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/eleganceGallery2025w2\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/MUkpWeGBdxYfnJT37\n\n  \n    −\n    +\n \n 05:00"
   },
   {
-    "objectID": "slides/01_thu_efficiency.html#elegance-and-computing",
-    "href": "slides/01_thu_efficiency.html#elegance-and-computing",
+    "objectID": "slides/01_thu_efficiency.html#elegance-in-software-design",
+    "href": "slides/01_thu_efficiency.html#elegance-in-software-design",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance and computing",
-    "text": "Elegance and computing\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
+    "section": "Elegance in software design",
+    "text": "Elegance in software design\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
   },
   {
     "objectID": "slides/01_thu_efficiency.html#section",
