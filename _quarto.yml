@@ -51,7 +51,7 @@ website:
         contents:
           - href: setup.qmd
             text: "Setup"
-          - href: "https://canvas.ubc.ca/courses/182082"
+          - href: "https://canvas.ubc.ca/courses/176702"
             text: "Canvas"
           - href: "https://piazza.com/ubc.ca/winterterm22025/cpsc203"
             text: "Piazza"
