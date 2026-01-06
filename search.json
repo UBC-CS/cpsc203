@@ -2766,7 +2766,7 @@
     "href": "syllabus.html#instructor-information",
     "title": "Syllabus",
     "section": "Instructor information",
-    "text": "Instructor information\n\nProf: Cinda Heeren\n📧 cheeren@cs.ubc.ca\n⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen\n📧 \n⏰ TBD · 🏢 TBD\nTA: Joel Gunawan 📧 \n⏰ TBD · 🏢 TBD\nTA: Timothy Solnyshkin 📧 \n⏰ TBD · 🏢 TBD",
+    "text": "Instructor information\n\nProf: Cinda Heeren\n📧 cheeren@cs.ubc.ca\n⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen\n📧 \n⏰ TBD · 🏢 TBD\nTA: Paulette Koronkevich Gunawan 📧 \n⏰ TBD · 🏢 TBD\nTA: TBD 📧 \n⏰ TBD · 🏢 TBD",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -2799,7 +2799,7 @@
     "href": "syllabus.html#course-requirements",
     "title": "Syllabus",
     "section": "Course requirements",
-    "text": "Course requirements\nDeliverables for the course include the following components:\n\nProblem of the Week (POTW) – You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nClassroom Meetings – Class meets Tue/Thu, 3:30-5p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants.\nLab – The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are asynchronous video instruction, together with PrairieLearn exercises. There are 10 over the term, beginning in week 3.\nExamlets – Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nProjects – Most of the coding in the course will occur within three significan coding projects. Though we place no constraints on your use of outside resources for completing these exercises, all of the algorithms and problem solving they contain may appear on examlets.\nFinal Exam – Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
+    "text": "Course requirements\nDeliverables for the course include the following components:\n\nProblem of the Week (POTW) – You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nClassroom Meetings – Class meets Tue/Thu, 11a-12:30p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants.\nLab – The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are presented in physical class meetings where you will work in groups to complete PrairieLearn assessments. There are ~10 over the term, beginning in week 2.\nExamlets – Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nProjects – Most of the coding in the course will occur within three significan coding projects. Though we place no constraints on your use of outside resources for completing these exercises, all of the algorithms and problem solving they contain may appear on examlets.\nFinal Exam – Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -2810,7 +2810,7 @@
     "href": "syllabus.html#grading-and-exam-policies",
     "title": "Syllabus",
     "section": "Grading and exam policies",
-    "text": "Grading and exam policies\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nFridays at 6 PM\n\n\nLabs\n5% (10 x 0.5%)\nFridays at 6 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD\n\n\n\nYou must pass the final exam (50%) to pass the course.",
+    "text": "Grading and exam policies\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nSundays at 11:59 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 11:59 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD\n\n\n\nYou must pass the final exam (50%) to pass the course.",
     "crumbs": [
       "Course information",
       "Syllabus"
