@@ -27,8 +27,20 @@ The day concludes with a sequence of Python examples designed to clear the cobwe
 
 1. We connect the idea of "elegance" to common items and to software design!
 
-2. The *time* it takes to solve a problem is one way of measuring the size of a 
-problem. That time can often be described by simple mathematical function. 
+2. The *time* it takes to solve a problem is one way of measuring the size of a
+problem. That time can often be described by simple mathematical function.
+
+## Elegance: Continuing the discussion
+
+On Tuesday we introduced **elegance** as a conceptual metaphor for software engineering.
+
+We looked at the scissors example---form perfectly matched to function, with no unnecessary complexity.
+
+Today, we're going to dig deeper into this idea:
+
+- What does elegance look like across different contexts?
+- How do we define it more precisely?
+- How does this apply to the way we solve problems in computing?
 
 # Software design
 
@@ -64,7 +76,7 @@ After looking at the images in the gallery, reflect and write a short definition
 
 {{< countdown minutes=5 >}}
 
-## Elegance and computing
+## Software Design: Elegance = Ingenuity + Simplicity
 
 How does this apply to the way we solve problems in computing?
 
