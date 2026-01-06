@@ -86,7 +86,9 @@ schedule <- read_csv(
     week = col_character(),
     date = col_date(),
     tue_activity = col_character(),
+    tue_video = col_character(),
     thu_activity = col_character(),
+    thu_video = col_character(),
     lab = col_character(),
     potw = col_character(),
     project = col_character(),
@@ -186,6 +188,14 @@ schedule |>
     missing_text = fa("file-alt", fill_opacity = 0.1)
   ) |>
   fmt_url(
+    columns = ends_with("video"),
+    label = fa("video")
+  ) |>
+  sub_missing(
+    columns = ends_with("video"),
+    missing_text = fa("video", fill_opacity = 0.1)
+  ) |>
+  fmt_url(
     columns = lab,
     label = fa("laptop-code")
   ) |>
@@ -214,8 +224,10 @@ schedule |>
     date = "Mon",
     tue_slides = "S",
     tue_activity = "A",
+    tue_video = "V",
     thu_slides = "S",
     thu_activity = "A",
+    thu_video = "V",
     lab = "Lab",
     potw = "POTW",
     project_display = "Project",
@@ -223,11 +235,11 @@ schedule |>
   ) |>
   tab_spanner(
     label = "Tue",
-    columns = c(tue_slides, tue_activity)
+    columns = c(tue_slides, tue_activity, tue_video)
   ) |>
   tab_spanner(
     label = "Thu",
-    columns = c(thu_slides, thu_activity)
+    columns = c(thu_slides, thu_activity, thu_video)
   ) |>
   cols_align(
     align = "center",
