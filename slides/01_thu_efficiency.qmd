@@ -4,13 +4,14 @@ date: 2026-01-08
 
 ## Announcements {.smaller}
 
-* Website getting closer -- Only setup is wrong (I think)
+* Website live -- please let me know if you see errors!
 
-* POTW starts today! <https://us.prairielearn.com/pl/course_instance/202804>
+* POTW starts next week! <https://us.prairielearn.com/pl/course_instance/202804>
+
+* Labs start next week. Answer the qualtrics survey!!
 
 * Enroll in CPSC203 on **PrairieTest**: <https://us.prairietest.com>
 
-* First examlet signup available! 
 
 ::: notes
 **Summary**
@@ -42,7 +43,6 @@ Today, we're going to dig deeper into this idea:
 - How do we define it more precisely?
 - How does this apply to the way we solve problems in computing?
 
-# Software design
 
 ## {{< iconify fa6-solid laptop-code >}} Elegance  {.activity .smaller}
 
@@ -76,7 +76,7 @@ After looking at the images in the gallery, reflect and write a short definition
 
 {{< countdown minutes=5 >}}
 
-## Software Design: Elegance = Ingenuity + Simplicity
+## Elegance in software design
 
 How does this apply to the way we solve problems in computing?
 

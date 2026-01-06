@@ -222,6 +222,8 @@ You will emerge from the course with increased proficiency in Python programming
 
 4.  Speculate together on why you're doing this!!
 
+{{< countdown minutes=10 >}}
+
 ## Tangrams: Why? {.smaller}
 
 **Key insight:** The pieces never change. You're learning to see how the same fundamental components can be combined differently to solve different problems.
@@ -236,11 +238,11 @@ Just like tangram pieces, programming constructs don't change. What changes is h
 
 ## Elegance
 
-We're going to spend some time on another conceptual metaphor for software engineering.
+We're going to spend some time on another conceptual metaphor...
 
-What makes something **elegant**?
+A poser: What does it mean for something to be **elegant**?
 
-## Elegance: examples
+## Elegance Example?
 
 Scissors
 
@@ -258,3 +260,19 @@ Scissors
 :::
 ::::::
 
+::: notes
+questions we leave with... can something be elegant if it's not functional? 
+:::
+
+## Summary
+
+Today we have begun to introduce some of the themes and ideas that we'll see all term long:
+
+1. Counting steps: what's the best that can happen? what's the worst? 
+
+2. Design of Programmatic solutions: 
+    - decomposition
+    - reusability
+    - creativity
+
+3. Elegance?? WHY?
