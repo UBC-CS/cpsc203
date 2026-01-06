@@ -147,8 +147,8 @@ This course will teach you a bunch of different things!
 ::: small-font-size
 | Item                 | Weight          | Due date(s)       |
 |----------------------|-----------------|-------------------|
-| Problems of the Week | 10% (10 x 1%)   | Fridays at 6 PM   |
-| Labs                 | 5% (10 x 0.5%)  | Fridays at 6 PM   |
+| Problems of the Week | 10% (10 x 1%)   | Sundays at 11:59 PM   |
+| Labs                 | 5% (10 x 0.5%)  | Sundays at 11:59 PM   |
 | Programming Projects | 9% (3 x 3%)     | Three in the term |
 | Examlets.            | 50% (5 x 10%)   | \~ Bi-weekly      |
 | Final Exam           | 26%             | TBD               |
@@ -221,4 +221,40 @@ You will emerge from the course with increased proficiency in Python programming
 3.  Solve as many as you'd like, together
 
 4.  Speculate together on why you're doing this!!
+
+## Tangrams: Why? {.smaller}
+
+**Key insight:** The pieces never change. You're learning to see how the same fundamental components can be combined differently to solve different problems.
+
+This is exactly how programming works:
+
+- **Decomposition:** Breaking complex problems into simpler pieces
+- **Reusability:** The same building blocks (variables, loops, conditionals, functions) solve countless different problems
+- **Composition:** Different arrangements of the same pieces create different solutions
+
+Just like tangram pieces, programming constructs don't change. What changes is how you arrange them.
+
+## Elegance
+
+We're going to spend some time on another conceptual metaphor for software engineering.
+
+What makes something **elegant**?
+
+## Elegance: examples
+
+Scissors
+
+:::::: columns
+::: {.column width="33%"}
+![](/images/two-scissors.jpg){fig-alt="A set of scissors."}
+:::
+
+::: {.column width="33%"}
+![](/images/non-functional-scissors.jpg){fig-alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."}
+:::
+
+::: {.column width="33%"}
+![](/images/assorted-scissors.png){fig-alt="A variety of scissors in different colours."}
+:::
+::::::
 

@@ -54,25 +54,6 @@ decidedly does not.
 (Gallery walk)
 :::
 
-## Elegance: examples
-
-Scissors
-
-:::::: columns
-::: {.column width="33%"}
-![](/images/two-scissors.jpg){fig-alt="A set of scissors."}
-:::
-
-::: {.column width="33%"}
-![](/images/non-functional-scissors.jpg){fig-alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."}
-:::
-
-::: {.column width="33%"}
-![](/images/assorted-scissors.png){fig-alt="A variety of scissors in different colours."}
-:::
-::::::
-
-
 ## {{< iconify fa6-solid laptop-code >}} Your turn: Elegance---definition {.activity}
 
 Gallery: <https://tinyurl.com/eleganceGallery2025w2>
