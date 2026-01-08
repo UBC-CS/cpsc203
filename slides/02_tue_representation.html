@@ -226,7 +226,7 @@
 </ul>
 <aside class="notes">
 <p><strong>Summary</strong></p>
-<p>In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into colour representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!</p>
+<p>Today we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -245,77 +245,17 @@
 <li>Computers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually <em>anything</em>!</li>
 </ol>
 </section>
-<section id="warm-up" class="slide level2">
-<h2>Warm Up</h2>
-<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>10</th>
-<th>100</th>
-<th>1000</th>
-<th>10,000</th>
-<th>10<sup>12</sup></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>10<sup>-11</sup>s</td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>1 s</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(n \log n\)</span></td>
-<td>10<sup>-11</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-7</sup> s</td>
-<td>40 s</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(n^2\)</span></td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-4</sup> s</td>
-<td>10<sup>12</sup> s</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(n^3\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-3</sup> s</td>
-<td>1 s</td>
-<td>10<sup>24</sup> s</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(2^n\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>18</sup> s</td>
-<td>10<sup>289</sup> s</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>The amount of computation we do inside our algorithm actually matters!</p>
+<section id="representation" class="slide level2">
+<h2>Representation</h2>
+<p>Today we’re exploring a fundamental question: How do we <em>represent</em> the world as data?</p>
+<p>We’ll look at “representation” in two important senses:</p>
+<ul>
+<li><strong>Technical</strong>: How computers encode rich concepts (like colour) as numbers</li>
+<li><strong>Social</strong>: Who is represented in this discipline, and why it matters</li>
+</ul>
+<p>Let’s start with something personal and familiar: colour.</p>
 <aside class="notes">
-<p>Why does this matter?</p>
-<p>Annotate:</p>
-<ol type="1">
-<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
-<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
-<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
-</ol>
-<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
-<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
-<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
-<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
-<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
+<p>Annotate as you go - don’t read the bullets verbatim. Let the dual meaning emerge through the lesson.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -327,11 +267,6 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section>
-<section id="representation" class="title-slide slide level1 center">
-<h1>Representation</h1>
-
 </section>
 <section id="colour-interpretation" class="slide level2">
 <h2>Colour interpretation</h2>
@@ -353,7 +288,7 @@
 <p><span class="hexagon-blue"></span></p>
 <p><span class="hexagon-violet"></span></p>
 </div></div>
-<div id="timer_5c501bac16dff75fa1a5a3867ece427914fdfbd1" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_33f263890ca54166e78dd6cc5a496cd821293be8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -458,7 +393,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="colourrepresentation-2" class="slide level2">
+<section id="colourrepresentation-2" class="slide level2 activity">
 <h2>Colour—representation</h2>
 <p>What’s the highest number we can represent with 4 bits?</p>
 <p><br>
@@ -486,6 +421,13 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<div id="timer_33f263890ca54166e78dd6cc5a496cd821293be8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 </section>
 <section id="colourrepresentation-3" class="slide level2">
 <h2>Colour—representation</h2>
@@ -522,8 +464,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="colourrepresentation-aside" class="slide level2">
-<h2>Colour—representation (aside)</h2>
+<section id="representation-two-meanings" class="slide level2">
+<h2>Representation: Two Meanings</h2>
 <p>What do you observe about the following RGB colours?</p>
 <table class="caption-top">
 <thead>
@@ -566,6 +508,19 @@
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>[Your 7-minute narrative with RGB cube prop about missing dimensions and diversity in CS]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="colour-and-code" class="slide level2 smaller">
 <h2>Colour and Code</h2>
@@ -649,8 +604,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5w
 </section>
 <section id="your-turn-change-image-or-boost" class="slide level2 activity">
 <h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Change image or boost</h2>
-<p>Find an online image you would like to boost and use its URL in the code we just wrote.</p>
-<p>How can you adjust the code to manipulate the colours in a different way?</p>
+<p>Experiment with the code! Try one or more of these:</p>
+<ol type="1">
+<li>Find a different image URL and boost a different colour (green? blue?)</li>
+<li>Change the threshold value (try 150 instead of 200)</li>
+<li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
+<li>What happens if you boost pixels that are LOW in red instead of high?</li>
+</ol>
+<div id="timer_33f263890ca54166e78dd6cc5a496cd821293be8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">12</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 
 
 <script type="pyodide-data">
@@ -670,7 +637,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
