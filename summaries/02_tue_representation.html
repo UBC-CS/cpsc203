@@ -141,13 +141,13 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles/styles.css">
 <meta property="og:title" content="Week 2, Tuesday: Representation—Technical and Social – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/poppyfield.jpg">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/ssd.jpg">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:image:alt" content="A field of bright red poppies with green stems and leaves.">
+<meta property="og:image:alt" content="A solid-state drive circuit board with visible memory chips and electronic components.">
 <meta name="twitter:title" content="Week 2, Tuesday: Representation—Technical and Social – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/poppyfield.jpg">
-<meta name="twitter:image:alt" content="A field of bright red poppies with green stems and leaves.">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/ssd.jpg">
+<meta name="twitter:image:alt" content="A solid-state drive circuit board with visible memory chips and electronic components.">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -452,26 +452,25 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-cultural-richness-of-colour" id="toc-the-cultural-richness-of-colour" class="nav-link active" data-scroll-target="#the-cultural-richness-of-colour">The Cultural Richness of Colour</a></li>
-  <li><a href="#from-complexity-to-simplicity-how-computers-see-colour" id="toc-from-complexity-to-simplicity-how-computers-see-colour" class="nav-link" data-scroll-target="#from-complexity-to-simplicity-how-computers-see-colour">From Complexity to Simplicity: How Computers See Colour</a>
+  <li><a href="#how-computers-see-colour" id="toc-how-computers-see-colour" class="nav-link" data-scroll-target="#how-computers-see-colour">How Computers “See” Colour</a>
   <ul class="collapse">
-  <li><a href="#electrical-signals-and-bits" id="toc-electrical-signals-and-bits" class="nav-link" data-scroll-target="#electrical-signals-and-bits">Electrical Signals and Bits</a></li>
-  <li><a href="#from-bits-to-numbers" id="toc-from-bits-to-numbers" class="nav-link" data-scroll-target="#from-bits-to-numbers">From Bits to Numbers</a></li>
-  <li><a href="#from-numbers-to-colours-rgb-representation" id="toc-from-numbers-to-colours-rgb-representation" class="nav-link" data-scroll-target="#from-numbers-to-colours-rgb-representation">From Numbers to Colours: RGB Representation</a></li>
-  <li><a href="#hexadecimal-a-friendlier-notation" id="toc-hexadecimal-a-friendlier-notation" class="nav-link" data-scroll-target="#hexadecimal-a-friendlier-notation">Hexadecimal: A Friendlier Notation</a></li>
+  <li><a href="#it-all-starts-with-electricity" id="toc-it-all-starts-with-electricity" class="nav-link" data-scroll-target="#it-all-starts-with-electricity">It All Starts with Electricity</a></li>
+  <li><a href="#from-bits-to-numbers-its-just-counting" id="toc-from-bits-to-numbers-its-just-counting" class="nav-link" data-scroll-target="#from-bits-to-numbers-its-just-counting">From Bits to Numbers (It’s Just Counting!)</a></li>
+  <li><a href="#from-numbers-to-colours-rgb" id="toc-from-numbers-to-colours-rgb" class="nav-link" data-scroll-target="#from-numbers-to-colours-rgb">From Numbers to Colours: RGB</a></li>
+  <li><a href="#hexadecimal-because-programmers-are-lazy-in-a-good-way" id="toc-hexadecimal-because-programmers-are-lazy-in-a-good-way" class="nav-link" data-scroll-target="#hexadecimal-because-programmers-are-lazy-in-a-good-way">Hexadecimal: Because Programmers Are Lazy (In a Good Way)</a></li>
   </ul></li>
-  <li><a href="#the-power-and-peril-of-reduction" id="toc-the-power-and-peril-of-reduction" class="nav-link" data-scroll-target="#the-power-and-peril-of-reduction">The Power and Peril of Reduction</a></li>
-  <li><a href="#representation-a-second-meaning" id="toc-representation-a-second-meaning" class="nav-link" data-scroll-target="#representation-a-second-meaning">Representation: A Second Meaning</a>
+  <li><a href="#stop-and-feel-two-things" id="toc-stop-and-feel-two-things" class="nav-link" data-scroll-target="#stop-and-feel-two-things">Stop and Feel Two Things</a></li>
+  <li><a href="#the-plot-twist-a-second-meaning-of-representation" id="toc-the-plot-twist-a-second-meaning-of-representation" class="nav-link" data-scroll-target="#the-plot-twist-a-second-meaning-of-representation">The Plot Twist: A Second Meaning of “Representation”</a>
   <ul class="collapse">
-  <li><a href="#diversity-as-dimensionality" id="toc-diversity-as-dimensionality" class="nav-link" data-scroll-target="#diversity-as-dimensionality">Diversity as Dimensionality</a></li>
+  <li><a href="#heres-where-it-gets-real" id="toc-heres-where-it-gets-real" class="nav-link" data-scroll-target="#heres-where-it-gets-real">Here’s Where It Gets Real</a></li>
   </ul></li>
-  <li><a href="#putting-it-into-practice-image-manipulation" id="toc-putting-it-into-practice-image-manipulation" class="nav-link" data-scroll-target="#putting-it-into-practice-image-manipulation">Putting It Into Practice: Image Manipulation</a>
+  <li><a href="#lets-write-some-code" id="toc-lets-write-some-code" class="nav-link" data-scroll-target="#lets-write-some-code">Let’s Write Some Code!</a>
   <ul class="collapse">
-  <li><a href="#the-algorithm" id="toc-the-algorithm" class="nav-link" data-scroll-target="#the-algorithm">The Algorithm</a></li>
   <li><a href="#the-code" id="toc-the-code" class="nav-link" data-scroll-target="#the-code">The Code</a></li>
-  <li><a href="#whats-happening-here" id="toc-whats-happening-here" class="nav-link" data-scroll-target="#whats-happening-here">What’s Happening Here?</a></li>
+  <li><a href="#whats-actually-happening" id="toc-whats-actually-happening" class="nav-link" data-scroll-target="#whats-actually-happening">What’s Actually Happening?</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn! 🎮</a></li>
   </ul></li>
-  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try It Yourself</a></li>
-  <li><a href="#reflection-what-have-we-learned" id="toc-reflection-what-have-we-learned" class="nav-link" data-scroll-target="#reflection-what-have-we-learned">Reflection: What Have We Learned?</a></li>
+  <li><a href="#what-did-we-learn" id="toc-what-did-we-learn" class="nav-link" data-scroll-target="#what-did-we-learn">What Did We Learn?</a></li>
   <li><a href="#coming-up" id="toc-coming-up" class="nav-link" data-scroll-target="#coming-up">Coming Up</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -499,33 +498,43 @@ window.Quarto = {
 </header>
 
 
-<p>What does it mean to be <em>represented</em>? This question sits at the heart of computer science in two profound ways. On one hand, we need to understand how computers represent the world around us—how they take rich, complex phenomena like colour and reduce them to sequences of electrical signals. On the other hand, we need to think critically about who gets to be represented in this field, and why that matters for the kinds of problems we solve and the solutions we create.</p>
-<p>Today’s lesson weaves these two meanings of “representation” together through an exploration of how computers encode colour.</p>
+<p>What does it mean to be <em>represented</em>?</p>
+<p>This question sits at the heart of computer science in two surprising ways. Today we’re going on a journey—from the cultural richness of colour, down to the electrical signals inside your computer, and back up to some big questions about who gets to shape the technology we all use.</p>
+<p>Ready? Let’s go.</p>
 <section id="the-cultural-richness-of-colour" class="level2">
 <h2 class="anchored" data-anchor-id="the-cultural-richness-of-colour">The Cultural Richness of Colour</h2>
-<p>Before we dive into bits and bytes, let’s start with something personal: What’s your favorite colour?</p>
-<p>Take a moment to really think about this. Is it blue, like the ocean on a clear day? Red, like the poppies that bloom in spring? Green, like the forests that cool our cities? Do you have a sense of <em>why</em> it’s your favorite? Does it influence what you wear, how you decorate your space, what you’re drawn to when you shop?</p>
-<p>Colour is deeply personal and culturally loaded. Different cultures attach vastly different meanings to the same colours:</p>
+<p>Before we dive into bits and bytes, let’s start with something personal: <strong>What’s your favorite colour?</strong></p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+<p>No, really—take a moment to think about it. Is it <span class="blue">blue</span>, like the ocean on a clear day? <span class="red">Red</span>, like the poppies that bloom in spring? <span class="green">Green</span>, like the forests that cool our cities?</p>
+<p>Do you know <em>why</em> it’s your favorite? Does it show up in your wardrobe, your room decor, the things you’re drawn to when you shop?</p>
+<p>Colour is <em>weird</em>. It’s deeply personal, but it’s also culturally loaded in ways we don’t always notice:</p>
 <ul>
-<li><strong>Red</strong> might mean luck and celebration in Chinese culture, but danger or warning in Western contexts</li>
-<li><strong>White</strong> symbolizes purity and weddings in many Western traditions, but mourning and funerals in some Eastern cultures</li>
-<li><strong>Purple</strong> was once the colour of royalty (because the dye was incredibly expensive), but has taken on new meanings in modern contexts</li>
+<li><span class="red"><strong>Red</strong></span> <span class="swatch-red"></span> means luck and celebration in Chinese culture… but danger and warning in Western contexts. Same colour, totally different vibes!</li>
+<li><strong>White</strong> <span class="swatch-white"></span> symbolizes purity and weddings in many Western traditions… but mourning and funerals in some Eastern cultures. Imagine the confusion at an international wedding!</li>
+<li><span class="purple"><strong>Purple</strong></span> <span class="swatch-purple"></span> was once <em>the</em> colour of royalty (because the dye was ridiculously expensive)… but has taken on completely different meanings today.</li>
 </ul>
-<p>These associations aren’t arbitrary—they’re woven into art, literature, religious practices, and daily life. Colour carries <em>meaning</em> that varies across time, place, and context.</p>
-<p>This richness makes colour a perfect case study for understanding representation in computing. How do we take something so nuanced, so culturally complex, so tied to human experience—and make a computer understand it?</p>
+<p>These associations aren’t random—they’re woven into centuries of art, literature, religion, and daily life. Colour carries <em>meaning</em>.</p>
+<p>So here’s the question that should blow your mind a little: <strong>How do we take something this rich and nuanced and make a computer understand it?</strong></p>
 </section>
-<section id="from-complexity-to-simplicity-how-computers-see-colour" class="level2">
-<h2 class="anchored" data-anchor-id="from-complexity-to-simplicity-how-computers-see-colour">From Complexity to Simplicity: How Computers See Colour</h2>
-<p>The answer is both elegant and slightly troubling: <strong>we reduce colour to numbers</strong>.</p>
-<section id="electrical-signals-and-bits" class="level3">
-<h3 class="anchored" data-anchor-id="electrical-signals-and-bits">Electrical Signals and Bits</h3>
-<p>Let’s start at the very bottom. Inside your computer, everything—and I mean <em>everything</em>—comes down to electrical charges. Picture a solid-state drive: tiny transistors holding or releasing electrons, creating regions of positive and negative charge across the chip.</p>
-<p>These charges get interpreted as <strong>bits</strong>: binary digits that can be either 0 or 1. That’s it. Just two states. On or off. High voltage or low voltage. One or zero.</p>
-<p>Is that enough to represent the world? Amazingly, yes.</p>
+<section id="how-computers-see-colour" class="level2">
+<h2 class="anchored" data-anchor-id="how-computers-see-colour">How Computers “See” Colour</h2>
+<p>Spoiler alert: they don’t. Not really. But we’ve found a clever workaround.</p>
+<section id="it-all-starts-with-electricity" class="level3">
+<h3 class="anchored" data-anchor-id="it-all-starts-with-electricity">It All Starts with Electricity</h3>
+<p>Let’s go all the way down to the bottom. Inside your computer, <em>everything</em>—and I mean <strong>everything</strong>—comes down to electrical charges.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ssd.jpg" class="img-fluid figure-img" alt="A solid-state drive circuit board with visible memory chips and electronic components."></p>
+<figcaption>Close-up of a solid-state drive (SSD) circuit board. All data—including your favorite cat photos and every colour in them—is ultimately stored as electrical charges in chips like these. Wild, right?</figcaption>
+</figure>
+</div>
+<p>See those chips? They’re full of tiny transistors holding or releasing electrons, creating regions of positive and negative charge. Your computer interprets these charges as <strong>bits</strong>: binary digits that can be either 0 or 1.</p>
+<p>That’s it. Just two states. On or off. Yes or no. One or zero.</p>
+<p>Is that <em>really</em> enough to represent… everything? 🤔</p>
 </section>
-<section id="from-bits-to-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="from-bits-to-numbers">From Bits to Numbers</h3>
-<p>You already know how to represent numbers in base 10 (decimal). The number 3157 means:</p>
+<section id="from-bits-to-numbers-its-just-counting" class="level3">
+<h3 class="anchored" data-anchor-id="from-bits-to-numbers-its-just-counting">From Bits to Numbers (It’s Just Counting!)</h3>
+<p>Here’s where it gets fun. You already know how to count in base 10:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -550,7 +559,8 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>We can do exactly the same thing in base 2 (binary), where each position represents a power of 2 instead of a power of 10:</p>
+<p>The number 3157 is just: three thousands, one hundred, five tens, and seven ones.</p>
+<p>Now here’s the trick—we can do <em>exactly the same thing</em> in base 2:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -575,50 +585,68 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>So the binary number 1011 represents the decimal number 11.</p>
-<p><strong>Quick check:</strong> What’s the highest number you can represent with 4 bits? With 5 bits?</p>
-<p>With 4 bits, you can represent 0 through 15 (that’s <span class="math inline">\(2^4 = 16\)</span> different values). With 5 bits, you can represent 0 through 31 (that’s <span class="math inline">\(2^5 = 32\)</span> different values).</p>
-<p>In general, with <span class="math inline">\(n\)</span> bits, you can represent <span class="math inline">\(2^n\)</span> different values.</p>
+<p>So 1011 in binary = 8 + 0 + 2 + 1 = <strong>11</strong> in decimal.</p>
+<p><strong>Pop quiz!</strong> 🎯</p>
+<ul>
+<li>What’s the highest number you can make with 4 bits?</li>
+<li>What about 5 bits?</li>
+</ul>
+<p><em>(Think about it before scrolling…)</em></p>
+<p>With 4 bits: 1111 = 8+4+2+1 = <strong>15</strong> (that’s <span class="math inline">\(2^4 - 1\)</span>, or 16 possible values: 0 through 15)</p>
+<p>With 5 bits: 11111 = <strong>31</strong> (that’s <span class="math inline">\(2^5 - 1\)</span>, or 32 possible values)</p>
+<p>In general, <span class="math inline">\(n\)</span> bits gives you <span class="math inline">\(2^n\)</span> different values. Math is cool. 😎</p>
 </section>
-<section id="from-numbers-to-colours-rgb-representation" class="level3">
-<h3 class="anchored" data-anchor-id="from-numbers-to-colours-rgb-representation">From Numbers to Colours: RGB Representation</h3>
-<p>Now here’s the key insight: if we can represent any number with bits, and we can agree on a system for mapping numbers to colours, then we can represent any colour with bits.</p>
-<p>The most common system is <strong>RGB</strong>: Red, Green, Blue. Each colour component gets a number from 0 to 255 (which happens to be exactly the range you can represent with 8 bits, since <span class="math inline">\(2^8 = 256\)</span>).</p>
-<p>For example: - <code>(255, 0, 0)</code> is pure red (maximum red, no green, no blue) - <code>(0, 255, 0)</code> is pure green - <code>(0, 0, 255)</code> is pure blue - <code>(255, 255, 0)</code> is yellow (red + green) - <code>(255, 0, 127)</code> is a pinkish color (lots of red, no green, half blue)</p>
-<p>By mixing different amounts of red, green, and blue light, we can represent roughly 16.7 million different colours (<span class="math inline">\(256 \times 256 \times 256 = 16{,}777{,}216\)</span> to be exact).</p>
+<section id="from-numbers-to-colours-rgb" class="level3">
+<h3 class="anchored" data-anchor-id="from-numbers-to-colours-rgb">From Numbers to Colours: RGB</h3>
+<p>Okay, so we can represent numbers with bits. But how do we get from numbers to <em>colours</em>?</p>
+<p>We just… agree on a system! The most common one is <strong>RGB</strong>: <span class="red"><strong>R</strong>ed</span>, <span class="green"><strong>G</strong>reen</span>, <span class="blue"><strong>B</strong>lue</span>.</p>
+<p>Each colour component gets a number from 0 to 255. (Why 255? Because that’s exactly <span class="math inline">\(2^8 - 1\)</span>—the range of an 8-bit number. Everything connects!)</p>
+<p>Check it out:</p>
+<ul>
+<li><code>(255, 0, 0)</code> = pure <span class="red"><strong>red</strong></span> <span class="swatch-red"></span> (max <span class="red">red</span>, no <span class="green">green</span>, no <span class="blue">blue</span>)</li>
+<li><code>(0, 255, 0)</code> = pure <span class="green"><strong>green</strong></span> <span class="swatch-green"></span></li>
+<li><code>(0, 0, 255)</code> = pure <span class="blue"><strong>blue</strong></span> <span class="swatch-blue"></span></li>
+<li><code>(255, 255, 0)</code> = <span class="yellow"><strong>yellow</strong></span> <span class="swatch-yellow"></span> (<span class="red">red</span> + <span class="green">green</span>, no <span class="blue">blue</span>—try it!)</li>
+<li><code>(255, 0, 127)</code> = a lovely <span class="pink"><strong>pink</strong></span> <span class="swatch-pink"></span></li>
+</ul>
+<p>By mixing different amounts of <span class="red">red</span>, <span class="green">green</span>, and <span class="blue">blue</span> light, we can create…</p>
+<p>$256 = $ <strong>16,777,216 different colours!</strong> 🌈</p>
+<p>That’s more colours than most humans can distinguish. Not bad for a bunch of 1s and 0s!</p>
 </section>
-<section id="hexadecimal-a-friendlier-notation" class="level3">
-<h3 class="anchored" data-anchor-id="hexadecimal-a-friendlier-notation">Hexadecimal: A Friendlier Notation</h3>
-<p>Writing colours as three separate decimal numbers works, but it gets tedious. A 24-bit colour like:</p>
+<section id="hexadecimal-because-programmers-are-lazy-in-a-good-way" class="level3">
+<h3 class="anchored" data-anchor-id="hexadecimal-because-programmers-are-lazy-in-a-good-way">Hexadecimal: Because Programmers Are Lazy (In a Good Way)</h3>
+<p>Writing <code>(103, 78, 167)</code> every time you want a specific <span class="purple">purple</span> is tedious. And writing the binary version?</p>
 <pre><code>0110 0111 0100 1110 1010 0111</code></pre>
-<p>is even worse to read! That’s where <strong>hexadecimal</strong> (base 16) notation comes in.</p>
-<p>In hexadecimal, we use 16 digits: <code>0 1 2 3 4 5 6 7 8 9 a b c d e f</code></p>
-<p>Each hex digit represents exactly 4 bits, so we can write any 24-bit colour using just 6 hex digits:</p>
-<pre><code>0110 0111 0100 1110 1010 0111  (binary)
-   6    7    4    e    a    7  (hexadecimal)</code></pre>
-<p>Which we write as: <code>#674ea7</code></p>
-<p>This is the format you see in web design, graphic design tools, and CSS stylesheets. It’s just a more compact way of writing the same RGB information: - First two hex digits: red channel (67 in hex = 103 in decimal) - Middle two hex digits: green channel (4e in hex = 78 in decimal) - Last two hex digits: blue channel (a7 in hex = 167 in decimal)</p>
-<p>You can play with hex colours at <a href="https://colorizer.org" class="uri">https://colorizer.org</a> to build intuition.</p>
+<p>Ugh. Nobody wants that.</p>
+<p>Enter <strong>hexadecimal</strong> (base 16). Instead of 10 digits, we use 16: <code>0 1 2 3 4 5 6 7 8 9 a b c d e f</code></p>
+<p>The magic: each hex digit represents <em>exactly</em> 4 bits. So we can write any colour in just 6 characters:</p>
+<pre><code>0110 0111 0100 1110 1010 0111  (binary - 24 digits 😫)
+   6    7    4    e    a    7  (hex - 6 characters 😊)</code></pre>
+<p>Which we write as: <strong><code>#674ea7</code></strong> <span class="swatch-purple"></span></p>
+<p>You’ve probably seen hex codes in web design, CSS, or design tools. Now you know what they actually mean!</p>
+<p>🎨 <strong>Want to play?</strong> Check out <a href="https://colorizer.org" class="uri">https://colorizer.org</a> and try converting between RGB and hex. It’s weirdly satisfying.</p>
 </section>
 </section>
-<section id="the-power-and-peril-of-reduction" class="level2">
-<h2 class="anchored" data-anchor-id="the-power-and-peril-of-reduction">The Power and Peril of Reduction</h2>
-<p>At this point, you might feel two contradictory reactions:</p>
+<section id="stop-and-feel-two-things" class="level2">
+<h2 class="anchored" data-anchor-id="stop-and-feel-two-things">Stop and Feel Two Things</h2>
+<p>At this point, I want you to notice something. You might be feeling:</p>
 <ol type="1">
-<li><p><strong>Wonder:</strong> It’s amazing that we can represent millions of colours using just 1s and 0s! The layered abstraction—from electrical charges to bits to numbers to colours—is genuinely beautiful.</p></li>
-<li><p><strong>Unease:</strong> Something feels lost in translation. The cultural richness, the personal associations, the emotional resonance of colour—none of that is captured in <code>(255, 0, 127)</code>.</p></li>
+<li><p><strong>Wonder</strong> ✨ — It’s genuinely amazing that we can represent 16 million colours using just 1s and 0s! The layered abstraction—from electrons to bits to numbers to colours—is kind of beautiful.</p></li>
+<li><p><strong>Unease</strong> 😕 — Something feels <em>lost</em>. All that cultural richness, the personal associations, the emotional weight of colour… none of it survives in <code>(255, 0, 127)</code>.</p></li>
 </ol>
-<p>Both reactions are valid. This is the fundamental tension in all digital representation: <strong>to make something computational, we must reduce it</strong>.</p>
+<p>Both feelings are valid! This tension is at the heart of all digital representation: <strong>to make something computational, we have to reduce it.</strong></p>
+<p>Keep that thought. We’re going to need it.</p>
 </section>
-<section id="representation-a-second-meaning" class="level2">
-<h2 class="anchored" data-anchor-id="representation-a-second-meaning">Representation: A Second Meaning</h2>
-<p>Let’s return to our RGB colour system with a specific observation. Consider these six colours:</p>
+<section id="the-plot-twist-a-second-meaning-of-representation" class="level2">
+<h2 class="anchored" data-anchor-id="the-plot-twist-a-second-meaning-of-representation">The Plot Twist: A Second Meaning of “Representation”</h2>
+<p>Look at these six colours:</p>
+<div style="max-width: 250px;">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Red</th>
-<th style="text-align: center;">Green</th>
-<th style="text-align: center;">Blue</th>
+<th style="text-align: center;"><span class="red">R</span></th>
+<th style="text-align: center;"><span class="green">G</span></th>
+<th style="text-align: center;"><span class="blue">B</span></th>
 </tr>
 </thead>
 <tbody>
@@ -654,156 +682,147 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>What do you notice? <strong>They all have green = 0.</strong></p>
-<p>These colours are all in the purple/magenta family—mixtures of red and blue with no green component. And here’s the crucial insight: <strong>when one dimension is missing, we lose an entire space of possibilities</strong>.</p>
+</div>
+<p>Notice anything? 👀</p>
+<p><strong>They all have <span class="green">green</span> = 0.</strong></p>
+<p>These are all in the <span class="purple">purple</span>/<span class="pink">magenta</span> family—mixes of <span class="red">red</span> and <span class="blue">blue</span> with <em>zero</em> <span class="green">green</span>.</p>
+<p>Now imagine an RGB colour cube—a 3D box where each axis represents one colour channel (0 to 255). Every possible colour lives somewhere in that cube!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/RGB_color_solid_cube.png/400px-RGB_color_solid_cube.png" class="img-fluid figure-img" alt="A three-dimensional RGB color cube showing how red, green, and blue axes create a space of possible colors."></p>
-<figcaption>RGB color cube showing all possible combinations of red, green, and blue values. When we remove the green dimension (setting green=0), we’re left with only the back face of the cube—a single plane of purple/magenta colors. <a href="https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png">Image: Wikipedia</a></figcaption>
+<p><img src="../images/rgb_cube.jpg" class="img-fluid figure-img" alt="A three-dimensional RGB color cube showing how red, green, and blue axes create a space of possible colors." width="300"></p>
+<figcaption>The RGB colour cube. Every possible colour lives somewhere in this cube! <a href="https://www.colorcube.com/puzzle/puzzle.htm">Image: COLORCUBE</a></figcaption>
 </figure>
 </div>
-<p>With no green channel, we can never represent: - The green of spring leaves - The teal of tropical waters - The yellow of sunflowers - Any colour that requires even a hint of green</p>
-<p>Imagine the RGB cube above, but with the entire green dimension collapsed to zero. You’re left with only a single face of the cube—a flat plane. <strong>An entire dimension of color space simply doesn’t exist.</strong></p>
-<p>This is more than just an observation about RGB colour space. It’s a <strong>metaphor for representation in computer science itself</strong>.</p>
-<section id="diversity-as-dimensionality" class="level3">
-<h3 class="anchored" data-anchor-id="diversity-as-dimensionality">Diversity as Dimensionality</h3>
-<p>Just as removing the green channel limits the colours we can create, limiting the diversity of people in computer science limits the ideas we can explore and the problems we can solve.</p>
-<p>When everyone working on a problem comes from similar backgrounds, with similar experiences, similar perspectives—we’ve effectively removed dimensions from our “idea space.” We end up with solutions that work well for some people and not others. We fail to see problems that don’t affect us personally. We perpetuate biases we don’t even realize we have.</p>
-<p>This isn’t about being nice or politically correct. It’s about <strong>technical excellence</strong>. The best solutions come from teams that can see problems from multiple angles, that bring different kinds of expertise and lived experience to the table, that can imagine use cases beyond their own immediate context.</p>
+<p><strong>Try it yourself!</strong> Drag to rotate the cube and explore the colour space:</p>
+<iframe src="../interactives/rgb_cube.html" width="100%" height="400" style="border: 1px solid #ddd; border-radius: 8px;">
+</iframe>
+<p>When <span class="green">green</span> = 0, we’re stuck on just one face of this cube. A flat plane. We can <em>never</em> create:</p>
+<ul>
+<li>The <span class="green">green</span> of spring leaves <span class="swatch-green"></span></li>
+<li>The <span class="cyan">teal</span> of tropical waters <span class="swatch-cyan"></span></li>
+<li>The <span class="yellow">yellow</span> of sunflowers <span class="swatch-yellow"></span></li>
+<li>Anything that needs even a <em>hint</em> of <span class="green">green</span></li>
+</ul>
+<p><strong>An entire dimension just… doesn’t exist.</strong> 😱</p>
+<section id="heres-where-it-gets-real" class="level3">
+<h3 class="anchored" data-anchor-id="heres-where-it-gets-real">Here’s Where It Gets Real</h3>
+<p>This is more than a fun fact about colour spaces. It’s a <strong>metaphor</strong>.</p>
+<p>Just as removing the <span class="green">green</span> channel limits the colours we can create, <strong>limiting the diversity of people in computer science limits the ideas we can explore.</strong></p>
+<p>Think about it:</p>
+<ul>
+<li>When everyone on a team has similar backgrounds and experiences, they’ve effectively removed dimensions from the “idea space”</li>
+<li>They build solutions that work great for people like them… and poorly for everyone else</li>
+<li>They don’t see problems that don’t affect them personally</li>
+<li>They perpetuate biases they don’t even know they have</li>
+</ul>
+<p>This isn’t about being “nice” or “politically correct.” It’s about <strong>technical excellence</strong>. The best solutions come from teams that can see problems from multiple angles.</p>
 <p><strong>Representation matters—in both senses of the word.</strong></p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
 </section>
 </section>
-<section id="putting-it-into-practice-image-manipulation" class="level2">
-<h2 class="anchored" data-anchor-id="putting-it-into-practice-image-manipulation">Putting It Into Practice: Image Manipulation</h2>
-<p>Let’s bring this full circle by actually <em>using</em> RGB representation to manipulate images. Here’s a concrete problem:</p>
-<p><strong>Make the poppies pop!</strong> Given an image of a poppy field, we want to highlight the red flowers while fading everything else to grayscale.</p>
+<section id="lets-write-some-code" class="level2">
+<h2 class="anchored" data-anchor-id="lets-write-some-code">Let’s Write Some Code!</h2>
+<p>Enough philosophy—let’s actually <em>use</em> what we’ve learned. Here’s a fun challenge:</p>
+<p><strong>Make the poppies pop!</strong> 🌺</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/poppyfield.jpg" class="img-fluid figure-img" alt="A field of bright red poppies with green stems and leaves."></p>
-<figcaption>A field of red poppies that we’ll use for our image manipulation example.</figcaption>
+<figcaption>A field of red poppies. Our mission: make the flowers stand out by fading everything else to gray.</figcaption>
 </figure>
 </div>
-<section id="the-algorithm" class="level3">
-<h3 class="anchored" data-anchor-id="the-algorithm">The Algorithm</h3>
-<p>Here’s our strategy in plain language:</p>
-<ol type="1">
-<li>Look at each pixel in the image</li>
-<li>Check if its red channel is high (over 200, say)</li>
-<li>If yes: leave it alone (it’s probably a poppy!)</li>
-<li>If no: convert it to grayscale by setting all three channels to their average</li>
-</ol>
-<p>Converting to grayscale is simple: if a pixel is <code>(120, 80, 40)</code>, the average is <code>(120 + 80 + 40) / 3 = 80</code>, so we replace it with <code>(80, 80, 80)</code>. When all three channels are equal, you get gray.</p>
-</section>
+<p>The plan: 1. Look at each pixel 2. If it’s very <span class="red">red</span> (probably a poppy!), leave it alone 3. Otherwise, convert it to <span class="gray">gray</span></p>
+<p>Simple, right? Let’s code it!</p>
 <section id="the-code" class="level3">
 <h3 class="anchored" data-anchor-id="the-code">The Code</h3>
-<p>Here’s how we express this in Python. <strong>Try editing the code below!</strong> Change the threshold value, modify the effect, experiment with different logic:</p>
-<pre class="{pyodide}"><code>import numpy as np
-from skimage import io
-import matplotlib.pyplot as plt
-
-Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
-
-def boost_red_pixel(p: Pixel) -&gt; Pixel:
-    """
-    If the pixel has high red value, leave it alone.
-    Otherwise, fade it to gray.
-    """
-    # Extract the colour channels as integers
-    red = int(p[0])
-    green = int(p[1])
-    blue = int(p[2])
-
-    # Compute grayscale value
-    grey = (red + green + blue) // 3
-
-    # Conditionally change the pixel to grey
-    if red &lt; 200:
-        red = green = blue = grey
-
-    return (red, green, blue)
-
-def fancify(img: np.ndarray) -&gt; np.ndarray:
-    """
-    Create a new image by applying boost_red_pixel
-    to every pixel in the original.
-    """
-    H, W = img.shape[:2]  # Get height and width
-    out = img.copy()      # Create a copy to modify
-
-    # Traverse every pixel
-    for row in range(H):
-        for col in range(W):
-            out[row, col] = boost_red_pixel(img[row, col])
-
-    return out
-
-def main():
-    # Load image from URL
-    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
-
-    # Apply the effect
-    out = fancify(img)
-
-    # Display the result
-    plt.imshow(out)
-    plt.axis('off')
-    plt.show()
-
-main()</code></pre>
+<p>💡 <strong>Copy this code</strong> (click the icon in the top-right corner) and paste it into your own Python environment to run it!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Pixel <span class="op">=</span> <span class="bu">tuple</span>[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Make non-red pixels gray, keep red pixels vibrant."""</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate gray value (average of all channels)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue) <span class="op">//</span> <span class="dv">3</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If not very red, make it gray</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (red, green, blue)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Apply our effect to every pixel in the image."""</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>]  <span class="co"># Height and Width</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> img.copy()</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Visit every single pixel (this is the nested loop pattern!)</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row, col])</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grab the image from the web</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> io.imread(url)[..., :<span class="dv">3</span>]  <span class="co"># Keep only RGB channels</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Work our magic</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> fancify(img)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Show off the result!</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    plt.imshow(out)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="whats-happening-here" class="level3">
-<h3 class="anchored" data-anchor-id="whats-happening-here">What’s Happening Here?</h3>
-<p>Let’s break down the key ideas:</p>
-<p><strong>Type Annotations</strong>: The line <code>Pixel = tuple[np.uint8, np.uint8, np.uint8]</code> creates a type alias. It’s saying “a Pixel is a tuple of three unsigned 8-bit integers” (which is exactly what we need for RGB values 0-255).</p>
-<p><strong>Nested Loops</strong>: The <code>fancify</code> function uses a <strong>nested loop pattern</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># process img[row, col]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is the standard way to traverse a 2D grid (like an image). Let’s visualize how this works with a tiny 4×3 image:</p>
-<pre><code>Order of processing:
-┌─────┬─────┬─────┬─────┐
+<section id="whats-actually-happening" class="level3">
+<h3 class="anchored" data-anchor-id="whats-actually-happening">What’s Actually Happening?</h3>
+<p><strong>The nested loop</strong> is the key pattern here. We’re visiting every pixel in order:</p>
+<pre><code>┌─────┬─────┬─────┬─────┐
 │  1  │  2  │  3  │  4  │  ← row 0
 ├─────┼─────┼─────┼─────┤
 │  5  │  6  │  7  │  8  │  ← row 1
 ├─────┼─────┼─────┼─────┤
 │  9  │ 10  │ 11  │ 12  │  ← row 2
-└─────┴─────┴─────┴─────┘
- col 0 col 1 col 2 col 3</code></pre>
-<p>The outer loop visits row 0, then row 1, then row 2. For each row, the inner loop visits every column from left to right. So we process pixels in order: (0,0), (0,1), (0,2), (0,3), then (1,0), (1,1), (1,2), (1,3), and so on.</p>
-<p>If the image is 400 pixels tall and 600 pixels wide, this executes <span class="math inline">\(400 \times 600 = 240{,}000\)</span> times. (Remember our efficiency discussions from Week 1? This is an <span class="math inline">\(O(n^2)\)</span> algorithm!)</p>
-<p><strong>Array Indexing</strong>: <code>img[row, col]</code> gets the pixel at position (row, col). In this case, it returns a tuple like <code>(234, 112, 98)</code> representing that pixel’s RGB values.</p>
-<p><strong>Functional Decomposition</strong>: Notice how we split the problem into two functions: - <code>boost_red_pixel</code>: handles the logic for a single pixel - <code>fancify</code>: handles traversing all pixels and applying the function</p>
-<p>This is good software design! It makes the code easier to understand, test, and modify.</p>
+└─────┴─────┴─────┴─────┘</code></pre>
+<p>Row by row, column by column. For a 400×600 image, that’s <span class="math inline">\(400 \times 600 = 240{,}000\)</span> pixels!</p>
+<p>(Remember Week 1? This is <span class="math inline">\(O(n^2)\)</span> behavior. Efficiency matters!)</p>
 </section>
-</section>
-<section id="try-it-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="try-it-yourself">Try It Yourself</h2>
-<p>Now that you understand the mechanics, experiment! Here are some ideas:</p>
+<section id="your-turn" class="level3">
+<h3 class="anchored" data-anchor-id="your-turn">Your Turn! 🎮</h3>
+<p>Try these experiments:</p>
 <ol type="1">
-<li><p><strong>Boost a different colour</strong>: Change the code to highlight green instead of red. What threshold value works well?</p></li>
-<li><p><strong>Adjust the threshold</strong>: Try 150 instead of 200. What happens? What about 250?</p></li>
-<li><p><strong>Invert colours</strong>: Instead of converting to grayscale, try inverting: <code>red = 255 - red</code>. This creates a photographic negative effect.</p></li>
-<li><p><strong>Reverse the logic</strong>: What if you boost pixels that are <em>low</em> in red instead of high? What kind of effect does this create?</p></li>
-<li><p><strong>Use your own image</strong>: Find any image URL online and process it. Nature photos, artwork, selfies—anything works!</p></li>
+<li><strong>Boost <span class="green">green</span> instead</strong> — What threshold works well for leaves?</li>
+<li><strong>Change the threshold</strong> — Try 150 or 250 instead of 200</li>
+<li><strong>Invert instead of gray</strong> — Use <code>red = 255 - red</code> for a trippy negative effect</li>
+<li><strong>Reverse the logic</strong> — Keep the <em>non-red</em> pixels and gray out the red ones</li>
 </ol>
-<p>The best way to understand representation is to <em>play</em> with it. Change values, break things, see what happens. That’s how you build intuition.</p>
+<p>The best way to understand this stuff? <strong>Play with it.</strong> Break things. See what happens. That’s how you build intuition!</p>
 </section>
-<section id="reflection-what-have-we-learned" class="level2">
-<h2 class="anchored" data-anchor-id="reflection-what-have-we-learned">Reflection: What Have We Learned?</h2>
-<p>Today’s lesson covers a lot of ground, but it all connects to a central theme: <strong>representation shapes what’s possible</strong>.</p>
-<p><strong>Technical representation</strong>: - Computers represent everything as bits (1s and 0s) - Bits can represent numbers (through binary encoding) - Numbers can represent colours (through RGB mapping) - This layered abstraction is powerful but reductive</p>
-<p><strong>Social representation</strong>: - Missing dimensions limit possibilities - Diversity isn’t just about fairness—it’s about technical excellence - Who builds the technology determines what problems get solved</p>
-<p><strong>Practical skills</strong>: - Binary and hexadecimal number systems - RGB colour representation - Image manipulation with nested loops - Functional decomposition in code</p>
-<p>As you continue in computer science, you’ll encounter many forms of representation: how we represent text (Unicode), sound (waveforms and compression), networks (graphs), uncertainty (probability distributions), and knowledge itself (data structures and databases).</p>
-<p>Each representation is a choice—a decision about what to preserve and what to discard, what to make easy and what to make hard. Understanding representation means understanding these tradeoffs.</p>
-<p>And remember: the metaphor of the missing green channel applies to everything we build. <strong>Diverse teams create richer solutions</strong>—not because we check a box, but because more dimensions means more possibilities.</p>
+</section>
+<section id="what-did-we-learn" class="level2">
+<h2 class="anchored" data-anchor-id="what-did-we-learn">What Did We Learn?</h2>
+<p>Let’s zoom out. Today’s journey:</p>
+<p><strong>Technical stuff:</strong> - Computers store everything as bits (1s and 0s) - Bits → numbers → colours (it’s abstractions all the way down!) - RGB gives us 16+ million colours - Hex is just a compact way to write RGB values</p>
+<p><strong>Big ideas:</strong> - Digital representation requires <em>reduction</em>—we lose richness - Missing dimensions limit what’s possible - Diversity in tech isn’t just nice—it’s <em>technically necessary</em></p>
+<p><strong>Skills:</strong> - Binary and hexadecimal conversion - RGB colour representation - Nested loops for image processing - Breaking problems into functions</p>
 </section>
 <section id="coming-up" class="level2">
 <h2 class="anchored" data-anchor-id="coming-up">Coming Up</h2>
-<p>We’ve focused today on <em>what</em> computers represent and <em>why</em> representation matters. Next, we’ll dig deeper into <em>how</em>—exploring more data structures, thinking about efficiency of different representations, and building more complex programs that leverage these ideas.</p>
-<p>But for now: go play with colours. Break some code. Make something unexpected. That’s where the real learning happens.</p>
+<p>We’ve focused on <em>what</em> computers represent and <em>why</em> representation matters. Next time, we’ll dig into <em>how</em> we represent more complex data—and why different choices lead to different tradeoffs.</p>
+<p>But for now: go play with colours! 🎨 Find a hex code you love. Write some code that manipulates images in weird ways. Make something unexpected.</p>
+<p>That’s where the real learning happens.</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
 <hr>
-<p><em>Photo credit: Poppy field image from <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/">Epic Gardening</a></em></p>
+<p><em>Photo credit: Poppy field from <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/">Epic Gardening</a>. SSD image from <a href="https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/">Ars Technica</a>. RGB cube from <a href="https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png">Wikipedia</a>.</em></p>
 
 
 </section>

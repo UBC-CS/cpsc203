@@ -1,1 +1,55 @@
 /* css styles */
+
+/* ===========================================
+   COLOR PALETTE
+   Vibrant teaching colors matching slide theme
+   =========================================== */
+
+/* Colored text classes */
+.red { color: #d62828; }
+.pink { color: #e91e8c; }
+.orange { color: #e85d04; }
+.apricot { color: #f4a261; }
+.yellow { color: #c9a227; } /* Darker for readability on white */
+.gold { color: #c9a227; }
+.green { color: #2a9d2a; }
+.lime { color: #52b000; } /* Darker for readability */
+.cyan { color: #0096b4; } /* Darker for readability */
+.blue { color: #0077b6; }
+.violet { color: #7209b7; }
+.purple { color: #6a4c93; }
+.gray { color: #6c757d; }
+.white { color: #ffffff; }
+
+/* Bold + color combos */
+.red-bold { color: #d62828; font-weight: 700; }
+.pink-bold { color: #e91e8c; font-weight: 700; }
+.orange-bold { color: #e85d04; font-weight: 700; }
+.green-bold { color: #2a9d2a; font-weight: 700; }
+.blue-bold { color: #0077b6; font-weight: 700; }
+.violet-bold { color: #7209b7; font-weight: 700; }
+.purple-bold { color: #6a4c93; font-weight: 700; }
+
+/* Color swatches - small inline squares */
+.swatch-red { background-color: #d62828; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-pink { background-color: #e91e8c; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-orange { background-color: #e85d04; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-apricot { background-color: #f4a261; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-yellow { background-color: #f9c74f; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-gold { background-color: #c9a227; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-green { background-color: #2a9d2a; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-lime { background-color: #70e000; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-cyan { background-color: #00b4d8; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-blue { background-color: #0077b6; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-violet { background-color: #7209b7; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-purple { background-color: #6a4c93; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-gray { background-color: #6c757d; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; }
+.swatch-white { background-color: #ffffff; width: 1em; height: 1em; display: inline-block; vertical-align: middle; margin: 0 0.2em; border-radius: 3px; border: 1px solid #dee2e6; }
+
+/* Hexagon swatches - larger decorative shapes */
+.hexagon-red { background: #d62828; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
+.hexagon-orange { background: #e85d04; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
+.hexagon-yellow { background: #f9c74f; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
+.hexagon-green { background: #2a9d2a; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
+.hexagon-blue { background: #0077b6; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
+.hexagon-violet { background: #7209b7; height: 60px; aspect-ratio: 1/0.866; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-block; margin: 0 5px; }
