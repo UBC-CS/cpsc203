@@ -2,179 +2,217 @@
 title: "Week 2, Tuesday: Representation—Technical and Social"
 ---
 
-What does it mean to be *represented*? This question sits at the heart of computer science in two profound ways. On one hand, we need to understand how computers represent the world around us—how they take rich, complex phenomena like colour and reduce them to sequences of electrical signals. On the other hand, we need to think critically about who gets to be represented in this field, and why that matters for the kinds of problems we solve and the solutions we create.
+What does it mean to be *represented*?
 
-Today's lesson weaves these two meanings of "representation" together through an exploration of how computers encode colour.
+This question sits at the heart of computer science in two surprising ways. Today we're going on a journey—from the cultural richness of colour, down to the electrical signals inside your computer, and back up to some big questions about who gets to shape the technology we all use.
+
+Ready? Let's go.
 
 ## The Cultural Richness of Colour
 
-Before we dive into bits and bytes, let's start with something personal: What's your favorite colour?
+Before we dive into bits and bytes, let's start with something personal: **What's your favorite colour?**
 
-Take a moment to really think about this. Is it blue, like the ocean on a clear day? Red, like the poppies that bloom in spring? Green, like the forests that cool our cities? Do you have a sense of *why* it's your favorite? Does it influence what you wear, how you decorate your space, what you're drawn to when you shop?
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
 
-Colour is deeply personal and culturally loaded. Different cultures attach vastly different meanings to the same colours:
+No, really—take a moment to think about it. Is it [blue]{.blue}, like the ocean on a clear day? [Red]{.red}, like the poppies that bloom in spring? [Green]{.green}, like the forests that cool our cities?
 
-- **Red** might mean luck and celebration in Chinese culture, but danger or warning in Western contexts
-- **White** symbolizes purity and weddings in many Western traditions, but mourning and funerals in some Eastern cultures
-- **Purple** was once the colour of royalty (because the dye was incredibly expensive), but has taken on new meanings in modern contexts
+Do you know *why* it's your favorite? Does it show up in your wardrobe, your room decor, the things you're drawn to when you shop?
 
-These associations aren't arbitrary—they're woven into art, literature, religious practices, and daily life. Colour carries *meaning* that varies across time, place, and context.
+Colour is *weird*. It's deeply personal, but it's also culturally loaded in ways we don't always notice:
 
-This richness makes colour a perfect case study for understanding representation in computing. How do we take something so nuanced, so culturally complex, so tied to human experience—and make a computer understand it?
+- [**Red**]{.red} []{.swatch-red} means luck and celebration in Chinese culture... but danger and warning in Western contexts. Same colour, totally different vibes!
+- **White** []{.swatch-white} symbolizes purity and weddings in many Western traditions... but mourning and funerals in some Eastern cultures. Imagine the confusion at an international wedding!
+- [**Purple**]{.purple} []{.swatch-purple} was once *the* colour of royalty (because the dye was ridiculously expensive)... but has taken on completely different meanings today.
 
-## From Complexity to Simplicity: How Computers See Colour
+These associations aren't random—they're woven into centuries of art, literature, religion, and daily life. Colour carries *meaning*.
 
-The answer is both elegant and slightly troubling: **we reduce colour to numbers**.
+So here's the question that should blow your mind a little: **How do we take something this rich and nuanced and make a computer understand it?**
 
-### Electrical Signals and Bits
+## How Computers "See" Colour
 
-Let's start at the very bottom. Inside your computer, everything—and I mean *everything*—comes down to electrical charges. Picture a solid-state drive: tiny transistors holding or releasing electrons, creating regions of positive and negative charge across the chip.
+Spoiler alert: they don't. Not really. But we've found a clever workaround.
 
-These charges get interpreted as **bits**: binary digits that can be either 0 or 1. That's it. Just two states. On or off. High voltage or low voltage. One or zero.
+### It All Starts with Electricity
 
-Is that enough to represent the world? Amazingly, yes.
+Let's go all the way down to the bottom. Inside your computer, *everything*—and I mean **everything**—comes down to electrical charges.
 
-### From Bits to Numbers
+![Close-up of a solid-state drive (SSD) circuit board. All data—including your favorite cat photos and every colour in them—is ultimately stored as electrical charges in chips like these. Wild, right?](/images/ssd.jpg){fig-alt="A solid-state drive circuit board with visible memory chips and electronic components."}
 
-You already know how to represent numbers in base 10 (decimal). The number 3157 means:
+See those chips? They're full of tiny transistors holding or releasing electrons, creating regions of positive and negative charge. Your computer interprets these charges as **bits**: binary digits that can be either 0 or 1.
+
+That's it. Just two states. On or off. Yes or no. One or zero.
+
+Is that *really* enough to represent... everything? 🤔
+
+### From Bits to Numbers (It's Just Counting!)
+
+Here's where it gets fun. You already know how to count in base 10:
 
 | 3 | 1 | 5 | 7 |
 |---|---|---|---|
 | 3 × 10³ | 1 × 10² | 5 × 10¹ | 7 × 10⁰ |
 | 3000 | 100 | 50 | 7 |
 
-We can do exactly the same thing in base 2 (binary), where each position represents a power of 2 instead of a power of 10:
+The number 3157 is just: three thousands, one hundred, five tens, and seven ones.
+
+Now here's the trick—we can do *exactly the same thing* in base 2:
 
 | 1 | 0 | 1 | 1 |
 |---|---|---|---|
 | 1 × 2³ | 0 × 2² | 1 × 2¹ | 1 × 2⁰ |
 | 8 | 0 | 2 | 1 |
 
-So the binary number 1011 represents the decimal number 11.
+So 1011 in binary = 8 + 0 + 2 + 1 = **11** in decimal.
 
-**Quick check:** What's the highest number you can represent with 4 bits? With 5 bits?
+**Pop quiz!** 🎯
 
-With 4 bits, you can represent 0 through 15 (that's $2^4 = 16$ different values).
-With 5 bits, you can represent 0 through 31 (that's $2^5 = 32$ different values).
+- What's the highest number you can make with 4 bits?
+- What about 5 bits?
 
-In general, with $n$ bits, you can represent $2^n$ different values.
+*(Think about it before scrolling...)*
 
-### From Numbers to Colours: RGB Representation
+With 4 bits: 1111 = 8+4+2+1 = **15** (that's $2^4 - 1$, or 16 possible values: 0 through 15)
 
-Now here's the key insight: if we can represent any number with bits, and we can agree on a system for mapping numbers to colours, then we can represent any colour with bits.
+With 5 bits: 11111 = **31** (that's $2^5 - 1$, or 32 possible values)
 
-The most common system is **RGB**: Red, Green, Blue. Each colour component gets a number from 0 to 255 (which happens to be exactly the range you can represent with 8 bits, since $2^8 = 256$).
+In general, $n$ bits gives you $2^n$ different values. Math is cool. 😎
 
-For example:
-- `(255, 0, 0)` is pure red (maximum red, no green, no blue)
-- `(0, 255, 0)` is pure green
-- `(0, 0, 255)` is pure blue
-- `(255, 255, 0)` is yellow (red + green)
-- `(255, 0, 127)` is a pinkish color (lots of red, no green, half blue)
+### From Numbers to Colours: RGB
 
-By mixing different amounts of red, green, and blue light, we can represent roughly 16.7 million different colours ($256 \times 256 \times 256 = 16{,}777{,}216$ to be exact).
+Okay, so we can represent numbers with bits. But how do we get from numbers to *colours*?
 
-### Hexadecimal: A Friendlier Notation
+We just... agree on a system! The most common one is **RGB**: [**R**ed]{.red}, [**G**reen]{.green}, [**B**lue]{.blue}.
 
-Writing colours as three separate decimal numbers works, but it gets tedious. A 24-bit colour like:
+Each colour component gets a number from 0 to 255. (Why 255? Because that's exactly $2^8 - 1$—the range of an 8-bit number. Everything connects!)
+
+Check it out:
+
+- `(255, 0, 0)` = pure [**red**]{.red} []{.swatch-red} (max [red]{.red}, no [green]{.green}, no [blue]{.blue})
+- `(0, 255, 0)` = pure [**green**]{.green} []{.swatch-green}
+- `(0, 0, 255)` = pure [**blue**]{.blue} []{.swatch-blue}
+- `(255, 255, 0)` = [**yellow**]{.yellow} []{.swatch-yellow} ([red]{.red} + [green]{.green}, no [blue]{.blue}—try it!)
+- `(255, 0, 127)` = a lovely [**pink**]{.pink} []{.swatch-pink}
+
+By mixing different amounts of [red]{.red}, [green]{.green}, and [blue]{.blue} light, we can create...
+
+$256 \times 256 \times 256 = $ **16,777,216 different colours!** 🌈
+
+That's more colours than most humans can distinguish. Not bad for a bunch of 1s and 0s!
+
+### Hexadecimal: Because Programmers Are Lazy (In a Good Way)
+
+Writing `(103, 78, 167)` every time you want a specific [purple]{.purple} is tedious. And writing the binary version?
 
 ```
 0110 0111 0100 1110 1010 0111
 ```
 
-is even worse to read! That's where **hexadecimal** (base 16) notation comes in.
+Ugh. Nobody wants that.
 
-In hexadecimal, we use 16 digits: `0 1 2 3 4 5 6 7 8 9 a b c d e f`
+Enter **hexadecimal** (base 16). Instead of 10 digits, we use 16: `0 1 2 3 4 5 6 7 8 9 a b c d e f`
 
-Each hex digit represents exactly 4 bits, so we can write any 24-bit colour using just 6 hex digits:
+The magic: each hex digit represents *exactly* 4 bits. So we can write any colour in just 6 characters:
 
 ```
-0110 0111 0100 1110 1010 0111  (binary)
-   6    7    4    e    a    7  (hexadecimal)
+0110 0111 0100 1110 1010 0111  (binary - 24 digits 😫)
+   6    7    4    e    a    7  (hex - 6 characters 😊)
 ```
 
-Which we write as: `#674ea7`
+Which we write as: **`#674ea7`** []{.swatch-purple}
 
-This is the format you see in web design, graphic design tools, and CSS stylesheets. It's just a more compact way of writing the same RGB information:
-- First two hex digits: red channel (67 in hex = 103 in decimal)
-- Middle two hex digits: green channel (4e in hex = 78 in decimal)
-- Last two hex digits: blue channel (a7 in hex = 167 in decimal)
+You've probably seen hex codes in web design, CSS, or design tools. Now you know what they actually mean!
 
-You can play with hex colours at <https://colorizer.org> to build intuition.
+🎨 **Want to play?** Check out <https://colorizer.org> and try converting between RGB and hex. It's weirdly satisfying.
 
-## The Power and Peril of Reduction
+## Stop and Feel Two Things
 
-At this point, you might feel two contradictory reactions:
+At this point, I want you to notice something. You might be feeling:
 
-1. **Wonder:** It's amazing that we can represent millions of colours using just 1s and 0s! The layered abstraction—from electrical charges to bits to numbers to colours—is genuinely beautiful.
+1. **Wonder** ✨ — It's genuinely amazing that we can represent 16 million colours using just 1s and 0s! The layered abstraction—from electrons to bits to numbers to colours—is kind of beautiful.
 
-2. **Unease:** Something feels lost in translation. The cultural richness, the personal associations, the emotional resonance of colour—none of that is captured in `(255, 0, 127)`.
+2. **Unease** 😕 — Something feels *lost*. All that cultural richness, the personal associations, the emotional weight of colour... none of it survives in `(255, 0, 127)`.
 
-Both reactions are valid. This is the fundamental tension in all digital representation: **to make something computational, we must reduce it**.
+Both feelings are valid! This tension is at the heart of all digital representation: **to make something computational, we have to reduce it.**
 
-## Representation: A Second Meaning
+Keep that thought. We're going to need it.
 
-Let's return to our RGB colour system with a specific observation. Consider these six colours:
+## The Plot Twist: A Second Meaning of "Representation"
 
-| Red | Green | Blue |
-|:---:|:-----:|:----:|
-| 255 |   0   |  0   |
-| 17  |   0   | 178  |
-| 45  |   0   |  13  |
-| 200 |   0   | 220  |
-| 62  |   0   |  37  |
-| 130 |   0   |  95  |
+Look at these six colours:
 
-What do you notice? **They all have green = 0.**
+::: {style="max-width: 250px;"}
+| [R]{.red} | [G]{.green} | [B]{.blue} |
+|:---:|:---:|:---:|
+| 255 | 0 | 0 |
+| 17 | 0 | 178 |
+| 45 | 0 | 13 |
+| 200 | 0 | 220 |
+| 62 | 0 | 37 |
+| 130 | 0 | 95 |
+:::
 
-These colours are all in the purple/magenta family—mixtures of red and blue with no green component. And here's the crucial insight: **when one dimension is missing, we lose an entire space of possibilities**.
+Notice anything? 👀
 
-![RGB color cube showing all possible combinations of red, green, and blue values. When we remove the green dimension (setting green=0), we're left with only the back face of the cube—a single plane of purple/magenta colors. [Image: Wikipedia](https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/RGB_color_solid_cube.png/400px-RGB_color_solid_cube.png){fig-alt="A three-dimensional RGB color cube showing how red, green, and blue axes create a space of possible colors."}
+**They all have [green]{.green} = 0.**
 
-With no green channel, we can never represent:
-- The green of spring leaves
-- The teal of tropical waters
-- The yellow of sunflowers
-- Any colour that requires even a hint of green
+These are all in the [purple]{.purple}/[magenta]{.pink} family—mixes of [red]{.red} and [blue]{.blue} with *zero* [green]{.green}.
 
-Imagine the RGB cube above, but with the entire green dimension collapsed to zero. You're left with only a single face of the cube—a flat plane. **An entire dimension of color space simply doesn't exist.**
+Now imagine an RGB colour cube—a 3D box where each axis represents one colour channel (0 to 255). Every possible colour lives somewhere in that cube!
 
-This is more than just an observation about RGB colour space. It's a **metaphor for representation in computer science itself**.
+![The RGB colour cube. Every possible colour lives somewhere in this cube! [Image: COLORCUBE](https://www.colorcube.com/puzzle/puzzle.htm)](/images/rgb_cube.jpg){fig-alt="A three-dimensional RGB color cube showing how red, green, and blue axes create a space of possible colors." width="300"}
 
-### Diversity as Dimensionality
+**Try it yourself!** Drag to rotate the cube and explore the colour space:
 
-Just as removing the green channel limits the colours we can create, limiting the diversity of people in computer science limits the ideas we can explore and the problems we can solve.
+<iframe src="/interactives/rgb_cube.html" width="100%" height="400" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
 
-When everyone working on a problem comes from similar backgrounds, with similar experiences, similar perspectives—we've effectively removed dimensions from our "idea space." We end up with solutions that work well for some people and not others. We fail to see problems that don't affect us personally. We perpetuate biases we don't even realize we have.
+When [green]{.green} = 0, we're stuck on just one face of this cube. A flat plane. We can *never* create:
 
-This isn't about being nice or politically correct. It's about **technical excellence**. The best solutions come from teams that can see problems from multiple angles, that bring different kinds of expertise and lived experience to the table, that can imagine use cases beyond their own immediate context.
+- The [green]{.green} of spring leaves []{.swatch-green}
+- The [teal]{.cyan} of tropical waters []{.swatch-cyan}
+- The [yellow]{.yellow} of sunflowers []{.swatch-yellow}
+- Anything that needs even a *hint* of [green]{.green}
+
+**An entire dimension just... doesn't exist.** 😱
+
+### Here's Where It Gets Real
+
+This is more than a fun fact about colour spaces. It's a **metaphor**.
+
+Just as removing the [green]{.green} channel limits the colours we can create, **limiting the diversity of people in computer science limits the ideas we can explore.**
+
+Think about it:
+
+- When everyone on a team has similar backgrounds and experiences, they've effectively removed dimensions from the "idea space"
+- They build solutions that work great for people like them... and poorly for everyone else
+- They don't see problems that don't affect them personally
+- They perpetuate biases they don't even know they have
+
+This isn't about being "nice" or "politically correct." It's about **technical excellence**. The best solutions come from teams that can see problems from multiple angles.
 
 **Representation matters—in both senses of the word.**
 
-## Putting It Into Practice: Image Manipulation
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
 
-Let's bring this full circle by actually *using* RGB representation to manipulate images. Here's a concrete problem:
+## Let's Write Some Code!
 
-**Make the poppies pop!** Given an image of a poppy field, we want to highlight the red flowers while fading everything else to grayscale.
+Enough philosophy—let's actually *use* what we've learned. Here's a fun challenge:
 
-![A field of red poppies that we'll use for our image manipulation example.](/images/poppyfield.jpg){fig-alt="A field of bright red poppies with green stems and leaves."}
+**Make the poppies pop!** 🌺
 
-### The Algorithm
+![A field of red poppies. Our mission: make the flowers stand out by fading everything else to gray.](/images/poppyfield.jpg){fig-alt="A field of bright red poppies with green stems and leaves."}
 
-Here's our strategy in plain language:
+The plan:
+1. Look at each pixel
+2. If it's very [red]{.red} (probably a poppy!), leave it alone
+3. Otherwise, convert it to [gray]{.gray}
 
-1. Look at each pixel in the image
-2. Check if its red channel is high (over 200, say)
-3. If yes: leave it alone (it's probably a poppy!)
-4. If no: convert it to grayscale by setting all three channels to their average
-
-Converting to grayscale is simple: if a pixel is `(120, 80, 40)`, the average is `(120 + 80 + 40) / 3 = 80`, so we replace it with `(80, 80, 80)`. When all three channels are equal, you get gray.
+Simple, right? Let's code it!
 
 ### The Code
 
-Here's how we express this in Python. **Try editing the code below!** Change the threshold value, modify the effect, experiment with different logic:
+💡 **Copy this code** (click the icon in the top-right corner) and paste it into your own Python environment to run it!
 
-```{pyodide}
+```python
 import numpy as np
 from skimage import io
 import matplotlib.pyplot as plt
@@ -182,33 +220,26 @@ import matplotlib.pyplot as plt
 Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
 
 def boost_red_pixel(p: Pixel) -> Pixel:
-    """
-    If the pixel has high red value, leave it alone.
-    Otherwise, fade it to gray.
-    """
-    # Extract the colour channels as integers
+    """Make non-red pixels gray, keep red pixels vibrant."""
     red = int(p[0])
     green = int(p[1])
     blue = int(p[2])
 
-    # Compute grayscale value
+    # Calculate gray value (average of all channels)
     grey = (red + green + blue) // 3
 
-    # Conditionally change the pixel to grey
+    # If not very red, make it gray
     if red < 200:
         red = green = blue = grey
 
     return (red, green, blue)
 
 def fancify(img: np.ndarray) -> np.ndarray:
-    """
-    Create a new image by applying boost_red_pixel
-    to every pixel in the original.
-    """
-    H, W = img.shape[:2]  # Get height and width
-    out = img.copy()      # Create a copy to modify
+    """Apply our effect to every pixel in the image."""
+    H, W = img.shape[:2]  # Height and Width
+    out = img.copy()
 
-    # Traverse every pixel
+    # Visit every single pixel (this is the nested loop pattern!)
     for row in range(H):
         for col in range(W):
             out[row, col] = boost_red_pixel(img[row, col])
@@ -216,13 +247,14 @@ def fancify(img: np.ndarray) -> np.ndarray:
     return out
 
 def main():
-    # Load image from URL
-    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
+    # Grab the image from the web
+    url = 'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'
+    img = io.imread(url)[..., :3]  # Keep only RGB channels
 
-    # Apply the effect
+    # Work our magic
     out = fancify(img)
 
-    # Display the result
+    # Show off the result!
     plt.imshow(out)
     plt.axis('off')
     plt.show()
@@ -230,23 +262,11 @@ def main():
 main()
 ```
 
-### What's Happening Here?
+### What's Actually Happening?
 
-Let's break down the key ideas:
-
-**Type Annotations**: The line `Pixel = tuple[np.uint8, np.uint8, np.uint8]` creates a type alias. It's saying "a Pixel is a tuple of three unsigned 8-bit integers" (which is exactly what we need for RGB values 0-255).
-
-**Nested Loops**: The `fancify` function uses a **nested loop pattern**:
-```python
-for row in range(H):
-    for col in range(W):
-        # process img[row, col]
-```
-
-This is the standard way to traverse a 2D grid (like an image). Let's visualize how this works with a tiny 4×3 image:
+**The nested loop** is the key pattern here. We're visiting every pixel in order:
 
 ```
-Order of processing:
 ┌─────┬─────┬─────┬─────┐
 │  1  │  2  │  3  │  4  │  ← row 0
 ├─────┼─────┼─────┼─────┤
@@ -254,70 +274,54 @@ Order of processing:
 ├─────┼─────┼─────┼─────┤
 │  9  │ 10  │ 11  │ 12  │  ← row 2
 └─────┴─────┴─────┴─────┘
- col 0 col 1 col 2 col 3
 ```
 
-The outer loop visits row 0, then row 1, then row 2. For each row, the inner loop visits every column from left to right. So we process pixels in order: (0,0), (0,1), (0,2), (0,3), then (1,0), (1,1), (1,2), (1,3), and so on.
+Row by row, column by column. For a 400×600 image, that's $400 \times 600 = 240{,}000$ pixels!
 
-If the image is 400 pixels tall and 600 pixels wide, this executes $400 \times 600 = 240{,}000$ times. (Remember our efficiency discussions from Week 1? This is an $O(n^2)$ algorithm!)
+(Remember Week 1? This is $O(n^2)$ behavior. Efficiency matters!)
 
-**Array Indexing**: `img[row, col]` gets the pixel at position (row, col). In this case, it returns a tuple like `(234, 112, 98)` representing that pixel's RGB values.
+### Your Turn! 🎮
 
-**Functional Decomposition**: Notice how we split the problem into two functions:
-- `boost_red_pixel`: handles the logic for a single pixel
-- `fancify`: handles traversing all pixels and applying the function
+Try these experiments:
 
-This is good software design! It makes the code easier to understand, test, and modify.
+1. **Boost [green]{.green} instead** — What threshold works well for leaves?
+2. **Change the threshold** — Try 150 or 250 instead of 200
+3. **Invert instead of gray** — Use `red = 255 - red` for a trippy negative effect
+4. **Reverse the logic** — Keep the *non-red* pixels and gray out the red ones
 
-## Try It Yourself
+The best way to understand this stuff? **Play with it.** Break things. See what happens. That's how you build intuition!
 
-Now that you understand the mechanics, experiment! Here are some ideas:
+## What Did We Learn?
 
-1. **Boost a different colour**: Change the code to highlight green instead of red. What threshold value works well?
+Let's zoom out. Today's journey:
 
-2. **Adjust the threshold**: Try 150 instead of 200. What happens? What about 250?
+**Technical stuff:**
+- Computers store everything as bits (1s and 0s)
+- Bits → numbers → colours (it's abstractions all the way down!)
+- RGB gives us 16+ million colours
+- Hex is just a compact way to write RGB values
 
-3. **Invert colours**: Instead of converting to grayscale, try inverting: `red = 255 - red`. This creates a photographic negative effect.
+**Big ideas:**
+- Digital representation requires *reduction*—we lose richness
+- Missing dimensions limit what's possible
+- Diversity in tech isn't just nice—it's *technically necessary*
 
-4. **Reverse the logic**: What if you boost pixels that are *low* in red instead of high? What kind of effect does this create?
-
-5. **Use your own image**: Find any image URL online and process it. Nature photos, artwork, selfies—anything works!
-
-The best way to understand representation is to *play* with it. Change values, break things, see what happens. That's how you build intuition.
-
-## Reflection: What Have We Learned?
-
-Today's lesson covers a lot of ground, but it all connects to a central theme: **representation shapes what's possible**.
-
-**Technical representation**:
-- Computers represent everything as bits (1s and 0s)
-- Bits can represent numbers (through binary encoding)
-- Numbers can represent colours (through RGB mapping)
-- This layered abstraction is powerful but reductive
-
-**Social representation**:
-- Missing dimensions limit possibilities
-- Diversity isn't just about fairness—it's about technical excellence
-- Who builds the technology determines what problems get solved
-
-**Practical skills**:
-- Binary and hexadecimal number systems
+**Skills:**
+- Binary and hexadecimal conversion
 - RGB colour representation
-- Image manipulation with nested loops
-- Functional decomposition in code
-
-As you continue in computer science, you'll encounter many forms of representation: how we represent text (Unicode), sound (waveforms and compression), networks (graphs), uncertainty (probability distributions), and knowledge itself (data structures and databases).
-
-Each representation is a choice—a decision about what to preserve and what to discard, what to make easy and what to make hard. Understanding representation means understanding these tradeoffs.
-
-And remember: the metaphor of the missing green channel applies to everything we build. **Diverse teams create richer solutions**—not because we check a box, but because more dimensions means more possibilities.
+- Nested loops for image processing
+- Breaking problems into functions
 
 ## Coming Up
 
-We've focused today on *what* computers represent and *why* representation matters. Next, we'll dig deeper into *how*—exploring more data structures, thinking about efficiency of different representations, and building more complex programs that leverage these ideas.
+We've focused on *what* computers represent and *why* representation matters. Next time, we'll dig into *how* we represent more complex data—and why different choices lead to different tradeoffs.
 
-But for now: go play with colours. Break some code. Make something unexpected. That's where the real learning happens.
+But for now: go play with colours! 🎨 Find a hex code you love. Write some code that manipulates images in weird ways. Make something unexpected.
+
+That's where the real learning happens.
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
 
 ---
 
-*Photo credit: Poppy field image from [Epic Gardening](https://www.epicgardening.com/spring-wildflowers-from-seed/)*
+*Photo credit: Poppy field from [Epic Gardening](https://www.epicgardening.com/spring-wildflowers-from-seed/). SSD image from [Ars Technica](https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/). RGB cube from [Wikipedia](https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png).*
