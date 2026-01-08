@@ -180,6 +180,31 @@ ex. `#674ea7` []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pi
 Hex = base 16
 :::
 
+## Colour---hexadecimal
+
+What colour is this 24-bit number?
+
+::: small-font-size
+\
+
+`0110 0111 0100 1110 1010 0111`
+
+\
+:::
+
+Converting to hexadecimal: `#___________`
+
+(Use digits `0123456789abcdef`)
+
+::: notes
+Walk through conversion on board:
+- First 8 bits (0110 0111) = Red channel
+- Next 8 bits (0100 1110) = Green channel
+- Last 8 bits (1010 0111) = Blue channel
+- Convert each 4-bit group to hex digit
+- Result: #674ea7
+:::
+
 ## Representation: Two Meanings
 
 What do you observe about the following RGB colours?
