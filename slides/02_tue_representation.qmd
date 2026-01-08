@@ -1,5 +1,5 @@
 ---
-date: 2025-09-11
+date: 2026-01-14
 ---
 
 ## Announcements {.smaller}
@@ -239,12 +239,11 @@ Otherwise, change the pixel to grey by setting all 3 colour channels to the aver
 ## Colour and Code
 
 ```{pyodide}
-from typing import Tuple
 import numpy as np
 from skimage import io
 import matplotlib.pyplot as plt
 
-Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
 
 '''Input: Pixel p
    Output: Pixel
@@ -265,7 +264,7 @@ def boost_red_pixel(p: Pixel) -> Pixel:
 
 
     # return updated pixel
-    return Pixel((red, green, blue))
+    return (red, green, blue)
 
 ''' Input: np.ndarray representing an image
     Output: an np.ndarray representing an image
@@ -300,12 +299,11 @@ main()
 
 ::: notes
 ``` python
-from typing import Tuple
 import numpy as np
 from skimage import io
 import matplotlib.pyplot as plt
 
-Pixel = Tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
 
 '''Input: Pixel p
    Output: Pixel
