@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 2, Tuesday: Representation—Technical and Social – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f8de076aeb9658a6c96d343f1d6c5546.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-69a118ed5aa843c5d3f13e92a12ee77e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1962b8704e35fd18bddbdb7d8a4a5ec2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 2, Tuesday: Representation—Technical and Social – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/poppyfield.jpg">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="A field of bright red poppies with green stems and leaves.">
+<meta name="twitter:title" content="Week 2, Tuesday: Representation—Technical and Social – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/poppyfield.jpg">
+<meta name="twitter:image:alt" content="A field of bright red poppies with green stems and leaves.">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 2, Tuesday: Representation—Technical and Social</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-cultural-richness-of-colour" id="toc-the-cultural-richness-of-colour" class="nav-link active" data-scroll-target="#the-cultural-richness-of-colour">The Cultural Richness of Colour</a></li>
+  <li><a href="#from-complexity-to-simplicity-how-computers-see-colour" id="toc-from-complexity-to-simplicity-how-computers-see-colour" class="nav-link" data-scroll-target="#from-complexity-to-simplicity-how-computers-see-colour">From Complexity to Simplicity: How Computers See Colour</a>
+  <ul class="collapse">
+  <li><a href="#electrical-signals-and-bits" id="toc-electrical-signals-and-bits" class="nav-link" data-scroll-target="#electrical-signals-and-bits">Electrical Signals and Bits</a></li>
+  <li><a href="#from-bits-to-numbers" id="toc-from-bits-to-numbers" class="nav-link" data-scroll-target="#from-bits-to-numbers">From Bits to Numbers</a></li>
+  <li><a href="#from-numbers-to-colours-rgb-representation" id="toc-from-numbers-to-colours-rgb-representation" class="nav-link" data-scroll-target="#from-numbers-to-colours-rgb-representation">From Numbers to Colours: RGB Representation</a></li>
+  <li><a href="#hexadecimal-a-friendlier-notation" id="toc-hexadecimal-a-friendlier-notation" class="nav-link" data-scroll-target="#hexadecimal-a-friendlier-notation">Hexadecimal: A Friendlier Notation</a></li>
+  </ul></li>
+  <li><a href="#the-power-and-peril-of-reduction" id="toc-the-power-and-peril-of-reduction" class="nav-link" data-scroll-target="#the-power-and-peril-of-reduction">The Power and Peril of Reduction</a></li>
+  <li><a href="#representation-a-second-meaning" id="toc-representation-a-second-meaning" class="nav-link" data-scroll-target="#representation-a-second-meaning">Representation: A Second Meaning</a>
+  <ul class="collapse">
+  <li><a href="#diversity-as-dimensionality" id="toc-diversity-as-dimensionality" class="nav-link" data-scroll-target="#diversity-as-dimensionality">Diversity as Dimensionality</a></li>
+  </ul></li>
+  <li><a href="#putting-it-into-practice-image-manipulation" id="toc-putting-it-into-practice-image-manipulation" class="nav-link" data-scroll-target="#putting-it-into-practice-image-manipulation">Putting It Into Practice: Image Manipulation</a>
+  <ul class="collapse">
+  <li><a href="#the-algorithm" id="toc-the-algorithm" class="nav-link" data-scroll-target="#the-algorithm">The Algorithm</a></li>
+  <li><a href="#the-code" id="toc-the-code" class="nav-link" data-scroll-target="#the-code">The Code</a></li>
+  <li><a href="#whats-happening-here" id="toc-whats-happening-here" class="nav-link" data-scroll-target="#whats-happening-here">What’s Happening Here?</a></li>
+  </ul></li>
+  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try It Yourself</a></li>
+  <li><a href="#reflection-what-have-we-learned" id="toc-reflection-what-have-we-learned" class="nav-link" data-scroll-target="#reflection-what-have-we-learned">Reflection: What Have We Learned?</a></li>
+  <li><a href="#coming-up" id="toc-coming-up" class="nav-link" data-scroll-target="#coming-up">Coming Up</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 2, Tuesday: Representation—Technical and Social</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>What does it mean to be <em>represented</em>? This question sits at the heart of computer science in two profound ways. On one hand, we need to understand how computers represent the world around us—how they take rich, complex phenomena like colour and reduce them to sequences of electrical signals. On the other hand, we need to think critically about who gets to be represented in this field, and why that matters for the kinds of problems we solve and the solutions we create.</p>
+<p>Today’s lesson weaves these two meanings of “representation” together through an exploration of how computers encode colour.</p>
+<section id="the-cultural-richness-of-colour" class="level2">
+<h2 class="anchored" data-anchor-id="the-cultural-richness-of-colour">The Cultural Richness of Colour</h2>
+<p>Before we dive into bits and bytes, let’s start with something personal: What’s your favorite colour?</p>
+<p>Take a moment to really think about this. Is it blue, like the ocean on a clear day? Red, like the poppies that bloom in spring? Green, like the forests that cool our cities? Do you have a sense of <em>why</em> it’s your favorite? Does it influence what you wear, how you decorate your space, what you’re drawn to when you shop?</p>
+<p>Colour is deeply personal and culturally loaded. Different cultures attach vastly different meanings to the same colours:</p>
+<ul>
+<li><strong>Red</strong> might mean luck and celebration in Chinese culture, but danger or warning in Western contexts</li>
+<li><strong>White</strong> symbolizes purity and weddings in many Western traditions, but mourning and funerals in some Eastern cultures</li>
+<li><strong>Purple</strong> was once the colour of royalty (because the dye was incredibly expensive), but has taken on new meanings in modern contexts</li>
+</ul>
+<p>These associations aren’t arbitrary—they’re woven into art, literature, religious practices, and daily life. Colour carries <em>meaning</em> that varies across time, place, and context.</p>
+<p>This richness makes colour a perfect case study for understanding representation in computing. How do we take something so nuanced, so culturally complex, so tied to human experience—and make a computer understand it?</p>
+</section>
+<section id="from-complexity-to-simplicity-how-computers-see-colour" class="level2">
+<h2 class="anchored" data-anchor-id="from-complexity-to-simplicity-how-computers-see-colour">From Complexity to Simplicity: How Computers See Colour</h2>
+<p>The answer is both elegant and slightly troubling: <strong>we reduce colour to numbers</strong>.</p>
+<section id="electrical-signals-and-bits" class="level3">
+<h3 class="anchored" data-anchor-id="electrical-signals-and-bits">Electrical Signals and Bits</h3>
+<p>Let’s start at the very bottom. Inside your computer, everything—and I mean <em>everything</em>—comes down to electrical charges. Picture a solid-state drive: tiny transistors holding or releasing electrons, creating regions of positive and negative charge across the chip.</p>
+<p>These charges get interpreted as <strong>bits</strong>: binary digits that can be either 0 or 1. That’s it. Just two states. On or off. High voltage or low voltage. One or zero.</p>
+<p>Is that enough to represent the world? Amazingly, yes.</p>
+</section>
+<section id="from-bits-to-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="from-bits-to-numbers">From Bits to Numbers</h3>
+<p>You already know how to represent numbers in base 10 (decimal). The number 3157 means:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>3</th>
+<th>1</th>
+<th>5</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3 × 10³</td>
+<td>1 × 10²</td>
+<td>5 × 10¹</td>
+<td>7 × 10⁰</td>
+</tr>
+<tr class="even">
+<td>3000</td>
+<td>100</td>
+<td>50</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>We can do exactly the same thing in base 2 (binary), where each position represents a power of 2 instead of a power of 10:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>1</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 × 2³</td>
+<td>0 × 2²</td>
+<td>1 × 2¹</td>
+<td>1 × 2⁰</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>So the binary number 1011 represents the decimal number 11.</p>
+<p><strong>Quick check:</strong> What’s the highest number you can represent with 4 bits? With 5 bits?</p>
+<p>With 4 bits, you can represent 0 through 15 (that’s <span class="math inline">\(2^4 = 16\)</span> different values). With 5 bits, you can represent 0 through 31 (that’s <span class="math inline">\(2^5 = 32\)</span> different values).</p>
+<p>In general, with <span class="math inline">\(n\)</span> bits, you can represent <span class="math inline">\(2^n\)</span> different values.</p>
+</section>
+<section id="from-numbers-to-colours-rgb-representation" class="level3">
+<h3 class="anchored" data-anchor-id="from-numbers-to-colours-rgb-representation">From Numbers to Colours: RGB Representation</h3>
+<p>Now here’s the key insight: if we can represent any number with bits, and we can agree on a system for mapping numbers to colours, then we can represent any colour with bits.</p>
+<p>The most common system is <strong>RGB</strong>: Red, Green, Blue. Each colour component gets a number from 0 to 255 (which happens to be exactly the range you can represent with 8 bits, since <span class="math inline">\(2^8 = 256\)</span>).</p>
+<p>For example: - <code>(255, 0, 0)</code> is pure red (maximum red, no green, no blue) - <code>(0, 255, 0)</code> is pure green - <code>(0, 0, 255)</code> is pure blue - <code>(255, 255, 0)</code> is yellow (red + green) - <code>(255, 0, 127)</code> is a pinkish color (lots of red, no green, half blue)</p>
+<p>By mixing different amounts of red, green, and blue light, we can represent roughly 16.7 million different colours (<span class="math inline">\(256 \times 256 \times 256 = 16{,}777{,}216\)</span> to be exact).</p>
+</section>
+<section id="hexadecimal-a-friendlier-notation" class="level3">
+<h3 class="anchored" data-anchor-id="hexadecimal-a-friendlier-notation">Hexadecimal: A Friendlier Notation</h3>
+<p>Writing colours as three separate decimal numbers works, but it gets tedious. A 24-bit colour like:</p>
+<pre><code>0110 0111 0100 1110 1010 0111</code></pre>
+<p>is even worse to read! That’s where <strong>hexadecimal</strong> (base 16) notation comes in.</p>
+<p>In hexadecimal, we use 16 digits: <code>0 1 2 3 4 5 6 7 8 9 a b c d e f</code></p>
+<p>Each hex digit represents exactly 4 bits, so we can write any 24-bit colour using just 6 hex digits:</p>
+<pre><code>0110 0111 0100 1110 1010 0111  (binary)
+   6    7    4    e    a    7  (hexadecimal)</code></pre>
+<p>Which we write as: <code>#674ea7</code></p>
+<p>This is the format you see in web design, graphic design tools, and CSS stylesheets. It’s just a more compact way of writing the same RGB information: - First two hex digits: red channel (67 in hex = 103 in decimal) - Middle two hex digits: green channel (4e in hex = 78 in decimal) - Last two hex digits: blue channel (a7 in hex = 167 in decimal)</p>
+<p>You can play with hex colours at <a href="https://colorizer.org" class="uri">https://colorizer.org</a> to build intuition.</p>
+</section>
+</section>
+<section id="the-power-and-peril-of-reduction" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-and-peril-of-reduction">The Power and Peril of Reduction</h2>
+<p>At this point, you might feel two contradictory reactions:</p>
+<ol type="1">
+<li><p><strong>Wonder:</strong> It’s amazing that we can represent millions of colours using just 1s and 0s! The layered abstraction—from electrical charges to bits to numbers to colours—is genuinely beautiful.</p></li>
+<li><p><strong>Unease:</strong> Something feels lost in translation. The cultural richness, the personal associations, the emotional resonance of colour—none of that is captured in <code>(255, 0, 127)</code>.</p></li>
+</ol>
+<p>Both reactions are valid. This is the fundamental tension in all digital representation: <strong>to make something computational, we must reduce it</strong>.</p>
+</section>
+<section id="representation-a-second-meaning" class="level2">
+<h2 class="anchored" data-anchor-id="representation-a-second-meaning">Representation: A Second Meaning</h2>
+<p>Let’s return to our RGB colour system with a specific observation. Consider these six colours:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Green</th>
+<th style="text-align: center;">Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">178</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">95</td>
+</tr>
+</tbody>
+</table>
+<p>What do you notice? <strong>They all have green = 0.</strong></p>
+<p>These colours are all in the purple/magenta family—mixtures of red and blue with no green component. And here’s the crucial insight: <strong>when one dimension is missing, we lose an entire space of possibilities</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/RGB_color_solid_cube.png/400px-RGB_color_solid_cube.png" class="img-fluid figure-img" alt="A three-dimensional RGB color cube showing how red, green, and blue axes create a space of possible colors."></p>
+<figcaption>RGB color cube showing all possible combinations of red, green, and blue values. When we remove the green dimension (setting green=0), we’re left with only the back face of the cube—a single plane of purple/magenta colors. <a href="https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png">Image: Wikipedia</a></figcaption>
+</figure>
+</div>
+<p>With no green channel, we can never represent: - The green of spring leaves - The teal of tropical waters - The yellow of sunflowers - Any colour that requires even a hint of green</p>
+<p>Imagine the RGB cube above, but with the entire green dimension collapsed to zero. You’re left with only a single face of the cube—a flat plane. <strong>An entire dimension of color space simply doesn’t exist.</strong></p>
+<p>This is more than just an observation about RGB colour space. It’s a <strong>metaphor for representation in computer science itself</strong>.</p>
+<section id="diversity-as-dimensionality" class="level3">
+<h3 class="anchored" data-anchor-id="diversity-as-dimensionality">Diversity as Dimensionality</h3>
+<p>Just as removing the green channel limits the colours we can create, limiting the diversity of people in computer science limits the ideas we can explore and the problems we can solve.</p>
+<p>When everyone working on a problem comes from similar backgrounds, with similar experiences, similar perspectives—we’ve effectively removed dimensions from our “idea space.” We end up with solutions that work well for some people and not others. We fail to see problems that don’t affect us personally. We perpetuate biases we don’t even realize we have.</p>
+<p>This isn’t about being nice or politically correct. It’s about <strong>technical excellence</strong>. The best solutions come from teams that can see problems from multiple angles, that bring different kinds of expertise and lived experience to the table, that can imagine use cases beyond their own immediate context.</p>
+<p><strong>Representation matters—in both senses of the word.</strong></p>
+</section>
+</section>
+<section id="putting-it-into-practice-image-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-into-practice-image-manipulation">Putting It Into Practice: Image Manipulation</h2>
+<p>Let’s bring this full circle by actually <em>using</em> RGB representation to manipulate images. Here’s a concrete problem:</p>
+<p><strong>Make the poppies pop!</strong> Given an image of a poppy field, we want to highlight the red flowers while fading everything else to grayscale.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/poppyfield.jpg" class="img-fluid figure-img" alt="A field of bright red poppies with green stems and leaves."></p>
+<figcaption>A field of red poppies that we’ll use for our image manipulation example.</figcaption>
+</figure>
+</div>
+<section id="the-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="the-algorithm">The Algorithm</h3>
+<p>Here’s our strategy in plain language:</p>
+<ol type="1">
+<li>Look at each pixel in the image</li>
+<li>Check if its red channel is high (over 200, say)</li>
+<li>If yes: leave it alone (it’s probably a poppy!)</li>
+<li>If no: convert it to grayscale by setting all three channels to their average</li>
+</ol>
+<p>Converting to grayscale is simple: if a pixel is <code>(120, 80, 40)</code>, the average is <code>(120 + 80 + 40) / 3 = 80</code>, so we replace it with <code>(80, 80, 80)</code>. When all three channels are equal, you get gray.</p>
+</section>
+<section id="the-code" class="level3">
+<h3 class="anchored" data-anchor-id="the-code">The Code</h3>
+<p>Here’s how we express this in Python. <strong>Try editing the code below!</strong> Change the threshold value, modify the effect, experiment with different logic:</p>
+<pre class="{pyodide}"><code>import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+def boost_red_pixel(p: Pixel) -&gt; Pixel:
+    """
+    If the pixel has high red value, leave it alone.
+    Otherwise, fade it to gray.
+    """
+    # Extract the colour channels as integers
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+
+    # Compute grayscale value
+    grey = (red + green + blue) // 3
+
+    # Conditionally change the pixel to grey
+    if red &lt; 200:
+        red = green = blue = grey
+
+    return (red, green, blue)
+
+def fancify(img: np.ndarray) -&gt; np.ndarray:
+    """
+    Create a new image by applying boost_red_pixel
+    to every pixel in the original.
+    """
+    H, W = img.shape[:2]  # Get height and width
+    out = img.copy()      # Create a copy to modify
+
+    # Traverse every pixel
+    for row in range(H):
+        for col in range(W):
+            out[row, col] = boost_red_pixel(img[row, col])
+
+    return out
+
+def main():
+    # Load image from URL
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
+
+    # Apply the effect
+    out = fancify(img)
+
+    # Display the result
+    plt.imshow(out)
+    plt.axis('off')
+    plt.show()
+
+main()</code></pre>
+</section>
+<section id="whats-happening-here" class="level3">
+<h3 class="anchored" data-anchor-id="whats-happening-here">What’s Happening Here?</h3>
+<p>Let’s break down the key ideas:</p>
+<p><strong>Type Annotations</strong>: The line <code>Pixel = tuple[np.uint8, np.uint8, np.uint8]</code> creates a type alias. It’s saying “a Pixel is a tuple of three unsigned 8-bit integers” (which is exactly what we need for RGB values 0-255).</p>
+<p><strong>Nested Loops</strong>: The <code>fancify</code> function uses a <strong>nested loop pattern</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># process img[row, col]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is the standard way to traverse a 2D grid (like an image). Let’s visualize how this works with a tiny 4×3 image:</p>
+<pre><code>Order of processing:
+┌─────┬─────┬─────┬─────┐
+│  1  │  2  │  3  │  4  │  ← row 0
+├─────┼─────┼─────┼─────┤
+│  5  │  6  │  7  │  8  │  ← row 1
+├─────┼─────┼─────┼─────┤
+│  9  │ 10  │ 11  │ 12  │  ← row 2
+└─────┴─────┴─────┴─────┘
+ col 0 col 1 col 2 col 3</code></pre>
+<p>The outer loop visits row 0, then row 1, then row 2. For each row, the inner loop visits every column from left to right. So we process pixels in order: (0,0), (0,1), (0,2), (0,3), then (1,0), (1,1), (1,2), (1,3), and so on.</p>
+<p>If the image is 400 pixels tall and 600 pixels wide, this executes <span class="math inline">\(400 \times 600 = 240{,}000\)</span> times. (Remember our efficiency discussions from Week 1? This is an <span class="math inline">\(O(n^2)\)</span> algorithm!)</p>
+<p><strong>Array Indexing</strong>: <code>img[row, col]</code> gets the pixel at position (row, col). In this case, it returns a tuple like <code>(234, 112, 98)</code> representing that pixel’s RGB values.</p>
+<p><strong>Functional Decomposition</strong>: Notice how we split the problem into two functions: - <code>boost_red_pixel</code>: handles the logic for a single pixel - <code>fancify</code>: handles traversing all pixels and applying the function</p>
+<p>This is good software design! It makes the code easier to understand, test, and modify.</p>
+</section>
+</section>
+<section id="try-it-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-yourself">Try It Yourself</h2>
+<p>Now that you understand the mechanics, experiment! Here are some ideas:</p>
+<ol type="1">
+<li><p><strong>Boost a different colour</strong>: Change the code to highlight green instead of red. What threshold value works well?</p></li>
+<li><p><strong>Adjust the threshold</strong>: Try 150 instead of 200. What happens? What about 250?</p></li>
+<li><p><strong>Invert colours</strong>: Instead of converting to grayscale, try inverting: <code>red = 255 - red</code>. This creates a photographic negative effect.</p></li>
+<li><p><strong>Reverse the logic</strong>: What if you boost pixels that are <em>low</em> in red instead of high? What kind of effect does this create?</p></li>
+<li><p><strong>Use your own image</strong>: Find any image URL online and process it. Nature photos, artwork, selfies—anything works!</p></li>
+</ol>
+<p>The best way to understand representation is to <em>play</em> with it. Change values, break things, see what happens. That’s how you build intuition.</p>
+</section>
+<section id="reflection-what-have-we-learned" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-what-have-we-learned">Reflection: What Have We Learned?</h2>
+<p>Today’s lesson covers a lot of ground, but it all connects to a central theme: <strong>representation shapes what’s possible</strong>.</p>
+<p><strong>Technical representation</strong>: - Computers represent everything as bits (1s and 0s) - Bits can represent numbers (through binary encoding) - Numbers can represent colours (through RGB mapping) - This layered abstraction is powerful but reductive</p>
+<p><strong>Social representation</strong>: - Missing dimensions limit possibilities - Diversity isn’t just about fairness—it’s about technical excellence - Who builds the technology determines what problems get solved</p>
+<p><strong>Practical skills</strong>: - Binary and hexadecimal number systems - RGB colour representation - Image manipulation with nested loops - Functional decomposition in code</p>
+<p>As you continue in computer science, you’ll encounter many forms of representation: how we represent text (Unicode), sound (waveforms and compression), networks (graphs), uncertainty (probability distributions), and knowledge itself (data structures and databases).</p>
+<p>Each representation is a choice—a decision about what to preserve and what to discard, what to make easy and what to make hard. Understanding representation means understanding these tradeoffs.</p>
+<p>And remember: the metaphor of the missing green channel applies to everything we build. <strong>Diverse teams create richer solutions</strong>—not because we check a box, but because more dimensions means more possibilities.</p>
+</section>
+<section id="coming-up" class="level2">
+<h2 class="anchored" data-anchor-id="coming-up">Coming Up</h2>
+<p>We’ve focused today on <em>what</em> computers represent and <em>why</em> representation matters. Next, we’ll dig deeper into <em>how</em>—exploring more data structures, thinking about efficiency of different representations, and building more complex programs that leverage these ideas.</p>
+<p>But for now: go play with colours. Break some code. Make something unexpected. That’s where the real learning happens.</p>
+<hr>
+<p><em>Photo credit: Poppy field image from <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/">Epic Gardening</a></em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/02_tue_representation.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
