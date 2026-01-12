@@ -1212,7 +1212,7 @@
     "href": "labs/02_create-website.html#steps",
     "title": " Lab: Create your own website!",
     "section": " Steps",
-    "text": "Steps\n\nOpen your workspace: NA.\nCreate index.qmd.\nClick the “Render” button on top.\nDownload the output directory _site.\nOpen Netlify Drop: app.netlify.com/drop.\nDrag and drop the downloaded _site onto Netlify Drop.\nPost the link to your website in the comments below."
+    "text": "Steps\n\nOpen your workspace: us.prairielearn.com/pl/course_instance/202804/assessment/2631211.\nCreate index.qmd.\nClick the “Render” button on top.\nDownload the output directory _site.\nOpen Netlify Drop: app.netlify.com/drop.\nDrag and drop the downloaded _site onto Netlify Drop.\nPost the link to your website in the comments below."
   },
   {
     "objectID": "labs/02_create-website.html#resources",
