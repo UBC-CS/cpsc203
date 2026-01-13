@@ -378,6 +378,42 @@ table caption {
 // Activity slide background (legacy support)
 .reveal .activity {
   background-color: theme-color("activity");
+  color: white;
+
+  h2 {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
+
+  a {
+    color: #a3d5ff;
+  }
+
+  code {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+
+  table {
+    th {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+
+    td, th {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    tr:nth-child(odd) {
+      background-color: transparent;
+    }
+  }
 }
 
 .abbreviation-highlight {

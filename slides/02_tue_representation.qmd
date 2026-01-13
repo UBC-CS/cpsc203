@@ -117,33 +117,63 @@ Can we use bits to represent integers?
 Talk about the BASE of the number.
 :::
 
-## Colour---representation {.activity}
+## {{< iconify fa6-solid comments >}} Your turn: Binary to decimal {.activity}
 
-What's the highest number we can represent with 4 bits?
+Convert these binary numbers to decimal:
 
-\
-\
+| Binary | Decimal |
+|--------|---------|
+| `1010` | _______ |
+| `1101` | _______ |
+| `0111` | _______ |
 
-What's the highest number we can represent with 5 bits?
-
-\
-\
-
-How many bits do we need to express 120?
-
-\
-\
+{{< countdown minutes=3 >}}
 
 ::: notes
-Can we represent any integer this way?
-YES!
-Until we run out of memory.
-But we have more memory than we can even conceive of.
-
-How does this help us with colour?
+Answers: 10, 13, 7
 :::
 
-{{< countdown minutes=6 >}}
+## {{< iconify fa6-solid comments >}} Your turn: Thinking about bits {.activity}
+
+What's the largest number you can represent with 4 bits? _______
+
+\
+
+How many bits do you need to represent 120? _______
+
+\
+
+If I give you one more bit, what happens to how many numbers you can represent?
+
+\
+
+How high can you count on your fingers? and toes?
+
+{{< countdown minutes=3 >}}
+
+::: notes
+- Largest with 4 bits: 15 (1111)
+- Bits for 120: 7 bits (120 < 128 = 2^7)
+- One more bit: DOUBLES the numbers you can represent!
+
+Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.
+:::
+
+## From bits to... everything?
+
+We've seen that bits can represent integers.
+
+But integers are just the beginning!
+
+If we can assign numbers to things, we can represent *anything*:
+
+- Text (A=65, B=66, ...)
+- Sound (amplitude samples)
+- Images (pixel colours)
+- Video (sequences of images)
+- Your favorite song, your family photos, this lecture...
+
+Let's see how this works with **colour**.
 
 ## Colour---representation
 
@@ -205,7 +235,7 @@ Walk through conversion on board:
 - Result: #674ea7
 :::
 
-## Representation: Two Meanings
+## Representation: An aside
 
 What do you observe about the following RGB colours?
 
@@ -360,3 +390,15 @@ Experiment with the code! Try one or more of these:
 4. What happens if you boost pixels that are LOW in red instead of high?
 
 {{< countdown minutes=12 >}}
+
+## What you learned today
+
+You've discovered something profound:
+
+- Computers store everything as **bits** (0s and 1s)
+- Bits can represent **integers** (using binary, base 2)
+- Integers can represent **colours** (RGB: three numbers 0-255)
+- Which means bits can represent **images** (grids of pixels)
+- And you wrote **code** to manipulate those images!
+
+From electrical signals → to making poppies pop.
