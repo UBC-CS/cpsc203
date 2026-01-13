@@ -100,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7e745c094e38f47e1e49ac7c09d7c9b4.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-d6c4d93e6da7e9b7414d3ca7a1f99991.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -288,7 +288,7 @@
 <p><span class="hexagon-blue"></span></p>
 <p><span class="hexagon-violet"></span></p>
 </div></div>
-<div id="timer_4463bc5235d58db9dd5572ee7b4186e05e53d3ad" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_0bf285b71dac2aa154595fb04b5021414d16d720" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -393,23 +393,40 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="colourrepresentation-2" class="slide level2 activity">
-<h2>Colour—representation</h2>
-<p>What’s the highest number we can represent with 4 bits?</p>
-<p><br>
-<br>
-</p>
-<p>What’s the highest number we can represent with 5 bits?</p>
-<p><br>
-<br>
-</p>
-<p>How many bits do we need to express 120?</p>
-<p><br>
-<br>
-</p>
+<section id="your-turn-binary-to-decimal" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Binary to decimal</h2>
+<p>Convert these binary numbers to decimal:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Binary</th>
+<th>Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>1010</code></td>
+<td>_______</td>
+</tr>
+<tr class="even">
+<td><code>1101</code></td>
+<td>_______</td>
+</tr>
+<tr class="odd">
+<td><code>0111</code></td>
+<td>_______</td>
+</tr>
+</tbody>
+</table>
+<div id="timer_0bf285b71dac2aa154595fb04b5021414d16d720" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 <aside class="notes">
-<p>Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.</p>
-<p>How does this help us with colour?</p>
+<p>Answers: 10, 13, 7</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -421,15 +438,60 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div id="timer_4463bc5235d58db9dd5572ee7b4186e05e53d3ad" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</section>
+<section id="your-turn-thinking-about-bits" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Thinking about bits</h2>
+<p>What’s the largest number you can represent with 4 bits? _______</p>
+<p><br>
+</p>
+<p>How many bits do you need to represent 120? _______</p>
+<p><br>
+</p>
+<p>If I give you one more bit, what happens to how many numbers you can represent?</p>
+<p><br>
+</p>
+<p>How high can you count on your fingers? and toes?</p>
+<div id="timer_0bf285b71dac2aa154595fb04b5021414d16d720" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
- <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
+<aside class="notes">
+<ul>
+<li>Largest with 4 bits: 15 (1111)</li>
+<li>Bits for 120: 7 bits (120 &lt; 128 = 2^7)</li>
+<li>One more bit: DOUBLES the numbers you can represent!</li>
+</ul>
+<p>Can we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="colourrepresentation-3" class="slide level2">
+<section id="from-bits-to-everything" class="slide level2">
+<h2>From bits to… everything?</h2>
+<p>We’ve seen that bits can represent integers.</p>
+<p>But integers are just the beginning!</p>
+<p>If we can assign numbers to things, we can represent <em>anything</em>:</p>
+<ul>
+<li>Text (A=65, B=66, …)</li>
+<li>Sound (amplitude samples)</li>
+<li>Images (pixel colours)</li>
+<li>Video (sequences of images)</li>
+<li>Your favorite song, your family photos, this lecture…</li>
+</ul>
+<p>Let’s see how this works with <strong>colour</strong>.</p>
+</section>
+<section id="colourrepresentation-2" class="slide level2">
 <h2>Colour—representation</h2>
 <p>Can we use integers to represent colours?</p>
 <p>One way: RGB (red, green, blue), where each “component” is in range 0 through 255.</p>
@@ -437,7 +499,7 @@
 <p>Fun calculator for colour values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></p>
 <p>How many bits for 256 values? <code>4  5  6  7  8  9  10</code></p>
 </section>
-<section id="colourrepresentation-4" class="slide level2">
+<section id="colourrepresentation-3" class="slide level2">
 <h2>Colour—representation</h2>
 <p>What colour is</p>
 <div class="small-font-size">
@@ -490,8 +552,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="representation-two-meanings" class="slide level2">
-<h2>Representation: Two Meanings</h2>
+<section id="representation-an-aside" class="slide level2">
+<h2>Representation: An aside</h2>
 <p>What do you observe about the following RGB colours?</p>
 <table class="caption-top">
 <thead>
@@ -637,13 +699,25 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5w
 <li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
 <li>What happens if you boost pixels that are LOW in red instead of high?</li>
 </ol>
-<div id="timer_4463bc5235d58db9dd5572ee7b4186e05e53d3ad" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_0bf285b71dac2aa154595fb04b5021414d16d720" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">12</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
+</section>
+<section id="what-you-learned-today" class="slide level2">
+<h2>What you learned today</h2>
+<p>You’ve discovered something profound:</p>
+<ul>
+<li>Computers store everything as <strong>bits</strong> (0s and 1s)</li>
+<li>Bits can represent <strong>integers</strong> (using binary, base 2)</li>
+<li>Integers can represent <strong>colours</strong> (RGB: three numbers 0-255)</li>
+<li>Which means bits can represent <strong>images</strong> (grids of pixels)</li>
+<li>And you wrote <strong>code</strong> to manipulate those images!</li>
+</ul>
+<p>From electrical signals → to making poppies pop.</p>
 
 
 <script type="pyodide-data">

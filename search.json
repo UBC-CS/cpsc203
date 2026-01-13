@@ -2033,22 +2033,36 @@
     "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
   },
   {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-2",
-    "href": "slides/02_tue_representation.html#colourrepresentation-2",
+    "objectID": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
+    "href": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nWhat’s the highest number we can represent with 4 bits?\n\n\n\nWhat’s the highest number we can represent with 5 bits?\n\n\n\nHow many bits do we need to express 120?\n\n\n\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of.\nHow does this help us with colour?\n\n\n  \n    −\n    +\n \n 06:00"
+    "section": " Your turn: Binary to decimal",
+    "text": "Your turn: Binary to decimal\nConvert these binary numbers to decimal:\n\n\n\nBinary\nDecimal\n\n\n\n\n1010\n_______\n\n\n1101\n_______\n\n\n0111\n_______\n\n\n\n\n  \n    −\n    +\n \n 03:00\n \n\nAnswers: 10, 13, 7"
   },
   {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-3",
-    "href": "slides/02_tue_representation.html#colourrepresentation-3",
+    "objectID": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
+    "href": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Thinking about bits",
+    "text": "Your turn: Thinking about bits\nWhat’s the largest number you can represent with 4 bits? _______\n\n\nHow many bits do you need to represent 120? _______\n\n\nIf I give you one more bit, what happens to how many numbers you can represent?\n\n\nHow high can you count on your fingers? and toes?\n\n  \n    −\n    +\n \n 03:00\n \n\n\nLargest with 4 bits: 15 (1111)\nBits for 120: 7 bits (120 &lt; 128 = 2^7)\nOne more bit: DOUBLES the numbers you can represent!\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#from-bits-to-everything",
+    "href": "slides/02_tue_representation.html#from-bits-to-everything",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "From bits to… everything?",
+    "text": "From bits to… everything?\nWe’ve seen that bits can represent integers.\nBut integers are just the beginning!\nIf we can assign numbers to things, we can represent anything:\n\nText (A=65, B=66, …)\nSound (amplitude samples)\nImages (pixel colours)\nVideo (sequences of images)\nYour favorite song, your family photos, this lecture…\n\nLet’s see how this works with colour."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourrepresentation-2",
+    "href": "slides/02_tue_representation.html#colourrepresentation-2",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
     "text": "Colour—representation\nCan we use integers to represent colours?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for colour values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
   },
   {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-4",
-    "href": "slides/02_tue_representation.html#colourrepresentation-4",
+    "objectID": "slides/02_tue_representation.html#colourrepresentation-3",
+    "href": "slides/02_tue_representation.html#colourrepresentation-3",
     "title": "Programming, problem solving, and algorithms",
     "section": "Colour—representation",
     "text": "Colour—representation\nWhat colour is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
@@ -2061,11 +2075,11 @@
     "text": "Colour—hexadecimal\nWhat colour is this 24-bit number?\n\n\n\n0110 0111 0100 1110 1010 0111\n\n\n\nConverting to hexadecimal: #___________\n(Use digits 0123456789abcdef)\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
   },
   {
-    "objectID": "slides/02_tue_representation.html#representation-two-meanings",
-    "href": "slides/02_tue_representation.html#representation-two-meanings",
+    "objectID": "slides/02_tue_representation.html#representation-an-aside",
+    "href": "slides/02_tue_representation.html#representation-an-aside",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Representation: Two Meanings",
-    "text": "Representation: Two Meanings\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95\n\n\n\n\n[Your 7-minute narrative with RGB cube prop about missing dimensions and diversity in CS]"
+    "section": "Representation: An aside",
+    "text": "Representation: An aside\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95\n\n\n\n\n[Your 7-minute narrative with RGB cube prop about missing dimensions and diversity in CS]"
   },
   {
     "objectID": "slides/02_tue_representation.html#colour-and-code",
@@ -2087,6 +2101,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Change image or boost",
     "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different colour (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#what-you-learned-today",
+    "href": "slides/02_tue_representation.html#what-you-learned-today",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What you learned today",
+    "text": "What you learned today\nYou’ve discovered something profound:\n\nComputers store everything as bits (0s and 1s)\nBits can represent integers (using binary, base 2)\nIntegers can represent colours (RGB: three numbers 0-255)\nWhich means bits can represent images (grids of pixels)\nAnd you wrote code to manipulate those images!\n\nFrom electrical signals → to making poppies pop."
   },
   {
     "objectID": "slides/13_tue_vislit.html#announcements",
