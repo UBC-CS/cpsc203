@@ -9,10 +9,12 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="dcterms.date" content="2025-09-16">
+  <meta name="dcterms.date" content="2026-01-16">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -213,16 +215,110 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 16, 2025</p>
+  <p class="date">January 16, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section id="section" class="slide level2 centered" data-background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" data-background-interactive="true" data-menu-title="Tech stack instructions">
-<h2></h2>
+<section id="colour-and-code" class="slide level2 smaller">
+<h2>Colour and Code</h2>
+<p>Make the poppies pop!</p>
+
+<img data-src="../images/poppyfield.jpg" alt="A field of red poppies." class="r-stretch"><p>PC: <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/" class="uri">https://www.epicgardening.com/spring-wildflowers-from-seed/</a></p>
+<p>Examine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values.</p>
 </section>
-<section id="practice-problems" class="slide level2">
-<h2>Practice problems</h2>
+<section id="colour-and-code-1" class="slide level2">
+<h2>Colour and Code</h2>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5wXG5mcm9tIHNraW1hZ2UgaW1wb3J0IGlvXG5pbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5cblBpeGVsID0gdHVwbGVbbnAudWludDgsIG5wLnVpbnQ4LCBucC51aW50OF0gICMgKHIsIGcsIGIpXG5cbicnJ0lucHV0OiBQaXhlbCBwXG4gICBPdXRwdXQ6IFBpeGVsXG4gICBGdW5jdGlvbjogSWYgdGhlIHBpeGVsIGhhcyBoaWdoIHJlZCB2YWx1ZSwgdGhlbiBkb24ndCBjaGFuZ2UgaXQsIG90aGVyd2lzZVxuICAgZmFkZSB0aGUgcGl4ZWwgdG8gZ3JleS4gIE5vdGUsIHRvIGdyZXkgYSBwaXhlbCwgc2V0IGFsbCBjb2xvciBjaGFubmVscyB0b1xuICAgdGhlIGF2ZXJhZ2Ugb2YgdGhlIDMuXG4nJydcbmRlZiBib29zdF9yZWRfcGl4ZWwocDogUGl4ZWwpIC0+IFBpeGVsOlxuICAgICMgc2V0dXAgLS0gZXh0cmFjdCB0aGUgY29sb3IgY2hhbm5lbHMgYXMgaW50c1xuICAgIHJlZCA9IGludChwWzBdKVxuICAgIGdyZWVuID0gaW50KHBbMV0pXG4gICAgYmx1ZSA9IGludChwWzJdKVxuXG4gICAgIyBjb21wdXRlIGdyZXlcblxuXG4gICAgIyBjb25kaXRpb25hbGx5IGNoYW5nZSB0aGUgcGl4ZWwgdG8gZ3JleVxuXG5cbiAgICAjIHJldHVybiB1cGRhdGVkIHBpeGVsXG4gICAgcmV0dXJuIChyZWQsIGdyZWVuLCBibHVlKVxuXG4nJycgSW5wdXQ6IG5wLm5kYXJyYXkgcmVwcmVzZW50aW5nIGFuIGltYWdlXG4gICAgT3V0cHV0OiBhbiBucC5uZGFycmF5IHJlcHJlc2VudGluZyBhbiBpbWFnZVxuICAgIEZ1bmN0aW9uOiBDcmVhdGUgYSBuZXcgaW1hZ2UgYnkgYXBwbGluZyB0aGUgYm9vc3RfcmVkX3BpeGVsXG4gICAgZnVuY3Rpb24gdG8gZXZlcnkgcGl4ZWwgaW4gdGhlIG9yaWdpbmFsLCBhbmQgc2F2aW5nIHRoZVxuICAgIHJlc3VsdCB0byB0aGUgY29weS5cbicnJ1xuXG5kZWYgZmFuY2lmeShpbWc6IG5wLm5kYXJyYXkpIC0+IG5wLm5kYXJyYXk6XG4gICAgSCwgVyA9IGltZy5zaGFwZVs6Ml0gIyBncmFiIHRoZSBoZWlnaHQgYW5kIHdpZHRoIG9mIHRoZSBpbWFnZVxuICAgIG91dCA9IGltZy5jb3B5KCkgICAgICMgd3JpdGUgdG8gYSBjb3B5IC0tIGVhc3kgd2F5IHRvIGdldCB0aGUgc2l6ZSByaWdodFxuXG4gICAgIyB0cmF2ZXJzZSBldmVyeSBwaXhlbCBpbiB0aGUgaW1hZ2UgYW5kIHdyaXRlIHRvIHRoZSBjb3B5IVxuXG5cblxuICAgICMgcmV0dXJuIGltYWdlIHdpdGggY2hhbmdlZCBwaXhlbHNcbiAgICByZXR1cm4gb3V0XG5cbmRlZiBtYWluKCkgLT4gTm9uZTpcblxuICAgIGltZyA9IGlvLmltcmVhZCgnaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9pbWFnZXMvcG9wcHlmaWVsZC5qcGcnKVsuLi4sIDozXSAgICAgIyByZWFkIGZyb20gd2Vic2l0ZSwga2VlcCBmaXJzdCAzIGNoYW5uZWxzIChSR0IpXG5cbiAgICBvdXQgPSBmYW5jaWZ5KGltZykgICAgICAgICAgICAjIG1ha2UgYSBuZXcgZmFuY3kgaW1hZ2VcblxuICAgIHBsdC5pbXNob3cob3V0KSAgICAgICAgICAgICAgICMgb3V0cHV0IHRoZSByZXN1bHRzXG4gICAgcGx0LmF4aXMoJ29mZicpXG4gICAgcGx0LnNob3coKVxuXG5tYWluKCkifQ==
+</script>
+</div>
+<aside class="notes">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb1-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a>Pixel <span class="op">=</span> <span class="bu">tuple</span>[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co">'''Input: Pixel p</span></span>
+<span id="cb1-8"><a></a><span class="co">   Output: Pixel</span></span>
+<span id="cb1-9"><a></a><span class="co">   Function: If the pixel has high red value, then don't change it, otherwise</span></span>
+<span id="cb1-10"><a></a><span class="co">   fade the pixel to grey.  Note, to grey a pixel, set all color channels to</span></span>
+<span id="cb1-11"><a></a><span class="co">   the average of the 3.</span></span>
+<span id="cb1-12"><a></a><span class="co">'''</span></span>
+<span id="cb1-13"><a></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
+<span id="cb1-14"><a></a>    <span class="co"># setup -- extract the color channels as ints</span></span>
+<span id="cb1-15"><a></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
+<span id="cb1-16"><a></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
+<span id="cb1-17"><a></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
+<span id="cb1-18"><a></a>    <span class="co"># compute grey</span></span>
+<span id="cb1-19"><a></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue)<span class="op">//</span><span class="dv">3</span></span>
+<span id="cb1-20"><a></a></span>
+<span id="cb1-21"><a></a>    <span class="co"># conditionally change the pixel to grey</span></span>
+<span id="cb1-22"><a></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
+<span id="cb1-23"><a></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
+<span id="cb1-24"><a></a></span>
+<span id="cb1-25"><a></a>    <span class="co"># return updated pixel</span></span>
+<span id="cb1-26"><a></a>    <span class="cf">return</span> (red, green, blue)</span>
+<span id="cb1-27"><a></a></span>
+<span id="cb1-28"><a></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb1-29"><a></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>] <span class="co"># grab the height and width of the image</span></span>
+<span id="cb1-30"><a></a>    out <span class="op">=</span> img.copy()     <span class="co"># write to a copy</span></span>
+<span id="cb1-31"><a></a></span>
+<span id="cb1-32"><a></a>    <span class="co"># traverse every pixel in the image and change it!</span></span>
+<span id="cb1-33"><a></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
+<span id="cb1-34"><a></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
+<span id="cb1-35"><a></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row,col])</span>
+<span id="cb1-36"><a></a></span>
+<span id="cb1-37"><a></a>    <span class="co"># return image with changed pixels</span></span>
+<span id="cb1-38"><a></a>    <span class="cf">return</span> out</span>
+<span id="cb1-39"><a></a></span>
+<span id="cb1-40"><a></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-41"><a></a></span>
+<span id="cb1-42"><a></a>    img <span class="op">=</span> io.imread(<span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span>)[..., :<span class="dv">3</span>]     <span class="co"># keep first 3 channels (RGB)</span></span>
+<span id="cb1-43"><a></a></span>
+<span id="cb1-44"><a></a>    out <span class="op">=</span> fancify(img)</span>
+<span id="cb1-45"><a></a></span>
+<span id="cb1-46"><a></a>    plt.imshow(out)</span>
+<span id="cb1-47"><a></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb1-48"><a></a>    plt.show()</span>
+<span id="cb1-49"><a></a></span>
+<span id="cb1-50"><a></a>main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-change-image-or-boost" class="slide level2 activity">
+<h2>Your turn: Change image or boost</h2>
+<p>Experiment with the code! Try one or more of these:</p>
+<ol type="1">
+<li>Find a different image URL and boost a different color (green? blue?)</li>
+<li>Change the threshold value (try 150 instead of 200)</li>
+<li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
+<li>What happens if you boost pixels that are LOW in red instead of high?</li>
+</ol>
+<div id="timer_88d624a4153697bb0cafa3e14dc50a0d72cca9cf" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">12</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+</section>
+<section id="a-little-math-puzzle-break" class="slide level2">
+<h2>A little math puzzle break</h2>
 <p><span class="math inline">\(1 + 3 + 5 + \ldots + 1337\)</span> = <u>____________</u></p>
 <p><br>
 </p>
@@ -241,8 +337,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="sums-continued" class="slide level2">
-<h2>Sums continued</h2>
+<section id="puzzle-continued" class="slide level2">
+<h2>puzzle continued…</h2>
 <p>English description:</p>
 <p>The sum of the first <span class="math inline">\(k\)</span> odd integers is <u>________</u></p>
 <p>What about <span class="math inline">\(11 + 13 + \ldots + 23\)</span>?</p>
@@ -261,30 +357,35 @@
 <h2>Back to handcraft</h2>
 <div class="columns">
 <div class="column" style="width:33%;">
-<p><img data-src="../images/quilt.jpg" alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."></p>
+<p><img data-src="../images/quilt.jpg" alt="A quilt in different colors—green and pink—and patterns—paisley and flowers."></p>
 <p><img data-src="../images/doily.jpg" alt="A white doily with a spiral pattern on a wooden surface."></p>
 </div><div class="column" style="width:33%;">
 <p><img data-src="../images/pinecone-pen.jpg" alt="A pen made from pinecone."></p>
-<p><img data-src="../images/shirt.jpg" alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."></p>
+<p><img data-src="../images/shirt.jpg" alt="A vibrant woven textile with intricate geometric patterns in various colors the main being red, displayed against a mossy wooden background."></p>
 </div><div class="column" style="width:33%;">
 <p><img data-src="../images/paper-violin.jpg" alt="A violin made from intricately quilled green paper with a bow."></p>
-<p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colours."></p>
+<p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colors."></p>
 </div></div>
 </section>
-<section id="where-are-we" class="slide level2">
-<h2>Where are we?</h2>
-<div class="quarto-layout-panel" data-layout="[2,8]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img data-src="../images/knitted-dishcloth-with-basket-weave.png" alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
-<p><img data-src="../images/nested-grids.png" alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."></p>
-</div>
-</div>
-</div>
+<section id="representing-handcraft" class="slide level2">
+<h2>Representing handcraft</h2>
+<p>How do we represent a craft project in code?</p>
+<p>We need to think about:</p>
+<ul>
+<li>What <strong>data</strong> describes the object?</li>
+<li>What <strong>operations</strong> can we perform on it?</li>
+</ul>
+<p>Let’s start with something simpler than a full quilt…</p>
+</section>
+<section id="a-bead-bracelet" class="slide level2">
+<h2>A bead bracelet</h2>
+
+<img data-src="../images/bracelet.png" style="width:100.0%" alt="A colorful beaded bracelet." class="r-stretch"><p>What data describes a <strong>bead</strong>?</p>
+<p><br>
+</p>
+<p>What data describes a <strong>bracelet</strong>?</p>
 <aside class="notes">
-<p>The 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?</p>
+<p>Bead: radius, color Bracelet: radius, list of beads</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -297,24 +398,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="program-design" class="slide level2">
-<h2>Program design</h2>
-<div class="quarto-layout-panel" data-layout="[1,1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="../images/pixelated-chevron-knitting-pattern.jpg" alt="A chevron knitting pattern with zigzag lines."></p>
+<section id="dataclasses-in-python" class="slide level2">
+<h2>Dataclasses in Python</h2>
+<p>A <strong>dataclass</strong> bundles related data together into a custom type.</p>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="../images/pixelated-diagonal-lines-knitting-pattern.jpg" alt="A knitting pattern with diagonal stripes."></p>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRhY2xhc3NlcyBpbXBvcnQgZGF0YWNsYXNzXG5cbkBkYXRhY2xhc3NcbmNsYXNzIEJlYWQ6XG4gICAgcmFkaXVzOiBmbG9hdFxuICAgIGNvbG9yOiB0dXBsZVtpbnQsIGludCwgaW50XSAgIyBSR0IhIn0=
+</script>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="../images/pixelated-diamond-knitting-pattern.jpg" alt="A knitting pattern with diagonal stripes."></p>
-</div>
-</div>
-</div>
-<p>A handcraft is a collection of <u>__________</u>. Every <u>__________</u> has a <u>__________</u>, and a collection of <u>__________</u>. Every <u>__________</u> is a collection of <u>__________</u>. Every <u>__________</u> is either “knit” or “purl,” and is drawn as a <u>__________</u>.</p>
+<p>This creates a new type called <code>Bead</code> with two attributes.</p>
 <aside class="notes">
-<p>Missing words: blocks, blocks, position, rows, stitches, rectangles</p>
+<p>Connect back to Tuesday’s RGB representation!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -327,21 +424,37 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="classes-in-python" class="slide level2">
-<h2>Classes in Python</h2>
-<p>Mechanism for creating user-defined types.</p>
-<p>Used to identify attributes with an object. Associates functionality with the relevant objects.</p>
-<p>Example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="at">@dataclass</span></span>
-<span id="cb1-2"><a></a><span class="kw">class</span> color:</span>
-<span id="cb1-3"><a></a>  <span class="co">"""</span></span>
-<span id="cb1-4"><a></a><span class="co">  color: simply gathers color components</span></span>
-<span id="cb1-5"><a></a><span class="co">  """</span></span>
-<span id="cb1-6"><a></a>  red: <span class="bu">int</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb1-7"><a></a>  green: <span class="bu">int</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb1-8"><a></a>  blue: <span class="bu">int</span> <span class="op">=</span> <span class="dv">120</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="creating-bead-objects" class="slide level2">
+<h2>Creating Bead objects</h2>
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBDcmVhdGUgc29tZSBiZWFkc1xucmVkX2JlYWQgPSBCZWFkKHJhZGl1cz01LjAsIGNvbG9yPSgyNTUsIDAsIDApKVxuYmx1ZV9iZWFkID0gQmVhZChyYWRpdXM9My4wLCBjb2xvcj0oMCwgMCwgMjU1KSlcbmJpZ19ncmVlbiA9IEJlYWQocmFkaXVzPTguMCwgY29sb3I9KDAsIDIwMCwgMCkpXG5cbiMgQWNjZXNzIGF0dHJpYnV0ZXM6In0=
+</script>
+</div>
+</section>
+<section id="your-turn-beads" class="slide level2 activity">
+<h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Beads</h2>
+<p>What would these print?</p>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYjEgPSBCZWFkKHJhZGl1cz00LjAsIGNvbG9yPSgxMDAsIDEwMCwgMTAwKSlcbmIyID0gQmVhZChyYWRpdXM9Ni4wLCBjb2xvcj0oMjU1LCAxMjgsIDApKVxuXG5wcmludChiMS5yYWRpdXMgKyBiMi5yYWRpdXMpICAgICAgICAjIF9fX19fX19cbnByaW50KGIyLmNvbG9yWzBdKSAgICAgICAgICAgICAgICAgICMgX19fX19fX1xucHJpbnQoYjEucmFkaXVzICogMikgICAgICAgICAgICAgICAgIyBfX19fX19fIn0=
+</script>
+</div>
+<div id="timer_88d624a4153697bb0cafa3e14dc50a0d72cca9cf" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 <aside class="notes">
-<p>Data classes allow us to create substructures to organize data in a way useful to us. Attributes are data and the functionality are member functions. Attributes can be defined with default values.</p>
+<p>Answers: 10.0, 255, 8.0</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -354,45 +467,46 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="design-strategies" class="slide level2">
-<h2>Design Strategies</h2>
-<ol type="1">
-<li><p>Decompose a problem into classes</p></li>
-<li><p>List the data associated with each class</p></li>
-<li><p>Write the “driver” code that illustrates the functionality you expect from each class.</p></li>
-<li><p>Implement the functions you expect.</p></li>
-<li><p>Run the driver code to test your functionality.</p></li>
-</ol>
+<section id="adding-behavior-methods" class="slide level2">
+<h2>Adding behavior: methods</h2>
+<p>A dataclass can also have <strong>methods</strong>.</p>
+<div>
+<div id="pyodide-5" class="exercise-cell">
+
+</div>
+<script type="pyodide-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRhY2xhc3NlcyBpbXBvcnQgZGF0YWNsYXNzXG5mcm9tIG1hdHBsb3RsaWIucGF0Y2hlcyBpbXBvcnQgQ2lyY2xlXG5cbkBkYXRhY2xhc3NcbmNsYXNzIEJlYWQ6XG4gICAgcmFkaXVzOiBmbG9hdFxuICAgIGNvbG9yOiB0dXBsZVtpbnQsIGludCwgaW50XVxuXG4gICAgZGVmIGRpYW1ldGVyKHNlbGYpIC0+IGZsb2F0OlxuICAgICAgICByZXR1cm4gMiAqIHNlbGYucmFkaXVzXG5cbiAgICBkZWYgZHJhdyhzZWxmLCBheCwgeDogZmxvYXQsIHk6IGZsb2F0KSAtPiBOb25lOlxuICAgICAgICBcIlwiXCJEcmF3IHRoaXMgYmVhZCBjZW50ZXJlZCBhdCAoeCwgeSkgb24gdGhlIGdpdmVuIGF4ZXMuXCJcIlwiXG4gICAgICAgIHIsIGcsIGIgPSBzZWxmLmNvbG9yXG4gICAgICAgIGNpcmNsZSA9IENpcmNsZSgoeCwgeSksIHNlbGYucmFkaXVzLCBjb2xvcj0ociAvIDI1NSwgZyAvIDI1NSwgYiAvIDI1NSkpXG4gICAgICAgIGF4LmFkZF9wYXRjaChjaXJjbGUpIn0=
+</script>
+</div>
 </section>
-<section id="which-classes" class="slide level2">
-<h2>Which classes?</h2>
-<div class="quarto-layout-panel" data-layout="[2,8]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img data-src="../images/knitted-dishcloth-with-basket-weave.png" alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."></p>
+<section id="calling-methods" class="slide level2">
+<h2>Calling methods</h2>
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
-<p><img data-src="../images/nested-grids.png" alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."></p>
+<script type="pyodide-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuXG5yZWRfYmVhZCA9IEJlYWQocmFkaXVzPTUuMCwgY29sb3I9KDI1NSwgMCwgMCkpXG5ibHVlX2JlYWQgPSBCZWFkKHJhZGl1cz0zLjAsIGNvbG9yPSgwLCAwLCAyNTUpKVxuXG4jIENhbGwgbWV0aG9kcyB3aXRoIGRvdCBub3RhdGlvblxucHJpbnQocmVkX2JlYWQuZGlhbWV0ZXIoKSlcbnByaW50KGJsdWVfYmVhZC5kaWFtZXRlcigpKVxuXG4jIERyYXcgdHdvIGJlYWRzOiBzbWFsbGVyIG9uIHRvcCBvZiBsYXJnZXJcbmZpZywgYXggPSBwbHQuc3VicGxvdHMoKVxucmVkX2JlYWQuZHJhdyhheCwgMCwgMClcbmJsdWVfYmVhZC5kcmF3KGF4LCAwLCA4KVxuYXguc2V0X2FzcGVjdChcImVxdWFsXCIpXG5heC5hdXRvc2NhbGUoKVxucGx0LmF4aXMoXCJvZmZcIilcbnBsdC5zaG93KCkifQ==
+</script>
 </div>
-</div>
-</div>
-<aside class="notes">
-<p>The 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section>
+<section id="what-you-learned-today" class="slide level2">
+<h2>What you learned today</h2>
+<ul>
+<li>The sum of the first k odds is _____</li>
+<li>Lists are more complex than they first appear.</li>
+<li><strong>Dataclasses</strong> let us define our own types</li>
+<li><strong>Attributes</strong> are the data associated with an instance of a class</li>
+<li><strong>Methods</strong> are functions that belong to a class</li>
+</ul>
+<p>Next time: The Bracelet</p>
 
 
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTYiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl82ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzYgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzUgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzMgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
