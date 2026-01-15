@@ -1,12 +1,150 @@
 ---
-date: 2025-09-16
+date: 2026-01-16
 ---
 
 ## Announcements
 
-##  {.centered background-iframe="https://ubc-cs.github.io/cpsc203/setup.html" background-interactive="true" data-menu-title="Tech stack instructions"}
+## Colour and Code {.smaller}
 
-## Practice problems
+Make the poppies pop!
+
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
+
+PC: <https://www.epicgardening.com/spring-wildflowers-from-seed/>
+
+Examine each pixel.
+If its red color channel is high (over 200, say), then leave it as is.
+Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values.
+
+## Colour and Code
+
+```{pyodide}
+import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the color channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+
+    # compute grey
+
+
+    # conditionally change the pixel to grey
+
+
+    # return updated pixel
+    return (red, green, blue)
+
+''' Input: np.ndarray representing an image
+    Output: an np.ndarray representing an image
+    Function: Create a new image by appling the boost_red_pixel
+    function to every pixel in the original, and saving the
+    result to the copy.
+'''
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy -- easy way to get the size right
+
+    # traverse every pixel in the image and write to the copy!
+
+
+
+    # return image with changed pixels
+    return out
+
+def main() -> None:
+
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
+
+    out = fancify(img)            # make a new fancy image
+
+    plt.imshow(out)               # output the results
+    plt.axis('off')
+    plt.show()
+
+main()
+```
+
+::: notes
+``` python
+import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all color channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the color channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+    # compute grey
+    grey = (red + green + blue)//3
+
+    # conditionally change the pixel to grey
+    if red < 200:
+        red = green = blue = grey
+
+    # return updated pixel
+    return (red, green, blue)
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy
+
+    # traverse every pixel in the image and change it!
+    for row in range(H):
+        for col in range(W):
+            out[row, col] = boost_red_pixel(img[row,col])
+
+    # return image with changed pixels
+    return out
+
+def main() -> None:
+
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)
+
+    out = fancify(img)
+
+    plt.imshow(out)
+    plt.axis('off')
+    plt.show()
+
+main()
+```
+:::
+
+## Your turn: Change image or boost {.activity}
+
+Experiment with the code! Try one or more of these:
+
+1. Find a different image URL and boost a different color (green? blue?)
+2. Change the threshold value (try 150 instead of 200)
+3. Instead of greying, try inverting: `red = 255 - red`
+4. What happens if you boost pixels that are LOW in red instead of high?
+
+{{< countdown minutes=12 >}}
+
+
+## A little math puzzle break
 
 $1 + 3 + 5 + \ldots + 1337$ = [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
 
@@ -18,7 +156,7 @@ How many terms?
 Always always start this conversation from k=1, not zero.
 :::
 
-## Sums continued
+## puzzle continued...
 
 English description:
 
@@ -43,7 +181,7 @@ The infrastructure on PL is adequate for most things we'll do.
 
 :::::: columns
 ::: {.column width="33%"}
-![](/images/quilt.jpg){fig-alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."}
+![](/images/quilt.jpg){fig-alt="A quilt in different colors—green and pink—and patterns—paisley and flowers."}
 
 ![](/images/doily.jpg){fig-alt="A white doily with a spiral pattern on a wooden surface."}
 :::
@@ -51,97 +189,143 @@ The infrastructure on PL is adequate for most things we'll do.
 ::: {.column width="33%"}
 ![](/images/pinecone-pen.jpg){fig-alt="A pen made from pinecone."}
 
-![](/images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."}
+![](/images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colors the main being red, displayed against a mossy wooden background."}
 :::
 
 ::: {.column width="33%"}
 ![](/images/paper-violin.jpg){fig-alt="A violin made from intricately quilled green paper with a bow."}
 
-![](/images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colours."}
+![](/images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colors."}
 :::
 ::::::
 
-## Where are we?
+## Representing handcraft
 
-::: {layout="[2,8]"}
-![](/images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
+How do we represent a craft project in code?
 
-![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
-:::
+We need to think about:
 
-::: notes
-The 8x8 grid illustrates dishcloth.
-Each block has 5 rows of 5 stitches.
-How would you represent a handcraft using Python types?
-:::
+- What **data** describes the object?
+- What **operations** can we perform on it?
 
-## Program design
+Let's start with something simpler than a full quilt...
 
-::: {layout="[1,1,1]"}
-![](/images/pixelated-chevron-knitting-pattern.jpg){fig-alt="A chevron knitting pattern with zigzag lines."}
+## A bead bracelet
 
-![](/images/pixelated-diagonal-lines-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
+![](/images/bracelet.png){fig-alt="A colorful beaded bracelet." width="100%"}
 
-![](/images/pixelated-diamond-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
-:::
+What data describes a **bead**?
 
-A handcraft is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} has a [\_\_\_\_\_\_\_\_\_\_]{.underline}, and a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is either "knit" or "purl," and is drawn as a [\_\_\_\_\_\_\_\_\_\_]{.underline}.
+\
+
+What data describes a **bracelet**?
 
 ::: notes
-Missing words: blocks, blocks, position, rows, stitches, rectangles
+Bead: radius, color
+Bracelet: radius, list of beads
 :::
 
-## Classes in Python
+## Dataclasses in Python
 
-Mechanism for creating user-defined types.
+A **dataclass** bundles related data together into a custom type.
 
-Used to identify attributes with an object.
-Associates functionality with the relevant objects.
+``` {pyodide}
+from dataclasses import dataclass
 
-Example:
-
-``` python
 @dataclass
-class color:
-  """
-  color: simply gathers color components
-  """
-  red: int = 120
-  green: int = 120
-  blue: int = 120
+class Bead:
+    radius: float
+    color: tuple[int, int, int]  # RGB!
 ```
 
-::: notes
-Data classes allow us to create substructures to organize data in a way useful to us.
-Attributes are data and the functionality are member functions.
-Attributes can be defined with default values.
-:::
-
-## Design Strategies
-
-1.  Decompose a problem into classes
-
-2.  List the data associated with each class
-
-3.  Write the "driver" code that illustrates the functionality you expect from each class.
-
-4.  Implement the functions you expect.
-
-5.  Run the driver code to test your functionality.
-
-## Which classes?
-
-::: {layout="[2,8]"}
-![](/images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
-
-![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
-:::
+This creates a new type called `Bead` with two attributes.
 
 ::: notes
-The 8x8 grid illustrates dishcloth.
-Each block has 5 rows of 5 stitches.
-How would you represent a handcraft using Python types?
+Connect back to Tuesday's RGB representation!
 :::
+
+## Creating Bead objects
+
+``` {pyodide}
+# Create some beads
+red_bead = Bead(radius=5.0, color=(255, 0, 0))
+blue_bead = Bead(radius=3.0, color=(0, 0, 255))
+big_green = Bead(radius=8.0, color=(0, 200, 0))
+
+# Access attributes:
+```
+
+## {{< iconify fa6-solid comments >}} Your turn: Beads {.activity}
+
+What would these print?
+
+``` {pyodide}
+b1 = Bead(radius=4.0, color=(100, 100, 100))
+b2 = Bead(radius=6.0, color=(255, 128, 0))
+
+print(b1.radius + b2.radius)        # _______
+print(b2.color[0])                  # _______
+print(b1.radius * 2)                # _______
+```
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Answers: 10.0, 255, 8.0
+:::
+
+## Adding behavior: methods
+
+A dataclass can also have **methods**.
+
+``` {pyodide}
+from dataclasses import dataclass
+from matplotlib.patches import Circle
+
+@dataclass
+class Bead:
+    radius: float
+    color: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+    def draw(self, ax, x: float, y: float) -> None:
+        """Draw this bead centered at (x, y) on the given axes."""
+        r, g, b = self.color
+        circle = Circle((x, y), self.radius, color=(r / 255, g / 255, b / 255))
+        ax.add_patch(circle)
+```
+
+
+## Calling methods
+
+``` {pyodide}
+import matplotlib.pyplot as plt
+
+red_bead = Bead(radius=5.0, color=(255, 0, 0))
+blue_bead = Bead(radius=3.0, color=(0, 0, 255))
+
+# Call methods with dot notation
+print(red_bead.diameter())
+print(blue_bead.diameter())
+
+# Draw two beads: smaller on top of larger
+fig, ax = plt.subplots()
+red_bead.draw(ax, 0, 0)
+blue_bead.draw(ax, 0, 8)
+ax.set_aspect("equal")
+ax.autoscale()
+plt.axis("off")
+plt.show()
+```
+
+## What you learned today
+
+- The sum of the first k odds is \_\_\_\_\_
+- Lists are more complex than they first appear.
+- **Dataclasses** let us define our own types 
+- **Attributes** are the data associated with an instance of a class
+- **Methods** are functions that belong to a class
+
+Next time: The Bracelet

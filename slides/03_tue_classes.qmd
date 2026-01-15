@@ -1,11 +1,193 @@
 ---
-date: 2025-09-18
+date: 2026-01-21
 ---
 
 ## Announcements
 
+## The Bracelet
 
+A bracelet contains **a list of beads** and has a **radius**.
 
+``` {pyodide}
+@dataclass
+class Bracelet:
+    radius: float           # radius of the bracelet circle
+    beads: list[Bead]       # the beads on the bracelet
+```
+
+This is **composition**: a Bracelet *contains* Beads.
+
+## Creating a Bracelet
+
+``` python
+# First, create some beads
+b1 = Bead(radius=5.0, colour=(255, 0, 0))
+b2 = Bead(radius=3.0, colour=(0, 255, 0))
+b3 = Bead(radius=4.0, colour=(0, 0, 255))
+
+# Then, create a bracelet with those beads
+my_bracelet = Bracelet(radius=20.0, beads=[b1, b2, b3])
+
+# Access the beads
+print(len(my_bracelet.beads))           # 3
+print(my_bracelet.beads[0].radius)      # 5.0
+print(my_bracelet.beads[1].colour)      # (0, 255, 0)
+```
+
+## Does it fit?
+
+The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.
+
+``` python
+import math
+
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float:
+        return 2 * math.pi * self.radius
+
+    def fits(self) -> bool:
+        total = 0
+        for bead in self.beads:
+            total += bead.diameter()
+        return total <= self.circumference()
+```
+
+## {{< iconify fa6-solid comments >}} Your turn: Does it fit? {.activity}
+
+``` python
+b1 = Bead(radius=5.0, colour=(255, 0, 0))
+b2 = Bead(radius=3.0, colour=(0, 255, 0))
+b3 = Bead(radius=4.0, colour=(0, 0, 255))
+
+bracelet1 = Bracelet(radius=20.0, beads=[b1, b2, b3])
+bracelet2 = Bracelet(radius=3.0, beads=[b1, b2, b3])
+```
+
+What do `bracelet1.fits()` and `bracelet2.fits()` return?
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Total diameter = 10 + 6 + 8 = 24
+bracelet1: circumference = 2π(20) ≈ 125.7, fits() -> True (24 <= 125.7)
+bracelet2: circumference = 2π(3) ≈ 18.8, fits() -> False (24 > 18.8)
+:::
+
+## How much slack?
+
+``` python
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float:
+        return 2 * math.pi * self.radius
+
+    def fits(self) -> bool:
+        total = 0
+        for bead in self.beads:
+            total += bead.diameter()
+        return total <= self.circumference()
+
+    def slack(self) -> float:
+        total = 0
+        for bead in self.beads:
+            total += bead.diameter()
+        return self.circumference() - total
+```
+
+::: notes
+Could refactor to avoid duplicate code, but keep it simple for now.
+:::
+
+## Drawing the bracelet
+
+The bracelet decides **where** each bead goes (around the circle).
+
+``` python
+def draw(self) -> None:
+    if not self.fits():
+        print("Beads don't fit!")
+        return
+
+    spacing = self.slack() / len(self.beads)
+    arc_position = 0
+    for bead in self.beads:
+        arc_position += bead.radius + spacing / 2
+        angle = arc_position / self.radius
+        x = self.radius * math.cos(angle)
+        y = self.radius * math.sin(angle)
+        bead.draw(ax, x, y)
+        arc_position += bead.radius + spacing / 2
+```
+
+::: notes
+Key design: Bracelet owns layout logic, Bead just draws itself at given position.
+Arc length to angle: angle = arc_length / radius
+:::
+
+## The full picture {.smaller}
+
+``` python
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+    def draw(self, ax, x: float, y: float) -> None:
+        # implementation uses matplotlib
+        ...
+
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float: ...
+    def fits(self) -> bool: ...
+    def slack(self) -> float: ...
+    def draw(self) -> None: ...
+```
+
+## {{< iconify fa6-solid computer >}} Your turn: Experiment {.activity}
+
+Try the bracelet code on PrairieLearn!
+
+1. Create beads of different sizes and colors
+2. Make a bracelet and check if it fits
+3. Try adding more beads until it doesn't fit
+4. What's the largest bead you could still add?
+
+{{< countdown minutes=10 >}}
+
+## Design Strategies
+
+1.  Identify the **objects** in your problem (nouns)
+
+2.  List the **data** each object needs (attributes)
+
+3.  List the **operations** each object supports (methods)
+
+4.  Decide which object is responsible for what
+
+5.  Implement and test incrementally
+
+## What you learned about bracelets
+
+- **Dataclasses** let us define custom types with attributes
+- **Methods** are functions that belong to a class
+- **Composition**: objects can contain other objects
+- **Design**: who owns what data and behavior matters!
+
+Now let's apply these ideas to a new domain...
 
 ## Back to handcraft
 
