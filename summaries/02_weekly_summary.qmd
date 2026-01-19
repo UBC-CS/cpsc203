@@ -330,35 +330,25 @@ Here's a cute mathematical puzzle we explored in class. It turns out that adding
 
 ### Building Squares from Odd Numbers
 
-Start with a single square:
-
-```
-■       1 = 1²
-```
-
-Now wrap it with 3 more squares (the next odd number):
-
-```
-■ ■ ■
-■ ■ ■     1 + 3 = 4 = 2²
-■ ■ ■
-```
-
-Wrap that with 5 more squares:
-
-```
-■ ■ ■ ■ ■
-■ ■ ■ ■ ■
-■ ■ ■ ■ ■     1 + 3 + 5 = 9 = 3²
-■ ■ ■ ■ ■
-■ ■ ■ ■ ■
-```
+![Building squares from odd numbers: 1, then 1+3=4, then 1+3+5=9.](/images/odd-squares.png){fig-alt="Three squares showing 1×1, 2×2, and 3×3 grids with colored layers: red for 1, blue for 3, yellow for 5."}
 
 Do you see the pattern? Each odd number forms an "L-shape" that wraps around the previous square to make the next bigger square!
 
+[**1**]{.red} + [**3**]{.blue} + [**5**]{.yellow} + ...
+
 **The sum of the first $k$ odd numbers is $k^2$.**
 
-That's why $1 + 3 + 5 + \ldots + 1337 = 669^2 = 447561$. (There are 669 odd numbers from 1 to 1337.)
+### How Many Terms? Finding k
+
+But wait—if someone gives you $1 + 3 + 5 + \ldots + 2381$, how do you know how many terms that is?
+
+![The k-th odd number is 2k−1, so we can work backwards to find k.](/images/finding-k.png){fig-alt="A table showing k maps to 2k-1, and the formula k = (last+1)/2 with example: 1+3+...+2381 has k=1191, so sum = 1191² = 1,418,481."}
+
+The k-th odd number is $2k - 1$. So if the last term is $2k - 1$, then:
+
+$$k = \frac{\text{last} + 1}{2}$$
+
+That's why $1 + 3 + 5 + \ldots + 1337 = 669^2 = 447561$. (Since $k = (1337+1)/2 = 669$.)
 
 ### Sums of Partial Sequences: Inclusion-Exclusion
 
@@ -366,16 +356,7 @@ What about $11 + 13 + 15 + \ldots + 23$?
 
 Think geometrically! This is like taking a 12×12 square (sum of first 12 odds, ending at 23) and *removing* a 5×5 square (sum of first 5 odds, ending at 9):
 
-```
-┌─────────────────┐
-│                 │
-│    ┌─────┐      │
-│    │ 5×5 │      │    12² - 5² = 144 - 25 = 119
-│    │     │      │
-│    └─────┘      │
-│          12×12  │
-└─────────────────┘
-```
+![The 5×5 square sits in a corner of the 12×12, showing exactly which squares are subtracted.](/images/inclusion-exclusion.png){fig-alt="A 12×12 grid with a 5×5 corner highlighted in grey with a dashed red border, showing 12² − 5² = 119."}
 
 **The sum of odd numbers from $(2j+1)$ to $(2k-1)$ is $k^2 - j^2$.**
 
@@ -383,20 +364,15 @@ This is inclusion-exclusion in action: take the big square, subtract the small o
 
 ### What About Even Numbers?
 
-The sum of the first $k$ even numbers follows a similar pattern. Notice that:
+Here's a neat trick: every even number is just an odd number plus one! So we can regroup:
 
-$$2 + 4 + 6 + \ldots + 2k = 2(1 + 2 + 3 + \ldots + k)$$
+$$2 + 4 + \ldots + 24 = (1+1) + (3+1) + \ldots + (23+1)$$
 
-But here's another way to see it geometrically. Each even number is just one more than the corresponding odd number:
+$$= \underbrace{1 + 3 + \ldots + 23}_{12 \text{ odds}} + \underbrace{1 + 1 + \ldots + 1}_{12 \text{ ones}} = 12^2 + 12$$
 
-```
-Odds:  1   3   5   7   ...
-       ↓   ↓   ↓   ↓
-Evens: 2   4   6   8   ...
-       +1  +1  +1  +1
-```
+![The sum of evens is the sum of odds plus k extra ones.](/images/evens-from-odds.png){fig-alt="A 3×3 grid for odds with a row of 3 colored +1 squares below, showing evens = odds + k."}
 
-So the sum of the first $k$ evens = sum of the first $k$ odds + $k$:
+In general, the sum of the first $k$ evens = sum of the first $k$ odds + $k$:
 
 $$2 + 4 + 6 + \ldots + 2k = k^2 + k = k(k+1)$$
 
