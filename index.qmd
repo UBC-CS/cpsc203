@@ -133,8 +133,8 @@ schedule <- read_csv(
       !is.na(exam) & exam_booking_live ~ glue("[{exam}]({prairietest_url})"),
       # Exam booking not yet live - show name without link
       !is.na(exam) ~ as.character(exam),
-      # Practice material (in week before examlet) - no link for now
-      !is.na(exam_practice) ~ as.character(fa("pen-to-square")),
+      # Practice material (in week before examlet) - link to PrairieLearn
+      !is.na(exam_practice) ~ glue("[{fa('pen-to-square')}]({exam_practice})"),
       .default = NA_character_
     )
   )
