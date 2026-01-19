@@ -472,6 +472,13 @@ window.Quarto = {
   </ul></li>
   <li><a href="#what-did-we-learn" id="toc-what-did-we-learn" class="nav-link" data-scroll-target="#what-did-we-learn">What Did We Learn?</a></li>
   <li><a href="#coming-up" id="toc-coming-up" class="nav-link" data-scroll-target="#coming-up">Coming Up</a></li>
+  <li><a href="#diversion-the-geometry-of-odd-numbers" id="toc-diversion-the-geometry-of-odd-numbers" class="nav-link" data-scroll-target="#diversion-the-geometry-of-odd-numbers">Diversion: The Geometry of Odd Numbers</a>
+  <ul class="collapse">
+  <li><a href="#building-squares-from-odd-numbers" id="toc-building-squares-from-odd-numbers" class="nav-link" data-scroll-target="#building-squares-from-odd-numbers">Building Squares from Odd Numbers</a></li>
+  <li><a href="#sums-of-partial-sequences-inclusion-exclusion" id="toc-sums-of-partial-sequences-inclusion-exclusion" class="nav-link" data-scroll-target="#sums-of-partial-sequences-inclusion-exclusion">Sums of Partial Sequences: Inclusion-Exclusion</a></li>
+  <li><a href="#what-about-even-numbers" id="toc-what-about-even-numbers" class="nav-link" data-scroll-target="#what-about-even-numbers">What About Even Numbers?</a></li>
+  <li><a href="#why-does-this-matter" id="toc-why-does-this-matter" class="nav-link" data-scroll-target="#why-does-this-matter">Why Does This Matter?</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/02_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/02_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -822,9 +829,70 @@ window.Quarto = {
 <p>That’s where the real learning happens.</p>
 <p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
 <hr>
+</section>
+<section id="diversion-the-geometry-of-odd-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="diversion-the-geometry-of-odd-numbers">Diversion: The Geometry of Odd Numbers</h2>
+<p>Here’s a cute mathematical puzzle we explored in class. It turns out that adding odd numbers reveals beautiful geometric patterns!</p>
+<section id="building-squares-from-odd-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="building-squares-from-odd-numbers">Building Squares from Odd Numbers</h3>
+<p>Start with a single square:</p>
+<pre><code>■       1 = 1²</code></pre>
+<p>Now wrap it with 3 more squares (the next odd number):</p>
+<pre><code>■ ■ ■
+■ ■ ■     1 + 3 = 4 = 2²
+■ ■ ■</code></pre>
+<p>Wrap that with 5 more squares:</p>
+<pre><code>■ ■ ■ ■ ■
+■ ■ ■ ■ ■
+■ ■ ■ ■ ■     1 + 3 + 5 = 9 = 3²
+■ ■ ■ ■ ■
+■ ■ ■ ■ ■</code></pre>
+<p>Do you see the pattern? Each odd number forms an “L-shape” that wraps around the previous square to make the next bigger square!</p>
+<p><strong>The sum of the first <span class="math inline">\(k\)</span> odd numbers is <span class="math inline">\(k^2\)</span>.</strong></p>
+<p>That’s why <span class="math inline">\(1 + 3 + 5 + \ldots + 1337 = 669^2 = 447561\)</span>. (There are 669 odd numbers from 1 to 1337.)</p>
+</section>
+<section id="sums-of-partial-sequences-inclusion-exclusion" class="level3">
+<h3 class="anchored" data-anchor-id="sums-of-partial-sequences-inclusion-exclusion">Sums of Partial Sequences: Inclusion-Exclusion</h3>
+<p>What about <span class="math inline">\(11 + 13 + 15 + \ldots + 23\)</span>?</p>
+<p>Think geometrically! This is like taking a 12×12 square (sum of first 12 odds, ending at 23) and <em>removing</em> a 5×5 square (sum of first 5 odds, ending at 9):</p>
+<pre><code>┌─────────────────┐
+│                 │
+│    ┌─────┐      │
+│    │ 5×5 │      │    12² - 5² = 144 - 25 = 119
+│    │     │      │
+│    └─────┘      │
+│          12×12  │
+└─────────────────┘</code></pre>
+<p><strong>The sum of odd numbers from <span class="math inline">\((2j+1)\)</span> to <span class="math inline">\((2k-1)\)</span> is <span class="math inline">\(k^2 - j^2\)</span>.</strong></p>
+<p>This is inclusion-exclusion in action: take the big square, subtract the small one!</p>
+</section>
+<section id="what-about-even-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="what-about-even-numbers">What About Even Numbers?</h3>
+<p>The sum of the first <span class="math inline">\(k\)</span> even numbers follows a similar pattern. Notice that:</p>
+<p><span class="math display">\[2 + 4 + 6 + \ldots + 2k = 2(1 + 2 + 3 + \ldots + k)\]</span></p>
+<p>But here’s another way to see it geometrically. Each even number is just one more than the corresponding odd number:</p>
+<pre><code>Odds:  1   3   5   7   ...
+       ↓   ↓   ↓   ↓
+Evens: 2   4   6   8   ...
+       +1  +1  +1  +1</code></pre>
+<p>So the sum of the first <span class="math inline">\(k\)</span> evens = sum of the first <span class="math inline">\(k\)</span> odds + <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[2 + 4 + 6 + \ldots + 2k = k^2 + k = k(k+1)\]</span></p>
+<p>For example: <span class="math inline">\(2 + 4 + 6 + \ldots + 1338 = 669 \times 670 = 448230\)</span>.</p>
+</section>
+<section id="why-does-this-matter" class="level3">
+<h3 class="anchored" data-anchor-id="why-does-this-matter">Why Does This Matter?</h3>
+<p>These patterns show up everywhere in computer science:</p>
+<ul>
+<li><strong>Loop analysis</strong>: When you have nested loops, you’re often summing arithmetic sequences</li>
+<li><strong>Algorithm complexity</strong>: Many <span class="math inline">\(O(n^2)\)</span> algorithms have this structure hiding inside</li>
+<li><strong>Geometric reasoning</strong>: Sometimes the fastest way to understand a formula is to <em>draw</em> it</li>
+</ul>
+<p>Plus, it’s just satisfying when math has pictures! 🎨</p>
+<hr>
 <p><em>Photo credit: Poppy field from <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/">Epic Gardening</a>. SSD image from <a href="https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/">Ars Technica</a>. RGB cube from <a href="https://commons.wikimedia.org/wiki/File:RGB_color_solid_cube.png">Wikipedia</a>.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
