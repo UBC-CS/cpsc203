@@ -8,7 +8,7 @@ date: 2026-01-20
 
 Let's explore some surprising list behaviors.
 
-Open the **List Activity**  on PrairieLearn.
+Open the [**List Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2638038) on PrairieLearn.
 
 Inside the workspace there are 4 files, each containing a short sequence of exercises. Complete them, and then we'll review together.
 
@@ -390,32 +390,6 @@ Could refactor to avoid duplicate code, but keep it simple for now.
 
 ![](/images/bracelet_layout.png){.r-stretch}
 
-## Drawing the bracelet
-
-The bracelet decides **where** each bead goes (around the circle).
-
-``` {pyodide}
-def draw(self) -> None:
-    if not self.fits():
-        print("Beads don't fit!")
-        return
-
-    spacing = self.slack() / len(self.beads)
-    arc_position = 0
-    for bead in self.beads:
-        arc_position += bead.radius + spacing / 2
-        angle = arc_position / self.radius
-        x = self.radius * math.cos(angle)
-        y = self.radius * math.sin(angle)
-        bead.draw(ax, x, y)
-        arc_position += bead.radius + spacing / 2
-```
-
-::: notes
-Key design: Bracelet owns layout logic, Bead just draws itself at given position.
-Arc length to angle: angle = arc_length / radius
-:::
-
 ## The full picture {.smaller}
 
 ``` python
@@ -440,7 +414,7 @@ class Bracelet:
 
 ## {{< iconify fa6-solid computer >}} Your turn: Experiment {.activity}
 
-Try the **Bracelet Activity** on PrairieLearn!
+Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2638037) on PrairieLearn!
 
 {{< countdown minutes=10 >}}
 
