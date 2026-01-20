@@ -1236,7 +1236,7 @@
     "href": "index.html#weekly-announcement",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "Weekly announcement",
-    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03\nJan 19\n\n\n\n\n\n\n\n\n\n\n    04\nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
+    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      NA_slides\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n\n    03\nJan 19\n\n\n\n\n\n\n\n\n\n\n\n    04\nJan 26\n\n\n\n\n\n\n\n\n\n\nEX1\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\n\nProj3",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2600,6 +2600,132 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/03_tue_classes.html#list-activity",
+    "href": "slides/03_tue_classes.html#list-activity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " List Activity",
+    "text": "List Activity\nLet’s explore some surprising list behaviors.\nOpen the List Activity on PrairieLearn.\nInside the workspace there are 4 files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n  \n    −\n    +\n \n 10:00\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#lists-a-quick-review",
+    "href": "slides/03_tue_classes.html#lists-a-quick-review",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Lists: A Quick Review",
+    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#adding-to-lists",
+    "href": "slides/03_tue_classes.html#adding-to-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding to Lists",
+    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#list-aliasing",
+    "href": "slides/03_tue_classes.html#list-aliasing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Aliasing",
+    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists – it creates another reference to the same list."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#shallow-copy",
+    "href": "slides/03_tue_classes.html#shallow-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Shallow Copy",
+    "text": "Shallow Copy\n\n\n\n\n\n\n.copy() only copies the outer list. The inner lists are still shared!"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#deep-copy",
+    "href": "slides/03_tue_classes.html#deep-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Deep Copy",
+    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy when you have nested structures (lists of lists, lists of objects)."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#references",
+    "href": "slides/03_tue_classes.html#references",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "References",
+    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#list-comprehensions",
+    "href": "slides/03_tue_classes.html#list-comprehensions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#list-comprehensions-with-conditions",
+    "href": "slides/03_tue_classes.html#list-comprehensions-with-conditions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions with Conditions",
+    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#defining-our-own-types",
+    "href": "slides/03_tue_classes.html#defining-our-own-types",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Defining our own types",
+    "text": "Defining our own types\nSo far we’ve used built-in types: int, float, str, list, tuple…\nWhat if we want to represent something more complex?\n\nA bead with a radius and a color?\nA bracelet with beads arranged in a circle?\nA song with a title and duration?\nA playlist with a name and songs?\n\nPython lets us define our own types using dataclasses."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#a-bead-bracelet",
+    "href": "slides/03_tue_classes.html#a-bead-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A bead bracelet",
+    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#dataclasses-in-python",
+    "href": "slides/03_tue_classes.html#dataclasses-in-python",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Dataclasses in Python",
+    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\nThis creates a new type called Bead with two attributes.\n\nConnect back to Tuesday’s RGB representation!"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#creating-bead-objects",
+    "href": "slides/03_tue_classes.html#creating-bead-objects",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Creating Bead objects",
+    "text": "Creating Bead objects"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#your-turn-beads",
+    "href": "slides/03_tue_classes.html#your-turn-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Beads",
+    "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#adding-behavior-methods",
+    "href": "slides/03_tue_classes.html#adding-behavior-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding behavior: methods",
+    "text": "Adding behavior: methods\nA dataclass can also have methods."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#adding-behavior-more-methods",
+    "href": "slides/03_tue_classes.html#adding-behavior-more-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding behavior: more methods",
+    "text": "Adding behavior: more methods\nAdd a draw method:"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#calling-methods",
+    "href": "slides/03_tue_classes.html#calling-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Calling methods",
+    "text": "Calling methods"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#questions",
+    "href": "slides/03_tue_classes.html#questions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Questions?",
+    "text": "Questions?\nNow that you know about dataclass how would you design a Bracelet?"
+  },
+  {
     "objectID": "slides/03_tue_classes.html#the-bracelet",
     "href": "slides/03_tue_classes.html#the-bracelet",
     "title": "Programming, problem solving, and algorithms",
@@ -2611,49 +2737,63 @@
     "href": "slides/03_tue_classes.html#creating-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
     "section": "Creating a Bracelet",
-    "text": "Creating a Bracelet\n# First, create some beads\nb1 = Bead(radius=5.0, colour=(255, 0, 0))\nb2 = Bead(radius=3.0, colour=(0, 255, 0))\nb3 = Bead(radius=4.0, colour=(0, 0, 255))\n\n# Then, create a bracelet with those beads\nmy_bracelet = Bracelet(radius=20.0, beads=[b1, b2, b3])\n\n# Access the beads\nprint(len(my_bracelet.beads))           # 3\nprint(my_bracelet.beads[0].radius)      # 5.0\nprint(my_bracelet.beads[1].colour)      # (0, 255, 0)"
+    "text": "Creating a Bracelet"
   },
   {
     "objectID": "slides/03_tue_classes.html#does-it-fit",
     "href": "slides/03_tue_classes.html#does-it-fit",
     "title": "Programming, problem solving, and algorithms",
     "section": "Does it fit?",
-    "text": "Does it fit?\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.\nimport math\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float:\n        return 2 * math.pi * self.radius\n\n    def fits(self) -&gt; bool:\n        total = 0\n        for bead in self.beads:\n            total += bead.diameter()\n        return total &lt;= self.circumference()"
+    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#does-it-fit-1",
+    "href": "slides/03_tue_classes.html#does-it-fit-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Does it fit?",
+    "text": "Does it fit?\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
   },
   {
     "objectID": "slides/03_tue_classes.html#your-turn-does-it-fit",
     "href": "slides/03_tue_classes.html#your-turn-does-it-fit",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Does it fit?",
-    "text": "Your turn: Does it fit?\nb1 = Bead(radius=5.0, colour=(255, 0, 0))\nb2 = Bead(radius=3.0, colour=(0, 255, 0))\nb3 = Bead(radius=4.0, colour=(0, 0, 255))\n\nbracelet1 = Bracelet(radius=20.0, beads=[b1, b2, b3])\nbracelet2 = Bracelet(radius=3.0, beads=[b1, b2, b3])\nWhat do bracelet1.fits() and bracelet2.fits() return?\n\n  \n    −\n    +\n \n 02:00\n \n\nTotal diameter = 10 + 6 + 8 = 24 bracelet1: circumference = 2π(20) ≈ 125.7, fits() -&gt; True (24 &lt;= 125.7) bracelet2: circumference = 2π(3) ≈ 18.8, fits() -&gt; False (24 &gt; 18.8)"
+    "text": "Your turn: Does it fit?\n\n\n\n\n\n\nWhat do bracelet1.fits() and bracelet2.fits() return?\n\n  \n    −\n    +\n \n 02:00\n \n\nTotal diameter = 10 + 6 + 8 = 24 bracelet1: circumference = 2π(20) ≈ 125.7, fits() -&gt; True (24 &lt;= 125.7) bracelet2: circumference = 2π(3) ≈ 18.8, fits() -&gt; False (24 &gt; 18.8)"
   },
   {
     "objectID": "slides/03_tue_classes.html#how-much-slack",
     "href": "slides/03_tue_classes.html#how-much-slack",
     "title": "Programming, problem solving, and algorithms",
     "section": "How much slack?",
-    "text": "How much slack?\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float:\n        return 2 * math.pi * self.radius\n\n    def fits(self) -&gt; bool:\n        total = 0\n        for bead in self.beads:\n            total += bead.diameter()\n        return total &lt;= self.circumference()\n\n    def slack(self) -&gt; float:\n        total = 0\n        for bead in self.beads:\n            total += bead.diameter()\n        return self.circumference() - total\n\nCould refactor to avoid duplicate code, but keep it simple for now."
+    "text": "How much slack?\n\n\n\n\n\n\n\nCould refactor to avoid duplicate code, but keep it simple for now."
   },
   {
     "objectID": "slides/03_tue_classes.html#drawing-the-bracelet",
     "href": "slides/03_tue_classes.html#drawing-the-bracelet",
     "title": "Programming, problem solving, and algorithms",
     "section": "Drawing the bracelet",
-    "text": "Drawing the bracelet\nThe bracelet decides where each bead goes (around the circle).\ndef draw(self) -&gt; None:\n    if not self.fits():\n        print(\"Beads don't fit!\")\n        return\n\n    spacing = self.slack() / len(self.beads)\n    arc_position = 0\n    for bead in self.beads:\n        arc_position += bead.radius + spacing / 2\n        angle = arc_position / self.radius\n        x = self.radius * math.cos(angle)\n        y = self.radius * math.sin(angle)\n        bead.draw(ax, x, y)\n        arc_position += bead.radius + spacing / 2\n\nKey design: Bracelet owns layout logic, Bead just draws itself at given position. Arc length to angle: angle = arc_length / radius"
+    "text": "Drawing the bracelet"
+  },
+  {
+    "objectID": "slides/03_tue_classes.html#drawing-the-bracelet-1",
+    "href": "slides/03_tue_classes.html#drawing-the-bracelet-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Drawing the bracelet",
+    "text": "Drawing the bracelet\nThe bracelet decides where each bead goes (around the circle).\n\n\n\n\n\n\n\nKey design: Bracelet owns layout logic, Bead just draws itself at given position. Arc length to angle: angle = arc_length / radius"
   },
   {
     "objectID": "slides/03_tue_classes.html#the-full-picture",
     "href": "slides/03_tue_classes.html#the-full-picture",
     "title": "Programming, problem solving, and algorithms",
     "section": "The full picture",
-    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float:\n        return 2 * self.radius\n\n    def draw(self, ax, x: float, y: float) -&gt; None:\n        # implementation uses matplotlib\n        ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def fits(self) -&gt; bool: ...\n    def slack(self) -&gt; float: ...\n    def draw(self) -&gt; None: ..."
+    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def fits(self) -&gt; bool: ...\n    def slack(self) -&gt; float: ...\n    def draw(self) -&gt; None: ..."
   },
   {
     "objectID": "slides/03_tue_classes.html#your-turn-experiment",
     "href": "slides/03_tue_classes.html#your-turn-experiment",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Experiment",
-    "text": "Your turn: Experiment\nTry the bracelet code on PrairieLearn!\n\nCreate beads of different sizes and colors\nMake a bracelet and check if it fits\nTry adding more beads until it doesn’t fit\nWhat’s the largest bead you could still add?\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/03_tue_classes.html#design-strategies",
@@ -2663,67 +2803,11 @@
     "text": "Design Strategies\n\nIdentify the objects in your problem (nouns)\nList the data each object needs (attributes)\nList the operations each object supports (methods)\nDecide which object is responsible for what\nImplement and test incrementally"
   },
   {
-    "objectID": "slides/03_tue_classes.html#what-you-learned-about-bracelets",
-    "href": "slides/03_tue_classes.html#what-you-learned-about-bracelets",
+    "objectID": "slides/03_tue_classes.html#what-you-learned",
+    "href": "slides/03_tue_classes.html#what-you-learned",
     "title": "Programming, problem solving, and algorithms",
-    "section": "What you learned about bracelets",
-    "text": "What you learned about bracelets\n\nDataclasses let us define custom types with attributes\nMethods are functions that belong to a class\nComposition: objects can contain other objects\nDesign: who owns what data and behavior matters!\n\nNow let’s apply these ideas to a new domain…"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#back-to-handcraft",
-    "href": "slides/03_tue_classes.html#back-to-handcraft",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Back to handcraft",
-    "text": "Back to handcraft"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#where-are-we",
-    "href": "slides/03_tue_classes.html#where-are-we",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Where are we?",
-    "text": "Where are we?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#program-design",
-    "href": "slides/03_tue_classes.html#program-design",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Program design",
-    "text": "Program design\n\n\n\n\n\n\n\n\n\n\n\n\n\nA handcraft is a collection of __________. Every __________ has a __________, and a collection of __________. Every __________ is a collection of __________. Every __________ is either “knit” or “purl,” and is drawn as a __________.\n\nMissing words: blocks, blocks, position, rows, stitches, rectangles"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#classes-in-python",
-    "href": "slides/03_tue_classes.html#classes-in-python",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Classes in Python",
-    "text": "Classes in Python\nMechanism for creating user-defined types.\nUsed to identify attributes with an object. Associates functionality with the relevant objects.\nExample:\n@dataclass\nclass color:\n  \"\"\"\n  color: simply gathers color components\n  \"\"\"\n  red: int = 120\n  green: int = 120\n  blue: int = 120\n\nData classes allow us to create substructures to organize data in a way useful to us. Attributes are data and the functionality are member functions. Attributes can be defined with default values."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#using-a-data-class",
-    "href": "slides/03_tue_classes.html#using-a-data-class",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Using a Data Class",
-    "text": "Using a Data Class\n@dataclass\nclass color:\n  \"\"\"\n  color: simply gathers color components\n  \"\"\"\n  red: int = 120\n  green: int = 120\n  blue: int = 120\nDeclaring an object of type color():\n\n\nAccessing the data of an object of type color():"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#design-strategies-1",
-    "href": "slides/03_tue_classes.html#design-strategies-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design Strategies",
-    "text": "Design Strategies\n\nDecompose a problem into classes\nList the data associated with each class\nWrite the “driver” code that illustrates the functionality you expect from each class.\nImplement the functions you expect.\nRun the driver code to test your functionality."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#which-classes",
-    "href": "slides/03_tue_classes.html#which-classes",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Which classes?",
-    "text": "Which classes?\n\n\n\n\nHandcraft:\nBlock:\nRow:\nStitch:\nImage:\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#lets-write",
-    "href": "slides/03_tue_classes.html#lets-write",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Write",
-    "text": "Let’s Write\nhttps://us.prairielearn.com/pl/course_instance/193300/assessment/2588207"
+    "section": "What you learned",
+    "text": "What you learned\n\nDataclasses let us define custom types with attributes\nMethods are functions that belong to a class\nComposition: objects can contain other objects\nDesign: who owns what data and behavior matters!"
   },
   {
     "objectID": "slides/12_tue_maps.html#announcements",
