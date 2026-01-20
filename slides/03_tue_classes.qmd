@@ -1,8 +1,290 @@
 ---
-date: 2026-01-21
+date: 2026-01-20
 ---
 
 ## Announcements
+
+## {{< iconify fa6-solid computer >}} List Activity {.activity}
+
+Let's explore some surprising list behaviors.
+
+Open the **List Activity**  on PrairieLearn.
+
+Inside the workspace there are 4 files, each containing a short sequence of exercises. Complete them, and then we'll review together.
+
+Be curious. Feel free to experiment by changing things!
+
+Write down surprising behaviors.
+
+{{< countdown minutes=10 >}}
+
+::: notes
+Week3_tue_lists activity - covers aliasing, append vs extend, list comprehension
+:::
+
+## Lists: A Quick Review
+
+Lists are **ordered collections** that can hold any type of data.
+
+``` {pyodide}
+provinces = ['British Columbia', 'Alberta', 'Ontario']
+numbers = [1, 2, 3, 4, 5]
+mixed = ['hello', 42, 3.14, True]
+```
+
+We can:
+
+- Access elements by index: `provinces[0]`
+- Slice: `numbers[1:3]`
+- Get length: `len(provinces)`
+
+## Adding to Lists
+
+``` {pyodide}
+provinces = ['British Columbia']
+
+# These work differently!
+provinces.append('Alberta')           # adds one element
+provinces.extend(['Ontario', 'Quebec'])  # adds each element
+
+maritime = provinces + ['NS']         # new list!
+provinces[0] = 'BC'
+print(maritime[0])                    # still 'British Columbia'
+```
+
+What about `provinces.append(['Ontario', 'Quebec'])`?
+
+## List Aliasing
+
+``` {pyodide}
+grid = [[1, 2], [3, 4]]
+backup = grid
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[99, 2], [3, 4]] -- surprise!
+```
+
+Assignment doesn't copy lists -- it creates another **reference** to the same list.
+
+## Shallow Copy
+
+``` {pyodide}
+grid = [[1, 2], [3, 4]]
+backup = grid.copy()     # shallow copy - NEW outer list
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[99, 2], [3, 4]] -- still linked!
+```
+
+`.copy()` only copies the outer list. The inner lists are still shared!
+
+## Deep Copy
+
+``` {pyodide}
+import copy
+
+grid = [[1, 2], [3, 4]]
+backup = copy.deepcopy(grid)   # copies EVERYTHING
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[1, 2], [3, 4]] -- truly independent!
+```
+
+Use `deepcopy` when you have nested structures (lists of lists, lists of objects).
+
+## References
+
+Variables are **names** that refer to objects in memory.
+
+``` {pyodide}
+m1 = ['a', 'b']    # m1 refers to a list object
+m2 = m1            # m2 refers to the SAME object
+m3 = m1.copy()     # m3 refers to a NEW object (shallow)
+```
+
+Think of it like sticky notes on boxes - `m1` and `m2` are two sticky notes on the **same** box.
+
+## List Comprehensions
+
+A compact way to create lists:
+
+``` {pyodide}
+# Instead of this:
+squares = []
+for x in range(5):
+    squares.append(x ** 2)
+
+# Write this:
+squares = [x ** 2 for x in range(5)]
+```
+
+Both produce: `[0, 1, 4, 9, 16]`
+
+## List Comprehensions with Conditions
+
+``` {pyodide}
+# Filter: only include if condition is true
+evens = [x for x in range(10) if x % 2 == 0]
+# [0, 2, 4, 6, 8]
+
+# Transform based on condition
+signs = [x if x % 2 == 0 else -x for x in range(5)]
+# [0, -1, 2, -3, 4]
+```
+
+Notice the difference: `if` at the **end** filters, `if/else` **before** `for` transforms.
+
+# Data Classes
+
+## Defining our own types
+
+So far we've used built-in types: `int`, `float`, `str`, `list`, `tuple`...
+
+What if we want to represent something more complex?
+
+- A **bead** with a radius and a color?
+- A **bracelet** with beads arranged in a circle?
+- A **song** with a title and duration?
+- A **playlist** with a name and songs?
+
+Python lets us define our own types using **dataclasses**.
+
+## A bead bracelet
+
+![](/images/bracelet.png){.r-stretch fig-alt="A colorful beaded bracelet."}
+
+What data describes a **bead**?
+
+What data describes a **bracelet**?
+
+::: notes
+Bead: radius, color
+Bracelet: radius, list of beads
+:::
+
+## Dataclasses in Python
+
+A **dataclass** bundles related data together into a custom type.
+
+``` {pyodide}
+from dataclasses import dataclass
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]  # RGB
+```
+
+This creates a new type called `Bead` with two attributes.
+
+::: notes
+Connect back to Tuesday's RGB representation!
+:::
+
+## Creating Bead objects
+
+``` {pyodide}
+# Create some beads
+red_bead = Bead(radius=5.0, colour=(255, 0, 0))
+blue_bead = Bead(radius=3.0, colour=(0, 0, 255))
+big_green = Bead(radius=8.0, colour=(0, 200, 0))
+
+# Access attributes:
+print(red_bead.radius)
+print(blue_bead.colour)
+```
+
+## {{< iconify fa6-solid comments >}} Your turn: Beads {.activity}
+
+What would these print?
+
+``` {pyodide}
+b1 = Bead(radius=4.0, colour=(100, 100, 100))
+b2 = Bead(radius=6.0, colour=(255, 128, 0))
+
+print(b1.radius + b2.radius)        # _______
+print(b2.colour[0])                  # _______
+print(b1.radius * 2)                # _______
+```
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Answers: 10.0, 255, 8.0
+:::
+
+## Adding behavior: methods
+
+A dataclass can also have **methods**.
+
+``` {pyodide}
+from dataclasses import dataclass
+from matplotlib.patches import Circle
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+# Declare a Bead
+# print its diameter
+```
+## Adding behavior: more methods
+
+Add a `draw` method:
+
+``` {pyodide}
+from dataclasses import dataclass
+from matplotlib.patches import Circle
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+    def draw(self, ax, x: float, y: float) -> None:
+        """Draw this bead centered at (x, y) on the given axes."""
+        r, g, b = self.colour
+        circle = Circle((x, y), self.radius, color=(r / 255, g / 255, b / 255))
+        ax.add_patch(circle)
+```
+
+
+## Calling methods
+
+``` {pyodide}
+import matplotlib.pyplot as plt
+
+red_bead = Bead(radius=5.0, colour=(255, 0, 0))
+blue_bead = Bead(radius=3.0, colour=(0, 0, 255))
+
+# Draw two beads
+fig, ax = plt.subplots()
+
+red_bead.draw(ax, 0, 0)
+blue_bead.draw(ax, 0, 8)
+
+ax.set_aspect("equal")
+ax.autoscale()
+plt.axis("off")
+plt.show()
+```
+
+## Questions?
+
+Now that you know about `dataclass` how would you design a `Bracelet`?
 
 ## The Bracelet
 
@@ -19,26 +301,28 @@ This is **composition**: a Bracelet *contains* Beads.
 
 ## Creating a Bracelet
 
-``` python
+``` {pyodide}
 # First, create some beads
 b1 = Bead(radius=5.0, colour=(255, 0, 0))
 b2 = Bead(radius=3.0, colour=(0, 255, 0))
 b3 = Bead(radius=4.0, colour=(0, 0, 255))
 
-# Then, create a bracelet with those beads
-my_bracelet = Bracelet(radius=20.0, beads=[b1, b2, b3])
+# Create a bracelet with those beads
+# Access the beads inside the bracelet
 
-# Access the beads
-print(len(my_bracelet.beads))           # 3
-print(my_bracelet.beads[0].radius)      # 5.0
-print(my_bracelet.beads[1].colour)      # (0, 255, 0)
 ```
+
+## Does it fit?
+
+![](/images/bracelet_fits.png){.r-stretch}
+
+The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.
 
 ## Does it fit?
 
 The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.
 
-``` python
+``` {pyodide}
 import math
 
 @dataclass
@@ -47,18 +331,15 @@ class Bracelet:
     beads: list[Bead]
 
     def circumference(self) -> float:
-        return 2 * math.pi * self.radius
+        return None
 
     def fits(self) -> bool:
-        total = 0
-        for bead in self.beads:
-            total += bead.diameter()
-        return total <= self.circumference()
+        return None
 ```
 
 ## {{< iconify fa6-solid comments >}} Your turn: Does it fit? {.activity}
 
-``` python
+``` {pyodide}
 b1 = Bead(radius=5.0, colour=(255, 0, 0))
 b2 = Bead(radius=3.0, colour=(0, 255, 0))
 b3 = Bead(radius=4.0, colour=(0, 0, 255))
@@ -79,7 +360,7 @@ bracelet2: circumference = 2π(3) ≈ 18.8, fits() -> False (24 > 18.8)
 
 ## How much slack?
 
-``` python
+``` {pyodide}
 @dataclass
 class Bracelet:
     radius: float
@@ -107,9 +388,13 @@ Could refactor to avoid duplicate code, but keep it simple for now.
 
 ## Drawing the bracelet
 
+![](/images/bracelet_layout.png){.r-stretch}
+
+## Drawing the bracelet
+
 The bracelet decides **where** each bead goes (around the circle).
 
-``` python
+``` {pyodide}
 def draw(self) -> None:
     if not self.fits():
         print("Beads don't fit!")
@@ -139,12 +424,8 @@ class Bead:
     radius: float
     colour: tuple[int, int, int]
 
-    def diameter(self) -> float:
-        return 2 * self.radius
-
-    def draw(self, ax, x: float, y: float) -> None:
-        # implementation uses matplotlib
-        ...
+    def diameter(self) -> float: ...
+    def draw(self, ax, x: float, y: float) -> None: ...
 
 @dataclass
 class Bracelet:
@@ -159,12 +440,7 @@ class Bracelet:
 
 ## {{< iconify fa6-solid computer >}} Your turn: Experiment {.activity}
 
-Try the bracelet code on PrairieLearn!
-
-1. Create beads of different sizes and colors
-2. Make a bracelet and check if it fits
-3. Try adding more beads until it doesn't fit
-4. What's the largest bead you could still add?
+Try the **Bracelet Activity** on PrairieLearn!
 
 {{< countdown minutes=10 >}}
 
@@ -180,156 +456,11 @@ Try the bracelet code on PrairieLearn!
 
 5.  Implement and test incrementally
 
-## What you learned about bracelets
+## What you learned
 
 - **Dataclasses** let us define custom types with attributes
 - **Methods** are functions that belong to a class
 - **Composition**: objects can contain other objects
 - **Design**: who owns what data and behavior matters!
-
-Now let's apply these ideas to a new domain...
-
-## Back to handcraft
-
-:::::: columns
-::: {.column width="33%"}
-![](/images/quilt.jpg){fig-alt="A quilt in different colours—green and pink—and patterns—paisley and flowers."}
-
-![](/images/doily.jpg){fig-alt="A white doily with a spiral pattern on a wooden surface."}
-:::
-
-::: {.column width="33%"}
-![](/images/pinecone-pen.jpg){fig-alt="A pen made from pinecone."}
-
-![](/images/shirt.jpg){fig-alt="A vibrant woven textile with intricate geometric patterns in various colours the main being red, displayed against a mossy wooden background."}
-:::
-
-::: {.column width="33%"}
-![](/images/paper-violin.jpg){fig-alt="A violin made from intricately quilled green paper with a bow."}
-
-![](/images/crochet-bike.jpg){fig-alt="A bicycle covered in crocheted yarn in various colours."}
-:::
-::::::
-
-## Where are we?
-
-::: {layout="[2,8]"}
-![](/images/knitted-dishcloth-with-basket-weave.png){fig-alt="A teal knitted dishcloth with a basketweave pattern and two red knitting needles resting on it."}
-
-![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
-:::
-
-::: notes
-The 8x8 grid illustrates dishcloth.
-Each block has 5 rows of 5 stitches.
-How would you represent a handcraft using Python types?
-:::
-
-## Program design
-
-::: {layout="[1,1,1]"}
-![](/images/pixelated-chevron-knitting-pattern.jpg){fig-alt="A chevron knitting pattern with zigzag lines."}
-
-![](/images/pixelated-diagonal-lines-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
-
-![](/images/pixelated-diamond-knitting-pattern.jpg){fig-alt="A knitting pattern with diagonal stripes."}
-:::
-
-A handcraft is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} has a [\_\_\_\_\_\_\_\_\_\_]{.underline}, and a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is a collection of [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-Every [\_\_\_\_\_\_\_\_\_\_]{.underline} is either "knit" or "purl," and is drawn as a [\_\_\_\_\_\_\_\_\_\_]{.underline}.
-
-::: notes
-Missing words: blocks, blocks, position, rows, stitches, rectangles
-:::
-
-## Classes in Python
-
-Mechanism for creating user-defined types.
-
-Used to identify attributes with an object.
-Associates functionality with the relevant objects.
-
-Example:
-
-``` python
-@dataclass
-class color:
-  """
-  color: simply gathers color components
-  """
-  red: int = 120
-  green: int = 120
-  blue: int = 120
-```
-
-::: notes
-Data classes allow us to create substructures to organize data in a way useful to us.
-Attributes are data and the functionality are member functions.
-Attributes can be defined with default values.
-
-:::
-
-## Using a Data Class
-
-``` python
-@dataclass
-class color:
-  """
-  color: simply gathers color components
-  """
-  red: int = 120
-  green: int = 120
-  blue: int = 120
-```
-
-Declaring an object of type color():
-
-\
-
-Accessing the data of an object of type color():
-
-
-## Design Strategies
-
-1.  Decompose a problem into classes
-
-2.  List the data associated with each class
-
-3.  Write the "driver" code that illustrates the functionality you expect from each class.
-
-4.  Implement the functions you expect.
-
-5.  Run the driver code to test your functionality.
-
-## Which classes?
-
-::::: columns
-::: {.column style="width: 50%;"}
-![](/images/nested-grids.png){fig-alt="A 2D grid with one square extended, showing it as a smaller grid pattern that repeats across the larger grid."}
-:::
-::: {.column style="width: 50%;"}
-Handcraft:
-
-Block:
-
-Row:
-
-Stitch:
-
-Image:
-:::
-:::::
-
-::: notes
-The 8x8 grid illustrates dishcloth.
-Each block has 5 rows of 5 stitches.
-How would you represent a handcraft using Python types?
-:::
-
-## Let's Write {.smaller}
-
-<https://us.prairielearn.com/pl/course_instance/193300/assessment/2588207>
 
 
