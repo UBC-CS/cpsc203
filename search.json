@@ -2775,13 +2775,6 @@
     "text": "Drawing the bracelet"
   },
   {
-    "objectID": "slides/03_tue_classes.html#drawing-the-bracelet-1",
-    "href": "slides/03_tue_classes.html#drawing-the-bracelet-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Drawing the bracelet",
-    "text": "Drawing the bracelet\nThe bracelet decides where each bead goes (around the circle).\n\n\n\n\n\n\n\nKey design: Bracelet owns layout logic, Bead just draws itself at given position. Arc length to angle: angle = arc_length / radius"
-  },
-  {
     "objectID": "slides/03_tue_classes.html#the-full-picture",
     "href": "slides/03_tue_classes.html#the-full-picture",
     "title": "Programming, problem solving, and algorithms",
