@@ -4,6 +4,21 @@ date: 2026-01-22
 
 ## Announcements
 
+## Your toolkit (so far)
+
+- **Representation** — how we encode meaning (binary, types, RGB)
+- **Collections** — how we group things (lists, tuples, dicts)
+- **Control flow** — how we make decisions and repeat (if/else, loops)
+- **Functions** — how we name and reuse logic
+- **Abstraction** — how we hide complexity
+- **Efficiency** — how we measure cost (summations, Big-O)
+
+Every problem we solve uses some combination of these.
+
+The pattern: learn a new tool, use it to solve a harder problem.
+
+Today: **dataclasses** → **bracelets**
+
 # Data Classes
 
 ## Defining our own types
