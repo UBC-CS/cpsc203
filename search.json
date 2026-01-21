@@ -2313,6 +2313,13 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/03_thu_friendship.html#your-toolkit-so-far",
+    "href": "slides/03_thu_friendship.html#your-toolkit-so-far",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Your toolkit (so far)",
+    "text": "Your toolkit (so far)\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, Big-O)\n\nEvery problem we solve uses some combination of these.\nThe pattern: learn a new tool, use it to solve a harder problem.\nToday: dataclasses → bracelets"
+  },
+  {
     "objectID": "slides/03_thu_friendship.html#defining-our-own-types",
     "href": "slides/03_thu_friendship.html#defining-our-own-types",
     "title": "Programming, problem solving, and algorithms",
