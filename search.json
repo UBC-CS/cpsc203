@@ -522,256 +522,585 @@
     "text": "Resources\n\nREALLY great example: https://www.youtube.com/watch?v=wsSEKm-rU6U\nOSMNX reference: https://github.com/gboeing/osmnx-examples\nTutorial: https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07\nTags: https://wiki.openstreetmap.org/wiki/Map_features"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#announcements",
-    "href": "slides/09_thu_graphs.html#announcements",
+    "objectID": "slides/08_tue_voronoi.html#announcements",
+    "href": "slides/08_tue_voronoi.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
     "text": "Announcements"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#rush-hour",
-    "href": "slides/09_thu_graphs.html#rush-hour",
+    "objectID": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
+    "href": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Voronoi diagrams",
+    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#design-an-algorithm",
+    "href": "slides/08_tue_voronoi.html#design-an-algorithm",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Design an Algorithm",
+    "text": "Design an Algorithm"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#pointillism",
+    "href": "slides/08_tue_voronoi.html#pointillism",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Pointillism",
+    "text": "Pointillism\n\n\nA Sunday on La Grande Jatte"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#algorithmic-art",
+    "href": "slides/08_tue_voronoi.html#algorithmic-art",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Algorithmic Art",
+    "text": "Algorithmic Art\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the voronoi diagram in the new image, using the center colors from the original image.\n\nThe quality of the new image\ndepends on ____________________."
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#planning",
+    "href": "slides/08_tue_voronoi.html#planning",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning",
+    "text": "Planning\n \n\nPoint:\nColor:\nCenter:\nCenters:\nImage:"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#planning-1",
+    "href": "slides/08_tue_voronoi.html#planning-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning",
+    "text": "Planning\nData flow:"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#demo",
+    "href": "slides/08_tue_voronoi.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#analysis",
+    "href": "slides/08_tue_voronoi.html#analysis",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Analysis",
+    "text": "Analysis\nHow much work is done? Let \\(n\\) denote the size of the image, \\(n = width \\cdot height\\)\n\n\n\nRead image:\nChoose centers:\nBuild new image:\n\n \n\nWrite out new image:"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#announcements",
+    "href": "slides/13_tue_vislit.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#visualizing-literature",
+    "href": "slides/13_tue_vislit.html#visualizing-literature",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Visualizing Literature",
+    "text": "Visualizing Literature"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#lexical-novelty",
+    "href": "slides/13_tue_vislit.html#lexical-novelty",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Lexical Novelty",
+    "text": "Lexical Novelty\n\n\n\n\n“Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel. In the below visualizations (in which each column represents a chapter and each small block a paragraph of text), I maintain a variable which represents novelty. When a paragraph contains more than 25% new terms (i.e. words that have not been observed thus far) this variable is set at its maximum of 1. Otherwise, the variable decays. The variable is used to colour the paragraph with red being 1.0 and blue being 0. The result is that we can get an idea of the introduction of new ideas in novels.” - Matthew Hurst"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#word-co-occurrence",
+    "href": "slides/13_tue_vislit.html#word-co-occurrence",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Word Co-occurrence",
+    "text": "Word Co-occurrence"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#cross-references",
+    "href": "slides/13_tue_vislit.html#cross-references",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Cross References",
+    "text": "Cross References"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#sentiment-analysis",
+    "href": "slides/13_tue_vislit.html#sentiment-analysis",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Sentiment Analysis",
+    "text": "Sentiment Analysis"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#mapping",
+    "href": "slides/13_tue_vislit.html#mapping",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Mapping",
+    "text": "Mapping"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#visualizing-literature-1",
+    "href": "slides/13_tue_vislit.html#visualizing-literature-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Visualizing Literature",
+    "text": "Visualizing Literature\n\nA novel is just a long sequence of characters.\nIf we treat it as data, we can:\n\nCount and visualize patterns,\nCompare books or authors,\nBuild networks of characters and concepts.\n\nToday: turn a novel into numbers and pictures."
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#what-can-we-compute-from-a-book",
+    "href": "slides/13_tue_vislit.html#what-can-we-compute-from-a-book",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What Can We Compute From a Book?",
+    "text": "What Can We Compute From a Book?\nIf I give you the full text of a novel as a .txt file\n\nWhat questions could we ask?\nWhat numbers or graphs could we compute?\n\nIdeas:"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#the-text-as-data-pipeline",
+    "href": "slides/13_tue_vislit.html#the-text-as-data-pipeline",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Text-as-Data Pipeline",
+    "text": "The Text-as-Data Pipeline\nData flow:\n\nLoad the text from a file\nTokenize: split into words\nPreprocess:\n\nlowercase\nremove punctuation\nremove stopwords\nuse lemmas\n\nCount frequencies\nVisualize as a bar chart\nInterpret: what do the counts tell us?"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#step-1-getting-the-text-into-python",
+    "href": "slides/13_tue_vislit.html#step-1-getting-the-text-into-python",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 1: Getting the Text into Python",
+    "text": "Step 1: Getting the Text into Python"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#tokenizer",
+    "href": "slides/13_tue_vislit.html#tokenizer",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Tokenizer",
+    "text": "Tokenizer\nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data (string) into any of these using a “tokenizer”"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#tokenization",
+    "href": "slides/13_tue_vislit.html#tokenization",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Tokenization",
+    "text": "Tokenization\n \nTranslate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#demo",
+    "href": "slides/13_tue_vislit.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\n\n\n\n\n \n \nThirty most common tokens in the mystery text."
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#pre-processing",
+    "href": "slides/13_tue_vislit.html#pre-processing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Pre-processing",
+    "text": "Pre-processing"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence",
+    "href": "slides/13_tue_vislit.html#a-feasible-sequence",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nUnify tally for “Valor” and “valor”.\n\n\nDepending on task, may not want to do this."
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-1",
+    "href": "slides/13_tue_vislit.html#a-feasible-sequence-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nTokenizer leaves periods at end of sentences: “father.”\n \nAmazingly, it works fine for “Dr.”, “$3.50”, “!”"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-2",
+    "href": "slides/13_tue_vislit.html#a-feasible-sequence-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nList of common, unhelpful words compiled by spacy from large corpora. We keep words that aren’t in that list.\n \nMore sophisticated approach is called tf-idf."
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-3",
+    "href": "slides/13_tue_vislit.html#a-feasible-sequence-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Feasible Sequence",
+    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\ngoes -&gt; go running -&gt; run eaten -&gt; eat"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#curious",
+    "href": "slides/13_tue_vislit.html#curious",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Curious?",
+    "text": "Curious?"
+  },
+  {
+    "objectID": "slides/13_tue_vislit.html#demo-1",
+    "href": "slides/13_tue_vislit.html#demo-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#announcements",
+    "href": "slides/02_tue_representation.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nSetup instructions available.\nPython resources posted to piazza.\nFirst examlet signup available.\n\n\nSummary\nToday we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#learning-outcomes",
+    "href": "slides/02_tue_representation.html#learning-outcomes",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nComputers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually anything!"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#representation",
+    "href": "slides/02_tue_representation.html#representation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Representation",
+    "text": "Representation\nToday we’re exploring a fundamental question: How do we represent the world as data?\nWe’ll look at “representation” in two important senses:\n\nTechnical: How computers encode rich concepts (like colour) as numbers\nSocial: Who is represented in this discipline, and why it matters\n\nLet’s start with something personal and familiar: colour.\n\nAnnotate as you go - don’t read the bullets verbatim. Let the dual meaning emerge through the lesson."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colour-interpretation",
+    "href": "slides/02_tue_representation.html#colour-interpretation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour interpretation",
+    "text": "Colour interpretation\nWhat’s your favorite colour? Do you have a sense for why it’s your favorite? Does that colour influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
+    "href": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Colour—cultural interpretations",
+    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourrepresentation",
+    "href": "slides/02_tue_representation.html#colourrepresentation",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\n\nFirst, some general questions…\nWhat does data look like to a computer?\n\n\n\nIs that enough?\n\nhttps://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/\n\n\n\nPositive and negative charges interpreted as 1 and 0.\nBinary digits = bits"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourrepresentation-1",
+    "href": "slides/02_tue_representation.html#colourrepresentation-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
+    "href": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Binary to decimal",
+    "text": "Your turn: Binary to decimal\nConvert these binary numbers to decimal:\n\n\n\nBinary\nDecimal\n\n\n\n\n1010\n_______\n\n\n1101\n_______\n\n\n0111\n_______\n\n\n\n\n  \n    −\n    +\n \n 03:00\n \n\nAnswers: 10, 13, 7"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
+    "href": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Thinking about bits",
+    "text": "Your turn: Thinking about bits\nWhat’s the largest number you can represent with 4 bits? _______\n\n\nHow many bits do you need to represent 120? _______\n\n\nIf I give you one more bit, what happens to how many numbers you can represent?\n\n\nHow high can you count on your fingers? and toes?\n\n  \n    −\n    +\n \n 03:00\n \n\n\nLargest with 4 bits: 15 (1111)\nBits for 120: 7 bits (120 &lt; 128 = 2^7)\nOne more bit: DOUBLES the numbers you can represent!\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#from-bits-to-everything",
+    "href": "slides/02_tue_representation.html#from-bits-to-everything",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "From bits to… everything?",
+    "text": "From bits to… everything?\nWe’ve seen that bits can represent integers.\nBut integers are just the beginning!\nIf we can assign numbers to things, we can represent anything:\n\nText (A=65, B=66, …)\nSound (amplitude samples)\nImages (pixel colours)\nVideo (sequences of images)\nYour favorite song, your family photos, this lecture…\n\nLet’s see how this works with colour."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourrepresentation-2",
+    "href": "slides/02_tue_representation.html#colourrepresentation-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nCan we use integers to represent colours?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for colour values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourrepresentation-3",
+    "href": "slides/02_tue_representation.html#colourrepresentation-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—representation",
+    "text": "Colour—representation\nWhat colour is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colourhexadecimal",
+    "href": "slides/02_tue_representation.html#colourhexadecimal",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour—hexadecimal",
+    "text": "Colour—hexadecimal\nWhat colour is this 24-bit number?\n\n\n\n0110 0111 0100 1110 1010 0111\n\n\n\nConverting to hexadecimal: #___________\n(Use digits 0123456789abcdef)\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#representation-an-aside",
+    "href": "slides/02_tue_representation.html#representation-an-aside",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Representation: An aside",
+    "text": "Representation: An aside\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95\n\n\n\n\n[Your 7-minute narrative with RGB cube prop about missing dimensions and diversity in CS]"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colour-and-code",
+    "href": "slides/02_tue_representation.html#colour-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#colour-and-code-1",
+    "href": "slides/02_tue_representation.html#colour-and-code-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\n\n\n\n\n\n\n\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the colour channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey \n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n    \n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n    \n    out = fancify(img)\n  \n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n  \nmain()"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
+    "href": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Change image or boost",
+    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different colour (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"
+  },
+  {
+    "objectID": "slides/02_tue_representation.html#what-you-learned-today",
+    "href": "slides/02_tue_representation.html#what-you-learned-today",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What you learned today",
+    "text": "What you learned today\nYou’ve discovered something profound:\n\nComputers store everything as bits (0s and 1s)\nBits can represent integers (using binary, base 2)\nIntegers can represent colours (RGB: three numbers 0-255)\nWhich means bits can represent images (grids of pixels)\nAnd you wrote code to manipulate those images!\n\nFrom electrical signals → to making poppies pop."
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#announcements",
+    "href": "slides/01_thu_efficiency.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nWebsite live – please let me know if you see errors!\nPOTW starts next week! https://us.prairielearn.com/pl/course_instance/202804\nLabs start next week. Answer the qualtrics survey!!\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#learning-outcomes",
+    "href": "slides/01_thu_efficiency.html#learning-outcomes",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nWe connect the idea of “elegance” to common items and to software design!\nThe time it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function."
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
+    "href": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance: Continuing the discussion",
+    "text": "Elegance: Continuing the discussion\nOn Tuesday we introduced elegance as a conceptual metaphor for software engineering.\nWe looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.\nToday, we’re going to dig deeper into this idea:\n\nWhat does elegance look like across different contexts?\nHow do we define it more precisely?\nHow does this apply to the way we solve problems in computing?"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#elegance",
+    "href": "slides/01_thu_efficiency.html#elegance",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Elegance",
+    "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/eleganceGallery2025w2\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
+    "href": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Elegance—definition",
+    "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/eleganceGallery2025w2\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/MUkpWeGBdxYfnJT37\n\n  \n    −\n    +\n \n 05:00"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#elegance-in-software-design",
+    "href": "slides/01_thu_efficiency.html#elegance-in-software-design",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance in software design",
+    "text": "Elegance in software design\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#section",
+    "href": "slides/01_thu_efficiency.html#section",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "",
+    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#handcraft-1",
+    "href": "slides/01_thu_efficiency.html#handcraft-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft",
+    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.\n\nQuilt—patterns\nCrochet—2 different kinds\nPaper—Friend’s artistry"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#knitting",
+    "href": "slides/01_thu_efficiency.html#knitting",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting",
+    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#knitting-examples",
+    "href": "slides/01_thu_efficiency.html#knitting-examples",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting: examples",
+    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”\nAxis of algorithmic quality includes"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task",
+    "href": "slides/01_thu_efficiency.html#quantifying-the-task",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n  \n    −\n    +\n \n 05:00\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task-1",
+    "href": "slides/01_thu_efficiency.html#quantifying-the-task-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\nIf we are solving a problem ____________ for a given input, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\nDiscussion:\n\n\n\n\n\n\n\nFirst blank: or write an algorithm\n\nIn this example we choose to label \\(n\\) as the side-length\nWe don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3\\(n\\) x \\(n\\) takes time 3\\(n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.\nSometimes we have more than one parameter"
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#handcraft-and-code",
+    "href": "slides/01_thu_efficiency.html#handcraft-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft and Code",
+    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef knit_square_print(n): for r in range(n): row = “” for c in range(n):\nrow += ‘X’\nprint(row)\nscript: walk through existing code. counting stitches is the same as counting time.\nwhich line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?\nlet’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.\nhave we done more work? a little, but the most frequent line happens the same number of times."
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task-2",
+    "href": "slides/01_thu_efficiency.html#quantifying-the-task-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
+  },
+  {
+    "objectID": "slides/01_thu_efficiency.html#words-and-ideas",
+    "href": "slides/01_thu_efficiency.html#words-and-ideas",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Words and Ideas",
+    "text": "Words and Ideas\n\nElegance\nGrowth of simple functions over time\nRepresenting complexity of a problem using time\nRunning time of a Python function"
+  },
+  {
+    "objectID": "slides/11_tue_sudoku.html#announcements",
+    "href": "slides/11_tue_sudoku.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/11_tue_sudoku.html#rush-hour",
+    "href": "slides/11_tue_sudoku.html#rush-hour",
     "title": "Programming, problem solving, and algorithms",
     "section": "Rush Hour",
     "text": "Rush Hour\n\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nPath:"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#state-machine",
-    "href": "slides/09_thu_graphs.html#state-machine",
+    "objectID": "slides/11_tue_sudoku.html#representing-sudoku",
+    "href": "slides/11_tue_sudoku.html#representing-sudoku",
     "title": "Programming, problem solving, and algorithms",
-    "section": "State Machine",
-    "text": "State Machine\n\n\n\n\nThis graph can be used to quickly calculate whether a given number is divisible by 7.\nStart at the circle node at the top. For each digit \\(d\\) in the given number, follow \\(d\\) blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.\n\n\n3703"
+    "section": "Representing Sudoku",
+    "text": "Representing Sudoku\n\nA representation of a system is a model of the system that is useful in analysis.\nA state space is a collection of all possible configurations of a physical system.\nEach configuration is described using its representation, and is called a state.\n\nHow would you represent the game of Sudoku?"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#the-stanford-bunny",
-    "href": "slides/09_thu_graphs.html#the-stanford-bunny",
+    "objectID": "slides/11_tue_sudoku.html#state-space-graphs",
+    "href": "slides/11_tue_sudoku.html#state-space-graphs",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Stanford Bunny",
-    "text": "The Stanford Bunny\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n \nPlanar Graph:"
+    "section": "State Space Graphs",
+    "text": "State Space Graphs\nDefine a graph where every vertex is ________________________, and edge (u,v) means ________________________.\nHow many neighbors does this vertex have?"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#graph-explorations",
-    "href": "slides/09_thu_graphs.html#graph-explorations",
+    "objectID": "slides/11_tue_sudoku.html#tictactoe-state-space-graph",
+    "href": "slides/11_tue_sudoku.html#tictactoe-state-space-graph",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Graph Explorations",
-    "text": "Graph Explorations\n \nA graph \\(G\\) is defined by a set of vertices \\(V\\), and a set of edges \\(E\\).\n \nAlgorithm running time is typically described using the number of vertices, but execution usually depends on the number of edges, so we must understand the relationship between them."
+    "section": "TicTacToe State Space Graph",
+    "text": "TicTacToe State Space Graph"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#how-many-edges",
-    "href": "slides/09_thu_graphs.html#how-many-edges",
+    "objectID": "slides/11_tue_sudoku.html#searching-state-space-graphs",
+    "href": "slides/11_tue_sudoku.html#searching-state-space-graphs",
     "title": "Programming, problem solving, and algorithms",
-    "section": "How Many Edges?",
-    "text": "How Many Edges?\nSuppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?\n\n\n\n\nAt least __________ edges because the graph is connected.\n \nAt most _________ edges which occurs when the graph is complete."
+    "section": "Searching State Space Graphs",
+    "text": "Searching State Space Graphs"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#handshaking",
-    "href": "slides/09_thu_graphs.html#handshaking",
+    "objectID": "slides/11_tue_sudoku.html#depth-first-search",
+    "href": "slides/11_tue_sudoku.html#depth-first-search",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Handshaking",
-    "text": "Handshaking\nSuppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?\n\n\n\n\nThe following are equivalent:\n\nThe number of neighbors of a vertex.\nThe number of incident edges of a vertex.\nThe degree of a vertex."
+    "section": "Depth First Search",
+    "text": "Depth First Search\n\n\n\n\n\n\nhttps://www.youtube.com/watch?v=8qrZ1clEp-Y"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#degree-games",
-    "href": "slides/09_thu_graphs.html#degree-games",
+    "objectID": "slides/11_tue_sudoku.html#stacks",
+    "href": "slides/11_tue_sudoku.html#stacks",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Degree Games",
-    "text": "Degree Games\n\n\nSuppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?\n\nAn algorithm for finding a graph, given a degree sequence, is described in the practice problems.\nHavel-Hakimi"
+    "section": "Stacks",
+    "text": "Stacks\n\n\nProgrammatic manifestation of a ________________.\n \nStack functions:\n\nInsert: push(item)\nRemove: pop() \\(\\rightarrow\\) item\n\nDeque functions:\n\nInsert: append(item)\nRemove: pop() \\(\\rightarrow\\) item"
   },
   {
-    "objectID": "slides/09_thu_graphs.html#pencil-puzzles",
-    "href": "slides/09_thu_graphs.html#pencil-puzzles",
+    "objectID": "slides/11_tue_sudoku.html#flood-fill",
+    "href": "slides/11_tue_sudoku.html#flood-fill",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Pencil Puzzles",
-    "text": "Pencil Puzzles\n\n\n\n\nTrace each graph without lifting your pencil and without revisiting an edge.\n \nCan all graphs be traced?\n \nWhat characterizes those that cannot?"
+    "section": "Flood Fill",
+    "text": "Flood Fill\n\n\n\n\nenqueue the center\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w"
   },
   {
-    "objectID": "slides/tbd_tbd_python-2.html#announcements",
-    "href": "slides/tbd_tbd_python-2.html#announcements",
+    "objectID": "slides/11_tue_sudoku.html#depth-first-search-1",
+    "href": "slides/11_tue_sudoku.html#depth-first-search-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
+    "section": "Depth First Search",
+    "text": "Depth First Search\n\n\n\n\n             A B C D E\n\n\nprocess start vertex\npush(start_vertex)\nwhile the stack is not empty:\n\nv = pop()\nfor each valid neighbor w of v:\n\nprocess w\npush(w)"
   },
   {
-    "objectID": "slides/02_thu_lists.html#announcements",
-    "href": "slides/02_thu_lists.html#announcements",
+    "objectID": "slides/11_tue_sudoku.html#algorithm-planning",
+    "href": "slides/11_tue_sudoku.html#algorithm-planning",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
+    "section": "Algorithm Planning",
+    "text": "Algorithm Planning\nOverall strategy:\n\nMove forward through the states (board configurations) until you can’t go any farther.\nIf the board is complete, you win!\nIf the board is not complete, then back up and try a new state in the most recent cell possible."
   },
   {
-    "objectID": "slides/02_thu_lists.html#colour-and-code",
-    "href": "slides/02_thu_lists.html#colour-and-code",
+    "objectID": "slides/11_tue_sudoku.html#searching-state-space-graphs-1",
+    "href": "slides/11_tue_sudoku.html#searching-state-space-graphs-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values."
+    "section": "Searching State Space Graphs",
+    "text": "Searching State Space Graphs"
   },
   {
-    "objectID": "slides/02_thu_lists.html#colour-and-code-1",
-    "href": "slides/02_thu_lists.html#colour-and-code-1",
+    "objectID": "slides/11_tue_sudoku.html#moving-toward-implementation",
+    "href": "slides/11_tue_sudoku.html#moving-toward-implementation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\n\n\n\n\n\n\n\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all color channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the color channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey\n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n\n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n\n    out = fancify(img)\n\n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n\nmain()"
+    "section": "Moving toward implementation",
+    "text": "Moving toward implementation\nNeed to be able to check whether a candidate entry is valid.\n\n\nSuppose we have a variable grid, representing the board, and we want to place a value called num, in position (x,y).\nNeed to check uniqueness in:\n\nrow\ncolumn\nblock\n\n\n\nWhich conditional checks a row?\nWhich conditional checks a column?\nHow shall we check a block?"
   },
   {
-    "objectID": "slides/02_thu_lists.html#your-turn-change-image-or-boost",
-    "href": "slides/02_thu_lists.html#your-turn-change-image-or-boost",
+    "objectID": "slides/11_tue_sudoku.html#block-validity",
+    "href": "slides/11_tue_sudoku.html#block-validity",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Your turn: Change image or boost",
-    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different color (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"
+    "section": "Block Validity",
+    "text": "Block Validity\nPython tidbit: to query a region in a 2d numpy matrix, just define the bounds on the region and use in.\nIn the small example below, 2 in grid[0:2,0:2] returns True.\n\nNew puzzle: given a location (x,y) how do we define its region?"
   },
   {
-    "objectID": "slides/02_thu_lists.html#a-little-math-puzzle-break",
-    "href": "slides/02_thu_lists.html#a-little-math-puzzle-break",
+    "objectID": "slides/11_tue_sudoku.html#defining-regions",
+    "href": "slides/11_tue_sudoku.html#defining-regions",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A little math puzzle break",
-    "text": "A little math puzzle break\n\\(1 + 3 + 5 + \\ldots + 1337\\) = ____________\n\n\nHow many terms?\n\nAlways always start this conversation from k=1, not zero."
+    "section": "Defining Regions",
+    "text": "Defining Regions\nGiven location \\((x,y)\\), determine the region in which it lives.\n\n\n\na region s:t contains \\(x\\) if \\(s\\leq x&lt; t\\)\nfor a \\(4\\times 4\\) grid, the block size is 2"
   },
   {
-    "objectID": "slides/02_thu_lists.html#puzzle-continued",
-    "href": "slides/02_thu_lists.html#puzzle-continued",
+    "objectID": "slides/11_tue_sudoku.html#generalize",
+    "href": "slides/11_tue_sudoku.html#generalize",
     "title": "Programming, problem solving, and algorithms",
-    "section": "puzzle continued…",
-    "text": "puzzle continued…\nEnglish description:\nThe sum of the first \\(k\\) odd integers is ________\nWhat about \\(11 + 13 + \\ldots + 23\\)?\n\n\n\n\nAnd \\(2 + 4 + 6 + \\ldots + 1338\\)?"
+    "section": "Generalize",
+    "text": "Generalize\nFind the region for point \\((x,y)\\) in a \\(r^2\\times r^2\\) grid.\nHint: In python, x//r is the integer part of “x divided by r”."
   },
   {
-    "objectID": "slides/02_thu_lists.html#python-demo-lists",
-    "href": "slides/02_thu_lists.html#python-demo-lists",
+    "objectID": "slides/11_tue_sudoku.html#another-puzzle",
+    "href": "slides/11_tue_sudoku.html#another-puzzle",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Python Demo: Lists",
-    "text": "Python Demo: Lists\nExploratory code lives at https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679\nDon’t worry if you haven’t set up your own machine. The infrastructure on PL is adequate for most things we’ll do."
+    "section": "Another Puzzle",
+    "text": "Another Puzzle\nThe locations in sudoku are specified by \\((x,y)\\). As we advance our solution, we can loop over the ranges of \\(x\\) (\\(W\\)) and \\(y\\) (\\(H\\)), but it would be easier if we could just iterate over the values 0 up to \\(W\\times H\\).\nWrite a function postup that takes an integer position p as input, and returns an (x,y) position. You may assume that the height and width of the grid is stored in a variable called states."
   },
   {
-    "objectID": "slides/02_thu_lists.html#back-to-handcraft",
-    "href": "slides/02_thu_lists.html#back-to-handcraft",
+    "objectID": "slides/11_tue_sudoku.html#demo",
+    "href": "slides/11_tue_sudoku.html#demo",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Back to handcraft",
-    "text": "Back to handcraft"
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
   },
   {
-    "objectID": "slides/02_thu_lists.html#representing-handcraft",
-    "href": "slides/02_thu_lists.html#representing-handcraft",
+    "objectID": "slides/11_tue_sudoku.html#a-closing-thought",
+    "href": "slides/11_tue_sudoku.html#a-closing-thought",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Representing handcraft",
-    "text": "Representing handcraft\nHow do we represent a craft project in code?\nWe need to think about:\n\nWhat data describes the object?\nWhat operations can we perform on it?\n\nLet’s start with something simpler than a full quilt…"
+    "section": "A Closing Thought",
+    "text": "A Closing Thought\nCould we be smarter?"
   },
   {
-    "objectID": "slides/02_thu_lists.html#a-bead-bracelet",
-    "href": "slides/02_thu_lists.html#a-bead-bracelet",
+    "objectID": "slides/11_tue_sudoku.html#another-closing-thought",
+    "href": "slides/11_tue_sudoku.html#another-closing-thought",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A bead bracelet",
-    "text": "A bead bracelet\n\nWhat data describes a bead?\n\n\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#dataclasses-in-python",
-    "href": "slides/02_thu_lists.html#dataclasses-in-python",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Dataclasses in Python",
-    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\nThis creates a new type called Bead with two attributes.\n\nConnect back to Tuesday’s RGB representation!"
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#creating-bead-objects",
-    "href": "slides/02_thu_lists.html#creating-bead-objects",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Creating Bead objects",
-    "text": "Creating Bead objects"
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#your-turn-beads",
-    "href": "slides/02_thu_lists.html#your-turn-beads",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Beads",
-    "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#adding-behavior-methods",
-    "href": "slides/02_thu_lists.html#adding-behavior-methods",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding behavior: methods",
-    "text": "Adding behavior: methods\nA dataclass can also have methods."
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#calling-methods",
-    "href": "slides/02_thu_lists.html#calling-methods",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Calling methods",
-    "text": "Calling methods"
-  },
-  {
-    "objectID": "slides/02_thu_lists.html#what-you-learned-today",
-    "href": "slides/02_thu_lists.html#what-you-learned-today",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What you learned today",
-    "text": "What you learned today\n\nThe sum of the first k odds is _____\nLists are more complex than they first appear.\nDataclasses let us define our own types\nAttributes are the data associated with an instance of a class\nMethods are functions that belong to a class\n\nNext time: The Bracelet"
-  },
-  {
-    "objectID": "slides/tbd_tbd_git.html#announcements",
-    "href": "slides/tbd_tbd_git.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#announcements",
-    "href": "slides/03_thu_handcraft.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nEX1 in the books. Nice work. A few little bugs in questions, but avg is already 93%.\nMany office hours this week to help w machine setup. You’ll need it for Projects, and for your future."
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#back-to-handcraft",
-    "href": "slides/03_thu_handcraft.html#back-to-handcraft",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Back to handcraft",
-    "text": "Back to handcraft"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#where-are-we",
-    "href": "slides/03_thu_handcraft.html#where-are-we",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Where are we?",
-    "text": "Where are we?\n\n\n\n\n\n\n\n\n\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types?"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#program-design",
-    "href": "slides/03_thu_handcraft.html#program-design",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Program design",
-    "text": "Program design\n\n\n\n\n\n\n\n\n\n\n\n\n\nA handcraft is a collection of __________. Every __________ has a __________, and a collection of __________. Every __________ is a collection of __________. Every __________ is either “knit” or “purl,” and is drawn as a __________.\n\nMissing words: blocks, blocks, position, rows, stitches, rectangles"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#design-strategies",
-    "href": "slides/03_thu_handcraft.html#design-strategies",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design Strategies",
-    "text": "Design Strategies\n\nDecompose a problem into classes\nList the data associated with each class\nWrite the “driver” code that illustrates the functionality you expect from each class.\nImplement the functions you expect.\nRun the driver code to test your functionality."
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#which-classes",
-    "href": "slides/03_thu_handcraft.html#which-classes",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Which classes?",
-    "text": "Which classes?\n\n\n\n\nHandcraft:\nBlock:\nRow:\nStitch:\nImage:\n\n\nThe 8x8 grid illustrates dishcloth. Each block has 5 rows of 5 stitches. How would you represent a handcraft using Python types? Image is like a canvas… we have to draw on it."
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#translation",
-    "href": "slides/03_thu_handcraft.html#translation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Translation",
-    "text": "Translation\nFrom stitch coordinates to pixel coordinates\nImageDraw.Rectangle(xy, fill):\n\nxy is [(x0,y0),(x1,y1)] a bounding box, inclusive.\nfill is a color"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#lets-write",
-    "href": "slides/03_thu_handcraft.html#lets-write",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Write",
-    "text": "Let’s Write\nhttps://us.prairielearn.com/pl/course_instance/193300/assessment/2590319"
-  },
-  {
-    "objectID": "slides/03_thu_handcraft.html#interface",
-    "href": "slides/03_thu_handcraft.html#interface",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Interface",
-    "text": "Interface\nA row has a list of stitches:\nclass row:\n  ...\n  stitches: list[stitch]\n  ...\nBut we want to declare rows like:\nr1 = row('KKKPPPKP')\nTo do this, we need a function to translate between string of K, P and stitch objects.\nDefine __init__: special function invoked for you by the system when variable is declared."
+    "section": "Another Closing Thought",
+    "text": "Another Closing Thought\nIs our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?)\n\n3: 9x9\n4: 16x16\n5: 25x25\n6: 36x36\n\nSudoku is known to be “NP-Complete”."
   },
   {
     "objectID": "slides/tbd_tbd_python-1.html#announcements",
@@ -1788,585 +2117,340 @@
     "text": "References\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbellanas, Begoña, Manuel Abellanas, Arne Pommerening, Dolores Lodares, and Simón Cuadros. 2016. “A Forest Simulation Approach Using Weighted Voronoi Diagrams. An Application to Mediterranean Fir Abies Pinsapo Boiss Stands.” Forest Systems 25 (2): e062–62. https://doi.org/10.5424/fs/2016252-08021."
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#announcements",
-    "href": "slides/11_tue_sudoku.html#announcements",
+    "objectID": "slides/tbd_tbd_git.html#announcements",
+    "href": "slides/tbd_tbd_git.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
     "text": "Announcements"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#rush-hour",
-    "href": "slides/11_tue_sudoku.html#rush-hour",
+    "objectID": "slides/02_thu_lists.html#announcements",
+    "href": "slides/02_thu_lists.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#colour-and-code",
+    "href": "slides/02_thu_lists.html#colour-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values."
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#colour-and-code-1",
+    "href": "slides/02_thu_lists.html#colour-and-code-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Colour and Code",
+    "text": "Colour and Code\n\n\n\n\n\n\n\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all color channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the color channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey\n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n\n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n\n    out = fancify(img)\n\n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n\nmain()"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#your-turn-change-image-or-boost",
+    "href": "slides/02_thu_lists.html#your-turn-change-image-or-boost",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Your turn: Change image or boost",
+    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different color (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#a-little-math-puzzle-break",
+    "href": "slides/02_thu_lists.html#a-little-math-puzzle-break",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A little math puzzle break",
+    "text": "A little math puzzle break\n\\(1 + 3 + 5 + \\ldots + 1337\\) = ____________\n\n\nHow many terms?\n\nAlways always start this conversation from k=1, not zero."
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#puzzle-continued",
+    "href": "slides/02_thu_lists.html#puzzle-continued",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "puzzle continued…",
+    "text": "puzzle continued…\nEnglish description:\nThe sum of the first \\(k\\) odd integers is ________\nWhat about \\(11 + 13 + \\ldots + 23\\)?\n\n\n\n\nAnd \\(2 + 4 + 6 + \\ldots + 1338\\)?"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#python-demo-lists",
+    "href": "slides/02_thu_lists.html#python-demo-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Python Demo: Lists",
+    "text": "Python Demo: Lists\nExploratory code lives at https://us.prairielearn.com/pl/course_instance/193300/assessment/2587679\nDon’t worry if you haven’t set up your own machine. The infrastructure on PL is adequate for most things we’ll do."
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#back-to-handcraft",
+    "href": "slides/02_thu_lists.html#back-to-handcraft",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Back to handcraft",
+    "text": "Back to handcraft"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#representing-handcraft",
+    "href": "slides/02_thu_lists.html#representing-handcraft",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Representing handcraft",
+    "text": "Representing handcraft\nHow do we represent a craft project in code?\nWe need to think about:\n\nWhat data describes the object?\nWhat operations can we perform on it?\n\nLet’s start with something simpler than a full quilt…"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#a-bead-bracelet",
+    "href": "slides/02_thu_lists.html#a-bead-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A bead bracelet",
+    "text": "A bead bracelet\n\nWhat data describes a bead?\n\n\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#dataclasses-in-python",
+    "href": "slides/02_thu_lists.html#dataclasses-in-python",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Dataclasses in Python",
+    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\nThis creates a new type called Bead with two attributes.\n\nConnect back to Tuesday’s RGB representation!"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#creating-bead-objects",
+    "href": "slides/02_thu_lists.html#creating-bead-objects",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Creating Bead objects",
+    "text": "Creating Bead objects"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#your-turn-beads",
+    "href": "slides/02_thu_lists.html#your-turn-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Beads",
+    "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#adding-behavior-methods",
+    "href": "slides/02_thu_lists.html#adding-behavior-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding behavior: methods",
+    "text": "Adding behavior: methods\nA dataclass can also have methods."
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#calling-methods",
+    "href": "slides/02_thu_lists.html#calling-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Calling methods",
+    "text": "Calling methods"
+  },
+  {
+    "objectID": "slides/02_thu_lists.html#what-you-learned-today",
+    "href": "slides/02_thu_lists.html#what-you-learned-today",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What you learned today",
+    "text": "What you learned today\n\nThe sum of the first k odds is _____\nLists are more complex than they first appear.\nDataclasses let us define our own types\nAttributes are the data associated with an instance of a class\nMethods are functions that belong to a class\n\nNext time: The Bracelet"
+  },
+  {
+    "objectID": "slides/tbd_tbd_python-2.html#announcements",
+    "href": "slides/tbd_tbd_python-2.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#announcements",
+    "href": "slides/09_thu_graphs.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#rush-hour",
+    "href": "slides/09_thu_graphs.html#rush-hour",
     "title": "Programming, problem solving, and algorithms",
     "section": "Rush Hour",
     "text": "Rush Hour\n\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nPath:"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#representing-sudoku",
-    "href": "slides/11_tue_sudoku.html#representing-sudoku",
+    "objectID": "slides/09_thu_graphs.html#state-machine",
+    "href": "slides/09_thu_graphs.html#state-machine",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Representing Sudoku",
-    "text": "Representing Sudoku\n\nA representation of a system is a model of the system that is useful in analysis.\nA state space is a collection of all possible configurations of a physical system.\nEach configuration is described using its representation, and is called a state.\n\nHow would you represent the game of Sudoku?"
+    "section": "State Machine",
+    "text": "State Machine\n\n\n\n\nThis graph can be used to quickly calculate whether a given number is divisible by 7.\nStart at the circle node at the top. For each digit \\(d\\) in the given number, follow \\(d\\) blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.\n\n\n3703"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#state-space-graphs",
-    "href": "slides/11_tue_sudoku.html#state-space-graphs",
+    "objectID": "slides/09_thu_graphs.html#the-stanford-bunny",
+    "href": "slides/09_thu_graphs.html#the-stanford-bunny",
     "title": "Programming, problem solving, and algorithms",
-    "section": "State Space Graphs",
-    "text": "State Space Graphs\nDefine a graph where every vertex is ________________________, and edge (u,v) means ________________________.\nHow many neighbors does this vertex have?"
+    "section": "The Stanford Bunny",
+    "text": "The Stanford Bunny\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n \nPlanar Graph:"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#tictactoe-state-space-graph",
-    "href": "slides/11_tue_sudoku.html#tictactoe-state-space-graph",
+    "objectID": "slides/09_thu_graphs.html#graph-explorations",
+    "href": "slides/09_thu_graphs.html#graph-explorations",
     "title": "Programming, problem solving, and algorithms",
-    "section": "TicTacToe State Space Graph",
-    "text": "TicTacToe State Space Graph"
+    "section": "Graph Explorations",
+    "text": "Graph Explorations\n \nA graph \\(G\\) is defined by a set of vertices \\(V\\), and a set of edges \\(E\\).\n \nAlgorithm running time is typically described using the number of vertices, but execution usually depends on the number of edges, so we must understand the relationship between them."
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#searching-state-space-graphs",
-    "href": "slides/11_tue_sudoku.html#searching-state-space-graphs",
+    "objectID": "slides/09_thu_graphs.html#how-many-edges",
+    "href": "slides/09_thu_graphs.html#how-many-edges",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Searching State Space Graphs",
-    "text": "Searching State Space Graphs"
+    "section": "How Many Edges?",
+    "text": "How Many Edges?\nSuppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?\n\n\n\n\nAt least __________ edges because the graph is connected.\n \nAt most _________ edges which occurs when the graph is complete."
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#depth-first-search",
-    "href": "slides/11_tue_sudoku.html#depth-first-search",
+    "objectID": "slides/09_thu_graphs.html#handshaking",
+    "href": "slides/09_thu_graphs.html#handshaking",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Depth First Search",
-    "text": "Depth First Search\n\n\n\n\n\n\nhttps://www.youtube.com/watch?v=8qrZ1clEp-Y"
+    "section": "Handshaking",
+    "text": "Handshaking\nSuppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?\n\n\n\n\nThe following are equivalent:\n\nThe number of neighbors of a vertex.\nThe number of incident edges of a vertex.\nThe degree of a vertex."
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#stacks",
-    "href": "slides/11_tue_sudoku.html#stacks",
+    "objectID": "slides/09_thu_graphs.html#degree-games",
+    "href": "slides/09_thu_graphs.html#degree-games",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Stacks",
-    "text": "Stacks\n\n\nProgrammatic manifestation of a ________________.\n \nStack functions:\n\nInsert: push(item)\nRemove: pop() \\(\\rightarrow\\) item\n\nDeque functions:\n\nInsert: append(item)\nRemove: pop() \\(\\rightarrow\\) item"
+    "section": "Degree Games",
+    "text": "Degree Games\n\n\nSuppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?\n\nAn algorithm for finding a graph, given a degree sequence, is described in the practice problems.\nHavel-Hakimi"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#flood-fill",
-    "href": "slides/11_tue_sudoku.html#flood-fill",
+    "objectID": "slides/09_thu_graphs.html#pencil-puzzles",
+    "href": "slides/09_thu_graphs.html#pencil-puzzles",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Flood Fill",
-    "text": "Flood Fill\n\n\n\n\nenqueue the center\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w"
+    "section": "Pencil Puzzles",
+    "text": "Pencil Puzzles\n\n\n\n\nTrace each graph without lifting your pencil and without revisiting an edge.\n \nCan all graphs be traced?\n \nWhat characterizes those that cannot?"
   },
   {
-    "objectID": "slides/11_tue_sudoku.html#depth-first-search-1",
-    "href": "slides/11_tue_sudoku.html#depth-first-search-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Depth First Search",
-    "text": "Depth First Search\n\n\n\n\n             A B C D E\n\n\nprocess start vertex\npush(start_vertex)\nwhile the stack is not empty:\n\nv = pop()\nfor each valid neighbor w of v:\n\nprocess w\npush(w)"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#algorithm-planning",
-    "href": "slides/11_tue_sudoku.html#algorithm-planning",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Algorithm Planning",
-    "text": "Algorithm Planning\nOverall strategy:\n\nMove forward through the states (board configurations) until you can’t go any farther.\nIf the board is complete, you win!\nIf the board is not complete, then back up and try a new state in the most recent cell possible."
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#searching-state-space-graphs-1",
-    "href": "slides/11_tue_sudoku.html#searching-state-space-graphs-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Searching State Space Graphs",
-    "text": "Searching State Space Graphs"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#moving-toward-implementation",
-    "href": "slides/11_tue_sudoku.html#moving-toward-implementation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Moving toward implementation",
-    "text": "Moving toward implementation\nNeed to be able to check whether a candidate entry is valid.\n\n\nSuppose we have a variable grid, representing the board, and we want to place a value called num, in position (x,y).\nNeed to check uniqueness in:\n\nrow\ncolumn\nblock\n\n\n\nWhich conditional checks a row?\nWhich conditional checks a column?\nHow shall we check a block?"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#block-validity",
-    "href": "slides/11_tue_sudoku.html#block-validity",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Block Validity",
-    "text": "Block Validity\nPython tidbit: to query a region in a 2d numpy matrix, just define the bounds on the region and use in.\nIn the small example below, 2 in grid[0:2,0:2] returns True.\n\nNew puzzle: given a location (x,y) how do we define its region?"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#defining-regions",
-    "href": "slides/11_tue_sudoku.html#defining-regions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Defining Regions",
-    "text": "Defining Regions\nGiven location \\((x,y)\\), determine the region in which it lives.\n\n\n\na region s:t contains \\(x\\) if \\(s\\leq x&lt; t\\)\nfor a \\(4\\times 4\\) grid, the block size is 2"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#generalize",
-    "href": "slides/11_tue_sudoku.html#generalize",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Generalize",
-    "text": "Generalize\nFind the region for point \\((x,y)\\) in a \\(r^2\\times r^2\\) grid.\nHint: In python, x//r is the integer part of “x divided by r”."
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#another-puzzle",
-    "href": "slides/11_tue_sudoku.html#another-puzzle",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Another Puzzle",
-    "text": "Another Puzzle\nThe locations in sudoku are specified by \\((x,y)\\). As we advance our solution, we can loop over the ranges of \\(x\\) (\\(W\\)) and \\(y\\) (\\(H\\)), but it would be easier if we could just iterate over the values 0 up to \\(W\\times H\\).\nWrite a function postup that takes an integer position p as input, and returns an (x,y) position. You may assume that the height and width of the grid is stored in a variable called states."
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#demo",
-    "href": "slides/11_tue_sudoku.html#demo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#a-closing-thought",
-    "href": "slides/11_tue_sudoku.html#a-closing-thought",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "A Closing Thought",
-    "text": "A Closing Thought\nCould we be smarter?"
-  },
-  {
-    "objectID": "slides/11_tue_sudoku.html#another-closing-thought",
-    "href": "slides/11_tue_sudoku.html#another-closing-thought",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Another Closing Thought",
-    "text": "Another Closing Thought\nIs our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?)\n\n3: 9x9\n4: 16x16\n5: 25x25\n6: 36x36\n\nSudoku is known to be “NP-Complete”."
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#announcements",
-    "href": "slides/01_thu_efficiency.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nWebsite live – please let me know if you see errors!\nPOTW starts next week! https://us.prairielearn.com/pl/course_instance/202804\nLabs start next week. Answer the qualtrics survey!!\nEnroll in CPSC203 on PrairieTest: https://us.prairietest.com\n\n\nSummary\nIn this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#learning-outcomes",
-    "href": "slides/01_thu_efficiency.html#learning-outcomes",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\n\nWe connect the idea of “elegance” to common items and to software design!\nThe time it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function."
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
-    "href": "slides/01_thu_efficiency.html#elegance-continuing-the-discussion",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance: Continuing the discussion",
-    "text": "Elegance: Continuing the discussion\nOn Tuesday we introduced elegance as a conceptual metaphor for software engineering.\nWe looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.\nToday, we’re going to dig deeper into this idea:\n\nWhat does elegance look like across different contexts?\nHow do we define it more precisely?\nHow does this apply to the way we solve problems in computing?"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#elegance",
-    "href": "slides/01_thu_efficiency.html#elegance",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Elegance",
-    "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/eleganceGallery2025w2\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
-    "href": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Elegance—definition",
-    "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/eleganceGallery2025w2\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/MUkpWeGBdxYfnJT37\n\n  \n    −\n    +\n \n 05:00"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#elegance-in-software-design",
-    "href": "slides/01_thu_efficiency.html#elegance-in-software-design",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance in software design",
-    "text": "Elegance in software design\nHow does this apply to the way we solve problems in computing?\nIngenuity:\n\n\n\nSimplicity:\n\n\n\nINGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.\nSIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).\n\n\n\nFor further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#section",
-    "href": "slides/01_thu_efficiency.html#section",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#handcraft-1",
-    "href": "slides/01_thu_efficiency.html#handcraft-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft",
-    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.\n\nQuilt—patterns\nCrochet—2 different kinds\nPaper—Friend’s artistry"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#knitting",
-    "href": "slides/01_thu_efficiency.html#knitting",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting",
-    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#knitting-examples",
-    "href": "slides/01_thu_efficiency.html#knitting-examples",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting: examples",
-    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”\nAxis of algorithmic quality includes"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task",
-    "href": "slides/01_thu_efficiency.html#quantifying-the-task",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n  \n    −\n    +\n \n 05:00\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task-1",
-    "href": "slides/01_thu_efficiency.html#quantifying-the-task-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\nIf we are solving a problem ____________ for a given input, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\nDiscussion:\n\n\n\n\n\n\n\nFirst blank: or write an algorithm\n\nIn this example we choose to label \\(n\\) as the side-length\nWe don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3\\(n\\) x \\(n\\) takes time 3\\(n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.\nSometimes we have more than one parameter"
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#handcraft-and-code",
-    "href": "slides/01_thu_efficiency.html#handcraft-and-code",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft and Code",
-    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef knit_square_print(n): for r in range(n): row = “” for c in range(n):\nrow += ‘X’\nprint(row)\nscript: walk through existing code. counting stitches is the same as counting time.\nwhich line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?\nlet’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.\nhave we done more work? a little, but the most frequent line happens the same number of times."
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#quantifying-the-task-2",
-    "href": "slides/01_thu_efficiency.html#quantifying-the-task-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\nSuppose we can knit 1012 stitches per second…\n\n\n\n\n10\n100\n1000\n10,000\n1012\n\n\n\n\n\\(n\\)\n10-11s\n10-10 s\n10-9 s\n10-8 s\n1 s\n\n\n\\(n \\log n\\)\n10-11 s\n10-9 s\n10-8 s\n10-7 s\n40 s\n\n\n\\(n^2\\)\n10-10 s\n10-8 s\n10-6 s\n10-4 s\n1012 s\n\n\n\\(n^3\\)\n10-9 s\n10-6 s\n10-3 s\n1 s\n1024 s\n\n\n\\(2^n\\)\n10-9 s\n1018 s\n10289 s\n\n\n\n\n\nThe amount of computation we do inside our algorithm actually matters!\n\nWhy does this matter?\nAnnotate:\n\nEach stitch takes a tiny tiny fraction of a second 1/1012 = 10-12 (fastest machine is 415 x 1015).\n\\(n\\) is size parameter for our computation.\n\\(T(n)\\) is the amount of time our computation takes.\n\nChoose one to illustrate if our rag/data size is 1000, and we need to compute n3 steps/stitches (like knitting a cube!!), then the total time is 10003/1012 = 10-3 a thousandth of a second. Nbd.\nBUT let’s look at bigger data. 1012 (~128gb pretty big) 1012 mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 1012 s = ~32000 years. The sun will long since have burnt out by 1018 s\nPunchline—we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap—we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). 🙁\nNOTE: \\(\\log\\) is \\(\\log_2\\). And \\(\\log 1000 = 10\\)."
-  },
-  {
-    "objectID": "slides/01_thu_efficiency.html#words-and-ideas",
-    "href": "slides/01_thu_efficiency.html#words-and-ideas",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Words and Ideas",
-    "text": "Words and Ideas\n\nElegance\nGrowth of simple functions over time\nRepresenting complexity of a problem using time\nRunning time of a Python function"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#announcements",
-    "href": "slides/02_tue_representation.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nSetup instructions available.\nPython resources posted to piazza.\nFirst examlet signup available.\n\n\nSummary\nToday we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#learning-outcomes",
-    "href": "slides/02_tue_representation.html#learning-outcomes",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\n\nComputers interpret electrical signals as bits, and bits can be used to represent numbers, and numbers can be used to represent colours, which suggests that we can represent virtually anything!"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#representation",
-    "href": "slides/02_tue_representation.html#representation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Representation",
-    "text": "Representation\nToday we’re exploring a fundamental question: How do we represent the world as data?\nWe’ll look at “representation” in two important senses:\n\nTechnical: How computers encode rich concepts (like colour) as numbers\nSocial: Who is represented in this discipline, and why it matters\n\nLet’s start with something personal and familiar: colour.\n\nAnnotate as you go - don’t read the bullets verbatim. Let the dual meaning emerge through the lesson."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colour-interpretation",
-    "href": "slides/02_tue_representation.html#colour-interpretation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour interpretation",
-    "text": "Colour interpretation\nWhat’s your favorite colour? Do you have a sense for why it’s your favorite? Does that colour influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
-    "href": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Colour—cultural interpretations",
-    "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation",
-    "href": "slides/02_tue_representation.html#colourrepresentation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\n\nFirst, some general questions…\nWhat does data look like to a computer?\n\n\n\nIs that enough?\n\nhttps://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/\n\n\n\nPositive and negative charges interpreted as 1 and 0.\nBinary digits = bits"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-1",
-    "href": "slides/02_tue_representation.html#colourrepresentation-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
-    "href": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Binary to decimal",
-    "text": "Your turn: Binary to decimal\nConvert these binary numbers to decimal:\n\n\n\nBinary\nDecimal\n\n\n\n\n1010\n_______\n\n\n1101\n_______\n\n\n0111\n_______\n\n\n\n\n  \n    −\n    +\n \n 03:00\n \n\nAnswers: 10, 13, 7"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
-    "href": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Thinking about bits",
-    "text": "Your turn: Thinking about bits\nWhat’s the largest number you can represent with 4 bits? _______\n\n\nHow many bits do you need to represent 120? _______\n\n\nIf I give you one more bit, what happens to how many numbers you can represent?\n\n\nHow high can you count on your fingers? and toes?\n\n  \n    −\n    +\n \n 03:00\n \n\n\nLargest with 4 bits: 15 (1111)\nBits for 120: 7 bits (120 &lt; 128 = 2^7)\nOne more bit: DOUBLES the numbers you can represent!\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#from-bits-to-everything",
-    "href": "slides/02_tue_representation.html#from-bits-to-everything",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "From bits to… everything?",
-    "text": "From bits to… everything?\nWe’ve seen that bits can represent integers.\nBut integers are just the beginning!\nIf we can assign numbers to things, we can represent anything:\n\nText (A=65, B=66, …)\nSound (amplitude samples)\nImages (pixel colours)\nVideo (sequences of images)\nYour favorite song, your family photos, this lecture…\n\nLet’s see how this works with colour."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-2",
-    "href": "slides/02_tue_representation.html#colourrepresentation-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nCan we use integers to represent colours?\nOne way: RGB (red, green, blue), where each “component” is in range 0 through 255.\nex. (255, 0, 127) ==     \nFun calculator for colour values: https://colorizer.org\nHow many bits for 256 values? 4  5  6  7  8  9  10"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colourrepresentation-3",
-    "href": "slides/02_tue_representation.html#colourrepresentation-3",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—representation",
-    "text": "Colour—representation\nWhat colour is\n\n\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\n\nEasier to read if we use hexadecimal representation:\nEach component is represented by 2 hex digits 0123456789abcdef\nex. #674ea7     \n\nHex = base 16"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colourhexadecimal",
-    "href": "slides/02_tue_representation.html#colourhexadecimal",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour—hexadecimal",
-    "text": "Colour—hexadecimal\nWhat colour is this 24-bit number?\n\n\n\n0110 0111 0100 1110 1010 0111\n\n\n\nConverting to hexadecimal: #___________\n(Use digits 0123456789abcdef)\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#representation-an-aside",
-    "href": "slides/02_tue_representation.html#representation-an-aside",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Representation: An aside",
-    "text": "Representation: An aside\nWhat do you observe about the following RGB colours?\n\n\n\nRed\nGreen\nBlue\n\n\n\n\n255\n0\n0\n\n\n17\n0\n178\n\n\n45\n0\n13\n\n\n200\n0\n220\n\n\n62\n0\n37\n\n\n130\n0\n95\n\n\n\n\n[Your 7-minute narrative with RGB cube prop about missing dimensions and diversity in CS]"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colour-and-code",
-    "href": "slides/02_tue_representation.html#colour-and-code",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red colour channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values."
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#colour-and-code-1",
-    "href": "slides/02_tue_representation.html#colour-and-code-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\n\n\n\n\n\n\n\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the colour channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey \n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n    \n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n    \n    out = fancify(img)\n  \n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n  \nmain()"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
-    "href": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Change image or boost",
-    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different colour (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"
-  },
-  {
-    "objectID": "slides/02_tue_representation.html#what-you-learned-today",
-    "href": "slides/02_tue_representation.html#what-you-learned-today",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What you learned today",
-    "text": "What you learned today\nYou’ve discovered something profound:\n\nComputers store everything as bits (0s and 1s)\nBits can represent integers (using binary, base 2)\nIntegers can represent colours (RGB: three numbers 0-255)\nWhich means bits can represent images (grids of pixels)\nAnd you wrote code to manipulate those images!\n\nFrom electrical signals → to making poppies pop."
-  },
-  {
-    "objectID": "slides/13_tue_vislit.html#announcements",
-    "href": "slides/13_tue_vislit.html#announcements",
+    "objectID": "slides/03_thu_friendship.html#announcements",
+    "href": "slides/03_thu_friendship.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
     "text": "Announcements"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#visualizing-literature",
-    "href": "slides/13_tue_vislit.html#visualizing-literature",
+    "objectID": "slides/03_thu_friendship.html#defining-our-own-types",
+    "href": "slides/03_thu_friendship.html#defining-our-own-types",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Visualizing Literature",
-    "text": "Visualizing Literature"
+    "section": "Defining our own types",
+    "text": "Defining our own types\nSo far we’ve used built-in types: int, float, str, list, tuple…\nWhat if we want to represent something more complex?\n\nA bead with a radius and a color?\nA bracelet with beads arranged in a circle?\nA song with a title and duration?\nA playlist with a name and songs?\n\nPython lets us define our own types using dataclasses."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#lexical-novelty",
-    "href": "slides/13_tue_vislit.html#lexical-novelty",
+    "objectID": "slides/03_thu_friendship.html#a-bead-bracelet",
+    "href": "slides/03_thu_friendship.html#a-bead-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Lexical Novelty",
-    "text": "Lexical Novelty\n\n\n\n\n“Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel. In the below visualizations (in which each column represents a chapter and each small block a paragraph of text), I maintain a variable which represents novelty. When a paragraph contains more than 25% new terms (i.e. words that have not been observed thus far) this variable is set at its maximum of 1. Otherwise, the variable decays. The variable is used to colour the paragraph with red being 1.0 and blue being 0. The result is that we can get an idea of the introduction of new ideas in novels.” - Matthew Hurst"
+    "section": "A bead bracelet",
+    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#word-co-occurrence",
-    "href": "slides/13_tue_vislit.html#word-co-occurrence",
+    "objectID": "slides/03_thu_friendship.html#dataclasses-in-python",
+    "href": "slides/03_thu_friendship.html#dataclasses-in-python",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Word Co-occurrence",
-    "text": "Word Co-occurrence"
+    "section": "Dataclasses in Python",
+    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\nThis creates a new type called Bead with two attributes.\n\nConnect back to Tuesday’s RGB representation!"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#cross-references",
-    "href": "slides/13_tue_vislit.html#cross-references",
+    "objectID": "slides/03_thu_friendship.html#creating-bead-objects",
+    "href": "slides/03_thu_friendship.html#creating-bead-objects",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Cross References",
-    "text": "Cross References"
+    "section": "Creating Bead objects",
+    "text": "Creating Bead objects"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#sentiment-analysis",
-    "href": "slides/13_tue_vislit.html#sentiment-analysis",
+    "objectID": "slides/03_thu_friendship.html#your-turn-beads",
+    "href": "slides/03_thu_friendship.html#your-turn-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Sentiment Analysis",
-    "text": "Sentiment Analysis"
+    "section": " Your turn: Beads",
+    "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#mapping",
-    "href": "slides/13_tue_vislit.html#mapping",
+    "objectID": "slides/03_thu_friendship.html#adding-behavior-methods",
+    "href": "slides/03_thu_friendship.html#adding-behavior-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Mapping",
-    "text": "Mapping"
+    "section": "Adding behavior: methods",
+    "text": "Adding behavior: methods\nA dataclass can also have methods."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#visualizing-literature-1",
-    "href": "slides/13_tue_vislit.html#visualizing-literature-1",
+    "objectID": "slides/03_thu_friendship.html#adding-behavior-more-methods",
+    "href": "slides/03_thu_friendship.html#adding-behavior-more-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Visualizing Literature",
-    "text": "Visualizing Literature\n\nA novel is just a long sequence of characters.\nIf we treat it as data, we can:\n\nCount and visualize patterns,\nCompare books or authors,\nBuild networks of characters and concepts.\n\nToday: turn a novel into numbers and pictures."
+    "section": "Adding behavior: more methods",
+    "text": "Adding behavior: more methods\nAdd a draw method:"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#what-can-we-compute-from-a-book",
-    "href": "slides/13_tue_vislit.html#what-can-we-compute-from-a-book",
+    "objectID": "slides/03_thu_friendship.html#calling-methods",
+    "href": "slides/03_thu_friendship.html#calling-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "What Can We Compute From a Book?",
-    "text": "What Can We Compute From a Book?\nIf I give you the full text of a novel as a .txt file\n\nWhat questions could we ask?\nWhat numbers or graphs could we compute?\n\nIdeas:"
+    "section": "Calling methods",
+    "text": "Calling methods"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#the-text-as-data-pipeline",
-    "href": "slides/13_tue_vislit.html#the-text-as-data-pipeline",
+    "objectID": "slides/03_thu_friendship.html#questions",
+    "href": "slides/03_thu_friendship.html#questions",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Text-as-Data Pipeline",
-    "text": "The Text-as-Data Pipeline\nData flow:\n\nLoad the text from a file\nTokenize: split into words\nPreprocess:\n\nlowercase\nremove punctuation\nremove stopwords\nuse lemmas\n\nCount frequencies\nVisualize as a bar chart\nInterpret: what do the counts tell us?"
+    "section": "Questions?",
+    "text": "Questions?\nNow that you know about dataclass how would you design a Bracelet?"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#step-1-getting-the-text-into-python",
-    "href": "slides/13_tue_vislit.html#step-1-getting-the-text-into-python",
+    "objectID": "slides/03_thu_friendship.html#the-bracelet",
+    "href": "slides/03_thu_friendship.html#the-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Step 1: Getting the Text into Python",
-    "text": "Step 1: Getting the Text into Python"
+    "section": "The Bracelet",
+    "text": "The Bracelet\nA bracelet contains a list of beads and has a radius.\n\n\n\n\n\n\nThis is composition: a Bracelet contains Beads."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#tokenizer",
-    "href": "slides/13_tue_vislit.html#tokenizer",
+    "objectID": "slides/03_thu_friendship.html#creating-a-bracelet",
+    "href": "slides/03_thu_friendship.html#creating-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenizer",
-    "text": "Tokenizer\nWe want to analyze the data by word or by ____________ or by ____________ or by ____________…\nWe can separate the data (string) into any of these using a “tokenizer”"
+    "section": "Creating a Bracelet",
+    "text": "Creating a Bracelet"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#tokenization",
-    "href": "slides/13_tue_vislit.html#tokenization",
+    "objectID": "slides/03_thu_friendship.html#does-it-fit",
+    "href": "slides/03_thu_friendship.html#does-it-fit",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Tokenization",
-    "text": "Tokenization\n \nTranslate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
+    "section": "Does it fit?",
+    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#demo",
-    "href": "slides/13_tue_vislit.html#demo",
+    "objectID": "slides/03_thu_friendship.html#does-it-fit-1",
+    "href": "slides/03_thu_friendship.html#does-it-fit-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\n\n\n\n\n \n \nThirty most common tokens in the mystery text."
+    "section": "Does it fit?",
+    "text": "Does it fit?\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#pre-processing",
-    "href": "slides/13_tue_vislit.html#pre-processing",
+    "objectID": "slides/03_thu_friendship.html#your-turn-does-it-fit",
+    "href": "slides/03_thu_friendship.html#your-turn-does-it-fit",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Pre-processing",
-    "text": "Pre-processing"
+    "section": " Your turn: Does it fit?",
+    "text": "Your turn: Does it fit?\n\n\n\n\n\n\nWhat do bracelet1.fits() and bracelet2.fits() return?\n\n  \n    −\n    +\n \n 02:00\n \n\nTotal diameter = 10 + 6 + 8 = 24 bracelet1: circumference = 2π(20) ≈ 125.7, fits() -&gt; True (24 &lt;= 125.7) bracelet2: circumference = 2π(3) ≈ 18.8, fits() -&gt; False (24 &gt; 18.8)"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence",
-    "href": "slides/13_tue_vislit.html#a-feasible-sequence",
+    "objectID": "slides/03_thu_friendship.html#how-much-slack",
+    "href": "slides/03_thu_friendship.html#how-much-slack",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Feasible Sequence",
-    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nUnify tally for “Valor” and “valor”.\n\n\nDepending on task, may not want to do this."
+    "section": "How much slack?",
+    "text": "How much slack?\n\n\n\n\n\n\n\nCould refactor to avoid duplicate code, but keep it simple for now."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-1",
-    "href": "slides/13_tue_vislit.html#a-feasible-sequence-1",
+    "objectID": "slides/03_thu_friendship.html#drawing-the-bracelet",
+    "href": "slides/03_thu_friendship.html#drawing-the-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Feasible Sequence",
-    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nTokenizer leaves periods at end of sentences: “father.”\n \nAmazingly, it works fine for “Dr.”, “$3.50”, “!”"
+    "section": "Drawing the bracelet",
+    "text": "Drawing the bracelet"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-2",
-    "href": "slides/13_tue_vislit.html#a-feasible-sequence-2",
+    "objectID": "slides/03_thu_friendship.html#the-full-picture",
+    "href": "slides/03_thu_friendship.html#the-full-picture",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Feasible Sequence",
-    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\nList of common, unhelpful words compiled by spacy from large corpora. We keep words that aren’t in that list.\n \nMore sophisticated approach is called tf-idf."
+    "section": "The full picture",
+    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def fits(self) -&gt; bool: ...\n    def slack(self) -&gt; float: ...\n    def draw(self) -&gt; None: ..."
   },
   {
-    "objectID": "slides/13_tue_vislit.html#a-feasible-sequence-3",
-    "href": "slides/13_tue_vislit.html#a-feasible-sequence-3",
+    "objectID": "slides/03_thu_friendship.html#your-turn-experiment",
+    "href": "slides/03_thu_friendship.html#your-turn-experiment",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Feasible Sequence",
-    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\ngoes -&gt; go running -&gt; run eaten -&gt; eat"
+    "section": " Your turn: Experiment",
+    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 10:00"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#curious",
-    "href": "slides/13_tue_vislit.html#curious",
+    "objectID": "slides/03_thu_friendship.html#design-strategies",
+    "href": "slides/03_thu_friendship.html#design-strategies",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Curious?",
-    "text": "Curious?"
+    "section": "Design Strategies",
+    "text": "Design Strategies\n\nIdentify the objects in your problem (nouns)\nList the data each object needs (attributes)\nList the operations each object supports (methods)\nDecide which object is responsible for what\nImplement and test incrementally"
   },
   {
-    "objectID": "slides/13_tue_vislit.html#demo-1",
-    "href": "slides/13_tue_vislit.html#demo-1",
+    "objectID": "slides/03_thu_friendship.html#what-you-learned",
+    "href": "slides/03_thu_friendship.html#what-you-learned",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#announcements",
-    "href": "slides/08_tue_voronoi.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
-    "href": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Voronoi diagrams",
-    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#design-an-algorithm",
-    "href": "slides/08_tue_voronoi.html#design-an-algorithm",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design an Algorithm",
-    "text": "Design an Algorithm"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#pointillism",
-    "href": "slides/08_tue_voronoi.html#pointillism",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Pointillism",
-    "text": "Pointillism\n\n\nA Sunday on La Grande Jatte"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#algorithmic-art",
-    "href": "slides/08_tue_voronoi.html#algorithmic-art",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Algorithmic Art",
-    "text": "Algorithmic Art\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the voronoi diagram in the new image, using the center colors from the original image.\n\nThe quality of the new image\ndepends on ____________________."
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#planning",
-    "href": "slides/08_tue_voronoi.html#planning",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Planning",
-    "text": "Planning\n \n\nPoint:\nColor:\nCenter:\nCenters:\nImage:"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#planning-1",
-    "href": "slides/08_tue_voronoi.html#planning-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Planning",
-    "text": "Planning\nData flow:"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#demo",
-    "href": "slides/08_tue_voronoi.html#demo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/08_tue_voronoi.html#analysis",
-    "href": "slides/08_tue_voronoi.html#analysis",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Analysis",
-    "text": "Analysis\nHow much work is done? Let \\(n\\) denote the size of the image, \\(n = width \\cdot height\\)\n\n\n\nRead image:\nChoose centers:\nBuild new image:\n\n \n\nWrite out new image:"
+    "section": "What you learned",
+    "text": "What you learned\n\nDataclasses let us define custom types with attributes\nMethods are functions that belong to a class\nComposition: objects can contain other objects\nDesign: who owns what data and behavior matters!"
   },
   {
     "objectID": "slides/04_thu_web-as-data.html#announcements",
@@ -2663,144 +2747,11 @@
     "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
   },
   {
-    "objectID": "slides/03_tue_classes.html#defining-our-own-types",
-    "href": "slides/03_tue_classes.html#defining-our-own-types",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Defining our own types",
-    "text": "Defining our own types\nSo far we’ve used built-in types: int, float, str, list, tuple…\nWhat if we want to represent something more complex?\n\nA bead with a radius and a color?\nA bracelet with beads arranged in a circle?\nA song with a title and duration?\nA playlist with a name and songs?\n\nPython lets us define our own types using dataclasses."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#a-bead-bracelet",
-    "href": "slides/03_tue_classes.html#a-bead-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "A bead bracelet",
-    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#dataclasses-in-python",
-    "href": "slides/03_tue_classes.html#dataclasses-in-python",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Dataclasses in Python",
-    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\nThis creates a new type called Bead with two attributes.\n\nConnect back to Tuesday’s RGB representation!"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#creating-bead-objects",
-    "href": "slides/03_tue_classes.html#creating-bead-objects",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Creating Bead objects",
-    "text": "Creating Bead objects"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#your-turn-beads",
-    "href": "slides/03_tue_classes.html#your-turn-beads",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Beads",
-    "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#adding-behavior-methods",
-    "href": "slides/03_tue_classes.html#adding-behavior-methods",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding behavior: methods",
-    "text": "Adding behavior: methods\nA dataclass can also have methods."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#adding-behavior-more-methods",
-    "href": "slides/03_tue_classes.html#adding-behavior-more-methods",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding behavior: more methods",
-    "text": "Adding behavior: more methods\nAdd a draw method:"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#calling-methods",
-    "href": "slides/03_tue_classes.html#calling-methods",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Calling methods",
-    "text": "Calling methods"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#questions",
-    "href": "slides/03_tue_classes.html#questions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Questions?",
-    "text": "Questions?\nNow that you know about dataclass how would you design a Bracelet?"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#the-bracelet",
-    "href": "slides/03_tue_classes.html#the-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Bracelet",
-    "text": "The Bracelet\nA bracelet contains a list of beads and has a radius.\n\n\n\n\n\n\nThis is composition: a Bracelet contains Beads."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#creating-a-bracelet",
-    "href": "slides/03_tue_classes.html#creating-a-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Creating a Bracelet",
-    "text": "Creating a Bracelet"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#does-it-fit",
-    "href": "slides/03_tue_classes.html#does-it-fit",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Does it fit?",
-    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#does-it-fit-1",
-    "href": "slides/03_tue_classes.html#does-it-fit-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Does it fit?",
-    "text": "Does it fit?\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#your-turn-does-it-fit",
-    "href": "slides/03_tue_classes.html#your-turn-does-it-fit",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Does it fit?",
-    "text": "Your turn: Does it fit?\n\n\n\n\n\n\nWhat do bracelet1.fits() and bracelet2.fits() return?\n\n  \n    −\n    +\n \n 02:00\n \n\nTotal diameter = 10 + 6 + 8 = 24 bracelet1: circumference = 2π(20) ≈ 125.7, fits() -&gt; True (24 &lt;= 125.7) bracelet2: circumference = 2π(3) ≈ 18.8, fits() -&gt; False (24 &gt; 18.8)"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#how-much-slack",
-    "href": "slides/03_tue_classes.html#how-much-slack",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How much slack?",
-    "text": "How much slack?\n\n\n\n\n\n\n\nCould refactor to avoid duplicate code, but keep it simple for now."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#drawing-the-bracelet",
-    "href": "slides/03_tue_classes.html#drawing-the-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Drawing the bracelet",
-    "text": "Drawing the bracelet"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#the-full-picture",
-    "href": "slides/03_tue_classes.html#the-full-picture",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The full picture",
-    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def fits(self) -&gt; bool: ...\n    def slack(self) -&gt; float: ...\n    def draw(self) -&gt; None: ..."
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#your-turn-experiment",
-    "href": "slides/03_tue_classes.html#your-turn-experiment",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Experiment",
-    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 10:00"
-  },
-  {
-    "objectID": "slides/03_tue_classes.html#design-strategies",
-    "href": "slides/03_tue_classes.html#design-strategies",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design Strategies",
-    "text": "Design Strategies\n\nIdentify the objects in your problem (nouns)\nList the data each object needs (attributes)\nList the operations each object supports (methods)\nDecide which object is responsible for what\nImplement and test incrementally"
-  },
-  {
     "objectID": "slides/03_tue_classes.html#what-you-learned",
     "href": "slides/03_tue_classes.html#what-you-learned",
     "title": "Programming, problem solving, and algorithms",
     "section": "What you learned",
-    "text": "What you learned\n\nDataclasses let us define custom types with attributes\nMethods are functions that belong to a class\nComposition: objects can contain other objects\nDesign: who owns what data and behavior matters!"
+    "text": "What you learned\n\nAliasing: assignment creates references, not copies\nShallow copy: .copy() only copies the outer structure\nDeep copy: copy.deepcopy() copies everything\nList comprehensions: compact syntax for creating lists"
   },
   {
     "objectID": "slides/12_tue_maps.html#announcements",
