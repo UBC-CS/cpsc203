@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 200">
+  <!-- Title -->
+  <text x="275" y="22" font-family="system-ui" font-size="15" font-weight="bold" fill="#333" text-anchor="middle">BEAD vs BRACELET</text>
+
+  <!-- Bead section -->
+  <rect x="30" y="40" width="230" height="150" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="8"/>
+  <text x="145" y="65" font-family="system-ui" font-size="14" font-weight="bold" fill="#7b1fa2" text-anchor="middle">Bead</text>
+
+  <!-- Bead DATA -->
+  <text x="50" y="90" font-family="system-ui" font-size="11" fill="#555" font-weight="bold">DATA</text>
+  <circle cx="60" cy="108" r="4" fill="#7b1fa2"/>
+  <text x="70" y="112" font-family="monospace" font-size="11" fill="#333">radius</text>
+  <circle cx="60" cy="128" r="4" fill="#7b1fa2"/>
+  <text x="70" y="132" font-family="monospace" font-size="11" fill="#333">colour</text>
+
+  <!-- Bead BEHAVIOR -->
+  <text x="50" y="155" font-family="system-ui" font-size="11" fill="#555" font-weight="bold">BEHAVIOR</text>
+  <circle cx="60" cy="173" r="4" fill="#e65100"/>
+  <text x="70" y="177" font-family="monospace" font-size="11" fill="#333">diameter()</text>
+
+  <!-- Bead icon -->
+  <circle cx="200" cy="130" r="30" fill="#f44336" stroke="#b71c1c" stroke-width="2"/>
+
+  <!-- Bracelet section -->
+  <rect x="290" y="40" width="230" height="150" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="8"/>
+  <text x="405" y="65" font-family="system-ui" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">Bracelet</text>
+
+  <!-- Bracelet DATA -->
+  <text x="310" y="90" font-family="system-ui" font-size="11" fill="#555" font-weight="bold">DATA</text>
+  <circle cx="320" cy="108" r="4" fill="#2e7d32"/>
+  <text x="330" y="112" font-family="monospace" font-size="11" fill="#333">radius</text>
+  <circle cx="320" cy="128" r="4" fill="#2e7d32"/>
+  <text x="330" y="132" font-family="monospace" font-size="11" fill="#333">beads (list)</text>
+
+  <!-- Bracelet BEHAVIOR -->
+  <text x="310" y="155" font-family="system-ui" font-size="11" fill="#555" font-weight="bold">BEHAVIOR</text>
+  <circle cx="320" cy="170" r="3" fill="#e65100"/>
+  <text x="330" y="174" font-family="monospace" font-size="9" fill="#333">circumference()</text>
+  <circle cx="420" cy="170" r="3" fill="#e65100"/>
+  <text x="430" y="174" font-family="monospace" font-size="9" fill="#333">slack()</text>
+  <circle cx="320" cy="185" r="3" fill="#e65100"/>
+  <text x="330" y="189" font-family="monospace" font-size="9" fill="#333">string_bead()</text>
+  <circle cx="420" cy="185" r="3" fill="#e65100"/>
+  <text x="430" y="189" font-family="monospace" font-size="9" fill="#333">draw()</text>
+</svg>
