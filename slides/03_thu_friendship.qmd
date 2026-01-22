@@ -4,14 +4,14 @@ date: 2026-01-22
 
 ## Announcements
 
-## Your toolkit (so far)
+## Your current toolkit {.smaller}
 
 - **Representation** — how we encode meaning (binary, types, RGB)
 - **Collections** — how we group things (lists, tuples, dicts)
 - **Control flow** — how we make decisions and repeat (if/else, loops)
 - **Functions** — how we name and reuse logic
 - **Abstraction** — how we hide complexity
-- **Efficiency** — how we measure cost (summations, Big-O)
+- **Efficiency** — how we measure cost (summations, timing analysis)
 
 Every problem we solve uses some combination of these.
 
@@ -69,6 +69,11 @@ Connect back to Tuesday's RGB representation!
 ## Creating Bead objects
 
 ``` {pyodide}
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
 # Create some beads
 red_bead = Bead(radius=5.0, colour=(255, 0, 0))
 blue_bead = Bead(radius=3.0, colour=(0, 0, 255))
@@ -117,7 +122,7 @@ class Bead:
 # Declare a Bead
 # print its diameter
 ```
-## Adding behavior: more methods
+## Adding behavior: more methods {.smaller}
 
 Add a `draw` method:
 
@@ -181,9 +186,14 @@ This is **composition**: a Bracelet *contains* Beads.
 ## Creating a Bracelet
 
 ``` {pyodide}
+@dataclass
+class Bracelet:
+    radius: float           # radius of the bracelet circle
+    beads: list[Bead]       # the beads on the bracelet
+    
 # First, create some beads
 b1 = Bead(radius=5.0, colour=(255, 0, 0))
-b2 = Bead(radius=3.0, colour=(0, 255, 0))
+b2 = Bead(radius=3.0, colour=(0, 255, 37))
 b3 = Bead(radius=4.0, colour=(0, 0, 255))
 
 # Create a bracelet with those beads
@@ -195,11 +205,9 @@ b3 = Bead(radius=4.0, colour=(0, 0, 255))
 
 ![](/images/bracelet_fits.png){.r-stretch}
 
-The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.
+The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference. We refer to the extra string as *slack*.
 
-## Does it fit?
-
-The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference.
+## How much slack?
 
 ``` {pyodide}
 import math
@@ -210,34 +218,16 @@ class Bracelet:
     beads: list[Bead]
 
     def circumference(self) -> float:
-        return None
+        return 2 * math.pi * self.radius
 
-    def fits(self) -> bool:
-        return None
+    def slack(self) -> float: 
+    """ circumference - sum of diameters"""
+        pass
 ```
 
-## {{< iconify fa6-solid comments >}} Your turn: Does it fit? {.activity}
+## Adding beads safely
 
-``` {pyodide}
-b1 = Bead(radius=5.0, colour=(255, 0, 0))
-b2 = Bead(radius=3.0, colour=(0, 255, 0))
-b3 = Bead(radius=4.0, colour=(0, 0, 255))
-
-bracelet1 = Bracelet(radius=20.0, beads=[b1, b2, b3])
-bracelet2 = Bracelet(radius=3.0, beads=[b1, b2, b3])
-```
-
-What do `bracelet1.fits()` and `bracelet2.fits()` return?
-
-{{< countdown minutes=2 >}}
-
-::: notes
-Total diameter = 10 + 6 + 8 = 24
-bracelet1: circumference = 2π(20) ≈ 125.7, fits() -> True (24 <= 125.7)
-bracelet2: circumference = 2π(3) ≈ 18.8, fits() -> False (24 > 18.8)
-:::
-
-## How much slack?
+We only want to add a bead if it fits!
 
 ``` {pyodide}
 @dataclass
@@ -245,25 +235,13 @@ class Bracelet:
     radius: float
     beads: list[Bead]
 
-    def circumference(self) -> float:
-        return 2 * math.pi * self.radius
+    def circumference(self) -> float: ...
+    def slack(self) -> float: ...
 
-    def fits(self) -> bool:
-        total = 0
-        for bead in self.beads:
-            total += bead.diameter()
-        return total <= self.circumference()
-
-    def slack(self) -> float:
-        total = 0
-        for bead in self.beads:
-            total += bead.diameter()
-        return self.circumference() - total
+    def string_bead(self, bead: Bead) -> bool:
+        """Add a bead only if it fits. Returns True if added."""
+        pass
 ```
-
-::: notes
-Could refactor to avoid duplicate code, but keep it simple for now.
-:::
 
 ## Drawing the bracelet
 
@@ -286,8 +264,9 @@ class Bracelet:
     beads: list[Bead]
 
     def circumference(self) -> float: ...
-    def fits(self) -> bool: ...
     def slack(self) -> float: ...
+    def string_bead(self, bead: Bead) -> bool: ...
+    def remove_bead(self, index: int) -> Bead: ...
     def draw(self) -> None: ...
 ```
 
@@ -295,7 +274,7 @@ class Bracelet:
 
 Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2638037) on PrairieLearn!
 
-{{< countdown minutes=10 >}}
+{{< countdown minutes=20 >}}
 
 ## Design Strategies
 
