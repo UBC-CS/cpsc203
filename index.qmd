@@ -136,7 +136,7 @@ schedule <- read_csv(
       # Practice material (in week before examlet) - only link if URL exists
       !is.na(exam_practice) & str_starts(exam_practice, "http") ~ glue("[{fa('pen-to-square')}]({exam_practice})"),
       # Practice material placeholder (no URL yet) - show faded icon
-      !is.na(exam_practice) ~ fa("pen-to-square", fill_opacity = 0.1),
+      !is.na(exam_practice) ~ as.character(fa("pen-to-square", fill_opacity = 0.1)),
       .default = NA_character_
     )
   )
