@@ -2313,11 +2313,11 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/03_thu_friendship.html#your-toolkit-so-far",
-    "href": "slides/03_thu_friendship.html#your-toolkit-so-far",
+    "objectID": "slides/03_thu_friendship.html#your-current-toolkit",
+    "href": "slides/03_thu_friendship.html#your-current-toolkit",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Your toolkit (so far)",
-    "text": "Your toolkit (so far)\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, Big-O)\n\nEvery problem we solve uses some combination of these.\nThe pattern: learn a new tool, use it to solve a harder problem.\nToday: dataclasses → bracelets"
+    "section": "Your current toolkit",
+    "text": "Your current toolkit\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, timing analysis)\n\nEvery problem we solve uses some combination of these.\nThe pattern: learn a new tool, use it to solve a harder problem.\nToday: dataclasses → bracelets"
   },
   {
     "objectID": "slides/03_thu_friendship.html#defining-our-own-types",
@@ -2401,28 +2401,21 @@
     "href": "slides/03_thu_friendship.html#does-it-fit",
     "title": "Programming, problem solving, and algorithms",
     "section": "Does it fit?",
-    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
-  },
-  {
-    "objectID": "slides/03_thu_friendship.html#does-it-fit-1",
-    "href": "slides/03_thu_friendship.html#does-it-fit-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Does it fit?",
-    "text": "Does it fit?\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference."
-  },
-  {
-    "objectID": "slides/03_thu_friendship.html#your-turn-does-it-fit",
-    "href": "slides/03_thu_friendship.html#your-turn-does-it-fit",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Does it fit?",
-    "text": "Your turn: Does it fit?\n\n\n\n\n\n\nWhat do bracelet1.fits() and bracelet2.fits() return?\n\n  \n    −\n    +\n \n 02:00\n \n\nTotal diameter = 10 + 6 + 8 = 24 bracelet1: circumference = 2π(20) ≈ 125.7, fits() -&gt; True (24 &lt;= 125.7) bracelet2: circumference = 2π(3) ≈ 18.8, fits() -&gt; False (24 &gt; 18.8)"
+    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference. We refer to the extra string as slack."
   },
   {
     "objectID": "slides/03_thu_friendship.html#how-much-slack",
     "href": "slides/03_thu_friendship.html#how-much-slack",
     "title": "Programming, problem solving, and algorithms",
     "section": "How much slack?",
-    "text": "How much slack?\n\n\n\n\n\n\n\nCould refactor to avoid duplicate code, but keep it simple for now."
+    "text": "How much slack?"
+  },
+  {
+    "objectID": "slides/03_thu_friendship.html#adding-beads-safely",
+    "href": "slides/03_thu_friendship.html#adding-beads-safely",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding beads safely",
+    "text": "Adding beads safely\nWe only want to add a bead if it fits!"
   },
   {
     "objectID": "slides/03_thu_friendship.html#drawing-the-bracelet",
@@ -2436,14 +2429,14 @@
     "href": "slides/03_thu_friendship.html#the-full-picture",
     "title": "Programming, problem solving, and algorithms",
     "section": "The full picture",
-    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def fits(self) -&gt; bool: ...\n    def slack(self) -&gt; float: ...\n    def draw(self) -&gt; None: ..."
+    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ..."
   },
   {
     "objectID": "slides/03_thu_friendship.html#your-turn-experiment",
     "href": "slides/03_thu_friendship.html#your-turn-experiment",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Experiment",
-    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 20:00"
   },
   {
     "objectID": "slides/03_thu_friendship.html#design-strategies",
