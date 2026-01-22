@@ -72,8 +72,8 @@ resources <-
       str_extract("\\d+_([:alpha:]+)_.*$", group = 1),
     type = path |> path_dir()
   ) |>
-  # Remove unassigned resources indicated by "tbd"
-  filter(!str_detect(path, "tbd")) |>
+  # Remove unassigned resources (tbd, _holding, etc.) and files without valid week/day
+  filter(!str_detect(path, "tbd|_holding"), !is.na(week)) |>
   select(week, type, day, path) |>
   pivot_wider(names_from = c(day, type), names_sep = "_", values_from = path)
 
@@ -133,8 +133,10 @@ schedule <- read_csv(
       !is.na(exam) & exam_booking_live ~ glue("[{exam}]({prairietest_url})"),
       # Exam booking not yet live - show name without link
       !is.na(exam) ~ as.character(exam),
-      # Practice material (in week before examlet) - link to PrairieLearn
-      !is.na(exam_practice) ~ glue("[{fa('pen-to-square')}]({exam_practice})"),
+      # Practice material (in week before examlet) - only link if URL exists
+      !is.na(exam_practice) & str_starts(exam_practice, "http") ~ glue("[{fa('pen-to-square')}]({exam_practice})"),
+      # Practice material placeholder (no URL yet) - show faded icon
+      !is.na(exam_practice) ~ fa("pen-to-square", fill_opacity = 0.1),
       .default = NA_character_
     )
   )
