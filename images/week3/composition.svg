@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Title -->
+  <text x="250" y="25" font-family="system-ui" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Composition: Objects Containing Objects</text>
+
+  <!-- Bracelet box -->
+  <rect x="100" y="50" width="300" height="90" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="8"/>
+  <text x="120" y="75" font-family="system-ui" font-size="14" font-weight="bold" fill="#1565c0">Bracelet</text>
+  <text x="120" y="95" font-family="monospace" font-size="11" fill="#333">radius: 20.0</text>
+  <text x="120" y="115" font-family="monospace" font-size="11" fill="#333">beads: [</text>
+
+  <!-- Arrow from beads to bead list -->
+  <line x1="250" y1="125" x2="250" y2="165" stroke="#1565c0" stroke-width="2"/>
+  <polygon points="250,165 245,155 255,155" fill="#1565c0"/>
+
+  <!-- Bead list container -->
+  <rect x="60" y="175" width="380" height="100" fill="#fff8e1" stroke="#f9a825" stroke-width="2" rx="8" stroke-dasharray="5,3"/>
+
+  <!-- Individual beads -->
+  <!-- Red bead -->
+  <g transform="translate(85, 195)">
+    <rect x="0" y="0" width="90" height="65" fill="#ffebee" stroke="#c62828" stroke-width="2" rx="6"/>
+    <text x="45" y="18" font-family="system-ui" font-size="11" font-weight="bold" fill="#c62828" text-anchor="middle">Bead</text>
+    <text x="10" y="35" font-family="monospace" font-size="9" fill="#333">r=4.0</text>
+    <circle cx="70" cy="42" r="15" fill="#ef5350"/>
+    <text x="45" y="58" font-family="monospace" font-size="8" fill="#666" text-anchor="middle">(220,60,60)</text>
+  </g>
+
+  <!-- Green bead -->
+  <g transform="translate(200, 195)">
+    <rect x="0" y="0" width="90" height="65" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="6"/>
+    <text x="45" y="18" font-family="system-ui" font-size="11" font-weight="bold" fill="#2e7d32" text-anchor="middle">Bead</text>
+    <text x="10" y="35" font-family="monospace" font-size="9" fill="#333">r=3.0</text>
+    <circle cx="70" cy="42" r="12" fill="#66bb6a"/>
+    <text x="45" y="58" font-family="monospace" font-size="8" fill="#666" text-anchor="middle">(50,205,50)</text>
+  </g>
+
+  <!-- Blue bead -->
+  <g transform="translate(315, 195)">
+    <rect x="0" y="0" width="90" height="65" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="6"/>
+    <text x="45" y="18" font-family="system-ui" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">Bead</text>
+    <text x="10" y="35" font-family="monospace" font-size="9" fill="#333">r=3.5</text>
+    <circle cx="70" cy="42" r="13" fill="#42a5f5"/>
+    <text x="45" y="58" font-family="monospace" font-size="8" fill="#666" text-anchor="middle">(65,105,225)</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="250" y="295" font-family="system-ui" font-size="12" fill="#666" text-anchor="middle">The Bracelet CONTAINS Beads. Each Bead is a complete object with its own data.</text>
+</svg>

@@ -1,0 +1,229 @@
+---
+title: "Week 3: Lists & Custom Types"
+---
+
+This week we learned two powerful ways to organize data: mastering the quirks of Python's lists, and creating our own custom types with dataclasses. Let's tie it all together!
+
+## Your Growing Toolkit
+
+Every problem we solve uses some combination of these tools:
+
+- [**Representation**]{.purple} — how we encode meaning (binary, types, RGB)
+- [**Collections**]{.blue} — how we group things (lists, tuples, dicts)
+- [**Control flow**]{.green} — how we make decisions and repeat (if/else, loops)
+- [**Functions**]{.orange} — how we name and reuse logic
+- [**Abstraction**]{.red} — how we hide complexity
+- [**Efficiency**]{.pink} — how we measure cost (summations, timing analysis)
+
+The pattern: *learn a new tool, use it to solve a harder problem.*
+
+This week: [**Lists**]{.blue} (deep dive) + [**Dataclasses**]{.purple} (new tool!) → **Bracelets**
+
+## The Big Picture
+
+![](/images/week3/big-picture.svg){fig-alt="Diagram showing two ways to organize data: Lists (Tuesday) for collections, and Dataclasses (Thursday) for custom types with bundled data and behavior."}
+
+These ideas combine powerfully: a [**Bracelet**]{.purple} *is* a dataclass that *contains* a [**list**]{.blue} of [**Bead**]{.purple} objects!
+
+---
+
+# Tuesday: [Lists]{.blue} 
+
+Lists seem simple... until they surprise you. Understanding *why* they behave the way they do requires thinking about how Python handles memory.
+
+## The Mental Model: Names, Not Boxes
+
+Here's the key insight that explains *everything* about list behavior:
+
+**Variables are sticky notes, not boxes.**
+
+![](/images/week3/aliasing.svg){fig-alt="Diagram showing wrong vs correct mental model for list assignment. Wrong: two separate boxes. Correct: two names pointing to one object."}
+
+When you write `m2 = m1`, you're not copying the list—you're sticking a second name to the *same* list!
+
+## [Aliasing]{.red}: The Plot Twist
+
+```python
+grid = [[1, 2], [3, 4]]
+backup = grid           # <- This does NOT copy!
+
+grid[0][0] = 99
+
+print(grid)    # [[99, 2], [3, 4]]
+print(backup)  # [[99, 2], [3, 4]]  <- SURPRISE!
+```
+
+Both names point to the same object in memory:
+
+![](/images/week3/aliasing-memory.svg){fig-alt="Memory diagram showing grid and backup variables both pointing to the same nested list structure, with a change to [99,2] affecting both names."}
+
+## The Copy Spectrum
+
+Not all copies are created equal!
+
+![](/images/week3/copy-spectrum.svg){fig-alt="Diagram comparing three ways to copy lists: assignment (same object), shallow copy (new outer list but shared inner lists), and deep copy (everything independent)."}
+
+**When to use each:**
+
+| Situation | Use |
+|-----------|-----|
+| Just another name for the same list | `=` assignment |
+| Flat list (no nested lists) | `.copy()` |
+| Nested structures (lists of lists) | `copy.deepcopy()` |
+
+## append vs extend
+
+These look similar but do *very* different things:
+
+```python
+provinces = ['BC']
+
+provinces.append('Alberta')      # Adds ONE element
+# ['BC', 'Alberta']
+
+provinces.extend(['ON', 'QC'])   # Adds EACH element
+# ['BC', 'Alberta', 'ON', 'QC']
+
+provinces.append(['NS', 'NB'])   # Adds the LIST as one element!
+# ['BC', 'Alberta', 'ON', 'QC', ['NS', 'NB']]  <- Probably not what you wanted!
+```
+
+![](/images/week3/append-extend.svg){fig-alt="Diagram comparing append (adds one thing, even if it's a list) vs extend (adds each thing from the iterable)."}
+
+## [List Comprehensions]{.orange}: Compact & Powerful
+
+Instead of building lists with loops:
+
+```python
+# The long way
+squares = []
+for x in range(5):
+    squares.append(x ** 2)
+```
+
+Write it in one line:
+
+```python
+# The comprehension way
+squares = [x ** 2 for x in range(5)]
+# [0, 1, 4, 9, 16]
+```
+
+Add conditions to filter:
+
+```python
+evens = [x for x in range(10) if x % 2 == 0]
+# [0, 2, 4, 6, 8]
+```
+
+![](/images/week3/comprehension.svg){fig-alt="Diagram showing list comprehension anatomy: expression (TRANSFORM), for item in iterable (LOOP), if condition (FILTER, optional)."}
+
+---
+
+# Thursday: Designing Our Own [Types]{.purple}
+
+Built-in types are great, but what if we need to represent something specific—like a bead with a radius and color?
+
+## [Dataclasses]{.purple}: Data + Behavior in One Package
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]  # RGB!
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+```
+
+Now we can create bead objects:
+
+```python
+red_bead = Bead(radius=5.0, colour=(255, 0, 0))
+print(red_bead.radius)      # 5.0
+print(red_bead.diameter())  # 10.0
+```
+
+![](/images/week3/dataclass-anatomy.svg){fig-alt="Diagram showing anatomy of a dataclass: the @dataclass decorator, attributes (the data), and methods (the behavior)."}
+
+## [Composition]{.green}: Objects Containing Objects
+
+A `Bracelet` contains `Bead` objects—this is [**composition**]{.green}!
+
+```python
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]  # <- A list of our custom type!
+```
+
+![](/images/week3/composition.svg){fig-alt="Diagram showing composition: a Bracelet object containing a list of Bead objects, each with their own radius and color."}
+
+## Design: Who Owns What?
+
+When designing with dataclasses, ask:
+
+1. **What are the nouns?** → These become your classes
+2. **What data does each noun have?** → These become attributes
+3. **What can each noun do?** → These become methods
+
+![](/images/week3/bead-vs-bracelet.svg){fig-alt="Comparison of Bead class (radius, colour, diameter method) vs Bracelet class (radius, beads list, circumference/slack/string_bead/draw methods)."}
+
+Notice how `Bracelet.slack()` needs to use `Bead.diameter()`—objects collaborate!
+
+## Do the Beads Fit?
+
+The beads fit on a bracelet if the sum of their diameters ≤ the circumference. The leftover string is called **slack**.
+
+![](/images/week3/slack.svg){fig-alt="Diagram showing a bracelet with beads and the slack formula: slack = circumference - sum of all diameters. If slack < 0 beads don't fit, if slack >= 0 we have room."}
+
+---
+
+## Putting It All Together
+
+This week's concepts connect beautifully:
+
+![](/images/week3/putting-together.svg){fig-alt="Diagram showing how Tuesday's list concepts (collections, aliasing, comprehensions) connect to Thursday's dataclass concepts (beads list, object references, list comprehension in methods)."}
+
+Your toolkit is growing!
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
+
+---
+
+## Quick Reference
+
+### [Lists]{.blue}
+
+| Operation | What it does |
+|-----------|-------------|
+| `m2 = m1` | Creates another name for the SAME list |
+| `m2 = m1.copy()` | New outer list, inner objects shared |
+| `m2 = copy.deepcopy(m1)` | Completely independent copy |
+| `lst.append(x)` | Adds x as ONE element |
+| `lst.extend(x)` | Adds EACH element from x |
+| `[expr for x in lst if cond]` | List comprehension |
+
+### [Dataclasses]{.purple}
+
+| Concept | Example |
+|---------|---------|
+| Define a class | `@dataclass` + `class Name:` |
+| Attributes | `radius: float` |
+| Methods | `def diameter(self) -> float:` |
+| Create an object | `Bead(radius=5.0, colour=(255,0,0))` |
+| Access attribute | `my_bead.radius` |
+| Call method | `my_bead.diameter()` |
+| Composition | `beads: list[Bead]` |
+
+---
+
+## What's Next?
+
+With [lists]{.blue} and [dataclasses]{.purple}, you can now model complex real-world things! Next week we'll explore how to make our programs handle the unexpected gracefully—and how to verify they actually work.
+
+Happy coding! 🎨
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
