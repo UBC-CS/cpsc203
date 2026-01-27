@@ -205,7 +205,7 @@ letter_bead = Bead(radius=3.0, colour=(255, 0, 0), letter="C")  # has letter
 
 ## Python's `enumerate()` function
 
-When looping, sometimes you need both the **index** and the **value**:
+When iterating over a list, sometimes you need both the **index** and the **value**:
 
 ``` {pyodide}
 fruits = ["apple", "banana", "cherry"]
