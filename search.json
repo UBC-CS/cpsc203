@@ -2614,6 +2614,13 @@
     "text": "Adding beads safely\nWe only want to add a bead if it fits!"
   },
   {
+    "objectID": "slides/04_tue_bracelet.html#removing-beads",
+    "href": "slides/04_tue_bracelet.html#removing-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Removing beads",
+    "text": "Removing beads\nWhat if we want to swap out a bead?\n\n\n\n\n\n\nHint: Lists have a method called pop(index) that removes and returns the item at that index."
+  },
+  {
     "objectID": "slides/04_tue_bracelet.html#drawing-the-bracelet",
     "href": "slides/04_tue_bracelet.html#drawing-the-bracelet",
     "title": "Programming, problem solving, and algorithms",
@@ -2628,11 +2635,53 @@
     "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ..."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#your-turn-experiment",
-    "href": "slides/04_tue_bracelet.html#your-turn-experiment",
+    "objectID": "slides/04_tue_bracelet.html#your-turn-implement-bracelet",
+    "href": "slides/04_tue_bracelet.html#your-turn-implement-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Experiment",
-    "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 50:00"
+    "section": " Your turn: Implement Bracelet",
+    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity on PrairieLearn!\nImplement these methods:\n\ncircumference() - return 2πr\nslack() - circumference minus total bead diameters\nstring_bead(bead) - add bead if it fits, return True/False\nremove_bead(index) - remove and return the bead at index\n\n\n  \n    −\n    +\n \n 30:00"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
+    "href": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Extending functionality: Name bracelets",
+    "text": "Extending functionality: Name bracelets\nWhat if we want to make a friendship bracelet with someone’s name on it?\n  ╭─────────────────────────╮\n  │  [C][P][S][C][2][0][3]  │\n  ╰─────────────────────────╯\nWe need beads that can hold letters!"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#letter-beads",
+    "href": "slides/04_tue_bracelet.html#letter-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Letter beads",
+    "text": "Letter beads\nA letter bead is just a Bead with a letter on it!\n\n\n\n\n\n\nWe added one attribute: letter."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#printing-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#printing-a-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Printing a bracelet",
+    "text": "Printing a bracelet\nWe want to print the letters on a bracelet’s beads.\n\n\n\n\n\n\nWhat does hasattr do? Why do we need it?\n\nhasattr checks if an object has a particular attribute. We need it because regular Beads don’t have a letter attribute."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#making-a-name-bracelet",
+    "href": "slides/04_tue_bracelet.html#making-a-name-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Making a name bracelet",
+    "text": "Making a name bracelet"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#your-turn-design-challenge",
+    "href": "slides/04_tue_bracelet.html#your-turn-design-challenge",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Design challenge",
+    "text": "Your turn: Design challenge\nWhat if the name is too long to fit?\nDiscuss with a neighbor:\n\nHow would you check if a name fits before creating beads?\nWhat should happen if it doesn’t fit?\nHow would you modify make_name_bracelet to handle this?\n\n\n  \n    −\n    +\n \n 05:00"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#your-turn-letter-beads",
+    "href": "slides/04_tue_bracelet.html#your-turn-letter-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Letter beads",
+    "text": "Your turn: Letter beads\nBack to PrairieLearn - try Task 6: Letter Beads!\n\n  \n    −\n    +\n \n 15:00"
   },
   {
     "objectID": "slides/04_tue_bracelet.html#design-strategies",
