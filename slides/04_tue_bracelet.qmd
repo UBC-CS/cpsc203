@@ -209,18 +209,20 @@ Add a `name()` method to Bracelet that assigns letters to existing beads:
 
 ``` {pyodide}
 def name(self, word: str) -> None:
-    """Assign letters from word to the first beads."""
-    for i, letter in enumerate(word):
+    """Assign letters from REVERSED word to the first beads."""
+    for i, letter in enumerate(reversed(word)):
         if i < len(self.beads):
             self.beads[i].letter = letter
             # Lighten the bead (blend toward white)
             r, g, b = self.beads[i].colour
             self.beads[i].colour = (
-                min(255, r + (255 - r) // 2),
-                min(255, g + (255 - g) // 2),
-                min(255, b + (255 - b) // 2),
+                min(255, r + 2*(255 - r) // 3),
+                min(255, g + 2*(255 - g) // 3),
+                min(255, b + 2*(255 - b) // 3),
             )
 ```
+
+Why `reversed`? So the name reads correctly around the circle!
 
 ## Using `name()`
 
@@ -234,9 +236,9 @@ bracelet = Bracelet(radius=20.0, beads=[b1, b2, b3])
 # Name it!
 bracelet.name("HI")
 
-# Check the letters
-print(bracelet.beads[0].letter)  # "H"
-print(bracelet.beads[1].letter)  # "I"
+# Check the letters (reversed order!)
+print(bracelet.beads[0].letter)  # "I"
+print(bracelet.beads[1].letter)  # "H"
 print(bracelet.beads[2].letter)  # "" (no letter assigned)
 ```
 
