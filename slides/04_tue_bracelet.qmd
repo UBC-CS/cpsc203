@@ -203,6 +203,26 @@ plain_bead = Bead(radius=3.0, colour=(255, 0, 0))           # no letter
 letter_bead = Bead(radius=3.0, colour=(255, 0, 0), letter="C")  # has letter
 ```
 
+## Python's `enumerate()` function
+
+When looping, sometimes you need both the **index** and the **value**:
+
+``` {pyodide}
+fruits = ["apple", "banana", "cherry"]
+
+# Without enumerate - manually tracking index
+i = 0
+for fruit in fruits:
+    print(f"{i}: {fruit}")
+    i += 1
+
+# With enumerate - cleaner!
+for i, fruit in enumerate(fruits):
+    print(f"{i}: {fruit}")
+```
+
+`enumerate()` gives you pairs of `(index, value)` as you loop.
+
 ## Naming a bracelet
 
 Add a `name()` method to Bracelet that assigns letters to existing beads:
