@@ -169,85 +169,76 @@ Implement these methods:
 - `string_bead(bead)` - add bead if it fits, return True/False
 - `remove_bead(index)` - remove and return the bead at index
 
+If you finish early, try **Tasks 4 & 5** (brighten methods)!
+
 {{< countdown minutes=30 >}}
 
 ## Extending functionality: Name bracelets
 
 What if we want to make a **friendship bracelet** with someone's name on it?
 
-```
-  ╭─────────────────────────╮
-  │  [C][P][S][C][2][0][3]  │
-  ╰─────────────────────────╯
-```
+![](/images/name-bracelet.svg){.r-stretch fig-alt="A bracelet with letter beads spelling CPSC203."}
 
 We need beads that can hold **letters**!
 
-## Letter beads
+## Adding letters to beads
 
-A letter bead is just a Bead with a letter on it!
+Let's add an optional `letter` attribute to our Bead class:
 
 ``` {pyodide}
 @dataclass
-class LetterBead:
+class Bead:
     radius: float
     colour: tuple[int, int, int]
-    letter: str  # a single character
+    letter: str = ""  # empty string means no letter
 
     def diameter(self) -> float:
         return 2 * self.radius
 ```
 
-We added one attribute: `letter`.
-
-## Printing a bracelet
-
-We want to **print the letters** on a bracelet's beads.
+Now beads can optionally have letters!
 
 ``` {pyodide}
-def print_bracelet(bracelet: Bracelet) -> str:
-    """Return the letters on the bracelet as a string."""
-    result = ""
-    for bead in bracelet.beads:
-        if hasattr(bead, 'letter'):
-            result += bead.letter
-    return result
+plain_bead = Bead(radius=3.0, colour=(255, 0, 0))           # no letter
+letter_bead = Bead(radius=3.0, colour=(255, 0, 0), letter="C")  # has letter
 ```
 
-What does `hasattr` do? Why do we need it?
+## Naming a bracelet
 
-::: notes
-hasattr checks if an object has a particular attribute.
-We need it because regular Beads don't have a letter attribute.
-:::
-
-## Making a name bracelet
+Add a `name()` method to Bracelet that assigns letters to existing beads:
 
 ``` {pyodide}
-def make_name_bracelet(name: str, radius: float, bead_radius: float, colour: tuple) -> Bracelet:
-    """Create a bracelet with letter beads spelling the name."""
-    beads = []
-    for letter in name:
-        bead = LetterBead(radius=bead_radius, colour=colour, letter=letter)
-        beads.append(bead)
-    return Bracelet(radius=radius, beads=beads)
-
-# Try it!
-friendship = make_name_bracelet("CPSC203", radius=25.0, bead_radius=3.0, colour=(255, 182, 193))
-print(print_bracelet(friendship))
+def name(self, word: str) -> None:
+    """Assign letters from word to the first beads."""
+    for i, letter in enumerate(word):
+        if i < len(self.beads):
+            self.beads[i].letter = letter
+            # Lighten the bead (blend toward white)
+            r, g, b = self.beads[i].colour
+            self.beads[i].colour = (
+                min(255, r + (255 - r) // 2),
+                min(255, g + (255 - g) // 2),
+                min(255, b + (255 - b) // 2),
+            )
 ```
 
-## {{< iconify fa6-solid comments >}} Your turn: Design challenge {.activity}
+## Using `name()`
 
-What if the name is too long to fit?
+``` {pyodide}
+# Create a bracelet with some beads
+b1 = Bead(radius=3.0, colour=(255, 0, 0))
+b2 = Bead(radius=3.0, colour=(0, 255, 0))
+b3 = Bead(radius=3.0, colour=(0, 0, 255))
+bracelet = Bracelet(radius=20.0, beads=[b1, b2, b3])
 
-Discuss with a neighbor:
+# Name it!
+bracelet.name("HI")
 
-1. How would you check if a name fits before creating beads?
-2. What should happen if it doesn't fit?
-3. How would you modify `make_name_bracelet` to handle this?
-
-{{< countdown minutes=5 >}}
+# Check the letters
+print(bracelet.beads[0].letter)  # "H"
+print(bracelet.beads[1].letter)  # "I"
+print(bracelet.beads[2].letter)  # "" (no letter assigned)
+```
 
 ## {{< iconify fa6-solid computer >}} Your turn: Letter beads {.activity}
 
