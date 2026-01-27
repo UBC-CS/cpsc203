@@ -109,6 +109,28 @@ class Bracelet:
         pass
 ```
 
+## Removing beads
+
+What if we want to swap out a bead?
+
+``` {pyodide}
+@dataclass
+class Bracelet:
+    ...
+    def remove_bead(self, index: int) -> Bead:
+        """Remove and return the bead at the given index."""
+        pass
+```
+
+**Hint:** Lists have a method called `pop(index)` that removes and returns the item at that index.
+
+``` {pyodide}
+fruits = ["apple", "banana", "cherry"]
+removed = fruits.pop(1)  # removes "banana"
+print(removed)           # "banana"
+print(fruits)            # ["apple", "cherry"]
+```
+
 ## Drawing the bracelet
 
 ![](/images/bracelet_layout.png){.r-stretch}
@@ -136,11 +158,102 @@ class Bracelet:
     def draw(self) -> None: ...
 ```
 
-## {{< iconify fa6-solid computer >}} Your turn: Experiment {.activity}
+## {{< iconify fa6-solid computer >}} Your turn: Implement Bracelet {.activity}
 
 Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2638037) on PrairieLearn!
 
-{{< countdown minutes=50 >}}
+Implement these methods:
+
+- `circumference()` - return 2πr
+- `slack()` - circumference minus total bead diameters
+- `string_bead(bead)` - add bead if it fits, return True/False
+- `remove_bead(index)` - remove and return the bead at index
+
+{{< countdown minutes=30 >}}
+
+## Extending functionality: Name bracelets
+
+What if we want to make a **friendship bracelet** with someone's name on it?
+
+```
+  ╭─────────────────────────╮
+  │  [C][P][S][C][2][0][3]  │
+  ╰─────────────────────────╯
+```
+
+We need beads that can hold **letters**!
+
+## Letter beads
+
+A letter bead is just a Bead with a letter on it!
+
+``` {pyodide}
+@dataclass
+class LetterBead:
+    radius: float
+    colour: tuple[int, int, int]
+    letter: str  # a single character
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+```
+
+We added one attribute: `letter`.
+
+## Printing a bracelet
+
+We want to **print the letters** on a bracelet's beads.
+
+``` {pyodide}
+def print_bracelet(bracelet: Bracelet) -> str:
+    """Return the letters on the bracelet as a string."""
+    result = ""
+    for bead in bracelet.beads:
+        if hasattr(bead, 'letter'):
+            result += bead.letter
+    return result
+```
+
+What does `hasattr` do? Why do we need it?
+
+::: notes
+hasattr checks if an object has a particular attribute.
+We need it because regular Beads don't have a letter attribute.
+:::
+
+## Making a name bracelet
+
+``` {pyodide}
+def make_name_bracelet(name: str, radius: float, bead_radius: float, colour: tuple) -> Bracelet:
+    """Create a bracelet with letter beads spelling the name."""
+    beads = []
+    for letter in name:
+        bead = LetterBead(radius=bead_radius, colour=colour, letter=letter)
+        beads.append(bead)
+    return Bracelet(radius=radius, beads=beads)
+
+# Try it!
+friendship = make_name_bracelet("CPSC203", radius=25.0, bead_radius=3.0, colour=(255, 182, 193))
+print(print_bracelet(friendship))
+```
+
+## {{< iconify fa6-solid comments >}} Your turn: Design challenge {.activity}
+
+What if the name is too long to fit?
+
+Discuss with a neighbor:
+
+1. How would you check if a name fits before creating beads?
+2. What should happen if it doesn't fit?
+3. How would you modify `make_name_bracelet` to handle this?
+
+{{< countdown minutes=5 >}}
+
+## {{< iconify fa6-solid computer >}} Your turn: Letter beads {.activity}
+
+Back to PrairieLearn - try **Task 6: Letter Beads**!
+
+{{< countdown minutes=15 >}}
 
 ## Design Strategies
 
