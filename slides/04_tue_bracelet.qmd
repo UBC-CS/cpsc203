@@ -160,7 +160,7 @@ class Bracelet:
 
 ## {{< iconify fa6-solid computer >}} Your turn: Implement Bracelet {.activity}
 
-Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2638037) on PrairieLearn!
+Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/202804/assessment/2640487) on PrairieLearn!
 
 Implement these methods:
 
