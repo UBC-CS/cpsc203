@@ -2660,7 +2660,7 @@
     "href": "slides/04_tue_bracelet.html#naming-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
     "section": "Naming a bracelet",
-    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:"
+    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:\n\n\n\n\n\n\nWhy reversed? So the name reads correctly around the circle!"
   },
   {
     "objectID": "slides/04_tue_bracelet.html#using-name",
