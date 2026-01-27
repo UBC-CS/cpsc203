@@ -2639,42 +2639,35 @@
     "href": "slides/04_tue_bracelet.html#your-turn-implement-bracelet",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Implement Bracelet",
-    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity on PrairieLearn!\nImplement these methods:\n\ncircumference() - return 2πr\nslack() - circumference minus total bead diameters\nstring_bead(bead) - add bead if it fits, return True/False\nremove_bead(index) - remove and return the bead at index\n\n\n  \n    −\n    +\n \n 30:00"
+    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity on PrairieLearn!\nImplement these methods:\n\ncircumference() - return 2πr\nslack() - circumference minus total bead diameters\nstring_bead(bead) - add bead if it fits, return True/False\nremove_bead(index) - remove and return the bead at index\n\nIf you finish early, try Tasks 4 & 5 (brighten methods)!\n\n  \n    −\n    +\n \n 30:00"
   },
   {
     "objectID": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
     "href": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
     "title": "Programming, problem solving, and algorithms",
     "section": "Extending functionality: Name bracelets",
-    "text": "Extending functionality: Name bracelets\nWhat if we want to make a friendship bracelet with someone’s name on it?\n  ╭─────────────────────────╮\n  │  [C][P][S][C][2][0][3]  │\n  ╰─────────────────────────╯\nWe need beads that can hold letters!"
+    "text": "Extending functionality: Name bracelets\nWhat if we want to make a friendship bracelet with someone’s name on it?\n\nWe need beads that can hold letters!"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#letter-beads",
-    "href": "slides/04_tue_bracelet.html#letter-beads",
+    "objectID": "slides/04_tue_bracelet.html#adding-letters-to-beads",
+    "href": "slides/04_tue_bracelet.html#adding-letters-to-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Letter beads",
-    "text": "Letter beads\nA letter bead is just a Bead with a letter on it!\n\n\n\n\n\n\nWe added one attribute: letter."
+    "section": "Adding letters to beads",
+    "text": "Adding letters to beads\nLet’s add an optional letter attribute to our Bead class:\n\n\n\n\n\n\nNow beads can optionally have letters!"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#printing-a-bracelet",
-    "href": "slides/04_tue_bracelet.html#printing-a-bracelet",
+    "objectID": "slides/04_tue_bracelet.html#naming-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#naming-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Printing a bracelet",
-    "text": "Printing a bracelet\nWe want to print the letters on a bracelet’s beads.\n\n\n\n\n\n\nWhat does hasattr do? Why do we need it?\n\nhasattr checks if an object has a particular attribute. We need it because regular Beads don’t have a letter attribute."
+    "section": "Naming a bracelet",
+    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#making-a-name-bracelet",
-    "href": "slides/04_tue_bracelet.html#making-a-name-bracelet",
+    "objectID": "slides/04_tue_bracelet.html#using-name",
+    "href": "slides/04_tue_bracelet.html#using-name",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Making a name bracelet",
-    "text": "Making a name bracelet"
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#your-turn-design-challenge",
-    "href": "slides/04_tue_bracelet.html#your-turn-design-challenge",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Design challenge",
-    "text": "Your turn: Design challenge\nWhat if the name is too long to fit?\nDiscuss with a neighbor:\n\nHow would you check if a name fits before creating beads?\nWhat should happen if it doesn’t fit?\nHow would you modify make_name_bracelet to handle this?\n\n\n  \n    −\n    +\n \n 05:00"
+    "section": "Using name()",
+    "text": "Using name()"
   },
   {
     "objectID": "slides/04_tue_bracelet.html#your-turn-letter-beads",

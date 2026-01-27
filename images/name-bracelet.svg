@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Bracelet string (circle) -->
+  <circle cx="200" cy="200" r="140" fill="none" stroke="#8B4513" stroke-width="4"/>
+
+  <!-- Letter beads: C S 2 0 3 (5 beads with letters) -->
+  <!-- C bead at top -->
+  <circle cx="200" cy="60" r="28" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <text x="200" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">C</text>
+
+  <!-- S bead -->
+  <circle cx="305" cy="110" r="28" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <text x="305" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">S</text>
+
+  <!-- 2 bead -->
+  <circle cx="340" cy="200" r="28" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <text x="340" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">2</text>
+
+  <!-- 0 bead -->
+  <circle cx="305" cy="290" r="28" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <text x="305" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">0</text>
+
+  <!-- 3 bead -->
+  <circle cx="200" cy="340" r="28" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  <text x="200" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">3</text>
+
+  <!-- Plain decorative beads to fill the gap (4 colorful beads) -->
+  <circle cx="95" cy="290" r="22" fill="#FF6B6B"/>
+  <circle cx="60" cy="200" r="22" fill="#4ECDC4"/>
+  <circle cx="95" cy="110" r="22" fill="#FFE66D"/>
+  <circle cx="155" cy="60" r="18" fill="#95E1D3"/>
+</svg>
