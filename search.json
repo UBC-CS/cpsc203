@@ -2660,7 +2660,7 @@
     "href": "slides/04_tue_bracelet.html#pythons-enumerate-function",
     "title": "Programming, problem solving, and algorithms",
     "section": "Python’s enumerate() function",
-    "text": "Python’s enumerate() function\nWhen looping, sometimes you need both the index and the value:\n\n\n\n\n\n\nenumerate() gives you pairs of (index, value) as you loop."
+    "text": "Python’s enumerate() function\nWhen iterating over a list, sometimes you need both the index and the value:\n\n\n\n\n\n\nenumerate() gives you pairs of (index, value) as you loop."
   },
   {
     "objectID": "slides/04_tue_bracelet.html#naming-a-bracelet",
