@@ -177,7 +177,7 @@ If you finish early, try **Tasks 4 & 5** (brighten methods)!
 
 What if we want to make a **friendship bracelet** with someone's name on it?
 
-![](/images/name-bracelet.svg){.r-stretch fig-alt="A bracelet with letter beads spelling CPSC203."}
+![](/images/name-bracelet.svg){.r-stretch fig-alt="A bracelet with letter beads spelling CS203."}
 
 We need beads that can hold **letters**!
 
