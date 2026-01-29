@@ -251,12 +251,13 @@ Documentation for Billboard.py is here: <https://pypi.org/project/billboard.py/>
 
 
 
-## Billboard Hot 100 Demo
-
+## Billboard Hot 100 Demo {.activity}
 
 \
 
-[Link to PL activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+[Link to PL activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641271)
+
+The activity contains several challenges!
 
 
 
