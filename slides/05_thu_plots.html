@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <meta name="dcterms.date" content="2025-10-07">
+  <meta name="dcterms.date" content="2026-02-05">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -213,190 +213,55 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 7, 2025</p>
+  <p class="date">February 5, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>next week is a quiet week: no class meetings, no labs, no potw.</li>
+<li>Lab 5 is this week</li>
 </ul>
 </section>
 <section id="today" class="slide level2">
 <h2>Today</h2>
-<p>Warm Up – datetime again</p>
-<p>Exploring pandas:</p>
+<p>Asking harder questions:</p>
 <ul>
-<li>Filtering Data</li>
-<li>Making charts</li>
-<li>Asking harder questions</li>
+<li>Working with multiple weeks of data</li>
+<li>Visualizing song trajectories</li>
+<li>Using <code>.isin()</code> to filter by a list</li>
 </ul>
 </section>
-<section id="warm-up" class="slide level2 smaller">
-<h2>Warm Up</h2>
-<p><strong><code>datetime</code></strong>: a Python library that simplifies date computation.</p>
-<p><strong>Objects we need</strong></p>
+<section id="todays-challenge" class="slide level2">
+<h2>Today’s challenge…</h2>
+<p>Given a year of charts,</p>
 <ul>
-<li><code>date</code> — a calendar day (year-month-day)</li>
-<li><code>timedelta</code> — a number of days you can add/subtract</li>
+<li><p>what do the paths of the number ones look like?</p></li>
+<li><p>Do most songs debut at the top? How fast do they fall?</p></li>
 </ul>
-<p><strong>Core calls</strong></p>
-<ul>
-<li><code>today=date.today()</code>: today’s date</li>
-<li><code>today.weekday()</code>: an integer <strong>0..6</strong> with <strong>Mon=0, … , Sun=6</strong></li>
-<li><code>today - timedelta(days=k)</code>: the date <strong>k days earlier</strong></li>
-</ul>
+<p>We can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data.</p>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<div>
-<div id="pyodide-1" class="exercise-cell">
-
-</div>
-<script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZSwgdGltZWRlbHRhXG5cbmRlZiBnZXRMYXN0U2F0dXJkYXkoZGF5KTpcbiAgICB3ID0gZGF5LndlZWtkYXkoKSAgICAgICAgICAgICAgICAgICAgICAgICMgTW9uPTAsIC4uLiwgU2F0PTUsIFN1bj02XG4gICAgb2Zmc2V0ID0gKHcgLSA1KSAlIDcgICAgICAgICAgICAgICAgICAgICAjIGRheXMgc2luY2UgdGhlIG1vc3QgcmVjZW50IFNhdHVyZGF5XG4gICAgcmV0dXJuIGRheSAtIHRpbWVkZWx0YShkYXlzPW9mZnNldCkgICAgICAjIHN0ZXAgYmFjayBieSB0aGF0IG1hbnkgZGF5c1xuXG50b2RheSA9IGRhdGUudG9kYXkoKVxucHJpbnQoZlwiTGFzdCBTYXQncyBkYXRlIHdhczoge2dldExhc3RTYXR1cmRheSh0b2RheSl9XCIpXG5cbiMgMiBvdGhlciB3YXlzIHRvIGluaXRpYWxpemUgZGF0ZXM6XG5IYmRheSA9IGRhdGUoMjAwNCwxMCwxMylcbnByaW50KGZcIlRoZSBTYXQgYmVmb3JlIEggYmlydGhkYXkgd2FzOiB7Z2V0TGFzdFNhdHVyZGF5KEhiZGF5KX0pXG5cbkNiZGF5ID0gXCIyMDAxLTA0LTIwXCJcbm9iZGRhdGUgPSBkYXRlLmZyb21pc29mb3JtYXQoQ2JkYXkpXG5wcmludChmXCJUaGUgU2F0IGJlZm9yZSBDIGJpcnRoZGF5IHdhczoge2dldExhc3RTYXR1cmRheShDYmRheSl9KSJ9
-</script>
-</div>
-</section>
-<section>
-<section id="data-frames" class="title-slide slide level1 center">
-<h1>Data Frames</h1>
-
-</section>
-<section id="section" class="slide level2" data-background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" data-background-interactive="true" data-menu-title="pandas cheat sheet">
-<h2></h2>
-</section>
-<section id="some-challenges" class="slide level2">
-<h2>Some challenges…</h2>
-<p>Given last week’s chart:</p>
-<ol type="1">
-<li><p>How many new songs were there?</p></li>
-<li><p>What’s the average peak?</p></li>
-<li><p>Among those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)</p></li>
-<li><p>Which song changed the most? Was it rising or falling?</p></li>
-<li><p>Write and answer your own question:</p>
-<p><u>_____________________________________________________</u></p></li>
-</ol>
+<section id="the-key-technique-.isin" class="slide level2">
+<h2>The key technique: <code>.isin()</code></h2>
+<p>To track specific songs across weeks, we need to filter by a <strong>list</strong> of values:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Get songs that were #1 at some point</span></span>
+<span id="cb1-2"><a></a>number_ones <span class="op">=</span> df[df[<span class="st">'rank'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'song'</span>].unique()</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Filter to only those songs (across all weeks)</span></span>
+<span id="cb1-5"><a></a>trajectories <span class="op">=</span> df[df[<span class="st">'song'</span>].isin(number_ones)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.isin()</code> returns <code>True</code> for rows where the column value is in the list.</p>
 </section>
 <section id="lets-write-code" class="slide level2 activity">
 <h2>Let’s Write Code</h2>
-<p>Open CA5.2 Billboard, and load <code>class_nb.py</code>.</p>
+<p>Open the Billboard (Visualization) activity, and load <code>STUDENT_viz_nb.py</code>.</p>
 <p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345">PrairieLearn Activity</a></p>
 </section>
-<section id="some-challenges-1" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Which song moved the most? Did it rise or fall?</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
-<span id="cb1-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>What patterns do you see in the #1 songs?</li>
+<li>Do most songs debut at the top?</li>
+<li>How quickly do they typically fall?</li>
+<li>Any songs with unusual trajectories?</li>
+</ul>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
@@ -406,11 +271,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <p><a href="https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot" class="uri">https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot</a></p>
 
 
-<script type="pyodide-data">
-eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
-</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+eyJjb250ZW50cyI6W119
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -423,7 +285,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

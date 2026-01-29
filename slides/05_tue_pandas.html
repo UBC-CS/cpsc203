@@ -220,12 +220,10 @@
 </section>
 <section id="today" class="slide level2">
 <h2>Today</h2>
-<p>Warm Up</p>
-<p>Exploring pandas:</p>
 <ul>
-<li>Filtering Data</li>
-<li>Making charts</li>
-<li>Asking harder questions</li>
+<li>Warm Up: datetime</li>
+<li>From dictionaries to <strong>DataFrames</strong></li>
+<li>Filtering, aggregating, and more — in one line!</li>
 </ul>
 </section>
 <section id="warm-up" class="slide level2 smaller">
@@ -301,34 +299,91 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h1>Data Frames</h1>
 
 </section>
+<section id="last-time-lists-of-dictionaries" class="slide level2">
+<h2>Last time: Lists of Dictionaries</h2>
+<p>We explored Billboard data using <strong>loops</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Find artist with most songs</span></span>
+<span id="cb1-2"><a></a>artist_counts <span class="op">=</span> {}</span>
+<span id="cb1-3"><a></a><span class="cf">for</span> song <span class="kw">in</span> chartlist:</span>
+<span id="cb1-4"><a></a>    artist <span class="op">=</span> song[<span class="st">'artist'</span>]</span>
+<span id="cb1-5"><a></a>    <span class="cf">if</span> artist <span class="kw">in</span> artist_counts:</span>
+<span id="cb1-6"><a></a>        artist_counts[artist] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a></a>        artist_counts[artist] <span class="op">=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This works, but it’s verbose. Every question needed a loop!</p>
+</section>
+<section id="a-better-way-dataframes" class="slide level2">
+<h2>A Better Way: DataFrames</h2>
+<p>A <strong>DataFrame</strong> is a 2D table (like a spreadsheet):</p>
+<ul>
+<li>Rows = records (songs)</li>
+<li>Columns = attributes (title, artist, rank, …)</li>
+</ul>
+<p>DataFrames have <strong>built-in operations</strong> for filtering, aggregating, and more.</p>
+</section>
 <section id="pandas-and-data-frames" class="slide level2">
 <h2>pandas and data frames</h2>
-<p><code>import pandas</code></p>
-Instead of saying
-<center>
-<code>pandas.read_csv('file.csv')</code>
-</center>
-<p>we can say</p>
-<p>&nbsp;</p>
-<p>This function returns a <em>dataframe</em> containing the data from <code>file.csv</code>.</p>
-<p>To give a name to that dataframe, we say:</p>
+<p><code>import pandas as pd</code></p>
+<p>Create a DataFrame from a list of dictionaries:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df <span class="op">=</span> pd.DataFrame(chartlist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or load from a CSV file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="the-payoff-one-liners" class="slide level2 smaller">
+<h2>The Payoff: One-Liners!</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 34%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>With loops</th>
+<th>With DataFrames</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Count new songs</td>
+<td>5+ lines</td>
+<td><code>df[df['isNew']].shape[0]</code></td>
+</tr>
+<tr class="even">
+<td>Average peak</td>
+<td>4 lines</td>
+<td><code>df['peakPos'].mean()</code></td>
+</tr>
+<tr class="odd">
+<td>Filter long-running</td>
+<td>4 lines</td>
+<td><code>df[df['weeks'] &gt; 10]</code></td>
+</tr>
+<tr class="even">
+<td>Find biggest mover</td>
+<td>8+ lines</td>
+<td><code>df.loc[df['gradient'].abs().idxmax()]</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="csv-files" class="slide level2">
 <h2>CSV files</h2>
-<p>To implement: <code>df = pd.read_csv('bill_week.csv')</code></p>
-<p><code>bill_week.csv</code> must have field names in row 1, and data beginning in row 2.</p>
+<p>To load data: <code>df = pd.read_csv('bill_week.csv')</code></p>
+<p>CSV files have field names in row 1, and data beginning in row 2.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>bill_week.csv</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="bill_week.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>,week,title,artist,rank,last_week,peak_pos,weeks_on_chart</span>
-<span id="cb1-2"><a></a>0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19</span>
-<span id="cb1-3"><a></a>1,2019-09-21,Senorita,Shawn Mendes &amp; Camila Cabello,2,2,1,12</span>
-<span id="cb1-4"><a></a>2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10</span>
-<span id="cb1-5"><a></a>3,2019-09-21,Circles,Post Malone,4,7,4,2</span>
-<span id="cb1-6"><a></a>4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24</span>
-<span id="cb1-7"><a></a>5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15</span>
-<span id="cb1-8"><a></a>6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="bill_week.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a></a>,week,title,artist,rank,last_week,peak_pos,weeks_on_chart</span>
+<span id="cb4-2"><a></a>0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19</span>
+<span id="cb4-3"><a></a>1,2019-09-21,Senorita,Shawn Mendes &amp; Camila Cabello,2,2,1,12</span>
+<span id="cb4-4"><a></a>2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10</span>
+<span id="cb4-5"><a></a>3,2019-09-21,Circles,Post Malone,4,7,4,2</span>
+<span id="cb4-6"><a></a>4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24</span>
+<span id="cb4-7"><a></a>5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15</span>
+<span id="cb4-8"><a></a>6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="section" class="slide level2" data-background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" data-background-interactive="true" data-menu-title="pandas cheat sheet">
@@ -377,19 +432,19 @@ Instead of saying
 <p><u>_____________________________________________________</u></p></li>
 </ol>
 <aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'bill_week.csv'</span>)</span>
-<span id="cb2-2"><a></a>df3 <span class="op">=</span> df2[ df2[<span class="st">'weeks_on_chart'</span>] <span class="op">&gt;</span> <span class="dv">10</span> ]</span>
-<span id="cb2-3"><a></a><span class="bu">print</span>(<span class="st">"all:  "</span>)</span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(df2)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="st">"endurance:  "</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(df3)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>df4 <span class="op">=</span> df2[ df2[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>].count()[<span class="st">'title'</span>]</span>
-<span id="cb2-9"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span>
-<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="st">"new count"</span>)</span>
-<span id="cb2-11"><a></a><span class="bu">print</span>(df4)</span>
-<span id="cb2-12"><a></a><span class="bu">print</span>(<span class="st">"peak avg"</span>)</span>
-<span id="cb2-13"><a></a><span class="bu">print</span>(df5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'bill_week.csv'</span>)</span>
+<span id="cb5-2"><a></a>df3 <span class="op">=</span> df2[ df2[<span class="st">'weeks_on_chart'</span>] <span class="op">&gt;</span> <span class="dv">10</span> ]</span>
+<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="st">"all:  "</span>)</span>
+<span id="cb5-4"><a></a><span class="bu">print</span>(df2)</span>
+<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">"endurance:  "</span>)</span>
+<span id="cb5-6"><a></a><span class="bu">print</span>(df3)</span>
+<span id="cb5-7"><a></a></span>
+<span id="cb5-8"><a></a>df4 <span class="op">=</span> df2[ df2[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>].count()[<span class="st">'title'</span>]</span>
+<span id="cb5-9"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span>
+<span id="cb5-10"><a></a><span class="bu">print</span>(<span class="st">"new count"</span>)</span>
+<span id="cb5-11"><a></a><span class="bu">print</span>(df4)</span>
+<span id="cb5-12"><a></a><span class="bu">print</span>(<span class="st">"peak avg"</span>)</span>
+<span id="cb5-13"><a></a><span class="bu">print</span>(df5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -510,7 +565,7 @@ Instead of saying
 </div></div>
 <aside class="notes">
 <p>Filter, apply function, think about output (sometimes means choosing columns, too)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df[df[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>][[<span class="st">'title'</span>, <span class="st">'artist'</span>, <span class="st">'weeks_on_chart'</span>]] .count()[‘title<span class="st">']</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>df[df[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>][[<span class="st">'title'</span>, <span class="st">'artist'</span>, <span class="st">'weeks_on_chart'</span>]] .count()[‘title<span class="st">']</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -625,7 +680,7 @@ Instead of saying
 </table>
 </div></div>
 <aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -740,8 +795,8 @@ Instead of saying
 </table>
 </div></div>
 <aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>enduring_peak <span class="op">=</span> df[df[<span class="st">'weeks_on_chart'</span>]<span class="op">&gt;=</span><span class="dv">10</span>][<span class="st">'peak_pos'</span>].mean()</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"enduring avg peak: "</span> <span class="op">+</span> <span class="bu">str</span>(enduring_peak))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>enduring_peak <span class="op">=</span> df[df[<span class="st">'weeks_on_chart'</span>]<span class="op">&gt;=</span><span class="dv">10</span>][<span class="st">'peak_pos'</span>].mean()</span>
+<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">"enduring avg peak: "</span> <span class="op">+</span> <span class="bu">str</span>(enduring_peak))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -856,8 +911,8 @@ Instead of saying
 </table>
 </div></div>
 <aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
+<span id="cb9-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

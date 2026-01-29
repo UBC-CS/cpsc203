@@ -414,14 +414,14 @@
     "href": "slides/04_thu_web-as-data.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nPOTW will be open indefinitely\nEX2 this week"
+    "text": "Announcements\n\nEX1 this week"
   },
   {
     "objectID": "slides/04_thu_web-as-data.html#what-have-we-done",
     "href": "slides/04_thu_web-as-data.html#what-have-we-done",
     "title": "Programming, problem solving, and algorithms",
     "section": "What have we done?",
-    "text": "What have we done?\nOverview:\n\nMetaphors for software design.\nEfficiency – how long do bits of code take to run?\nRepresentation – binary numbers, colors\nSums (a bit of an aside)\nLists & Dictionaries (intro)\nData Classes\nHandcraft/Garden – putting it together into something bigger"
+    "text": "What have we done?\nOverview:"
   },
   {
     "objectID": "slides/04_thu_web-as-data.html#information-as-data",
@@ -494,18 +494,25 @@
     "text": "Billboard Hot 100 Demo\n\n\nLink to PL activity"
   },
   {
-    "objectID": "slides/04_thu_web-as-data.html#pandas-for-python",
-    "href": "slides/04_thu_web-as-data.html#pandas-for-python",
+    "objectID": "slides/04_thu_web-as-data.html#what-we-learned-today",
+    "href": "slides/04_thu_web-as-data.html#what-we-learned-today",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Pandas for Python",
-    "text": "Pandas for Python\nData Structures:\n\nSeries – 1D collection\nDataframe – 2D collection of instances x attributes\n\nWhy pandas instead of python lists?\n\nVectorized – operations can be applied to entire structures, and chained together.\nMany built-in functions that take advantage of a slight difference…"
+    "section": "What we learned today",
+    "text": "What we learned today\n\nWeb data can be accessed programmatically using APIs\nThe billboard.py library gives us chart data as Python objects\nWe converted that data into a list of dictionaries\nWe answered questions using loops and list comprehensions"
+  },
+  {
+    "objectID": "slides/04_thu_web-as-data.html#the-challenge",
+    "href": "slides/04_thu_web-as-data.html#the-challenge",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The challenge",
+    "text": "The challenge\nEvery question required writing a loop:\n\nFind the #1 song → loop through list\nCount new songs → loop and count\nFind the longest-running song → loop and track max\nCalculate average peak → loop and sum\n\nWhat if there was a data structure designed for this kind of analysis?"
   },
   {
     "objectID": "slides/04_thu_web-as-data.html#next-time",
     "href": "slides/04_thu_web-as-data.html#next-time",
     "title": "Programming, problem solving, and algorithms",
     "section": "Next time",
-    "text": "Next time\nExploring pandas:\n\nFiltering Data\nMaking charts\nAsking harder questions"
+    "text": "Next time\nIntroducing DataFrames — a powerful data structure that makes tabular data analysis much simpler:\n\nFiltering data in one line\nBuilt-in aggregations (mean, max, count…)\nEasy visualization with charts"
   },
   {
     "objectID": "slides/03_thu_friendship.html#announcements",
@@ -1135,7 +1142,7 @@
     "href": "slides/05_tue_pandas.html#today",
     "title": "Programming, problem solving, and algorithms",
     "section": "Today",
-    "text": "Today\nWarm Up\nExploring pandas:\n\nFiltering Data\nMaking charts\nAsking harder questions"
+    "text": "Today\n\nWarm Up: datetime\nFrom dictionaries to DataFrames\nFiltering, aggregating, and more — in one line!"
   },
   {
     "objectID": "slides/05_tue_pandas.html#warm-up",
@@ -1159,18 +1166,39 @@
     "text": "Code"
   },
   {
+    "objectID": "slides/05_tue_pandas.html#last-time-lists-of-dictionaries",
+    "href": "slides/05_tue_pandas.html#last-time-lists-of-dictionaries",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Last time: Lists of Dictionaries",
+    "text": "Last time: Lists of Dictionaries\nWe explored Billboard data using loops:\n# Find artist with most songs\nartist_counts = {}\nfor song in chartlist:\n    artist = song['artist']\n    if artist in artist_counts:\n        artist_counts[artist] += 1\n    else:\n        artist_counts[artist] = 1\nThis works, but it’s verbose. Every question needed a loop!"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#a-better-way-dataframes",
+    "href": "slides/05_tue_pandas.html#a-better-way-dataframes",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Better Way: DataFrames",
+    "text": "A Better Way: DataFrames\nA DataFrame is a 2D table (like a spreadsheet):\n\nRows = records (songs)\nColumns = attributes (title, artist, rank, …)\n\nDataFrames have built-in operations for filtering, aggregating, and more."
+  },
+  {
     "objectID": "slides/05_tue_pandas.html#pandas-and-data-frames",
     "href": "slides/05_tue_pandas.html#pandas-and-data-frames",
     "title": "Programming, problem solving, and algorithms",
     "section": "pandas and data frames",
-    "text": "pandas and data frames\nimport pandas\nInstead of saying\n\npandas.read_csv('file.csv')\n\nwe can say\n \nThis function returns a dataframe containing the data from file.csv.\nTo give a name to that dataframe, we say:"
+    "text": "pandas and data frames\nimport pandas as pd\nCreate a DataFrame from a list of dictionaries:\ndf = pd.DataFrame(chartlist)\nOr load from a CSV file:\ndf = pd.read_csv('billboard.csv')"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#the-payoff-one-liners",
+    "href": "slides/05_tue_pandas.html#the-payoff-one-liners",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Payoff: One-Liners!",
+    "text": "The Payoff: One-Liners!\n\n\n\n\n\n\n\n\nTask\nWith loops\nWith DataFrames\n\n\n\n\nCount new songs\n5+ lines\ndf[df['isNew']].shape[0]\n\n\nAverage peak\n4 lines\ndf['peakPos'].mean()\n\n\nFilter long-running\n4 lines\ndf[df['weeks'] &gt; 10]\n\n\nFind biggest mover\n8+ lines\ndf.loc[df['gradient'].abs().idxmax()]"
   },
   {
     "objectID": "slides/05_tue_pandas.html#csv-files",
     "href": "slides/05_tue_pandas.html#csv-files",
     "title": "Programming, problem solving, and algorithms",
     "section": "CSV files",
-    "text": "CSV files\nTo implement: df = pd.read_csv('bill_week.csv')\nbill_week.csv must have field names in row 1, and data beginning in row 2.\n\n\nbill_week.csv\n\n,week,title,artist,rank,last_week,peak_pos,weeks_on_chart\n0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19\n1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12\n2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10\n3,2019-09-21,Circles,Post Malone,4,7,4,2\n4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24\n5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15\n6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14"
+    "text": "CSV files\nTo load data: df = pd.read_csv('bill_week.csv')\nCSV files have field names in row 1, and data beginning in row 2.\n\n\nbill_week.csv\n\n,week,title,artist,rank,last_week,peak_pos,weeks_on_chart\n0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19\n1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12\n2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10\n3,2019-09-21,Circles,Post Malone,4,7,4,2\n4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24\n5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15\n6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14"
   },
   {
     "objectID": "slides/05_tue_pandas.html#selecting-rows",
@@ -1240,49 +1268,42 @@
     "href": "slides/05_thu_plots.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nnext week is a quiet week: no class meetings, no labs, no potw."
+    "text": "Announcements\n\nLab 5 is this week"
   },
   {
     "objectID": "slides/05_thu_plots.html#today",
     "href": "slides/05_thu_plots.html#today",
     "title": "Programming, problem solving, and algorithms",
     "section": "Today",
-    "text": "Today\nWarm Up – datetime again\nExploring pandas:\n\nFiltering Data\nMaking charts\nAsking harder questions"
+    "text": "Today\nAsking harder questions:\n\nWorking with multiple weeks of data\nVisualizing song trajectories\nUsing .isin() to filter by a list"
   },
   {
-    "objectID": "slides/05_thu_plots.html#warm-up",
-    "href": "slides/05_thu_plots.html#warm-up",
+    "objectID": "slides/05_thu_plots.html#todays-challenge",
+    "href": "slides/05_thu_plots.html#todays-challenge",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Warm Up",
-    "text": "Warm Up\ndatetime: a Python library that simplifies date computation.\nObjects we need\n\ndate — a calendar day (year-month-day)\ntimedelta — a number of days you can add/subtract\n\nCore calls\n\ntoday=date.today(): today’s date\ntoday.weekday(): an integer 0..6 with Mon=0, … , Sun=6\ntoday - timedelta(days=k): the date k days earlier"
+    "section": "Today’s challenge…",
+    "text": "Today’s challenge…\nGiven a year of charts,\n\nwhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data."
   },
   {
-    "objectID": "slides/05_thu_plots.html#code",
-    "href": "slides/05_thu_plots.html#code",
+    "objectID": "slides/05_thu_plots.html#the-key-technique-.isin",
+    "href": "slides/05_thu_plots.html#the-key-technique-.isin",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Code",
-    "text": "Code"
-  },
-  {
-    "objectID": "slides/05_thu_plots.html#some-challenges",
-    "href": "slides/05_thu_plots.html#some-challenges",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\nGiven last week’s chart:\n\nHow many new songs were there?\nWhat’s the average peak?\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\nWhich song changed the most? Was it rising or falling?\nWrite and answer your own question:\n_____________________________________________________"
+    "section": "The key technique: .isin()",
+    "text": "The key technique: .isin()\nTo track specific songs across weeks, we need to filter by a list of values:\n# Get songs that were #1 at some point\nnumber_ones = df[df['rank'] == 1]['song'].unique()\n\n# Filter to only those songs (across all weeks)\ntrajectories = df[df['song'].isin(number_ones)]\n.isin() returns True for rows where the column value is in the list."
   },
   {
     "objectID": "slides/05_thu_plots.html#lets-write-code",
     "href": "slides/05_thu_plots.html#lets-write-code",
     "title": "Programming, problem solving, and algorithms",
     "section": "Let’s Write Code",
-    "text": "Let’s Write Code\nOpen CA5.2 Billboard, and load class_nb.py.\nPrairieLearn Activity"
+    "text": "Let’s Write Code\nOpen the Billboard (Visualization) activity, and load STUDENT_viz_nb.py.\nPrairieLearn Activity"
   },
   {
-    "objectID": "slides/05_thu_plots.html#some-challenges-1",
-    "href": "slides/05_thu_plots.html#some-challenges-1",
+    "objectID": "slides/05_thu_plots.html#discussion",
+    "href": "slides/05_thu_plots.html#discussion",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nWhich song moved the most? Did it rise or fall?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf['gradient'] = df['rank'] - df['last_week']\nprint(df.loc[df['gradient'].abs().idxmax()])"
+    "section": "Discussion",
+    "text": "Discussion\n\nWhat patterns do you see in the #1 songs?\nDo most songs debut at the top?\nHow quickly do they typically fall?\nAny songs with unusual trajectories?"
   },
   {
     "objectID": "slides/05_thu_plots.html#resources",
@@ -1421,14 +1442,14 @@
     "href": "labs/02_create-website.html",
     "title": " Lab: Create your own website!",
     "section": "",
-    "text": "Warning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)"
+    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
     "objectID": "labs/02_create-website.html#basic-structure-of-quarto-document",
     "href": "labs/02_create-website.html#basic-structure-of-quarto-document",
     "title": " Lab: Create your own website!",
-    "section": "Basic structure of Quarto document",
-    "text": "Basic structure of Quarto document\nWe are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
+    "section": "",
+    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
     "objectID": "labs/02_create-website.html#steps",
@@ -1460,7 +1481,7 @@
     "href": "index.html#weekly-announcement",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "Weekly announcement",
-    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04\nJan 26\n\n\n\n\n\n\n\n\n\n\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
+    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04\nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
     "crumbs": [
       "Course information",
       "Schedule"
