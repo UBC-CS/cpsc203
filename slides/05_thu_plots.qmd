@@ -1,5 +1,5 @@
 ---
-date: 2025-10-07
+date: 2026-02-05
 pyodide:
   - pandas
   - matplotlib
@@ -8,117 +8,52 @@ pyodide:
 
 ## Announcements
 
-* next week is a quiet week: no class meetings, no labs, no potw.
+* Lab 5 is this week
 
 ## Today
 
-Warm Up -- datetime again
+Asking harder questions:
 
-Exploring pandas:
-   
-* Filtering Data
-* Making charts
-* Asking harder questions
+* Working with multiple weeks of data
+* Visualizing song trajectories
+* Using `.isin()` to filter by a list
 
-## Warm Up {.smaller}
+## Today's challenge...
 
-**`datetime`**: a Python library that simplifies date computation. 
+Given a year of charts,
 
-**Objects we need**
+* what do the paths of the number ones look like?
 
-* `date` — a calendar day (year-month-day)
-* `timedelta` — a number of days you can add/subtract 
+* Do most songs debut at the top? How fast do they fall?
 
-**Core calls**
+We can quantify these things, and analyze them, but a picture will help us see if there's anything interesting in the data.
 
-* `today=date.today()`: today’s date 
-* `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
-* `today - timedelta(days=k)`: the date **k days earlier**
+## The key technique: `.isin()`
 
-## Code 
+To track specific songs across weeks, we need to filter by a **list** of values:
 
-``` {pyodide}
-from datetime import date, timedelta
+```python
+# Get songs that were #1 at some point
+number_ones = df[df['rank'] == 1]['song'].unique()
 
-def getLastSaturday(day):
-    w = day.weekday()                        # Mon=0, ..., Sat=5, Sun=6
-    offset = (w - 5) % 7                     # days since the most recent Saturday
-    return day - timedelta(days=offset)      # step back by that many days
-
-today = date.today()
-print(f"Last Sat's date was: {getLastSaturday(today)}")
-
-# 2 other ways to initialize dates:
-Hbday = date(2004,10,13)
-print(f"The Sat before H birthday was: {getLastSaturday(Hbday)})
-
-Cbday = "2001-04-20"
-obddate = date.fromisoformat(Cbday)
-print(f"The Sat before C birthday was: {getLastSaturday(Cbday)})
-
+# Filter to only those songs (across all weeks)
+trajectories = df[df['song'].isin(number_ones)]
 ```
 
-
-# Data Frames
-
-##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
-
-## Some challenges...
-
-Given last week's chart:
-
-1.  How many new songs were there?
-
-2.  What's the average peak?
-
-3.  Among those who were on the list for more than 10wk, what's the average peak?
-    (Is it very different than the previous answer?)
-
-4.  Which song changed the most?
-    Was it rising or falling?
-
-5.  Write and answer your own question:
-
-    [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
-
+`.isin()` returns `True` for rows where the column value is in the list.
 
 ## Let's Write Code {.activity}
 
-Open CA5.2 Billboard, and load `class_nb.py`.
+Open the Billboard (Visualization) activity, and load `STUDENT_viz_nb.py`.
 
 [PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
 
+## Discussion
 
-## Some challenges...
-
-::::: columns
-::: {.column width="50%"}
-Which song moved the most?
-Did it rise or fall?
-:::
-
-::: {.column width="50%"}
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-|----|----|----|----|----|----|
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-:::
-:::::
-
-::: notes
-``` python
-df['gradient'] = df['rank'] - df['last_week']
-print(df.loc[df['gradient'].abs().idxmax()])
-```
-:::
-
+* What patterns do you see in the #1 songs?
+* Do most songs debut at the top?
+* How quickly do they typically fall?
+* Any songs with unusual trajectories?
 
 ## Resources
 
@@ -129,7 +64,3 @@ print(df.loc[df['gradient'].abs().idxmax()])
 <https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>
 
 <https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
-
-
-
-

@@ -1,5 +1,5 @@
 ---
-date: 2025-10-02
+date: 2026-01-29
 pyodide:
   - pandas
   - matplotlib
@@ -9,20 +9,12 @@ pyodide:
 
 ## Announcements
 
-1. POTW will be open indefinitely
-2. EX2 this week
+1. EX1 this week
 
 ## What have we done?
 
 **Overview:**
 
-1. Metaphors for software design. 
-2. Efficiency -- how long do bits of code take to run?
-3. Representation -- binary numbers, colors
-4. Sums (a bit of an aside)
-5. Lists & Dictionaries (intro)
-7. Data Classes
-8. Handcraft/Garden -- putting it together into something bigger
 
 ## Information as data {.smaller}
 
@@ -269,26 +261,32 @@ Documentation for Billboard.py is here: <https://pypi.org/project/billboard.py/>
 
 
 
-## Pandas for Python
+## What we learned today
 
-**Data Structures:**
+* Web data can be accessed programmatically using **APIs**
+* The `billboard.py` library gives us chart data as Python objects
+* We converted that data into a **list of dictionaries**
+* We answered questions using loops and list comprehensions
 
-1. Series -- 1D collection
-2. Dataframe -- 2D collection of instances x attributes
+## The challenge
 
-Why pandas instead of python lists?
+Every question required writing a loop:
 
-* Vectorized -- operations can be applied to entire structures, and chained together.
+* Find the #1 song → loop through list
+* Count new songs → loop and count
+* Find the longest-running song → loop and track max
+* Calculate average peak → loop and sum
 
-* Many built-in functions that take advantage of a slight difference...
+What if there was a data structure *designed* for this kind of analysis?
 
 ## Next time
 
-Exploring pandas:
-   
-* Filtering Data
-* Making charts
-* Asking harder questions
+Introducing **DataFrames** — a powerful data structure that makes
+tabular data analysis much simpler:
+
+* Filtering data in one line
+* Built-in aggregations (mean, max, count...)
+* Easy visualization with charts
 
 
 

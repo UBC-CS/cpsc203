@@ -10,13 +10,9 @@ pyodide:
 
 ## Today
 
-Warm Up
-
-Exploring pandas:
-   
-* Filtering Data
-* Making charts
-* Asking harder questions
+* Warm Up: datetime
+* From dictionaries to **DataFrames**
+* Filtering, aggregating, and more — in one line!
 
 ## Warm Up {.smaller}
 
@@ -105,26 +101,62 @@ print(f"Last Saturday's date was: {lastSatDate}")
 
 # Data Frames
 
+## Last time: Lists of Dictionaries
+
+We explored Billboard data using **loops**:
+
+```python
+# Find artist with most songs
+artist_counts = {}
+for song in chartlist:
+    artist = song['artist']
+    if artist in artist_counts:
+        artist_counts[artist] += 1
+    else:
+        artist_counts[artist] = 1
+```
+
+This works, but it's verbose. Every question needed a loop!
+
+## A Better Way: DataFrames
+
+A **DataFrame** is a 2D table (like a spreadsheet):
+
+- Rows = records (songs)
+- Columns = attributes (title, artist, rank, ...)
+
+DataFrames have **built-in operations** for filtering, aggregating, and more.
+
 ## pandas and data frames
 
-`import pandas` 
+`import pandas as pd`
 
-Instead of saying 
-<center>`pandas.read_csv('file.csv')`</center>
+Create a DataFrame from a list of dictionaries:
 
-we can say
+```python
+df = pd.DataFrame(chartlist)
+```
 
-\ 
+Or load from a CSV file:
 
-This function returns a *dataframe* containing the data from `file.csv`.
+```python
+df = pd.read_csv('billboard.csv')
+```
 
-To give a name to that dataframe, we say:
+## The Payoff: One-Liners! {.smaller}
+
+| Task | With loops | With DataFrames |
+|------|------------|-----------------|
+| Count new songs | 5+ lines | `df[df['isNew']].shape[0]` |
+| Average peak | 4 lines | `df['peakPos'].mean()` |
+| Filter long-running | 4 lines | `df[df['weeks'] > 10]` |
+| Find biggest mover | 8+ lines | `df.loc[df['gradient'].abs().idxmax()]` |
 
 ## CSV files
 
-To implement: `df = pd.read_csv('bill_week.csv')`
+To load data: `df = pd.read_csv('bill_week.csv')`
 
-`bill_week.csv` must have field names in row 1, and data beginning in row 2.
+CSV files have field names in row 1, and data beginning in row 2.
 
 ``` {.default filename="bill_week.csv"}
 ,week,title,artist,rank,last_week,peak_pos,weeks_on_chart
