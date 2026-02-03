@@ -424,6 +424,10 @@ table caption {
   opacity: 0;
 }
 
+.text-faded {
+  opacity: 0.15;
+}
+
 // Screen reader only (accessibility)
 .sr-only {
   border: 0 !important;

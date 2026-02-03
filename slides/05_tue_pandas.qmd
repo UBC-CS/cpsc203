@@ -29,6 +29,8 @@ pyodide:
 * `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
 * `today - timedelta(days=k)`: the date **k days earlier**
 
+Ref: <https://docs.python.org/3/library/datetime.html>
+
 ::: notes
 **Billboard constraint**
 - The library expects **Saturday** chart dates. We need the **most recent Saturday** at or before today.
@@ -113,17 +115,21 @@ print(f"Last Saturday's date was: {lastSatDate}")
 
 # Data Frames
 
-## Last time: Lists of Dictionaries
+## Last week: Lists of Dictionaries
+
+``` {pyodide}
+#| setup: true
+#| exercise: billboard
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+chartlist = df.to_dict('records')
+```
 
 We explored Billboard data using **loops**:
 
 ``` {pyodide}
-chartlist = [
-    {"title": "Die With A Smile", "artist": "Lady Gaga & Bruno Mars", "rank": 1},
-    {"title": "APT.", "artist": "Rose & Bruno Mars", "rank": 2},
-    {"title": "Shake It Off", "artist": "Lady Gaga", "rank": 10},
-]
-
+#| exercise: billboard
+# chartlist: list of song dictionaries
 # Find artist with most songs
 artist_counts = {}
 for song in chartlist:
@@ -140,17 +146,20 @@ This works, but it's verbose. Every question needed a loop!
 
 ## A Better Way: DataFrames
 
-A **DataFrame** is a 2D table (like a spreadsheet):
-
-- Rows = records (songs)
-- Columns = attributes (title, artist, rank, ...)
+A **DataFrame** is a 2D table: rows = records, columns = attributes.
 
 DataFrames have **built-in operations** for filtering, aggregating, and more.
 
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+df.head(10)
+```
+
+
 ## pandas and data frames
 
-::::: columns
-::: {.column width="50%"}
+
 `import pandas as pd`
 
 Create a DataFrame from a list of dictionaries:
@@ -164,23 +173,7 @@ Or load from a CSV file:
 ```python
 df = pd.read_csv('billboard.csv')
 ```
-:::
 
-::: {.column width="50%"}
-``` {pyodide}
-import pandas as pd
-
-chartlist = [
-    {"title": "Die With A Smile", "artist": "Lady Gaga & Bruno Mars", "rank": 1},
-    {"title": "APT.", "artist": "Rose & Bruno Mars", "rank": 2},
-    {"title": "Shake It Off", "artist": "Lady Gaga", "rank": 10},
-]
-
-df = pd.DataFrame(chartlist)
-print(df)
-```
-:::
-:::::
 
 ## The Payoff: One-Liners! {.smaller}
 
@@ -191,60 +184,49 @@ print(df)
 | Filter long-running | 4 lines | `df[df['weeks'] > 10]` |
 | Find biggest mover | 8+ lines | `df.loc[df['gradient'].abs().idxmax()]` |
 
-## CSV files {.smaller}
+## `.csv` files 
 
-::::: columns
-::: {.column width="40%"}
-To load data:
+If our data is in a `.csv` file:
 
 ```python
 df = pd.read_csv('billboard.csv')
 ```
 
-CSV files have field names in row 1, and data beginning in row 2.
+`.csv` files have *attribute names* in row 1, and data beginning in row 2.
 
 ```default
 title,artist,rank,last_week,...
 Die With A Smile,Lady Gaga,1,1,...
 APT.,Rose & Bruno Mars,2,2,...
 ```
-:::
-
-::: {.column width="60%"}
-``` {pyodide}
-import pandas as pd
-
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
-print(df.head())  # First 5 rows
-```
 
 ``` {pyodide}
-# What columns do we have?
+# What columns (attributes) do we have?
 print(df.columns.tolist())
 ```
-:::
-:::::
+
 
 ##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
 
 ## Selecting rows {.smaller}
 
 ::::: columns
-::: {.column width="40%"}
+::: {.column width="30%"}
 ![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in pandas data frames."}
 
--   `df.nlargest(n, col)` — top n by column
--   `df[df[col] > val]` — filter by condition
 :::
 
-::: {.column width="60%"}
-``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+::: {.column width="70%"}
 
+-   `df.nlargest(n, col)` — top n by column
+
+
+``` {pyodide}
 # Top 5 by weeks on chart
 print(df.nlargest(5, 'weeks')[['title', 'weeks']])
 ```
+
+-   `df[df[col] > val]` — filter by condition
 
 ``` {pyodide}
 # Songs on chart more than 20 weeks
@@ -262,17 +244,15 @@ print(long_runners[['title', 'weeks']])
 
     Adds a column to the DataFrame containing the computed value for every row.
 
--   `df[df['col'] > val]`
+-   `df[df['new_col'] > val]`
 
     Filter rows by the new column.
 :::
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
-# Add a "gradient" column (positive = rising)
+# Add a "gradient" column 
 df['gradient'] = df['last_week'] - df['rank']
 
 # Find songs that rose more than 10 spots
@@ -302,8 +282,6 @@ Let's work through some examples together before you try similar problems.
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 # Filter for Taylor Swift
 taylor = df[df['artist'].str.contains('Taylor')]
@@ -327,8 +305,6 @@ print(taylor[['rank', 'title']])
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 # Songs that peaked at #1
 peaked_at_one = df[df['peakPos'] == 1]
@@ -354,8 +330,6 @@ print(peaked_at_one[['rank', 'title', 'peakPos']].head())
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 avg_weeks = df['weeks'].mean()
 print(f"Average weeks on chart: {avg_weeks:.1f}")
@@ -380,8 +354,6 @@ print(f"Min: {df['weeks'].min()}, Max: {df['weeks'].max()}")
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 top10 = df[df['rank'] <= 10]
 avg_weeks_top10 = top10['weeks'].mean()
@@ -408,8 +380,6 @@ print(f"Average weeks (top 10): {avg_weeks_top10:.1f}")
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 # Find index of max weeks
 idx = df['weeks'].idxmax()
@@ -439,8 +409,6 @@ print(f"  {longest['weeks']} weeks, currently #{longest['rank']}")
 
 ::: {.column width="60%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 # Exclude new songs (lastPos == 0 means "not on chart last week")
 returning = df[df['lastPos'] > 0].copy()
@@ -475,8 +443,6 @@ If we compute `change = lastPos - rank`:
 
 ::: {.column width="50%"}
 ``` {pyodide}
-import pandas as pd
-df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
 # New songs have lastPos = 0
 new_songs = df[df['lastPos'] == 0]
@@ -489,9 +455,9 @@ print(new_songs[['rank', 'title', 'lastPos', 'isNew']])
 
 ## Let's Write Code {.activity}
 
-Open CA5.2 Billboard, and load `class_nb.py`.
+Open CA5.1 Billboard, and load `STUDENT_nb.py`.
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641273)
 
 
 ## Resources
