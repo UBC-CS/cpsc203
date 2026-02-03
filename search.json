@@ -1149,7 +1149,7 @@
     "href": "slides/05_tue_pandas.html#warm-up",
     "title": "Programming, problem solving, and algorithms",
     "section": "Warm Up",
-    "text": "Warm Up\ndatetime: a Python library that simplifies date computation.\nObjects we need\n\ndate — a calendar day (year-month-day)\ntimedelta — a number of days you can add/subtract\n\nCore calls\n\ntoday=date.today(): today’s date\ntoday.weekday(): an integer 0..6 with Mon=0, … , Sun=6\ntoday - timedelta(days=k): the date k days earlier\n\n\nBillboard constraint - The library expects Saturday chart dates. We need the most recent Saturday at or before today."
+    "text": "Warm Up\ndatetime: a Python library that simplifies date computation.\nObjects we need\n\ndate — a calendar day (year-month-day)\ntimedelta — a number of days you can add/subtract\n\nCore calls\n\ntoday=date.today(): today’s date\ntoday.weekday(): an integer 0..6 with Mon=0, … , Sun=6\ntoday - timedelta(days=k): the date k days earlier\n\nRef: https://docs.python.org/3/library/datetime.html\n\nBillboard constraint - The library expects Saturday chart dates. We need the most recent Saturday at or before today."
   },
   {
     "objectID": "slides/05_tue_pandas.html#last-saturday",
@@ -1166,25 +1166,25 @@
     "text": "Code"
   },
   {
-    "objectID": "slides/05_tue_pandas.html#last-time-lists-of-dictionaries",
-    "href": "slides/05_tue_pandas.html#last-time-lists-of-dictionaries",
+    "objectID": "slides/05_tue_pandas.html#last-week-lists-of-dictionaries",
+    "href": "slides/05_tue_pandas.html#last-week-lists-of-dictionaries",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Last time: Lists of Dictionaries",
-    "text": "Last time: Lists of Dictionaries\nWe explored Billboard data using loops:\n\n\n\n\n\n\nThis works, but it’s verbose. Every question needed a loop!"
+    "section": "Last week: Lists of Dictionaries",
+    "text": "Last week: Lists of Dictionaries\n\nWe explored Billboard data using loops:\n\n\n\n\n\n\nThis works, but it’s verbose. Every question needed a loop!"
   },
   {
     "objectID": "slides/05_tue_pandas.html#a-better-way-dataframes",
     "href": "slides/05_tue_pandas.html#a-better-way-dataframes",
     "title": "Programming, problem solving, and algorithms",
     "section": "A Better Way: DataFrames",
-    "text": "A Better Way: DataFrames\nA DataFrame is a 2D table (like a spreadsheet):\n\nRows = records (songs)\nColumns = attributes (title, artist, rank, …)\n\nDataFrames have built-in operations for filtering, aggregating, and more."
+    "text": "A Better Way: DataFrames\nA DataFrame is a 2D table: rows = records, columns = attributes.\nDataFrames have built-in operations for filtering, aggregating, and more."
   },
   {
     "objectID": "slides/05_tue_pandas.html#pandas-and-data-frames",
     "href": "slides/05_tue_pandas.html#pandas-and-data-frames",
     "title": "Programming, problem solving, and algorithms",
     "section": "pandas and data frames",
-    "text": "pandas and data frames\n\n\nimport pandas as pd\nCreate a DataFrame from a list of dictionaries:\ndf = pd.DataFrame(chartlist)\nOr load from a CSV file:\ndf = pd.read_csv('billboard.csv')"
+    "text": "pandas and data frames\nimport pandas as pd\nCreate a DataFrame from a list of dictionaries:\ndf = pd.DataFrame(chartlist)\nOr load from a CSV file:\ndf = pd.read_csv('billboard.csv')"
   },
   {
     "objectID": "slides/05_tue_pandas.html#the-payoff-one-liners",
@@ -1197,22 +1197,22 @@
     "objectID": "slides/05_tue_pandas.html#csv-files",
     "href": "slides/05_tue_pandas.html#csv-files",
     "title": "Programming, problem solving, and algorithms",
-    "section": "CSV files",
-    "text": "CSV files\n\n\nTo load data:\ndf = pd.read_csv('billboard.csv')\nCSV files have field names in row 1, and data beginning in row 2.\ntitle,artist,rank,last_week,...\nDie With A Smile,Lady Gaga,1,1,...\nAPT.,Rose & Bruno Mars,2,2,..."
+    "section": ".csv files",
+    "text": ".csv files\nIf our data is in a .csv file:\ndf = pd.read_csv('billboard.csv')\n.csv files have attribute names in row 1, and data beginning in row 2.\ntitle,artist,rank,last_week,...\nDie With A Smile,Lady Gaga,1,1,...\nAPT.,Rose & Bruno Mars,2,2,..."
   },
   {
     "objectID": "slides/05_tue_pandas.html#selecting-rows",
     "href": "slides/05_tue_pandas.html#selecting-rows",
     "title": "Programming, problem solving, and algorithms",
     "section": "Selecting rows",
-    "text": "Selecting rows\n\n\n\n\ndf.nlargest(n, col) — top n by column\ndf[df[col] &gt; val] — filter by condition"
+    "text": "Selecting rows\n\n\n\n\n\ndf.nlargest(n, col) — top n by column\n\n\n\n\n\n\n\n\ndf[df[col] &gt; val] — filter by condition"
   },
   {
     "objectID": "slides/05_tue_pandas.html#adding-a-column",
     "href": "slides/05_tue_pandas.html#adding-a-column",
     "title": "Programming, problem solving, and algorithms",
     "section": "Adding a column",
-    "text": "Adding a column\n\n\n\ndf['new_col'] = expression\nAdds a column to the DataFrame containing the computed value for every row.\ndf[df['col'] &gt; val]\nFilter rows by the new column."
+    "text": "Adding a column\n\n\n\ndf['new_col'] = expression\nAdds a column to the DataFrame containing the computed value for every row.\ndf[df['new_col'] &gt; val]\nFilter rows by the new column."
   },
   {
     "objectID": "slides/05_tue_pandas.html#guided-demos",
@@ -1275,7 +1275,7 @@
     "href": "slides/05_tue_pandas.html#lets-write-code",
     "title": "Programming, problem solving, and algorithms",
     "section": "Let’s Write Code",
-    "text": "Let’s Write Code\nOpen CA5.2 Billboard, and load class_nb.py.\nPrairieLearn Activity"
+    "text": "Let’s Write Code\nOpen CA5.1 Billboard, and load STUDENT_nb.py.\nPrairieLearn Activity"
   },
   {
     "objectID": "slides/05_tue_pandas.html#resources",

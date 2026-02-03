@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Clock face -->
+  <circle cx="100" cy="100" r="90" fill="white" stroke="#333" stroke-width="3"/>
+
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="4" fill="#333"/>
+
+  <!-- Numbers 0-6 arranged evenly, 0 at top -->
+  <!-- Each number is 360/7 = 51.43 degrees apart -->
+  <!-- Starting at -90 degrees (top) and going clockwise -->
+
+  <!-- 0 at top (angle = -90°) -->
+  <text x="100" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">0</text>
+
+  <!-- 1 at angle = -90 + 51.43 = -38.57° -->
+  <!-- x = 100 + 72*cos(-38.57°) = 100 + 56.3 = 156.3 -->
+  <!-- y = 100 + 72*sin(-38.57°) = 100 - 44.9 = 55.1 -->
+  <text x="156" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">1</text>
+
+  <!-- 2 at angle = -90 + 102.86 = 12.86° -->
+  <!-- x = 100 + 72*cos(12.86°) = 100 + 70.2 = 170.2 -->
+  <!-- y = 100 + 72*sin(12.86°) = 100 + 16.0 = 116 -->
+  <text x="172" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">2</text>
+
+  <!-- 3 at angle = -90 + 154.29 = 64.29° -->
+  <!-- x = 100 + 72*cos(64.29°) = 100 + 31.3 = 131.3 -->
+  <!-- y = 100 + 72*sin(64.29°) = 100 + 64.9 = 164.9 -->
+  <text x="131" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">3</text>
+
+  <!-- 4 at angle = -90 + 205.71 = 115.71° -->
+  <!-- x = 100 + 72*cos(115.71°) = 100 - 31.3 = 68.7 -->
+  <!-- y = 100 + 72*sin(115.71°) = 100 + 64.9 = 164.9 -->
+  <text x="69" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">4</text>
+
+  <!-- 5 at angle = -90 + 257.14 = 167.14° -->
+  <!-- x = 100 + 72*cos(167.14°) = 100 - 70.2 = 29.8 -->
+  <!-- y = 100 + 72*sin(167.14°) = 100 + 16.0 = 116 -->
+  <text x="28" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">5</text>
+
+  <!-- 6 at angle = -90 + 308.57 = 218.57° -->
+  <!-- x = 100 + 72*cos(218.57°) = 100 - 56.3 = 43.7 -->
+  <!-- y = 100 + 72*sin(218.57°) = 100 - 44.9 = 55.1 -->
+  <text x="44" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">6</text>
+
+</svg>
