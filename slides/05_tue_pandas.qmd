@@ -1,9 +1,9 @@
 ---
-date: 2025-10-07
+date: 2026-02-03
 pyodide:
-  - pandas
-  - matplotlib
-  - datetime
+  packages:
+    - pandas
+    - matplotlib
 ---
 
 ## Announcements
@@ -38,21 +38,33 @@ pyodide:
 
 Let $w =$ `today.weekday()` $\in \{0,\dots,6\}$ and note **Saturday $= 5$**.
 
+
+::::: columns
+:::: {.column width="60%"}
+
+
 **offset:** How many days to step *back* to reach Saturday.
 
-
-* If today is **Saturday** ($w=5$): offset $=0$  
-* If today is **Sunday** ($w=6$): offset $=1$  
-* If today is **Monday** ($w=0$): offset $=2$  
+* If today is **Saturday** ($w=5$): offset $=0$
+* If today is **Sunday** ($w=6$): offset $=1$
+* If today is **Monday** ($w=0$): offset $=2$
 * ...
 
 $$
-\texttt{offset} = (w - 5)\bmod 7 
+\texttt{offset} = (w - 5)\bmod 7
 $$
 
 $$
 \texttt{lastSaturday} = \texttt{today} - \texttt{timedelta(days=offset)}.
 $$
+
+::::
+:::: {.column width="20%"}
+
+![](/images/clock7.svg){width="100%"}
+
+::::
+:::::
 
 <!-- Inline SVG week strip (Mon=0 … Sun=6; Sat=5 highlighted) -->
 <svg viewBox="0 0 820 120" width="90%" role="img" aria-label="Weekday indices Mon=0 ... Sun=6; Saturday=5">
@@ -105,7 +117,13 @@ print(f"Last Saturday's date was: {lastSatDate}")
 
 We explored Billboard data using **loops**:
 
-```python
+``` {pyodide}
+chartlist = [
+    {"title": "Die With A Smile", "artist": "Lady Gaga & Bruno Mars", "rank": 1},
+    {"title": "APT.", "artist": "Rose & Bruno Mars", "rank": 2},
+    {"title": "Shake It Off", "artist": "Lady Gaga", "rank": 10},
+]
+
 # Find artist with most songs
 artist_counts = {}
 for song in chartlist:
@@ -114,6 +132,8 @@ for song in chartlist:
         artist_counts[artist] += 1
     else:
         artist_counts[artist] = 1
+
+print(artist_counts)
 ```
 
 This works, but it's verbose. Every question needed a loop!
@@ -129,6 +149,8 @@ DataFrames have **built-in operations** for filtering, aggregating, and more.
 
 ## pandas and data frames
 
+::::: columns
+::: {.column width="50%"}
 `import pandas as pd`
 
 Create a DataFrame from a list of dictionaries:
@@ -142,6 +164,23 @@ Or load from a CSV file:
 ```python
 df = pd.read_csv('billboard.csv')
 ```
+:::
+
+::: {.column width="50%"}
+``` {pyodide}
+import pandas as pd
+
+chartlist = [
+    {"title": "Die With A Smile", "artist": "Lady Gaga & Bruno Mars", "rank": 1},
+    {"title": "APT.", "artist": "Rose & Bruno Mars", "rank": 2},
+    {"title": "Shake It Off", "artist": "Lady Gaga", "rank": 10},
+]
+
+df = pd.DataFrame(chartlist)
+print(df)
+```
+:::
+:::::
 
 ## The Payoff: One-Liners! {.smaller}
 
@@ -152,22 +191,39 @@ df = pd.read_csv('billboard.csv')
 | Filter long-running | 4 lines | `df[df['weeks'] > 10]` |
 | Find biggest mover | 8+ lines | `df.loc[df['gradient'].abs().idxmax()]` |
 
-## CSV files
+## CSV files {.smaller}
 
-To load data: `df = pd.read_csv('bill_week.csv')`
+::::: columns
+::: {.column width="40%"}
+To load data:
+
+```python
+df = pd.read_csv('billboard.csv')
+```
 
 CSV files have field names in row 1, and data beginning in row 2.
 
-``` {.default filename="bill_week.csv"}
-,week,title,artist,rank,last_week,peak_pos,weeks_on_chart
-0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19
-1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12
-2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10
-3,2019-09-21,Circles,Post Malone,4,7,4,2
-4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24
-5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15
-6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14
+```default
+title,artist,rank,last_week,...
+Die With A Smile,Lady Gaga,1,1,...
+APT.,Rose & Bruno Mars,2,2,...
 ```
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+print(df.head())  # First 5 rows
+```
+
+``` {pyodide}
+# What columns do we have?
+print(df.columns.tolist())
+```
+:::
+:::::
 
 ##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
 
@@ -176,192 +232,266 @@ CSV files have field names in row 1, and data beginning in row 2.
 ::::: columns
 ::: {.column width="40%"}
 ![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in pandas data frames."}
+
+-   `df.nlargest(n, col)` — top n by column
+-   `df[df[col] > val]` — filter by condition
 :::
 
 ::: {.column width="60%"}
--   `df.nlargest(10,'last_week')`
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
-    Returns top 10 hits from last week.
+# Top 5 by weeks on chart
+print(df.nlargest(5, 'weeks')[['title', 'weeks']])
+```
 
-\
-
--   `df[ df['weeks_on_chart'] > 10 ]`
-
-    Returns all songs that have been on the charts for more than 10 weeks.
+``` {pyodide}
+# Songs on chart more than 20 weeks
+long_runners = df[df['weeks'] > 20]
+print(long_runners[['title', 'weeks']])
+```
 :::
 :::::
 
 ## Adding a column {.smaller}
 
--   `df['gradient'] = df['last_week'] - df['rank']`
+::::: columns
+::: {.column width="40%"}
+-   `df['new_col'] = expression`
 
-    Adds a column to the DataFrame containing the difference for every row.
+    Adds a column to the DataFrame containing the computed value for every row.
 
-\
+-   `df[df['col'] > val]`
 
--   `df[ df['gradient'] > 10 ]`
+    Filter rows by the new column.
+:::
 
-    Returns all songs that have moved more than 10 spaces in the last week.
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
 
-## Some challenges...
+# Add a "gradient" column (positive = rising)
+df['gradient'] = df['last_week'] - df['rank']
 
-Given last week's chart:
-
-1.  How many new songs were there?
-
-2.  What's the average peak?
-
-3.  Among those who were on the list for more than 10wk, what's the average peak?
-    (Is it very different than the previous answer?)
-
-4.  Which song changed the most?
-    Was it rising or falling?
-
-5.  Write and answer your own question:
-
-    [\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
-
-::: notes
-``` python
-df2 = pd.read_csv('bill_week.csv')
-df3 = df2[ df2['weeks_on_chart'] > 10 ]
-print("all:  ")
-print(df2)
-print("endurance:  ")
-print(df3)
-
-df4 = df2[ df2['last_week'] == 101].count()['title']
-df5 = df3['peak_pos'].mean()
-print("new count")
-print(df4)
-print("peak avg")
-print(df5)
+# Find songs that rose more than 10 spots
+risers = df[df['gradient'] > 10]
+print(risers[['title', 'rank', 'last_week', 'gradient']])
 ```
 :::
+:::::
+
+## Guided Demos
+
+Let's work through some examples together before you try similar problems.
+
+# Demo 1: Counting with a condition
+
+## Demo: How many Taylor Swift songs? {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Count songs by a specific artist.
+
+**Strategy:**
+
+1. Filter rows where artist contains "Taylor"
+2. Count the resulting rows
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+# Filter for Taylor Swift
+taylor = df[df['artist'].str.contains('Taylor')]
+print(f"Taylor Swift has {len(taylor)} songs on the chart:")
+print(taylor[['rank', 'title']])
+```
+:::
+:::::
+
+## Demo: How many songs at #1 peak? {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Count songs that peaked at #1.
+
+**Strategy:**
+
+1. Filter where `peakPos == 1`
+2. Count with `len()` or `.shape[0]`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+# Songs that peaked at #1
+peaked_at_one = df[df['peakPos'] == 1]
+print(f"Songs that peaked at #1: {len(peaked_at_one)}")
+print(peaked_at_one[['rank', 'title', 'peakPos']].head())
+```
+:::
+:::::
+
+# Demo 2: Aggregation (mean, max, min)
+
+## Demo: Average weeks on chart {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Find the average weeks on chart.
+
+**Strategy:**
+
+- Select a column: `df['weeks']`
+- Apply aggregation: `.mean()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+avg_weeks = df['weeks'].mean()
+print(f"Average weeks on chart: {avg_weeks:.1f}")
+
+# Also useful: min, max, median
+print(f"Min: {df['weeks'].min()}, Max: {df['weeks'].max()}")
+```
+:::
+:::::
+
+## Demo: Average weeks for top 10 only {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Average weeks, but only for top 10 songs.
+
+**Strategy:**
+
+1. Filter first: `df[df['rank'] <= 10]`
+2. Then aggregate: `['weeks'].mean()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+top10 = df[df['rank'] <= 10]
+avg_weeks_top10 = top10['weeks'].mean()
+
+print(f"Average weeks (all songs): {df['weeks'].mean():.1f}")
+print(f"Average weeks (top 10): {avg_weeks_top10:.1f}")
+```
+:::
+:::::
+
+# Demo 3: Finding extremes with idxmax
+
+## Demo: Longest-running song {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Find the song with the most weeks on chart.
+
+**Strategy:**
+
+- `idxmax()` returns the **row index** of the maximum
+- `df.loc[idx]` retrieves that row
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+# Find index of max weeks
+idx = df['weeks'].idxmax()
+longest = df.loc[idx]
+
+print(f"Longest-running song:")
+print(f"  {longest['title']} by {longest['artist']}")
+print(f"  {longest['weeks']} weeks, currently #{longest['rank']}")
+```
+:::
+:::::
+
+## Demo: Biggest riser this week {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Which song moved up the most?
+
+**Problem:** New songs have `lastPos = 0` (they weren't on the chart last week).
+
+**Strategy:**
+
+1. Filter out new songs first
+2. Compute change: `lastPos - rank`
+3. Find max with `idxmax()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+# Exclude new songs (lastPos == 0 means "not on chart last week")
+returning = df[df['lastPos'] > 0].copy()
+
+# Positive = rose, negative = fell
+returning['change'] = returning['lastPos'] - returning['rank']
+
+# Find biggest riser
+idx = returning['change'].idxmax()
+riser = returning.loc[idx]
+print(f"Biggest riser: {riser['title']}")
+print(f"  #{riser['lastPos']} → #{riser['rank']} (up {riser['change']} spots)")
+```
+:::
+:::::
+
+## Handling special values {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+**The `lastPos = 0` problem**
+
+New songs weren't on the chart last week, so `lastPos = 0`.
+
+If we compute `change = lastPos - rank`:
+
+- New song at #23: `0 - 23 = -23`
+- Looks like it **fell** 23 spots!
+
+**Solution:** Filter them out first, or use `isNew`.
+:::
+
+::: {.column width="50%"}
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+
+# New songs have lastPos = 0
+new_songs = df[df['lastPos'] == 0]
+print("New songs (lastPos = 0):")
+print(new_songs[['rank', 'title', 'lastPos', 'isNew']])
+```
+:::
+:::::
+
 
 ## Let's Write Code {.activity}
 
 Open CA5.2 Billboard, and load `class_nb.py`.
 
 [PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
-
-## Some challenges...
-
-::::: columns
-::: {.column width="50%"}
-How many new songs are there?
-:::
-
-::: {.column width="50%"}
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-|----|----|----|----|----|----|
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-:::
-:::::
-
-::: notes
-Filter, apply function, think about output (sometimes means choosing columns, too)
-
-``` python
-df[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title']
-```
-:::
-
-## Some challenges...
-
-::::: columns
-::: {.column width="50%"}
-What's the average peak?
-:::
-
-::: {.column width="50%"}
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-|----|----|----|----|----|----|
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-:::
-:::::
-
-::: notes
-``` python
-df5 = df3['peak_pos'].mean()
-```
-:::
-
-## Some challenges...
-
-::::: columns
-::: {.column width="50%"}
-Among those who were on the list for more than 10wk, what's the average peak?
-(Is it very different than the previous answer?)
-:::
-
-::: {.column width="50%"}
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-|----|----|----|----|----|----|
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-:::
-:::::
-
-::: notes
-``` python
-enduring_peak = df[df['weeks_on_chart']>=10]['peak_pos'].mean()
-print("enduring avg peak: " + str(enduring_peak))
-```
-:::
-
-## Some challenges...
-
-::::: columns
-::: {.column width="50%"}
-Which song moved the most?
-Did it rise or fall?
-:::
-
-::: {.column width="50%"}
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-|----|----|----|----|----|----|
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-| [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} | [C]{.text-hidden} |
-:::
-:::::
-
-::: notes
-``` python
-df['gradient'] = df['rank'] - df['last_week']
-print(df.loc[df['gradient'].abs().idxmax()])
-```
-:::
 
 
 ## Resources
