@@ -1156,7 +1156,7 @@
     "href": "slides/05_tue_pandas.html#last-saturday",
     "title": "Programming, problem solving, and algorithms",
     "section": "Last Saturday",
-    "text": "Last Saturday\nLet \\(w =\\) today.weekday() \\(\\in \\{0,\\dots,6\\}\\) and note Saturday \\(= 5\\).\noffset: How many days to step back to reach Saturday.\n\nIf today is Saturday (\\(w=5\\)): offset \\(=0\\)\n\nIf today is Sunday (\\(w=6\\)): offset \\(=1\\)\n\nIf today is Monday (\\(w=0\\)): offset \\(=2\\)\n\n…\n\n\\[\n\\texttt{offset} = (w - 5)\\bmod 7\n\\]\n\\[\n\\texttt{lastSaturday} = \\texttt{today} - \\texttt{timedelta(days=offset)}.\n\\]\n\n\n\n\n           Mon0 Tue1 Wed2 Thu3 Fri4 Sat5 Sun6"
+    "text": "Last Saturday\nLet \\(w =\\) today.weekday() \\(\\in \\{0,\\dots,6\\}\\) and note Saturday \\(= 5\\).\n\n\noffset: How many days to step back to reach Saturday.\n\nIf today is Saturday (\\(w=5\\)): offset \\(=0\\)\nIf today is Sunday (\\(w=6\\)): offset \\(=1\\)\nIf today is Monday (\\(w=0\\)): offset \\(=2\\)\n…\n\n\\[\n\\texttt{offset} = (w - 5)\\bmod 7\n\\]\n\\[\n\\texttt{lastSaturday} = \\texttt{today} - \\texttt{timedelta(days=offset)}.\n\\]\n\n\n\n\n\n\n\n           Mon0 Tue1 Wed2 Thu3 Fri4 Sat5 Sun6"
   },
   {
     "objectID": "slides/05_tue_pandas.html#code",
@@ -1170,7 +1170,7 @@
     "href": "slides/05_tue_pandas.html#last-time-lists-of-dictionaries",
     "title": "Programming, problem solving, and algorithms",
     "section": "Last time: Lists of Dictionaries",
-    "text": "Last time: Lists of Dictionaries\nWe explored Billboard data using loops:\n# Find artist with most songs\nartist_counts = {}\nfor song in chartlist:\n    artist = song['artist']\n    if artist in artist_counts:\n        artist_counts[artist] += 1\n    else:\n        artist_counts[artist] = 1\nThis works, but it’s verbose. Every question needed a loop!"
+    "text": "Last time: Lists of Dictionaries\nWe explored Billboard data using loops:\n\n\n\n\n\n\nThis works, but it’s verbose. Every question needed a loop!"
   },
   {
     "objectID": "slides/05_tue_pandas.html#a-better-way-dataframes",
@@ -1184,7 +1184,7 @@
     "href": "slides/05_tue_pandas.html#pandas-and-data-frames",
     "title": "Programming, problem solving, and algorithms",
     "section": "pandas and data frames",
-    "text": "pandas and data frames\nimport pandas as pd\nCreate a DataFrame from a list of dictionaries:\ndf = pd.DataFrame(chartlist)\nOr load from a CSV file:\ndf = pd.read_csv('billboard.csv')"
+    "text": "pandas and data frames\n\n\nimport pandas as pd\nCreate a DataFrame from a list of dictionaries:\ndf = pd.DataFrame(chartlist)\nOr load from a CSV file:\ndf = pd.read_csv('billboard.csv')"
   },
   {
     "objectID": "slides/05_tue_pandas.html#the-payoff-one-liners",
@@ -1198,28 +1198,77 @@
     "href": "slides/05_tue_pandas.html#csv-files",
     "title": "Programming, problem solving, and algorithms",
     "section": "CSV files",
-    "text": "CSV files\nTo load data: df = pd.read_csv('bill_week.csv')\nCSV files have field names in row 1, and data beginning in row 2.\n\n\nbill_week.csv\n\n,week,title,artist,rank,last_week,peak_pos,weeks_on_chart\n0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19\n1,2019-09-21,Senorita,Shawn Mendes & Camila Cabello,2,2,1,12\n2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10\n3,2019-09-21,Circles,Post Malone,4,7,4,2\n4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24\n5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15\n6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14"
+    "text": "CSV files\n\n\nTo load data:\ndf = pd.read_csv('billboard.csv')\nCSV files have field names in row 1, and data beginning in row 2.\ntitle,artist,rank,last_week,...\nDie With A Smile,Lady Gaga,1,1,...\nAPT.,Rose & Bruno Mars,2,2,..."
   },
   {
     "objectID": "slides/05_tue_pandas.html#selecting-rows",
     "href": "slides/05_tue_pandas.html#selecting-rows",
     "title": "Programming, problem solving, and algorithms",
     "section": "Selecting rows",
-    "text": "Selecting rows\n\n\n\n\n\ndf.nlargest(10,'last_week')\nReturns top 10 hits from last week.\n\n\n\n\ndf[ df['weeks_on_chart'] &gt; 10 ]\nReturns all songs that have been on the charts for more than 10 weeks."
+    "text": "Selecting rows\n\n\n\n\ndf.nlargest(n, col) — top n by column\ndf[df[col] &gt; val] — filter by condition"
   },
   {
     "objectID": "slides/05_tue_pandas.html#adding-a-column",
     "href": "slides/05_tue_pandas.html#adding-a-column",
     "title": "Programming, problem solving, and algorithms",
     "section": "Adding a column",
-    "text": "Adding a column\n\ndf['gradient'] = df['last_week'] - df['rank']\nAdds a column to the DataFrame containing the difference for every row.\n\n\n\n\ndf[ df['gradient'] &gt; 10 ]\nReturns all songs that have moved more than 10 spaces in the last week."
+    "text": "Adding a column\n\n\n\ndf['new_col'] = expression\nAdds a column to the DataFrame containing the computed value for every row.\ndf[df['col'] &gt; val]\nFilter rows by the new column."
   },
   {
-    "objectID": "slides/05_tue_pandas.html#some-challenges",
-    "href": "slides/05_tue_pandas.html#some-challenges",
+    "objectID": "slides/05_tue_pandas.html#guided-demos",
+    "href": "slides/05_tue_pandas.html#guided-demos",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\nGiven last week’s chart:\n\nHow many new songs were there?\nWhat’s the average peak?\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\nWhich song changed the most? Was it rising or falling?\nWrite and answer your own question:\n_____________________________________________________\n\n\ndf2 = pd.read_csv('bill_week.csv')\ndf3 = df2[ df2['weeks_on_chart'] &gt; 10 ]\nprint(\"all:  \")\nprint(df2)\nprint(\"endurance:  \")\nprint(df3)\n\ndf4 = df2[ df2['last_week'] == 101].count()['title']\ndf5 = df3['peak_pos'].mean()\nprint(\"new count\")\nprint(df4)\nprint(\"peak avg\")\nprint(df5)"
+    "section": "Guided Demos",
+    "text": "Guided Demos\nLet’s work through some examples together before you try similar problems."
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-how-many-taylor-swift-songs",
+    "href": "slides/05_tue_pandas.html#demo-how-many-taylor-swift-songs",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: How many Taylor Swift songs?",
+    "text": "Demo: How many Taylor Swift songs?\n\n\nGoal: Count songs by a specific artist.\nStrategy:\n\nFilter rows where artist contains “Taylor”\nCount the resulting rows"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-how-many-songs-at-1-peak",
+    "href": "slides/05_tue_pandas.html#demo-how-many-songs-at-1-peak",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: How many songs at #1 peak?",
+    "text": "Demo: How many songs at #1 peak?\n\n\nGoal: Count songs that peaked at #1.\nStrategy:\n\nFilter where peakPos == 1\nCount with len() or .shape[0]"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-average-weeks-on-chart",
+    "href": "slides/05_tue_pandas.html#demo-average-weeks-on-chart",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: Average weeks on chart",
+    "text": "Demo: Average weeks on chart\n\n\nGoal: Find the average weeks on chart.\nStrategy:\n\nSelect a column: df['weeks']\nApply aggregation: .mean()"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-average-weeks-for-top-10-only",
+    "href": "slides/05_tue_pandas.html#demo-average-weeks-for-top-10-only",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: Average weeks for top 10 only",
+    "text": "Demo: Average weeks for top 10 only\n\n\nGoal: Average weeks, but only for top 10 songs.\nStrategy:\n\nFilter first: df[df['rank'] &lt;= 10]\nThen aggregate: ['weeks'].mean()"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-longest-running-song",
+    "href": "slides/05_tue_pandas.html#demo-longest-running-song",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: Longest-running song",
+    "text": "Demo: Longest-running song\n\n\nGoal: Find the song with the most weeks on chart.\nStrategy:\n\nidxmax() returns the row index of the maximum\ndf.loc[idx] retrieves that row"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#demo-biggest-riser-this-week",
+    "href": "slides/05_tue_pandas.html#demo-biggest-riser-this-week",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo: Biggest riser this week",
+    "text": "Demo: Biggest riser this week\n\n\nGoal: Which song moved up the most?\nProblem: New songs have lastPos = 0 (they weren’t on the chart last week).\nStrategy:\n\nFilter out new songs first\nCompute change: lastPos - rank\nFind max with idxmax()"
+  },
+  {
+    "objectID": "slides/05_tue_pandas.html#handling-special-values",
+    "href": "slides/05_tue_pandas.html#handling-special-values",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handling special values",
+    "text": "Handling special values\n\n\nThe lastPos = 0 problem\nNew songs weren’t on the chart last week, so lastPos = 0.\nIf we compute change = lastPos - rank:\n\nNew song at #23: 0 - 23 = -23\nLooks like it fell 23 spots!\n\nSolution: Filter them out first, or use isNew."
   },
   {
     "objectID": "slides/05_tue_pandas.html#lets-write-code",
@@ -1227,34 +1276,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Let’s Write Code",
     "text": "Let’s Write Code\nOpen CA5.2 Billboard, and load class_nb.py.\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/05_tue_pandas.html#some-challenges-1",
-    "href": "slides/05_tue_pandas.html#some-challenges-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nHow many new songs are there?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nFilter, apply function, think about output (sometimes means choosing columns, too)\ndf[df['last_week'] == 101][['title', 'artist', 'weeks_on_chart']] .count()[‘title']"
-  },
-  {
-    "objectID": "slides/05_tue_pandas.html#some-challenges-2",
-    "href": "slides/05_tue_pandas.html#some-challenges-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nWhat’s the average peak?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf5 = df3['peak_pos'].mean()"
-  },
-  {
-    "objectID": "slides/05_tue_pandas.html#some-challenges-3",
-    "href": "slides/05_tue_pandas.html#some-challenges-3",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nAmong those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\nenduring_peak = df[df['weeks_on_chart']&gt;=10]['peak_pos'].mean()\nprint(\"enduring avg peak: \" + str(enduring_peak))"
-  },
-  {
-    "objectID": "slides/05_tue_pandas.html#some-challenges-4",
-    "href": "slides/05_tue_pandas.html#some-challenges-4",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Some challenges…",
-    "text": "Some challenges…\n\n\nWhich song moved the most? Did it rise or fall?\n\n\n\n\n\n\n\n\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\nC\nC\nC\nC\nC\nC\n\n\n\n\n\ndf['gradient'] = df['rank'] - df['last_week']\nprint(df.loc[df['gradient'].abs().idxmax()])"
   },
   {
     "objectID": "slides/05_tue_pandas.html#resources",

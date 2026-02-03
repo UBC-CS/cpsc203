@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <meta name="dcterms.date" content="2025-10-07">
+  <meta name="dcterms.date" content="2026-02-03">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -213,7 +213,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 7, 2025</p>
+  <p class="date">February 3, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
@@ -257,14 +257,13 @@
 <section id="last-saturday" class="slide level2 smaller">
 <h2>Last Saturday</h2>
 <p>Let <span class="math inline">\(w =\)</span> <code>today.weekday()</code> <span class="math inline">\(\in \{0,\dots,6\}\)</span> and note <strong>Saturday <span class="math inline">\(= 5\)</span></strong>.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>offset:</strong> How many days to step <em>back</em> to reach Saturday.</p>
 <ul>
-<li>If today is <strong>Saturday</strong> (<span class="math inline">\(w=5\)</span>): offset <span class="math inline">\(=0\)</span><br>
-</li>
-<li>If today is <strong>Sunday</strong> (<span class="math inline">\(w=6\)</span>): offset <span class="math inline">\(=1\)</span><br>
-</li>
-<li>If today is <strong>Monday</strong> (<span class="math inline">\(w=0\)</span>): offset <span class="math inline">\(=2\)</span><br>
-</li>
+<li>If today is <strong>Saturday</strong> (<span class="math inline">\(w=5\)</span>): offset <span class="math inline">\(=0\)</span></li>
+<li>If today is <strong>Sunday</strong> (<span class="math inline">\(w=6\)</span>): offset <span class="math inline">\(=1\)</span></li>
+<li>If today is <strong>Monday</strong> (<span class="math inline">\(w=0\)</span>): offset <span class="math inline">\(=2\)</span></li>
 <li>…</li>
 </ul>
 <p><span class="math display">\[
@@ -273,6 +272,9 @@
 <p><span class="math display">\[
 \texttt{lastSaturday} = \texttt{today} - \texttt{timedelta(days=offset)}.
 \]</span></p>
+</div><div class="column" style="width:20%;">
+<p><img data-src="../images/clock7.svg" style="width:100.0%"></p>
+</div></div>
 <!-- Inline SVG week strip (Mon=0 … Sun=6; Sat=5 highlighted) -->
 <svg viewbox="0 0 820 120" width="90%" role="img" aria-label="Weekday indices Mon=0 ... Sun=6; Saturday=5">
 <style>
@@ -302,14 +304,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <section id="last-time-lists-of-dictionaries" class="slide level2">
 <h2>Last time: Lists of Dictionaries</h2>
 <p>We explored Billboard data using <strong>loops</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Find artist with most songs</span></span>
-<span id="cb1-2"><a></a>artist_counts <span class="op">=</span> {}</span>
-<span id="cb1-3"><a></a><span class="cf">for</span> song <span class="kw">in</span> chartlist:</span>
-<span id="cb1-4"><a></a>    artist <span class="op">=</span> song[<span class="st">'artist'</span>]</span>
-<span id="cb1-5"><a></a>    <span class="cf">if</span> artist <span class="kw">in</span> artist_counts:</span>
-<span id="cb1-6"><a></a>        artist_counts[artist] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb1-7"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb1-8"><a></a>        artist_counts[artist] <span class="op">=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2hhcnRsaXN0ID0gW1xuICAgIHtcInRpdGxlXCI6IFwiRGllIFdpdGggQSBTbWlsZVwiLCBcImFydGlzdFwiOiBcIkxhZHkgR2FnYSAmIEJydW5vIE1hcnNcIiwgXCJyYW5rXCI6IDF9LFxuICAgIHtcInRpdGxlXCI6IFwiQVBULlwiLCBcImFydGlzdFwiOiBcIlJvc2UgJiBCcnVubyBNYXJzXCIsIFwicmFua1wiOiAyfSxcbiAgICB7XCJ0aXRsZVwiOiBcIlNoYWtlIEl0IE9mZlwiLCBcImFydGlzdFwiOiBcIkxhZHkgR2FnYVwiLCBcInJhbmtcIjogMTB9LFxuXVxuXG4jIEZpbmQgYXJ0aXN0IHdpdGggbW9zdCBzb25nc1xuYXJ0aXN0X2NvdW50cyA9IHt9XG5mb3Igc29uZyBpbiBjaGFydGxpc3Q6XG4gICAgYXJ0aXN0ID0gc29uZ1snYXJ0aXN0J11cbiAgICBpZiBhcnRpc3QgaW4gYXJ0aXN0X2NvdW50czpcbiAgICAgICAgYXJ0aXN0X2NvdW50c1thcnRpc3RdICs9IDFcbiAgICBlbHNlOlxuICAgICAgICBhcnRpc3RfY291bnRzW2FydGlzdF0gPSAxXG5cbnByaW50KGFydGlzdF9jb3VudHMpIn0=
+</script>
+</div>
 <p>This works, but it’s verbose. Every question needed a loop!</p>
 </section>
 <section id="a-better-way-dataframes" class="slide level2">
@@ -323,11 +325,23 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 </section>
 <section id="pandas-and-data-frames" class="slide level2">
 <h2>pandas and data frames</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><code>import pandas as pd</code></p>
 <p>Create a DataFrame from a list of dictionaries:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df <span class="op">=</span> pd.DataFrame(chartlist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>df <span class="op">=</span> pd.DataFrame(chartlist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Or load from a CSV file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5jaGFydGxpc3QgPSBbXG4gICAge1widGl0bGVcIjogXCJEaWUgV2l0aCBBIFNtaWxlXCIsIFwiYXJ0aXN0XCI6IFwiTGFkeSBHYWdhICYgQnJ1bm8gTWFyc1wiLCBcInJhbmtcIjogMX0sXG4gICAge1widGl0bGVcIjogXCJBUFQuXCIsIFwiYXJ0aXN0XCI6IFwiUm9zZSAmIEJydW5vIE1hcnNcIiwgXCJyYW5rXCI6IDJ9LFxuICAgIHtcInRpdGxlXCI6IFwiU2hha2UgSXQgT2ZmXCIsIFwiYXJ0aXN0XCI6IFwiTGFkeSBHYWdhXCIsIFwicmFua1wiOiAxMH0sXG5dXG5cbmRmID0gcGQuRGF0YUZyYW1lKGNoYXJ0bGlzdClcbnByaW50KGRmKSJ9
+</script>
+</div>
+</div></div>
 </section>
 <section id="the-payoff-one-liners" class="slide level2 smaller">
 <h2>The Payoff: One-Liners!</h2>
@@ -368,23 +382,34 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 </tbody>
 </table>
 </section>
-<section id="csv-files" class="slide level2">
+<section id="csv-files" class="slide level2 smaller">
 <h2>CSV files</h2>
-<p>To load data: <code>df = pd.read_csv('bill_week.csv')</code></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>To load data:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>CSV files have field names in row 1, and data beginning in row 2.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>bill_week.csv</strong></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a></a>title,artist,rank,last_week,...</span>
+<span id="cb4-2"><a></a>Die With A Smile,Lady Gaga,1,1,...</span>
+<span id="cb4-3"><a></a>APT.,Rose &amp; Bruno Mars,2,2,...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="bill_week.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a></a>,week,title,artist,rank,last_week,peak_pos,weeks_on_chart</span>
-<span id="cb4-2"><a></a>0,2019-09-21,Truth Hurts,Lizzo,1,1,1,19</span>
-<span id="cb4-3"><a></a>1,2019-09-21,Senorita,Shawn Mendes &amp; Camila Cabello,2,2,1,12</span>
-<span id="cb4-4"><a></a>2,2019-09-21,Goodbyes,Post Malone Featuring Young Thug,3,10,3,10</span>
-<span id="cb4-5"><a></a>3,2019-09-21,Circles,Post Malone,4,7,4,2</span>
-<span id="cb4-6"><a></a>4,2019-09-21,Bad Guy,Billie Eilish,5,3,1,24</span>
-<span id="cb4-7"><a></a>5,2019-09-21,Ran$om,Lil Tecca,6,4,4,15</span>
-<span id="cb4-8"><a></a>6,2019-09-21,No Guidance,Chris Brown Featuring Drake,7,6,6,14</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KCdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vVUJDLUNTL2Nwc2MyMDMvcmVmcy9oZWFkcy9tYWluL2RhdGEvYmlsbF8yMDI2LTAxLTMxLmNzdicpXG5wcmludChkZi5oZWFkKCkpICAjIEZpcnN0IDUgcm93cyJ9
+</script>
 </div>
+<div>
+<div id="pyodide-5" class="exercise-cell">
+
+</div>
+<script type="pyodide-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBXaGF0IGNvbHVtbnMgZG8gd2UgaGF2ZT9cbnByaW50KGRmLmNvbHVtbnMudG9saXN0KCkpIn0=
+</script>
+</div>
+</div></div>
 </section>
 <section id="section" class="slide level2" data-background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" data-background-interactive="true" data-menu-title="pandas cheat sheet">
 <h2></h2>
@@ -394,536 +419,224 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><img data-src="../images/pandas-subset-rows.png" alt="pandas cheat sheet section on selecting rows in pandas data frames."></p>
+<ul>
+<li><code>df.nlargest(n, col)</code> — top n by column</li>
+<li><code>df[df[col] &gt; val]</code> — filter by condition</li>
+</ul>
 </div><div class="column" style="width:60%;">
-<ul>
-<li><p><code>df.nlargest(10,'last_week')</code></p>
-<p>Returns top 10 hits from last week.</p></li>
-</ul>
-<p><br>
-</p>
-<ul>
-<li><p><code>df[ df['weeks_on_chart'] &gt; 10 ]</code></p>
-<p>Returns all songs that have been on the charts for more than 10 weeks.</p></li>
-</ul>
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
+</div>
+<script type="pyodide-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIFRvcCA1IGJ5IHdlZWtzIG9uIGNoYXJ0XG5wcmludChkZi5ubGFyZ2VzdCg1LCAnd2Vla3MnKVtbJ3RpdGxlJywgJ3dlZWtzJ11dKSJ9
+</script>
+</div>
+<div>
+<div id="pyodide-7" class="exercise-cell">
+
+</div>
+<script type="pyodide-7-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBTb25ncyBvbiBjaGFydCBtb3JlIHRoYW4gMjAgd2Vla3NcbmxvbmdfcnVubmVycyA9IGRmW2RmWyd3ZWVrcyddID4gMjBdXG5wcmludChsb25nX3J1bm5lcnNbWyd0aXRsZScsICd3ZWVrcyddXSkifQ==
+</script>
+</div>
 </div></div>
 </section>
 <section id="adding-a-column" class="slide level2 smaller">
 <h2>Adding a column</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
-<li><p><code>df['gradient'] = df['last_week'] - df['rank']</code></p>
-<p>Adds a column to the DataFrame containing the difference for every row.</p></li>
+<li><p><code>df['new_col'] = expression</code></p>
+<p>Adds a column to the DataFrame containing the computed value for every row.</p></li>
+<li><p><code>df[df['col'] &gt; val]</code></p>
+<p>Filter rows by the new column.</p></li>
 </ul>
-<p><br>
-</p>
-<ul>
-<li><p><code>df[ df['gradient'] &gt; 10 ]</code></p>
-<p>Returns all songs that have moved more than 10 spaces in the last week.</p></li>
-</ul>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-8" class="exercise-cell">
+
+</div>
+<script type="pyodide-8-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIEFkZCBhIFwiZ3JhZGllbnRcIiBjb2x1bW4gKHBvc2l0aXZlID0gcmlzaW5nKVxuZGZbJ2dyYWRpZW50J10gPSBkZlsnbGFzdF93ZWVrJ10gLSBkZlsncmFuayddXG5cbiMgRmluZCBzb25ncyB0aGF0IHJvc2UgbW9yZSB0aGFuIDEwIHNwb3RzXG5yaXNlcnMgPSBkZltkZlsnZ3JhZGllbnQnXSA+IDEwXVxucHJpbnQocmlzZXJzW1sndGl0bGUnLCAncmFuaycsICdsYXN0X3dlZWsnLCAnZ3JhZGllbnQnXV0pIn0=
+</script>
+</div>
+</div></div>
 </section>
-<section id="some-challenges" class="slide level2">
-<h2>Some challenges…</h2>
-<p>Given last week’s chart:</p>
+<section id="guided-demos" class="slide level2">
+<h2>Guided Demos</h2>
+<p>Let’s work through some examples together before you try similar problems.</p>
+</section></section>
+<section>
+<section id="demo-1-counting-with-a-condition" class="title-slide slide level1 center">
+<h1>Demo 1: Counting with a condition</h1>
+
+</section>
+<section id="demo-how-many-taylor-swift-songs" class="slide level2 smaller">
+<h2>Demo: How many Taylor Swift songs?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Count songs by a specific artist.</p>
+<p><strong>Strategy:</strong></p>
 <ol type="1">
-<li><p>How many new songs were there?</p></li>
-<li><p>What’s the average peak?</p></li>
-<li><p>Among those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)</p></li>
-<li><p>Which song changed the most? Was it rising or falling?</p></li>
-<li><p>Write and answer your own question:</p>
-<p><u>_____________________________________________________</u></p></li>
+<li>Filter rows where artist contains “Taylor”</li>
+<li>Count the resulting rows</li>
 </ol>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'bill_week.csv'</span>)</span>
-<span id="cb5-2"><a></a>df3 <span class="op">=</span> df2[ df2[<span class="st">'weeks_on_chart'</span>] <span class="op">&gt;</span> <span class="dv">10</span> ]</span>
-<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="st">"all:  "</span>)</span>
-<span id="cb5-4"><a></a><span class="bu">print</span>(df2)</span>
-<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">"endurance:  "</span>)</span>
-<span id="cb5-6"><a></a><span class="bu">print</span>(df3)</span>
-<span id="cb5-7"><a></a></span>
-<span id="cb5-8"><a></a>df4 <span class="op">=</span> df2[ df2[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>].count()[<span class="st">'title'</span>]</span>
-<span id="cb5-9"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(<span class="st">"new count"</span>)</span>
-<span id="cb5-11"><a></a><span class="bu">print</span>(df4)</span>
-<span id="cb5-12"><a></a><span class="bu">print</span>(<span class="st">"peak avg"</span>)</span>
-<span id="cb5-13"><a></a><span class="bu">print</span>(df5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-9" class="exercise-cell">
+
+</div>
+<script type="pyodide-9-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIEZpbHRlciBmb3IgVGF5bG9yIFN3aWZ0XG50YXlsb3IgPSBkZltkZlsnYXJ0aXN0J10uc3RyLmNvbnRhaW5zKCdUYXlsb3InKV1cbnByaW50KGZcIlRheWxvciBTd2lmdCBoYXMge2xlbih0YXlsb3IpfSBzb25ncyBvbiB0aGUgY2hhcnQ6XCIpXG5wcmludCh0YXlsb3JbWydyYW5rJywgJ3RpdGxlJ11dKSJ9
+</script>
+</div>
+</div></div>
+</section>
+<section id="demo-how-many-songs-at-1-peak" class="slide level2 smaller">
+<h2>Demo: How many songs at #1 peak?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Count songs that peaked at #1.</p>
+<p><strong>Strategy:</strong></p>
+<ol type="1">
+<li>Filter where <code>peakPos == 1</code></li>
+<li>Count with <code>len()</code> or <code>.shape[0]</code></li>
+</ol>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-10" class="exercise-cell">
+
+</div>
+<script type="pyodide-10-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIFNvbmdzIHRoYXQgcGVha2VkIGF0ICMxXG5wZWFrZWRfYXRfb25lID0gZGZbZGZbJ3BlYWtQb3MnXSA9PSAxXVxucHJpbnQoZlwiU29uZ3MgdGhhdCBwZWFrZWQgYXQgIzE6IHtsZW4ocGVha2VkX2F0X29uZSl9XCIpXG5wcmludChwZWFrZWRfYXRfb25lW1sncmFuaycsICd0aXRsZScsICdwZWFrUG9zJ11dLmhlYWQoKSkifQ==
+</script>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="demo-2-aggregation-mean-max-min" class="title-slide slide level1 center">
+<h1>Demo 2: Aggregation (mean, max, min)</h1>
+
+</section>
+<section id="demo-average-weeks-on-chart" class="slide level2 smaller">
+<h2>Demo: Average weeks on chart</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Find the average weeks on chart.</p>
+<p><strong>Strategy:</strong></p>
+<ul>
+<li>Select a column: <code>df['weeks']</code></li>
+<li>Apply aggregation: <code>.mean()</code></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-11" class="exercise-cell">
+
+</div>
+<script type="pyodide-11-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG5hdmdfd2Vla3MgPSBkZlsnd2Vla3MnXS5tZWFuKClcbnByaW50KGZcIkF2ZXJhZ2Ugd2Vla3Mgb24gY2hhcnQ6IHthdmdfd2Vla3M6LjFmfVwiKVxuXG4jIEFsc28gdXNlZnVsOiBtaW4sIG1heCwgbWVkaWFuXG5wcmludChmXCJNaW46IHtkZlsnd2Vla3MnXS5taW4oKX0sIE1heDoge2RmWyd3ZWVrcyddLm1heCgpfVwiKSJ9
+</script>
+</div>
+</div></div>
+</section>
+<section id="demo-average-weeks-for-top-10-only" class="slide level2 smaller">
+<h2>Demo: Average weeks for top 10 only</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Average weeks, but only for top 10 songs.</p>
+<p><strong>Strategy:</strong></p>
+<ol type="1">
+<li>Filter first: <code>df[df['rank'] &lt;= 10]</code></li>
+<li>Then aggregate: <code>['weeks'].mean()</code></li>
+</ol>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-12" class="exercise-cell">
+
+</div>
+<script type="pyodide-12-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG50b3AxMCA9IGRmW2RmWydyYW5rJ10gPD0gMTBdXG5hdmdfd2Vla3NfdG9wMTAgPSB0b3AxMFsnd2Vla3MnXS5tZWFuKClcblxucHJpbnQoZlwiQXZlcmFnZSB3ZWVrcyAoYWxsIHNvbmdzKToge2RmWyd3ZWVrcyddLm1lYW4oKTouMWZ9XCIpXG5wcmludChmXCJBdmVyYWdlIHdlZWtzICh0b3AgMTApOiB7YXZnX3dlZWtzX3RvcDEwOi4xZn1cIikifQ==
+</script>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="demo-3-finding-extremes-with-idxmax" class="title-slide slide level1 center">
+<h1>Demo 3: Finding extremes with idxmax</h1>
+
+</section>
+<section id="demo-longest-running-song" class="slide level2 smaller">
+<h2>Demo: Longest-running song</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Find the song with the most weeks on chart.</p>
+<p><strong>Strategy:</strong></p>
+<ul>
+<li><code>idxmax()</code> returns the <strong>row index</strong> of the maximum</li>
+<li><code>df.loc[idx]</code> retrieves that row</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-13" class="exercise-cell">
+
+</div>
+<script type="pyodide-13-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIEZpbmQgaW5kZXggb2YgbWF4IHdlZWtzXG5pZHggPSBkZlsnd2Vla3MnXS5pZHhtYXgoKVxubG9uZ2VzdCA9IGRmLmxvY1tpZHhdXG5cbnByaW50KGZcIkxvbmdlc3QtcnVubmluZyBzb25nOlwiKVxucHJpbnQoZlwiICB7bG9uZ2VzdFsndGl0bGUnXX0gYnkge2xvbmdlc3RbJ2FydGlzdCddfVwiKVxucHJpbnQoZlwiICB7bG9uZ2VzdFsnd2Vla3MnXX0gd2Vla3MsIGN1cnJlbnRseSAje2xvbmdlc3RbJ3JhbmsnXX1cIikifQ==
+</script>
+</div>
+</div></div>
+</section>
+<section id="demo-biggest-riser-this-week" class="slide level2 smaller">
+<h2>Demo: Biggest riser this week</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Goal:</strong> Which song moved up the most?</p>
+<p><strong>Problem:</strong> New songs have <code>lastPos = 0</code> (they weren’t on the chart last week).</p>
+<p><strong>Strategy:</strong></p>
+<ol type="1">
+<li>Filter out new songs first</li>
+<li>Compute change: <code>lastPos - rank</code></li>
+<li>Find max with <code>idxmax()</code></li>
+</ol>
+</div><div class="column" style="width:60%;">
+<div>
+<div id="pyodide-14" class="exercise-cell">
+
+</div>
+<script type="pyodide-14-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIEV4Y2x1ZGUgbmV3IHNvbmdzIChsYXN0UG9zID09IDAgbWVhbnMgXCJub3Qgb24gY2hhcnQgbGFzdCB3ZWVrXCIpXG5yZXR1cm5pbmcgPSBkZltkZlsnbGFzdFBvcyddID4gMF0uY29weSgpXG5cbiMgUG9zaXRpdmUgPSByb3NlLCBuZWdhdGl2ZSA9IGZlbGxcbnJldHVybmluZ1snY2hhbmdlJ10gPSByZXR1cm5pbmdbJ2xhc3RQb3MnXSAtIHJldHVybmluZ1sncmFuayddXG5cbiMgRmluZCBiaWdnZXN0IHJpc2VyXG5pZHggPSByZXR1cm5pbmdbJ2NoYW5nZSddLmlkeG1heCgpXG5yaXNlciA9IHJldHVybmluZy5sb2NbaWR4XVxucHJpbnQoZlwiQmlnZ2VzdCByaXNlcjoge3Jpc2VyWyd0aXRsZSddfVwiKVxucHJpbnQoZlwiICAje3Jpc2VyWydsYXN0UG9zJ119IOKGkiAje3Jpc2VyWydyYW5rJ119ICh1cCB7cmlzZXJbJ2NoYW5nZSddfSBzcG90cylcIikifQ==
+</script>
+</div>
+</div></div>
+</section>
+<section id="handling-special-values" class="slide level2 smaller">
+<h2>Handling special values</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>The <code>lastPos = 0</code> problem</strong></p>
+<p>New songs weren’t on the chart last week, so <code>lastPos = 0</code>.</p>
+<p>If we compute <code>change = lastPos - rank</code>:</p>
+<ul>
+<li>New song at #23: <code>0 - 23 = -23</code></li>
+<li>Looks like it <strong>fell</strong> 23 spots!</li>
+</ul>
+<p><strong>Solution:</strong> Filter them out first, or use <code>isNew</code>.</p>
+</div><div class="column" style="width:50%;">
+<div>
+<div id="pyodide-15" class="exercise-cell">
+
+</div>
+<script type="pyodide-15-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VCQy1DUy9jcHNjMjAzL3JlZnMvaGVhZHMvbWFpbi9kYXRhL2JpbGxfMjAyNi0wMS0zMS5jc3YnKVxuXG4jIE5ldyBzb25ncyBoYXZlIGxhc3RQb3MgPSAwXG5uZXdfc29uZ3MgPSBkZltkZlsnbGFzdFBvcyddID09IDBdXG5wcmludChcIk5ldyBzb25ncyAobGFzdFBvcyA9IDApOlwiKVxucHJpbnQobmV3X3NvbmdzW1sncmFuaycsICd0aXRsZScsICdsYXN0UG9zJywgJ2lzTmV3J11dKSJ9
+</script>
+</div>
+</div></div>
 </section>
 <section id="lets-write-code" class="slide level2 activity">
 <h2>Let’s Write Code</h2>
 <p>Open CA5.2 Billboard, and load <code>class_nb.py</code>.</p>
 <p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345">PrairieLearn Activity</a></p>
-</section>
-<section id="some-challenges-1" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>How many new songs are there?</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-<aside class="notes">
-<p>Filter, apply function, think about output (sometimes means choosing columns, too)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>df[df[<span class="st">'last_week'</span>] <span class="op">==</span> <span class="dv">101</span>][[<span class="st">'title'</span>, <span class="st">'artist'</span>, <span class="st">'weeks_on_chart'</span>]] .count()[‘title<span class="st">']</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="some-challenges-2" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>What’s the average peak?</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>df5 <span class="op">=</span> df3[<span class="st">'peak_pos'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="some-challenges-3" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Among those who were on the list for more than 10wk, what’s the average peak? (Is it very different than the previous answer?)</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>enduring_peak <span class="op">=</span> df[df[<span class="st">'weeks_on_chart'</span>]<span class="op">&gt;=</span><span class="dv">10</span>][<span class="st">'peak_pos'</span>].mean()</span>
-<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">"enduring avg peak: "</span> <span class="op">+</span> <span class="bu">str</span>(enduring_peak))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="some-challenges-4" class="slide level2">
-<h2>Some challenges…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Which song moved the most? Did it rise or fall?</p>
-</div><div class="column" style="width:50%;">
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-<th><span class="text-hidden">C</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="even">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-<tr class="odd">
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-<td><span class="text-hidden">C</span></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'rank'</span>] <span class="op">-</span> df[<span class="st">'last_week'</span>]</span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(df.loc[df[<span class="st">'gradient'</span>].<span class="bu">abs</span>().idxmax()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
@@ -934,10 +647,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 
 
 <script type="pyodide-data">
-eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIiwicGFuZGFzIiwibWF0cGxvdGxpYiJdfX0=
 </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTE1IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTUgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE1LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE0IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTQgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE0LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEzIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTMgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEzLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTMtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMyA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEyIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTIgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEyLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMiA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTExIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTEgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTExLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTEtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEwIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTAgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEwLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTAtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTAsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTkiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl85ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzkgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzksIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTgiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS04LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzggPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzgsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTciLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl83ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS03LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzcgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzcsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTYiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl82ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzYgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzUgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzMgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
