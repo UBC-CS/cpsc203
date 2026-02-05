@@ -177,7 +177,7 @@ But plotting wants **one column per song**:
 ``` {pyodide}
 # Step A: Group by date AND title
 grouped = onespath.groupby(['date', 'title'])
-print(type(grouped))
+grouped.size().head(10)  # Show first 10 groups (each has 1 row)
 ```
 
 `groupby` organizes rows into groups — here, one group per (date, title) pair.
