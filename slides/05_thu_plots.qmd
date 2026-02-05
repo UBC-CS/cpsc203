@@ -1,9 +1,9 @@
 ---
 date: 2026-02-05
 pyodide:
-  - pandas
-  - matplotlib
-  - datetime
+  packages:
+    - pandas
+    - matplotlib
 ---
 
 ## Announcements
@@ -28,25 +28,196 @@ Given a year of charts,
 
 We can quantify these things, and analyze them, but a picture will help us see if there's anything interesting in the data.
 
-## The key technique: `.isin()`
+## Sketch
 
-To track specific songs across weeks, we need to filter by a **list** of values:
+Draw a very loose sketch of the paths through the charts of all the songs that hit #1.
 
-```python
-# Get songs that were #1 at some point
-number_ones = df[df['rank'] == 1]['song'].unique()
+- First imagine what the path of *one* song looks like.
 
-# Filter to only those songs (across all weeks)
-trajectories = df[df['song'].isin(number_ones)]
+- How many paths are there?
+
+## Key steps:
+
+1. Assemble the data we want to analyze.
+2. Find the list of Number 1 songs.
+3. For each of those songs, make a list of their ranks over time.
+4. Plot each song's trajectory!
+
+
+## Step 1: One Week vs. One Year
+
+``` {pyodide}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load a YEAR of Billboard data (52 weeks!)
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/billboard2025.csv')
 ```
 
-`.isin()` returns `True` for rows where the column value is in the list.
+Tuesday: single snapshot (100 songs, 1 week)
+
+``` {pyodide}
+# Full year: 52 weeks × 100 songs = 5200 rows
+print(f"Shape: {df.shape}")
+print(f"Weeks of data: {df['date'].nunique()}")
+df.head()
+```
+
+## Structure of Multi-Week Data {.smaller}
+
+Each row is one song on one week's chart:
+
+``` {pyodide}
+# Same song appears multiple times (once per week on chart)
+example = df[df['title'] == 'Die With A Smile'][['date', 'title', 'rank', 'weeks']]
+print(example.head(10))
+```
+
+We can track a song's journey through the charts!
+
+## Step 2: Which Songs Hit #1? {.smaller}
+
+First, filter to rows where `rank == 1`:
+
+``` {pyodide}
+# Filter to #1 positions only
+at_number_one = df[df['rank'] == 1]
+print(f"Rows where a song was #1: {len(at_number_one)}")
+at_number_one[['date', 'title', 'artist']].head(10)
+```
+
+## Step 2: Get Unique Titles {.smaller}
+
+Many songs stay at #1 for multiple weeks. We want the **unique** song titles:
+
+``` {pyodide}
+# Get unique titles that were ever #1
+ones = df[df['rank'] == 1]['title']
+print(f"Total #1 positions: {len(ones)}")
+print(f"Unique songs that hit #1: {ones.nunique()}")
+print("\nThe songs:")
+print(ones.unique())
+```
+
+
+## Step 3: The Problem
+
+We have a list of song titles that hit #1.
+
+Now we want **all** rows for those songs — their complete chart history.
+
+How do we filter for existence in a list?
+
+## `.isin()` — Filter by List Membership {.smaller}
+
+``` {pyodide}
+students = pd.DataFrame({
+    'name': ['Bluey', 'Dora', 'Arthur', 'Peppa', 'Elmo', 'Moana', 'Bingo', 'Diego', 'Boots', 'Bandit'],
+    'major': ['ECON', 'BIOC', 'PHAS', 'EOSC', 'PSYC', 'MATH', 'ECON', 'BIOC', 'PHAS', 'PSYC']
+})
+```
+
+``` {pyodide}
+students
+```
+
+``` {pyodide}
+majors_to_find = ['ECON', 'PHAS']
+found_students = students[students['major'].isin(majors_to_find)]
+found_students
+```
+
+`.isin(list)` returns `True` for rows where the value appears in the list.
+
+
+## Step 4: Plot one Line Per Song
+
+We want to plot **rank over time** for each #1 song.
+
+- X-axis: \_\_\_\_\_\_\_\_\_
+- Y-axis: \_\_\_\_\_\_\_\_\_ (note: \_\_\_\_\_\_\_\_\_)
+- One line per song
+
+## Step 4: Reshaping for Plotting
+
+Our data looks like this (one row per song per week):
+
+| date | title | rank |
+|------|-------|------|
+| 2025-01-04 | Song A | 1 |
+| 2025-01-04 | Song B | 15 |
+| 2025-01-11 | Song A | 3 |
+| 2025-01-11 | Song B | 1 |
+
+But plotting wants **one column per song**:
+
+| date | Song A | Song B |
+|------|--------|--------|
+| 2025-01-04 | 1 | 15 |
+| 2025-01-11 | 3 | 1 |
+
+## Step 4A: Breaking Down the Chain {.smaller}
+
+``` {pyodide}
+# Step A: Group by date AND title
+grouped = onespath.groupby(['date', 'title'])
+print(type(grouped))
+```
+
+`groupby` organizes rows into groups — here, one group per (date, title) pair.
+
+## Step 4B: Extract the rank {.smaller}
+
+``` {pyodide}
+# Step B: Get the rank for each group
+ranks = onespath.groupby(['date', 'title'])['rank'].sum()
+print(ranks.head(10))
+```
+
+Now we have a **Series** with a multi-level index (date, title).
+
+`.sum()` might seem odd — but each group has exactly one row, so sum just extracts that value.
+
+## Step 4C: Pivot with `unstack()` {.smaller}
+
+``` {pyodide}
+# Step C: unstack pivots titles into columns
+plot_data = onespath.groupby(['date', 'title'])['rank'].sum().unstack()
+print(f"Shape: {plot_data.shape}")
+plot_data.head()
+```
+
+`unstack()` takes the inner index level (title) and makes it into columns.
+
+Now each column is a song, each row is a date!
+
+## Step 4D: The Plot {.smaller}
+
+``` {pyodide}
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Invert y-axis so #1 is at top
+ax.invert_yaxis()
+
+# Plot all trajectories
+onespath.groupby(['date', 'title'])['rank'].sum().unstack().plot(ax=ax)
+
+ax.set_ylabel('Chart Position')
+ax.set_xlabel('Date')
+ax.set_title('Chart Trajectories of #1 Songs (2025)')
+
+# Move legend outside the plot
+ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', fontsize=8)
+
+plt.tight_layout()
+plt.show()
+```
 
 ## Let's Write Code {.activity}
 
 Open the Billboard (Visualization) activity, and load `STUDENT_viz_nb.py`.
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2594345)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641272)
 
 ## Discussion
 
@@ -54,6 +225,91 @@ Open the Billboard (Visualization) activity, and load `STUDENT_viz_nb.py`.
 * Do most songs debut at the top?
 * How quickly do they typically fall?
 * Any songs with unusual trajectories?
+
+# Part 2: Staying Power
+
+## The Question
+
+Does a **strong debut** mean a song will stick around longer?
+
+Or do **slow climbers** have more staying power?
+
+Let's investigate with a scatter plot!
+
+## What We Need
+
+To answer this, we need two pieces of info for each song:
+
+1. **Debut position** — where did it first appear on the chart?
+2. **Total weeks** — how long did it stay on the chart?
+
+## Finding Debut Position {.smaller}
+
+The `isNew` column is `True` when a song first appears:
+
+``` {pyodide}
+# Songs in their first week on the chart
+debuts = df[df['isNew'] == True][['title', 'rank']]
+print(f"Songs that debuted in this data: {len(debuts)}")
+debuts.head(10)
+```
+
+## Finding Total Weeks {.smaller}
+
+The `weeks` column shows how many weeks a song has been on the chart.
+
+We want the **maximum** for each song:
+
+``` {pyodide}
+# Max weeks on chart for each song
+staying_power = df.groupby('title')['weeks'].max()
+print(f"Unique songs: {len(staying_power)}")
+staying_power.head(10)
+```
+
+## Combining the Data {.smaller}
+
+Now we need to merge debut position with staying power:
+
+``` {pyodide}
+# Rename columns for clarity
+debuts_df = debuts.rename(columns={'rank': 'debut_rank'})
+staying_df = staying_power.reset_index().rename(columns={'weeks': 'total_weeks'})
+
+# Merge on title
+combined = pd.merge(debuts_df, staying_df, on='title')
+combined.head(10)
+```
+
+## The Scatter Plot {.smaller}
+
+``` {pyodide}
+fig, ax = plt.subplots(figsize=(10, 6))
+
+ax.scatter(combined['debut_rank'], combined['total_weeks'], alpha=0.5)
+ax.invert_xaxis()  # Lower debut rank (better) on the right
+ax.set_xlabel('Debut Position (lower = better)')
+ax.set_ylabel('Total Weeks on Chart')
+ax.set_title('Does a Strong Debut Mean Staying Power?')
+
+plt.tight_layout()
+plt.show()
+```
+
+## What Do You See?
+
+- Is there a correlation between debut position and staying power?
+- Any outliers — songs that debuted low but stayed forever?
+- Or songs that debuted at #1 but disappeared quickly?
+
+## Summary
+
+| Concept | Code |
+|---------|------|
+| Filter by condition | `df[df['rank'] == 1]` |
+| Get unique values | `df['title'].unique()` |
+| Filter by list | `df[df['title'].isin(list)]` |
+| Reshape for plotting | `.groupby([...]).unstack()` |
 
 ## Resources
 
