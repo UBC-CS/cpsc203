@@ -22,7 +22,7 @@ Asking harder questions:
 
 Given a year of charts,
 
-* what do the paths of the number ones look like?
+* What do the paths of the number ones look like?
 
 * Do most songs debut at the top? How fast do they fall?
 
@@ -32,9 +32,11 @@ We can quantify these things, and analyze them, but a picture will help us see i
 
 Draw a very loose sketch of the paths through the charts of all the songs that hit #1.
 
-- First imagine what the path of *one* song looks like.
+- What are some reasonable axes?
 
-- How many paths are there?
+- Imagine what the path of *one* song looks like.
+
+- How many paths are there for all songs?
 
 ## Key steps:
 
@@ -46,24 +48,22 @@ Draw a very loose sketch of the paths through the charts of all the songs that h
 
 ## Step 1: One Week vs. One Year
 
+Tuesday: single snapshot (100 songs, 1 week)
+
 ``` {pyodide}
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load a YEAR of Billboard data (52 weeks!)
 df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/billboard2025.csv')
-```
 
-Tuesday: single snapshot (100 songs, 1 week)
-
-``` {pyodide}
-# Full year: 52 weeks × 100 songs = 5200 rows
-print(f"Shape: {df.shape}")
+print(f"Shape: {df.shape}") # How many rows?
 print(f"Weeks of data: {df['date'].nunique()}")
 df.head()
 ```
 
-## Structure of Multi-Week Data {.smaller}
+
+## Step 1: Structure of Multi-Week Data {.smaller}
 
 Each row is one song on one week's chart:
 
@@ -108,27 +108,38 @@ Now we want **all** rows for those songs — their complete chart history.
 
 How do we filter for existence in a list?
 
-## `.isin()` — Filter by List Membership {.smaller}
+## Step 3: `.isin()` — Filter by List Membership {.smaller}
 
 ``` {pyodide}
+#| echo: false
 students = pd.DataFrame({
     'name': ['Bluey', 'Dora', 'Arthur', 'Peppa', 'Elmo', 'Moana', 'Bingo', 'Diego', 'Boots', 'Bandit'],
     'major': ['ECON', 'BIOC', 'PHAS', 'EOSC', 'PSYC', 'MATH', 'ECON', 'BIOC', 'PHAS', 'PSYC']
 })
 ```
 
+:::: {.columns}
+::: {.column width="45%"}
 ``` {pyodide}
 students
 ```
-
+:::
+::: {.column width="55%"}
 ``` {pyodide}
 majors_to_find = ['ECON', 'PHAS']
 found_students = students[students['major'].isin(majors_to_find)]
 found_students
 ```
+:::
+::::
 
 `.isin(list)` returns `True` for rows where the value appears in the list.
 
+``` {pyodide}
+#| echo: false
+# Get all chart history for songs that hit #1
+onespath = df[df['title'].isin(ones)]
+```
 
 ## Step 4: Plot one Line Per Song
 
