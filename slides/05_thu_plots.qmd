@@ -112,6 +112,7 @@ How do we filter for existence in a list?
 
 ``` {pyodide}
 #| echo: false
+import pandas as pd
 students = pd.DataFrame({
     'name': ['Bluey', 'Dora', 'Arthur', 'Peppa', 'Elmo', 'Moana', 'Bingo', 'Diego', 'Boots', 'Bandit'],
     'major': ['ECON', 'BIOC', 'PHAS', 'EOSC', 'PSYC', 'MATH', 'ECON', 'BIOC', 'PHAS', 'PSYC']
@@ -137,7 +138,11 @@ found_students
 
 ``` {pyodide}
 #| echo: false
-# Get all chart history for songs that hit #1
+#| output: false
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/billboard2025.csv')
+ones = df[df['rank'] == 1]['title']
 onespath = df[df['title'].isin(ones)]
 ```
 
