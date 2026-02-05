@@ -1303,14 +1303,14 @@
     "href": "slides/05_thu_plots.html#todays-challenge",
     "title": "Programming, problem solving, and algorithms",
     "section": "Today’s challenge…",
-    "text": "Today’s challenge…\nGiven a year of charts,\n\nwhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data."
+    "text": "Today’s challenge…\nGiven a year of charts,\n\nWhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data."
   },
   {
     "objectID": "slides/05_thu_plots.html#sketch",
     "href": "slides/05_thu_plots.html#sketch",
     "title": "Programming, problem solving, and algorithms",
     "section": "Sketch",
-    "text": "Sketch\nDraw a very loose sketch of the paths through the charts of all the songs that hit #1.\n\nFirst imagine what the path of one song looks like.\nHow many paths are there?"
+    "text": "Sketch\nDraw a very loose sketch of the paths through the charts of all the songs that hit #1.\n\nWhat are some reasonable axes?\nImagine what the path of one song looks like.\nHow many paths are there for all songs?"
   },
   {
     "objectID": "slides/05_thu_plots.html#key-steps",
@@ -1324,14 +1324,14 @@
     "href": "slides/05_thu_plots.html#step-1-one-week-vs.-one-year",
     "title": "Programming, problem solving, and algorithms",
     "section": "Step 1: One Week vs. One Year",
-    "text": "Step 1: One Week vs. One Year\n\n\n\n\n\n\nTuesday: single snapshot (100 songs, 1 week)"
+    "text": "Step 1: One Week vs. One Year\nTuesday: single snapshot (100 songs, 1 week)"
   },
   {
-    "objectID": "slides/05_thu_plots.html#structure-of-multi-week-data",
-    "href": "slides/05_thu_plots.html#structure-of-multi-week-data",
+    "objectID": "slides/05_thu_plots.html#step-1-structure-of-multi-week-data",
+    "href": "slides/05_thu_plots.html#step-1-structure-of-multi-week-data",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Structure of Multi-Week Data",
-    "text": "Structure of Multi-Week Data\nEach row is one song on one week’s chart:\n\n\n\n\n\n\nWe can track a song’s journey through the charts!"
+    "section": "Step 1: Structure of Multi-Week Data",
+    "text": "Step 1: Structure of Multi-Week Data\nEach row is one song on one week’s chart:\n\n\n\n\n\n\nWe can track a song’s journey through the charts!"
   },
   {
     "objectID": "slides/05_thu_plots.html#step-2-which-songs-hit-1",
@@ -1355,11 +1355,11 @@
     "text": "Step 3: The Problem\nWe have a list of song titles that hit #1.\nNow we want all rows for those songs — their complete chart history.\nHow do we filter for existence in a list?"
   },
   {
-    "objectID": "slides/05_thu_plots.html#isin-filter-by-list-membership",
-    "href": "slides/05_thu_plots.html#isin-filter-by-list-membership",
+    "objectID": "slides/05_thu_plots.html#step-3-.isin-filter-by-list-membership",
+    "href": "slides/05_thu_plots.html#step-3-.isin-filter-by-list-membership",
     "title": "Programming, problem solving, and algorithms",
-    "section": ".isin() — Filter by List Membership",
-    "text": ".isin() — Filter by List Membership\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.isin(list) returns True for rows where the value appears in the list."
+    "section": "Step 3: .isin() — Filter by List Membership",
+    "text": "Step 3: .isin() — Filter by List Membership\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.isin(list) returns True for rows where the value appears in the list."
   },
   {
     "objectID": "slides/05_thu_plots.html#step-4-plot-one-line-per-song",
