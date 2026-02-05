@@ -1306,11 +1306,102 @@
     "text": "Today’s challenge…\nGiven a year of charts,\n\nwhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data."
   },
   {
-    "objectID": "slides/05_thu_plots.html#the-key-technique-.isin",
-    "href": "slides/05_thu_plots.html#the-key-technique-.isin",
+    "objectID": "slides/05_thu_plots.html#sketch",
+    "href": "slides/05_thu_plots.html#sketch",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The key technique: .isin()",
-    "text": "The key technique: .isin()\nTo track specific songs across weeks, we need to filter by a list of values:\n# Get songs that were #1 at some point\nnumber_ones = df[df['rank'] == 1]['song'].unique()\n\n# Filter to only those songs (across all weeks)\ntrajectories = df[df['song'].isin(number_ones)]\n.isin() returns True for rows where the column value is in the list."
+    "section": "Sketch",
+    "text": "Sketch\nDraw a very loose sketch of the paths through the charts of all the songs that hit #1.\n\nFirst imagine what the path of one song looks like.\nHow many paths are there?"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#key-steps",
+    "href": "slides/05_thu_plots.html#key-steps",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Key steps:",
+    "text": "Key steps:\n\nAssemble the data we want to analyze.\nFind the list of Number 1 songs.\nFor each of those songs, make a list of their ranks over time.\nPlot each song’s trajectory!"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-1-one-week-vs.-one-year",
+    "href": "slides/05_thu_plots.html#step-1-one-week-vs.-one-year",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 1: One Week vs. One Year",
+    "text": "Step 1: One Week vs. One Year\n\n\n\n\n\n\nTuesday: single snapshot (100 songs, 1 week)"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#structure-of-multi-week-data",
+    "href": "slides/05_thu_plots.html#structure-of-multi-week-data",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Structure of Multi-Week Data",
+    "text": "Structure of Multi-Week Data\nEach row is one song on one week’s chart:\n\n\n\n\n\n\nWe can track a song’s journey through the charts!"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-2-which-songs-hit-1",
+    "href": "slides/05_thu_plots.html#step-2-which-songs-hit-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 2: Which Songs Hit #1?",
+    "text": "Step 2: Which Songs Hit #1?\nFirst, filter to rows where rank == 1:"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-2-get-unique-titles",
+    "href": "slides/05_thu_plots.html#step-2-get-unique-titles",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 2: Get Unique Titles",
+    "text": "Step 2: Get Unique Titles\nMany songs stay at #1 for multiple weeks. We want the unique song titles:"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-3-the-problem",
+    "href": "slides/05_thu_plots.html#step-3-the-problem",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 3: The Problem",
+    "text": "Step 3: The Problem\nWe have a list of song titles that hit #1.\nNow we want all rows for those songs — their complete chart history.\nHow do we filter for existence in a list?"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#isin-filter-by-list-membership",
+    "href": "slides/05_thu_plots.html#isin-filter-by-list-membership",
+    "title": "Programming, problem solving, and algorithms",
+    "section": ".isin() — Filter by List Membership",
+    "text": ".isin() — Filter by List Membership\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.isin(list) returns True for rows where the value appears in the list."
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4-plot-one-line-per-song",
+    "href": "slides/05_thu_plots.html#step-4-plot-one-line-per-song",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4: Plot one Line Per Song",
+    "text": "Step 4: Plot one Line Per Song\nWe want to plot rank over time for each #1 song.\n\nX-axis: _________\nY-axis: _________ (note: _________)\nOne line per song"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4-reshaping-for-plotting",
+    "href": "slides/05_thu_plots.html#step-4-reshaping-for-plotting",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4: Reshaping for Plotting",
+    "text": "Step 4: Reshaping for Plotting\nOur data looks like this (one row per song per week):\n\n\n\ndate\ntitle\nrank\n\n\n\n\n2025-01-04\nSong A\n1\n\n\n2025-01-04\nSong B\n15\n\n\n2025-01-11\nSong A\n3\n\n\n2025-01-11\nSong B\n1\n\n\n\nBut plotting wants one column per song:\n\n\n\ndate\nSong A\nSong B\n\n\n\n\n2025-01-04\n1\n15\n\n\n2025-01-11\n3\n1"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4a-breaking-down-the-chain",
+    "href": "slides/05_thu_plots.html#step-4a-breaking-down-the-chain",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4A: Breaking Down the Chain",
+    "text": "Step 4A: Breaking Down the Chain\n\n\n\n\n\n\ngroupby organizes rows into groups — here, one group per (date, title) pair."
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4b-extract-the-rank",
+    "href": "slides/05_thu_plots.html#step-4b-extract-the-rank",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4B: Extract the rank",
+    "text": "Step 4B: Extract the rank\n\n\n\n\n\n\nNow we have a Series with a multi-level index (date, title).\n.sum() might seem odd — but each group has exactly one row, so sum just extracts that value."
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4c-pivot-with-unstack",
+    "href": "slides/05_thu_plots.html#step-4c-pivot-with-unstack",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4C: Pivot with unstack()",
+    "text": "Step 4C: Pivot with unstack()\n\n\n\n\n\n\nunstack() takes the inner index level (title) and makes it into columns.\nNow each column is a song, each row is a date!"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#step-4d-the-plot",
+    "href": "slides/05_thu_plots.html#step-4d-the-plot",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4D: The Plot",
+    "text": "Step 4D: The Plot"
   },
   {
     "objectID": "slides/05_thu_plots.html#lets-write-code",
@@ -1325,6 +1416,62 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Discussion",
     "text": "Discussion\n\nWhat patterns do you see in the #1 songs?\nDo most songs debut at the top?\nHow quickly do they typically fall?\nAny songs with unusual trajectories?"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#the-question",
+    "href": "slides/05_thu_plots.html#the-question",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Question",
+    "text": "The Question\nDoes a strong debut mean a song will stick around longer?\nOr do slow climbers have more staying power?\nLet’s investigate with a scatter plot!"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#what-we-need",
+    "href": "slides/05_thu_plots.html#what-we-need",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What We Need",
+    "text": "What We Need\nTo answer this, we need two pieces of info for each song:\n\nDebut position — where did it first appear on the chart?\nTotal weeks — how long did it stay on the chart?"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#finding-debut-position",
+    "href": "slides/05_thu_plots.html#finding-debut-position",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Finding Debut Position",
+    "text": "Finding Debut Position\nThe isNew column is True when a song first appears:"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#finding-total-weeks",
+    "href": "slides/05_thu_plots.html#finding-total-weeks",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Finding Total Weeks",
+    "text": "Finding Total Weeks\nThe weeks column shows how many weeks a song has been on the chart.\nWe want the maximum for each song:"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#combining-the-data",
+    "href": "slides/05_thu_plots.html#combining-the-data",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Combining the Data",
+    "text": "Combining the Data\nNow we need to merge debut position with staying power:"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#the-scatter-plot",
+    "href": "slides/05_thu_plots.html#the-scatter-plot",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Scatter Plot",
+    "text": "The Scatter Plot"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#what-do-you-see",
+    "href": "slides/05_thu_plots.html#what-do-you-see",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What Do You See?",
+    "text": "What Do You See?\n\nIs there a correlation between debut position and staying power?\nAny outliers — songs that debuted low but stayed forever?\nOr songs that debuted at #1 but disappeared quickly?"
+  },
+  {
+    "objectID": "slides/05_thu_plots.html#summary",
+    "href": "slides/05_thu_plots.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nConcept\nCode\n\n\n\n\nFilter by condition\ndf[df['rank'] == 1]\n\n\nGet unique values\ndf['title'].unique()\n\n\nFilter by list\ndf[df['title'].isin(list)]\n\n\nReshape for plotting\n.groupby([...]).unstack()"
   },
   {
     "objectID": "slides/05_thu_plots.html#resources",
