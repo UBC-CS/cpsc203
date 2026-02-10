@@ -1,0 +1,205 @@
+---
+date: 2026-02-12
+pyodide:
+  packages:
+    - pandas
+---
+
+## Announcements
+
+* Examlet 2 is happening now through Thursday — good luck!
+* Project 1 due March 1
+
+## Previously...
+
+🔍 **The Great Data Heist**
+
+You solved four rooms using dictionary patterns:
+
+1. **The Intersection** — Membership pattern (`defaultdict(bool)`)
+2. **The Cipher** — Counter pattern (`Counter`)
+3. **The Vault** — Complement/Two-Sum pattern
+4. **The Alibi Map** — Grouping pattern (`defaultdict(list)`)
+
+Today: One more pattern + catch the thief!
+
+## Recap: The Patterns So Far
+
+``` {pyodide}
+from collections import defaultdict, Counter
+
+# Membership: Track what we've seen
+seen = defaultdict(bool)
+seen["apple"] = True
+if seen["banana"]:  # False, no KeyError!
+    print("seen")
+
+# Counting: How many of each?
+counts = Counter(["a", "b", "a", "c", "a"])
+print(counts.most_common(1))  # [('a', 3)]
+
+# Grouping: Organize by category
+by_category = defaultdict(list)
+by_category["fruit"].append("apple")
+```
+
+## Pattern: Translation/Mapping
+
+**Use case:** Convert values from one representation to another.
+
+``` {pyodide}
+# Grade point conversion
+letter_to_gpa = {
+    "A+": 4.33, "A": 4.0, "A-": 3.67,
+    "B+": 3.33, "B": 3.0, "B-": 2.67,
+    "C+": 2.33, "C": 2.0, "C-": 1.67,
+    "D": 1.0, "F": 0.0
+}
+
+grades = ["A", "B+", "A-", "C"]
+gpas = [letter_to_gpa[g] for g in grades]
+print(f"Grades: {grades}")
+print(f"GPAs: {gpas}")
+print(f"Average: {sum(gpas)/len(gpas):.2f}")
+```
+
+# 🚪 Room 5: The Escape Route
+
+## Room 5: The Escape Route
+
+The thief left behind an emoji-coded escape plan:
+
+``` {pyodide}
+escape_message = "🚗➡️🏢⬅️🌳➡️🚂"
+```
+
+We found a partial decoder ring in their pocket:
+
+``` {pyodide}
+decoder = {
+    "🚗": "car",
+    "🏢": "building",
+    "🌳": "park",
+    "🚂": "train station",
+    "➡️": "go to",
+    "⬅️": "avoid"
+}
+```
+
+Decode the escape route!
+
+## Room 5: Decoding
+
+``` {pyodide}
+escape_message = "🚗➡️🏢⬅️🌳➡️🚂"
+
+decoded_route = []
+for emoji in escape_message:
+    if emoji in decoder:
+        decoded_route.append(decoder[emoji])
+    else:
+        decoded_route.append(f"[unknown: {emoji}]")
+
+print("Escape route:")
+print(" → ".join(decoded_route))
+```
+
+## 🔓 Room 5 Complete!
+
+The thief planned to escape via car to the building, avoid the park, and catch a train!
+
+``` {pyodide}
+print("🚨 Alert the train station!")
+```
+
+# 🎯 The Finale
+
+## Putting It All Together
+
+You've gathered all the clues:
+
+1. **Room 1:** Suspects in both galleries: Prof. Histogram, Dr. Correlation
+2. **Room 2:** Cipher revealed: "DIAGONAL" — vault hint
+3. **Room 3:** Vault code cracked
+4. **Room 4:** Ms. Outlier has unverified alibi, no witnesses
+5. **Room 5:** Escape route decoded — train station!
+
+## The Deduction
+
+``` {pyodide}
+# Cross-reference all evidence
+clues = {
+    "in_both_galleries": ["Prof. Histogram", "Dr. Correlation"],
+    "unverified_alibi": ["Prof. Histogram", "Ms. Outlier", "Mr. Regression"],
+    "no_alibi_witnesses": ["Ms. Outlier"],
+    "verified_elsewhere": ["Dr. Correlation", "Dean Bayes"]
+}
+
+# Find suspects who match ALL suspicious criteria
+suspects_in_both = set(clues["in_both_galleries"])
+unverified = set(clues["unverified_alibi"])
+verified_elsewhere = set(clues["verified_elsewhere"])
+
+# In both galleries AND unverified alibi AND not verified elsewhere
+prime_suspect = suspects_in_both & unverified - verified_elsewhere
+print(f"🔍 The thief is: {prime_suspect}")
+```
+
+## 🎉 Case Closed!
+
+**Prof. Histogram** stole the Golden DataFrame!
+
+- ✅ Was in both Gallery A and Gallery B
+- ✅ Claims "faculty meeting" but unverified
+- ✅ Another person claims same alibi (providing cover)
+- ❌ Not verified to be elsewhere
+
+## The Dictionary Patterns
+
+| Pattern | Use Case | Technique |
+|---------|----------|-----------|
+| **Record** | Store named fields | `{"name": ..., "age": ...}` |
+| **Membership** | Track what we've seen | `seen[x] = True` |
+| **Counting** | Count occurrences | `Counter(items)` |
+| **Complement** | Find pairs | Store & check complements |
+| **Grouping** | Organize by category | `defaultdict(list)` |
+| **Translation** | Convert values | Direct key → value mapping |
+
+## Continue the Heist! {.activity}
+
+If you haven't finished the Data Heist, keep working on it!
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
+
+## Why This Matters
+
+These patterns show up constantly in data analysis:
+
+- **Membership:** "Which users visited both pages?"
+- **Counter:** "What are the most common words in this text?"
+- **Complement:** "Find transactions that balance to zero"
+- **Grouping:** "Organize students by major" (like pandas groupby!)
+- **Translation:** "Convert letter grades to GPA"
+
+Dictionaries make these tasks fast and elegant.
+
+## Summary
+
+Dictionaries give you **fast lookup by key** — whether you have 100 items or 100,000.
+
+The patterns we learned:
+
+1. **Record** — Store data with named fields (like Billboard songs)
+2. **Membership** — Have I seen this before?
+3. **Counting** — How many of each? (use `Counter`)
+4. **Complement** — Find the matching pair
+5. **Grouping** — Organize by category (use `defaultdict`)
+6. **Translation** — Convert from one format to another
+
+## Next Week
+
+🌴 **Reading Week — No Classes!**
+
+Enjoy the break, and keep working on Project 1.
+
+See you in Week 8!

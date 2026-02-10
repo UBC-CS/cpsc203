@@ -1,0 +1,621 @@
+---
+date: 2026-02-10
+pyodide:
+  packages:
+    - pandas
+---
+
+## Announcements
+
+* Examlet 2 is this Thursday — book your slot on PrairieTest!
+* Project 1 (Pokémon Data Explorer) released — due March 1
+
+## Today
+
+🔍 **The Great Data Heist**
+
+An escape room adventure to master Python dictionaries!
+
+## The Setup
+
+:::: {.columns}
+::: {.column width="60%"}
+Last night, someone broke into the **Vancouver Museum of Data Science**.
+
+The thief stole the legendary **Golden DataFrame** — an artifact said to contain the answers to all data questions.
+
+You've been called in as **data detectives** to solve the case.
+:::
+::: {.column width="40%"}
+![](https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=300)
+:::
+::::
+
+## Your Tool: The Dictionary
+
+Dictionaries are Python's **key-value lookup** structure.
+
+``` {pyodide}
+# Creating a dictionary
+suspect = {
+    "name": "Prof. Histogram",
+    "department": "Statistics",
+    "alibi": "Was at faculty meeting",
+    "motive": "Jealousy of the DataFrame's power"
+}
+
+print(suspect["name"])
+print(suspect["alibi"])
+```
+
+## Pattern: Dictionary as Record
+
+This looks familiar! It's just like our Billboard data:
+
+``` {pyodide}
+# A list of dictionaries — each dict is a "record" with named fields
+songs = [
+    {"title": "Die With A Smile", "artist": "Bruno Mars", "rank": 1},
+    {"title": "APT.", "artist": "Rose", "rank": 2},
+    {"title": "Birds of a Feather", "artist": "Billie Eilish", "rank": 3},
+]
+
+# Access fields by name, not position
+for song in songs:
+    print(f"{song['rank']}. {song['title']} by {song['artist']}")
+```
+
+This is similar to named tuples and dataclasses — keys act like attribute names!
+
+## Dictionary Basics
+
+``` {pyodide}
+# Access by key
+print(suspect["department"])
+
+# Add new key-value pair
+suspect["last_seen"] = "Library, 8pm"
+
+# Check if key exists
+if "motive" in suspect:
+    print("Motive found!")
+
+# Get all keys
+print(list(suspect.keys()))
+```
+
+## Watch Out: KeyError!
+
+``` {pyodide}
+# What happens if the key doesn't exist?
+try:
+    print(suspect["hobby"])
+except KeyError as e:
+    print(f"KeyError: {e} — that key doesn't exist!")
+```
+
+``` {pyodide}
+# Safe way to check first
+if "hobby" in suspect:
+    print(suspect["hobby"])
+else:
+    print("No hobby on file")
+```
+
+## Why Dictionaries?
+
+**Lists:** Access by position (index)
+```python
+data[0], data[1], data[2]  # What's at position 0?
+```
+
+**Dictionaries:** Access by meaningful key
+```python
+data["name"], data["age"], data["score"]  # Self-documenting!
+```
+
+Dictionaries are also **fast** — looking up a key takes about the same time whether you have 10 items or 10 million!
+
+## The Evidence Room
+
+Before we enter the crime scene, let's examine the evidence we've gathered:
+
+``` {pyodide}
+# Security log: who entered which rooms
+security_log = [
+    {"person": "Prof. Histogram", "room": "Gallery A", "time": "7:00pm"},
+    {"person": "Dr. Correlation", "room": "Gallery B", "time": "7:15pm"},
+    {"person": "Prof. Histogram", "room": "Gallery B", "time": "7:30pm"},
+    {"person": "Ms. Outlier", "room": "Gallery A", "time": "7:45pm"},
+    {"person": "Dr. Correlation", "room": "Vault", "time": "8:00pm"},
+    {"person": "Prof. Histogram", "room": "Vault", "time": "8:15pm"},
+]
+```
+
+## Pattern: Tracking Membership
+
+**Use case:** Track whether we've encountered something before.
+
+``` {pyodide}
+from collections import defaultdict
+
+# defaultdict(bool) returns False for missing keys
+seen = defaultdict(bool)
+
+# Mark something as seen
+seen["apple"] = True
+seen["banana"] = True
+
+# Check if we've seen it — no KeyError!
+if seen["apple"]:
+    print("We've seen apple before!")
+
+if not seen["cherry"]:
+    print("Cherry is new to us")
+```
+
+`defaultdict(bool)` returns `False` for missing keys — no KeyError!
+
+# 🚪 Room 1: The Intersection
+
+## Room 1: The Intersection
+
+The thief visited **both** Gallery A and Gallery B before the theft.
+
+**Your mission:** Find everyone who was in BOTH rooms.
+
+``` {pyodide}
+# Who was in Gallery A?
+gallery_a_visitors = [log["______"] for log in ____________
+                      if log["____"] == "Gallery A"]
+print("Gallery A:", gallery_a_visitors)
+```
+
+``` {pyodide}
+#| echo: false
+gallery_a_visitors = [log["person"] for log in security_log
+                      if log["room"] == "Gallery A"]
+gallery_b_visitors = [log["person"] for log in security_log
+                      if log["room"] == "Gallery B"]
+```
+
+## The Naive Approach: Check Every Pair
+
+``` {pyodide}
+# Check every person in A against every person in B
+in_both = []
+for person_a in gallery_a_visitors:      # Loop through A
+    for person_b in gallery_b_visitors:  # Loop through B
+        if person_a == person_b:
+            in_both.append(person_a)
+print("In both:", set(in_both))
+```
+
+This works... but what if the lists are LONG?
+
+## The Problem with Nested Loops
+
+![](images/nested_loop_check.png)
+
+With 10 people in Gallery A and 12 in Gallery B:
+**10 × 12 = 120 comparisons**
+
+With 10,000 in each: **100,000,000 comparisons!**
+
+## Room 1: Solving with a Dictionary
+
+``` {pyodide}
+from collections import defaultdict
+
+# Step 1: Build a "seen in Gallery A" dictionary
+in_gallery_a = defaultdict(bool)
+for person in gallery_a_visitors:
+    in_gallery_a[person] = True
+
+print("Seen in Gallery A:", dict(in_gallery_a))
+```
+
+``` {pyodide}
+# Step 2: Check who from Gallery B is also in our dict
+suspects_both_rooms = []
+for person in gallery_b_visitors:
+    if in_gallery_a[person]:  # No KeyError thanks to defaultdict!
+        suspects_both_rooms.append(person)
+
+print("In BOTH rooms:", set(suspects_both_rooms))
+```
+
+## Why Is This Faster?
+
+- **Step 1:** Look at each Gallery A person once → 10 operations
+- **Step 2:** Look at each Gallery B person once → 12 operations
+- **Total:** 10 + 12 = **22 operations** (not 120!)
+
+Dictionary lookup is **instant** — it doesn't matter how many keys are stored!
+
+## The Pattern: Set Intersection
+
+![](images/venn_intersection.png)
+
+```python
+from collections import defaultdict
+seen_in_first = defaultdict(bool)
+for item in first_list:
+    seen_in_first[item] = True
+
+in_both = [item for item in second_list if seen_in_first[item]]
+```
+
+**Use when:** Finding common elements, detecting duplicates
+
+## 🔓 Room 1 Complete!
+
+**Clue unlocked:** The suspects who visited both rooms are...
+
+``` {pyodide}
+print(set(suspects_both_rooms))
+```
+
+These are our prime suspects!
+
+## Pattern: Counting Frequencies
+
+**Use case:** Count how many times each item appears.
+
+``` {pyodide}
+# Counting letters in a word — the hard way
+word = "mississippi"
+counts = {}
+
+for letter in word:
+    if letter in counts:
+        counts[letter] += 1
+    else:
+        counts[letter] = 1
+
+print(counts)
+```
+
+## The KeyError Problem
+
+What if we forget to check?
+
+``` {pyodide}
+counts = {}
+word = "hello"
+
+try:
+    for letter in word:
+        counts[letter] += 1  # KeyError on first occurrence!
+except KeyError as e:
+    print(f"KeyError: {e} — can't increment a key that doesn't exist!")
+```
+
+## Solution: Use Counter from collections
+
+``` {pyodide}
+from collections import Counter
+
+word = "mississippi"
+counts = Counter(word)
+
+print(counts)
+print(f"Most common: {counts.most_common(2)}")
+```
+
+`Counter` is a special dictionary that handles counting automatically!
+
+# 🚪 Room 2: The Cipher
+
+## Room 2: The Cipher
+
+You found a mysterious note left by the thief:
+
+```
+WKLV LV WKH FRGH: GLDJRQDO
+```
+
+It appears to be a **substitution cipher**. The thief replaced each letter with another.
+
+**Hint:** It's a Caesar cipher — each letter shifted by the same amount.
+
+## Frequency Analysis
+
+In English, some letters appear more often than others:
+
+| Letter | Frequency |
+|--------|-----------|
+| E | 12.7% |
+| T | 9.1% |
+| A | 8.2% |
+| O | 7.5% |
+| I | 7.0% |
+
+If we count the letters in the cipher, the most common one is probably E!
+
+## Room 2: Cracking the Code
+
+``` {pyodide}
+from collections import Counter
+
+cipher = "WKLV LV WKH FRGH: GLDJRQDO"
+
+# Step 1: Count letter frequencies using Counter
+letters_only = [c for c in cipher if c.isalpha()]
+letter_counts = Counter(letters_only)
+
+print("Letter frequencies:", letter_counts)
+print(f"Most common: {letter_counts.most_common(3)}")
+```
+
+## Room 2: Finding the Shift
+
+``` {pyodide}
+# Step 2: Most common letter in cipher (Counter makes this easy!)
+most_common = letter_counts.most_common(1)[0][0]
+print(f"Most common letter in cipher: {most_common}")
+
+# Step 3: Assume it maps to 'E' - calculate shift
+shift = ord(most_common) - ord('E')
+print(f"Shift amount: {shift}")
+```
+
+## Room 2: Decoding with a Mapping Dictionary
+
+``` {pyodide}
+# Step 4: Build a decryption dictionary (mapping pattern!)
+decrypt = {}
+for i in range(26):
+    cipher_letter = chr(ord('A') + i)
+    plain_letter = chr(ord('A') + (i - shift) % 26)
+    decrypt[cipher_letter] = plain_letter
+
+print("Decryption mapping:", decrypt)
+```
+
+## Room 2: Using the Mapping
+
+``` {pyodide}
+# Step 5: Decode using dictionary lookup
+decoded = ""
+for char in cipher:
+    if char.isalpha():
+        decoded += decrypt[char]  # Dictionary maps cipher → plain
+    else:
+        decoded += char
+
+print("Decoded message:", decoded)
+```
+
+This is the **translation/mapping pattern** — convert values using a dictionary!
+
+## 🔓 Room 2 Complete!
+
+**Clue unlocked:** The decoded message reveals...
+
+``` {pyodide}
+print(decoded)
+```
+
+"THIS IS THE CODE: DIAGONAL" — a hint about the vault!
+
+## Why Dictionaries Are Fast
+
+With 50,000 items:
+
+- **List search:** Check each item one by one → slow!
+- **Dictionary lookup:** Jump directly to the key → fast!
+
+Dictionary lookups take about the same time whether you have 100 items or 100,000!
+
+## Pattern: Finding Complements (Two-Sum)
+
+**Use case:** Find two numbers that add up to a target.
+
+``` {pyodide}
+numbers = [3, 7, 1, 9, 4, 6, 2]
+target = 10
+
+# For each number, what do we NEED to find?
+for n in numbers:
+    complement = target - n
+    print(f"{n} needs {complement} to make {target}")
+```
+
+## The Complement Pattern
+
+``` {pyodide}
+numbers = [3, 7, 1, 9, 4, 6, 2]
+target = 10
+
+seen = {}
+for n in numbers:
+    complement = target - n
+    if complement in seen:
+        print(f"Found pair: {complement} + {n} = {target}")
+    seen[n] = True
+```
+
+As we scan, we remember what we've seen — and check if the complement exists!
+
+# 🚪 Room 3: The Vault
+
+## Room 3: The Vault
+
+The vault has a two-dial combination lock.
+
+Each dial shows a number, and they must add up to exactly **42**.
+
+The thief left behind two torn pieces of paper with numbers:
+
+``` {pyodide}
+left_dial_options = [8, 15, 27, 33, 19, 24, 12, 38]
+right_dial_options = [7, 14, 28, 34, 23, 18, 4, 31]
+target_sum = 42
+```
+
+Find the two numbers (one from each list) that open the vault!
+
+## Room 3: Solving It
+
+``` {pyodide}
+# Step 1: Build lookup for what we need from right dial
+left_values = {}
+for left in left_dial_options:
+    needed = target_sum - left
+    left_values[needed] = left  # "If I see {needed}, pair with {left}"
+
+print("Looking for these on right dial:", list(left_values.keys()))
+```
+
+``` {pyodide}
+# Step 2: Check right dial for matches
+for right in right_dial_options:
+    if right in left_values:
+        left = left_values[right]
+        print(f"VAULT CODE: {left} + {right} = {target_sum}")
+```
+
+## 🔓 Room 3 Complete!
+
+The vault opens, revealing more evidence...
+
+And a note: "The alibi is the key."
+
+## Pattern: Grouping by Category
+
+**Use case:** Organize items into categories (like pandas groupby!).
+
+``` {pyodide}
+fruits = [
+    ("apple", "red"),
+    ("banana", "yellow"),
+    ("cherry", "red"),
+    ("lemon", "yellow"),
+    ("grape", "purple")
+]
+
+by_color = {}
+for fruit, color in fruits:
+    if color not in by_color:
+        by_color[color] = []
+    by_color[color].append(fruit)
+
+print(by_color)
+```
+
+## The KeyError Problem (Again!)
+
+``` {pyodide}
+by_color = {}
+try:
+    for fruit, color in fruits:
+        by_color[color].append(fruit)  # KeyError!
+except KeyError as e:
+    print(f"KeyError: {e} — can't append to a list that doesn't exist!")
+```
+
+## Solution: Use defaultdict(list)
+
+``` {pyodide}
+from collections import defaultdict
+
+by_color = defaultdict(list)  # Missing keys auto-create empty lists
+for fruit, color in fruits:
+    by_color[color].append(fruit)
+
+print(dict(by_color))
+```
+
+`defaultdict(list)` automatically creates an empty list for missing keys!
+
+# 🚪 Room 4: The Suspect Board
+
+## Room 4: The Suspect Board
+
+We have testimony from five suspects about where they were at 8pm:
+
+``` {pyodide}
+suspects = [
+    {"name": "Prof. Histogram", "alibi": "faculty meeting", "verified": False},
+    {"name": "Dr. Correlation", "alibi": "at the gym", "verified": True},
+    {"name": "Ms. Outlier", "alibi": "working late", "verified": False},
+    {"name": "Mr. Regression", "alibi": "faculty meeting", "verified": False},
+    {"name": "Dean Bayes", "alibi": "at the gym", "verified": True},
+]
+```
+
+Group suspects by their alibi to find who was together!
+
+## Room 4: Grouping Suspects
+
+``` {pyodide}
+from collections import defaultdict
+
+# Group by alibi
+by_alibi = defaultdict(list)
+for suspect in suspects:
+    by_alibi[suspect["alibi"]].append(suspect["name"])
+
+print("Suspects grouped by alibi:")
+for alibi, names in by_alibi.items():
+    print(f"  {alibi}: {names}")
+```
+
+## Room 4: Finding the Lone Wolf
+
+``` {pyodide}
+# Who has an unverified alibi with no witnesses?
+print("Suspicious alibis (unverified):")
+for suspect in suspects:
+    if not suspect["verified"]:
+        alibi = suspect["alibi"]
+        others = [s["name"] for s in suspects
+                  if s["alibi"] == alibi and s["name"] != suspect["name"]]
+        if not others:
+            print(f"  {suspect['name']} claims '{alibi}' — NO WITNESSES!")
+```
+
+## 🔓 Room 4 Complete!
+
+**Clue unlocked:** One suspect has an unverified alibi with no witnesses...
+
+``` {pyodide}
+for suspect in suspects:
+    if not suspect["verified"]:
+        alibi = suspect["alibi"]
+        others = [s for s in suspects
+                  if s["alibi"] == alibi and s["name"] != suspect["name"]]
+        if not others:
+            print(f"PRIME SUSPECT: {suspect['name']}")
+```
+
+## Let's Practice! {.activity}
+
+Open the Data Heist activity. You'll solve 4 puzzles with LARGE datasets.
+
+*Inspired by [Advent of Code](https://adventofcode.com/) puzzles!*
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
+
+## The Dictionary Patterns
+
+| Pattern | Use Case | Technique |
+|---------|----------|-----------|
+| **Record** | Store named fields | `{"name": ..., "age": ...}` |
+| **Membership** | Track what we've seen | `seen[x] = True` |
+| **Counting** | Count occurrences | `Counter(items)` |
+| **Complement** | Find pairs | Store & check complements |
+| **Grouping** | Organize by category | `defaultdict(list)` |
+
+## Summary
+
+Dictionaries give you **fast lookup by key** — whether you have 100 items or 100,000.
+
+The patterns we learned:
+
+1. **Record** — Store data with named fields
+2. **Membership** — Have I seen this before? (`defaultdict(bool)`)
+3. **Counting** — How many of each? (`Counter`)
+4. **Complement** — Find the matching pair
+5. **Grouping** — Organize by category (`defaultdict(list)`)
