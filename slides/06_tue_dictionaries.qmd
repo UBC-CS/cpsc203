@@ -435,13 +435,15 @@ for n in numbers:
 ## The Complement Pattern
 
 ``` {pyodide}
+from collections import defaultdict
+
 numbers = [3, 7, 1, 9, 4, 6, 2]
 target = 10
 
-seen = {}
+seen = defaultdict(bool)
 for n in numbers:
     complement = target - n
-    if complement in seen:
+    if seen[complement]:  # No KeyError with defaultdict!
         print(f"Found pair: {complement} + {n} = {target}")
     seen[n] = True
 ```
