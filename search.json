@@ -869,7 +869,7 @@
     "href": "slides/06_thu_dictionaries.html#previously",
     "title": "Programming, problem solving, and algorithms",
     "section": "Previously…",
-    "text": "Previously…\n🔍 The Great Data Heist\nYou solved four rooms using dictionary patterns:\n\nThe Intersection — Membership pattern (defaultdict(bool))\nThe Cipher — Counter pattern (Counter)\nThe Vault — Complement/Two-Sum pattern\nThe Alibi Map — Grouping pattern (defaultdict(list))\n\nToday: One more pattern + catch the thief!"
+    "text": "Previously…\n🔍 The Great Data Heist\nYou solved four rooms using dictionary patterns:\n\nThe Intersection — Membership pattern (defaultdict(bool))\nThe Cipher — Counter pattern (Counter) + trial-and-error\nThe Vault — Complement/Two-Sum pattern\nThe Alibi Map — Grouping pattern (defaultdict(list))\n\nToday: The Translation/Mapping pattern + catch the thief!"
   },
   {
     "objectID": "slides/06_thu_dictionaries.html#recap-the-patterns-so-far",
@@ -884,6 +884,34 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Pattern: Translation/Mapping",
     "text": "Pattern: Translation/Mapping\nUse case: Convert values from one representation to another."
+  },
+  {
+    "objectID": "slides/06_thu_dictionaries.html#remember-the-cipher",
+    "href": "slides/06_thu_dictionaries.html#remember-the-cipher",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Remember the Cipher?",
+    "text": "Remember the Cipher?\nOn Tuesday, we cracked the cipher by trying shifts until we found English:\nWKLV LV WKH FRGH: GLDJRQDO → THIS IS THE CODE: DIAGONAL\nWe found shift = 3 by trial and error. But what if we have a much longer message?"
+  },
+  {
+    "objectID": "slides/06_thu_dictionaries.html#building-a-decryption-dictionary",
+    "href": "slides/06_thu_dictionaries.html#building-a-decryption-dictionary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Building a Decryption Dictionary",
+    "text": "Building a Decryption Dictionary"
+  },
+  {
+    "objectID": "slides/06_thu_dictionaries.html#decoding-with-the-mapping",
+    "href": "slides/06_thu_dictionaries.html#decoding-with-the-mapping",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Decoding with the Mapping",
+    "text": "Decoding with the Mapping"
+  },
+  {
+    "objectID": "slides/06_thu_dictionaries.html#the-translation-pattern",
+    "href": "slides/06_thu_dictionaries.html#the-translation-pattern",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Translation Pattern",
+    "text": "The Translation Pattern\n# General form: build a mapping dictionary\nmapping = {old_value: new_value for ...}\n\n# Apply the mapping\nresult = [mapping[x] for x in data]\nUse when: Converting codes, abbreviations, grades, categories…"
   },
   {
     "objectID": "slides/06_thu_dictionaries.html#room-5-the-escape-route-1",
@@ -3335,25 +3363,11 @@
     "text": "Room 2: Trying Different Shifts"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#room-2-building-a-mapping-dictionary",
-    "href": "slides/06_tue_dictionaries.html#room-2-building-a-mapping-dictionary",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Room 2: Building a Mapping Dictionary",
-    "text": "Room 2: Building a Mapping Dictionary"
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#room-2-using-the-mapping",
-    "href": "slides/06_tue_dictionaries.html#room-2-using-the-mapping",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Room 2: Using the Mapping",
-    "text": "Room 2: Using the Mapping\n\n\n\n\n\n\nThis is the translation/mapping pattern — convert values using a dictionary!"
-  },
-  {
     "objectID": "slides/06_tue_dictionaries.html#room-2-complete",
     "href": "slides/06_tue_dictionaries.html#room-2-complete",
     "title": "Programming, problem solving, and algorithms",
     "section": "🔓 Room 2 Complete!",
-    "text": "🔓 Room 2 Complete!\nClue unlocked: The decoded message reveals…\n\n\n\n\n\n\n“THIS IS THE CODE: DIAGONAL” — a hint about the vault!"
+    "text": "🔓 Room 2 Complete!\nClue unlocked: Shift 3 reveals the message!\n“THIS IS THE CODE: DIAGONAL” — a hint about the vault!\nOn Thursday, we’ll learn how to use a mapping dictionary to decode messages more elegantly."
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#why-dictionaries-are-fast",
@@ -3410,6 +3424,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Why defaultdict(list)?",
     "text": "Why defaultdict(list)?\nWithout it, you get a KeyError:\n\n\n\n\n\n\ndefaultdict(list) automatically creates an empty list for missing keys!"
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#grouping-with-dictionaries",
+    "href": "slides/06_tue_dictionaries.html#grouping-with-dictionaries",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Grouping with Dictionaries",
+    "text": "Grouping with Dictionaries\nWhat if our items are dictionaries, not tuples?\n\n\n\n\n\n\nSame pattern — just access the key with suspect[\"alibi\"] instead of unpacking a tuple!"
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#room-4-the-suspect-board-1",
