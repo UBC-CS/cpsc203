@@ -1,14 +1,39 @@
 ---
 title: "Week 6"
 description: >
-  Version control with {{< iconify fa6-brands git-alt >}} Git and
-  {{< iconify fa6-brands github >}} GitHub
+  Dictionary patterns and The Great Data Heist escape room
 author: "{{< var instructor.name >}}"
-date: 2025-10-06
+date: 2026-02-09
 categories:
   - "weekly announcement"
 draft: true
 ---
 
-This week we will start introducing a new tool in our course, Git and GitHub!
+This week we dive into Python dictionaries through an escape room adventure!
 
+## The Great Data Heist
+
+The Golden DataFrame has been stolen from the Vancouver Museum of Data Science. You'll use dictionary patterns to:
+
+- Find suspects who visited both crime scenes (Boolean/Seen pattern)
+- Crack ciphers using frequency analysis (Counter pattern)
+- Open the vault with two-sum puzzles (Complement pattern)
+- Group suspects by alibi (Grouping pattern)
+- Decode escape routes (Translation pattern)
+
+## Why Dictionaries Matter
+
+Dictionaries give you **O(1) lookup** — instant access by key. With datasets of 50,000+ items, this means operations that would take hours with nested loops finish in milliseconds.
+
+These same patterns appear in:
+- Coding interviews (Two Sum, Group Anagrams, etc.)
+- Real-world data processing
+- Advent of Code puzzles
+
+## Examlet 2
+
+Examlet 2 is available in the CBTF this week. Book your time slot on PrairieTest!
+
+## Project 1
+
+Project 1 (Pokémon Data Explorer) is due March 1. Start early and have fun with it!

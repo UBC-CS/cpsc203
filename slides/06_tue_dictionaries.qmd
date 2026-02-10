@@ -195,7 +195,7 @@ This works... but what if the lists are LONG?
 
 ## The Problem with Nested Loops
 
-![](images/nested_loop_check.png)
+![](../images/nested_loop_check.svg)
 
 With 10 people in Gallery A and 12 in Gallery B:
 **10 × 12 = 120 comparisons**
@@ -235,7 +235,7 @@ Dictionary lookup is **instant** — it doesn't matter how many keys are stored!
 
 ## The Pattern: Set Intersection
 
-![](images/venn_intersection.png)
+![](../images/venn_intersection.svg)
 
 ```python
 from collections import defaultdict
