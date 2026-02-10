@@ -403,46 +403,13 @@ for shift in range(1, 6):
     print(f"Shift {shift}: {decode_with_shift(cipher, shift)}")
 ```
 
-## Room 2: Building a Mapping Dictionary
-
-``` {pyodide}
-# Shift 3 works! Build a decryption dictionary
-shift = 3
-decrypt = {}
-for i in range(26):
-    cipher_letter = chr(ord('A') + i)
-    plain_letter = chr(ord('A') + (i - shift) % 26)
-    decrypt[cipher_letter] = plain_letter
-
-print("Decryption mapping:")
-print(decrypt)
-```
-
-## Room 2: Using the Mapping
-
-``` {pyodide}
-# Decode using dictionary lookup
-decoded = ""
-for char in cipher:
-    if char.isalpha():
-        decoded += decrypt[char]  # Dictionary maps cipher → plain
-    else:
-        decoded += char
-
-print("Decoded message:", decoded)
-```
-
-This is the **translation/mapping pattern** — convert values using a dictionary!
-
 ## 🔓 Room 2 Complete!
 
-**Clue unlocked:** The decoded message reveals...
-
-``` {pyodide}
-print(decoded)
-```
+**Clue unlocked:** Shift 3 reveals the message!
 
 "THIS IS THE CODE: DIAGONAL" — a hint about the vault!
+
+On Thursday, we'll learn how to use a **mapping dictionary** to decode messages more elegantly.
 
 ## Why Dictionaries Are Fast
 
@@ -568,6 +535,28 @@ except KeyError as e:
 
 `defaultdict(list)` automatically creates an empty list for missing keys!
 
+## Grouping with Dictionaries
+
+What if our items are dictionaries, not tuples?
+
+``` {pyodide}
+from collections import defaultdict
+
+# Two example suspects
+example_suspects = [
+    {"name": "Prof. Histogram", "alibi": "faculty meeting"},
+    {"name": "Mr. Regression", "alibi": "faculty meeting"},
+]
+
+by_alibi = defaultdict(list)
+for suspect in example_suspects:
+    by_alibi[suspect["alibi"]].append(suspect["name"])
+
+print(dict(by_alibi))
+```
+
+Same pattern — just access the key with `suspect["alibi"]` instead of unpacking a tuple!
+
 # 🚪 Room 4: The Suspect Board
 
 ## Room 4: The Suspect Board
@@ -604,15 +593,10 @@ for alibi, names in by_alibi.items():
 ## Room 4: Finding the Lone Wolf
 
 ``` {pyodide}
-# Who has an unverified alibi with no witnesses?
-print("Suspicious alibis (unverified):")
-for suspect in suspects:
-    if not suspect["verified"]:
-        alibi = suspect["alibi"]
-        others = [s["name"] for s in suspects
-                  if s["alibi"] == alibi and s["name"] != suspect["name"]]
-        if not others:
-            print(f"  {suspect['name']} claims '{alibi}' — NO WITNESSES!")
+# Find alibis with only one person — no witnesses!
+for alibi, names in by_alibi.items():
+    if len(names) == 1:
+        print(f"'{alibi}' has only one person: {names[0]} — NO WITNESSES!")
 ```
 
 ## 🔓 Room 4 Complete!
@@ -620,12 +604,11 @@ for suspect in suspects:
 **Clue unlocked:** One suspect has an unverified alibi with no witnesses...
 
 ``` {pyodide}
+# Cross-reference with unverified alibis
 for suspect in suspects:
     if not suspect["verified"]:
         alibi = suspect["alibi"]
-        others = [s for s in suspects
-                  if s["alibi"] == alibi and s["name"] != suspect["name"]]
-        if not others:
+        if len(by_alibi[alibi]) == 1:
             print(f"PRIME SUSPECT: {suspect['name']}")
 ```
 
@@ -635,7 +618,7 @@ Open the Data Heist activity. You'll solve 4 puzzles with LARGE datasets.
 
 *Inspired by [Advent of Code](https://adventofcode.com/) puzzles!*
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2646320)
 
 ## The Dictionary Patterns
 

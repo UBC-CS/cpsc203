@@ -17,11 +17,11 @@ pyodide:
 You solved four rooms using dictionary patterns:
 
 1. **The Intersection** — Membership pattern (`defaultdict(bool)`)
-2. **The Cipher** — Counter pattern (`Counter`)
+2. **The Cipher** — Counter pattern (`Counter`) + trial-and-error
 3. **The Vault** — Complement/Two-Sum pattern
 4. **The Alibi Map** — Grouping pattern (`defaultdict(list)`)
 
-Today: One more pattern + catch the thief!
+Today: The Translation/Mapping pattern + catch the thief!
 
 ## Recap: The Patterns So Far
 
@@ -62,6 +62,63 @@ print(f"Grades: {grades}")
 print(f"GPAs: {gpas}")
 print(f"Average: {sum(gpas)/len(gpas):.2f}")
 ```
+
+## Remember the Cipher?
+
+On Tuesday, we cracked the cipher by trying shifts until we found English:
+
+```
+WKLV LV WKH FRGH: GLDJRQDO → THIS IS THE CODE: DIAGONAL
+```
+
+We found shift = 3 by trial and error. But what if we have a **much longer message**?
+
+## Building a Decryption Dictionary
+
+``` {pyodide}
+# Build a complete letter → letter mapping
+shift = 3
+decrypt = {}
+for i in range(26):
+    cipher_letter = chr(ord('A') + i)
+    plain_letter = chr(ord('A') + (i - shift) % 26)
+    decrypt[cipher_letter] = plain_letter
+
+print("Decryption mapping:")
+print(decrypt)
+```
+
+## Decoding with the Mapping
+
+``` {pyodide}
+# A much longer encrypted message from the thief's notebook
+long_message = """
+WKLV LV WKH VHFUHW SODQ: HQWHU WKURXJK WKH EDFN GRRU.
+WDNH WKH JROGHQ GDWDIUDPH. HVFDSH EHIRUH PLGQLJKW.
+"""
+
+decoded = ""
+for char in long_message:
+    if char.isalpha():
+        decoded += decrypt[char]  # Dictionary maps cipher → plain
+    else:
+        decoded += char
+
+print("Decoded:")
+print(decoded)
+```
+
+## The Translation Pattern
+
+```python
+# General form: build a mapping dictionary
+mapping = {old_value: new_value for ...}
+
+# Apply the mapping
+result = [mapping[x] for x in data]
+```
+
+**Use when:** Converting codes, abbreviations, grades, categories...
 
 # 🚪 Room 5: The Escape Route
 
