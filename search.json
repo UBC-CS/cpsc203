@@ -3157,7 +3157,7 @@
     "href": "slides/06_tue_dictionaries.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nExamlet 2 is this Thursday — book your slot on PrairieTest!\nProject 1 (Pokémon Data Explorer) released — due March 1"
+    "text": "Announcements\n\nExamlet 2 is this week – check PT to verify\nProject 1 (Pokémon Data Explorer) released — due March 1"
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#today",
@@ -3314,6 +3314,20 @@
     "text": "Room 2: Cracking the Code"
   },
   {
+    "objectID": "slides/06_tue_dictionaries.html#how-letters-become-numbers",
+    "href": "slides/06_tue_dictionaries.html#how-letters-become-numbers",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "How Letters Become Numbers",
+    "text": "How Letters Become Numbers"
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#shifting-letters",
+    "href": "slides/06_tue_dictionaries.html#shifting-letters",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Shifting Letters",
+    "text": "Shifting Letters\n\n\n\n\n\n\nThe % 26 handles wrap-around: if we go past ‘A’, we loop back to ‘Z’."
+  },
+  {
     "objectID": "slides/06_tue_dictionaries.html#room-2-trying-different-shifts",
     "href": "slides/06_tue_dictionaries.html#room-2-trying-different-shifts",
     "title": "Programming, problem solving, and algorithms",
@@ -3391,18 +3405,11 @@
     "text": "Pattern: Grouping by Category\nUse case: Organize items into categories (like pandas groupby!)."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#the-keyerror-problem-again",
-    "href": "slides/06_tue_dictionaries.html#the-keyerror-problem-again",
+    "objectID": "slides/06_tue_dictionaries.html#why-defaultdictlist",
+    "href": "slides/06_tue_dictionaries.html#why-defaultdictlist",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The KeyError Problem (Again!)",
-    "text": "The KeyError Problem (Again!)"
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#solution-use-defaultdictlist",
-    "href": "slides/06_tue_dictionaries.html#solution-use-defaultdictlist",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Solution: Use defaultdict(list)",
-    "text": "Solution: Use defaultdict(list)\n\n\n\n\n\n\ndefaultdict(list) automatically creates an empty list for missing keys!"
+    "section": "Why defaultdict(list)?",
+    "text": "Why defaultdict(list)?\nWithout it, you get a KeyError:\n\n\n\n\n\n\ndefaultdict(list) automatically creates an empty list for missing keys!"
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#room-4-the-suspect-board-1",
