@@ -7,7 +7,7 @@ pyodide:
 
 ## Announcements
 
-* Examlet 2 is this Thursday — book your slot on PrairieTest!
+* Examlet 2 is this week -- check PT to verify
 * Project 1 (Pokémon Data Explorer) released — due March 1
 
 ## Today
@@ -348,6 +348,38 @@ print("Letter frequencies:", letter_counts)
 print(f"Most common: {letter_counts.most_common(3)}")
 ```
 
+## How Letters Become Numbers
+
+``` {pyodide}
+# ord() converts a character to its ASCII number
+# chr() converts an ASCII number back to a character
+
+print(f"ord('A') = {ord('A')}")  # 65
+print(f"ord('B') = {ord('B')}")  # 66
+print(f"ord('W') = {ord('W')}")  # 87
+
+# To get position in alphabet (0-25):
+letter = 'W'
+position = ord(letter) - ord('A')
+print(f"'W' is at position {position} in the alphabet")  # 22
+```
+
+## Shifting Letters
+
+``` {pyodide}
+# To shift 'W' back by 3:
+letter = 'W'
+shift = 3
+
+position = ord(letter) - ord('A')      # W is at position 22
+new_position = (position - shift) % 26  # 22 - 3 = 19 (% 26 handles wrap-around)
+new_letter = chr(new_position + ord('A'))  # Position 19 = 'T'
+
+print(f"'{letter}' shifted back by {shift} = '{new_letter}'")
+```
+
+The `% 26` handles wrap-around: if we go past 'A', we loop back to 'Z'.
+
 ## Room 2: Trying Different Shifts
 
 ``` {pyodide}
@@ -358,7 +390,10 @@ def decode_with_shift(text, shift):
     result = ""
     for char in text:
         if char.isalpha():
-            result += chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
+            # Convert to position, shift back, convert back to letter
+            position = ord(char) - ord('A')
+            new_position = (position - shift) % 26
+            result += chr(new_position + ord('A'))
         else:
             result += char
     return result
