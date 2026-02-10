@@ -471,8 +471,10 @@ Find the two numbers (one from each list) that open the vault!
 ## Room 3: Solving It
 
 ``` {pyodide}
+from collections import defaultdict
+
 # Step 1: Build lookup for what we need from right dial
-left_values = {}
+left_values = defaultdict(bool)
 for left in left_dial_options:
     needed = target_sum - left
     left_values[needed] = left  # "If I see {needed}, pair with {left}"
@@ -483,7 +485,7 @@ print("Looking for these on right dial:", list(left_values.keys()))
 ``` {pyodide}
 # Step 2: Check right dial for matches
 for right in right_dial_options:
-    if right in left_values:
+    if left_values[right]:  # No KeyError with defaultdict!
         left = left_values[right]
         print(f"VAULT CODE: {left} + {right} = {target_sum}")
 ```
