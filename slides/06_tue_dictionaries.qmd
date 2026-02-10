@@ -340,7 +340,7 @@ from collections import Counter
 
 cipher = "WKLV LV WKH FRGH: GLDJRQDO"
 
-# Step 1: Count letter frequencies using Counter
+# Count letter frequencies using Counter
 letters_only = [c for c in cipher if c.isalpha()]
 letter_counts = Counter(letters_only)
 
@@ -348,35 +348,45 @@ print("Letter frequencies:", letter_counts)
 print(f"Most common: {letter_counts.most_common(3)}")
 ```
 
-## Room 2: Finding the Shift
+## Room 2: Trying Different Shifts
 
 ``` {pyodide}
-# Step 2: Most common letter in cipher (Counter makes this easy!)
-most_common = letter_counts.most_common(1)[0][0]
-print(f"Most common letter in cipher: {most_common}")
+# Caesar cipher: try different shifts until we find English!
+cipher = "WKLV LV WKH FRGH: GLDJRQDO"
 
-# Step 3: Assume it maps to 'E' - calculate shift
-shift = ord(most_common) - ord('E')
-print(f"Shift amount: {shift}")
+def decode_with_shift(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            result += chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
+        else:
+            result += char
+    return result
+
+# Try a few shifts
+for shift in range(1, 6):
+    print(f"Shift {shift}: {decode_with_shift(cipher, shift)}")
 ```
 
-## Room 2: Decoding with a Mapping Dictionary
+## Room 2: Building a Mapping Dictionary
 
 ``` {pyodide}
-# Step 4: Build a decryption dictionary (mapping pattern!)
+# Shift 3 works! Build a decryption dictionary
+shift = 3
 decrypt = {}
 for i in range(26):
     cipher_letter = chr(ord('A') + i)
     plain_letter = chr(ord('A') + (i - shift) % 26)
     decrypt[cipher_letter] = plain_letter
 
-print("Decryption mapping:", decrypt)
+print("Decryption mapping:")
+print(decrypt)
 ```
 
 ## Room 2: Using the Mapping
 
 ``` {pyodide}
-# Step 5: Decode using dictionary lookup
+# Decode using dictionary lookup
 decoded = ""
 for char in cipher:
     if char.isalpha():
