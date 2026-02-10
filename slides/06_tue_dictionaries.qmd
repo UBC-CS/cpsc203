@@ -501,6 +501,8 @@ And a note: "The alibi is the key."
 **Use case:** Organize items into categories (like pandas groupby!).
 
 ``` {pyodide}
+from collections import defaultdict
+
 fruits = [
     ("apple", "red"),
     ("banana", "yellow"),
@@ -509,16 +511,16 @@ fruits = [
     ("grape", "purple")
 ]
 
-by_color = {}
+by_color = defaultdict(list)  # Missing keys auto-create empty lists
 for fruit, color in fruits:
-    if color not in by_color:
-        by_color[color] = []
     by_color[color].append(fruit)
 
-print(by_color)
+print(dict(by_color))
 ```
 
-## The KeyError Problem (Again!)
+## Why defaultdict(list)?
+
+Without it, you get a KeyError:
 
 ``` {pyodide}
 by_color = {}
@@ -527,18 +529,6 @@ try:
         by_color[color].append(fruit)  # KeyError!
 except KeyError as e:
     print(f"KeyError: {e} — can't append to a list that doesn't exist!")
-```
-
-## Solution: Use defaultdict(list)
-
-``` {pyodide}
-from collections import defaultdict
-
-by_color = defaultdict(list)  # Missing keys auto-create empty lists
-for fruit, color in fruits:
-    by_color[color].append(fruit)
-
-print(dict(by_color))
 ```
 
 `defaultdict(list)` automatically creates an empty list for missing keys!
