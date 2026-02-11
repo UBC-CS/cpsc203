@@ -1985,7 +1985,7 @@
     "href": "index.html#weekly-announcement",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "Weekly announcement",
-    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04 \nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
+    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04 \nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05\nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06\nFeb 9\n\n\n\n\n\n\n\n\n\n\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08\nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09\nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10\nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -1996,14 +1996,14 @@
     "href": "labs/02_create-website.html",
     "title": " Lab: Create your own website!",
     "section": "",
-    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
+    "text": "Warning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)"
   },
   {
     "objectID": "labs/02_create-website.html#basic-structure-of-quarto-document",
     "href": "labs/02_create-website.html#basic-structure-of-quarto-document",
     "title": " Lab: Create your own website!",
-    "section": "",
-    "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
+    "section": "Basic structure of Quarto document",
+    "text": "Basic structure of Quarto document\nWe are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
     "objectID": "labs/02_create-website.html#steps",
