@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .header { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; fill: white; }
+    .cell { font-family: 'Fira Code', monospace; font-size: 10px; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+  </style>
+
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" class="title">What's a DataFrame?</text>
+  <text x="350" y="45" text-anchor="middle" class="small" fill="#666">A 2D table: rows = records, columns = attributes</text>
+
+  <!-- Table -->
+  <g transform="translate(100, 70)">
+    <!-- Header row -->
+    <rect x="0" y="0" width="60" height="30" fill="#1976d2"/>
+    <rect x="60" y="0" width="150" height="30" fill="#1976d2"/>
+    <rect x="210" y="0" width="120" height="30" fill="#1976d2"/>
+    <rect x="330" y="0" width="50" height="30" fill="#1976d2"/>
+    <rect x="380" y="0" width="60" height="30" fill="#1976d2"/>
+
+    <text x="30" y="20" text-anchor="middle" class="header">rank</text>
+    <text x="135" y="20" text-anchor="middle" class="header">title</text>
+    <text x="270" y="20" text-anchor="middle" class="header">artist</text>
+    <text x="355" y="20" text-anchor="middle" class="header">weeks</text>
+    <text x="410" y="20" text-anchor="middle" class="header">isNew</text>
+
+    <!-- Data rows -->
+    <rect x="0" y="30" width="60" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="60" y="30" width="150" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="210" y="30" width="120" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="330" y="30" width="50" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="380" y="30" width="60" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+
+    <text x="30" y="47" text-anchor="middle" class="cell">1</text>
+    <text x="135" y="47" text-anchor="middle" class="cell">Die With A Smile</text>
+    <text x="270" y="47" text-anchor="middle" class="cell">Lady Gaga</text>
+    <text x="355" y="47" text-anchor="middle" class="cell">24</text>
+    <text x="410" y="47" text-anchor="middle" class="cell">False</text>
+
+    <rect x="0" y="55" width="60" height="25" fill="#fff" stroke="#90caf9"/>
+    <rect x="60" y="55" width="150" height="25" fill="#fff" stroke="#90caf9"/>
+    <rect x="210" y="55" width="120" height="25" fill="#fff" stroke="#90caf9"/>
+    <rect x="330" y="55" width="50" height="25" fill="#fff" stroke="#90caf9"/>
+    <rect x="380" y="55" width="60" height="25" fill="#fff" stroke="#90caf9"/>
+
+    <text x="30" y="72" text-anchor="middle" class="cell">2</text>
+    <text x="135" y="72" text-anchor="middle" class="cell">APT.</text>
+    <text x="270" y="72" text-anchor="middle" class="cell">Rose &amp; Bruno Mars</text>
+    <text x="355" y="72" text-anchor="middle" class="cell">14</text>
+    <text x="410" y="72" text-anchor="middle" class="cell">False</text>
+
+    <rect x="0" y="80" width="60" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="60" y="80" width="150" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="210" y="80" width="120" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="330" y="80" width="50" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+    <rect x="380" y="80" width="60" height="25" fill="#e3f2fd" stroke="#90caf9"/>
+
+    <text x="30" y="97" text-anchor="middle" class="cell">3</text>
+    <text x="135" y="97" text-anchor="middle" class="cell">Birds of a Feather</text>
+    <text x="270" y="97" text-anchor="middle" class="cell">Billie Eilish</text>
+    <text x="355" y="97" text-anchor="middle" class="cell">31</text>
+    <text x="410" y="97" text-anchor="middle" class="cell">False</text>
+
+    <!-- Ellipsis row -->
+    <text x="220" y="125" text-anchor="middle" class="cell" fill="#666">...</text>
+  </g>
+
+  <!-- Annotations -->
+  <g transform="translate(100, 220)">
+    <!-- Row annotation -->
+    <path d="M -30 -70 L -30 -20" stroke="#f57c00" stroke-width="2"/>
+    <path d="M -35 -70 L -25 -70" stroke="#f57c00" stroke-width="2"/>
+    <path d="M -35 -20 L -25 -20" stroke="#f57c00" stroke-width="2"/>
+    <text x="-50" y="-45" class="label" fill="#f57c00" transform="rotate(-90, -50, -45)">rows</text>
+
+    <!-- Column annotation -->
+    <path d="M 0 -90 L 440 -90" stroke="#7b1fa2" stroke-width="2"/>
+    <path d="M 0 -95 L 0 -85" stroke="#7b1fa2" stroke-width="2"/>
+    <path d="M 440 -95 L 440 -85" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="220" y="-100" text-anchor="middle" class="label" fill="#7b1fa2">columns (attributes)</text>
+  </g>
+
+  <!-- Bottom boxes -->
+  <rect x="100" y="245" width="200" height="55" rx="5" fill="#fff3e0" stroke="#f57c00"/>
+  <text x="200" y="268" text-anchor="middle" class="label" fill="#f57c00">Each Row = One Song</text>
+  <text x="200" y="288" text-anchor="middle" class="small">Like one dict in your list</text>
+
+  <rect x="400" y="245" width="200" height="55" rx="5" fill="#f3e5f5" stroke="#7b1fa2"/>
+  <text x="500" y="268" text-anchor="middle" class="label" fill="#7b1fa2">Each Column = One Attribute</text>
+  <text x="500" y="288" text-anchor="middle" class="small">Like one key in your dict</text>
+</svg>
