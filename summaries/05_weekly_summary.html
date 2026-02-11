@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 5: DataFrames and Visualization – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b10d88bc01b3c2b62a30403842a2cd1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1962b8704e35fd18bddbdb7d8a4a5ec2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 5: DataFrames and Visualization – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/week5/big-picture.svg">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="Overview showing Tuesday's DataFrame basics connecting to Thursday's visualization concepts.">
+<meta name="twitter:title" content="Week 5: DataFrames and Visualization – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/week5/big-picture.svg">
+<meta name="twitter:image:alt" content="Overview showing Tuesday's DataFrame basics connecting to Thursday's visualization concepts.">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 5: DataFrames and Visualization</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#your-growing-toolkit" id="toc-your-growing-toolkit" class="nav-link active" data-scroll-target="#your-growing-toolkit">Your Growing Toolkit</a></li>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture">The Big Picture</a></li>
+  <li><a href="#tuesday-dataframes" id="toc-tuesday-dataframes" class="nav-link" data-scroll-target="#tuesday-dataframes">Tuesday: <span class="blue">DataFrames</span></a>
+  <ul class="collapse">
+  <li><a href="#the-problem-with-loops" id="toc-the-problem-with-loops" class="nav-link" data-scroll-target="#the-problem-with-loops">The Problem with Loops</a></li>
+  <li><a href="#the-dataframe-solution" id="toc-the-dataframe-solution" class="nav-link" data-scroll-target="#the-dataframe-solution">The DataFrame Solution</a></li>
+  <li><a href="#what-is-a-dataframe" id="toc-what-is-a-dataframe" class="nav-link" data-scroll-target="#what-is-a-dataframe">What Is a DataFrame?</a>
+  <ul class="collapse">
+  <li><a href="#creating-dataframes" id="toc-creating-dataframes" class="nav-link" data-scroll-target="#creating-dataframes">Creating DataFrames</a></li>
+  <li><a href="#viewing-your-data" id="toc-viewing-your-data" class="nav-link" data-scroll-target="#viewing-your-data">Viewing Your Data</a></li>
+  </ul></li>
+  <li><a href="#pattern-1-filtering" id="toc-pattern-1-filtering" class="nav-link" data-scroll-target="#pattern-1-filtering">Pattern 1: <span class="green">Filtering</span></a>
+  <ul class="collapse">
+  <li><a href="#the-basic-pattern" id="toc-the-basic-pattern" class="nav-link" data-scroll-target="#the-basic-pattern">The Basic Pattern</a></li>
+  <li><a href="#counting-filtered-results" id="toc-counting-filtered-results" class="nav-link" data-scroll-target="#counting-filtered-results">Counting Filtered Results</a></li>
+  <li><a href="#adding-computed-columns" id="toc-adding-computed-columns" class="nav-link" data-scroll-target="#adding-computed-columns">Adding Computed Columns</a></li>
+  </ul></li>
+  <li><a href="#pattern-2-aggregation" id="toc-pattern-2-aggregation" class="nav-link" data-scroll-target="#pattern-2-aggregation">Pattern 2: <span class="orange">Aggregation</span></a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  <li><a href="#pattern-3-finding-extremes" id="toc-pattern-3-finding-extremes" class="nav-link" data-scroll-target="#pattern-3-finding-extremes">Pattern 3: <span class="purple">Finding Extremes</span></a>
+  <ul class="collapse">
+  <li><a href="#the-two-step-pattern" id="toc-the-two-step-pattern" class="nav-link" data-scroll-target="#the-two-step-pattern">The Two-Step Pattern</a></li>
+  <li><a href="#why-two-steps" id="toc-why-two-steps" class="nav-link" data-scroll-target="#why-two-steps">Why Two Steps?</a></li>
+  <li><a href="#biggest-riser-this-week" id="toc-biggest-riser-this-week" class="nav-link" data-scroll-target="#biggest-riser-this-week">Biggest Riser This Week</a></li>
+  </ul></li>
+  <li><a href="#the-datetime-warm-up" id="toc-the-datetime-warm-up" class="nav-link" data-scroll-target="#the-datetime-warm-up">The datetime Warm-Up</a>
+  <ul class="collapse">
+  <li><a href="#finding-last-saturday" id="toc-finding-last-saturday" class="nav-link" data-scroll-target="#finding-last-saturday">Finding “Last Saturday”</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#thursday-visualization" id="toc-thursday-visualization" class="nav-link" data-scroll-target="#thursday-visualization">Thursday: <span class="orange">Visualization</span></a>
+  <ul class="collapse">
+  <li><a href="#from-one-week-to-52-weeks" id="toc-from-one-week-to-52-weeks" class="nav-link" data-scroll-target="#from-one-week-to-52-weeks">From One Week to 52 Weeks</a>
+  <ul class="collapse">
+  <li><a href="#the-same-song-many-rows" id="toc-the-same-song-many-rows" class="nav-link" data-scroll-target="#the-same-song-many-rows">The Same Song, Many Rows</a></li>
+  </ul></li>
+  <li><a href="#finding-the-1-songs" id="toc-finding-the-1-songs" class="nav-link" data-scroll-target="#finding-the-1-songs">Finding the #1 Songs</a></li>
+  <li><a href="#pattern-4-list-membership-with-.isin" id="toc-pattern-4-list-membership-with-.isin" class="nav-link" data-scroll-target="#pattern-4-list-membership-with-.isin">Pattern 4: <span class="green">List Membership with .isin()</span></a>
+  <ul class="collapse">
+  <li><a href="#the-pattern" id="toc-the-pattern" class="nav-link" data-scroll-target="#the-pattern">The Pattern</a></li>
+  <li><a href="#example-with-students" id="toc-example-with-students" class="nav-link" data-scroll-target="#example-with-students">Example with Students</a></li>
+  <li><a href="#getting-all-data-for-1-songs" id="toc-getting-all-data-for-1-songs" class="nav-link" data-scroll-target="#getting-all-data-for-1-songs">Getting All Data for #1 Songs</a></li>
+  </ul></li>
+  <li><a href="#reshaping-for-plotting" id="toc-reshaping-for-plotting" class="nav-link" data-scroll-target="#reshaping-for-plotting">Reshaping for Plotting</a></li>
+  <li><a href="#pattern-5-groupby-unstack" id="toc-pattern-5-groupby-unstack" class="nav-link" data-scroll-target="#pattern-5-groupby-unstack">Pattern 5: <span class="purple">groupby + unstack</span></a>
+  <ul class="collapse">
+  <li><a href="#step-by-step" id="toc-step-by-step" class="nav-link" data-scroll-target="#step-by-step">Step by Step</a></li>
+  </ul></li>
+  <li><a href="#creating-the-trajectory-plot" id="toc-creating-the-trajectory-plot" class="nav-link" data-scroll-target="#creating-the-trajectory-plot">Creating the Trajectory Plot</a>
+  <ul class="collapse">
+  <li><a href="#why-invert-the-y-axis" id="toc-why-invert-the-y-axis" class="nav-link" data-scroll-target="#why-invert-the-y-axis">Why Invert the Y-Axis?</a></li>
+  </ul></li>
+  <li><a href="#scatter-plots-debut-vs.-staying-power" id="toc-scatter-plots-debut-vs.-staying-power" class="nav-link" data-scroll-target="#scatter-plots-debut-vs.-staying-power">Scatter Plots: Debut vs.&nbsp;Staying Power</a>
+  <ul class="collapse">
+  <li><a href="#finding-debut-position" id="toc-finding-debut-position" class="nav-link" data-scroll-target="#finding-debut-position">Finding Debut Position</a></li>
+  <li><a href="#finding-total-weeks" id="toc-finding-total-weeks" class="nav-link" data-scroll-target="#finding-total-weeks">Finding Total Weeks</a></li>
+  <li><a href="#merging-the-data" id="toc-merging-the-data" class="nav-link" data-scroll-target="#merging-the-data">Merging the Data</a></li>
+  <li><a href="#the-scatter-plot" id="toc-the-scatter-plot" class="nav-link" data-scroll-target="#the-scatter-plot">The Scatter Plot</a></li>
+  </ul></li>
+  <li><a href="#the-analysis-pipeline" id="toc-the-analysis-pipeline" class="nav-link" data-scroll-target="#the-analysis-pipeline">The Analysis Pipeline</a></li>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick Reference</a>
+  <ul class="collapse">
+  <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data"><span class="blue">Loading Data</span></a></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering"><span class="green">Filtering</span></a></li>
+  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="orange">Aggregation</span></a></li>
+  <li><a href="#finding-extremes" id="toc-finding-extremes" class="nav-link" data-scroll-target="#finding-extremes"><span class="purple">Finding Extremes</span></a></li>
+  <li><a href="#reshaping" id="toc-reshaping" class="nav-link" data-scroll-target="#reshaping"><span class="red">Reshaping</span></a></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting"><span class="pink">Plotting</span></a></li>
+  </ul></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/05_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/05_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 5: DataFrames and Visualization</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This week we leveled up from loops to DataFrames! We discovered that pandas can do in one or two lines what previously required five or six. Then we learned how to visualize data to spot patterns that numbers alone might miss.</p>
+<section id="your-growing-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-growing-toolkit">Your Growing Toolkit</h2>
+<p>Every problem we solve uses some combination of these tools:</p>
+<ul>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning (binary, types, RGB)</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things (lists, tuples, dicts)</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat (if/else, loops)</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost (summations, timing analysis)</li>
+</ul>
+<p>This week: <span class="blue"><strong>DataFrames</strong></span> (a new kind of collection) + <span class="orange"><strong>Visualization</strong></span> (seeing patterns) → <strong>Powerful data analysis</strong></p>
+</section>
+<section id="the-big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture">The Big Picture</h2>
+<p><img src="../images/week5/big-picture.svg" class="img-fluid" style="width:80.0%" alt="Overview showing Tuesday's DataFrame basics connecting to Thursday's visualization concepts."></p>
+<p>We started with Billboard Hot 100 data stored as lists of dictionaries, and ended up with beautiful trajectory plots showing how songs move through the charts. Along the way, we learned that the right data structure can make complex analysis feel almost effortless.</p>
+<hr>
+</section>
+<section id="tuesday-dataframes" class="level1">
+<h1>Tuesday: <span class="blue">DataFrames</span></h1>
+<p>We made a dramatic shift from writing loops for everything to letting pandas do the heavy lifting.</p>
+<section id="the-problem-with-loops" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-with-loops">The Problem with Loops</h2>
+<p>Last week, we explored Billboard data using <strong>lists of dictionaries</strong>. Every question required a loop:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count songs by artist — the loop way</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>artist_counts <span class="op">=</span> {}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> song <span class="kw">in</span> chartlist:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    artist <span class="op">=</span> song[<span class="st">'artist'</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> artist <span class="kw">in</span> artist_counts:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        artist_counts[artist] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        artist_counts[artist] <span class="op">=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This works, but it’s verbose. Finding the average weeks on chart? Another loop. Finding the #1 song? Another loop. It gets tedious!</p>
+</section>
+<section id="the-dataframe-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-dataframe-solution">The DataFrame Solution</h2>
+<p><img src="../images/week5/loops-vs-dataframe.svg" class="img-fluid" style="width:80.0%" alt="Side-by-side comparison showing 6 lines of loop code versus 2 lines of DataFrame code to accomplish the same task."></p>
+<p>A <strong>DataFrame</strong> is a 2D table where rows are records and columns are attributes. The key insight is that DataFrames have <strong>built-in operations</strong> for common tasks:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Count new songs — one line!</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>new_count <span class="op">=</span> df[df[<span class="st">'isNew'</span>]].shape[<span class="dv">0</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Average weeks on chart — one line!</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>avg_weeks <span class="op">=</span> df[<span class="st">'weeks'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="what-is-a-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-dataframe">What Is a DataFrame?</h2>
+<p><img src="../images/week5/dataframe-structure.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing a DataFrame structure with rows labeled as records and columns labeled as attributes."></p>
+<p>Think of a DataFrame like a spreadsheet:</p>
+<ul>
+<li>Each <strong>row</strong> is one record (one song on one week’s chart)</li>
+<li>Each <strong>column</strong> is one attribute (title, artist, rank, weeks, etc.)</li>
+<li>You can select, filter, and aggregate with simple expressions</li>
+</ul>
+<section id="creating-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="creating-dataframes">Creating DataFrames</h3>
+<p>You can create a DataFrame from a list of dictionaries:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(chartlist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or load directly from a CSV file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="viewing-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-your-data">Viewing Your Data</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">10</span>)          <span class="co"># First 10 rows</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.shape             <span class="co"># (rows, columns)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.columns.tolist()  <span class="co"># List of column names</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="pattern-1-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-1-filtering">Pattern 1: <span class="green">Filtering</span></h2>
+<p>One of the most powerful DataFrame operations is filtering — selecting only the rows that match some condition.</p>
+<p><img src="../images/week5/filter-chain.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing how df[condition] creates a boolean mask that selects matching rows."></p>
+<section id="the-basic-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="the-basic-pattern">The Basic Pattern</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># General form</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[condition]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>long_runners <span class="op">=</span> df[df[<span class="st">'weeks'</span>] <span class="op">&gt;</span> <span class="dv">20</span>]        <span class="co"># Songs on chart 20+ weeks</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="op">=</span> df[df[<span class="st">'artist'</span>].<span class="bu">str</span>.contains(<span class="st">'Taylor'</span>)]  <span class="co"># Taylor Swift songs</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>peaked_at_one <span class="op">=</span> df[df[<span class="st">'peakPos'</span>] <span class="op">==</span> <span class="dv">1</span>]     <span class="co"># Songs that peaked at #1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The expression <code>df['weeks'] &gt; 20</code> creates a <strong>boolean mask</strong> — a series of True/False values, one for each row. When you use this mask inside <code>df[...]</code>, you get back only the rows where the mask is True.</p>
+</section>
+<section id="counting-filtered-results" class="level3">
+<h3 class="anchored" data-anchor-id="counting-filtered-results">Counting Filtered Results</h3>
+<p>Once you’ve filtered, counting is simple:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many Taylor Swift songs?</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>taylor <span class="op">=</span> df[df[<span class="st">'artist'</span>].<span class="bu">str</span>.contains(<span class="st">'Taylor'</span>)]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taylor Swift has </span><span class="sc">{</span><span class="bu">len</span>(taylor)<span class="sc">}</span><span class="ss"> songs on the chart"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># How many songs peaked at #1?</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Songs that peaked at #1: </span><span class="sc">{</span><span class="bu">len</span>(df[df[<span class="st">'peakPos'</span>] <span class="op">==</span> <span class="dv">1</span>])<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="adding-computed-columns" class="level3">
+<h3 class="anchored" data-anchor-id="adding-computed-columns">Adding Computed Columns</h3>
+<p>You can create new columns based on existing ones:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How much did each song move this week?</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'gradient'</span>] <span class="op">=</span> df[<span class="st">'last_week'</span>] <span class="op">-</span> df[<span class="st">'rank'</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find songs that rose more than 10 spots</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>risers <span class="op">=</span> df[df[<span class="st">'gradient'</span>] <span class="op">&gt;</span> <span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="pattern-2-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-2-aggregation">Pattern 2: <span class="orange">Aggregation</span></h2>
+<p>Aggregation functions summarize an entire column into a single value:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>What it computes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.mean()</code></td>
+<td>Average value</td>
+</tr>
+<tr class="even">
+<td><code>.max()</code></td>
+<td>Maximum value</td>
+</tr>
+<tr class="odd">
+<td><code>.min()</code></td>
+<td>Minimum value</td>
+</tr>
+<tr class="even">
+<td><code>.sum()</code></td>
+<td>Total of all values</td>
+</tr>
+<tr class="odd">
+<td><code>.count()</code></td>
+<td>Number of values</td>
+</tr>
+</tbody>
+</table>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average weeks on chart</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>avg_weeks <span class="op">=</span> df[<span class="st">'weeks'</span>].mean()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average: </span><span class="sc">{</span>avg_weeks<span class="sc">:.1f}</span><span class="ss"> weeks"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Longest-running song's weeks</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>max_weeks <span class="op">=</span> df[<span class="st">'weeks'</span>].<span class="bu">max</span>()</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum: </span><span class="sc">{</span>max_weeks<span class="sc">}</span><span class="ss"> weeks"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Combined with filtering</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>top10 <span class="op">=</span> df[df[<span class="st">'rank'</span>] <span class="op">&lt;=</span> <span class="dv">10</span>]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Top 10 average weeks: </span><span class="sc">{</span>top10[<span class="st">'weeks'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="pattern-3-finding-extremes" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-3-finding-extremes">Pattern 3: <span class="purple">Finding Extremes</span></h2>
+<p>What if you want not just the maximum <em>value</em>, but the <em>entire row</em> with that maximum? That’s where <code>idxmax()</code> comes in.</p>
+<p><img src="../images/week5/idxmax-pattern.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing the two-step idxmax pattern: first find the index, then retrieve the row."></p>
+<section id="the-two-step-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="the-two-step-pattern">The Two-Step Pattern</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Find the INDEX of the maximum</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> df[<span class="st">'weeks'</span>].idxmax()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Get the full row at that index</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>longest_song <span class="op">=</span> df.loc[idx]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Longest-running: </span><span class="sc">{</span>longest_song[<span class="st">'title'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  by </span><span class="sc">{</span>longest_song[<span class="st">'artist'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>longest_song[<span class="st">'weeks'</span>]<span class="sc">}</span><span class="ss"> weeks on chart"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="why-two-steps" class="level3">
+<h3 class="anchored" data-anchor-id="why-two-steps">Why Two Steps?</h3>
+<ul>
+<li><code>df['weeks'].max()</code> returns <code>52</code> (just the number)</li>
+<li><code>df['weeks'].idxmax()</code> returns <code>17</code> (the row index)</li>
+<li><code>df.loc[17]</code> returns the entire row, so you can access all its fields</li>
+</ul>
+</section>
+<section id="biggest-riser-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="biggest-riser-this-week">Biggest Riser This Week</h3>
+<p>Here’s a more complex example that combines filtering with finding extremes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude new songs (they weren't on chart last week)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>returning <span class="op">=</span> df[df[<span class="st">'lastPos'</span>] <span class="op">&gt;</span> <span class="dv">0</span>].copy()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate how much each song moved</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>returning[<span class="st">'change'</span>] <span class="op">=</span> returning[<span class="st">'lastPos'</span>] <span class="op">-</span> returning[<span class="st">'rank'</span>]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the biggest riser</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> returning[<span class="st">'change'</span>].idxmax()</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>riser <span class="op">=</span> returning.loc[idx]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Biggest riser: </span><span class="sc">{</span>riser[<span class="st">'title'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  #</span><span class="sc">{</span>riser[<span class="st">'lastPos'</span>]<span class="sc">}</span><span class="ss"> → #</span><span class="sc">{</span>riser[<span class="st">'rank'</span>]<span class="sc">}</span><span class="ss"> (up </span><span class="sc">{</span>riser[<span class="st">'change'</span>]<span class="sc">}</span><span class="ss"> spots)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="the-datetime-warm-up" class="level2">
+<h2 class="anchored" data-anchor-id="the-datetime-warm-up">The datetime Warm-Up</h2>
+<p>Before diving into DataFrames, we learned about Python’s <code>datetime</code> module. This was useful because the Billboard library expects dates in a specific format.</p>
+<section id="finding-last-saturday" class="level3">
+<h3 class="anchored" data-anchor-id="finding-last-saturday">Finding “Last Saturday”</h3>
+<p>Billboard charts are released on Saturdays. To find the most recent Saturday:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date, timedelta</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getLastSaturday(day):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    w <span class="op">=</span> day.weekday()              <span class="co"># Mon=0, ..., Sat=5, Sun=6</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    offset <span class="op">=</span> (w <span class="op">-</span> <span class="dv">5</span>) <span class="op">%</span> <span class="dv">7</span>           <span class="co"># Days since Saturday</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> day <span class="op">-</span> timedelta(days<span class="op">=</span>offset)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> date.today()</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>last_saturday <span class="op">=</span> getLastSaturday(today)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The formula <code>(w - 5) % 7</code> uses modular arithmetic to compute how many days back we need to go to reach Saturday (which is weekday 5).</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="thursday-visualization" class="level1">
+<h1>Thursday: <span class="orange">Visualization</span></h1>
+<p>We moved from single snapshots to analyzing an entire year of data, then visualized song trajectories to spot patterns.</p>
+<section id="from-one-week-to-52-weeks" class="level2">
+<h2 class="anchored" data-anchor-id="from-one-week-to-52-weeks">From One Week to 52 Weeks</h2>
+<p>Tuesday’s data was a snapshot — 100 songs from one week. Thursday’s data was a full year:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'billboard2025.csv'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Shape: </span><span class="sc">{</span>df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)           <span class="co"># (5200, 12) - 52 weeks × 100 songs!</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Weeks: </span><span class="sc">{</span>df[<span class="st">'date'</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># 52 unique dates</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="the-same-song-many-rows" class="level3">
+<h3 class="anchored" data-anchor-id="the-same-song-many-rows">The Same Song, Many Rows</h3>
+<p>In multi-week data, each song appears <em>multiple times</em> — once for each week it’s on the chart:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Track "Die With A Smile" through the year</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> df[df[<span class="st">'title'</span>] <span class="op">==</span> <span class="st">'Die With A Smile'</span>][[<span class="st">'date'</span>, <span class="st">'rank'</span>, <span class="st">'weeks'</span>]]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example.head(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This structure lets us see a song’s <em>journey</em> through the charts!</p>
+</section>
+</section>
+<section id="finding-the-1-songs" class="level2">
+<h2 class="anchored" data-anchor-id="finding-the-1-songs">Finding the #1 Songs</h2>
+<p><strong>Step 1:</strong> Filter to rows where rank equals 1</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>at_number_one <span class="op">=</span> df[df[<span class="st">'rank'</span>] <span class="op">==</span> <span class="dv">1</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows where a song was #1: </span><span class="sc">{</span><span class="bu">len</span>(at_number_one)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Step 2:</strong> Get the unique song titles (a song might be #1 for multiple weeks)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> df[df[<span class="st">'rank'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'title'</span>].unique()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique songs that hit #1: </span><span class="sc">{</span><span class="bu">len</span>(ones)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pattern-4-list-membership-with-.isin" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-4-list-membership-with-.isin">Pattern 4: <span class="green">List Membership with .isin()</span></h2>
+<p>Now we want the <em>complete chart history</em> of every song that ever hit #1. How do we filter for rows where the title appears in a list?</p>
+<p><img src="../images/week5/isin-filter.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing how .isin() filters rows based on membership in a list."></p>
+<section id="the-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="the-pattern">The Pattern</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># songs_to_find is a list of titles</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>hits_history <span class="op">=</span> df[df[<span class="st">'title'</span>].isin(songs_to_find)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-with-students" class="level3">
+<h3 class="anchored" data-anchor-id="example-with-students">Example with Students</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'name'</span>: [<span class="st">'Bluey'</span>, <span class="st">'Dora'</span>, <span class="st">'Arthur'</span>, <span class="st">'Peppa'</span>],</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'major'</span>: [<span class="st">'ECON'</span>, <span class="st">'BIOC'</span>, <span class="st">'PHAS'</span>, <span class="st">'EOSC'</span>]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>majors_to_find <span class="op">=</span> [<span class="st">'ECON'</span>, <span class="st">'PHAS'</span>]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>found <span class="op">=</span> students[students[<span class="st">'major'</span>].isin(majors_to_find)]</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns Bluey and Arthur</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="getting-all-data-for-1-songs" class="level3">
+<h3 class="anchored" data-anchor-id="getting-all-data-for-1-songs">Getting All Data for #1 Songs</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get list of songs that were ever #1</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> df[df[<span class="st">'rank'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'title'</span>].unique()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get ALL rows for those songs (their complete histories)</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ones_path <span class="op">=</span> df[df[<span class="st">'title'</span>].isin(ones)]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total rows for #1 songs: </span><span class="sc">{</span><span class="bu">len</span>(ones_path)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="reshaping-for-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-for-plotting">Reshaping for Plotting</h2>
+<p>To plot each song as a separate line, we need to transform our data. Our data looks like this (one row per song per week):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>date</th>
+<th>title</th>
+<th>rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025-01-04</td>
+<td>Song A</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2025-01-04</td>
+<td>Song B</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>2025-01-11</td>
+<td>Song A</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2025-01-11</td>
+<td>Song B</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>But plotting wants <strong>one column per song</strong>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>date</th>
+<th>Song A</th>
+<th>Song B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025-01-04</td>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>2025-01-11</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pattern-5-groupby-unstack" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-5-groupby-unstack">Pattern 5: <span class="purple">groupby + unstack</span></h2>
+<p><img src="../images/week5/groupby-unstack.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing how groupby organizes data by categories and unstack pivots them into columns."></p>
+<section id="step-by-step" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step">Step by Step</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Group by date AND title</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> ones_path.groupby([<span class="st">'date'</span>, <span class="st">'title'</span>])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Extract the rank for each group</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>ranks <span class="op">=</span> grouped[<span class="st">'rank'</span>].<span class="bu">sum</span>()  <span class="co"># sum() just extracts the single value</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Pivot titles into columns</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> ranks.unstack()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or as one line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> ones_path.groupby([<span class="st">'date'</span>, <span class="st">'title'</span>])[<span class="st">'rank'</span>].<span class="bu">sum</span>().unstack()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="creating-the-trajectory-plot" class="level2">
+<h2 class="anchored" data-anchor-id="creating-the-trajectory-plot">Creating the Trajectory Plot</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot all trajectories</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plot_data.plot(ax<span class="op">=</span>ax)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># IMPORTANT: Invert y-axis so #1 is at the top!</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Chart Position'</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Chart Trajectories of #1 Songs (2025)'</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>ax.legend(bbox_to_anchor<span class="op">=</span>(<span class="fl">1.02</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-invert-the-y-axis" class="level3">
+<h3 class="anchored" data-anchor-id="why-invert-the-y-axis">Why Invert the Y-Axis?</h3>
+<p>In chart positions, lower numbers are better (#1 is the top). By default, matplotlib puts low values at the bottom. We call <code>ax.invert_yaxis()</code> to flip this, so #1 appears at the top of the plot.</p>
+</section>
+</section>
+<section id="scatter-plots-debut-vs.-staying-power" class="level2">
+<h2 class="anchored" data-anchor-id="scatter-plots-debut-vs.-staying-power">Scatter Plots: Debut vs.&nbsp;Staying Power</h2>
+<p>We also explored whether a strong debut predicts how long a song stays on the chart.</p>
+<section id="finding-debut-position" class="level3">
+<h3 class="anchored" data-anchor-id="finding-debut-position">Finding Debut Position</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Songs in their first week (isNew == True)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>debuts <span class="op">=</span> df[df[<span class="st">'isNew'</span>] <span class="op">==</span> <span class="va">True</span>][[<span class="st">'title'</span>, <span class="st">'rank'</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="finding-total-weeks" class="level3">
+<h3 class="anchored" data-anchor-id="finding-total-weeks">Finding Total Weeks</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maximum weeks for each song</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>staying_power <span class="op">=</span> df.groupby(<span class="st">'title'</span>)[<span class="st">'weeks'</span>].<span class="bu">max</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="merging-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="merging-the-data">Merging the Data</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare DataFrames for merging</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>debuts_df <span class="op">=</span> debuts.rename(columns<span class="op">=</span>{<span class="st">'rank'</span>: <span class="st">'debut_rank'</span>})</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>staying_df <span class="op">=</span> staying_power.reset_index().rename(columns<span class="op">=</span>{<span class="st">'weeks'</span>: <span class="st">'total_weeks'</span>})</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge on title</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> pd.merge(debuts_df, staying_df, on<span class="op">=</span><span class="st">'title'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="the-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="the-scatter-plot">The Scatter Plot</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>ax.scatter(combined[<span class="st">'debut_rank'</span>], combined[<span class="st">'total_weeks'</span>], alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ax.invert_xaxis()  <span class="co"># Lower debut rank (better) on the right</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Debut Position (lower = better)'</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Total Weeks on Chart'</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Does a Strong Debut Mean Staying Power?'</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="the-analysis-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis-pipeline">The Analysis Pipeline</h2>
+<p><img src="../images/week5/putting-together.svg" class="img-fluid" style="width:80.0%" alt="Pipeline showing Load → Filter → Reshape → Visualize → Chart emoji"></p>
+<p>Most data analysis follows this pattern:</p>
+<ol type="1">
+<li><strong>Load</strong> — <code>pd.read_csv()</code> to get your data</li>
+<li><strong>Filter</strong> — <code>df[condition]</code> to focus on relevant rows</li>
+<li><strong>Reshape</strong> — <code>groupby()</code> and <code>unstack()</code> to reorganize for analysis</li>
+<li><strong>Visualize</strong> — <code>.plot()</code> to see patterns</li>
+</ol>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+<hr>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<section id="loading-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-data"><span class="blue">Loading Data</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>From CSV file</td>
+<td><code>df = pd.read_csv('file.csv')</code></td>
+</tr>
+<tr class="even">
+<td>From list of dicts</td>
+<td><code>df = pd.DataFrame(list_of_dicts)</code></td>
+</tr>
+<tr class="odd">
+<td>View first rows</td>
+<td><code>df.head(10)</code></td>
+</tr>
+<tr class="even">
+<td>Get dimensions</td>
+<td><code>df.shape</code></td>
+</tr>
+<tr class="odd">
+<td>List columns</td>
+<td><code>df.columns.tolist()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="filtering" class="level3">
+<h3 class="anchored" data-anchor-id="filtering"><span class="green">Filtering</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>By condition</td>
+<td><code>df[df['col'] &gt; value]</code></td>
+</tr>
+<tr class="even">
+<td>String contains</td>
+<td><code>df[df['col'].str.contains('text')]</code></td>
+</tr>
+<tr class="odd">
+<td>Equality</td>
+<td><code>df[df['col'] == value]</code></td>
+</tr>
+<tr class="even">
+<td>List membership</td>
+<td><code>df[df['col'].isin(list)]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="aggregation" class="level3">
+<h3 class="anchored" data-anchor-id="aggregation"><span class="orange">Aggregation</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Average</td>
+<td><code>df['col'].mean()</code></td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td><code>df['col'].max()</code></td>
+</tr>
+<tr class="odd">
+<td>Minimum</td>
+<td><code>df['col'].min()</code></td>
+</tr>
+<tr class="even">
+<td>Sum</td>
+<td><code>df['col'].sum()</code></td>
+</tr>
+<tr class="odd">
+<td>Count</td>
+<td><code>len(df)</code> or <code>df.shape[0]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="finding-extremes" class="level3">
+<h3 class="anchored" data-anchor-id="finding-extremes"><span class="purple">Finding Extremes</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Index of max</td>
+<td><code>idx = df['col'].idxmax()</code></td>
+</tr>
+<tr class="even">
+<td>Index of min</td>
+<td><code>idx = df['col'].idxmin()</code></td>
+</tr>
+<tr class="odd">
+<td>Get that row</td>
+<td><code>df.loc[idx]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reshaping" class="level3">
+<h3 class="anchored" data-anchor-id="reshaping"><span class="red">Reshaping</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Group and aggregate</td>
+<td><code>df.groupby('col')['val'].sum()</code></td>
+</tr>
+<tr class="even">
+<td>Group by multiple</td>
+<td><code>df.groupby(['a', 'b'])['val'].sum()</code></td>
+</tr>
+<tr class="odd">
+<td>Pivot to columns</td>
+<td><code>.unstack()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="plotting" class="level3">
+<h3 class="anchored" data-anchor-id="plotting"><span class="pink">Plotting</span></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>df.plot(ax<span class="op">=</span>ax)                    <span class="co"># Line plot</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>ax.scatter(x_data, y_data)        <span class="co"># Scatter plot</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()                 <span class="co"># Flip y-axis</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Label'</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Label'</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Title'</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>We’ve seen how DataFrames make data analysis elegant and powerful. But all our work has been on existing columns — filtering and aggregating values that were already there.</p>
+<p>Next week, we’ll explore <strong>dictionaries</strong> in depth, learning patterns for counting, grouping, and transforming data that will make your code even more versatile!</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/05_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/05_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

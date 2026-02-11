@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 12px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 11px; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">From Loops to DataFrames</text>
+
+  <!-- Tuesday box -->
+  <rect x="50" y="60" width="300" height="180" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="200" y="90" text-anchor="middle" class="label" fill="#1976d2">Tuesday: DataFrames Basics</text>
+
+  <text x="70" y="120" class="small">List of dicts → Loop for everything</text>
+  <text x="70" y="145" class="small">DataFrame → One-liner operations!</text>
+
+  <text x="70" y="180" class="code">df.nlargest(5, 'weeks')</text>
+  <text x="70" y="200" class="code">df[df['artist'].str.contains('Taylor')]</text>
+  <text x="70" y="220" class="code">df['weeks'].mean()</text>
+
+  <!-- Thursday box -->
+  <rect x="450" y="60" width="300" height="180" rx="10" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="600" y="90" text-anchor="middle" class="label" fill="#f57c00">Thursday: Visualization</text>
+
+  <text x="470" y="120" class="small">One week → One year of data</text>
+  <text x="470" y="145" class="small">Filter → Group → Reshape → Plot</text>
+
+  <text x="470" y="180" class="code">df[df['title'].isin(ones)]</text>
+  <text x="470" y="200" class="code">.groupby(['date','title'])</text>
+  <text x="470" y="220" class="code">.unstack().plot()</text>
+
+  <!-- Arrow connecting them -->
+  <path d="M 350 150 L 450 150" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom summary -->
+  <text x="400" y="275" text-anchor="middle" class="small" fill="#333">
+    The power move: Express your analysis intent, let pandas do the work!
+  </text>
+</svg>

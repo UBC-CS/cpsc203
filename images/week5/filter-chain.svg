@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 10px; }
+    .num { font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: bold; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" class="title">The Filter Pattern: df[condition]</text>
+
+  <!-- Step 1: Full data -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="150" height="120" rx="8" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="75" y="25" text-anchor="middle" class="label" fill="#1976d2">All 100 Songs</text>
+
+    <!-- Mini table -->
+    <rect x="15" y="40" width="120" height="15" fill="#1976d2"/>
+    <text x="75" y="51" text-anchor="middle" class="small" fill="white">rank | title | weeks</text>
+    <text x="75" y="70" text-anchor="middle" class="small" fill="#666">Song 1...</text>
+    <text x="75" y="85" text-anchor="middle" class="small" fill="#666">Song 2...</text>
+    <text x="75" y="100" text-anchor="middle" class="small" fill="#666">... (100 rows)</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 210 110 L 280 110" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="245" y="95" text-anchor="middle" class="code">df['weeks'] > 20</text>
+
+  <!-- Step 2: Boolean mask -->
+  <g transform="translate(290, 50)">
+    <rect x="0" y="0" width="150" height="120" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+    <text x="75" y="25" text-anchor="middle" class="label" fill="#f9a825">True/False Mask</text>
+
+    <text x="75" y="55" text-anchor="middle" class="code">[True, False,</text>
+    <text x="75" y="70" text-anchor="middle" class="code"> False, True,</text>
+    <text x="75" y="85" text-anchor="middle" class="code"> True, False,</text>
+    <text x="75" y="100" text-anchor="middle" class="code"> ...]</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 450 110 L 520 110" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="485" y="95" text-anchor="middle" class="code">df[mask]</text>
+
+  <!-- Step 3: Filtered data -->
+  <g transform="translate(530, 50)">
+    <rect x="0" y="0" width="150" height="120" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="75" y="25" text-anchor="middle" class="label" fill="#2e7d32">Only Matching Rows</text>
+
+    <rect x="15" y="40" width="120" height="15" fill="#2e7d32"/>
+    <text x="75" y="51" text-anchor="middle" class="small" fill="white">rank | title | weeks</text>
+    <text x="75" y="70" text-anchor="middle" class="small" fill="#666">Long Song 1...</text>
+    <text x="75" y="85" text-anchor="middle" class="small" fill="#666">Long Song 2...</text>
+    <text x="75" y="100" text-anchor="middle" class="small" fill="#666">(fewer rows!)</text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom explanation -->
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="700" height="60" rx="8" fill="#fafafa" stroke="#ddd"/>
+    <text x="20" y="25" class="small" fill="#333">
+      <tspan font-weight="bold">The magic:</tspan> df[condition] creates a True/False value for each row,
+    </text>
+    <text x="20" y="45" class="small" fill="#333">
+      then keeps only the rows where it's True. You can chain these: df[cond1][cond2] or df[(cond1) &amp; (cond2)]
+    </text>
+  </g>
+</svg>

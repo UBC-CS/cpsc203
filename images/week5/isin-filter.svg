@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 10px; }
+    .header { font-family: 'Open Sans', sans-serif; font-size: 10px; font-weight: bold; fill: white; }
+    .cell { font-family: 'Fira Code', monospace; font-size: 9px; }
+  </style>
+
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" class="title">.isin() — Filter by List Membership</text>
+
+  <!-- The list to check -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="80" y="20" text-anchor="middle" class="label" fill="#f57c00">Songs that hit #1</text>
+    <text x="80" y="40" text-anchor="middle" class="code">ones = ['Die With A</text>
+    <text x="80" y="52" text-anchor="middle" class="code">Smile', 'APT.']</text>
+  </g>
+
+  <!-- Original table -->
+  <g transform="translate(250, 50)">
+    <text x="75" y="-5" text-anchor="middle" class="label" fill="#1976d2">Full Year DataFrame</text>
+    <rect x="0" y="0" width="30" height="18" fill="#1976d2"/>
+    <rect x="30" y="0" width="100" height="18" fill="#1976d2"/>
+    <rect x="130" y="0" width="40" height="18" fill="#1976d2"/>
+
+    <text x="15" y="13" text-anchor="middle" class="header">date</text>
+    <text x="80" y="13" text-anchor="middle" class="header">title</text>
+    <text x="150" y="13" text-anchor="middle" class="header">rank</text>
+
+    <rect x="0" y="18" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="30" text-anchor="middle" class="cell">Jan</text>
+    <text x="80" y="30" text-anchor="middle" class="cell">Die With A Smile</text>
+    <text x="150" y="30" text-anchor="middle" class="cell">1</text>
+
+    <rect x="0" y="36" width="170" height="18" fill="#fff" stroke="#ddd"/>
+    <text x="15" y="48" text-anchor="middle" class="cell">Jan</text>
+    <text x="80" y="48" text-anchor="middle" class="cell">Other Song</text>
+    <text x="150" y="48" text-anchor="middle" class="cell">15</text>
+
+    <rect x="0" y="54" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="66" text-anchor="middle" class="cell">Jan</text>
+    <text x="80" y="66" text-anchor="middle" class="cell">APT.</text>
+    <text x="150" y="66" text-anchor="middle" class="cell">3</text>
+
+    <rect x="0" y="72" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="84" text-anchor="middle" class="cell">Feb</text>
+    <text x="80" y="84" text-anchor="middle" class="cell">Die With A Smile</text>
+    <text x="150" y="84" text-anchor="middle" class="cell">2</text>
+
+    <text x="85" y="105" text-anchor="middle" class="cell">... (5000+ rows)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 440 100 L 500 100" stroke="#666" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="470" y="85" text-anchor="middle" class="code">.isin(ones)</text>
+
+  <!-- Result table -->
+  <g transform="translate(520, 50)">
+    <text x="85" y="-5" text-anchor="middle" class="label" fill="#2e7d32">Only #1 Songs' History</text>
+    <rect x="0" y="0" width="30" height="18" fill="#2e7d32"/>
+    <rect x="30" y="0" width="100" height="18" fill="#2e7d32"/>
+    <rect x="130" y="0" width="40" height="18" fill="#2e7d32"/>
+
+    <text x="15" y="13" text-anchor="middle" class="header">date</text>
+    <text x="80" y="13" text-anchor="middle" class="header">title</text>
+    <text x="150" y="13" text-anchor="middle" class="header">rank</text>
+
+    <rect x="0" y="18" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="30" text-anchor="middle" class="cell">Jan</text>
+    <text x="80" y="30" text-anchor="middle" class="cell">Die With A Smile</text>
+    <text x="150" y="30" text-anchor="middle" class="cell">1</text>
+
+    <rect x="0" y="36" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="48" text-anchor="middle" class="cell">Jan</text>
+    <text x="80" y="48" text-anchor="middle" class="cell">APT.</text>
+    <text x="150" y="48" text-anchor="middle" class="cell">3</text>
+
+    <rect x="0" y="54" width="170" height="18" fill="#e8f5e9" stroke="#81c784"/>
+    <text x="15" y="66" text-anchor="middle" class="cell">Feb</text>
+    <text x="80" y="66" text-anchor="middle" class="cell">Die With A Smile</text>
+    <text x="150" y="66" text-anchor="middle" class="cell">2</text>
+
+    <text x="85" y="87" text-anchor="middle" class="cell">... (fewer rows!)</text>
+  </g>
+
+  <!-- Bottom explanation -->
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="650" height="60" rx="8" fill="#fafafa" stroke="#ddd"/>
+    <text x="20" y="22" class="code" fill="#1976d2">onespath = df[df['title'].isin(ones)]</text>
+    <text x="20" y="45" class="small" fill="#333">
+      <tspan font-weight="bold">Use case:</tspan> When you have a list of values and want all rows matching any of them.
+    </text>
+  </g>
+
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

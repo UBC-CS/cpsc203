@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 10px; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" class="title">The Same Question, Two Ways</text>
+  <text x="400" y="45" text-anchor="middle" class="small" fill="#666">"How many songs does Taylor Swift have on the chart?"</text>
+
+  <!-- Left: Loop approach -->
+  <rect x="30" y="70" width="350" height="280" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="205" y="100" text-anchor="middle" class="label" fill="#c62828">With Loops (Last Week)</text>
+
+  <rect x="50" y="115" width="310" height="140" rx="5" fill="#fff" stroke="#ddd"/>
+  <text x="60" y="135" class="code">count = 0</text>
+  <text x="60" y="152" class="code">for song in chartlist:</text>
+  <text x="60" y="169" class="code">    artist = song['artist']</text>
+  <text x="60" y="186" class="code">    if 'Taylor' in artist:</text>
+  <text x="60" y="203" class="code">        count += 1</text>
+  <text x="60" y="220" class="code">print(count)</text>
+
+  <text x="205" y="280" text-anchor="middle" class="small" fill="#c62828">6 lines of code</text>
+  <text x="205" y="300" text-anchor="middle" class="small" fill="#666">You write the HOW</text>
+  <text x="205" y="320" text-anchor="middle" class="small" fill="#666">(initialize, loop, check, increment)</text>
+
+  <!-- Right: DataFrame approach -->
+  <rect x="420" y="70" width="350" height="280" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="595" y="100" text-anchor="middle" class="label" fill="#2e7d32">With DataFrames (This Week)</text>
+
+  <rect x="440" y="115" width="310" height="60" rx="5" fill="#fff" stroke="#ddd"/>
+  <text x="450" y="145" class="code">taylor = df[df['artist'].str.contains('Taylor')]</text>
+  <text x="450" y="162" class="code">len(taylor)</text>
+
+  <text x="595" y="220" text-anchor="middle" class="small" fill="#2e7d32">2 lines of code!</text>
+  <text x="595" y="250" text-anchor="middle" class="small" fill="#666">You express the WHAT</text>
+  <text x="595" y="270" text-anchor="middle" class="small" fill="#666">("give me rows where artist contains Taylor")</text>
+
+  <!-- Big checkmark -->
+  <circle cx="595" cy="310" r="25" fill="#2e7d32"/>
+  <path d="M 580 310 L 590 320 L 615 295" stroke="white" stroke-width="4" fill="none"/>
+</svg>
