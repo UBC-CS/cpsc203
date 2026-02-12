@@ -307,7 +307,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBDaGVjayBldmVyeSBwZXJz
 <section id="the-problem-with-nested-loops" class="slide level2">
 <h2>The Problem with Nested Loops</h2>
 
-<img data-src="images/nested_loop_check.svg" class="r-stretch"><p>With 10 people in Gallery A and 12 in Gallery B: <strong>10 × 12 = 120 comparisons</strong></p>
+<img data-src="../images/nested_loop_check.svg" class="r-stretch"><p>With 10 people in Gallery A and 12 in Gallery B: <strong>10 × 12 = 120 comparisons</strong></p>
 <p>With 10,000 in each: <strong>100,000,000 comparisons!</strong></p>
 </section>
 <section id="pattern-1-membership-with-a-dictionary" class="slide level2">
@@ -337,17 +337,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBTdGVwIDI6IENoZWNrIHdo
 <li><strong>Total:</strong> 10 + 12 = <strong>22 operations</strong> (not 120!)</li>
 </ul>
 <p>Dictionary lookup is <strong>instant</strong> — it doesn’t matter how many keys are stored!</p>
-</section>
-<section id="aside-set-intersection" class="slide level2">
-<h2>Aside: Set Intersection</h2>
-
-<img data-src="images/venn_intersection.svg" class="r-stretch"><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
-<span id="cb3-2"><a></a>seen_in_first <span class="op">=</span> defaultdict(<span class="bu">bool</span>)</span>
-<span id="cb3-3"><a></a><span class="cf">for</span> item <span class="kw">in</span> first_list:</span>
-<span id="cb3-4"><a></a>    seen_in_first[item] <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a>in_both <span class="op">=</span> [item <span class="cf">for</span> item <span class="kw">in</span> second_list <span class="cf">if</span> seen_in_first[item]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Use when:</strong> Finding common elements, detecting duplicates</p>
 </section>
 <section id="pattern-2-counting-frequencies" class="slide level2">
 <h2>Pattern 2: Counting Frequencies</h2>
@@ -427,7 +416,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBjb2xsZWN0aW9ucyBp
 <section id="beyond-caesar-random-substitution" class="slide level2">
 <h2>Beyond Caesar: Random Substitution</h2>
 <p>A Caesar cipher shifts by a fixed amount — we can decode with math:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>plain_letter <span class="op">=</span> <span class="bu">chr</span>(<span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">+</span> (i <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>plain_letter <span class="op">=</span> <span class="bu">chr</span>(<span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">+</span> (i <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>But what if the spy used a <strong>random substitution</strong>? No formula can help!</p>
 <div>
 <div id="pyodide-15" class="exercise-cell">

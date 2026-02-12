@@ -928,13 +928,6 @@
     "text": "Why Is This Faster?\n\nStep 1: Look at each Gallery A person once → 10 operations\nStep 2: Look at each Gallery B person once → 12 operations\nTotal: 10 + 12 = 22 operations (not 120!)\n\nDictionary lookup is instant — it doesn’t matter how many keys are stored!"
   },
   {
-    "objectID": "slides/06_thu_dictionaries.html#aside-set-intersection",
-    "href": "slides/06_thu_dictionaries.html#aside-set-intersection",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Aside: Set Intersection",
-    "text": "Aside: Set Intersection\n\nfrom collections import defaultdict\nseen_in_first = defaultdict(bool)\nfor item in first_list:\n    seen_in_first[item] = True\n\nin_both = [item for item in second_list if seen_in_first[item]]\nUse when: Finding common elements, detecting duplicates"
-  },
-  {
     "objectID": "slides/06_thu_dictionaries.html#pattern-2-counting-frequencies",
     "href": "slides/06_thu_dictionaries.html#pattern-2-counting-frequencies",
     "title": "Programming, problem solving, and algorithms",
