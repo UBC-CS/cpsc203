@@ -306,7 +306,7 @@ print(decrypt)
 ## Decoding with the Mapping
 
 ``` {pyodide}
-secret_message = "TQPV PV TQZ EGRZ: RPXMGFXS"
+secret_message = "TQZ MGSRZF RXTXYLDZ NXV QPRRZF PF TQZ CXUST"
 
 decoded = ""
 for char in secret_message:
