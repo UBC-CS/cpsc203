@@ -186,7 +186,7 @@ target = 10
 for n in numbers:
     for m in numbers:
         if n + m == target:
-            print(f"Found pair: {complement} + {n} = {target}")
+            print(f"Found pair: {m} + {n} = {target}")
 ```
 
 Do you like this? 
@@ -278,7 +278,7 @@ for w in words:
     else:
         result.append(w)
 
-print(" ".join(result))  # I ❤️ ☕
+print(" ".join(result))  
 ```
 
 ## Beyond Caesar: Random Substitution
@@ -294,11 +294,11 @@ But what if the spy used a **random substitution**? No formula can help!
 ``` {pyodide}
 # A random cipher — no pattern, just memorize the mapping
 decrypt = {
-    "Q": "A", "W": "B", "E": "C", "R": "D", "T": "E",
-    "Y": "F", "U": "G", "I": "H", "O": "I", "P": "J",
-    "A": "K", "S": "L", "D": "M", "F": "N", "G": "O",
-    "H": "P", "J": "Q", "K": "R", "L": "S", "Z": "T",
-    "X": "U", "C": "V", "V": "W", "B": "X", "N": "Y", "M": "Z"
+    "X": "A", "W": "B", "E": "C", "R": "D", "Z": "E",
+    "Y": "F", "M": "G", "Q": "H", "P": "I", "J": "J",
+    "K": "K", "S": "L", "D": "M", "F": "N", "G": "O",
+    "H": "P", "B": "Q", "L": "R", "V": "S", "T": "T",
+    "U": "U", "C": "V", "N": "W", "A": "X", "O": "Y", "I": "Z"
 }
 print(decrypt)
 ```
@@ -306,7 +306,7 @@ print(decrypt)
 ## Decoding with the Mapping
 
 ``` {pyodide}
-secret_message = "ZTEKS OL ZIT EGRT: ROQHGFQS"
+secret_message = "TQPV PV TQZ EGRZ: RPXMGFXS"
 
 decoded = ""
 for char in secret_message:
