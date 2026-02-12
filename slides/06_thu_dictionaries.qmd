@@ -7,211 +7,345 @@ pyodide:
 
 ## Announcements
 
-* Examlet 2 is happening now through Thursday — good luck!
+* Examlet 2 is happening now good luck!
 * Project 1 due March 1
 
-## Previously...
+## Dictionaries
 
-🔍 **The Great Data Heist**
-
-You solved four rooms using dictionary patterns:
-
-1. **The Intersection** — Membership pattern (`defaultdict(bool)`)
-2. **The Cipher** — Counter pattern (`Counter`) + trial-and-error
-3. **The Vault** — Complement/Two-Sum pattern
-4. **The Alibi Map** — Grouping pattern (`defaultdict(list)`)
-
-Today: The Translation/Mapping pattern + catch the thief!
-
-## Recap: The Patterns So Far
+Dictionaries are Python's **key-value lookup** structure.
 
 ``` {pyodide}
-from collections import defaultdict, Counter
+# Creating a dictionary
+suspect = {
+    "name": "Prof. Histogram",
+    "department": "Statistics",
+    "alibi": "Was at faculty meeting",
+    "motive": "Jealousy of the DataFrame's power"
+}
 
-# Membership: Track what we've seen
-seen = defaultdict(bool)
-seen["apple"] = True
-if seen["banana"]:  # False, no KeyError!
-    print("seen")
+print(suspect["name"])
+print(suspect["alibi"])
 
-# Counting: How many of each?
-counts = Counter(["a", "b", "a", "c", "a"])
-print(counts.most_common(1))  # [('a', 3)]
+# Add new key-value pair
+suspect["last_seen"] = "Library, 8pm"
 
-# Grouping: Organize by category
-by_category = defaultdict(list)
-by_category["fruit"].append("apple")
+# Check if key exists
+if "motive" in suspect:
+    print("Motive found!")
+
+# Get all keys
+print(list(suspect.keys()))
 ```
 
-## Pattern: Translation/Mapping
+## Beware: KeyError!
+
+``` {pyodide}
+# What happens if the key doesn't exist?
+try:
+    print(suspect["hobby"])
+except KeyError as e:
+    print(f"KeyError: {e} — that key doesn't exist!")
+```
+
+``` {pyodide}
+# Safe way to check first
+if "hobby" in suspect:
+    print(suspect["hobby"])
+else:
+    print("No hobby on file")
+```
+
+## Why Dictionaries?
+
+**Lists:** Access by position (index)
+```python
+fruit = [("apple","red"), ("banana","yellow"), ("cherry","red")]
+fruit[0], fruit[1], fruit[2]  # How do you look for "apple"?
+```
+
+**Dictionaries:** Access by meaningful key
+```python
+fruit = {"apple":"red", "banana":"yellow", "cherry":"red"}
+fruit["apple"], fruit["banana"], fruit["cherry"]  # Self-documenting!
+```
+
+Dictionaries are also **fast** — requires the same time whether there are 100 entries, or 100,000.
+
+# Dictionary Patterns
+
+## Pattern 0: Records
+
+Alternative to a data frame or named tuple:
+
+``` {pyodide}
+# Security log: who entered which rooms
+security_log = [
+    {"person": "Prof. Histogram", "room": "Gallery A", "time": "7:00pm"},
+    {"person": "Dr. Correlation", "room": "Gallery B", "time": "7:15pm"},
+    {"person": "Prof. Histogram", "room": "Gallery B", "time": "7:30pm"},
+    {"person": "Ms. Outlier", "room": "Gallery A", "time": "7:45pm"},
+    {"person": "Dr. Correlation", "room": "Vault", "time": "8:00pm"},
+    {"person": "Prof. Histogram", "room": "Vault", "time": "8:15pm"}
+]
+```
+
+
+## Pattern 1: Membership
+
+Find everyone who was in Gallery A *and* Gallery B.
+
+``` {pyodide}
+# Who was in Gallery A?
+gallery_a_visitors = [log["______"] for log in ____________
+                      if log["____"] == "Gallery A"]
+print("Gallery A:", gallery_a_visitors)
+# Who was in Gallery B?
+```
+
+## The Naive Approach: Check Every Pair
+
+``` {pyodide}
+# Check every person in A against every person in B
+in_both = []
+for person_a in gallery_a_visitors:      # Loop through A
+    for person_b in gallery_b_visitors:  # Loop through B
+        if person_a == person_b:
+            in_both.append(person_a)
+print("In both:", set(in_both))
+```
+
+This works... but what if the lists are LONG?
+
+## The Problem with Nested Loops
+
+![](images/nested_loop_check.svg)
+
+With 10 people in Gallery A and 12 in Gallery B:
+**10 × 12 = 120 comparisons**
+
+With 10,000 in each: **100,000,000 comparisons!**
+
+## Pattern 1: Membership with a Dictionary
+
+``` {pyodide}
+from collections import defaultdict
+
+# Step 1: Build a "seen in Gallery A" dictionary
+in_gallery_a = defaultdict(bool)
+for person in gallery_a_visitors:
+    in_gallery_a[person] = True
+
+print("Seen in Gallery A:", dict(in_gallery_a))
+```
+
+``` {pyodide}
+# Step 2: Check who from Gallery B is also in the dict
+suspects_both_rooms = []
+for person in gallery_b_visitors:
+    if in_gallery_a[person]:  # No KeyError thanks to defaultdict!
+        suspects_both_rooms.append(person)
+
+print("In BOTH rooms:", set(suspects_both_rooms))
+```
+
+## Why Is This Faster?
+
+- **Step 1:** Look at each Gallery A person once → 10 operations
+- **Step 2:** Look at each Gallery B person once → 12 operations
+- **Total:** 10 + 12 = **22 operations** (not 120!)
+
+Dictionary lookup is **instant** — it doesn't matter how many keys are stored!
+
+## Aside: Set Intersection
+
+![](images/venn_intersection.svg)
+
+```python
+from collections import defaultdict
+seen_in_first = defaultdict(bool)
+for item in first_list:
+    seen_in_first[item] = True
+
+in_both = [item for item in second_list if seen_in_first[item]]
+```
+
+**Use when:** Finding common elements, detecting duplicates
+
+## Pattern 2: Counting Frequencies
+
+**Use case:** Count how many times each item appears.
+
+``` {pyodide}
+from collections import Counter # specialized dictionary
+
+cipher = "WKLV LV WKH FRGH: GLDJRQDO"
+
+# Count letter frequencies using Counter
+letters_only = [c for c in cipher if c.isalpha()]
+letter_counts = Counter(letters_only)
+
+print("Letter frequencies:", letter_counts)
+print(f"Most common: {letter_counts.most_common(3)}")
+```
+
+## Pattern 3: Finding Complements
+
+**Use case:** Find two numbers that add up to a target.
+
+``` {pyodide}
+from collections import defaultdict
+
+numbers = [3, 7, 1, 9, 4, 6, 2]
+target = 10
+
+for n in numbers:
+    for m in numbers:
+        if n + m == target:
+            print(f"Found pair: {complement} + {n} = {target}")
+```
+
+Do you like this? 
+
+## Pattern 3: Finding Complements, reprise
+
+**Use case:** Find two numbers that add up to a target.
+
+``` {pyodide}
+from collections import defaultdict
+
+numbers = [3, 7, 1, 9, 4, 6, 2]
+target = 10
+
+seen = defaultdict(bool)
+for n in numbers:
+    complement = target - n
+    if seen[complement]:  # No KeyError with defaultdict!
+        print(f"Found pair: {complement} + {n} = {target}")
+    seen[n] = True
+```
+
+As we scan, we remember what we've seen — and check if the complement exists!
+
+
+## Pattern 4: Grouping by Category
+
+**Use case:** Organize items into categories
+
+``` {pyodide}
+from collections import defaultdict
+
+fruits = [
+    ("apple", "red"),
+    ("banana", "yellow"),
+    ("cherry", "red"),
+    ("lemon", "yellow"),
+    ("grape", "purple")
+]
+
+by_color = defaultdict(list)  # Missing keys auto-create empty lists
+for fruit, color in fruits:
+    by_color[color].append(fruit)
+
+print(dict(by_color))
+```
+
+## Grouping with Dictionaries
+
+What if our items are dictionaries, not tuples?
+
+``` {pyodide}
+from collections import defaultdict
+
+# Two example suspects
+example_suspects = [
+    {"name": "Prof. Histogram", "alibi": "faculty meeting"},
+    {"name": "Mr. Regression", "alibi": "faculty meeting"},
+]
+
+by_alibi = defaultdict(list)
+for suspect in example_suspects:
+    by_alibi[suspect["alibi"]].append(suspect["name"])
+
+print(dict(by_alibi))
+```
+
+Same pattern — just access the key with `suspect["alibi"]` instead of unpacking a tuple!
+
+## Pattern 5: Translation/Mapping
 
 **Use case:** Convert values from one representation to another.
 
 ``` {pyodide}
-# Grade point conversion
-letter_to_gpa = {
-    "A+": 4.33, "A": 4.0, "A-": 3.67,
-    "B+": 3.33, "B": 3.0, "B-": 2.67,
-    "C+": 2.33, "C": 2.0, "C-": 1.67,
-    "D": 1.0, "F": 0.0
-}
+from collections import defaultdict
 
-grades = ["A", "B+", "A-", "C"]
-gpas = [letter_to_gpa[g] for g in grades]
-print(f"Grades: {grades}")
-print(f"GPAs: {gpas}")
-print(f"Average: {sum(gpas)/len(gpas):.2f}")
+word_to_emoji = defaultdict(str, {
+    "sun": "☀️", "rain": "🌧️", "cloud": "☁️",
+    "happy": "😊", "sad": "😢", "love": "❤️",
+    "cat": "🐱", "dog": "🐶", "coffee": "☕"
+})
+
+words = ["I", "love", "coffee"]
+result = []
+for w in words:
+    emoji = word_to_emoji[w.lower()]
+    if emoji:
+        result.append(emoji)
+    else:
+        result.append(w)
+
+print(" ".join(result))  # I ❤️ ☕
 ```
 
-## Remember the Cipher?
+## Beyond Caesar: Random Substitution
 
-On Tuesday, we cracked the cipher by trying shifts until we found English:
+A Caesar cipher shifts by a fixed amount — we can decode with math:
 
+```python
+plain_letter = chr(ord('A') + (i - shift) % 26)
 ```
-WKLV LV WKH FRGH: GLDJRQDO → THIS IS THE CODE: DIAGONAL
-```
 
-We found shift = 3 by trial and error. But what if we have a **much longer message**?
-
-## Building a Decryption Dictionary
+But what if the spy used a **random substitution**? No formula can help!
 
 ``` {pyodide}
-# Build a complete letter → letter mapping
-shift = 3
-decrypt = {}
-for i in range(26):
-    cipher_letter = chr(ord('A') + i)
-    plain_letter = chr(ord('A') + (i - shift) % 26)
-    decrypt[cipher_letter] = plain_letter
-
-print("Decryption mapping:")
+# A random cipher — no pattern, just memorize the mapping
+decrypt = {
+    "Q": "A", "W": "B", "E": "C", "R": "D", "T": "E",
+    "Y": "F", "U": "G", "I": "H", "O": "I", "P": "J",
+    "A": "K", "S": "L", "D": "M", "F": "N", "G": "O",
+    "H": "P", "J": "Q", "K": "R", "L": "S", "Z": "T",
+    "X": "U", "C": "V", "V": "W", "B": "X", "N": "Y", "M": "Z"
+}
 print(decrypt)
 ```
 
 ## Decoding with the Mapping
 
 ``` {pyodide}
-# A much longer encrypted message from the thief's notebook
-long_message = """
-WKLV LV WKH VHFUHW SODQ: HQWHU WKURXJK WKH EDFN GRRU.
-WDNH WKH JROGHQ GDWDIUDPH. HVFDSH EHIRUH PLGQLJKW.
-"""
+secret_message = "ZTEKS OL ZIT EGRT: ROQHGFQS"
 
 decoded = ""
-for char in long_message:
+for char in secret_message:
     if char.isalpha():
         decoded += decrypt[char]  # Dictionary maps cipher → plain
     else:
         decoded += char
 
-print("Decoded:")
-print(decoded)
+print("Decoded:", decoded)
 ```
 
-## The Translation Pattern
+The dictionary *is* the cipher — no formula, just lookup!
 
-```python
-# General form: build a mapping dictionary
-mapping = {old_value: new_value for ...}
+## Let's Practice! {.activity}
 
-# Apply the mapping
-result = [mapping[x] for x in data]
-```
+Open the Data Heist activity. You'll solve 4 puzzles with LARGE datasets.
 
-**Use when:** Converting codes, abbreviations, grades, categories...
+*Inspired by [Advent of Code](https://adventofcode.com/) puzzles!*
 
-# 🚪 Room 5: The Escape Route
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
 
-## Room 5: The Escape Route
+## Summary
 
-The thief left behind an emoji-coded escape plan:
-
-``` {pyodide}
-escape_message = "🚗➡️🏢⬅️🌳➡️🚂"
-```
-
-We found a partial decoder ring in their pocket:
-
-``` {pyodide}
-decoder = {
-    "🚗": "car",
-    "🏢": "building",
-    "🌳": "park",
-    "🚂": "train station",
-    "➡️": "go to",
-    "⬅️": "avoid"
-}
-```
-
-Decode the escape route!
-
-## Room 5: Decoding
-
-``` {pyodide}
-escape_message = "🚗➡️🏢⬅️🌳➡️🚂"
-
-decoded_route = []
-for emoji in escape_message:
-    if emoji in decoder:
-        decoded_route.append(decoder[emoji])
-    else:
-        decoded_route.append(f"[unknown: {emoji}]")
-
-print("Escape route:")
-print(" → ".join(decoded_route))
-```
-
-## 🔓 Room 5 Complete!
-
-The thief planned to escape via car to the building, avoid the park, and catch a train!
-
-``` {pyodide}
-print("🚨 Alert the train station!")
-```
-
-# 🎯 The Finale
-
-## Putting It All Together
-
-You've gathered all the clues:
-
-1. **Room 1:** Suspects in both galleries: Prof. Histogram, Dr. Correlation
-2. **Room 2:** Cipher revealed: "DIAGONAL" — vault hint
-3. **Room 3:** Vault code cracked
-4. **Room 4:** Ms. Outlier has unverified alibi, no witnesses
-5. **Room 5:** Escape route decoded — train station!
-
-## The Deduction
-
-``` {pyodide}
-# Cross-reference all evidence
-clues = {
-    "in_both_galleries": ["Prof. Histogram", "Dr. Correlation"],
-    "unverified_alibi": ["Prof. Histogram", "Ms. Outlier", "Mr. Regression"],
-    "no_alibi_witnesses": ["Ms. Outlier"],
-    "verified_elsewhere": ["Dr. Correlation", "Dean Bayes"]
-}
-
-# Find suspects who match ALL suspicious criteria
-suspects_in_both = set(clues["in_both_galleries"])
-unverified = set(clues["unverified_alibi"])
-verified_elsewhere = set(clues["verified_elsewhere"])
-
-# In both galleries AND unverified alibi AND not verified elsewhere
-prime_suspect = suspects_in_both & unverified - verified_elsewhere
-print(f"🔍 The thief is: {prime_suspect}")
-```
-
-## 🎉 Case Closed!
-
-**Prof. Histogram** stole the Golden DataFrame!
-
-- ✅ Was in both Gallery A and Gallery B
-- ✅ Claims "faculty meeting" but unverified
-- ✅ Another person claims same alibi (providing cover)
-- ❌ Not verified to be elsewhere
-
-## The Dictionary Patterns
+Dictionaries give you **fast lookup by key** — whether you have 100 items or 100,000.
 
 | Pattern | Use Case | Technique |
 |---------|----------|-----------|
@@ -222,40 +356,9 @@ print(f"🔍 The thief is: {prime_suspect}")
 | **Grouping** | Organize by category | `defaultdict(list)` |
 | **Translation** | Convert values | Direct key → value mapping |
 
-## Continue the Heist! {.activity}
-
-If you haven't finished the Data Heist, keep working on it!
-
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
-
-## Why This Matters
-
-These patterns show up constantly in data analysis:
-
-- **Membership:** "Which users visited both pages?"
-- **Counter:** "What are the most common words in this text?"
-- **Complement:** "Find transactions that balance to zero"
-- **Grouping:** "Organize students by major" (like pandas groupby!)
-- **Translation:** "Convert letter grades to GPA"
-
-Dictionaries make these tasks fast and elegant.
-
-## Summary
-
-Dictionaries give you **fast lookup by key** — whether you have 100 items or 100,000.
-
-The patterns we learned:
-
-1. **Record** — Store data with named fields (like Billboard songs)
-2. **Membership** — Have I seen this before?
-3. **Counting** — How many of each? (use `Counter`)
-4. **Complement** — Find the matching pair
-5. **Grouping** — Organize by category (use `defaultdict`)
-6. **Translation** — Convert from one format to another
-
 ## Next Week
 
-🌴 **Reading Week — No Classes!**
+**Reading Week — No Classes!**
 
 Enjoy the break, and keep working on Project 1.
 
