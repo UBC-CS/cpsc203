@@ -3202,6 +3202,13 @@
     "text": "Analysis\nHow much work is done? Let \\(n\\) denote the size of the image, \\(n = width \\cdot height\\)\n\n\n\nRead image:\nChoose centers:\nBuild new image:\n\n \n\nWrite out new image:"
   },
   {
+    "objectID": "slides/08_tue_voronoi.html#exit-survey-and-feedback",
+    "href": "slides/08_tue_voronoi.html#exit-survey-and-feedback",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Exit survey and feedback",
+    "text": "Exit survey and feedback\nWhat’s a voronoi diagram?\nFeedback (2 questions) here:"
+  },
+  {
     "objectID": "slides/11_thu_maps.html#announcements",
     "href": "slides/11_thu_maps.html#announcements",
     "title": "Programming, problem solving, and algorithms",
