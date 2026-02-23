@@ -306,7 +306,7 @@ print(decrypt)
 ## Decoding with the Mapping
 
 ``` {pyodide}
-secret_message = "QXCZ X MLZXT LZXRPFM WLZXA"
+secret_message = "QXCZ X MLZXT LZXRPFM WLZXK"
 
 decoded = ""
 for char in secret_message:
@@ -322,9 +322,7 @@ The dictionary *is* the cipher — no formula, just lookup!
 
 ## Let's Practice! {.activity}
 
-Open the Data Heist activity. You'll solve 4 puzzles with LARGE datasets.
-
-*Inspired by [Advent of Code](https://adventofcode.com/) puzzles!*
+Open today's activity. You'll solve 2 new puzzles.
 
 [PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2641280)
 

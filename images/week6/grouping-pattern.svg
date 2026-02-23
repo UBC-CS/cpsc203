@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .item { font-family: 'Fira Code', monospace; font-size: 11px; }
+  </style>
+
+  <text x="350" y="25" text-anchor="middle" class="title">Grouping: Organize by Category</text>
+
+  <!-- Input items floating -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="70" height="25" rx="12" fill="#ffcdd2" stroke="#c62828"/>
+    <text x="35" y="17" text-anchor="middle" class="item">apple</text>
+
+    <rect x="80" y="0" width="70" height="25" rx="12" fill="#fff9c4" stroke="#f9a825"/>
+    <text x="115" y="17" text-anchor="middle" class="item">banana</text>
+
+    <rect x="160" y="0" width="70" height="25" rx="12" fill="#ffcdd2" stroke="#c62828"/>
+    <text x="195" y="17" text-anchor="middle" class="item">cherry</text>
+
+    <rect x="240" y="0" width="70" height="25" rx="12" fill="#fff9c4" stroke="#f9a825"/>
+    <text x="275" y="17" text-anchor="middle" class="item">lemon</text>
+
+    <rect x="320" y="0" width="70" height="25" rx="12" fill="#e1bee7" stroke="#8e24aa"/>
+    <text x="355" y="17" text-anchor="middle" class="item">grape</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 250 100 L 250 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#grouparrow)"/>
+  <text x="280" y="120" class="small">defaultdict(list)</text>
+
+  <!-- Output buckets -->
+  <g transform="translate(50, 150)">
+    <!-- Red bucket -->
+    <rect x="0" y="0" width="150" height="80" rx="5" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+    <text x="75" y="20" text-anchor="middle" class="label" fill="#c62828">"red"</text>
+    <rect x="15" y="35" width="55" height="22" rx="10" fill="#ffcdd2" stroke="#c62828"/>
+    <text x="42" y="50" text-anchor="middle" class="item">apple</text>
+    <rect x="80" y="35" width="55" height="22" rx="10" fill="#ffcdd2" stroke="#c62828"/>
+    <text x="107" y="50" text-anchor="middle" class="item">cherry</text>
+
+    <!-- Yellow bucket -->
+    <rect x="170" y="0" width="150" height="80" rx="5" fill="#fffde7" stroke="#f9a825" stroke-width="2"/>
+    <text x="245" y="20" text-anchor="middle" class="label" fill="#f9a825">"yellow"</text>
+    <rect x="185" y="35" width="55" height="22" rx="10" fill="#fff9c4" stroke="#f9a825"/>
+    <text x="212" y="50" text-anchor="middle" class="item">banana</text>
+    <rect x="250" y="35" width="55" height="22" rx="10" fill="#fff9c4" stroke="#f9a825"/>
+    <text x="277" y="50" text-anchor="middle" class="item">lemon</text>
+
+    <!-- Purple bucket -->
+    <rect x="340" y="0" width="120" height="80" rx="5" fill="#f3e5f5" stroke="#8e24aa" stroke-width="2"/>
+    <text x="400" y="20" text-anchor="middle" class="label" fill="#8e24aa">"purple"</text>
+    <rect x="362" y="35" width="55" height="22" rx="10" fill="#e1bee7" stroke="#8e24aa"/>
+    <text x="390" y="50" text-anchor="middle" class="item">grape</text>
+  </g>
+
+  <defs>
+    <marker id="grouparrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

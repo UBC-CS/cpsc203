@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .number { font-family: 'Fira Code', monospace; font-size: 16px; font-weight: bold; }
+  </style>
+
+  <text x="350" y="25" text-anchor="middle" class="title">Two-Sum: Find pairs that add to 10</text>
+
+  <!-- Numbers array -->
+  <text x="50" y="55" class="label">Numbers:</text>
+  <g transform="translate(120, 35)">
+    <rect x="0" y="0" width="40" height="35" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="20" y="25" text-anchor="middle" class="number" fill="#1976d2">3</text>
+
+    <rect x="45" y="0" width="40" height="35" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="65" y="25" text-anchor="middle" class="number" fill="#1976d2">7</text>
+
+    <rect x="90" y="0" width="40" height="35" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" class="number" fill="#1976d2">1</text>
+
+    <rect x="135" y="0" width="40" height="35" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="155" y="25" text-anchor="middle" class="number" fill="#1976d2">9</text>
+
+    <rect x="180" y="0" width="40" height="35" fill="#a5d6a7" stroke="#2e7d32" stroke-width="3"/>
+    <text x="200" y="25" text-anchor="middle" class="number" fill="#2e7d32">4</text>
+
+    <rect x="225" y="0" width="40" height="35" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="245" y="25" text-anchor="middle" class="number" fill="#1976d2">6</text>
+  </g>
+
+  <!-- Scanning indicator -->
+  <path d="M 320 75 L 320 95" stroke="#2e7d32" stroke-width="2" fill="none" marker-end="url(#greenarrow2)"/>
+  <text x="320" y="115" text-anchor="middle" class="small" fill="#2e7d32">scanning...</text>
+
+  <!-- Thought bubble -->
+  <ellipse cx="420" cy="110" rx="120" ry="35" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="420" y="105" text-anchor="middle" class="small">"I need 6 to make 10."</text>
+  <text x="420" y="120" text-anchor="middle" class="small">"Have I seen 6? Let me check..."</text>
+
+  <!-- Seen dictionary -->
+  <text x="50" y="160" class="label">Seen so far:</text>
+  <g transform="translate(130, 145)">
+    <rect x="0" y="0" width="40" height="30" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="20" y="22" text-anchor="middle" class="number" fill="#2e7d32">3</text>
+
+    <rect x="45" y="0" width="40" height="30" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="65" y="22" text-anchor="middle" class="number" fill="#2e7d32">7</text>
+
+    <rect x="90" y="0" width="40" height="30" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="110" y="22" text-anchor="middle" class="number" fill="#2e7d32">1</text>
+
+    <rect x="135" y="0" width="40" height="30" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="155" y="22" text-anchor="middle" class="number" fill="#2e7d32">9</text>
+  </g>
+
+  <!-- Result -->
+  <rect x="400" y="145" width="250" height="50" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="525" y="168" text-anchor="middle" class="small">Not yet! Keep going...</text>
+  <text x="525" y="185" text-anchor="middle" class="label" fill="#2e7d32">Next: 6 + 4 = 10!</text>
+
+  <defs>
+    <marker id="greenarrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e7d32"/>
+    </marker>
+  </defs>
+</svg>
