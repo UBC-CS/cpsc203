@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .big-number { font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; }
+    .huge { font-family: 'Open Sans', sans-serif; font-size: 28px; font-weight: bold; }
+  </style>
+
+  <!-- Left side: Nested loops -->
+  <rect x="20" y="20" width="360" height="280" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="200" y="50" text-anchor="middle" class="title" fill="#c62828">Nested Loops: O(n²)</text>
+
+  <!-- Grid visualization -->
+  <g transform="translate(60, 70)">
+    <!-- Gallery A (rows) -->
+    <text x="-10" y="15" text-anchor="end" class="small">A₁</text>
+    <text x="-10" y="40" text-anchor="end" class="small">A₂</text>
+    <text x="-10" y="65" text-anchor="end" class="small">A₃</text>
+    <text x="-10" y="90" text-anchor="end" class="small">...</text>
+
+    <!-- Gallery B (columns) -->
+    <text x="15" y="-5" text-anchor="middle" class="small">B₁</text>
+    <text x="40" y="-5" text-anchor="middle" class="small">B₂</text>
+    <text x="65" y="-5" text-anchor="middle" class="small">B₃</text>
+    <text x="90" y="-5" text-anchor="middle" class="small">...</text>
+
+    <!-- Grid cells -->
+    <rect x="0" y="0" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="25" y="0" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="50" y="0" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="75" y="0" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+
+    <rect x="0" y="25" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="25" y="25" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="50" y="25" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="75" y="25" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+
+    <rect x="0" y="50" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="25" y="50" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="50" y="50" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="75" y="50" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+
+    <rect x="0" y="75" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="25" y="75" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="50" y="75" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+    <rect x="75" y="75" width="25" height="25" fill="#ffcdd2" stroke="#c62828"/>
+  </g>
+
+  <text x="200" y="200" text-anchor="middle" class="label" fill="#c62828">Every A × Every B</text>
+  <text x="200" y="225" text-anchor="middle" class="small">10,000 × 10,000 =</text>
+  <text x="200" y="260" text-anchor="middle" class="huge" fill="#c62828">100,000,000</text>
+  <text x="200" y="285" text-anchor="middle" class="small" fill="#c62828">comparisons!</text>
+
+  <!-- Right side: Dictionary approach -->
+  <rect x="420" y="20" width="360" height="280" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="600" y="50" text-anchor="middle" class="title" fill="#2e7d32">Dictionary: O(n)</text>
+
+  <!-- Step 1 -->
+  <text x="440" y="80" class="label" fill="#2e7d32">Step 1: Build dictionary</text>
+  <g transform="translate(440, 90)">
+    <rect x="0" y="0" width="30" height="20" fill="#a5d6a7" stroke="#2e7d32"/>
+    <rect x="35" y="0" width="30" height="20" fill="#a5d6a7" stroke="#2e7d32"/>
+    <rect x="70" y="0" width="30" height="20" fill="#a5d6a7" stroke="#2e7d32"/>
+    <rect x="105" y="0" width="30" height="20" fill="#a5d6a7" stroke="#2e7d32"/>
+    <text x="150" y="15" class="small">... (10,000)</text>
+  </g>
+
+  <!-- Step 2 -->
+  <text x="440" y="150" class="label" fill="#2e7d32">Step 2: Check each B</text>
+  <g transform="translate(440, 160)">
+    <rect x="0" y="0" width="30" height="20" fill="#c8e6c9" stroke="#2e7d32"/>
+    <rect x="35" y="0" width="30" height="20" fill="#c8e6c9" stroke="#2e7d32"/>
+    <rect x="70" y="0" width="30" height="20" fill="#c8e6c9" stroke="#2e7d32"/>
+    <rect x="105" y="0" width="30" height="20" fill="#c8e6c9" stroke="#2e7d32"/>
+    <text x="150" y="15" class="small">... (10,000)</text>
+  </g>
+
+  <text x="600" y="220" text-anchor="middle" class="small">10,000 + 10,000 =</text>
+  <text x="600" y="255" text-anchor="middle" class="huge" fill="#2e7d32">20,000</text>
+  <text x="600" y="280" text-anchor="middle" class="small" fill="#2e7d32">operations!</text>
+
+  <!-- Speed comparison -->
+  <text x="600" y="305" text-anchor="middle" class="label" fill="#2e7d32">5,000× faster!</text>
+</svg>

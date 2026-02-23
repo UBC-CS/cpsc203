@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 6: Dictionaries – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b10d88bc01b3c2b62a30403842a2cd1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1962b8704e35fd18bddbdb7d8a4a5ec2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b40011a2ffb848728e6b87d40e816af6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 6: Dictionaries – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/week6/big-picture.svg">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="Overview showing Tuesday's dictionary fundamentals and patterns connecting to Thursday's translation pattern.">
+<meta name="twitter:title" content="Week 6: Dictionaries – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/week6/big-picture.svg">
+<meta name="twitter:image:alt" content="Overview showing Tuesday's dictionary fundamentals and patterns connecting to Thursday's translation pattern.">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 6: Dictionaries</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#your-growing-toolkit" id="toc-your-growing-toolkit" class="nav-link active" data-scroll-target="#your-growing-toolkit">Your Growing Toolkit</a></li>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture">The Big Picture</a></li>
+  <li><a href="#tuesday-dictionary-fundamentals" id="toc-tuesday-dictionary-fundamentals" class="nav-link" data-scroll-target="#tuesday-dictionary-fundamentals">Tuesday: <span class="blue">Dictionary Fundamentals</span></a>
+  <ul class="collapse">
+  <li><a href="#why-dictionaries-rock" id="toc-why-dictionaries-rock" class="nav-link" data-scroll-target="#why-dictionaries-rock">Why Dictionaries Rock</a></li>
+  <li><a href="#watch-out-keyerror" id="toc-watch-out-keyerror" class="nav-link" data-scroll-target="#watch-out-keyerror">Watch Out: KeyError!</a></li>
+  <li><a href="#pattern-0-records" id="toc-pattern-0-records" class="nav-link" data-scroll-target="#pattern-0-records">Pattern 0: <span class="purple">Records</span></a></li>
+  <li><a href="#pattern-1-membership" id="toc-pattern-1-membership" class="nav-link" data-scroll-target="#pattern-1-membership">Pattern 1: <span class="green">Membership</span></a>
+  <ul class="collapse">
+  <li><a href="#the-slow-way-nested-loops" id="toc-the-slow-way-nested-loops" class="nav-link" data-scroll-target="#the-slow-way-nested-loops">The Slow Way: Nested Loops</a></li>
+  <li><a href="#the-fast-way-dictionary-lookup" id="toc-the-fast-way-dictionary-lookup" class="nav-link" data-scroll-target="#the-fast-way-dictionary-lookup">The Fast Way: Dictionary Lookup</a></li>
+  </ul></li>
+  <li><a href="#pattern-2-counting" id="toc-pattern-2-counting" class="nav-link" data-scroll-target="#pattern-2-counting">Pattern 2: <span class="orange">Counting</span></a></li>
+  <li><a href="#pattern-3-complements" id="toc-pattern-3-complements" class="nav-link" data-scroll-target="#pattern-3-complements">Pattern 3: <span class="pink">Complements</span></a></li>
+  <li><a href="#pattern-4-grouping" id="toc-pattern-4-grouping" class="nav-link" data-scroll-target="#pattern-4-grouping">Pattern 4: <span class="red">Grouping</span></a>
+  <ul class="collapse">
+  <li><a href="#grouping-records" id="toc-grouping-records" class="nav-link" data-scroll-target="#grouping-records">Grouping Records</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#thursday-translation-pattern" id="toc-thursday-translation-pattern" class="nav-link" data-scroll-target="#thursday-translation-pattern">Thursday: <span class="orange">Translation Pattern</span></a>
+  <ul class="collapse">
+  <li><a href="#pattern-5-translation" id="toc-pattern-5-translation" class="nav-link" data-scroll-target="#pattern-5-translation">Pattern 5: <span class="blue">Translation</span></a></li>
+  <li><a href="#caesar-vs.-random-substitution" id="toc-caesar-vs.-random-substitution" class="nav-link" data-scroll-target="#caesar-vs.-random-substitution">Caesar vs.&nbsp;Random Substitution</a></li>
+  <li><a href="#building-the-reverse-mapping" id="toc-building-the-reverse-mapping" class="nav-link" data-scroll-target="#building-the-reverse-mapping">Building the Reverse Mapping</a></li>
+  <li><a href="#the-six-dictionary-patterns" id="toc-the-six-dictionary-patterns" class="nav-link" data-scroll-target="#the-six-dictionary-patterns">The Six Dictionary Patterns</a></li>
+  </ul></li>
+  <li><a href="#putting-it-all-together-the-great-data-heist" id="toc-putting-it-all-together-the-great-data-heist" class="nav-link" data-scroll-target="#putting-it-all-together-the-great-data-heist">Putting It All Together: The Great Data Heist</a>
+  <ul class="collapse">
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick Reference</a>
+  <ul class="collapse">
+  <li><a href="#creating-dictionaries" id="toc-creating-dictionaries" class="nav-link" data-scroll-target="#creating-dictionaries"><span class="blue">Creating Dictionaries</span></a></li>
+  <li><a href="#dictionary-operations" id="toc-dictionary-operations" class="nav-link" data-scroll-target="#dictionary-operations"><span class="green">Dictionary Operations</span></a></li>
+  <li><a href="#looping-over-dictionaries" id="toc-looping-over-dictionaries" class="nav-link" data-scroll-target="#looping-over-dictionaries"><span class="orange">Looping Over Dictionaries</span></a></li>
+  <li><a href="#defaultdict-types" id="toc-defaultdict-types" class="nav-link" data-scroll-target="#defaultdict-types"><span class="purple">defaultdict Types</span></a></li>
+  </ul></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/06_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/06_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 6: Dictionaries</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This week we unlocked Python’s secret weapon: the <strong>dictionary</strong>! We discovered that dictionaries aren’t just for storing data — they’re a Swiss Army knife for solving problems that would otherwise require tedious nested loops. Fast lookups, automatic grouping, instant counting — dictionaries do it all!</p>
+<section id="your-growing-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-growing-toolkit">Your Growing Toolkit</h2>
+<p>Every problem we solve uses some combination of these tools:</p>
+<ul>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning (binary, types, RGB)</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things (lists, tuples, dicts)</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat (if/else, loops)</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost (summations, timing analysis)</li>
+</ul>
+<p>This week: <span class="blue"><strong>Dictionaries</strong></span> + <span class="orange"><strong>Patterns</strong></span> → <strong>Powerful, efficient data manipulation!</strong></p>
+</section>
+<section id="the-big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture">The Big Picture</h2>
+<p><img src="../images/week6/big-picture.svg" class="img-fluid" style="width:80.0%" alt="Overview showing Tuesday's dictionary fundamentals and patterns connecting to Thursday's translation pattern."></p>
+<p>We started by discovering why dictionaries are lightning fast — constant-time lookup no matter how big they get! Then we mastered six patterns that pop up everywhere in real-world programming: records, membership, counting, complements, grouping, and translation.</p>
+<hr>
+</section>
+<section id="tuesday-dictionary-fundamentals" class="level1">
+<h1>Tuesday: <span class="blue">Dictionary Fundamentals</span></h1>
+<p>We discovered that dictionaries give you <strong>instant lookup by key</strong> — whether you have 100 entries or 100,000!</p>
+<section id="why-dictionaries-rock" class="level2">
+<h2 class="anchored" data-anchor-id="why-dictionaries-rock">Why Dictionaries Rock</h2>
+<p>With a list of tuples, finding an item means checking each one… painfully:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List approach: check each item one by one 😩</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [(<span class="st">"apple"</span>, <span class="st">"red"</span>), (<span class="st">"banana"</span>, <span class="st">"yellow"</span>), (<span class="st">"cherry"</span>, <span class="st">"red"</span>)]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, color <span class="kw">in</span> fruits:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fruit <span class="op">==</span> <span class="st">"apple"</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(color)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With a dictionary? <strong>Jump straight to the answer!</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary approach: instant lookup! 🎯</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> {<span class="st">"apple"</span>: <span class="st">"red"</span>, <span class="st">"banana"</span>: <span class="st">"yellow"</span>, <span class="st">"cherry"</span>: <span class="st">"red"</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="st">"apple"</span>])  <span class="co"># BAM! Instant!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="../images/week6/list-vs-dict.svg" class="img-fluid" style="width:80.0%" alt="Comparison showing list search checking each item versus dictionary jumping directly to the answer."></p>
+<p>This speed difference becomes MASSIVE with thousands or millions of entries!</p>
+</section>
+<section id="watch-out-keyerror" class="level2">
+<h2 class="anchored" data-anchor-id="watch-out-keyerror">Watch Out: KeyError!</h2>
+<p>What happens if you look up a key that doesn’t exist?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>suspect <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Prof. Histogram"</span>, <span class="st">"department"</span>: <span class="st">"Statistics"</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(suspect[<span class="st">"hobby"</span>])  <span class="co"># BOOM! 💥</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">KeyError</span> <span class="im">as</span> e:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"KeyError: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss"> — that key doesn't exist!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Two solutions:</strong></p>
+<ol type="1">
+<li><strong>Check first:</strong> <code>if "hobby" in suspect:</code></li>
+<li><strong>Use <code>defaultdict</code>:</strong> It provides a default value for missing keys — no more crashes!</li>
+</ol>
+</section>
+<section id="pattern-0-records" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-0-records">Pattern 0: <span class="purple">Records</span></h2>
+<p>Dictionaries work beautifully as named records — keys act as field names:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A list of records — each dict holds one entry</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>security_log <span class="op">=</span> [</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"person"</span>: <span class="st">"Prof. Histogram"</span>, <span class="st">"room"</span>: <span class="st">"Gallery A"</span>, <span class="st">"time"</span>: <span class="st">"7:00pm"</span>},</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"person"</span>: <span class="st">"Dr. Correlation"</span>, <span class="st">"room"</span>: <span class="st">"Gallery B"</span>, <span class="st">"time"</span>: <span class="st">"7:15pm"</span>},</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"person"</span>: <span class="st">"Prof. Histogram"</span>, <span class="st">"room"</span>: <span class="st">"Gallery B"</span>, <span class="st">"time"</span>: <span class="st">"7:30pm"</span>},</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Access by name, not position — so much clearer!</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> log <span class="kw">in</span> security_log:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>log[<span class="st">'person'</span>]<span class="sc">}</span><span class="ss"> entered </span><span class="sc">{</span>log[<span class="st">'room'</span>]<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>log[<span class="st">'time'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is exactly how our Billboard data was structured!</p>
+<hr>
+</section>
+<section id="pattern-1-membership" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-1-membership">Pattern 1: <span class="green">Membership</span></h2>
+<p><strong>Use case:</strong> Track whether we’ve seen something before — lightning fast!</p>
+<section id="the-slow-way-nested-loops" class="level3">
+<h3 class="anchored" data-anchor-id="the-slow-way-nested-loops">The Slow Way: Nested Loops</h3>
+<p>Finding people who visited both Gallery A and Gallery B:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check EVERY person in A against EVERY person in B 😱</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>in_both <span class="op">=</span> []</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> person_a <span class="kw">in</span> gallery_a_visitors:      <span class="co"># Loop through A</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> person_b <span class="kw">in</span> gallery_b_visitors:  <span class="co"># Loop through B</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> person_a <span class="op">==</span> person_b:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            in_both.append(person_a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With 10,000 people in each list: <strong>100,000,000 comparisons!</strong> That’s a recipe for a coffee break.</p>
+</section>
+<section id="the-fast-way-dictionary-lookup" class="level3">
+<h3 class="anchored" data-anchor-id="the-fast-way-dictionary-lookup">The Fast Way: Dictionary Lookup</h3>
+<p><img src="../images/week6/nested-vs-dict.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing nested loops doing 100 million comparisons versus dictionary approach doing only 20,000 operations."></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Build a "seen" dictionary — one pass through A</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>in_gallery_a <span class="op">=</span> defaultdict(<span class="bu">bool</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> person <span class="kw">in</span> gallery_a_visitors:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    in_gallery_a[person] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Check Gallery B against our dictionary — one pass through B</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>in_both <span class="op">=</span> []</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> person <span class="kw">in</span> gallery_b_visitors:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> in_gallery_a[person]:  <span class="co"># Instant lookup! No KeyError with defaultdict!</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        in_both.append(person)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With 10,000 in each: <strong>just 20,000 operations!</strong> That’s 5,000x faster!</p>
+<p><code>defaultdict(bool)</code> returns <code>False</code> for missing keys, avoiding KeyError.</p>
+<hr>
+</section>
+</section>
+<section id="pattern-2-counting" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-2-counting">Pattern 2: <span class="orange">Counting</span></h2>
+<p><strong>Use case:</strong> Count how many times each item appears — let Python do the work!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"mississippi"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> Counter(word)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counts)  <span class="co"># Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counts.most_common(<span class="dv">2</span>))  <span class="co"># [('i', 4), ('s', 4)]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="../images/week6/counter-pattern.svg" class="img-fluid" style="width:80.0%" alt="Visualization of Counter turning a string into a frequency dictionary."></p>
+<p><code>Counter</code> is a specialized dictionary that handles counting automatically. Perfect for frequency analysis — like counting letter occurrences to crack a cipher!</p>
+<hr>
+</section>
+<section id="pattern-3-complements" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-3-complements">Pattern 3: <span class="pink">Complements</span></h2>
+<p><strong>Use case:</strong> Find two numbers that add up to a target!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>seen <span class="op">=</span> defaultdict(<span class="bu">bool</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> numbers:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    complement <span class="op">=</span> target <span class="op">-</span> n</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> seen[complement]:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Found pair: </span><span class="sc">{</span>complement<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>target<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    seen[n] <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="../images/week6/complement-pattern.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing how we track seen numbers and check for complements as we scan."></p>
+<p>As we scan through, we remember what we’ve seen — and instantly check if the complement exists. This is the famous “two-sum” pattern!</p>
+<hr>
+</section>
+<section id="pattern-4-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-4-grouping">Pattern 4: <span class="red">Grouping</span></h2>
+<p><strong>Use case:</strong> Organize items into categories — like pandas groupby, but from scratch!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"apple"</span>, <span class="st">"red"</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"banana"</span>, <span class="st">"yellow"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"cherry"</span>, <span class="st">"red"</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"lemon"</span>, <span class="st">"yellow"</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>by_color <span class="op">=</span> defaultdict(<span class="bu">list</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, color <span class="kw">in</span> fruits:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    by_color[color].append(fruit)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dict</span>(by_color))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># {'red': ['apple', 'cherry'], 'yellow': ['banana', 'lemon']}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="../images/week6/grouping-pattern.svg" class="img-fluid" style="width:80.0%" alt="Visualization of items being sorted into category buckets."></p>
+<p><code>defaultdict(list)</code> automatically creates an empty list for missing keys — no more checking before appending!</p>
+<section id="grouping-records" class="level3">
+<h3 class="anchored" data-anchor-id="grouping-records">Grouping Records</h3>
+<p>When your items are dictionaries, same pattern — just grab the key you want to group by:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>suspects <span class="op">=</span> [</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Prof. Histogram"</span>, <span class="st">"alibi"</span>: <span class="st">"faculty meeting"</span>},</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Mr. Regression"</span>, <span class="st">"alibi"</span>: <span class="st">"faculty meeting"</span>},</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Ms. Outlier"</span>, <span class="st">"alibi"</span>: <span class="st">"working late"</span>},</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>by_alibi <span class="op">=</span> defaultdict(<span class="bu">list</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> suspect <span class="kw">in</span> suspects:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    by_alibi[suspect[<span class="st">"alibi"</span>]].append(suspect[<span class="st">"name"</span>])</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># {'faculty meeting': ['Prof. Histogram', 'Mr. Regression'], 'working late': ['Ms. Outlier']}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+</section>
+<section id="thursday-translation-pattern" class="level1">
+<h1>Thursday: <span class="orange">Translation Pattern</span></h1>
+<p>We added one more powerful pattern: using dictionaries as <strong>lookup tables</strong> to translate between representations!</p>
+<section id="pattern-5-translation" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-5-translation">Pattern 5: <span class="blue">Translation</span></h2>
+<p><strong>Use case:</strong> Convert values from one representation to another — instantly!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>word_to_emoji <span class="op">=</span> defaultdict(<span class="bu">str</span>, {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sun"</span>: <span class="st">"☀️"</span>, <span class="st">"rain"</span>: <span class="st">"🌧️"</span>, <span class="st">"cloud"</span>: <span class="st">"☁️"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"happy"</span>: <span class="st">"😊"</span>, <span class="st">"sad"</span>: <span class="st">"😢"</span>, <span class="st">"love"</span>: <span class="st">"❤️"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cat"</span>: <span class="st">"🐱"</span>, <span class="st">"dog"</span>: <span class="st">"🐶"</span>, <span class="st">"coffee"</span>: <span class="st">"☕"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"I"</span>, <span class="st">"love"</span>, <span class="st">"coffee"</span>]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w <span class="kw">in</span> words:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    emoji <span class="op">=</span> word_to_emoji[w.lower()]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    result.append(emoji <span class="cf">if</span> emoji <span class="cf">else</span> w)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">" "</span>.join(result))  <span class="co"># I ❤️ ☕</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The dictionary <em>is</em> the translation table — no formulas, just instant lookup!</p>
+<hr>
+</section>
+<section id="caesar-vs.-random-substitution" class="level2">
+<h2 class="anchored" data-anchor-id="caesar-vs.-random-substitution">Caesar vs.&nbsp;Random Substitution</h2>
+<p>For a simple <strong>Caesar cipher</strong> (shift by a fixed amount), we can use math:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decode_caesar(text, shift):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> char <span class="kw">in</span> text:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> char.isalpha():</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            position <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>            new_position <span class="op">=</span> (position <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> <span class="bu">chr</span>(new_position <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> char</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decode_caesar(<span class="st">"WKLV LV WKH FRGH"</span>, <span class="dv">3</span>))  <span class="co"># "THIS IS THE CODE"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But what about a <strong>random substitution</strong> cipher? No formula can help — we need a mapping dictionary!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The decryption key: cipher letter → plain letter</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>decrypt <span class="op">=</span> {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X"</span>: <span class="st">"A"</span>, <span class="st">"W"</span>: <span class="st">"B"</span>, <span class="st">"E"</span>: <span class="st">"C"</span>, <span class="st">"R"</span>: <span class="st">"D"</span>, <span class="st">"Z"</span>: <span class="st">"E"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Y"</span>: <span class="st">"F"</span>, <span class="st">"M"</span>: <span class="st">"G"</span>, <span class="st">"Q"</span>: <span class="st">"H"</span>, <span class="st">"P"</span>: <span class="st">"I"</span>, <span class="st">"J"</span>: <span class="st">"J"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"K"</span>: <span class="st">"K"</span>, <span class="st">"S"</span>: <span class="st">"L"</span>, <span class="st">"D"</span>: <span class="st">"M"</span>, <span class="st">"F"</span>: <span class="st">"N"</span>, <span class="st">"G"</span>: <span class="st">"O"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"H"</span>: <span class="st">"P"</span>, <span class="st">"B"</span>: <span class="st">"Q"</span>, <span class="st">"L"</span>: <span class="st">"R"</span>, <span class="st">"V"</span>: <span class="st">"S"</span>, <span class="st">"T"</span>: <span class="st">"T"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"U"</span>: <span class="st">"U"</span>, <span class="st">"C"</span>: <span class="st">"V"</span>, <span class="st">"N"</span>: <span class="st">"W"</span>, <span class="st">"A"</span>: <span class="st">"X"</span>, <span class="st">"O"</span>: <span class="st">"Y"</span>, <span class="st">"I"</span>: <span class="st">"Z"</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>secret_message <span class="op">=</span> <span class="st">"QXCZ X MLZXT LZXRPFM WLZXK"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>decoded <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> secret_message:</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> char.isalpha():</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        decoded <span class="op">+=</span> decrypt[char]</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        decoded <span class="op">+=</span> char</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decoded)  <span class="co"># "HAVE A GREAT READING BREAK"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="../images/week6/cipher-mapping.svg" class="img-fluid" style="width:80.0%" alt="Diagram showing how each cipher letter maps to a plain letter through the dictionary."></p>
+</section>
+<section id="building-the-reverse-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-reverse-mapping">Building the Reverse Mapping</h2>
+<p>If you have a <code>decrypt</code> dictionary (cipher → plain), you can build an <code>encrypt</code> dictionary (plain → cipher) by flipping it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given: decrypt maps cipher → plain</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Build: encrypt maps plain → cipher</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>encrypt <span class="op">=</span> {}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cipher_letter, plain_letter <span class="kw">in</span> decrypt.items():</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    encrypt[plain_letter] <span class="op">=</span> cipher_letter</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we can encode our own messages!</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"HELLO"</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>encoded <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> message:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> char.isalpha():</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        encoded <span class="op">+=</span> encrypt[char]</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        encoded <span class="op">+=</span> char</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two-way translation tables — dictionaries make it effortless!</p>
+<hr>
+</section>
+<section id="the-six-dictionary-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="the-six-dictionary-patterns">The Six Dictionary Patterns</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 33%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Use Case</th>
+<th>Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="purple"><strong>Record</strong></span></td>
+<td>Store named fields</td>
+<td><code>{"name": ..., "age": ...}</code></td>
+</tr>
+<tr class="even">
+<td><span class="green"><strong>Membership</strong></span></td>
+<td>Track what we’ve seen</td>
+<td><code>defaultdict(bool)</code>, <code>seen[x] = True</code></td>
+</tr>
+<tr class="odd">
+<td><span class="orange"><strong>Counting</strong></span></td>
+<td>Count occurrences</td>
+<td><code>Counter(items)</code></td>
+</tr>
+<tr class="even">
+<td><span class="pink"><strong>Complement</strong></span></td>
+<td>Find matching pairs</td>
+<td>Store &amp; check complements</td>
+</tr>
+<tr class="odd">
+<td><span class="red"><strong>Grouping</strong></span></td>
+<td>Organize by category</td>
+<td><code>defaultdict(list)</code></td>
+</tr>
+<tr class="even">
+<td><span class="blue"><strong>Translation</strong></span></td>
+<td>Convert representations</td>
+<td>Direct key → value mapping</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../images/week6/six-patterns.svg" class="img-fluid" style="width:80.0%" alt="Visual summary of all six dictionary patterns with icons."></p>
+<hr>
+</section>
+</section>
+<section id="putting-it-all-together-the-great-data-heist" class="level1">
+<h1>Putting It All Together: The Great Data Heist</h1>
+<p><img src="../images/week6/heist-story.svg" class="img-fluid" style="width:80.0%" alt="Comic-style panels showing the escape room narrative."></p>
+<p>Throughout this week, we told the story of <strong>The Great Data Heist</strong> — a mystery at the Vancouver Museum of Data Science where the legendary <strong>Golden DataFrame</strong> was stolen!</p>
+<p>As data detectives, we used dictionary patterns to:</p>
+<ol type="1">
+<li><strong>Room 1 (Membership):</strong> Find suspects who visited BOTH Gallery A and Gallery B by building a “seen” dictionary</li>
+<li><strong>Room 2 (Counting):</strong> Crack a cipher by analyzing letter frequencies with <code>Counter</code></li>
+<li><strong>Room 3 (Complements):</strong> Open the vault by finding two numbers that sum to the target</li>
+<li><strong>Room 4 (Grouping):</strong> Find the lone wolf suspect by grouping alibis with <code>defaultdict(list)</code></li>
+<li><strong>Final Challenge (Translation):</strong> Decode the thief’s message using a substitution cipher mapping</li>
+</ol>
+<p>Each room taught us a pattern that solves real problems efficiently. The escape room was fun, but the patterns are tools you’ll use again and again!</p>
+<hr>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<section id="creating-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="creating-dictionaries"><span class="blue">Creating Dictionaries</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Empty dictionary</td>
+<td><code>d = {}</code></td>
+</tr>
+<tr class="even">
+<td>With initial values</td>
+<td><code>d = {"a": 1, "b": 2}</code></td>
+</tr>
+<tr class="odd">
+<td>Default for missing keys</td>
+<td><code>d = defaultdict(bool)</code></td>
+</tr>
+<tr class="even">
+<td>Default empty list</td>
+<td><code>d = defaultdict(list)</code></td>
+</tr>
+<tr class="odd">
+<td>Counter</td>
+<td><code>c = Counter(items)</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dictionary-operations" class="level3">
+<h3 class="anchored" data-anchor-id="dictionary-operations"><span class="green">Dictionary Operations</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Get value</td>
+<td><code>d[key]</code> or <code>d.get(key, default)</code></td>
+</tr>
+<tr class="even">
+<td>Set value</td>
+<td><code>d[key] = value</code></td>
+</tr>
+<tr class="odd">
+<td>Check if key exists</td>
+<td><code>if key in d:</code></td>
+</tr>
+<tr class="even">
+<td>Get all keys</td>
+<td><code>d.keys()</code></td>
+</tr>
+<tr class="odd">
+<td>Get all values</td>
+<td><code>d.values()</code></td>
+</tr>
+<tr class="even">
+<td>Get key-value pairs</td>
+<td><code>d.items()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="looping-over-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="looping-over-dictionaries"><span class="orange">Looping Over Dictionaries</span></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop over keys</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> d:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop over values</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> d.values():</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(value)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop over both</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> d.items():</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="defaultdict-types" class="level3">
+<h3 class="anchored" data-anchor-id="defaultdict-types"><span class="purple">defaultdict Types</span></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Default Factory</th>
+<th>Missing Key Returns</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>defaultdict(bool)</code></td>
+<td><code>False</code></td>
+<td>Membership tracking</td>
+</tr>
+<tr class="even">
+<td><code>defaultdict(int)</code></td>
+<td><code>0</code></td>
+<td>Counting</td>
+</tr>
+<tr class="odd">
+<td><code>defaultdict(list)</code></td>
+<td><code>[]</code></td>
+<td>Grouping</td>
+</tr>
+<tr class="even">
+<td><code>defaultdict(str)</code></td>
+<td><code>""</code></td>
+<td>Translation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p><strong>Reading Week — No Classes!</strong></p>
+<p>Enjoy the break! When we return in Week 8, we’ll keep building on these foundations as you work toward Project 1.</p>
+<p>Have a great reading break!</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/06_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/06_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

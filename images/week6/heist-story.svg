@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 11px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 10px; }
+    .room { font-family: 'Open Sans', sans-serif; font-size: 9px; }
+  </style>
+
+  <!-- Title banner -->
+  <rect x="200" y="10" width="400" height="35" rx="5" fill="#1a237e"/>
+  <text x="400" y="33" text-anchor="middle" class="title" fill="#fff">🔍 THE GREAT DATA HEIST 🔍</text>
+
+  <!-- Room 1 -->
+  <rect x="30" y="60" width="140" height="100" rx="8" fill="#e8f5e9" stroke="#388e3c" stroke-width="2"/>
+  <text x="100" y="80" text-anchor="middle" class="label" fill="#388e3c">Room 1</text>
+  <text x="100" y="95" text-anchor="middle" class="small">🚪 Intersection</text>
+  <text x="100" y="115" text-anchor="middle" class="room">Find visitors in</text>
+  <text x="100" y="128" text-anchor="middle" class="room">BOTH galleries</text>
+  <text x="100" y="148" text-anchor="middle" class="label" fill="#388e3c">Membership</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 170 110 L 190 110" stroke="#666" stroke-width="2" fill="none" marker-end="url(#heist-arrow)"/>
+
+  <!-- Room 2 -->
+  <rect x="190" y="60" width="140" height="100" rx="8" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="260" y="80" text-anchor="middle" class="label" fill="#f57c00">Room 2</text>
+  <text x="260" y="95" text-anchor="middle" class="small">🔐 Cipher</text>
+  <text x="260" y="115" text-anchor="middle" class="room">Crack the code</text>
+  <text x="260" y="128" text-anchor="middle" class="room">using frequencies</text>
+  <text x="260" y="148" text-anchor="middle" class="label" fill="#f57c00">Counting</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 330 110 L 350 110" stroke="#666" stroke-width="2" fill="none" marker-end="url(#heist-arrow)"/>
+
+  <!-- Room 3 -->
+  <rect x="350" y="60" width="140" height="100" rx="8" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+  <text x="420" y="80" text-anchor="middle" class="label" fill="#c2185b">Room 3</text>
+  <text x="420" y="95" text-anchor="middle" class="small">🔓 Vault</text>
+  <text x="420" y="115" text-anchor="middle" class="room">Find two numbers</text>
+  <text x="420" y="128" text-anchor="middle" class="room">that sum to 42</text>
+  <text x="420" y="148" text-anchor="middle" class="label" fill="#c2185b">Complements</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 490 110 L 510 110" stroke="#666" stroke-width="2" fill="none" marker-end="url(#heist-arrow)"/>
+
+  <!-- Room 4 -->
+  <rect x="510" y="60" width="140" height="100" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="580" y="80" text-anchor="middle" class="label" fill="#c62828">Room 4</text>
+  <text x="580" y="95" text-anchor="middle" class="small">📋 Alibi Board</text>
+  <text x="580" y="115" text-anchor="middle" class="room">Group suspects</text>
+  <text x="580" y="128" text-anchor="middle" class="room">by their alibis</text>
+  <text x="580" y="148" text-anchor="middle" class="label" fill="#c62828">Grouping</text>
+
+  <!-- Arrow 4 -->
+  <path d="M 650 110 L 670 110" stroke="#666" stroke-width="2" fill="none" marker-end="url(#heist-arrow)"/>
+
+  <!-- Final Room -->
+  <rect x="670" y="60" width="100" height="100" rx="8" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="720" y="80" text-anchor="middle" class="label" fill="#1976d2">Final</text>
+  <text x="720" y="95" text-anchor="middle" class="small">📝 Message</text>
+  <text x="720" y="115" text-anchor="middle" class="room">Decode the</text>
+  <text x="720" y="128" text-anchor="middle" class="room">secret note</text>
+  <text x="720" y="148" text-anchor="middle" class="label" fill="#1976d2">Translation</text>
+
+  <!-- Bottom story box -->
+  <rect x="100" y="180" width="600" height="100" rx="10" fill="#fafafa" stroke="#666" stroke-width="1"/>
+
+  <!-- Golden DataFrame -->
+  <rect x="130" y="200" width="80" height="60" rx="5" fill="#ffd700" stroke="#b8860b" stroke-width="2"/>
+  <text x="170" y="225" text-anchor="middle" class="small" fill="#5d4037">Golden</text>
+  <text x="170" y="240" text-anchor="middle" class="small" fill="#5d4037">DataFrame</text>
+  <text x="170" y="252" text-anchor="middle" class="small">📊</text>
+
+  <!-- Story text -->
+  <text x="240" y="210" class="small">The legendary Golden DataFrame was stolen from the</text>
+  <text x="240" y="225" class="small">Vancouver Museum of Data Science! As data detectives,</text>
+  <text x="240" y="240" class="small">we used dictionary patterns to navigate each room,</text>
+  <text x="240" y="255" class="small">crack each puzzle, and ultimately catch the thief!</text>
+  <text x="240" y="270" class="label" fill="#1a237e">🎉 Case Solved — Dictionaries Save the Day! 🎉</text>
+
+  <defs>
+    <marker id="heist-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>
