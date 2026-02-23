@@ -3136,7 +3136,14 @@
     "href": "slides/08_tue_voronoi.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\nSign up for final exam!"
+  },
+  {
+    "objectID": "slides/08_tue_voronoi.html#where-we-are-going",
+    "href": "slides/08_tue_voronoi.html#where-we-are-going",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Where we are going",
+    "text": "Where we are going\nToday: Voronoi diagrams, lab: stacks\nThurs: Voronoi diagrams, queues\nTowards learning about graphs. All fundamental to CS!"
   },
   {
     "objectID": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
