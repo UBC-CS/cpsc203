@@ -129,6 +129,12 @@ How much work is done? Let $n$ denote the size of the image, $n = width \cdot he
 :::
 :::::
 
+## Exit survey and feedback
+
+What's a voronoi diagram?
+
+Feedback (2 questions) here:
+![](/images/tue-voronoi-qrcode.png){fig-alt="qr code for feedback"}
 
 
 
