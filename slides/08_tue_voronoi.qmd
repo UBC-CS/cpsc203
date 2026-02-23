@@ -1,8 +1,16 @@
 ---
-date: 2025-10-21
+date: 2026-02-24
 ---
 
 ## Announcements
+Sign up for final exam!
+
+## Where we are going
+Today: Voronoi diagrams, lab: stacks
+
+Thurs: Voronoi diagrams, queues
+
+Towards learning about graphs. All fundamental to CS!
 
 # Voronoi Diagrams
 
