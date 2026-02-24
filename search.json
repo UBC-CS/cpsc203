@@ -3150,7 +3150,7 @@
     "href": "slides/08_tue_voronoi.html#voronoi-diagrams-1",
     "title": "Programming, problem solving, and algorithms",
     "section": "Voronoi diagrams",
-    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\nhttps://en.wikipedia.org/wiki/Voronoi_diagram#Applications\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
+    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\nWikipedia applications\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
   },
   {
     "objectID": "slides/08_tue_voronoi.html#design-an-algorithm",
