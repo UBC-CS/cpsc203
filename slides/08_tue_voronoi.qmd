@@ -23,7 +23,7 @@ Given a (finite) set of "centres" $c_{1}, c_{2}, \ldots, c_{k}$, a Voronoi regio
 
 Together, the $R_{j}$ regions compose the Voronoi diagram of a plane.
 
-https://en.wikipedia.org/wiki/Voronoi_diagram#Applications
+[Wikipedia applications](https://en.wikipedia.org/wiki/Voronoi_diagram#Applications)
 
 :::
 ::::
