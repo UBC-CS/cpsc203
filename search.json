@@ -3459,6 +3459,13 @@
     "text": "Breadth First Search\n \nBreadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a ‘search key’), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (–Wikipedia)\n \nSimplified description:"
   },
   {
+    "objectID": "slides/08_thu_voronoi.html#exit-survey-and-feedback",
+    "href": "slides/08_thu_voronoi.html#exit-survey-and-feedback",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Exit survey and feedback",
+    "text": "Exit survey and feedback\nWhat’s a queue? How do we add / remove from one? Feedback (2 questions) here:"
+  },
+  {
     "objectID": "slides/06_thu_dictionaries.html#announcements",
     "href": "slides/06_thu_dictionaries.html#announcements",
     "title": "Programming, problem solving, and algorithms",
