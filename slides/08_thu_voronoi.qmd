@@ -1,5 +1,5 @@
 ---
-date: 2025-10-23
+date: 2026-02-26
 ---
 
 ## Announcements
@@ -266,7 +266,11 @@ Breadth-first search (BFS) is an algorithm for traversing or searching tree or g
 
 Simplified description: 
 
+## Exit survey and feedback
 
+What's a queue? How do we add / remove from one?
+Feedback (2 questions) here:
+![](/images/thurs-voronoi-qrcode.png){fig-alt="qr code for feedback"}
 
 
 
