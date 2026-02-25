@@ -269,8 +269,10 @@ Simplified description:
 ## Exit survey and feedback
 
 What's a queue? How do we add / remove from one?
+
+
 Feedback (2 questions) here:
-![](/images/thurs-voronoi-qrcode.png){fig-alt="qr code for feedback"}
+![](/images/thur-voronoi-qrcode.png){fig-alt="qr code for feedback"}
 
 
 
