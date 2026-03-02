@@ -27,9 +27,9 @@ We started with a beautiful question: *How can we create art with algorithms?* T
 
 ## What's a Voronoi Diagram?
 
-:::: {.columns}
+:::: {.columns style="column-gap: 2em;"}
 
-::: {.column width="55%"}
+::: {.column width="52%"}
 
 Imagine you're standing in Vancouver and want to find the nearest Tim Hortons. A **Voronoi diagram** divides the entire map into regions where every point in a region is closest to one particular location.
 
@@ -39,9 +39,9 @@ Together, these regions tile the entire plane — every point belongs to exactly
 
 :::
 
-::: {.column width="45%"}
+::: {.column width="44%"}
 
-![Tim Hortons Voronoi map of Vancouver](/images/tim-hortons-map.png){fig-alt="A map of Vancouver with pins marking Tim Hortons locations."}
+![Tim Hortons Voronoi map of Vancouver](/images/tim-hortons-voronoi.png){fig-alt="A map of Vancouver with Tim Hortons locations and Voronoi region boundaries."}
 
 :::
 
@@ -56,15 +56,15 @@ Voronoi diagrams appear everywhere! Cell tower coverage, school district boundar
 
 ## From Pointillism to Algorithmic Art
 
-:::: {.columns}
+:::: {.columns style="column-gap: 3em;"}
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 
 ![Seurat's "A Sunday on La Grande Jatte"](/images/SundayinthePark.jpg){fig-alt="The famous Seurat pointillist painting depicting 1880's park goers."}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%" style="padding-left: 1em;"}
 
 Georges Seurat pioneered **pointillism** in the 1880s, creating images from thousands of tiny colored dots. We can create our own version using Voronoi diagrams!
 
@@ -79,6 +79,12 @@ The quality of the resulting image depends on **how many centers we choose** and
 :::
 
 ::::
+
+### The Transformation Pipeline
+
+![The Voronoi art pipeline: original photo → sample random centers → fill Voronoi regions](/images/voronoi-pipeline.svg){fig-alt="Three-step pipeline showing a photo being transformed: first we sample random points as centers, then each center claims nearby pixels to create Voronoi art." width="100%"}
+
+Each center "claims" all nearby pixels, coloring them with that center's original color. More centers = more detail, but also more work!
 
 ---
 
@@ -103,6 +109,77 @@ Before diving into code, we thought carefully about our data types:
 
 ---
 
+## Measuring Distance
+
+To find the "nearest" center, we need to measure distance between points. The **Euclidean distance** between two points $(x_1, y_1)$ and $(x_2, y_2)$ comes from the Pythagorean theorem:
+
+$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+
+### Example: Which Center is Closer?
+
+Suppose we have a pixel at $(5, 5)$ and two centers:
+
+- **Red center** at $(2, 3)$
+- **Blue center** at $(8, 6)$
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+
+**Distance to Red:**
+$$d_{\text{red}} = \sqrt{(5-2)^2 + (5-3)^2} = \sqrt{9 + 4} = \sqrt{13} \approx 3.6$$
+
+**Distance to Blue:**
+$$d_{\text{blue}} = \sqrt{(5-8)^2 + (5-6)^2} = \sqrt{9 + 1} = \sqrt{10} \approx 3.2$$
+
+The pixel is closer to **Blue**!
+
+:::
+
+::: {.column width="50%"}
+
+```
+    0 1 2 3 4 5 6 7 8 9
+  0 · · · · · · · · · ·
+  1 · · · · · · · · · ·
+  2 · · · · · · · · · ·
+  3 · · R · · · · · · ·
+  4 · · · · · · · · · ·
+  5 · · · · · P · · · ·
+  6 · · · · · · · · B ·
+  7 · · · · · · · · · ·
+
+  R = Red center (2,3)
+  B = Blue center (8,6)
+  P = Pixel (5,5)
+```
+
+:::
+
+::::
+
+::: {.callout-tip}
+## A Clever Optimization: Skip the Square Root!
+
+Computing square roots is slow. But here's the key insight: **if $a < b$, then $a^2 < b^2$** (for positive numbers).
+
+So instead of comparing $\sqrt{13}$ vs $\sqrt{10}$, we can compare $13$ vs $10$ directly!
+
+```python
+# Slow: uses square root
+def distance(p1, p2):
+    return math.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)
+
+# Fast: squared distance (works for comparisons!)
+def distance_squared(p1, p2):
+    return (p2[0] - p1[0])**2 + (p2[1] - p1[1])**2
+```
+
+We only care about *which* center is closest, not the actual distance value. Since squaring preserves the ordering, we can skip the expensive `sqrt` call entirely!
+:::
+
+---
+
 ## The Naive Algorithm
 
 ![Grid with three colored centers](/images/Valgorithmgrid.jpg){fig-alt="A large grid with 3 colored centers showing distance calculation."}
@@ -123,12 +200,12 @@ Let $n$ = image size (width × height) and $k$ = number of centers:
 
 | Step | Work |
 |------|------|
-| 1. Read image | $O(n)$ — touch each pixel once |
-| 2. Choose centers | $O(k)$ — pick k random points |
-| 3. Build new image | $O(n \cdot k)$ — for each of n pixels, check all k centers |
-| 4. Write image | $O(n)$ — touch each pixel once |
+| 1. Read image | Proportional to $n$ — touch each pixel once |
+| 2. Choose centers | Proportional to $k$ — pick k random points |
+| 3. Build new image | Proportional to $n \cdot k$ — for each of n pixels, check all k centers |
+| 4. Write image | Proportional to $n$ — touch each pixel once |
 
-**Total: $O(n \cdot k)$** — this gets slow when we want lots of centers!
+**Total: Proportional to $n \cdot k$** — this gets slow when we want lots of centers!
 
 With a 1-megapixel image and 10,000 centers, that's 10 billion distance calculations. Can we do better? **Yes!**
 
@@ -143,9 +220,9 @@ With a 1-megapixel image and 10,000 centers, that's 10 billion distance calculat
 Instead of asking "which center is closest to this pixel?", we flip the question: start at each center and **grow outward** simultaneously!
 :::
 
-:::: {.columns}
+:::: {.columns style="column-gap: 2em;"}
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ![Single flood fill from one center](/images/FF1.png){fig-alt="Flood fill spreading from a single center point."}
 
@@ -153,7 +230,7 @@ Instead of asking "which center is closest to this pixel?", we flip the question
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ![Multiple flood fills creating Voronoi regions](/images/FF2.png){fig-alt="Multiple flood fills from different centers creating Voronoi regions."}
 
@@ -195,7 +272,7 @@ len(q) == 0           # check if empty (or just: not q)
 
 ::: {.callout-note}
 ## Why not use a regular list?
-You could use `list.append()` and `list.pop(0)`, but `pop(0)` is $O(n)$ because it shifts all remaining elements. With `deque`, both operations are $O(1)$!
+You could use `list.append()` and `list.pop(0)`, but `pop(0)` takes time proportional to $n$ because it shifts all remaining elements. With `deque`, both operations take constant time!
 :::
 
 ---
@@ -256,12 +333,12 @@ Because all centers start together and grow at the same rate, a pixel is claimed
 
 | Step | Work |
 |------|------|
-| 1. Read image | $O(n)$ |
-| 2. Choose centers | $O(k)$ |
-| 3. Build new image | $O(n)$ — each pixel processed exactly once! |
-| 4. Write image | $O(n)$ |
+| 1. Read image | Proportional to $n$ |
+| 2. Choose centers | Proportional to $k$ |
+| 3. Build new image | Proportional to $n$ — each pixel processed exactly once! |
+| 4. Write image | Proportional to $n$ |
 
-**Total: $O(n)$** — independent of the number of centers! 🎉
+**Total: Proportional to $n$** — independent of the number of centers! 🎉
 
 This is a massive improvement:
 
@@ -320,15 +397,15 @@ We can think of an image as a **graph**:
 - Each **pixel** is a vertex (node)
 - Each **adjacency** (up/down/left/right) is an edge connecting neighboring vertices
 
-:::: {.columns}
+:::: {.columns style="column-gap: 2em;"}
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 ![Image as a graph](/images/FF2.png){fig-alt="Image showing pixel grid as a graph structure."}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 
 Graphs are one of the most versatile data structures in computer science. They model:
 
@@ -367,10 +444,10 @@ Next week, we'll explore graphs as a general structure for modeling all kinds of
 
 ### [Voronoi Algorithm Comparison]{.orange}
 
-| Algorithm | Time Complexity | Good for |
-|-----------|-----------------|----------|
-| Naive | $O(n \cdot k)$ | Few centers |
-| Flood Fill | $O(n)$ | Many centers |
+| Algorithm | Time | Good for |
+|-----------|------|----------|
+| Naive | Proportional to $n \cdot k$ | Few centers |
+| Flood Fill | Proportional to $n$ | Many centers |
 
 ---
 
