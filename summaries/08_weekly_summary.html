@@ -141,15 +141,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles/styles.css">
 <meta property="og:title" content="Week 8: Voronoi Art &amp; Queues – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/tim-hortons-map.png">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/tim-hortons-voronoi.png">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:image:alt" content="A map of Vancouver with pins marking Tim Hortons locations.">
+<meta property="og:image:alt" content="A map of Vancouver with Tim Hortons locations and Voronoi region boundaries.">
 <meta property="og:image:height" content="1420">
 <meta property="og:image:width" content="1922">
 <meta name="twitter:title" content="Week 8: Voronoi Art &amp; Queues – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/tim-hortons-map.png">
-<meta name="twitter:image:alt" content="A map of Vancouver with pins marking Tim Hortons locations.">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/tim-hortons-voronoi.png">
+<meta name="twitter:image:alt" content="A map of Vancouver with Tim Hortons locations and Voronoi region boundaries.">
 <meta name="twitter:image-height" content="1420">
 <meta name="twitter:image-width" content="1922">
 <meta name="twitter:card" content="summary_large_image">
@@ -460,8 +460,15 @@ window.Quarto = {
   <li><a href="#tuesday-voronoi-diagrams" id="toc-tuesday-voronoi-diagrams" class="nav-link" data-scroll-target="#tuesday-voronoi-diagrams">Tuesday: <span class="blue">Voronoi Diagrams</span></a>
   <ul class="collapse">
   <li><a href="#whats-a-voronoi-diagram" id="toc-whats-a-voronoi-diagram" class="nav-link" data-scroll-target="#whats-a-voronoi-diagram">What’s a Voronoi Diagram?</a></li>
-  <li><a href="#from-pointillism-to-algorithmic-art" id="toc-from-pointillism-to-algorithmic-art" class="nav-link" data-scroll-target="#from-pointillism-to-algorithmic-art">From Pointillism to Algorithmic Art</a></li>
+  <li><a href="#from-pointillism-to-algorithmic-art" id="toc-from-pointillism-to-algorithmic-art" class="nav-link" data-scroll-target="#from-pointillism-to-algorithmic-art">From Pointillism to Algorithmic Art</a>
+  <ul class="collapse">
+  <li><a href="#the-transformation-pipeline" id="toc-the-transformation-pipeline" class="nav-link" data-scroll-target="#the-transformation-pipeline">The Transformation Pipeline</a></li>
+  </ul></li>
   <li><a href="#planning-our-solution" id="toc-planning-our-solution" class="nav-link" data-scroll-target="#planning-our-solution">Planning Our Solution</a></li>
+  <li><a href="#measuring-distance" id="toc-measuring-distance" class="nav-link" data-scroll-target="#measuring-distance">Measuring Distance</a>
+  <ul class="collapse">
+  <li><a href="#example-which-center-is-closer" id="toc-example-which-center-is-closer" class="nav-link" data-scroll-target="#example-which-center-is-closer">Example: Which Center is Closer?</a></li>
+  </ul></li>
   <li><a href="#the-naive-algorithm" id="toc-the-naive-algorithm" class="nav-link" data-scroll-target="#the-naive-algorithm">The Naive Algorithm</a>
   <ul class="collapse">
   <li><a href="#complexity-analysis" id="toc-complexity-analysis" class="nav-link" data-scroll-target="#complexity-analysis">Complexity Analysis</a></li>
@@ -537,15 +544,15 @@ window.Quarto = {
 <h1>Tuesday: <span class="blue">Voronoi Diagrams</span></h1>
 <section id="whats-a-voronoi-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="whats-a-voronoi-diagram">What’s a Voronoi Diagram?</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:52%;">
 <p>Imagine you’re standing in Vancouver and want to find the nearest Tim Hortons. A <strong>Voronoi diagram</strong> divides the entire map into regions where every point in a region is closest to one particular location.</p>
 <p>More formally: given a set of “centers” <span class="math inline">\(c_1, c_2, \ldots, c_k\)</span>, each <strong>Voronoi region</strong> <span class="math inline">\(R_j\)</span> contains all points that are closer to center <span class="math inline">\(c_j\)</span> than to any other center.</p>
 <p>Together, these regions tile the entire plane — every point belongs to exactly one region, and no point belongs to two regions!</p>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:44%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/tim-hortons-map.png" class="img-fluid figure-img" alt="A map of Vancouver with pins marking Tim Hortons locations."></p>
+<p><img src="../images/tim-hortons-voronoi.png" class="img-fluid figure-img" alt="A map of Vancouver with Tim Hortons locations and Voronoi region boundaries."></p>
 <figcaption>Tim Hortons Voronoi map of Vancouver</figcaption>
 </figure>
 </div>
@@ -568,15 +575,15 @@ window.Quarto = {
 </section>
 <section id="from-pointillism-to-algorithmic-art" class="level2">
 <h2 class="anchored" data-anchor-id="from-pointillism-to-algorithmic-art">From Pointillism to Algorithmic Art</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="columns" style="column-gap: 3em;">
+<div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/SundayinthePark.jpg" class="img-fluid figure-img" alt="The famous Seurat pointillist painting depicting 1880's park goers."></p>
 <figcaption>Seurat’s “A Sunday on La Grande Jatte”</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="padding-left: 1em;">
 <p>Georges Seurat pioneered <strong>pointillism</strong> in the 1880s, creating images from thousands of tiny colored dots. We can create our own version using Voronoi diagrams!</p>
 <p><strong>The Algorithm:</strong></p>
 <ol type="1">
@@ -587,7 +594,17 @@ window.Quarto = {
 <p>The quality of the resulting image depends on <strong>how many centers we choose</strong> and <strong>where we place them</strong>!</p>
 </div>
 </div>
+<section id="the-transformation-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="the-transformation-pipeline">The Transformation Pipeline</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/voronoi-pipeline.svg" class="img-fluid figure-img" style="width:100.0%" alt="Three-step pipeline showing a photo being transformed: first we sample random points as centers, then each center claims nearby pixels to create Voronoi art."></p>
+<figcaption>The Voronoi art pipeline: original photo → sample random centers → fill Voronoi regions</figcaption>
+</figure>
+</div>
+<p>Each center “claims” all nearby pixels, coloring them with that center’s original color. More centers = more detail, but also more work!</p>
 <hr>
+</section>
 </section>
 <section id="planning-our-solution" class="level2">
 <h2 class="anchored" data-anchor-id="planning-our-solution">Planning Our Solution</h2>
@@ -631,6 +648,63 @@ window.Quarto = {
 </ol>
 <hr>
 </section>
+<section id="measuring-distance" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-distance">Measuring Distance</h2>
+<p>To find the “nearest” center, we need to measure distance between points. The <strong>Euclidean distance</strong> between two points <span class="math inline">\((x_1, y_1)\)</span> and <span class="math inline">\((x_2, y_2)\)</span> comes from the Pythagorean theorem:</p>
+<p><span class="math display">\[d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\]</span></p>
+<section id="example-which-center-is-closer" class="level3">
+<h3 class="anchored" data-anchor-id="example-which-center-is-closer">Example: Which Center is Closer?</h3>
+<p>Suppose we have a pixel at <span class="math inline">\((5, 5)\)</span> and two centers:</p>
+<ul>
+<li><strong>Red center</strong> at <span class="math inline">\((2, 3)\)</span></li>
+<li><strong>Blue center</strong> at <span class="math inline">\((8, 6)\)</span></li>
+</ul>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<p><strong>Distance to Red:</strong> <span class="math display">\[d_{\text{red}} = \sqrt{(5-2)^2 + (5-3)^2} = \sqrt{9 + 4} = \sqrt{13} \approx 3.6\]</span></p>
+<p><strong>Distance to Blue:</strong> <span class="math display">\[d_{\text{blue}} = \sqrt{(5-8)^2 + (5-6)^2} = \sqrt{9 + 1} = \sqrt{10} \approx 3.2\]</span></p>
+<p>The pixel is closer to <strong>Blue</strong>!</p>
+</div><div class="column" style="width:50%;">
+<pre><code>    0 1 2 3 4 5 6 7 8 9
+  0 · · · · · · · · · ·
+  1 · · · · · · · · · ·
+  2 · · · · · · · · · ·
+  3 · · R · · · · · · ·
+  4 · · · · · · · · · ·
+  5 · · · · · P · · · ·
+  6 · · · · · · · · B ·
+  7 · · · · · · · · · ·
+
+  R = Red center (2,3)
+  B = Blue center (8,6)
+  P = Pixel (5,5)</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A Clever Optimization: Skip the Square Root!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Computing square roots is slow. But here’s the key insight: <strong>if <span class="math inline">\(a &lt; b\)</span>, then <span class="math inline">\(a^2 &lt; b^2\)</span></strong> (for positive numbers).</p>
+<p>So instead of comparing <span class="math inline">\(\sqrt{13}\)</span> vs <span class="math inline">\(\sqrt{10}\)</span>, we can compare <span class="math inline">\(13\)</span> vs <span class="math inline">\(10\)</span> directly!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slow: uses square root</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> distance(p1, p2):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> math.sqrt((p2[<span class="dv">0</span>] <span class="op">-</span> p1[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (p2[<span class="dv">1</span>] <span class="op">-</span> p1[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fast: squared distance (works for comparisons!)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> distance_squared(p1, p2):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (p2[<span class="dv">0</span>] <span class="op">-</span> p1[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (p2[<span class="dv">1</span>] <span class="op">-</span> p1[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We only care about <em>which</em> center is closest, not the actual distance value. Since squaring preserves the ordering, we can skip the expensive <code>sqrt</code> call entirely!</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
 <section id="the-naive-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="the-naive-algorithm">The Naive Algorithm</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -640,9 +714,9 @@ window.Quarto = {
 </figure>
 </div>
 <p>For each pixel in the output image, we find the nearest center by checking the distance to <em>every</em> center:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each pixel (x, y) <span class="kw">in</span> the image:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    find the center c <span class="cf">with</span> minimum distance to (x, y)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    color pixel (x, y) <span class="cf">with</span> the color of c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each pixel (x, y) <span class="kw">in</span> the image:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    find the center c <span class="cf">with</span> minimum distance to (x, y)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    color pixel (x, y) <span class="cf">with</span> the color of c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This works! But how efficient is it?</p>
 <section id="complexity-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="complexity-analysis">Complexity Analysis</h3>
@@ -661,23 +735,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>1. Read image</td>
-<td><span class="math inline">\(O(n)\)</span> — touch each pixel once</td>
+<td>Proportional to <span class="math inline">\(n\)</span> — touch each pixel once</td>
 </tr>
 <tr class="even">
 <td>2. Choose centers</td>
-<td><span class="math inline">\(O(k)\)</span> — pick k random points</td>
+<td>Proportional to <span class="math inline">\(k\)</span> — pick k random points</td>
 </tr>
 <tr class="odd">
 <td>3. Build new image</td>
-<td><span class="math inline">\(O(n \cdot k)\)</span> — for each of n pixels, check all k centers</td>
+<td>Proportional to <span class="math inline">\(n \cdot k\)</span> — for each of n pixels, check all k centers</td>
 </tr>
 <tr class="even">
 <td>4. Write image</td>
-<td><span class="math inline">\(O(n)\)</span> — touch each pixel once</td>
+<td>Proportional to <span class="math inline">\(n\)</span> — touch each pixel once</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Total: <span class="math inline">\(O(n \cdot k)\)</span></strong> — this gets slow when we want lots of centers!</p>
+<p><strong>Total: Proportional to <span class="math inline">\(n \cdot k\)</span></strong> — this gets slow when we want lots of centers!</p>
 <p>With a 1-megapixel image and 10,000 centers, that’s 10 billion distance calculations. Can we do better? <strong>Yes!</strong></p>
 <hr>
 </section>
@@ -700,8 +774,8 @@ window.Quarto = {
 <p>Instead of asking “which center is closest to this pixel?”, we flip the question: start at each center and <strong>grow outward</strong> simultaneously!</p>
 </div>
 </div>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:47%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/FF1.png" class="img-fluid figure-img" alt="Flood fill spreading from a single center point."></p>
@@ -709,7 +783,7 @@ window.Quarto = {
 </figure>
 </div>
 <p><strong>One center:</strong> The color spreads outward like ripples in a pond.</p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:47%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/FF2.png" class="img-fluid figure-img" alt="Multiple flood fills from different centers creating Voronoi regions."></p>
@@ -753,12 +827,12 @@ window.Quarto = {
 <section id="in-python-collections.deque" class="level3">
 <h3 class="anchored" data-anchor-id="in-python-collections.deque">In Python: <code>collections.deque</code></h3>
 <p>Python’s <code>deque</code> (double-ended queue) is perfect for this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> deque()           <span class="co"># Create an empty queue</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>q.append(item)        <span class="co"># enqueue — add to right/back</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> q.popleft()    <span class="co"># dequeue — remove from left/front</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(q) <span class="op">==</span> <span class="dv">0</span>           <span class="co"># check if empty (or just: not q)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> deque()           <span class="co"># Create an empty queue</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>q.append(item)        <span class="co"># enqueue — add to right/back</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> q.popleft()    <span class="co"># dequeue — remove from left/front</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(q) <span class="op">==</span> <span class="dv">0</span>           <span class="co"># check if empty (or just: not q)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -769,7 +843,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You could use <code>list.append()</code> and <code>list.pop(0)</code>, but <code>pop(0)</code> is <span class="math inline">\(O(n)\)</span> because it shifts all remaining elements. With <code>deque</code>, both operations are <span class="math inline">\(O(1)\)</span>!</p>
+<p>You could use <code>list.append()</code> and <code>list.pop(0)</code>, but <code>pop(0)</code> takes time proportional to <span class="math inline">\(n\)</span> because it shifts all remaining elements. With <code>deque</code>, both operations take constant time!</p>
 </div>
 </div>
 <hr>
@@ -778,28 +852,28 @@ window.Quarto = {
 <section id="the-flood-fill-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="the-flood-fill-algorithm">The Flood Fill Algorithm</h2>
 <p>Here’s the magic! We start all centers in the queue, then grow outward:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> voronoi_fill(image, centers):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    queue <span class="op">=</span> deque()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Start with all centers in the queue</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (x, y), color <span class="kw">in</span> centers:</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        queue.append(((x, y), color))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        visited.add((x, y))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        image[x, y] <span class="op">=</span> color</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process pixels in order</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> queue:</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        (x, y), color <span class="op">=</span> queue.popleft()</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check all 4 neighbors</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> nx, ny <span class="kw">in</span> [(x<span class="op">+</span><span class="dv">1</span>, y), (x<span class="op">-</span><span class="dv">1</span>, y), (x, y<span class="op">+</span><span class="dv">1</span>), (x, y<span class="op">-</span><span class="dv">1</span>)]:</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (nx, ny) <span class="kw">not</span> <span class="kw">in</span> visited <span class="kw">and</span> is_valid(nx, ny):</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                visited.add((nx, ny))</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                image[nx, ny] <span class="op">=</span> color</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                queue.append(((nx, ny), color))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> voronoi_fill(image, centers):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    queue <span class="op">=</span> deque()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Start with all centers in the queue</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (x, y), color <span class="kw">in</span> centers:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        queue.append(((x, y), color))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        visited.add((x, y))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        image[x, y] <span class="op">=</span> color</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process pixels in order</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> queue:</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        (x, y), color <span class="op">=</span> queue.popleft()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check all 4 neighbors</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> nx, ny <span class="kw">in</span> [(x<span class="op">+</span><span class="dv">1</span>, y), (x<span class="op">-</span><span class="dv">1</span>, y), (x, y<span class="op">+</span><span class="dv">1</span>), (x, y<span class="op">-</span><span class="dv">1</span>)]:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (nx, ny) <span class="kw">not</span> <span class="kw">in</span> visited <span class="kw">and</span> is_valid(nx, ny):</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                visited.add((nx, ny))</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                image[nx, ny] <span class="op">=</span> color</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                queue.append(((nx, ny), color))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -834,6 +908,10 @@ window.Quarto = {
 <section id="complexity-of-flood-fill" class="level2">
 <h2 class="anchored" data-anchor-id="complexity-of-flood-fill">Complexity of Flood Fill</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Step</th>
@@ -843,23 +921,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>1. Read image</td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td>Proportional to <span class="math inline">\(n\)</span></td>
 </tr>
 <tr class="even">
 <td>2. Choose centers</td>
-<td><span class="math inline">\(O(k)\)</span></td>
+<td>Proportional to <span class="math inline">\(k\)</span></td>
 </tr>
 <tr class="odd">
 <td>3. Build new image</td>
-<td><span class="math inline">\(O(n)\)</span> — each pixel processed exactly once!</td>
+<td>Proportional to <span class="math inline">\(n\)</span> — each pixel processed exactly once!</td>
 </tr>
 <tr class="even">
 <td>4. Write image</td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td>Proportional to <span class="math inline">\(n\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Total: <span class="math inline">\(O(n)\)</span></strong> — independent of the number of centers! 🎉</p>
+<p><strong>Total: Proportional to <span class="math inline">\(n\)</span></strong> — independent of the number of centers! 🎉</p>
 <p>This is a massive improvement:</p>
 <table class="caption-top table">
 <thead>
@@ -925,15 +1003,15 @@ window.Quarto = {
 <li>Each <strong>pixel</strong> is a vertex (node)</li>
 <li>Each <strong>adjacency</strong> (up/down/left/right) is an edge connecting neighboring vertices</li>
 </ul>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:47%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/FF2.png" class="img-fluid figure-img" alt="Image showing pixel grid as a graph structure."></p>
 <figcaption>Image as a graph</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:47%;">
 <p>Graphs are one of the most versatile data structures in computer science. They model:</p>
 <ul>
 <li>Social networks (people connected by friendships)</li>
@@ -1035,19 +1113,19 @@ window.Quarto = {
 <thead>
 <tr class="header">
 <th>Algorithm</th>
-<th>Time Complexity</th>
+<th>Time</th>
 <th>Good for</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Naive</td>
-<td><span class="math inline">\(O(n \cdot k)\)</span></td>
+<td>Proportional to <span class="math inline">\(n \cdot k\)</span></td>
 <td>Few centers</td>
 </tr>
 <tr class="even">
 <td>Flood Fill</td>
-<td><span class="math inline">\(O(n)\)</span></td>
+<td>Proportional to <span class="math inline">\(n\)</span></td>
 <td>Many centers</td>
 </tr>
 </tbody>
