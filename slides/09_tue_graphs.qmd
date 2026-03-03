@@ -1,8 +1,11 @@
 ---
-date: 2025-10-28
+date: 2026-03-03
 ---
 
 ## Announcements
+
+- EX3 this week!
+- Proj2 available, due 03/22, 11:59p. 
 
 # Voronoi Diagrams Fin
 
@@ -14,15 +17,14 @@ date: 2025-10-28
 [A Sunday on La Grande Jatte](https://artsandculture.google.com/asset/a-sunday-on-la-grande-jatte/twGyqq52R-lYpA?hl=en-GB)
 </center>
 
-
-## Voronoi Art {.smaller}
+## Voronoi Art {.tiny}
 
 ::::: columns
 ::: {.column width=50%}
 
 ![](/images/FF2.png)
 
-- enqueue the centers
+- enqueue and process the centers
 - while the queue is not empty:
    - v = dequeue
    - for each valid neighbor w of v:
@@ -90,17 +92,46 @@ How much work is done? Let $n$ denote the size of the image, $n = width \cdot he
 :::
 :::::
 
-## Analysis Continued
+## Analysis Continued {.tiny}
 
 We evaluate algorithms by looking at how their running times change as a function of the input size (n).  
 
 * Loosely, algorithm A is faster than algorithm B if A’s running time is _eventually_ less than B’s. 
 
-* <https://www.desmos.com/calculator>
+<div id="ggb-analysis"></div>
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<script>
+new GGBApplet({
+  appName: "graphing",
+  width: 1000,
+  height: 280,
+  showToolBar: false,
+  showAlgebraInput: true,
+  showMenuBar: false,
+  showKeyboardOnFocus: false,
+  allowUpscale: true,
+  appletOnLoad: function(api) {
+    api.setCoordSystem(-2, 20, -2, 20);
+    api.evalCommand("f(x) = x");
+    api.evalCommand("g(x) = x^2");
+  }
+}, true).inject("ggb-analysis");
+</script>
 
-<center>
-<img src="/images/desmos.png" alt="Desmos screenshot" width="50%">
-</center>
+
+## Summary! {.tiny}
+
+Our Voronoi journey taught us:
+
+1. **Voronoi Diagrams** — a beautiful structure from math and science, and we used it to make art!
+
+2. **A simple iterative algorithm** — for each pixel, check every center. It works... but it's slow.
+
+3. **A new data structure: the Queue** — implemented with Python's `deque`, it lines up data for orderly, first-in-first-out processing.
+
+4. **A new algorithm: Flood Fill** — start at every center simultaneously and grow outward. The queue keeps it all synchronized.
+
+5. **Algorithm analysis** — the naive approach costs $n \cdot n$ work. Flood fill? Just $n$. That's the difference between 10 billion operations and 1 million.
 
 
 ## Graphs: A new model for representing images {.smaller}
@@ -137,13 +168,13 @@ Our fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called 
 
 # Graphs
 
-## The Internet, circa 2003
+## The Internet, circa 2003 {.smaller}
 
 ::::: columns
-::: {.column}
-![](/images/gr1.png)
+::: {.column width="40%"}
+![](/images/gr1.png){height="500px"}
 :::
-::: {.column}
+::: {.column width="60%"}
 Graph $G = (V, E)$
 
 * $V$:
@@ -154,13 +185,15 @@ _Degree_ of a vertex:
 :::
 ::::: 
 
-## A Conflict Graph
+## A Conflict Graph {.smaller}
+
+What’s special about the vertex labels of this graph?
 
 ::::: columns
-::: {.column}
-![](/images/gr2.png)
+::: {.column width="40%"}
+![](/images/gr2.png){height="500px"}
 :::
-::: {.column}
+::: {.column width="60%"}
 Graph $G = (V, E)$
 
 * $V$:
@@ -177,15 +210,14 @@ Neighbors:
 :::
 ::::: 
 
-What’s special about the vertex labels of this graph?
 
-## A Complete Graph
+## A Complete Graph {.smaller}
 
 ::::: columns
-::: {.column}
-![](/images/gr3.png)
+::: {.column width="40%"}
+![](/images/gr3.png){height="500px"}
 :::
-::: {.column}
+::: {.column width="60%"}
 Graph $G = (V, E)$
 
 * $V$:
@@ -202,36 +234,37 @@ How many edges in a complete graph of n vertices?
 :::
 ::::: 
 
-## Social Network
+## Social Network {.smaller}
 
 ::::: columns
-::: {.column width=70%}
-![](/images/gr4.png)
+::: {.column width=60%}
+![](/images/gr4.png){height="500px"}
 :::
-::: {.column width=30%}
+::: {.column width=40%}
 Graph $G = (V, E)$
 
 * $V$:
 * $E$:
-
-:::
-::::: 
 
 Connected Graph:
 
 \ 
 
 Connected Component:
+:::
+::::: 
 
-## Rush Hour
+
+
+## Rush Hour {.smaller}
 
 ::::: columns
-::: {.column}
-![](/images/gr5.png)
+::: {.column width="40%"}
+![](/images/gr5.png){height="500px"}
 :::
-::: {.column}
+::: {.column width="60%"}
 
-<img src="/images/gr5rh.png" alt="Desmos screenshot" width="30%">
+<img src="/images/gr5rh.png" alt="Rush Hour game board" width="30%">
 
 Graph $G = (V, E)$
 
@@ -247,14 +280,12 @@ Path:
 
 ::::: columns
 ::: {.column width=35%}
-![](/images/gr6.png)
+![](/images/gr6.png){height="500px"}
 :::
 ::: {.column width=65%}
-This graph can be used to quickly calculate whether a given number is divisible by 7.
+This graph can be used to calculate whether a given number is divisible by 7.
 
-Start at the circle node at the top.
-For each digit $d$ in the given number, follow $d$ blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge.
-If you end up back at the circle node, your number is divisible by 7.
+Start at the circle node at the top. For each digit $d$ in the given number, follow $d$ blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.
 
 \
 
@@ -263,11 +294,11 @@ If you end up back at the circle node, your number is divisible by 7.
 :::
 ::::: 
 
-## The Stanford Bunny
+## The Stanford Bunny {.smaller}
 
 ::::: columns
 ::: {.column width=65%}
-![](/images/gr7.png)
+![](/images/gr7.png){height="500px"}
 :::
 ::: {.column width=35%}
 
@@ -283,22 +314,22 @@ Planar Graph:
 :::
 ::::: 
 
-## Graph Explorations
+## Graph Explorations {.smaller}
 
 A graph $G$ is defined by a set of vertices $V$, and a set of edges $E$. 
 
 
 Algorithm _running time_ is typically described using the number of _vertices_, but execution usually depends on the number of _edges_, so we must understand the relationship between them.
 
-## How Many Edges?
+## How Many Edges? {.smaller}
 
 Suppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?
 
 ::::: columns
 ::: {.column}
-![](/images/gr2.png)
+![](/images/gr2.png){height="500px"}
 :::
-::: {.column} 
+::: {.column}
 _At least_ __________ edges because the graph is connected.
 
 \ 
@@ -309,13 +340,13 @@ _At most_ _________ edges which occurs when the graph is complete.
 :::
 ::::: 
 
-## Handshaking
+## Handshaking {.smaller}
 
 Suppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?
 
 ::::: columns
 ::: {.column}
-![](/images/gr8.png)
+![](/images/gr8.png){height="500px"}
 :::
 ::: {.column} 
 The following are equivalent:
@@ -327,7 +358,7 @@ The following are equivalent:
 :::
 ::::: 
 
-## Degree Games
+## Degree Games {.smaller}
 
 ::::: columns
 ::: {.column}
@@ -342,13 +373,13 @@ An algorithm for finding a graph, given a degree sequence, is described in the p
 :::
 ::::: 
 
-![](/images/gr9.png)
+![](/images/gr9.png){height="250px"}
 
-## Pencil Puzzles
+## Pencil Puzzles {.smaller}
 
 ::::: columns
 ::: {.column}
-![](/images/gr10.png)
+![](/images/gr10.png){height="500px"}
 :::
 ::: {.column} 
 Trace each graph without lifting your pencil and without revisiting an edge.
