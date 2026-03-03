@@ -3743,7 +3743,7 @@
     "href": "slides/09_tue_graphs.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nEX3 this week!\nProj2 available, due 03/22, 11:59p."
   },
   {
     "objectID": "slides/09_tue_graphs.html#pointillism",
@@ -3757,7 +3757,7 @@
     "href": "slides/09_tue_graphs.html#voronoi-art",
     "title": "Programming, problem solving, and algorithms",
     "section": "Voronoi Art",
-    "text": "Voronoi Art\n\n\n\n\nenqueue the centers\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w"
+    "text": "Voronoi Art\n\n\n\n\nenqueue and process the centers\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w"
   },
   {
     "objectID": "slides/09_tue_graphs.html#demo",
@@ -3778,7 +3778,14 @@
     "href": "slides/09_tue_graphs.html#analysis-continued",
     "title": "Programming, problem solving, and algorithms",
     "section": "Analysis Continued",
-    "text": "Analysis Continued\nWe evaluate algorithms by looking at how their running times change as a function of the input size (n).\n\nLoosely, algorithm A is faster than algorithm B if A’s running time is eventually less than B’s.\nhttps://www.desmos.com/calculator"
+    "text": "Analysis Continued\nWe evaluate algorithms by looking at how their running times change as a function of the input size (n).\n\nLoosely, algorithm A is faster than algorithm B if A’s running time is eventually less than B’s."
+  },
+  {
+    "objectID": "slides/09_tue_graphs.html#summary",
+    "href": "slides/09_tue_graphs.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary!",
+    "text": "Summary!\nOur Voronoi journey taught us:\n\nVoronoi Diagrams — a beautiful structure from math and science, and we used it to make art!\nA simple iterative algorithm — for each pixel, check every center. It works… but it’s slow.\nA new data structure: the Queue — implemented with Python’s deque, it lines up data for orderly, first-in-first-out processing.\nA new algorithm: Flood Fill — start at every center simultaneously and grow outward. The queue keeps it all synchronized.\nAlgorithm analysis — the naive approach costs \\(n \\cdot n\\) work. Flood fill? Just \\(n\\). That’s the difference between 10 billion operations and 1 million."
   },
   {
     "objectID": "slides/09_tue_graphs.html#graphs-a-new-model-for-representing-images",
@@ -3806,7 +3813,7 @@
     "href": "slides/09_tue_graphs.html#a-conflict-graph",
     "title": "Programming, problem solving, and algorithms",
     "section": "A Conflict Graph",
-    "text": "A Conflict Graph\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nLabels:\n\n\nNeighbors:\n\nWhat’s special about the vertex labels of this graph?"
+    "text": "A Conflict Graph\nWhat’s special about the vertex labels of this graph?\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nLabels:\n\n\nNeighbors:"
   },
   {
     "objectID": "slides/09_tue_graphs.html#a-complete-graph",
@@ -3820,7 +3827,7 @@
     "href": "slides/09_tue_graphs.html#social-network",
     "title": "Programming, problem solving, and algorithms",
     "section": "Social Network",
-    "text": "Social Network\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\nConnected Graph:\n \nConnected Component:"
+    "text": "Social Network\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nConnected Graph:\n \nConnected Component:"
   },
   {
     "objectID": "slides/09_tue_graphs.html#rush-hour",
@@ -3834,7 +3841,7 @@
     "href": "slides/09_tue_graphs.html#state-machine",
     "title": "Programming, problem solving, and algorithms",
     "section": "State Machine",
-    "text": "State Machine\n\n\n\n\nThis graph can be used to quickly calculate whether a given number is divisible by 7.\nStart at the circle node at the top. For each digit \\(d\\) in the given number, follow \\(d\\) blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.\n\n\n3703"
+    "text": "State Machine\n\n\n\n\nThis graph can be used to calculate whether a given number is divisible by 7.\nStart at the circle node at the top. For each digit \\(d\\) in the given number, follow \\(d\\) blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.\n\n\n3703"
   },
   {
     "objectID": "slides/09_tue_graphs.html#the-stanford-bunny",
