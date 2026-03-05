@@ -6,6 +6,125 @@ date: 2025-10-30
 
 # Graphs
 
+## Graphs: A new model for representing images {.smaller}
+
+
+::::: columns
+::: {.column width=50%}
+
+![](/images/FF2.png)
+
+
+:::
+::: {.column width=50%}
+
+* A Graph is a collection of _vertices_, and _edges_ between them.  They’re used as a general model for many problems.
+
+
+* In our images every \_\_\_\_\_\_\_\_\_\_\_\_ is a vertex, and every \_\_\_\_\_\_\_\_\_\_\_\_ is an edge. 
+
+:::
+:::::
+
+
+Our fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called _Breadth First Search_.
+
+## Breadth First Search
+
+\ 
+
+**Breadth-first search** (**BFS**) is an algorithm for _traversing_ or _searching_ tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (--Wikipedia)
+
+
+\ 
+
+
+## The Internet, circa 2003 {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr1.png){height="500px"}
+:::
+::: {.column width="60%"}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+_Degree_ of a vertex:
+
+:::
+::::: 
+
+## A Conflict Graph {.smaller}
+
+What’s special about the vertex labels of this graph?
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr2.png){height="500px"}
+:::
+::: {.column width="60%"}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\
+
+Labels:
+
+\
+
+Neighbors:
+
+:::
+::::: 
+
+
+## A Complete Graph {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr3.png){height="500px"}
+:::
+::: {.column width="60%"}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+\
+
+A graph is _complete_ if it contains all possible edges.
+
+\
+
+How many edges in a complete graph of n vertices?
+
+:::
+::::: 
+
+## Social Network {.smaller}
+
+::::: columns
+::: {.column width=60%}
+![](/images/gr4.png){height="500px"}
+:::
+::: {.column width=40%}
+Graph $G = (V, E)$
+
+* $V$:
+* $E$:
+
+Connected Graph:
+
+\ 
+
+Connected Component:
+:::
+::::: 
+
 ## Rush Hour
 
 ::::: columns
@@ -148,6 +267,11 @@ Can all graphs be traced?
 What characterizes those that cannot?
 :::
 ::::: 
+
+## Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2656319)
+
 
 
 
