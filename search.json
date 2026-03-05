@@ -2794,6 +2794,48 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/09_thu_graphs.html#graphs-a-new-model-for-representing-images",
+    "href": "slides/09_thu_graphs.html#graphs-a-new-model-for-representing-images",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Graphs: A new model for representing images",
+    "text": "Graphs: A new model for representing images\n\n\n\n\n\nA Graph is a collection of vertices, and edges between them. They’re used as a general model for many problems.\nIn our images every ____________ is a vertex, and every ____________ is an edge.\n\n\nOur fast algorithm for Voronoi Art mirrors a classic algorithm on graphs called Breadth First Search."
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#breadth-first-search",
+    "href": "slides/09_thu_graphs.html#breadth-first-search",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Breadth First Search",
+    "text": "Breadth First Search\n \nBreadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (–Wikipedia)"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#the-internet-circa-2003",
+    "href": "slides/09_thu_graphs.html#the-internet-circa-2003",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Internet, circa 2003",
+    "text": "The Internet, circa 2003\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nDegree of a vertex:"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#a-conflict-graph",
+    "href": "slides/09_thu_graphs.html#a-conflict-graph",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Conflict Graph",
+    "text": "A Conflict Graph\nWhat’s special about the vertex labels of this graph?\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nLabels:\n\n\nNeighbors:"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#a-complete-graph",
+    "href": "slides/09_thu_graphs.html#a-complete-graph",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Complete Graph",
+    "text": "A Complete Graph\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nA graph is complete if it contains all possible edges.\n\n\nHow many edges in a complete graph of n vertices?"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#social-network",
+    "href": "slides/09_thu_graphs.html#social-network",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Social Network",
+    "text": "Social Network\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nConnected Graph:\n \nConnected Component:"
+  },
+  {
     "objectID": "slides/09_thu_graphs.html#rush-hour",
     "href": "slides/09_thu_graphs.html#rush-hour",
     "title": "Programming, problem solving, and algorithms",
@@ -2848,6 +2890,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Pencil Puzzles",
     "text": "Pencil Puzzles\n\n\n\n\nTrace each graph without lifting your pencil and without revisiting an edge.\n \nCan all graphs be traced?\n \nWhat characterizes those that cannot?"
+  },
+  {
+    "objectID": "slides/09_thu_graphs.html#demo",
+    "href": "slides/09_thu_graphs.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
   },
   {
     "objectID": "slides/12_thu_tsp.html#announcements",
@@ -3799,91 +3848,14 @@
     "href": "slides/09_tue_graphs.html#breadth-first-search",
     "title": "Programming, problem solving, and algorithms",
     "section": "Breadth First Search",
-    "text": "Breadth First Search\n \nBreadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (–Wikipedia)"
+    "text": "Breadth First Search\n\n\nBreadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph), and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. (–Wikipedia)"
   },
   {
-    "objectID": "slides/09_tue_graphs.html#the-internet-circa-2003",
-    "href": "slides/09_tue_graphs.html#the-internet-circa-2003",
+    "objectID": "slides/09_tue_graphs.html#next-time",
+    "href": "slides/09_tue_graphs.html#next-time",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Internet, circa 2003",
-    "text": "The Internet, circa 2003\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nDegree of a vertex:"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#a-conflict-graph",
-    "href": "slides/09_tue_graphs.html#a-conflict-graph",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "A Conflict Graph",
-    "text": "A Conflict Graph\nWhat’s special about the vertex labels of this graph?\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nLabels:\n\n\nNeighbors:"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#a-complete-graph",
-    "href": "slides/09_tue_graphs.html#a-complete-graph",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "A Complete Graph",
-    "text": "A Complete Graph\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n\n\nA graph is complete if it contains all possible edges.\n\n\nHow many edges in a complete graph of n vertices?"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#social-network",
-    "href": "slides/09_tue_graphs.html#social-network",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Social Network",
-    "text": "Social Network\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nConnected Graph:\n \nConnected Component:"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#rush-hour",
-    "href": "slides/09_tue_graphs.html#rush-hour",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Rush Hour",
-    "text": "Rush Hour\n\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\nPath:"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#state-machine",
-    "href": "slides/09_tue_graphs.html#state-machine",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "State Machine",
-    "text": "State Machine\n\n\n\n\nThis graph can be used to calculate whether a given number is divisible by 7.\nStart at the circle node at the top. For each digit \\(d\\) in the given number, follow \\(d\\) blue (solid) edges in succession. As you move from one digit to the next, follow 1 red (dashed) edge. If you end up back at the circle node, your number is divisible by 7.\n\n\n3703"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#the-stanford-bunny",
-    "href": "slides/09_tue_graphs.html#the-stanford-bunny",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Stanford Bunny",
-    "text": "The Stanford Bunny\n\n\n\n\nGraph \\(G = (V, E)\\)\n\n\\(V\\):\n\\(E\\):\n\n \nPlanar Graph:"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#graph-explorations",
-    "href": "slides/09_tue_graphs.html#graph-explorations",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Graph Explorations",
-    "text": "Graph Explorations\nA graph \\(G\\) is defined by a set of vertices \\(V\\), and a set of edges \\(E\\).\nAlgorithm running time is typically described using the number of vertices, but execution usually depends on the number of edges, so we must understand the relationship between them."
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#how-many-edges",
-    "href": "slides/09_tue_graphs.html#how-many-edges",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How Many Edges?",
-    "text": "How Many Edges?\nSuppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?\n\n\n\n\nAt least __________ edges because the graph is connected.\n \nAt most _________ edges which occurs when the graph is complete."
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#handshaking",
-    "href": "slides/09_tue_graphs.html#handshaking",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handshaking",
-    "text": "Handshaking\nSuppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?\n\n\n\n\nThe following are equivalent:\n\nThe number of neighbors of a vertex.\nThe number of incident edges of a vertex.\nThe degree of a vertex."
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#degree-games",
-    "href": "slides/09_tue_graphs.html#degree-games",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Degree Games",
-    "text": "Degree Games\n\n\nSuppose I drop my graph and it shatters into pieces. If I tell you the degree of each of the vertices, can you reconstruct the graph?\n\nAn algorithm for finding a graph, given a degree sequence, is described in the practice problems.\nHavel-Hakimi"
-  },
-  {
-    "objectID": "slides/09_tue_graphs.html#pencil-puzzles",
-    "href": "slides/09_tue_graphs.html#pencil-puzzles",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Pencil Puzzles",
-    "text": "Pencil Puzzles\n\n\n\n\nTrace each graph without lifting your pencil and without revisiting an edge.\n \nCan all graphs be traced?\n \nWhat characterizes those that cannot?"
+    "section": "Next time…",
+    "text": "Next time…\nGRAPHS!!"
   },
   {
     "objectID": "slides/04_thu_web-as-data.html#announcements",
