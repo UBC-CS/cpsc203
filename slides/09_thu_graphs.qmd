@@ -1,5 +1,5 @@
 ---
-date: 2025-10-30
+date: 2026-03-05
 ---
 
 ## Announcements
@@ -125,7 +125,7 @@ Connected Component:
 :::
 ::::: 
 
-## Rush Hour
+## Rush Hour {.smaller}
 
 ::::: columns
 ::: {.column}
@@ -145,7 +145,7 @@ Path:
 :::
 ::::: 
 
-## State Machine {.smaller}
+## State Machine {.tiny}
 
 ::::: columns
 ::: {.column width=35%}
@@ -165,7 +165,7 @@ If you end up back at the circle node, your number is divisible by 7.
 :::
 ::::: 
 
-## The Stanford Bunny
+## The Stanford Bunny {.smaller}
 
 ::::: columns
 ::: {.column width=65%}
@@ -195,7 +195,7 @@ A graph $G$ is defined by a set of vertices $V$, and a set of edges $E$.
 
 Algorithm _running time_ is typically described using the number of _vertices_, but execution usually depends on the number of _edges_, so we must understand the relationship between them.
 
-## How Many Edges?
+## How Many Edges? {.smaller}
 
 Suppose I tell you a connected graph has 100 vertices. What do we know about the number of edges?
 
@@ -214,7 +214,7 @@ _At most_ _________ edges which occurs when the graph is complete.
 :::
 ::::: 
 
-## Handshaking
+## Handshaking {.smaller}
 
 Suppose I tell you a graph has 28 vertices, each with degree 3. How many edges does it have?
 
@@ -232,7 +232,7 @@ The following are equivalent:
 :::
 ::::: 
 
-## Degree Games
+## Degree Games {.smaller}
 
 ::::: columns
 ::: {.column}
@@ -249,7 +249,7 @@ An algorithm for finding a graph, given a degree sequence, is described in the p
 
 ![](/images/gr9.png)
 
-## Pencil Puzzles
+## Pencil Puzzles {.smaller}
 
 ::::: columns
 ::: {.column}
