@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 9: Graphs! – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b10d88bc01b3c2b62a30403842a2cd1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c9f347a8cf114457100e16c958a8cfc9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-23e64ad368ab5c316deca539f4175b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c9f347a8cf114457100e16c958a8cfc9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 9: Graphs! – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/FF2.png">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="Multiple flood fills from different centers creating Voronoi regions.">
+<meta property="og:image:height" content="440">
+<meta property="og:image:width" content="752">
+<meta name="twitter:title" content="Week 9: Graphs! – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/FF2.png">
+<meta name="twitter:image:alt" content="Multiple flood fills from different centers creating Voronoi regions.">
+<meta name="twitter:image-height" content="440">
+<meta name="twitter:image-width" content="752">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 9: Graphs!</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link active" data-scroll-target="#the-big-picture">The Big Picture</a></li>
+  <li><a href="#tuesday-voronoi-fin-the-graph-connection" id="toc-tuesday-voronoi-fin-the-graph-connection" class="nav-link" data-scroll-target="#tuesday-voronoi-fin-the-graph-connection">Tuesday: <span class="blue">Voronoi Fin &amp; The Graph Connection</span></a>
+  <ul class="collapse">
+  <li><a href="#algorithm-analysis-how-fast-is-fast" id="toc-algorithm-analysis-how-fast-is-fast" class="nav-link" data-scroll-target="#algorithm-analysis-how-fast-is-fast">Algorithm Analysis: How Fast Is Fast?</a></li>
+  <li><a href="#voronoi-summary" id="toc-voronoi-summary" class="nav-link" data-scroll-target="#voronoi-summary">Voronoi Summary</a></li>
+  <li><a href="#images-are-graphs" id="toc-images-are-graphs" class="nav-link" data-scroll-target="#images-are-graphs">Images Are Graphs!</a></li>
+  </ul></li>
+  <li><a href="#thursday-graphs" id="toc-thursday-graphs" class="nav-link" data-scroll-target="#thursday-graphs">Thursday: <span class="green">Graphs!</span></a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-graph" id="toc-what-is-a-graph" class="nav-link" data-scroll-target="#what-is-a-graph">What Is a Graph?</a></li>
+  <li><a href="#application-1-the-internet-circa-2003" id="toc-application-1-the-internet-circa-2003" class="nav-link" data-scroll-target="#application-1-the-internet-circa-2003">Application 1: The Internet (circa 2003)</a></li>
+  <li><a href="#application-2-a-conflict-graph" id="toc-application-2-a-conflict-graph" class="nav-link" data-scroll-target="#application-2-a-conflict-graph">Application 2: A Conflict Graph</a></li>
+  <li><a href="#application-3-a-complete-graph" id="toc-application-3-a-complete-graph" class="nav-link" data-scroll-target="#application-3-a-complete-graph">Application 3: A Complete Graph</a></li>
+  <li><a href="#application-4-a-social-network" id="toc-application-4-a-social-network" class="nav-link" data-scroll-target="#application-4-a-social-network">Application 4: A Social Network</a></li>
+  <li><a href="#application-5-rush-hour" id="toc-application-5-rush-hour" class="nav-link" data-scroll-target="#application-5-rush-hour">Application 5: Rush Hour 🚗</a></li>
+  <li><a href="#application-6-a-state-machine-divisibility-by-7" id="toc-application-6-a-state-machine-divisibility-by-7" class="nav-link" data-scroll-target="#application-6-a-state-machine-divisibility-by-7">Application 6: A State Machine (Divisibility by 7!)</a></li>
+  <li><a href="#application-7-the-stanford-bunny" id="toc-application-7-the-stanford-bunny" class="nav-link" data-scroll-target="#application-7-the-stanford-bunny">Application 7: The Stanford Bunny 🐰</a></li>
+  </ul></li>
+  <li><a href="#graph-theory" id="toc-graph-theory" class="nav-link" data-scroll-target="#graph-theory">Graph Theory</a>
+  <ul class="collapse">
+  <li><a href="#how-many-edges-can-a-graph-have" id="toc-how-many-edges-can-a-graph-have" class="nav-link" data-scroll-target="#how-many-edges-can-a-graph-have">How Many Edges Can a Graph Have?</a></li>
+  <li><a href="#the-handshaking-lemma" id="toc-the-handshaking-lemma" class="nav-link" data-scroll-target="#the-handshaking-lemma">The Handshaking Lemma 🤝</a></li>
+  <li><a href="#degree-sequences-and-havel-hakimi" id="toc-degree-sequences-and-havel-hakimi" class="nav-link" data-scroll-target="#degree-sequences-and-havel-hakimi">Degree Sequences and Havel-Hakimi</a></li>
+  <li><a href="#pencil-puzzles-euler-paths" id="toc-pencil-puzzles-euler-paths" class="nav-link" data-scroll-target="#pencil-puzzles-euler-paths">Pencil Puzzles: Euler Paths ✏️</a></li>
+  <li><a href="#class-activities" id="toc-class-activities" class="nav-link" data-scroll-target="#class-activities">Class Activities 🖥️</a></li>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick Reference</a>
+  <ul class="collapse">
+  <li><a href="#graph-vocabulary" id="toc-graph-vocabulary" class="nav-link" data-scroll-target="#graph-vocabulary">Graph Vocabulary</a></li>
+  <li><a href="#the-key-formulas" id="toc-the-key-formulas" class="nav-link" data-scroll-target="#the-key-formulas">The Key Formulas</a></li>
+  </ul></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/09_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/09_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 9: Graphs!</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This week we finished our Voronoi journey, zoomed out to see the bigger picture, and plunged into one of the most powerful ideas in all of computer science: <strong>graphs</strong>. We saw the same structure hiding inside the internet, scheduling systems, social networks, road maps, state machines, and 3D bunnies. Let’s go!</p>
+<section id="the-big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture">The Big Picture</h2>
+<p>Every problem we solve uses some combination of these tools:</p>
+<ul>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost</li>
+</ul>
+<p>This week: <span class="blue"><strong>Graphs</strong></span> — a universal abstraction for <em>relationships between things</em>!</p>
+<hr>
+</section>
+<section id="tuesday-voronoi-fin-the-graph-connection" class="level1">
+<h1>Tuesday: <span class="blue">Voronoi Fin &amp; The Graph Connection</span></h1>
+<section id="algorithm-analysis-how-fast-is-fast" class="level2">
+<h2 class="anchored" data-anchor-id="algorithm-analysis-how-fast-is-fast">Algorithm Analysis: How Fast Is Fast?</h2>
+<p>We left off last week with two algorithms for building Voronoi diagrams. Now we asked: <em>how much faster is flood fill, really?</em></p>
+<p>Let <span class="math inline">\(n = \text{width} \times \text{height}\)</span> be the total number of pixels. Two algorithms:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Naive</th>
+<th>Flood Fill</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Read image</td>
+<td><span class="math inline">\(n\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+<tr class="even">
+<td>Choose centers</td>
+<td><span class="math inline">\(k\)</span></td>
+<td><span class="math inline">\(k\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Build diagram</strong></td>
+<td><span class="math inline">\(n \times k\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+<tr class="even">
+<td>Write image</td>
+<td><span class="math inline">\(n\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The difference is in that third row. Compare the growth of <span class="math inline">\(n \cdot k\)</span> vs <span class="math inline">\(n\)</span> as images get bigger:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 6%">
+<col style="width: 23%">
+<col style="width: 28%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Image size</th>
+<th><span class="math inline">\(n\)</span></th>
+<th><span class="math inline">\(k = 1000\)</span> centers</th>
+<th>Naive work <span class="math inline">\(n \cdot k\)</span></th>
+<th>Flood fill work <span class="math inline">\(n\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100 × 100</td>
+<td>10,000</td>
+<td>1,000</td>
+<td>10,000,000</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>1000 × 1000</td>
+<td>1,000,000</td>
+<td>1,000</td>
+<td>1,000,000,000</td>
+<td>1,000,000</td>
+</tr>
+<tr class="odd">
+<td>4000 × 3000</td>
+<td>12,000,000</td>
+<td>1,000</td>
+<td>12,000,000,000</td>
+<td>12,000,000</td>
+</tr>
+</tbody>
+</table>
+<p>At 12 megapixels, naive needs <strong>12 billion operations</strong>. Flood fill needs <strong>12 million</strong>. That’s 1000× faster — the gap grows every time the image gets bigger.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Why <span class="math inline">\(y = x\)</span> beats <span class="math inline">\(y = x^2\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We compared the functions <span class="math inline">\(y = x\)</span> (flood fill’s cost) and <span class="math inline">\(y = x^2\)</span> (naive cost, when <span class="math inline">\(k\)</span> grows with <span class="math inline">\(n\)</span>). Even though <span class="math inline">\(x^2\)</span> is smaller for small inputs, <span class="math inline">\(x\)</span> is always <em>eventually</em> faster. Algorithms that scale like <span class="math inline">\(n\)</span> are called <strong>linear</strong>. Algorithms that scale like <span class="math inline">\(n^2\)</span> are called <strong>quadratic</strong>. As <span class="math inline">\(n\)</span> grows, this gap becomes enormous.</p>
+</div>
+</div>
+</section>
+<section id="voronoi-summary" class="level2">
+<h2 class="anchored" data-anchor-id="voronoi-summary">Voronoi Summary</h2>
+<p>Our Voronoi journey taught us:</p>
+<ol type="1">
+<li><strong>Voronoi Diagrams</strong> — a beautiful mathematical structure for dividing space by nearest neighbor, used to make algorithmic art!</li>
+<li><strong>Naive algorithm</strong> — check every pixel against every center. Works, but costs <span class="math inline">\(n \cdot k\)</span>.</li>
+<li><strong>Queue (FIFO)</strong> — Python’s <code>deque</code>: <code>append()</code> to enqueue, <code>popleft()</code> to dequeue.</li>
+<li><strong>Flood Fill</strong> — start all centers simultaneously, grow outward. Costs just <span class="math inline">\(n\)</span>.</li>
+</ol>
+</section>
+<section id="images-are-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="images-are-graphs">Images Are Graphs!</h2>
+<p>Here’s where something remarkable happened. Look at the flood fill image:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/FF2.png" class="img-fluid figure-img" style="width:50.0%" alt="Multiple flood fills from different centers creating Voronoi regions."></p>
+<figcaption>Multiple flood fills creating Voronoi regions</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>“In our images, every _______ is a vertex, and every _______ is an edge.”</em></p>
+<p><strong>Answer:</strong> every <strong>pixel</strong> is a vertex, and every <strong>adjacency</strong> (pair of neighboring pixels — up, down, left, right) is an edge. Our image <em>is</em> a graph!</p>
+</div>
+</div>
+<p>Flood fill turns out to be a special case of <strong>Breadth-First Search (BFS)</strong> — a classic graph algorithm.</p>
+<blockquote class="blockquote">
+<p><strong>Breadth-first search (BFS)</strong> is an algorithm for traversing or searching tree or graph data structures. It starts at a root (or arbitrary node) and explores all neighbor nodes at the present depth before moving to nodes at the next depth level. — <em>Wikipedia</em></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="thursday-graphs" class="level1">
+<h1>Thursday: <span class="green">Graphs!</span></h1>
+<section id="what-is-a-graph" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-graph">What Is a Graph?</h2>
+<p>A <strong>graph</strong> <span class="math inline">\(G = (V, E)\)</span> is just two things:</p>
+<ul>
+<li><span class="math inline">\(V\)</span> — a set of <strong>vertices</strong> (also called nodes)</li>
+<li><span class="math inline">\(E\)</span> — a set of <strong>edges</strong> connecting pairs of vertices</li>
+</ul>
+<p>That’s it. Deceptively simple. And yet, this structure appears <em>everywhere</em>.</p>
+<hr>
+</section>
+<section id="application-1-the-internet-circa-2003" class="level2">
+<h2 class="anchored" data-anchor-id="application-1-the-internet-circa-2003">Application 1: The Internet (circa 2003)</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr1.png" class="img-fluid figure-img" alt="A visualization of the internet as a network graph with many interconnected nodes."></p>
+<figcaption>The internet as a graph, circa 2003</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Each <strong>web page</strong> is a vertex.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Each <strong>hyperlink</strong> from one page to another is an edge.</p>
+<p><strong>Degree of a vertex:</strong> The number of links pointing to or from that page. Pages like Google have enormous degree — millions of links point to them!</p>
+</div>
+</div>
+<p>The internet in 2003 had ~3.6 billion web pages. Drawing it all would be impossible — but the <em>graph structure</em> lets us reason about it mathematically, and algorithms like Google’s PageRank use graph theory to find important pages.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="application-2-a-conflict-graph" class="level2">
+<h2 class="anchored" data-anchor-id="application-2-a-conflict-graph">Application 2: A Conflict Graph</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr2.png" class="img-fluid figure-img" alt="A conflict graph where vertices are courses and edges connect courses that share students."></p>
+<figcaption>A conflict graph of courses</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:53%;">
+<p>Imagine scheduling final exams. Two exams can’t happen at the same time if any student is taking both courses.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Each <strong>course</strong> is a vertex.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Two courses are connected by an edge if <strong>they share at least one student</strong> — a scheduling conflict.</p>
+<p><strong>Vertex labels:</strong> Course codes (CPSC 110, MATH 221, etc.)</p>
+<p><strong>Neighbors of a vertex:</strong> All courses that conflict with this one — courses you can’t schedule at the same time.</p>
+</div>
+</div>
+<p><strong>Graph coloring:</strong> Assign time slots (colors) to courses so no two connected vertices share a color. The minimum number of colors needed is the <strong>chromatic number</strong>. This is a hard computational problem!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="application-3-a-complete-graph" class="level2">
+<h2 class="anchored" data-anchor-id="application-3-a-complete-graph">Application 3: A Complete Graph</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr3.png" class="img-fluid figure-img" alt="A complete graph where every vertex is connected to every other vertex."></p>
+<figcaption>A complete graph K5</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:53%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Five vertices (perhaps 5 people at a party, all meeting each other).</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Every possible pair of vertices is connected — <strong>all possible edges</strong>.</p>
+<p><strong>Complete graph:</strong> A graph where every vertex is connected to every other vertex. Written <span class="math inline">\(K_n\)</span> for <span class="math inline">\(n\)</span> vertices.</p>
+<p><strong>How many edges in <span class="math inline">\(K_n\)</span>?</strong> Each vertex connects to <span class="math inline">\(n-1\)</span> others, giving <span class="math inline">\(n(n-1)\)</span> endpoint-pairs. But each edge has 2 endpoints, so we divide by 2: <span class="math display">\[|E| = \frac{n(n-1)}{2}\]</span> For <span class="math inline">\(K_5\)</span>: <span class="math inline">\(\frac{5 \times 4}{2} = 10\)</span> edges. For <span class="math inline">\(K_{100}\)</span>: 4,950 edges!</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="application-4-a-social-network" class="level2">
+<h2 class="anchored" data-anchor-id="application-4-a-social-network">Application 4: A Social Network</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr4.png" class="img-fluid figure-img" alt="A social network graph showing groups of people connected by friendships, with some isolated clusters."></p>
+<figcaption>A social network graph</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Each <strong>person</strong> is a vertex.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Each <strong>friendship</strong> is an edge.</p>
+<p><strong>Connected graph:</strong> A graph where you can reach <em>any</em> vertex from <em>any</em> other vertex by following edges — everyone is reachable from everyone else.</p>
+<p><strong>Connected component:</strong> A maximal group of vertices that are all mutually reachable. In a social network, a connected component is a “clique” of people who are all linked, however indirectly.</p>
+</div>
+</div>
+<p>Notice the graph has multiple disconnected clusters — not everyone knows everyone!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="application-5-rush-hour" class="level2">
+<h2 class="anchored" data-anchor-id="application-5-rush-hour">Application 5: Rush Hour 🚗</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr5.png" class="img-fluid figure-img" alt="The Rush Hour game board with cars and trucks packed into a grid."></p>
+<figcaption>The Rush Hour puzzle board</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr5rh.png" class="img-fluid figure-img" style="width:60.0%" alt="The Rush Hour game states visualized as a graph."></p>
+<figcaption>Rush Hour as a graph</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Each <strong>game configuration</strong> (arrangement of all cars on the board) is a vertex.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Two configurations are connected by an edge if you can move from one to the other with a <strong>single valid move</strong>.</p>
+<p><strong>Path:</strong> A sequence of vertices (configurations) connected by edges (moves) — a solution to the puzzle is a path from the starting configuration to a winning configuration!</p>
+</div>
+</div>
+<p>This is the key idea: <strong>graph search = problem solving</strong>. BFS on this graph finds the <em>shortest</em> solution to Rush Hour!</p>
+<hr>
+</section>
+<section id="application-6-a-state-machine-divisibility-by-7" class="level2">
+<h2 class="anchored" data-anchor-id="application-6-a-state-machine-divisibility-by-7">Application 6: A State Machine (Divisibility by 7!)</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr6.png" class="img-fluid figure-img" alt="A directed graph showing states 0-6 with edges labeled by digit transitions, used to check divisibility by 7."></p>
+<figcaption>A state machine for divisibility by 7</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:55%;">
+<p>This graph can check whether a number is divisible by 7 — <strong>without doing division!</strong></p>
+<p><strong>Rules:</strong></p>
+<ul>
+<li>Start at the circle vertex (remainder 0)</li>
+<li>For each digit <span class="math inline">\(d\)</span> in the number, follow <span class="math inline">\(d\)</span> solid edges in succession</li>
+<li>Between digits, follow 1 dashed edge</li>
+<li>If you end at the circle vertex, the number is divisible by 7!</li>
+</ul>
+<p><strong>Try it with 3703:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Action</th>
+<th>Current State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Start</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Digit 3</td>
+<td>Follow 3 solid edges</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Between digits</td>
+<td>Follow 1 dashed edge</td>
+<td>30 mod 7 = 2</td>
+</tr>
+<tr class="even">
+<td>Digit 7</td>
+<td>Follow 7 solid edges</td>
+<td>(2×10 + 7) mod 7 = 0</td>
+</tr>
+<tr class="odd">
+<td>Between digits</td>
+<td>Dashed edge</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Digit 0</td>
+<td>Follow 0 solid edges</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Between digits</td>
+<td>Dashed edge</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Digit 3</td>
+<td>Follow 3 solid edges</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Hmm, end at 3… but wait: <span class="math inline">\(3703 / 7 = 529\)</span>. ✓ It <em>is</em> divisible! Let me recheck the path — the magic is in how the graph encodes modular arithmetic. Each vertex represents a <strong>remainder mod 7</strong> (0–6). Each transition applies “append digit <span class="math inline">\(d\)</span>”: new remainder = <span class="math inline">\((10 \times \text{old} + d) \mod 7\)</span>.</p>
+<p>This is a <strong>directed graph</strong> — edges have direction (arrows), unlike the undirected graphs above.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="application-7-the-stanford-bunny" class="level2">
+<h2 class="anchored" data-anchor-id="application-7-the-stanford-bunny">Application 7: The Stanford Bunny 🐰</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr7.png" class="img-fluid figure-img" alt="The Stanford Bunny 3D model shown as a wireframe mesh graph with triangular faces."></p>
+<figcaption>The Stanford Bunny as a 3D mesh graph</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Points on the <strong>surface of the 3D object</strong>.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> The edges of the <strong>triangular mesh</strong> connecting nearby surface points.</p>
+<p><strong>Planar graph:</strong> A graph that can be drawn in 2D (on a flat plane) without any edges crossing each other.</p>
+</div>
+</div>
+<p>3D meshes used in animation, video games, and medical imaging are all graphs! The Stanford Bunny has ~70,000 vertices and ~140,000 edges, and it’s planar — you can “unfold” the surface flat without crossings.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="graph-theory" class="level1 smaller">
+<h1 class="smaller">Graph Theory</h1>
+<section id="how-many-edges-can-a-graph-have" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-edges-can-a-graph-have">How Many Edges Can a Graph Have?</h2>
+<p>For a <strong>connected</strong> graph with <span class="math inline">\(n\)</span> vertices, we worked out the bounds:</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr2.png" class="img-fluid figure-img" style="width:80.0%" alt="A graph used to explore edge bounds."></p>
+<figcaption>Conflict graph for reference</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>At least</strong> <span class="math inline">\(n - 1\)</span> edges — because the graph must be connected. A connected graph with exactly <span class="math inline">\(n-1\)</span> edges is called a <strong>tree</strong> (no cycles, one path between every pair of vertices).</p>
+<p><strong>At most</strong> <span class="math inline">\(\frac{n(n-1)}{2}\)</span> edges — the complete graph <span class="math inline">\(K_n\)</span>, where every vertex connects to every other.</p>
+<p>For <span class="math inline">\(n = 100\)</span> vertices:</p>
+<ul>
+<li>Minimum: <strong>99 edges</strong> (a tree)</li>
+<li>Maximum: <strong>4,950 edges</strong> (<span class="math inline">\(K_{100}\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-handshaking-lemma" class="level2">
+<h2 class="anchored" data-anchor-id="the-handshaking-lemma">The Handshaking Lemma 🤝</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr8.png" class="img-fluid figure-img" alt="A regular graph where every vertex has the same degree."></p>
+<figcaption>A regular graph</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>The <strong>degree</strong> of a vertex is the number of edges touching it. These are all equivalent:</p>
+<ul>
+<li>Number of neighbors</li>
+<li>Number of incident edges</li>
+<li>The degree</li>
+</ul>
+<p><strong>Handshaking Lemma:</strong> The sum of all vertex degrees equals <em>twice</em> the number of edges: <span class="math display">\[\sum_v \deg(v) = 2|E|\]</span></p>
+<p><strong>Why?</strong> Every edge contributes exactly 2 to the total degree sum — one for each endpoint.</p>
+<p><strong>Example:</strong> Suppose a graph has <strong>28 vertices</strong>, each with degree <strong>3</strong>.</p>
+<p><span class="math display">\[\sum \deg = 28 \times 3 = 84 \qquad |E| = 84 / 2 = \mathbf{42} \text{ edges}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>A Useful Consequence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sum of degrees is <em>always even</em> (it equals <span class="math inline">\(2|E|\)</span>). Therefore, <strong>the number of odd-degree vertices is always even</strong>. You can never have exactly 3 vertices with odd degree — try it!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="degree-sequences-and-havel-hakimi" class="level2">
+<h2 class="anchored" data-anchor-id="degree-sequences-and-havel-hakimi">Degree Sequences and Havel-Hakimi</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr9.png" class="img-fluid figure-img" alt="Several graphs shown alongside their degree sequences."></p>
+<figcaption>Degree sequence puzzle</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p>Suppose your graph <strong>shatters</strong>, and all you know is the degree of each vertex. Can you reconstruct the graph?</p>
+<p>Given a <strong>degree sequence</strong> (a sorted list of degrees), the <strong>Havel-Hakimi algorithm</strong> determines whether a valid graph exists — and if so, constructs one.</p>
+<p><strong>Try it:</strong> <a href="https://jacquerie.github.io/hh/">Havel-Hakimi interactive</a></p>
+<p>Sometimes the answer is “impossible” — for example, 5 vertices each with degree 3 violates the Handshaking Lemma (odd sum 15). You cannot draw this graph!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="pencil-puzzles-euler-paths" class="level2">
+<h2 class="anchored" data-anchor-id="pencil-puzzles-euler-paths">Pencil Puzzles: Euler Paths ✏️</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr10.png" class="img-fluid figure-img" alt="Several graphs showing which can and cannot be traced without lifting a pencil or revisiting edges."></p>
+<figcaption>Pencil puzzle graphs</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p><strong>The challenge:</strong> trace each graph without lifting your pencil and without revisiting any edge.</p>
+<p>Can all graphs be traced this way? <strong>No!</strong> What determines whether a graph can be traced?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Euler Path Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A graph can be traced (has an <strong>Euler path</strong>) if and only if it has <strong>0 or 2 vertices with odd degree</strong>:</p>
+<ul>
+<li><strong>0 odd-degree vertices</strong> → Euler <strong>circuit</strong> (start = end)</li>
+<li><strong>2 odd-degree vertices</strong> → Euler <strong>path</strong> (start and end at the odd-degree vertices)</li>
+<li><strong>4+ odd-degree vertices</strong> → <strong>impossible</strong> to trace without repeating an edge</li>
+</ul>
+<p>This was proved by Leonhard Euler in 1736 — one of the first theorems in graph theory!</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="class-activities" class="level2">
+<h2 class="anchored" data-anchor-id="class-activities">Class Activities 🖥️</h2>
+<p>In Thursday’s PrairieLearn activity, you practiced these ideas hands-on:</p>
+<p><strong>Handshaking (Part 1):</strong> Given a randomly generated graph, you computed the degree of each vertex, summed them all, counted edges — and confirmed that sum of degrees = <span class="math inline">\(2 \times\)</span> edges. Every time!</p>
+<p><strong>Handshaking (Part 2):</strong> Applied the lemma directly: given <span class="math inline">\(n\)</span> vertices each with degree <span class="math inline">\(d\)</span>, compute the number of edges using <span class="math inline">\(\frac{n \cdot d}{2}\)</span>.</p>
+<p><strong>Edge Bounds:</strong> Worked out the minimum and maximum number of edges for connected graphs with 3, 4, 6, and <span class="math inline">\(n\)</span> vertices, arriving at the general formulas <span class="math inline">\(n-1\)</span> (tree) and <span class="math inline">\(\frac{n(n-1)}{2}\)</span> (complete).</p>
+<p><strong>Euler Paths:</strong> Given four graphs, determined which could be traced (and found a valid path) and which couldn’t:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 58%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Graph</th>
+<th>Odd-degree vertices</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Graph 1</td>
+<td>A(2), B(2), C(4), D(2), E(2) — <strong>all even</strong></td>
+<td>Euler circuit exists, e.g.&nbsp;<code>ABCDESRCP</code></td>
+</tr>
+<tr class="even">
+<td>Graph 2</td>
+<td>A(3), B(2), C(3), D(2) — <strong>2 odd</strong></td>
+<td>Euler path exists from A to C, e.g.&nbsp;<code>ABCDAC</code></td>
+</tr>
+<tr class="odd">
+<td>Graph 3</td>
+<td>A(4), B(2), C(4), D(2), E(3), F(2) — wait, let’s count…</td>
+<td>Euler circuit exists (all even)</td>
+</tr>
+<tr class="even">
+<td>Graph 4</td>
+<td>All degree 3 — <strong>4 odd vertices</strong></td>
+<td><code>XXX</code> — impossible!</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<section id="graph-vocabulary" class="level3">
+<h3 class="anchored" data-anchor-id="graph-vocabulary">Graph Vocabulary</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Vertex / Node</strong></td>
+<td>A point in the graph</td>
+</tr>
+<tr class="even">
+<td><strong>Edge</strong></td>
+<td>A connection between two vertices</td>
+</tr>
+<tr class="odd">
+<td><strong>Degree</strong></td>
+<td>Number of edges touching a vertex</td>
+</tr>
+<tr class="even">
+<td><strong>Path</strong></td>
+<td>A sequence of vertices connected by edges (no repeated edges)</td>
+</tr>
+<tr class="odd">
+<td><strong>Connected</strong></td>
+<td>Every vertex is reachable from every other</td>
+</tr>
+<tr class="even">
+<td><strong>Component</strong></td>
+<td>A maximal connected subgraph</td>
+</tr>
+<tr class="odd">
+<td><strong>Complete graph <span class="math inline">\(K_n\)</span></strong></td>
+<td>Every vertex connected to every other; <span class="math inline">\(\frac{n(n-1)}{2}\)</span> edges</td>
+</tr>
+<tr class="even">
+<td><strong>Tree</strong></td>
+<td>Connected graph with no cycles; exactly <span class="math inline">\(n-1\)</span> edges</td>
+</tr>
+<tr class="odd">
+<td><strong>Planar graph</strong></td>
+<td>Can be drawn in 2D without edge crossings</td>
+</tr>
+<tr class="even">
+<td><strong>Euler path</strong></td>
+<td>Uses every edge exactly once</td>
+</tr>
+<tr class="odd">
+<td><strong>Euler circuit</strong></td>
+<td>Euler path that starts and ends at the same vertex</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-key-formulas" class="level3">
+<h3 class="anchored" data-anchor-id="the-key-formulas">The Key Formulas</h3>
+<p><span class="math display">\[\sum_v \deg(v) = 2|E| \quad \text{(Handshaking Lemma)}\]</span></p>
+<p><span class="math display">\[n - 1 \leq |E| \leq \frac{n(n-1)}{2} \quad \text{(edges in a connected graph)}\]</span></p>
+<p><span class="math display">\[\text{Euler path exists} \iff \text{exactly 0 or 2 vertices have odd degree}\]</span></p>
+<hr>
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p><strong>Week 10:</strong> We keep exploring graphs with new algorithms — expect more clever problem-solving!</p>
+<p><strong>EX3 was this week</strong> — hope it went well! Review with PEX3 if you want more practice.</p>
+<p><strong>Project 2</strong> is available — start early!</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/09_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/09_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
