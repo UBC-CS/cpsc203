@@ -1,5 +1,5 @@
 ---
-date: 2025-11-04
+date: 2026-03-10
 ---
 
 ## Announcements
@@ -26,6 +26,15 @@ Supposing, for instance, that the **fundamental relations of** pitched **sounds*
 <center>
 ![](/images/mhallnotes.png)
 </center>
+
+## Note Tally
+
+| Note | Tally | Count |
+|:----:|:------|------:|
+| C | \|\| | 2 |
+| D | \|\|\|\| \|\|\|\| | 10 |
+| E | \|\|\|\| \|\|\|\| \| | 11 |
+| G | \|\| | 2 |
 
 ## Characterizing Mary
 
