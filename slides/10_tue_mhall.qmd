@@ -29,12 +29,12 @@ Supposing, for instance, that the **fundamental relations of** pitched **sounds*
 
 ## Note Tally
 
-| Note | Tally | Count |
-|:----:|:------|------:|
-| C | \|\| | 2 |
-| D | \|\|\|\| \|\|\|\| | 10 |
-| E | \|\|\|\| \|\|\|\| \| | 11 |
-| G | \|\| | 2 |
+| Note | Count |
+|:----:|:------:|
+| C | 3 |
+| D | 10 |
+| E | 11 |
+| G | 2 |
 
 ## Characterizing Mary
 
@@ -63,7 +63,7 @@ Supposing, for instance, that the **fundamental relations of** pitched **sounds*
 
 ## Demo {.activity}
     
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2609228)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2658332)
 
 ## Some Technical Details
 
