@@ -1488,7 +1488,7 @@
     "href": "slides/10_thu_sudoku.html#stacks",
     "title": "Programming, problem solving, and algorithms",
     "section": "Stacks",
-    "text": "Stacks\n\n\nProgrammatic manifestation of a ________________.\n \nStack functions:\n\nInsert: push(item)\nRemove: pop() \\(\\rightarrow\\) item\n\nDeque functions:\n\nInsert: append(item)\nRemove: pop() \\(\\rightarrow\\) item"
+    "text": "Stacks\nProgrammatic manifestation of a ________________.\n\n\n \nStack functions:\n\nInsert: push(item)\nRemove: pop() \\(\\rightarrow\\) item\n\nDeque functions:\n\nInsert: append(item)\nRemove: pop() \\(\\rightarrow\\) item"
   },
   {
     "objectID": "slides/10_thu_sudoku.html#flood-fill",
@@ -1502,7 +1502,7 @@
     "href": "slides/10_thu_sudoku.html#depth-first-search-1",
     "title": "Programming, problem solving, and algorithms",
     "section": "Depth First Search",
-    "text": "Depth First Search\n\n\n\n\n             A B C D E\n\n\nprocess start vertex\npush(start_vertex)\nwhile the stack is not empty:\n\nv = pop()\nfor each valid neighbor w of v:\n\nprocess w\npush(w)"
+    "text": "Depth First Search\n\n\n\n\n             A B C D E\n\n\npush(start_vertex)\nwhile the stack is not empty:\n\nv = pop()\nif v is not processed:\n\nprocess v\nfor each valid neighbor w of v:\n\npush(w)"
   },
   {
     "objectID": "slides/10_thu_sudoku.html#algorithm-planning",
@@ -1530,7 +1530,7 @@
     "href": "slides/10_thu_sudoku.html#block-validity",
     "title": "Programming, problem solving, and algorithms",
     "section": "Block Validity",
-    "text": "Block Validity\nPython tidbit: to query a region in a 2d numpy matrix, just define the bounds on the region and use in.\nIn the small example below, 2 in grid[0:2,0:2] returns True.\n\nNew puzzle: given a location (x,y) how do we define its region?"
+    "text": "Block Validity\nPython tidbit: to query a region in a 2d matrix, define the bounds on the region and use in.\nIn the small example below, 2 in grid[0:2,0:2] returns True.\n\nNew puzzle: given a location (x,y) how do we define its region?"
   },
   {
     "objectID": "slides/10_thu_sudoku.html#defining-regions",
@@ -1544,7 +1544,7 @@
     "href": "slides/10_thu_sudoku.html#generalize",
     "title": "Programming, problem solving, and algorithms",
     "section": "Generalize",
-    "text": "Generalize\nFind the region for point \\((x,y)\\) in a \\(r^2\\times r^2\\) grid.\nHint: In python, x//r is the integer part of “x divided by r”."
+    "text": "Generalize\nFind the region for point \\((x,y)\\) in a \\(r^2\\times r^2\\) grid.\nHint: In python, x//r is the integer part of “x divided by r”.\n\n\n[  :  ,  :  ]"
   },
   {
     "objectID": "slides/10_thu_sudoku.html#another-puzzle",

@@ -157,11 +157,11 @@
 <h1>Sudoku</h1>
 
 </section>
-<section id="rush-hour" class="slide level2">
+<section id="rush-hour" class="slide level2 smaller">
 <h2>Rush Hour</h2>
 <div class="columns">
 <div class="column">
-<p><img data-src="../images/gr5.png"></p>
+<p><img src="../images/gr5.png" width="70%"></p>
 </div><div class="column">
 <p><img src="../images/gr5rh.png" width="30%"></p>
 <p>Graph <span class="math inline">\(G = (V, E)\)</span></p>
@@ -172,7 +172,7 @@
 <p>Path:</p>
 </div></div>
 </section>
-<section id="representing-sudoku" class="slide level2">
+<section id="representing-sudoku" class="slide level2 smaller">
 <h2>Representing Sudoku</h2>
 <ul>
 <li>A <em>representation</em> of a system is a model of the system that is useful in analysis.</li>
@@ -180,37 +180,37 @@
 <li>Each configuration is described using its representation, and is called a <em>state</em>.</li>
 </ul>
 <p>How would you represent the game of Sudoku?</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"></section>
-<section id="state-space-graphs" class="slide level2">
+<p><img src="../images/su1smallgrid.png" height="80%"></p>
+</section>
+<section id="state-space-graphs" class="slide level2 smaller">
 <h2>State Space Graphs</h2>
 <p>Define a graph where every vertex is ________________________, and edge (u,v) means ________________________.</p>
 <p>How many neighbors does this vertex have?</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"></section>
-<section id="tictactoe-state-space-graph" class="slide level2">
+<p><img src="../images/su1smallgrid.png" height="80%"></p>
+</section>
+<section id="tictactoe-state-space-graph" class="slide level2 smaller">
 <h2>TicTacToe State Space Graph</h2>
 
-<img data-src="../images/su2tictactoe.png" class="r-stretch"></section>
-<section id="searching-state-space-graphs" class="slide level2">
+<img src="../images/su2tictactoe.png" width="25%" class="r-stretch"></section>
+<section id="searching-state-space-graphs" class="slide level2 smaller">
 <h2>Searching State Space Graphs</h2>
 
 <img data-src="../images/su3many.png" class="r-stretch"></section>
-<section id="depth-first-search" class="slide level2">
+<section id="depth-first-search" class="slide level2 smaller">
 <h2>Depth First Search</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../images/su4ariadne.png"></p>
+<p><img src="../images/su4ariadne.png" width="70%"></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="../images/su5maze.png"></p>
 </div></div>
 <p><a href="https://www.youtube.com/watch?v=8qrZ1clEp-Y" class="uri">https://www.youtube.com/watch?v=8qrZ1clEp-Y</a></p>
 </section>
-<section id="stacks" class="slide level2">
+<section id="stacks" class="slide level2 smaller">
 <h2>Stacks</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
 <p>Programmatic manifestation of a ________________.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>&nbsp;</p>
 <p>Stack functions:</p>
 <ul>
@@ -222,15 +222,15 @@
 <li>Insert: <code>append(item)</code></li>
 <li>Remove: <code>pop()</code> <span class="math inline">\(\rightarrow\)</span> <code>item</code></li>
 </ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="../images/su6pez.png"></p>
+</div><div class="column" style="width:20%;">
+<p><img src="../images/su6pez.png" width="80%"></p>
 </div></div>
 </section>
-<section id="flood-fill" class="slide level2 smaller">
+<section id="flood-fill" class="slide level2 tiny">
 <h2>Flood Fill</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../images/FF1.png"></p>
+<p><img src="../images/FF1.png" width="80%"></p>
 <ul>
 <li>enqueue the center</li>
 <li>while the queue is not empty:
@@ -264,7 +264,7 @@
 </svg>
 </div></div>
 </section>
-<section id="depth-first-search-1" class="slide level2 smaller">
+<section id="depth-first-search-1" class="slide level2 tiny">
 <h2>Depth First Search</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -278,36 +278,26 @@
 <line x1="80" y1="110" x2="200" y2="50" class="edge"></line> <line x1="80" y1="110" x2="200" y2="170" class="edge"></line> <line x1="200" y1="50" x2="200" y2="170" class="edge"></line> <line x1="200" y1="50" x2="260" y2="110" class="edge"></line> <line x1="200" y1="170" x2="260" y2="110" class="edge"></line> <line x1="200" y1="50" x2="340" y2="110" class="edge"></line> <line x1="260" y1="110" x2="340" y2="110" class="edge"></line> <line x1="200" y1="170" x2="340" y2="110" class="edge"></line> <circle cx="200" cy="50" r="22" class="node"></circle> <circle cx="80" cy="110" r="22" class="node"></circle> <circle cx="200" cy="170" r="22" class="node"></circle> <circle cx="260" cy="110" r="22" class="node"></circle> <circle cx="340" cy="110" r="22" class="node"></circle> <text x="200" y="50" class="label">A</text> <text x="80" y="110" class="label">B</text> <text x="200" y="170" class="label">C</text> <text x="260" y="110" class="label">D</text> <text x="340" y="110" class="label">E</text>
 </svg>
 <ul>
-<li>process start vertex</li>
 <li><code>push(start_vertex)</code></li>
 <li>while the <code>stack</code> is not empty:
 <ul>
 <li>v = <code>pop()</code></li>
+<li>if <code>v</code> is not processed:
+<ul>
+<li>process <code>v</code></li>
 <li>for each valid neighbor <code>w</code> of <code>v</code>:
 <ul>
-<li>process w</li>
 <li><code>push(w)</code></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 800 960" width="420" height="560" role="img">
-<defs>
-<style>
-      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
-      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    </style>
-</defs> <path id="center" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="outer"></path> <path id="edge" d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880" class="inner"></path>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 340" width="70" height="340" role="img" aria-label="Stack">
+<polyline points="20,10 20,330 80,330 80,10" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline>
 </svg>
 </div></div>
 </section>
@@ -324,7 +314,7 @@
 <h2>Searching State Space Graphs</h2>
 
 <img data-src="../images/su3many.png" class="r-stretch"></section>
-<section id="moving-toward-implementation" class="slide level2">
+<section id="moving-toward-implementation" class="slide level2 smaller">
 <h2>Moving toward implementation</h2>
 <p>Need to be able to check whether a candidate entry is <em>valid</em>.</p>
 <div class="columns">
@@ -343,18 +333,18 @@
 <p>How shall we check a block?</p>
 </div></div>
 </section>
-<section id="block-validity" class="slide level2">
+<section id="block-validity" class="slide level2 smaller">
 <h2>Block Validity</h2>
-<p><strong>Python tidbit</strong>: to query a region in a 2d numpy matrix, just define the bounds on the region and use <code>in</code>.</p>
+<p><strong>Python tidbit</strong>: to query a region in a 2d matrix, define the bounds on the region and use <code>in</code>.</p>
 <p>In the small example below, <code>2 in grid[0:2,0:2]</code> returns <code>True</code>.</p>
-
-<img data-src="../images/su1smallgrid.png" class="r-stretch"><p><strong>New puzzle</strong>: given a location (x,y) how do we define its region?</p>
+<p><img src="../images/su1smallgrid.png" height="100%"></p>
+<p><strong>New puzzle</strong>: given a location (x,y) how do we define its region?</p>
 </section>
-<section id="defining-regions" class="slide level2">
+<section id="defining-regions" class="slide level2 smaller">
 <h2>Defining Regions</h2>
 <p>Given location <span class="math inline">\((x,y)\)</span>, determine the region in which it lives.</p>
 <div class="columns">
-<div class="column" style="width:80%;">
+<div class="column" style="width:50%;">
 <ul>
 <li><p>a region <code>s:t</code> contains <span class="math inline">\(x\)</span> if <span class="math inline">\(s\leq x&lt; t\)</span></p></li>
 <li><p>for a <span class="math inline">\(4\times 4\)</span> grid, the block size is 2</p></li>
@@ -368,6 +358,12 @@
 <h2>Generalize</h2>
 <p>Find the region for point <span class="math inline">\((x,y)\)</span> in a <span class="math inline">\(r^2\times r^2\)</span> grid.</p>
 <p>Hint: In python, <code>x//r</code> is the integer part of “<code>x</code> divided by <code>r</code>”.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 660 80" width="660" height="80" role="img">
+<style>
+    .ch { font: bold 44px ui-sans-serif, 'Segoe UI', Arial; fill: #000; }
+  </style>
+<text class="ch" x="10" y="62">[</text> <line x1="45" y1="66" x2="165" y2="66" stroke="#000" stroke-width="3"></line> <text class="ch" x="168" y="62">:</text> <line x1="190" y1="66" x2="310" y2="66" stroke="#000" stroke-width="3"></line> <text class="ch" x="314" y="62">,</text> <line x1="340" y1="66" x2="460" y2="66" stroke="#000" stroke-width="3"></line> <text class="ch" x="463" y="62">:</text> <line x1="485" y1="66" x2="605" y2="66" stroke="#000" stroke-width="3"></line> <text class="ch" x="610" y="62">]</text>
+</svg>
 </section>
 <section id="another-puzzle" class="slide level2 smaller">
 <h2>Another Puzzle</h2>
@@ -389,7 +385,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3RhdGVzID0gMTBcbmRlZiBw
 </section>
 <section id="demo" class="slide level2 activity">
 <h2>Demo</h2>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/">PrairieLearn Activity</a></p>
+<p><a href="https://us.prairielearn.com/pl/course_instance/202804/assessment/2659076">PrairieLearn Activity</a></p>
 
 
 <script type="pyodide-data">
