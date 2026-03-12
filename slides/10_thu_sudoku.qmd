@@ -6,11 +6,12 @@ date: 2025-11-06
 
 # Sudoku
 
-## Rush Hour
+## Rush Hour {.smaller}
 
 ::::: columns
 ::: {.column}
-![](/images/gr5.png)
+<img src="/images/gr5.png" width="70%">
+
 :::
 ::: {.column}
 
@@ -26,7 +27,7 @@ Path:
 :::
 ::::: 
 
-## Representing Sudoku
+## Representing Sudoku {.smaller}
 
 * A *representation* of a system is a model of the system that is useful in analysis. 
 * A *state space* is a collection of all possible configurations of a physical system. 
@@ -34,30 +35,32 @@ Path:
 
 How would you represent the game of Sudoku?
 
-![](/images/su1smallgrid.png)
+<img src="/images/su1smallgrid.png" height="80%">
 
-## State Space Graphs
+
+## State Space Graphs {.smaller}
 
 Define a graph where every vertex is \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_,
 and edge (u,v) means \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 
 How many neighbors does this vertex have?
 
-![](/images/su1smallgrid.png)
+<img src="/images/su1smallgrid.png" height="80%">
 
-## TicTacToe State Space Graph
+## TicTacToe State Space Graph {.smaller}
 
-![](/images/su2tictactoe.png)
+<img src="/images/su2tictactoe.png" width="25%">
 
-## Searching State Space Graphs
+
+## Searching State Space Graphs {.smaller}
 
 ![](/images/su3many.png)
 
-## Depth First Search
+## Depth First Search {.smaller}
 
 ::::: {.columns}
 ::: {.column width=50%}
-![](/images/su4ariadne.png)
+<img src="/images/su4ariadne.png" width="70%">
 :::
 ::: {.column width=50%}
 ![](/images/su5maze.png)
@@ -66,11 +69,12 @@ How many neighbors does this vertex have?
 
 <https://www.youtube.com/watch?v=8qrZ1clEp-Y>
 
-## Stacks
+## Stacks {.smaller}
+
+Programmatic manifestation of a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 
 ::::: {.columns}
-::: {.column width=70%}
-Programmatic manifestation of a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+::: {.column width=50%}
 
 \ 
 
@@ -85,17 +89,18 @@ Deque functions:
 * Remove: `pop()` $\rightarrow$ `item`
 
 :::
-::: {.column width=30%}
-![](/images/su6pez.png)
+::: {.column width=20%}
+<img src="/images/su6pez.png" width="80%">
 :::
 :::::
 
-## Flood Fill {.smaller}
+## Flood Fill {.tiny}
 
 ::::: columns
 ::: {.column width=50%}
 
-![](/images/FF1.png)
+<img src="/images/FF1.png" width="80%">
+
 
 - enqueue the center
 - while the queue is not empty:
@@ -134,7 +139,7 @@ Deque functions:
 :::
 :::::
 
-## Depth First Search {.smaller}
+## Depth First Search {.tiny}
 
 ::::: columns
 ::: {.column width=50%}
@@ -169,40 +174,27 @@ Deque functions:
   <text x="340" y="110" class="label">E</text>
 </svg>
 
-
-- process start vertex
 - `push(start_vertex)` 
 - while the `stack` is not empty:
    - v = `pop()`
-   - for each valid neighbor `w` of `v`:
-      - process w
-      - `push(w)`
+   - if `v` is not processed:
+      - process `v`
+      - for each valid neighbor `w` of `v`:
+         - `push(w)`
 
 :::
 ::: {.column width=50%}
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="420" height="560" role="img">
-  <defs>
-    <style>
-      .outer { stroke:#000; stroke-width:120; fill:none; stroke-linecap:none; stroke-linejoin:round; }
-      .inner { stroke:#fff; stroke-width:100; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    </style>
-  </defs>
-  <path id="center"
-        d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880"
-        class="outer"/>
-  <path id="edge"
-        d="M 60 120
-           C 240 110, 460 130, 660 170
-           C 710 190, 710 300, 660 330
-           C 480 430, 300 390, 160 460
-           C 60 510, 60 690, 170 750
-           C 330 835, 520 820, 690 880"
-        class="inner"/>
+
+\ 
+
+\ 
+
+\ 
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 340" width="70" height="340" role="img" aria-label="Stack">
+  <polyline points="20,10 20,330 80,330 80,10"
+            fill="none" stroke="#000" stroke-width="6"
+            stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
 :::
@@ -220,7 +212,7 @@ Overall strategy:
 
 ![](/images/su3many.png)
 
-## Moving toward implementation
+## Moving toward implementation {.smaller}
 
 Need to be able to check whether a candidate entry is *valid*.
 
@@ -248,23 +240,24 @@ How shall we check a block?
 :::
 :::::
 
-## Block Validity
+## Block Validity {.smaller}
 
-**Python tidbit**: to query a region in a 2d numpy matrix, just define the bounds on the region and use `in`. 
+**Python tidbit**: to query a region in a 2d matrix, define the bounds on the region and use `in`. 
 
 In the small example below, `2 in grid[0:2,0:2]` returns `True`.
 
-![](/images/su1smallgrid.png)
+<img src="/images/su1smallgrid.png" height="100%">
+
 
 **New puzzle**: given a location (x,y) how do we define its region?
 
 
-## Defining Regions 
+## Defining Regions {.smaller}
 
 Given location $(x,y)$, determine the region in which it lives. 
 
 ::::: {.columns}
-::: {.column width=80%}
+::: {.column width=50%}
 * a region `s:t` contains $x$ if $s\leq x< t$
 
 * for a $4\times 4$ grid, the block size is 2
@@ -278,9 +271,24 @@ Given location $(x,y)$, determine the region in which it lives.
 
 ## Generalize
 
-Find the region for point $(x,y)$ in a $r^2\times r^2$ grid. 
+Find the region for point $(x,y)$ in a $r^2\times r^2$ grid.
 
-Hint: In python, `x//r` is the integer part of "`x` divided by `r`". 
+Hint: In python, `x//r` is the integer part of "`x` divided by `r`".
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 80" width="660" height="80" role="img">
+  <style>
+    .ch { font: bold 44px ui-sans-serif, 'Segoe UI', Arial; fill: #000; }
+  </style>
+  <text class="ch" x="10"  y="62">[</text>
+  <line x1="45"  y1="66" x2="165" y2="66" stroke="#000" stroke-width="3"/>
+  <text class="ch" x="168" y="62">:</text>
+  <line x1="190" y1="66" x2="310" y2="66" stroke="#000" stroke-width="3"/>
+  <text class="ch" x="314" y="62">,</text>
+  <line x1="340" y1="66" x2="460" y2="66" stroke="#000" stroke-width="3"/>
+  <text class="ch" x="463" y="62">:</text>
+  <line x1="485" y1="66" x2="605" y2="66" stroke="#000" stroke-width="3"/>
+  <text class="ch" x="610" y="62">]</text>
+</svg>
 
 ## Another Puzzle {.smaller}
 
@@ -307,5 +315,5 @@ print(postup(23))
 
 ## Demo {.activity}
     
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2659076)
 
