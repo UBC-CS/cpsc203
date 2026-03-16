@@ -4,6 +4,26 @@ date: 2026-03-17
 
 ## Announcements
 
+## Review
+
+Any lingering questions? <https://forms.gle/jqbvpR3CmPVKNZev5>
+
+## A Closing Thought
+
+Could we be smarter? 
+
+![](/images/su8grids.png)
+
+## Another Closing Thought
+
+Is our solution to Sudoku "tractable"?  (how fast does the state space grow, as we increase the board size?)
+* 3: 9x9
+* 4: 16x16
+* 5: 25x25
+* 6: 36x36
+
+Sudoku is known to be "NP-Complete". 
+
 # Maps
 
 ## Geographic Applications {data-background-image="/images/maps1data.png"}
