@@ -2899,6 +2899,27 @@
     "text": "Announcements"
   },
   {
+    "objectID": "slides/11_tue_maps.html#review",
+    "href": "slides/11_tue_maps.html#review",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Review",
+    "text": "Review\nAny lingering questions? https://forms.gle/jqbvpR3CmPVKNZev5"
+  },
+  {
+    "objectID": "slides/11_tue_maps.html#a-closing-thought",
+    "href": "slides/11_tue_maps.html#a-closing-thought",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Closing Thought",
+    "text": "A Closing Thought\nCould we be smarter?"
+  },
+  {
+    "objectID": "slides/11_tue_maps.html#another-closing-thought",
+    "href": "slides/11_tue_maps.html#another-closing-thought",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Another Closing Thought",
+    "text": "Another Closing Thought\nIs our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?) * 3: 9x9 * 4: 16x16 * 5: 25x25 * 6: 36x36\nSudoku is known to be “NP-Complete”."
+  },
+  {
     "objectID": "slides/11_tue_maps.html#geographic-applications",
     "href": "slides/11_tue_maps.html#geographic-applications",
     "title": "Programming, problem solving, and algorithms",
