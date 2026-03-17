@@ -2917,7 +2917,7 @@
     "href": "slides/11_tue_maps.html#another-closing-thought",
     "title": "Programming, problem solving, and algorithms",
     "section": "Another Closing Thought",
-    "text": "Another Closing Thought\nIs our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?) * 3: 9x9 * 4: 16x16 * 5: 25x25 * 6: 36x36\nSudoku is known to be “NP-Complete”."
+    "text": "Another Closing Thought\nIs our solution to Sudoku “tractable”? (how fast does the state space grow, as we increase the board size?)\n\n3: 9x9\n4: 16x16\n5: 25x25\n6: 36x36\n\nSudoku is known to be “NP-Complete”."
   },
   {
     "objectID": "slides/11_tue_maps.html#geographic-applications",
