@@ -17,6 +17,7 @@ Could we be smarter?
 ## Another Closing Thought
 
 Is our solution to Sudoku "tractable"?  (how fast does the state space grow, as we increase the board size?)
+
 * 3: 9x9
 * 4: 16x16
 * 5: 25x25
