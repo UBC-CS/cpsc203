@@ -14,15 +14,15 @@
     "text": "We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called literate programming. A Quarto document usually contains:\n\nText formatted in Markdown.\nCode is fenced as code chunk between ```{r} and ```.\nMetadata as YAML with the format key: value. You can find metadata in the header of the document fenced by ---, or in code chunks starting with #|.\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into\na finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n```{r}\n#| label: calculation\n\n1 + 1\n```"
   },
   {
-    "objectID": "labs/02_create-website.html#steps",
-    "href": "labs/02_create-website.html#steps",
+    "objectID": "labs/02_create-website.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
+    "href": "labs/02_create-website.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps",
     "title": " Lab: Create your own website!",
     "section": " Steps",
     "text": "Steps\n\nOpen your workspace: us.prairielearn.com/pl/course_instance/202804/assessment/2631211.\nCreate index.qmd.\nClick the “Render” button on top.\nDownload the output directory _site.\nOpen Netlify Drop: app.netlify.com/drop.\nDrag and drop the downloaded _site onto Netlify Drop.\nPost the link to your website in the comments below."
   },
   {
-    "objectID": "labs/02_create-website.html#resources",
-    "href": "labs/02_create-website.html#resources",
+    "objectID": "labs/02_create-website.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
+    "href": "labs/02_create-website.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources",
     "title": " Lab: Create your own website!",
     "section": " Resources",
     "text": "Resources\n\nDaring Fireball: Markdown\nInteractive Commonmark Markdown tutorial\nQuarto documentation\nGet started with Quarto Workshop including the material and this video:"
@@ -749,15 +749,15 @@
     "text": "Elegance: Continuing the discussion\nOn Tuesday we introduced elegance as a conceptual metaphor for software engineering.\nWe looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.\nToday, we’re going to dig deeper into this idea:\n\nWhat does elegance look like across different contexts?\nHow do we define it more precisely?\nHow does this apply to the way we solve problems in computing?"
   },
   {
-    "objectID": "slides/01_thu_efficiency.html#elegance",
-    "href": "slides/01_thu_efficiency.html#elegance",
+    "objectID": "slides/01_thu_efficiency.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-elegance",
+    "href": "slides/01_thu_efficiency.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-elegance",
     "title": "Programming, problem solving, and algorithms",
     "section": " Elegance",
     "text": "Elegance\nFind 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.\n\nNavigate to the Elegance Gallery: https://tinyurl.com/eleganceGallery2025w2\nClaim an available slide by entering a title.\nUpload your images, and then you’re done!\nI will move slides to the COMPLETED section of the gallery.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n(Gallery walk)"
   },
   {
-    "objectID": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
-    "href": "slides/01_thu_efficiency.html#your-turn-elegancedefinition",
+    "objectID": "slides/01_thu_efficiency.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-your-turn-elegancedefinition",
+    "href": "slides/01_thu_efficiency.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-your-turn-elegancedefinition",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Elegance—definition",
     "text": "Your turn: Elegance—definition\nGallery: https://tinyurl.com/eleganceGallery2025w2\nAfter looking at the images in the gallery, reflect and write a short definition of the word elegance:\nhttps://forms.gle/MUkpWeGBdxYfnJT37\n\n  \n    −\n    +\n \n 05:00"
@@ -847,8 +847,8 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/03_tue_classes.html#list-activity",
-    "href": "slides/03_tue_classes.html#list-activity",
+    "objectID": "slides/03_tue_classes.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "href": "slides/03_tue_classes.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
     "title": "Programming, problem solving, and algorithms",
     "section": " List Activity",
     "text": "List Activity\nLet’s explore some surprising list behaviors.\nOpen the List Activity on PrairieLearn.\nInside the workspace there are 4 files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n  \n    −\n    +\n \n 10:00\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
@@ -998,7 +998,7 @@
     "href": "slides/10_tue_mhall.html#other-applications",
     "title": "Programming, problem solving, and algorithms",
     "section": "Other Applications",
-    "text": "Other Applications\n\nPageRank: Google’s first search algorithm\n\nSome pages are likely to “follow” (be linked from) others.\nRank of page is based on the probability that you’ll be there at any moment\n\nNatural Language Processing\n\nSome words are more likely to follow others.\n“I just ate the whole desert” probably has a misspelling.\n“For dinner I ___ …” next word is probably “ate”\n\nDNA matching\nChemical reaction simulation\n\nMany others…"
+    "text": "Other Applications\n\nPageRank: Google’s first search algorithm\n\nSome pages are likely to “follow” (be linked from) others.\nRank of page is based on the probability that you’ll be there at any moment\n\nNatural Language Processing\n\nSome words are more likely to follow others.\n“I just ate the whole desert” probably has a misspelling.\n“For dinner I ___ … ” next word is probably “ate”\n\nDNA matching\nChemical reaction simulation\n\nMany others…"
   },
   {
     "objectID": "slides/01_tue_intro.html#teaching-staff",
@@ -1078,8 +1078,8 @@
     "text": "Tangrams"
   },
   {
-    "objectID": "slides/01_tue_intro.html#your-turn-tangrams",
-    "href": "slides/01_tue_intro.html#your-turn-tangrams",
+    "objectID": "slides/01_tue_intro.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-tangrams",
+    "href": "slides/01_tue_intro.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-tangrams",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: tangrams",
     "text": "Your turn: tangrams\n\nDefine a small working group of size up to 4.\nOne of you share: https://mathigon.org/tangram\nSolve as many as you’d like, together\nSpeculate together on why you’re doing this!!\n\n\n  \n    −\n    +\n \n 10:00"
@@ -2787,8 +2787,8 @@
     "text": "Creating Bead objects"
   },
   {
-    "objectID": "slides/03_thu_friendship.html#your-turn-beads",
-    "href": "slides/03_thu_friendship.html#your-turn-beads",
+    "objectID": "slides/03_thu_friendship.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
+    "href": "slides/03_thu_friendship.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Beads",
     "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
@@ -2871,8 +2871,8 @@
     "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ..."
   },
   {
-    "objectID": "slides/03_thu_friendship.html#your-turn-experiment",
-    "href": "slides/03_thu_friendship.html#your-turn-experiment",
+    "objectID": "slides/03_thu_friendship.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-experiment",
+    "href": "slides/03_thu_friendship.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-experiment",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Experiment",
     "text": "Your turn: Experiment\nTry the Bracelet Activity on PrairieLearn!\n\n  \n    −\n    +\n \n 20:00"
@@ -3137,8 +3137,8 @@
     "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ..."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#your-turn-implement-bracelet",
-    "href": "slides/04_tue_bracelet.html#your-turn-implement-bracelet",
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Implement Bracelet",
     "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity on PrairieLearn!\nImplement these methods:\n\ncircumference() - return 2πr\nslack() - circumference minus total bead diameters\nstring_bead(bead) - add bead if it fits, return True/False\nremove_bead(index) - remove and return the bead at index\n\nIf you finish early, try Tasks 4 & 5 (brighten methods)!\n\n  \n    −\n    +\n \n 30:00"
@@ -3179,8 +3179,8 @@
     "text": "Using name()"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#your-turn-letter-beads",
-    "href": "slides/04_tue_bracelet.html#your-turn-letter-beads",
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Letter beads",
     "text": "Your turn: Letter beads\nBack to PrairieLearn - try Task 6: Letter Beads!\n\n  \n    −\n    +\n \n 15:00"
@@ -3662,8 +3662,8 @@
     "text": "Creating Bead objects"
   },
   {
-    "objectID": "slides/02_thu_lists.html#your-turn-beads",
-    "href": "slides/02_thu_lists.html#your-turn-beads",
+    "objectID": "slides/02_thu_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
+    "href": "slides/02_thu_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Beads",
     "text": "Your turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 02:00\n \n\nAnswers: 10.0, 255, 8.0"
@@ -3907,8 +3907,8 @@
     "text": "Colour interpretation\nWhat’s your favorite colour? Do you have a sense for why it’s your favorite? Does that colour influence your dress/decor/purchases?\nPsychological: https://www.buzzfeed.com/mermaidbarbie/which-color-truly-matches-your-personality-24h9koy69s\nCultural: https://en.wikipedia.org/wiki/Color_symbolism"
   },
   {
-    "objectID": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
-    "href": "slides/02_tue_representation.html#your-turn-colourcultural-interpretations",
+    "objectID": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-colourcultural-interpretations",
+    "href": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-colourcultural-interpretations",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Colour—cultural interpretations",
     "text": "Your turn: Colour—cultural interpretations\nActivity—In pairs, choose a colour (primary or secondary) and find something in its cultural symbolism that surprises you. Contradictions are especially interesting. Report your findings to the class (briefly).\n\n\n\n\n\n\n\n\n\n\n\n  \n    −\n    +\n \n 05:00\n \n\nBig design implications for data visualization"
@@ -3928,15 +3928,15 @@
     "text": "Colour—representation\nCan we use bits to represent integers?\n\n\n\n3\n1\n5\n7\n\n\n103\n102\n101\n100\n\n\n\n\n\n\n\n\n\n\n\n\n103\n102\n101\n100\n\n\n23\n22\n21\n20\n\n\n\n\nTalk about the BASE of the number."
   },
   {
-    "objectID": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
-    "href": "slides/02_tue_representation.html#your-turn-binary-to-decimal",
+    "objectID": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-binary-to-decimal",
+    "href": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-binary-to-decimal",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Binary to decimal",
     "text": "Your turn: Binary to decimal\nConvert these binary numbers to decimal:\n\n\n\nBinary\nDecimal\n\n\n\n\n1010\n_______\n\n\n1101\n_______\n\n\n0111\n_______\n\n\n\n\n  \n    −\n    +\n \n 03:00\n \n\nAnswers: 10, 13, 7"
   },
   {
-    "objectID": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
-    "href": "slides/02_tue_representation.html#your-turn-thinking-about-bits",
+    "objectID": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
+    "href": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Thinking about bits",
     "text": "Your turn: Thinking about bits\nWhat’s the largest number you can represent with 4 bits? _______\n\n\nHow many bits do you need to represent 120? _______\n\n\nIf I give you one more bit, what happens to how many numbers you can represent?\n\n\nHow high can you count on your fingers? and toes?\n\n  \n    −\n    +\n \n 03:00\n \n\n\nLargest with 4 bits: 15 (1111)\nBits for 120: 7 bits (120 &lt; 128 = 2^7)\nOne more bit: DOUBLES the numbers you can represent!\n\nCan we represent any integer this way? YES! Until we run out of memory. But we have more memory than we can even conceive of."
@@ -3991,8 +3991,8 @@
     "text": "Colour and Code\n\n\n\n\n\n\n\nimport numpy as np\nfrom skimage import io\nimport matplotlib.pyplot as plt\n\nPixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)\n\n'''Input: Pixel p\n   Output: Pixel\n   Function: If the pixel has high red value, then don't change it, otherwise\n   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to\n   the average of the 3.\n'''\ndef boost_red_pixel(p: Pixel) -&gt; Pixel:\n    # setup -- extract the colour channels as ints\n    red = int(p[0])\n    green = int(p[1])\n    blue = int(p[2])\n    # compute grey \n    grey = (red + green + blue)//3\n\n    # conditionally change the pixel to grey\n    if red &lt; 200:\n        red = green = blue = grey\n\n    # return updated pixel\n    return (red, green, blue)\n\ndef fancify(img: np.ndarray) -&gt; np.ndarray:\n    H, W = img.shape[:2] # grab the height and width of the image\n    out = img.copy()     # write to a copy\n\n    # traverse every pixel in the image and change it!\n    for row in range(H):\n        for col in range(W):\n            out[row, col] = boost_red_pixel(img[row,col])\n\n    # return image with changed pixels\n    return out\n\ndef main() -&gt; None:\n    \n    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)\n    \n    out = fancify(img)\n  \n    plt.imshow(out)\n    plt.axis('off')\n    plt.show()\n  \nmain()"
   },
   {
-    "objectID": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
-    "href": "slides/02_tue_representation.html#your-turn-change-image-or-boost",
+    "objectID": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-change-image-or-boost",
+    "href": "slides/02_tue_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-change-image-or-boost",
     "title": "Programming, problem solving, and algorithms",
     "section": " Your turn: Change image or boost",
     "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different colour (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?\n\n\n  \n    −\n    +\n \n 12:00"

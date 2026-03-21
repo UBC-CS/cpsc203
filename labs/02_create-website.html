@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title> Lab: Create your own website! – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -67,19 +70,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b10d88bc01b3c2b62a30403842a2cd1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-efd6ff7163e34c65f10ccb003a1f55f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-665ef5c5d77cfb05cd7a07c04fb2ab30.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bfe735afd4d1464c5a58396f81eeeb61.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-665ef5c5d77cfb05cd7a07c04fb2ab30.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c9f347a8cf114457100e16c958a8cfc9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-23e64ad368ab5c316deca539f4175b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c9f347a8cf114457100e16c958a8cfc9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e97fcac3222244c00620a98e0801b45e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2e453d1704b2aa6ad2876bdadeed7cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-e97fcac3222244c00620a98e0801b45e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -419,8 +421,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#basic-structure-of-quarto-document" id="toc-basic-structure-of-quarto-document" class="nav-link active" data-scroll-target="#basic-structure-of-quarto-document">Basic structure of Quarto document</a></li>
-  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</a></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</a></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/labs/02_create-website.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/labs/02_create-website.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -471,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="steps" class="level2">
-<h2 class="anchored" data-anchor-id="steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</h2>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Open your workspace: <a href="https://us.prairielearn.com/pl/course_instance/202804/assessment/2631211">us.prairielearn.com/pl/course_instance/202804/assessment/2631211</a>.</label></li>
 <li><label><input type="checkbox">Create <code>index.qmd</code>.</label></li>
@@ -483,8 +485,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Post the link to your website in the comments below.</label></li>
 </ul>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</h2>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</h2>
 <ul>
 <li><a href="https://daringfireball.net/projects/markdown/">Daring Fireball: Markdown</a></li>
 <li><a href="https://commonmark.org/help/tutorial/">Interactive Commonmark Markdown tutorial</a></li>
