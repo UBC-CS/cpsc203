@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="dcterms.date" content="2025-11-20">
+  <meta name="dcterms.date" content="2026-03-24">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -216,123 +216,11 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">November 20, 2025</p>
+  <p class="date">March 24, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 </section>
-<section>
-<section id="single-source-shortest-path-fin" class="title-slide slide level1 center">
-<h1>Single Source Shortest Path, Fin</h1>
-
-</section>
-<section id="geographic-applications" class="slide level2" data-background-image="../images/maps1data.png">
-<h2>Geographic Applications</h2>
-<p>The data we use for computation is separate from the visualization.</p>
-</section>
-<section id="dijkstras-algorithm" class="slide level2 smaller">
-<h2>Dijkstra’s Algorithm</h2>
-<div class="columns">
-<div class="column">
-<ol type="1">
-<li><p>Initialize structure:</p>
-<ul>
-<li>For all <code>v</code>,
-<ul>
-<li><code>d[v] = INF</code>,</li>
-<li><code>p[v] = null</code></li>
-</ul></li>
-</ul></li>
-<li><p>Initialize source: <code>d[s] = 0</code></p></li>
-<li><p>Repeat these steps <code>n</code> times:</p></li>
-</ol>
-<ul>
-<li>Find minimum <code>d[]</code> unlabelled vertex: <code>v</code></li>
-<li>Label vertex <code>v</code></li>
-<li>For all unlabelled neighbors <code>w</code> of <code>v</code>,
-<ul>
-<li>If (_________________ &lt; <code>d[w]</code>)
-<ul>
-<li><code>d[w] =</code> ______________</li>
-<li><code>p[w] = v</code></li>
-</ul></li>
-</ul></li>
-</ul>
-</div><div class="column">
-<ul>
-<li>How is the algorithm similar to BFS/DFS?</li>
-</ul>
-<p>____________________________________ ____________________________________ ____________________________________</p>
-<ul>
-<li>How is the algorithm different from BFS/DFS?</li>
-</ul>
-<p>____________________________________ ____________________________________ ____________________________________</p>
-</div></div>
-</section>
-<section id="final-demo" class="slide level2 activity">
-<h2>Final Demo</h2>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2615102">PrairieLearn Activity</a></p>
-<p>What We’ll See in the Demos</p>
-<ul>
-<li><p>Convert map data to graph</p></li>
-<li><p>Identify amenities (Starbucks)</p></li>
-<li><p>Compute shortest route between two landmarks</p></li>
-<li><p>Visualize everything interactively</p></li>
-</ul>
-</section>
-<section id="what-have-we-learned" class="slide level2 smaller">
-<h2>What have we Learned?</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 21%">
-<col style="width: 19%">
-<col style="width: 17%">
-<col style="width: 17%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Algorithm</th>
-<th>Data Structure</th>
-<th>Costs?</th>
-<th>Shortest?</th>
-<th>Frontier</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>DFS</td>
-<td>Stack</td>
-<td>ignored</td>
-<td>no</td>
-<td>dive deep</td>
-</tr>
-<tr class="even">
-<td>BFS</td>
-<td>Queue</td>
-<td>all equal</td>
-<td>yes</td>
-<td>explore in layers</td>
-</tr>
-<tr class="odd">
-<td>Dijkstra</td>
-<td>Priority Queue</td>
-<td>any non-neg</td>
-<td>yes</td>
-<td>explore by shortest known distance</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<ul>
-<li><p>REALLY great example: <a href="https://www.youtube.com/watch?v=wsSEKm-rU6U" class="uri">https://www.youtube.com/watch?v=wsSEKm-rU6U</a></p></li>
-<li><p>OSMNX reference: <a href="https://github.com/gboeing/osmnx-examples" class="uri">https://github.com/gboeing/osmnx-examples</a></p></li>
-<li><p>Tutorial: <a href="https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07" class="uri">https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07</a></p></li>
-<li><p>Tags: <a href="https://wiki.openstreetmap.org/wiki/Map_features" class="uri">https://wiki.openstreetmap.org/wiki/Map_features</a></p></li>
-</ul>
-</section></section>
 <section>
 <section id="travelling-salesperson-problem-tsp" class="title-slide slide level1 center">
 <h1>Travelling Salesperson Problem (TSP)</h1>
@@ -340,7 +228,8 @@
 </section>
 <section id="maps-running-errands" class="slide level2">
 <h2>Maps: Running Errands</h2>
-<p>Determine the least cost route through a set of given locations, returning to the start.</p>
+<p>You’ve got 9 errands to run. What order do you do them in?</p>
+<p>Determine the least <em>cost</em> route through a set of given locations, returning to the start.</p>
 <div class="columns">
 <div class="column">
 <p><img data-src="../images/maps9van.png"></p>
@@ -356,9 +245,22 @@
 <li><p>First known mention was in 1930</p></li>
 <li><p>________________________________________</p></li>
 </ul>
+<aside class="notes">
+<p>No algorithmic solution that works in all cases, for large graphs. No way to tell if an answer is the best possible one!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="how-many-routes" class="slide level2">
-<h2>How many routes?</h2>
+<section id="why-is-the-problem-so-hard" class="slide level2">
+<h2>Why is the problem so hard?</h2>
 <p>Suppose you have 6 locations. How many different candidate solutions are there? Generalize to k locations?</p>
 <div class="columns">
 <div class="column">
@@ -380,6 +282,22 @@
 <p><a href="https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552" class="uri">https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552</a></p>
 
 <img data-src="../images/maps9caps.png" class="r-stretch"></section>
+<section id="why-this-matters" class="slide level2 smaller">
+<h2>Why This Matters</h2>
+<p>There are <em>lots</em> of applications:</p>
+<ul>
+<li>📦 <strong>UPS/FedEx/Amazon Delivery</strong> Millions saved by reducing even 1km per driver per day.</li>
+<li>🍔 <strong>UberEats/DoorDash/Skip</strong> Multi-stop pickup/delivery with time windows.</li>
+<li>🧬 <strong>DNA Sequencing &amp; Genome Assembly</strong> Ordering fragments relies on TSP-like reconstruction.</li>
+<li>🚌 <strong>School Bus Routing</strong> Minimize buses, fuel, and time while meeting constraints.</li>
+<li>🧪 <strong>Medical Lab Sample Pipelines</strong> Robotic arms schedule efficient multi-station workflows.</li>
+<li>❄️ <strong>Snowplow &amp; Garbage Truck Routing</strong> Efficiently cover every street in a city.</li>
+<li>🏭 <strong>Factory Robots &amp; CNC Machines</strong> Optimizing tool paths reduces waste, heat, and wear.</li>
+<li>✈️ <strong>Airline Crew Scheduling</strong> Complex daily routing: crews must return to base, meet rest rules.</li>
+<li>🌍 <strong>City Infrastructure Planning</strong> Utility inspections, meter reading, streetlight repair routes.</li>
+<li>🚑 <strong>Ambulance &amp; Emergency Routing</strong> Minimize response times; life-critical optimization.</li>
+</ul>
+</section>
 <section id="plan-for-code" class="slide level2" data-background-image="../images/maps9chart.png">
 <h2>Plan for Code</h2>
 <p>Steps to assemble our solution:</p>
@@ -411,14 +329,24 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-technical-detail" class="slide level2">
-<h2>A Technical Detail</h2>
+<section id="create-pairwise-distances" class="slide level2">
+<h2>2. Create pairwise distances</h2>
+<p>What structure should we use?</p>
+<p><code>dist['Vancouver']['Bellingham'] -&gt; int</code> <code>path['Vancouver']['Bellingham'] -&gt; list</code></p>
+<p>example: <code>dist['Van']['Bel'] = nx.shortest_path(G, 'Van', 'Bel', weight='length')</code></p>
+</section>
+<section id="create-all-possible-orders" class="slide level2">
+<h2>3. Create all possible orders</h2>
+<p><code>tours = list(itertools.permutations(list(dferrands['node'])))</code></p>
 
 <img data-src="../images/maps9home.png" class="r-stretch"></section>
-<section id="demo" class="slide level2 activity">
-<h2>Demo</h2>
-<p><a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2616092">PrairieLearn Activity</a></p>
-</section>
+<section id="tour-distance" class="slide level2">
+<h2>Tour Distance</h2>
+<p>We assemble each candidate solution as an arrangement of all of the errands:</p>
+<p>Ex: <code>A D B E F C</code></p>
+<p>How do we find the total distance if we do the errands in the suggested order?</p>
+
+<img data-src="../images/maps9home.png" class="r-stretch"></section>
 <section id="what-does-lambda-do" class="slide level2 smaller">
 <h2>What Does <code>lambda</code> Do?</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>dferrands[<span class="st">'latlong'</span>] <span class="op">=</span> dferrands.<span class="bu">apply</span>(</span>
@@ -434,27 +362,9 @@
 </ul>
 <p><strong>Why lambda?</strong> We only need this function once, so we write it right where it’s used.</p>
 </section>
-<section id="tour-distance" class="slide level2">
-<h2>Tour Distance</h2>
-<p>We assemble each candidate solution as an arrangement of all of the errands:</p>
-<p>Ex: <code>A D B E F C</code></p>
-<p>How do we find the total distance if we do the errands in the suggested order?</p>
-</section>
-<section id="why-this-matters" class="slide level2 smaller">
-<h2>Why This Matters</h2>
-<p>There are <em>lots</em> of applications:</p>
-<ul>
-<li>📦 <strong>UPS/FedEx/Amazon Delivery</strong> Millions saved by reducing even 1km per driver per day.</li>
-<li>🍔 <strong>UberEats/DoorDash/Skip</strong> Multi-stop pickup/delivery with time windows.</li>
-<li>🧬 <strong>DNA Sequencing &amp; Genome Assembly</strong> Ordering fragments relies on TSP-like reconstruction.</li>
-<li>🚌 <strong>School Bus Routing</strong> Minimize buses, fuel, and time while meeting constraints.</li>
-<li>🧪 <strong>Medical Lab Sample Pipelines</strong> Robotic arms schedule efficient multi-station workflows.</li>
-<li>❄️ <strong>Snowplow &amp; Garbage Truck Routing</strong> Efficiently cover every street in a city.</li>
-<li>🏭 <strong>Factory Robots &amp; CNC Machines</strong> Optimizing tool paths reduces waste, heat, and wear.</li>
-<li>✈️ <strong>Airline Crew Scheduling</strong> Complex daily routing: crews must return to base, meet rest rules.</li>
-<li>🌍 <strong>City Infrastructure Planning</strong> Utility inspections, meter reading, streetlight repair routes.</li>
-<li>🚑 <strong>Ambulance &amp; Emergency Routing</strong> Minimize response times; life-critical optimization.</li>
-</ul>
+<section id="demo" class="slide level2 activity">
+<h2>Demo</h2>
+<p><a href="https://us.prairielearn.com/pl/course_instance/202804/assessment/2663843">PrairieLearn Activity</a></p>
 
 
 <script type="ojs-module-contents">

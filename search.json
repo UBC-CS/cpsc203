@@ -3326,60 +3326,25 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/12_tue_maps.html#geographic-applications",
-    "href": "slides/12_tue_maps.html#geographic-applications",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Geographic Applications",
-    "text": "Geographic Applications\nThe data we use for computation is separate from the visualization."
-  },
-  {
-    "objectID": "slides/12_tue_maps.html#dijkstras-algorithm",
-    "href": "slides/12_tue_maps.html#dijkstras-algorithm",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Dijkstra’s Algorithm",
-    "text": "Dijkstra’s Algorithm\n\n\n\nInitialize structure:\n\nFor all v,\n\nd[v] = INF,\np[v] = null\n\n\nInitialize source: d[s] = 0\nRepeat these steps n times:\n\n\nFind minimum d[] unlabelled vertex: v\nLabel vertex v\nFor all unlabelled neighbors w of v,\n\nIf (_________________ &lt; d[w])\n\nd[w] = ______________\np[w] = v\n\n\n\n\n\nHow is the algorithm similar to BFS/DFS?\n\n____________________________________ ____________________________________ ____________________________________\n\nHow is the algorithm different from BFS/DFS?\n\n____________________________________ ____________________________________ ____________________________________"
-  },
-  {
-    "objectID": "slides/12_tue_maps.html#final-demo",
-    "href": "slides/12_tue_maps.html#final-demo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Final Demo",
-    "text": "Final Demo\nPrairieLearn Activity\nWhat We’ll See in the Demos\n\nConvert map data to graph\nIdentify amenities (Starbucks)\nCompute shortest route between two landmarks\nVisualize everything interactively"
-  },
-  {
-    "objectID": "slides/12_tue_maps.html#what-have-we-learned",
-    "href": "slides/12_tue_maps.html#what-have-we-learned",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What have we Learned?",
-    "text": "What have we Learned?\n\n\n\n\n\n\n\n\n\n\nAlgorithm\nData Structure\nCosts?\nShortest?\nFrontier\n\n\n\n\nDFS\nStack\nignored\nno\ndive deep\n\n\nBFS\nQueue\nall equal\nyes\nexplore in layers\n\n\nDijkstra\nPriority Queue\nany non-neg\nyes\nexplore by shortest known distance"
-  },
-  {
-    "objectID": "slides/12_tue_maps.html#resources",
-    "href": "slides/12_tue_maps.html#resources",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Resources",
-    "text": "Resources\n\nREALLY great example: https://www.youtube.com/watch?v=wsSEKm-rU6U\nOSMNX reference: https://github.com/gboeing/osmnx-examples\nTutorial: https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07\nTags: https://wiki.openstreetmap.org/wiki/Map_features"
-  },
-  {
     "objectID": "slides/12_tue_maps.html#maps-running-errands",
     "href": "slides/12_tue_maps.html#maps-running-errands",
     "title": "Programming, problem solving, and algorithms",
     "section": "Maps: Running Errands",
-    "text": "Maps: Running Errands\nDetermine the least cost route through a set of given locations, returning to the start."
+    "text": "Maps: Running Errands\nYou’ve got 9 errands to run. What order do you do them in?\nDetermine the least cost route through a set of given locations, returning to the start."
   },
   {
     "objectID": "slides/12_tue_maps.html#travelling-salesperson-problem-tsp-1",
     "href": "slides/12_tue_maps.html#travelling-salesperson-problem-tsp-1",
     "title": "Programming, problem solving, and algorithms",
     "section": "Travelling Salesperson Problem (TSP)",
-    "text": "Travelling Salesperson Problem (TSP)\n“Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?”\n\nClassic problem on graphs\nFirst known mention was in 1930\n________________________________________"
+    "text": "Travelling Salesperson Problem (TSP)\n“Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?”\n\nClassic problem on graphs\nFirst known mention was in 1930\n________________________________________\n\n\nNo algorithmic solution that works in all cases, for large graphs. No way to tell if an answer is the best possible one!"
   },
   {
-    "objectID": "slides/12_tue_maps.html#how-many-routes",
-    "href": "slides/12_tue_maps.html#how-many-routes",
+    "objectID": "slides/12_tue_maps.html#why-is-the-problem-so-hard",
+    "href": "slides/12_tue_maps.html#why-is-the-problem-so-hard",
     "title": "Programming, problem solving, and algorithms",
-    "section": "How many routes?",
-    "text": "How many routes?\nSuppose you have 6 locations. How many different candidate solutions are there? Generalize to k locations?\n\n\n\n\n________________________\n \n________________________\n \n________________________\n \n________________________\n \n________________________"
+    "section": "Why is the problem so hard?",
+    "text": "Why is the problem so hard?\nSuppose you have 6 locations. How many different candidate solutions are there? Generalize to k locations?\n\n\n\n\n________________________\n \n________________________\n \n________________________\n \n________________________\n \n________________________"
   },
   {
     "objectID": "slides/12_tue_maps.html#demo-blog",
@@ -3389,6 +3354,13 @@
     "text": "Demo Blog\nhttps://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552"
   },
   {
+    "objectID": "slides/12_tue_maps.html#why-this-matters",
+    "href": "slides/12_tue_maps.html#why-this-matters",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nThere are lots of applications:\n\n📦 UPS/FedEx/Amazon Delivery Millions saved by reducing even 1km per driver per day.\n🍔 UberEats/DoorDash/Skip Multi-stop pickup/delivery with time windows.\n🧬 DNA Sequencing & Genome Assembly Ordering fragments relies on TSP-like reconstruction.\n🚌 School Bus Routing Minimize buses, fuel, and time while meeting constraints.\n🧪 Medical Lab Sample Pipelines Robotic arms schedule efficient multi-station workflows.\n❄️ Snowplow & Garbage Truck Routing Efficiently cover every street in a city.\n🏭 Factory Robots & CNC Machines Optimizing tool paths reduces waste, heat, and wear.\n✈️ Airline Crew Scheduling Complex daily routing: crews must return to base, meet rest rules.\n🌍 City Infrastructure Planning Utility inspections, meter reading, streetlight repair routes.\n🚑 Ambulance & Emergency Routing Minimize response times; life-critical optimization."
+  },
+  {
     "objectID": "slides/12_tue_maps.html#plan-for-code",
     "href": "slides/12_tue_maps.html#plan-for-code",
     "title": "Programming, problem solving, and algorithms",
@@ -3396,25 +3368,18 @@
     "text": "Plan for Code\nSteps to assemble our solution:\n \n\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n\n\n\nassemble the graph and errands\ncreate pairwise distances\ncreate all possible permutations of paths\nfind minimum route and assemble turn-by-turn for that route\nvisualize on map"
   },
   {
-    "objectID": "slides/12_tue_maps.html#a-technical-detail",
-    "href": "slides/12_tue_maps.html#a-technical-detail",
+    "objectID": "slides/12_tue_maps.html#create-pairwise-distances",
+    "href": "slides/12_tue_maps.html#create-pairwise-distances",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Technical Detail",
-    "text": "A Technical Detail"
+    "section": "2. Create pairwise distances",
+    "text": "2. Create pairwise distances\nWhat structure should we use?\ndist['Vancouver']['Bellingham'] -&gt; int path['Vancouver']['Bellingham'] -&gt; list\nexample: dist['Van']['Bel'] = nx.shortest_path(G, 'Van', 'Bel', weight='length')"
   },
   {
-    "objectID": "slides/12_tue_maps.html#demo",
-    "href": "slides/12_tue_maps.html#demo",
+    "objectID": "slides/12_tue_maps.html#create-all-possible-orders",
+    "href": "slides/12_tue_maps.html#create-all-possible-orders",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/12_tue_maps.html#what-does-lambda-do",
-    "href": "slides/12_tue_maps.html#what-does-lambda-do",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What Does lambda Do?",
-    "text": "What Does lambda Do?\ndferrands['latlong'] = dferrands.apply(\n                lambda row: ox.geocode(row['errand']),\n                axis=1\n              )\nGoal: Create a new column (latlong) and fill it with coordinates for each errand in the dataframe.\nHow it works:\n\ndf.apply(..., axis=1): Run a function once for each row.\nlambda row: ox.geocode(row['errand']): A tiny inline function. Read it as: “Given a row, look up the place name in row['errand'],geocode it, and return the (lat, lon).”\nThe returned value becomes the entry in the new latlong column.\n\nWhy lambda? We only need this function once, so we write it right where it’s used."
+    "section": "3. Create all possible orders",
+    "text": "3. Create all possible orders\ntours = list(itertools.permutations(list(dferrands['node'])))"
   },
   {
     "objectID": "slides/12_tue_maps.html#tour-distance",
@@ -3424,11 +3389,18 @@
     "text": "Tour Distance\nWe assemble each candidate solution as an arrangement of all of the errands:\nEx: A D B E F C\nHow do we find the total distance if we do the errands in the suggested order?"
   },
   {
-    "objectID": "slides/12_tue_maps.html#why-this-matters",
-    "href": "slides/12_tue_maps.html#why-this-matters",
+    "objectID": "slides/12_tue_maps.html#what-does-lambda-do",
+    "href": "slides/12_tue_maps.html#what-does-lambda-do",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Why This Matters",
-    "text": "Why This Matters\nThere are lots of applications:\n\n📦 UPS/FedEx/Amazon Delivery Millions saved by reducing even 1km per driver per day.\n🍔 UberEats/DoorDash/Skip Multi-stop pickup/delivery with time windows.\n🧬 DNA Sequencing & Genome Assembly Ordering fragments relies on TSP-like reconstruction.\n🚌 School Bus Routing Minimize buses, fuel, and time while meeting constraints.\n🧪 Medical Lab Sample Pipelines Robotic arms schedule efficient multi-station workflows.\n❄️ Snowplow & Garbage Truck Routing Efficiently cover every street in a city.\n🏭 Factory Robots & CNC Machines Optimizing tool paths reduces waste, heat, and wear.\n✈️ Airline Crew Scheduling Complex daily routing: crews must return to base, meet rest rules.\n🌍 City Infrastructure Planning Utility inspections, meter reading, streetlight repair routes.\n🚑 Ambulance & Emergency Routing Minimize response times; life-critical optimization."
+    "section": "What Does lambda Do?",
+    "text": "What Does lambda Do?\ndferrands['latlong'] = dferrands.apply(\n                lambda row: ox.geocode(row['errand']),\n                axis=1\n              )\nGoal: Create a new column (latlong) and fill it with coordinates for each errand in the dataframe.\nHow it works:\n\ndf.apply(..., axis=1): Run a function once for each row.\nlambda row: ox.geocode(row['errand']): A tiny inline function. Read it as: “Given a row, look up the place name in row['errand'],geocode it, and return the (lat, lon).”\nThe returned value becomes the entry in the new latlong column.\n\nWhy lambda? We only need this function once, so we write it right where it’s used."
+  },
+  {
+    "objectID": "slides/12_tue_maps.html#demo",
+    "href": "slides/12_tue_maps.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nPrairieLearn Activity"
   },
   {
     "objectID": "slides/13_tue_vislit.html#announcements",
