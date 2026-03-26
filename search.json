@@ -1799,6 +1799,449 @@
     "text": "Diversion: The Geometry of Odd Numbers\nHere’s a cute mathematical puzzle we explored in class. It turns out that adding odd numbers reveals beautiful geometric patterns!\n\nBuilding Squares from Odd Numbers\n\n\n\nBuilding squares from odd numbers: 1, then 1+3=4, then 1+3+5=9.\n\n\nDo you see the pattern? Each odd number forms an “L-shape” that wraps around the previous square to make the next bigger square!\n1 + 3 + 5 + …\nThe sum of the first \\(k\\) odd numbers is \\(k^2\\).\n\n\nHow Many Terms? Finding k\nBut wait—if someone gives you \\(1 + 3 + 5 + \\ldots + 2381\\), how do you know how many terms that is?\n\n\n\nThe k-th odd number is 2k−1, so we can work backwards to find k.\n\n\nThe k-th odd number is \\(2k - 1\\). So if the last term is \\(2k - 1\\), then:\n\\[k = \\frac{\\text{last} + 1}{2}\\]\nThat’s why \\(1 + 3 + 5 + \\ldots + 1337 = 669^2 = 447561\\). (Since \\(k = (1337+1)/2 = 669\\).)\n\n\nSums of Partial Sequences: Inclusion-Exclusion\nWhat about \\(11 + 13 + 15 + \\ldots + 23\\)?\nThink geometrically! This is like taking a 12×12 square (sum of first 12 odds, ending at 23) and removing a 5×5 square (sum of first 5 odds, ending at 9):\n\n\n\nThe 5×5 square sits in a corner of the 12×12, showing exactly which squares are subtracted.\n\n\nThe sum of odd numbers from \\((2j+1)\\) to \\((2k-1)\\) is \\(k^2 - j^2\\).\nThis is inclusion-exclusion in action: take the big square, subtract the small one!\n\n\nWhat About Even Numbers?\nHere’s a neat trick: every even number is just an odd number plus one! So we can regroup:\n\\[2 + 4 + \\ldots + 24 = (1+1) + (3+1) + \\ldots + (23+1)\\]\n\\[= \\underbrace{1 + 3 + \\ldots + 23}_{12 \\text{ odds}} + \\underbrace{1 + 1 + \\ldots + 1}_{12 \\text{ ones}} = 12^2 + 12\\]\n\n\n\nThe sum of evens is the sum of odds plus k extra ones.\n\n\nIn general, the sum of the first \\(k\\) evens = sum of the first \\(k\\) odds + \\(k\\):\n\\[2 + 4 + 6 + \\ldots + 2k = k^2 + k = k(k+1)\\]\nFor example: \\(2 + 4 + 6 + \\ldots + 1338 = 669 \\times 670 = 448230\\).\n\n\nWhy Does This Matter?\nThese patterns show up everywhere in computer science:\n\nLoop analysis: When you have nested loops, you’re often summing arithmetic sequences\nAlgorithm complexity: Many \\(O(n^2)\\) algorithms have this structure hiding inside\nGeometric reasoning: Sometimes the fastest way to understand a formula is to draw it\n\nPlus, it’s just satisfying when math has pictures! 🎨\n\nPhoto credit: Poppy field from Epic Gardening. SSD image from Ars Technica. RGB cube from Wikipedia."
   },
   {
+    "objectID": "summaries/06_weekly_summary.html",
+    "href": "summaries/06_weekly_summary.html",
+    "title": "Week 6: Dictionaries",
+    "section": "",
+    "text": "This week we unlocked Python’s secret weapon: the dictionary! We discovered that dictionaries aren’t just for storing data — they’re a Swiss Army knife for solving problems that would otherwise require tedious nested loops. Fast lookups, automatic grouping, instant counting — dictionaries do it all!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#your-growing-toolkit",
+    "href": "summaries/06_weekly_summary.html#your-growing-toolkit",
+    "title": "Week 6: Dictionaries",
+    "section": "Your Growing Toolkit",
+    "text": "Your Growing Toolkit\nEvery problem we solve uses some combination of these tools:\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, timing analysis)\n\nThis week: Dictionaries + Patterns → Powerful, efficient data manipulation!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#the-big-picture",
+    "href": "summaries/06_weekly_summary.html#the-big-picture",
+    "title": "Week 6: Dictionaries",
+    "section": "The Big Picture",
+    "text": "The Big Picture\n\nWe started by discovering why dictionaries are lightning fast — constant-time lookup no matter how big they get! Then we mastered six patterns that pop up everywhere in real-world programming: records, membership, counting, complements, grouping, and translation."
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#why-dictionaries-rock",
+    "href": "summaries/06_weekly_summary.html#why-dictionaries-rock",
+    "title": "Week 6: Dictionaries",
+    "section": "Why Dictionaries Rock",
+    "text": "Why Dictionaries Rock\nWith a list of tuples, finding an item means checking each one… painfully:\n# List approach: check each item one by one 😩\nfruits = [(\"apple\", \"red\"), (\"banana\", \"yellow\"), (\"cherry\", \"red\")]\n\nfor fruit, color in fruits:\n    if fruit == \"apple\":\n        print(color)\n        break\nWith a dictionary? Jump straight to the answer!\n# Dictionary approach: instant lookup! 🎯\nfruits = {\"apple\": \"red\", \"banana\": \"yellow\", \"cherry\": \"red\"}\nprint(fruits[\"apple\"])  # BAM! Instant!\n\nThis speed difference becomes MASSIVE with thousands or millions of entries!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#watch-out-keyerror",
+    "href": "summaries/06_weekly_summary.html#watch-out-keyerror",
+    "title": "Week 6: Dictionaries",
+    "section": "Watch Out: KeyError!",
+    "text": "Watch Out: KeyError!\nWhat happens if you look up a key that doesn’t exist?\nsuspect = {\"name\": \"Prof. Histogram\", \"department\": \"Statistics\"}\n\ntry:\n    print(suspect[\"hobby\"])  # BOOM! 💥\nexcept KeyError as e:\n    print(f\"KeyError: {e} — that key doesn't exist!\")\nTwo solutions:\n\nCheck first: if \"hobby\" in suspect:\nUse defaultdict: It provides a default value for missing keys — no more crashes!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-0-records",
+    "href": "summaries/06_weekly_summary.html#pattern-0-records",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 0: Records",
+    "text": "Pattern 0: Records\nDictionaries work beautifully as named records — keys act as field names:\n# A list of records — each dict holds one entry\nsecurity_log = [\n    {\"person\": \"Prof. Histogram\", \"room\": \"Gallery A\", \"time\": \"7:00pm\"},\n    {\"person\": \"Dr. Correlation\", \"room\": \"Gallery B\", \"time\": \"7:15pm\"},\n    {\"person\": \"Prof. Histogram\", \"room\": \"Gallery B\", \"time\": \"7:30pm\"},\n]\n\n# Access by name, not position — so much clearer!\nfor log in security_log:\n    print(f\"{log['person']} entered {log['room']} at {log['time']}\")\nThis is exactly how our Billboard data was structured!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-1-membership",
+    "href": "summaries/06_weekly_summary.html#pattern-1-membership",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 1: Membership",
+    "text": "Pattern 1: Membership\nUse case: Track whether we’ve seen something before — lightning fast!\n\nThe Slow Way: Nested Loops\nFinding people who visited both Gallery A and Gallery B:\n# Check EVERY person in A against EVERY person in B 😱\nin_both = []\nfor person_a in gallery_a_visitors:      # Loop through A\n    for person_b in gallery_b_visitors:  # Loop through B\n        if person_a == person_b:\n            in_both.append(person_a)\nWith 10,000 people in each list: 100,000,000 comparisons! That’s a recipe for a coffee break.\n\n\nThe Fast Way: Dictionary Lookup\n\nfrom collections import defaultdict\n\n# Step 1: Build a \"seen\" dictionary — one pass through A\nin_gallery_a = defaultdict(bool)\nfor person in gallery_a_visitors:\n    in_gallery_a[person] = True\n\n# Step 2: Check Gallery B against our dictionary — one pass through B\nin_both = []\nfor person in gallery_b_visitors:\n    if in_gallery_a[person]:  # Instant lookup! No KeyError with defaultdict!\n        in_both.append(person)\nWith 10,000 in each: just 20,000 operations! That’s 5,000x faster!\ndefaultdict(bool) returns False for missing keys, avoiding KeyError."
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-2-counting",
+    "href": "summaries/06_weekly_summary.html#pattern-2-counting",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 2: Counting",
+    "text": "Pattern 2: Counting\nUse case: Count how many times each item appears — let Python do the work!\nfrom collections import Counter\n\nword = \"mississippi\"\ncounts = Counter(word)\n\nprint(counts)  # Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\nprint(counts.most_common(2))  # [('i', 4), ('s', 4)]\n\nCounter is a specialized dictionary that handles counting automatically. Perfect for frequency analysis — like counting letter occurrences to crack a cipher!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-3-complements",
+    "href": "summaries/06_weekly_summary.html#pattern-3-complements",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 3: Complements",
+    "text": "Pattern 3: Complements\nUse case: Find two numbers that add up to a target!\nfrom collections import defaultdict\n\nnumbers = [3, 7, 1, 9, 4, 6, 2]\ntarget = 10\n\nseen = defaultdict(bool)\nfor n in numbers:\n    complement = target - n\n    if seen[complement]:\n        print(f\"Found pair: {complement} + {n} = {target}\")\n    seen[n] = True\n\nAs we scan through, we remember what we’ve seen — and instantly check if the complement exists. This is the famous “two-sum” pattern!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-4-grouping",
+    "href": "summaries/06_weekly_summary.html#pattern-4-grouping",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 4: Grouping",
+    "text": "Pattern 4: Grouping\nUse case: Organize items into categories — like pandas groupby, but from scratch!\nfrom collections import defaultdict\n\nfruits = [\n    (\"apple\", \"red\"),\n    (\"banana\", \"yellow\"),\n    (\"cherry\", \"red\"),\n    (\"lemon\", \"yellow\"),\n]\n\nby_color = defaultdict(list)\nfor fruit, color in fruits:\n    by_color[color].append(fruit)\n\nprint(dict(by_color))\n# {'red': ['apple', 'cherry'], 'yellow': ['banana', 'lemon']}\n\ndefaultdict(list) automatically creates an empty list for missing keys — no more checking before appending!\n\nGrouping Records\nWhen your items are dictionaries, same pattern — just grab the key you want to group by:\nsuspects = [\n    {\"name\": \"Prof. Histogram\", \"alibi\": \"faculty meeting\"},\n    {\"name\": \"Mr. Regression\", \"alibi\": \"faculty meeting\"},\n    {\"name\": \"Ms. Outlier\", \"alibi\": \"working late\"},\n]\n\nby_alibi = defaultdict(list)\nfor suspect in suspects:\n    by_alibi[suspect[\"alibi\"]].append(suspect[\"name\"])\n\n# {'faculty meeting': ['Prof. Histogram', 'Mr. Regression'], 'working late': ['Ms. Outlier']}"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#pattern-5-translation",
+    "href": "summaries/06_weekly_summary.html#pattern-5-translation",
+    "title": "Week 6: Dictionaries",
+    "section": "Pattern 5: Translation",
+    "text": "Pattern 5: Translation\nUse case: Convert values from one representation to another — instantly!\nfrom collections import defaultdict\n\nword_to_emoji = defaultdict(str, {\n    \"sun\": \"☀️\", \"rain\": \"🌧️\", \"cloud\": \"☁️\",\n    \"happy\": \"😊\", \"sad\": \"😢\", \"love\": \"❤️\",\n    \"cat\": \"🐱\", \"dog\": \"🐶\", \"coffee\": \"☕\"\n})\n\nwords = [\"I\", \"love\", \"coffee\"]\nresult = []\nfor w in words:\n    emoji = word_to_emoji[w.lower()]\n    result.append(emoji if emoji else w)\n\nprint(\" \".join(result))  # I ❤️ ☕\nThe dictionary is the translation table — no formulas, just instant lookup!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#caesar-vs.-random-substitution",
+    "href": "summaries/06_weekly_summary.html#caesar-vs.-random-substitution",
+    "title": "Week 6: Dictionaries",
+    "section": "Caesar vs. Random Substitution",
+    "text": "Caesar vs. Random Substitution\nFor a simple Caesar cipher (shift by a fixed amount), we can use math:\ndef decode_caesar(text, shift):\n    result = \"\"\n    for char in text:\n        if char.isalpha():\n            position = ord(char) - ord('A')\n            new_position = (position - shift) % 26\n            result += chr(new_position + ord('A'))\n        else:\n            result += char\n    return result\n\nprint(decode_caesar(\"WKLV LV WKH FRGH\", 3))  # \"THIS IS THE CODE\"\nBut what about a random substitution cipher? No formula can help — we need a mapping dictionary!\n# The decryption key: cipher letter → plain letter\ndecrypt = {\n    \"X\": \"A\", \"W\": \"B\", \"E\": \"C\", \"R\": \"D\", \"Z\": \"E\",\n    \"Y\": \"F\", \"M\": \"G\", \"Q\": \"H\", \"P\": \"I\", \"J\": \"J\",\n    \"K\": \"K\", \"S\": \"L\", \"D\": \"M\", \"F\": \"N\", \"G\": \"O\",\n    \"H\": \"P\", \"B\": \"Q\", \"L\": \"R\", \"V\": \"S\", \"T\": \"T\",\n    \"U\": \"U\", \"C\": \"V\", \"N\": \"W\", \"A\": \"X\", \"O\": \"Y\", \"I\": \"Z\"\n}\n\nsecret_message = \"QXCZ X MLZXT LZXRPFM WLZXK\"\n\ndecoded = \"\"\nfor char in secret_message:\n    if char.isalpha():\n        decoded += decrypt[char]\n    else:\n        decoded += char\n\nprint(decoded)  # \"HAVE A GREAT READING BREAK\""
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#building-the-reverse-mapping",
+    "href": "summaries/06_weekly_summary.html#building-the-reverse-mapping",
+    "title": "Week 6: Dictionaries",
+    "section": "Building the Reverse Mapping",
+    "text": "Building the Reverse Mapping\nIf you have a decrypt dictionary (cipher → plain), you can build an encrypt dictionary (plain → cipher) by flipping it:\n# Given: decrypt maps cipher → plain\n# Build: encrypt maps plain → cipher\n\nencrypt = {}\nfor cipher_letter, plain_letter in decrypt.items():\n    encrypt[plain_letter] = cipher_letter\n\n# Now we can encode our own messages!\nmessage = \"HELLO\"\nencoded = \"\"\nfor char in message:\n    if char.isalpha():\n        encoded += encrypt[char]\n    else:\n        encoded += char\nTwo-way translation tables — dictionaries make it effortless!"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#the-six-dictionary-patterns",
+    "href": "summaries/06_weekly_summary.html#the-six-dictionary-patterns",
+    "title": "Week 6: Dictionaries",
+    "section": "The Six Dictionary Patterns",
+    "text": "The Six Dictionary Patterns\n\n\n\n\n\n\n\n\nPattern\nUse Case\nTechnique\n\n\n\n\nRecord\nStore named fields\n{\"name\": ..., \"age\": ...}\n\n\nMembership\nTrack what we’ve seen\ndefaultdict(bool), seen[x] = True\n\n\nCounting\nCount occurrences\nCounter(items)\n\n\nComplement\nFind matching pairs\nStore & check complements\n\n\nGrouping\nOrganize by category\ndefaultdict(list)\n\n\nTranslation\nConvert representations\nDirect key → value mapping"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#quick-reference",
+    "href": "summaries/06_weekly_summary.html#quick-reference",
+    "title": "Week 6: Dictionaries",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\nCreating Dictionaries\n\n\n\nTask\nCode\n\n\n\n\nEmpty dictionary\nd = {}\n\n\nWith initial values\nd = {\"a\": 1, \"b\": 2}\n\n\nDefault for missing keys\nd = defaultdict(bool)\n\n\nDefault empty list\nd = defaultdict(list)\n\n\nCounter\nc = Counter(items)\n\n\n\n\n\nDictionary Operations\n\n\n\nTask\nCode\n\n\n\n\nGet value\nd[key] or d.get(key, default)\n\n\nSet value\nd[key] = value\n\n\nCheck if key exists\nif key in d:\n\n\nGet all keys\nd.keys()\n\n\nGet all values\nd.values()\n\n\nGet key-value pairs\nd.items()\n\n\n\n\n\nLooping Over Dictionaries\n# Loop over keys\nfor key in d:\n    print(key)\n\n# Loop over values\nfor value in d.values():\n    print(value)\n\n# Loop over both\nfor key, value in d.items():\n    print(f\"{key}: {value}\")\n\n\ndefaultdict Types\n\n\n\nDefault Factory\nMissing Key Returns\nUse Case\n\n\n\n\ndefaultdict(bool)\nFalse\nMembership tracking\n\n\ndefaultdict(int)\n0\nCounting\n\n\ndefaultdict(list)\n[]\nGrouping\n\n\ndefaultdict(str)\n\"\"\nTranslation"
+  },
+  {
+    "objectID": "summaries/06_weekly_summary.html#whats-next",
+    "href": "summaries/06_weekly_summary.html#whats-next",
+    "title": "Week 6: Dictionaries",
+    "section": "What’s Next?",
+    "text": "What’s Next?\nReading Week — No Classes!\nEnjoy the break! When we return in Week 8, we’ll keep building on these foundations as you work toward Project 1.\nHave a great reading break!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html",
+    "href": "summaries/08_weekly_summary.html",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "",
+    "text": "Welcome back from Reading Week! This week we discovered one of the most beautiful intersections of art, mathematics, and computer science: Voronoi diagrams. We turned ordinary photos into stunning pointillist masterpieces, learned about the queue data structure, and got our first glimpse of graphs!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#your-growing-toolkit",
+    "href": "summaries/08_weekly_summary.html#your-growing-toolkit",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Your Growing Toolkit",
+    "text": "Your Growing Toolkit\nEvery problem we solve uses some combination of these tools:\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, timing analysis)\n\nThis week: Queues + Flood Fill → Efficient algorithmic art!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#the-big-picture",
+    "href": "summaries/08_weekly_summary.html#the-big-picture",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "The Big Picture",
+    "text": "The Big Picture\nWe started with a beautiful question: How can we create art with algorithms? This led us to Voronoi diagrams — a mathematical structure that divides space based on nearest neighbors. We implemented this concept twice: first with a naive algorithm, then with a clever flood-fill approach using queues that’s dramatically faster!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#whats-a-voronoi-diagram",
+    "href": "summaries/08_weekly_summary.html#whats-a-voronoi-diagram",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "What’s a Voronoi Diagram?",
+    "text": "What’s a Voronoi Diagram?\n\n\nImagine you’re standing in Vancouver and want to find the nearest Tim Hortons. A Voronoi diagram divides the entire map into regions where every point in a region is closest to one particular location.\nMore formally: given a set of “centers” \\(c_1, c_2, \\ldots, c_k\\), each Voronoi region \\(R_j\\) contains all points that are closer to center \\(c_j\\) than to any other center.\nTogether, these regions tile the entire plane — every point belongs to exactly one region, and no point belongs to two regions!\n\n\n\n\nTim Hortons Voronoi map of Vancouver\n\n\n\n\n\n\n\n\n\n\nTipReal-World Applications\n\n\n\nVoronoi diagrams appear everywhere! Cell tower coverage, school district boundaries, wildlife territory analysis, crystal growth patterns, and even the spots on a giraffe. See more on Wikipedia."
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#from-pointillism-to-algorithmic-art",
+    "href": "summaries/08_weekly_summary.html#from-pointillism-to-algorithmic-art",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "From Pointillism to Algorithmic Art",
+    "text": "From Pointillism to Algorithmic Art\n\n\n\n\n\nSeurat’s “A Sunday on La Grande Jatte”\n\n\n\nGeorges Seurat pioneered pointillism in the 1880s, creating images from thousands of tiny colored dots. We can create our own version using Voronoi diagrams!\nThe Algorithm:\n\nSelect a subset of points from the original image\nUse those points (with their colors) as centers\nBuild the Voronoi diagram, coloring each region with its center’s color\n\nThe quality of the resulting image depends on how many centers we choose and where we place them!\n\n\n\nThe Transformation Pipeline\n\n\n\nThe Voronoi art pipeline: original photo → sample random centers → fill Voronoi regions\n\n\nEach center “claims” all nearby pixels, coloring them with that center’s original color. More centers = more detail, but also more work!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#planning-our-solution",
+    "href": "summaries/08_weekly_summary.html#planning-our-solution",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Planning Our Solution",
+    "text": "Planning Our Solution\nBefore diving into code, we thought carefully about our data types:\n\n\n\nConcept\nPython Representation\n\n\n\n\nPoint\nA tuple (x, y) representing pixel coordinates\n\n\nColor\nA tuple (r, g, b) for RGB values\n\n\nCenter\nA (Point, Color) pair — the location and its color\n\n\nCenters\nA list of Center tuples\n\n\nImage\nA 2D grid of Colors (using PIL/Pillow)\n\n\n\nData Flow:\n\nRead the original image into memory\nChoose random pixel locations as centers, grabbing their colors from the original\nBuild a new image by assigning each pixel to its nearest center’s color\nWrite the result to a file"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#measuring-distance",
+    "href": "summaries/08_weekly_summary.html#measuring-distance",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Measuring Distance",
+    "text": "Measuring Distance\nTo find the “nearest” center, we need to measure distance between points. The Euclidean distance between two points \\((x_1, y_1)\\) and \\((x_2, y_2)\\) comes from the Pythagorean theorem:\n\\[d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\]\n\nExample: Which Center is Closer?\nSuppose we have a pixel at \\((5, 5)\\) and two centers:\n\nRed center at \\((2, 3)\\)\nBlue center at \\((8, 6)\\)\n\n\n\nDistance to Red: \\[d_{\\text{red}} = \\sqrt{(5-2)^2 + (5-3)^2} = \\sqrt{9 + 4} = \\sqrt{13} \\approx 3.6\\]\nDistance to Blue: \\[d_{\\text{blue}} = \\sqrt{(5-8)^2 + (5-6)^2} = \\sqrt{9 + 1} = \\sqrt{10} \\approx 3.2\\]\nThe pixel is closer to Blue!\n\n    0 1 2 3 4 5 6 7 8 9\n  0 · · · · · · · · · ·\n  1 · · · · · · · · · ·\n  2 · · · · · · · · · ·\n  3 · · R · · · · · · ·\n  4 · · · · · · · · · ·\n  5 · · · · · P · · · ·\n  6 · · · · · · · · B ·\n  7 · · · · · · · · · ·\n\n  R = Red center (2,3)\n  B = Blue center (8,6)\n  P = Pixel (5,5)\n\n\n\n\n\n\n\n\nTipA Clever Optimization: Skip the Square Root!\n\n\n\nComputing square roots is slow. But here’s the key insight: if \\(a &lt; b\\), then \\(a^2 &lt; b^2\\) (for positive numbers).\nSo instead of comparing \\(\\sqrt{13}\\) vs \\(\\sqrt{10}\\), we can compare \\(13\\) vs \\(10\\) directly!\n# Slow: uses square root\ndef distance(p1, p2):\n    return math.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)\n\n# Fast: squared distance (works for comparisons!)\ndef distance_squared(p1, p2):\n    return (p2[0] - p1[0])**2 + (p2[1] - p1[1])**2\nWe only care about which center is closest, not the actual distance value. Since squaring preserves the ordering, we can skip the expensive sqrt call entirely!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#the-naive-algorithm",
+    "href": "summaries/08_weekly_summary.html#the-naive-algorithm",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "The Naive Algorithm",
+    "text": "The Naive Algorithm\n\n\n\nGrid with three colored centers\n\n\nFor each pixel in the output image, we find the nearest center by checking the distance to every center:\nfor each pixel (x, y) in the image:\n    find the center c with minimum distance to (x, y)\n    color pixel (x, y) with the color of c\nThis works! But how efficient is it?\n\nComplexity Analysis\nLet \\(n\\) = image size (width × height) and \\(k\\) = number of centers:\n\n\n\n\n\n\n\nStep\nWork\n\n\n\n\n1. Read image\nProportional to \\(n\\) — touch each pixel once\n\n\n2. Choose centers\nProportional to \\(k\\) — pick k random points\n\n\n3. Build new image\nProportional to \\(n \\cdot k\\) — for each of n pixels, check all k centers\n\n\n4. Write image\nProportional to \\(n\\) — touch each pixel once\n\n\n\nTotal: Proportional to \\(n \\cdot k\\) — this gets slow when we want lots of centers!\nWith a 1-megapixel image and 10,000 centers, that’s 10 billion distance calculations. Can we do better? Yes!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#a-faster-approach-flip-the-question",
+    "href": "summaries/08_weekly_summary.html#a-faster-approach-flip-the-question",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "A Faster Approach: Flip the Question! 🌊",
+    "text": "A Faster Approach: Flip the Question! 🌊\n\n\n\n\n\n\nImportantThe Key Insight\n\n\n\nInstead of asking “which center is closest to this pixel?”, we flip the question: start at each center and grow outward simultaneously!\n\n\n\n\n\n\n\nSingle flood fill from one center\n\n\nOne center: The color spreads outward like ripples in a pond.\n\n\n\n\nMultiple flood fills creating Voronoi regions\n\n\nMultiple centers: Colors grow simultaneously — the first to reach a pixel “claims” it!\n\n\nBy growing all regions at the same rate, the first color to reach a pixel wins. Each pixel is processed exactly once — no matter how many centers we have!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#meet-the-queue",
+    "href": "summaries/08_weekly_summary.html#meet-the-queue",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Meet the Queue 🐧",
+    "text": "Meet the Queue 🐧\nTo implement flood fill, we need a data structure that processes items in the order they arrived. Enter the queue — a “first in, first out” (FIFO) structure:\n\n\n\nPenguins waiting in line\n\n\nJust like penguins waiting for fish — first to arrive, first to be served!\n\n\n\nOperation\nDescription\n\n\n\n\nenqueue(k)\nAdd item k to the back of the line\n\n\ndequeue()\nRemove and return the item at the front\n\n\n\n\nIn Python: collections.deque\nPython’s deque (double-ended queue) is perfect for this:\nfrom collections import deque\n\nq = deque()           # Create an empty queue\nq.append(item)        # enqueue — add to right/back\nitem = q.popleft()    # dequeue — remove from left/front\nlen(q) == 0           # check if empty (or just: not q)\n\n\n\n\n\n\nNoteWhy not use a regular list?\n\n\n\nYou could use list.append() and list.pop(0), but pop(0) takes time proportional to \\(n\\) because it shifts all remaining elements. With deque, both operations take constant time!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#the-flood-fill-algorithm",
+    "href": "summaries/08_weekly_summary.html#the-flood-fill-algorithm",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "The Flood Fill Algorithm",
+    "text": "The Flood Fill Algorithm\nHere’s the magic! We start all centers in the queue, then grow outward:\nfrom collections import deque\n\ndef voronoi_fill(image, centers):\n    queue = deque()\n    visited = set()\n\n    # Start with all centers in the queue\n    for (x, y), color in centers:\n        queue.append(((x, y), color))\n        visited.add((x, y))\n        image[x, y] = color\n\n    # Process pixels in order\n    while queue:\n        (x, y), color = queue.popleft()\n\n        # Check all 4 neighbors\n        for nx, ny in [(x+1, y), (x-1, y), (x, y+1), (x, y-1)]:\n            if (nx, ny) not in visited and is_valid(nx, ny):\n                visited.add((nx, ny))\n                image[nx, ny] = color\n                queue.append(((nx, ny), color))\n\n\n\n\n\n\nNoteWhat makes a neighbor “valid”?\n\n\n\nA neighbor (nx, ny) is valid if:\n\nIt’s within the image bounds: 0 &lt;= nx &lt; width and 0 &lt;= ny &lt; height\nIt hasn’t been visited yet (checked via the visited set)"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#why-does-this-work",
+    "href": "summaries/08_weekly_summary.html#why-does-this-work",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Why Does This Work?",
+    "text": "Why Does This Work?\nThe queue ensures we process pixels in order of distance from their center:\n\nAll centers start in the queue (distance 0)\nWe process a center, adding its immediate neighbors (distance 1)\nWe process those neighbors, adding their neighbors (distance 2)\nAnd so on…\n\nBecause all centers start together and grow at the same rate, a pixel is claimed by whichever center it’s actually closest to. The queue keeps everything synchronized!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#complexity-of-flood-fill",
+    "href": "summaries/08_weekly_summary.html#complexity-of-flood-fill",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Complexity of Flood Fill",
+    "text": "Complexity of Flood Fill\n\n\n\n\n\n\n\nStep\nWork\n\n\n\n\n1. Read image\nProportional to \\(n\\)\n\n\n2. Choose centers\nProportional to \\(k\\)\n\n\n3. Build new image\nProportional to \\(n\\) — each pixel processed exactly once!\n\n\n4. Write image\nProportional to \\(n\\)\n\n\n\nTotal: Proportional to \\(n\\) — independent of the number of centers! 🎉\nThis is a massive improvement:\n\n\n\nApproach\nOperations (1M pixels, 10K centers)\n\n\n\n\nNaive\n10,000,000,000 (10 billion!)\n\n\nFlood Fill\n1,000,000 (1 million)\n\n\n\nThat’s 10,000× faster! Now we can use as many centers as we want."
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#the-result",
+    "href": "summaries/08_weekly_summary.html#the-result",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "The Result",
+    "text": "The Result\n\n\n\nVoronoi art example\n\n\nBeautiful algorithmic art, efficiently computed! More centers = more detail, and our queue-based approach handles them all gracefully."
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#designing-solutions-key-questions",
+    "href": "summaries/08_weekly_summary.html#designing-solutions-key-questions",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Designing Solutions: Key Questions",
+    "text": "Designing Solutions: Key Questions\nWhen implementing the flood fill, we worked through these design questions:\n1. What should we put on the queue?\nA tuple of ((x, y), color) — the pixel location and the color it should receive.\n2. Which deque functions do we use?\n\nappend() to enqueue (add to back)\npopleft() to dequeue (remove from front)\n\n3. How do we check if the queue is empty?\n\nwhile queue: works because empty collections are falsy\nOr explicitly: while len(queue) &gt; 0:\n\n4. What are the “neighbors” of pixel (x,y)?\nThe 4-connected neighbors: (x+1, y), (x-1, y), (x, y+1), (x, y-1)\n5. What makes a neighbor “invalid”?\n\nOut of bounds: nx &lt; 0 or nx &gt;= width or ny &lt; 0 or ny &gt;= height\nAlready visited (already has a color)"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#preview-graphs",
+    "href": "summaries/08_weekly_summary.html#preview-graphs",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Preview: Graphs 🕸️",
+    "text": "Preview: Graphs 🕸️\nHere’s a beautiful realization: the flood fill pattern we just learned is actually a famous algorithm called Breadth-First Search (BFS)!\nWe can think of an image as a graph:\n\nEach pixel is a vertex (node)\nEach adjacency (up/down/left/right) is an edge connecting neighboring vertices\n\n\n\n\n\n\nImage as a graph\n\n\n\nGraphs are one of the most versatile data structures in computer science. They model:\n\nSocial networks (people connected by friendships)\nMaps (intersections connected by roads)\nWeb pages (pages connected by links)\nGame states (positions connected by moves)\n\n\n\nNext week, we’ll explore graphs as a general structure for modeling all kinds of problems!"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#quick-reference",
+    "href": "summaries/08_weekly_summary.html#quick-reference",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n\nQueue Operations\n\n\n\nOperation\ndeque Method\nDescription\n\n\n\n\nCreate\nq = deque()\nEmpty queue\n\n\nEnqueue\nq.append(x)\nAdd to back\n\n\nDequeue\nq.popleft()\nRemove from front\n\n\nPeek\nq[0]\nLook at front without removing\n\n\nIs empty?\nnot q or len(q) == 0\nCheck if empty\n\n\nSize\nlen(q)\nNumber of items\n\n\n\n\n\nStack vs Queue\n\n\n\n\n\n\n\n\n\n\nData Structure\nOrder\nAdd\nRemove\nAnalogy\n\n\n\n\nStack\nLIFO\npush (top)\npop (top)\nStack of plates\n\n\nQueue\nFIFO\nenqueue (back)\ndequeue (front)\nLine at coffee shop\n\n\n\n\n\nVoronoi Algorithm Comparison\n\n\n\nAlgorithm\nTime\nGood for\n\n\n\n\nNaive\nProportional to \\(n \\cdot k\\)\nFew centers\n\n\nFlood Fill\nProportional to \\(n\\)\nMany centers"
+  },
+  {
+    "objectID": "summaries/08_weekly_summary.html#whats-next",
+    "href": "summaries/08_weekly_summary.html#whats-next",
+    "title": "Week 8: Voronoi Art & Queues",
+    "section": "What’s Next?",
+    "text": "What’s Next?\nWeek 9: Graphs! We’ll formalize the graph data structure and learn more algorithms that build on BFS. Get ready to model all kinds of connected systems!\nExamlet 3: Coming up — book your CBTF slot!\nProject 1: Finish strong on your Pokémon Data Explorer!"
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup: Tech stack",
+    "section": "",
+    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for CPSC 203, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in CPSC 203.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#hardware",
+    "href": "setup.html#hardware",
+    "title": "Setup: Tech stack",
+    "section": "Hardware",
+    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Setup: Tech stack",
+    "section": "Software",
+    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 24H2 (build 26100.6584). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 16.0. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 4.6.11\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.8.18 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.16.0\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#optional-software",
+    "href": "setup.html#optional-software",
+    "title": "Setup: Tech stack",
+    "section": "Optional software",
+    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.51.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, CPSC 203\nChoose for expiration “Custom” and set the date to the end of this term: 2026-04-10\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.6.0 (64511). For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#attribution",
+    "href": "setup.html#attribution",
+    "title": "Setup: Tech stack",
+    "section": "Attribution",
+    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
+    "crumbs": [
+      "Resources",
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CPSC 203: Programming, problem solving, and algorithms",
+    "section": "",
+    "text": "Instructor: Dr. Cinda Heeren (She, Her)",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "index.html#weekly-announcement",
+    "href": "index.html#weekly-announcement",
+    "title": "CPSC 203: Programming, problem solving, and algorithms",
+    "section": "Weekly announcement",
+    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04 \nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05 \nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06 \nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08 \nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09 \nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10 \nMar 9\n\n\n\n\n\n\n\n\n\n\n    11 \nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#introduction",
+    "href": "syllabus.html#introduction",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#instructor-information",
+    "href": "syllabus.html#instructor-information",
+    "title": "Syllabus",
+    "section": "Instructor information",
+    "text": "Instructor information\n\nProf: Cinda Heeren\n📧 cheeren@cs.ubc.ca\n⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen\n📧 \n⏰ TBD · 🏢 TBD\nTA: Paulette Koronkevich Gunawan 📧 \n⏰ TBD · 🏢 TBD\nTA: TBD 📧 \n⏰ TBD · 🏢 TBD",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-description-and-learning-objectives",
+    "href": "syllabus.html#course-description-and-learning-objectives",
+    "title": "Syllabus",
+    "section": "Course description and learning objectives",
+    "text": "Course description and learning objectives\nLearning Outcomes for CPSC203\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#lecture-material-and-course-content",
+    "href": "syllabus.html#lecture-material-and-course-content",
+    "title": "Syllabus",
+    "section": "Lecture Material and Course Content",
+    "text": "Lecture Material and Course Content\nThe CPSC203 class meetings will be a mixture of guided exploration, theoretical narrative and exercises, and individual problem solving.\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.\nThis course is a natural followon to an introductory programming course – it provides an answer to “now that I’ve learned to code, what can I DO with it?”",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-requirements",
+    "href": "syllabus.html#course-requirements",
+    "title": "Syllabus",
+    "section": "Course requirements",
+    "text": "Course requirements\nDeliverables for the course include the following components:\n\nProblem of the Week (POTW) – You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nClassroom Meetings – Class meets Tue/Thu, 11a-12:30p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants.\nLab – The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are presented in physical class meetings where you will work in groups to complete PrairieLearn assessments. There are ~10 over the term, beginning in week 2.\nExamlets – Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nProjects – Most of the coding in the course will occur within three significan coding projects. Though we place no constraints on your use of outside resources for completing these exercises, all of the algorithms and problem solving they contain may appear on examlets.\nFinal Exam – Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-and-exam-policies",
+    "href": "syllabus.html#grading-and-exam-policies",
+    "title": "Syllabus",
+    "section": "Grading and exam policies",
+    "text": "Grading and exam policies\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nSundays at 11:59 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 11:59 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD\n\n\n\nYou must pass the final exam (50%) to pass the course.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#accessibility",
+    "href": "syllabus.html#accessibility",
+    "title": "Syllabus",
+    "section": "Accessibility",
+    "text": "Accessibility\nIf you have a disability or ongoing medical condition that may require accommodations, please contact the UBC Centre for Accessibility accessibility@ubc.ca to determine your eligibility and receive an accommodation letter.\nIf you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to speak with me.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#academic-misconduct",
+    "href": "syllabus.html#academic-misconduct",
+    "title": "Syllabus",
+    "section": "Academic misconduct",
+    "text": "Academic misconduct\nAll instances of academic misconduct will be handled in a manner consistent with UBC policies. This includes reporting to the CS Department’s Associate Head of Undergraduate Affairs, and Faculty of Science Associate Dean of Students. No credit will be given for any assignment which was completed with inappropriate collaboration.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#land-acknowledgement",
+    "href": "syllabus.html#land-acknowledgement",
+    "title": "Syllabus",
+    "section": "Land Acknowledgement",
+    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "CPSC 203: Programming, problem solving, and algorithms",
+    "section": "",
+    "text": "Attribution-ShareAlike 4.0 International\n=======================================================================\nCreative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\nUsing Creative Commons Public Licenses\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n Considerations for licensors: Our public licenses are\n intended for use by those authorized to give the public\n permission to use material in ways otherwise restricted by\n copyright and certain other rights. Our licenses are\n irrevocable. Licensors should read and understand the terms\n and conditions of the license they choose before applying it.\n Licensors should also secure all rights necessary before\n applying our licenses so that the public can reuse the\n material as expected. Licensors should clearly mark any\n material not subject to the license. This includes other CC-\n licensed material, or material used under an exception or\n limitation to copyright. More considerations for licensors:\nwiki.creativecommons.org/Considerations_for_licensors\n\n Considerations for the public: By using one of our public\n licenses, a licensor grants the public permission to use the\n licensed material under specified terms and conditions. If\n the licensor's permission is not necessary for any reason--for\n example, because of any applicable exception or limitation to\n copyright--then that use is not regulated by the license. Our\n licenses grant only permissions under copyright and certain\n other rights that a licensor has authority to grant. Use of\n the licensed material may still be restricted for other\n reasons, including because others have copyright or other\n rights in the material. A licensor may make special requests,\n such as asking that all changes be marked or described.\n Although not required by our licenses, you are encouraged to\n respect those requests where reasonable. More_considerations\n for the public:\nwiki.creativecommons.org/Considerations_for_licensees\n=======================================================================\nCreative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)\n\nnever produces Adapted Material.\n\nDownstream recipients.\n\nOffer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nAdditional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nNo downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\n\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material,\nincluding for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.\nTO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n=======================================================================\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
+  },
+  {
+    "objectID": "announcements.html",
+    "href": "announcements.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "No matching items",
+    "crumbs": [
+      "Course information",
+      "Announcements"
+    ]
+  },
+  {
     "objectID": "summaries/05_weekly_summary.html",
     "href": "summaries/05_weekly_summary.html",
     "title": "Week 5: DataFrames and Visualization",
@@ -1939,447 +2382,137 @@
     "text": "What’s Next?\nWe’ve seen how DataFrames make data analysis elegant and powerful. But all our work has been on existing columns — filtering and aggregating values that were already there.\nNext week, we’ll explore dictionaries in depth, learning patterns for counting, grouping, and transforming data that will make your code even more versatile!"
   },
   {
-    "objectID": "announcements.html",
-    "href": "announcements.html",
-    "title": "Announcements",
+    "objectID": "summaries/11_weekly_summary.html",
+    "href": "summaries/11_weekly_summary.html",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
     "section": "",
-    "text": "No matching items",
-    "crumbs": [
-      "Course information",
-      "Announcements"
-    ]
+    "text": "Graphs went geographic this week. We took everything we know about vertices and edges and plugged in a real dataset: the road network of Vancouver. By Tuesday’s end we could find the shortest driving route between any two points in the city. By Thursday we had confronted one of the most famous unsolved problems in computer science — and built a brute-force solution to it."
   },
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "CPSC 203: Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Attribution-ShareAlike 4.0 International\n=======================================================================\nCreative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\nUsing Creative Commons Public Licenses\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n Considerations for licensors: Our public licenses are\n intended for use by those authorized to give the public\n permission to use material in ways otherwise restricted by\n copyright and certain other rights. Our licenses are\n irrevocable. Licensors should read and understand the terms\n and conditions of the license they choose before applying it.\n Licensors should also secure all rights necessary before\n applying our licenses so that the public can reuse the\n material as expected. Licensors should clearly mark any\n material not subject to the license. This includes other CC-\n licensed material, or material used under an exception or\n limitation to copyright. More considerations for licensors:\nwiki.creativecommons.org/Considerations_for_licensors\n\n Considerations for the public: By using one of our public\n licenses, a licensor grants the public permission to use the\n licensed material under specified terms and conditions. If\n the licensor's permission is not necessary for any reason--for\n example, because of any applicable exception or limitation to\n copyright--then that use is not regulated by the license. Our\n licenses grant only permissions under copyright and certain\n other rights that a licensor has authority to grant. Use of\n the licensed material may still be restricted for other\n reasons, including because others have copyright or other\n rights in the material. A licensor may make special requests,\n such as asking that all changes be marked or described.\n Although not required by our licenses, you are encouraged to\n respect those requests where reasonable. More_considerations\n for the public:\nwiki.creativecommons.org/Considerations_for_licensees\n=======================================================================\nCreative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)\n\nnever produces Adapted Material.\n\nDownstream recipients.\n\nOffer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nAdditional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nNo downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\n\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material,\nincluding for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.\nTO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n=======================================================================\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#introduction",
-    "href": "syllabus.html#introduction",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images—even music—into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers—like testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#instructor-information",
-    "href": "syllabus.html#instructor-information",
-    "title": "Syllabus",
-    "section": "Instructor information",
-    "text": "Instructor information\n\nProf: Cinda Heeren\n📧 cheeren@cs.ubc.ca\n⏰ Mon 2–4pm · 🏢 ICCS 233 · \nTA: Minh Anh Nguyen\n📧 \n⏰ TBD · 🏢 TBD\nTA: Paulette Koronkevich Gunawan 📧 \n⏰ TBD · 🏢 TBD\nTA: TBD 📧 \n⏰ TBD · 🏢 TBD",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-description-and-learning-objectives",
-    "href": "syllabus.html#course-description-and-learning-objectives",
-    "title": "Syllabus",
-    "section": "Course description and learning objectives",
-    "text": "Course description and learning objectives\nLearning Outcomes for CPSC203\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#lecture-material-and-course-content",
-    "href": "syllabus.html#lecture-material-and-course-content",
-    "title": "Syllabus",
-    "section": "Lecture Material and Course Content",
-    "text": "Lecture Material and Course Content\nThe CPSC203 class meetings will be a mixture of guided exploration, theoretical narrative and exercises, and individual problem solving.\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.\nThis course is a natural followon to an introductory programming course – it provides an answer to “now that I’ve learned to code, what can I DO with it?”",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-requirements",
-    "href": "syllabus.html#course-requirements",
-    "title": "Syllabus",
-    "section": "Course requirements",
-    "text": "Course requirements\nDeliverables for the course include the following components:\n\nProblem of the Week (POTW) – You will complete approximately 50 small programming exercises, 5 per week. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nClassroom Meetings – Class meets Tue/Thu, 11a-12:30p, in MacMillan 360. All sessions are recorded and posted, but we make no guarantees about the quality of the recording, nor do we try very hard to replicate the in-class experience for online participants.\nLab – The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can DO the things we talk about in class. Lab exercises are presented in physical class meetings where you will work in groups to complete PrairieLearn assessments. There are ~10 over the term, beginning in week 2.\nExamlets – Five self-scheduled 50 minute assessments to be completed on PrairieLearn in the Computer Based Testing Facility (CBTF). You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nProjects – Most of the coding in the course will occur within three significan coding projects. Though we place no constraints on your use of outside resources for completing these exercises, all of the algorithms and problem solving they contain may appear on examlets.\nFinal Exam – Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#grading-and-exam-policies",
-    "href": "syllabus.html#grading-and-exam-policies",
-    "title": "Syllabus",
-    "section": "Grading and exam policies",
-    "text": "Grading and exam policies\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week\n10% (10 x 1%)\nSundays at 11:59 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 11:59 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree in the term\n\n\nExamlets.\n50% (5 x 10%)\n~ Bi-weekly\n\n\nFinal Exam\n26%\nTBD\n\n\n\nYou must pass the final exam (50%) to pass the course.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#accessibility",
-    "href": "syllabus.html#accessibility",
-    "title": "Syllabus",
-    "section": "Accessibility",
-    "text": "Accessibility\nIf you have a disability or ongoing medical condition that may require accommodations, please contact the UBC Centre for Accessibility accessibility@ubc.ca to determine your eligibility and receive an accommodation letter.\nIf you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to speak with me.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#academic-misconduct",
-    "href": "syllabus.html#academic-misconduct",
-    "title": "Syllabus",
-    "section": "Academic misconduct",
-    "text": "Academic misconduct\nAll instances of academic misconduct will be handled in a manner consistent with UBC policies. This includes reporting to the CS Department’s Associate Head of Undergraduate Affairs, and Faculty of Science Associate Dean of Students. No credit will be given for any assignment which was completed with inappropriate collaboration.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#land-acknowledgement",
-    "href": "syllabus.html#land-acknowledgement",
-    "title": "Syllabus",
-    "section": "Land Acknowledgement",
-    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CPSC 203: Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Instructor: Dr. Cinda Heeren (She, Her)",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "index.html#weekly-announcement",
-    "href": "index.html#weekly-announcement",
-    "title": "CPSC 203: Programming, problem solving, and algorithms",
-    "section": "Weekly announcement",
-    "text": "Weekly announcement\n\n\n\n\nNo matching items\n\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nJan 5\n\n\n\n\n\n\n\n\n\n\n    02 \nJan 12\n\n\n\n\n\n\n\n\n\n\n    03 \nJan 19\n\n\n\n\n\n\n\n\n\n\n    04 \nJan 26\n\n\n\n\n\n\n\n\n\nEX1\n    05 \nFeb 2\n\n\n\n\n\n\n\n\n\n\n    06 \nFeb 9\n\n\n\n\n\n\n\n\n\nEX2\n    07\nFeb 16\n\n\n\n\n\n\n\n\n\n\n    08 \nFeb 23\n\n\n\n\n\n\n\n\nProj1\n\n    09 \nMar 2\n\n\n\n\n\n\n\n\n\nEX3\n    10 \nMar 9\n\n\n\n\n\n\n\n\n\n\n    11\nMar 16\n\n\n\n\n\n\n\n\nProj2\nEX4\n    12\nMar 23\n\n\n\n\n\n\n\n\n\n\n    13\nMar 30\n\n\n\n\n\n\n\n\n\nEX5\n    14\nApr 6\n\n\n\n\n\n\n\n\nProj3",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup: Tech stack",
-    "section": "",
-    "text": "As with any computer science or data science course, several tools and software packages are needed for this course. These tools are not used by the typical consumer, so most Windows or macOS installations will not include them. Even on machines which do include them (such as many Linux distributions), they may still need some configuration. Below you will find guides to install the tech stack for CPSC 203, with different guides for different operating systems. A tech stack is the complete set of tools and technologies needed to accomplish a particular task; in this case, it is the various programming and data analytics that we will explore in CPSC 203.\nAs you go through the install guides, remember that perhaps the two most important things you will learn in this course is how to troubleshoot things and achieve familiarity and proficiency with your computer. Be patient, read things carefully, do not be afraid to try things, it’s unlikely you will do anything to irreversibly break your computer! Almost everything you do (you’re on your own if you decide to take a hammer to your laptop!) can be undone, don’t be afraid to ask your peers, TAs, and the instructor on Giscus below (you will need to set up an GitHub account first).\nThis is an exciting time for you as you begin your Software Development journey!",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#hardware",
-    "href": "setup.html#hardware",
-    "title": "Setup: Tech stack",
-    "section": "Hardware",
-    "text": "Hardware\nBefore starting, ensure that your laptop meets the minimum requirements:\n\nCan connect to networks via a wireless connection.\nHas at least 25 GB disk space available.\nHas at least 4 GB of RAM (more is recommended).\nUses a 64-bit CPU.\nIs at most 6 years old at the start of the course (4 years old or newer is recommended).\nStudent user has full administrative access to the computer.\n\n\n\n\n\n\n\nImportant\n\n\n\nIf your computer does not meet any of the requirements above, please don’t just drop the course!! Let me know first and we can discuss alternate possibilities so you can still take the course.",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#software",
-    "href": "setup.html#software",
-    "title": "Setup: Tech stack",
-    "section": "Software",
-    "text": "Software\n\n\n\n\n\n\nTip\n\n\n\nThese installation notes assume you are starting with a fresh install, without any custom setups. Following the instructions below will help you install and configure the tech stack correctly in the same way for our course, enabling us to support you effectively and minimize setup issues and software conflicts.\n\n\n\nWindowsmacOS\n\n\n In all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version.\n\n\nIn all the sections below, if you are presented with the choice to download either a 64-bit (also called x64) or a 32-bit (also called x86) version of the application always choose the 64-bit version. If you purchased a Mac anytime in the last few years, chances are you have an “M1/M2/M3/M4”… Mac, also known as “Apple Silicon”, and “arm64”. When given the option, you should choose to download the “arm64”/Apple Silicon or the “Universal versions—if that choice doesn’t exist, then you can choose the”x86” version which will run in “emulated mode”, which will result in a slight performance penalty.\n\n\n\n\n\nOperating system (OS)\nWe strongly suggest to run the latest version of the operating system (OS) available for your laptop.\n\n\n\n\n\n\nWarning\n\n\n\nIf you update or upgrade your OS you do so on your own risk!\n\n\nIn general, there are many good reasons to update your OS. Some of the software tools or their functionality used in our tutorials will only work on more recent OS versions. Updating your OS will also ensure that you have the latest security updates installed and help prevent unauthorized access to your computer.\nThere a two main reasons that would prevent you from updating your OS:\n\nYour hardware would not support the updated OS.\nSome of your software you depend on might not work on a newer OS.\n\n\nWindowsmacOS\n\n\nThe latest version of Windows 11 available is 24H2 (build 26100.6584). See here on how to update your Windows 11 machine to the latest version. If you do not own Windows 11, currently enrolled UBC students with a valid CWL account qualify for one license of Windows 11 Education.\n\n\nThe latest version of macOS is Tahoe 16.0. Check your current version of macOS. If you do not have the latest version, follow the upgrade instructions on the Apple support page.\nIf you cannot upgrade to the latest version, follow these instructions to find the system requirements and upgrade to latest versions available to you. If you need to maintain 32-bit compatibility for any of your software, then upgrade to no higher than macOS 10.14 Mojave.\n\n\n\n\n\nTerminal\nA terminal program allows you to interact with many different programs using a command line interface. Instead of using graphical elements like in a graphical user interface, you type in commands describing what program you want to use and how you want to use it.\n\nWindowsmacOS\n\n\nThe terminal app Terminal comes preinstalled with Windows. Activate the Windows Start menu, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\nThe terminal app Terminal comes preinstalled with macOS. Activate Spotlight with Command-SpaceCommand-Space, start typing “terminal” and select the Terminal app by pressing EnterEnter.\n\n\n\nYou will need to open the terminal several times in these instructions to install other programs.\n\n\nPackage manager\nA package manager is a program allowing you to install and update programs on your computer, similar to the Microsoft Store on Windows or the App Store on macOS. The main difference of a package manager to these programs is that you use them with a command line interface running in a terminal instead of a graphical user interface.\n\nWindowsmacOS\n\n\nIf you have at least Windows 10 version 1809 (build 17763) or later installed on your machine, you will already have the package manager WinGet available to you. When you use WinGet for the first time, you will be asked to register the Windows Package Manager with the Microsoft Store.\n\n\n\n\n\n\nImportant\n\n\n\nIf you cannot update your Windows to a version that supports WinGet, please reach out to the teaching team.\n\n\n\nResources\n\nUse WinGet to install and manage applications\n\n\n\n\nWe will use one of the most popular package managers on macOS called Homebrew. Open your Terminal, and then enter the following command:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nYou will be asked to enter the password for your computer:\n==&gt; Checking for `sudo` access (which may request your password)...\nEnter your password (it is normal that the cursor will not move as you enter characters for a password) and hit EnterEnter.\nNext, the installation will install the XCode Command Line Tools:\nThe XCode Command Line Tools will be installed.\nA new window will open with the following prompt:\n\nThe “xcode-select” command requires the command line developer tools. Would you like to install the tools now?\nChoose Install to download and install the command line developer tools now.” Confirm by clicking on “Install”.\n\nAfterwards, back in the terminal, you will be informed what steps will be executed:\n==&gt; This script will install:\n/opt/homebrew/bin/brew\n/opt/homebrew/share/doc/homebrew\n/opt/homebrew/share/man/man1/brew.1\n/opt/homebrew/share/zsh/site-functions/_brew\n/opt/homebrew/etc/bash_completion.d/brew\n/opt/homebrew\n/etc/paths.d/homebrew\n\nPress RETURN/ENTER to continue or any other key to abort:\nConfirm with EnterEnter. When the installation is finished, you will be asked to run the following command in the terminal to add Homebrew to your PATH:\necho &gt;&gt; \"${HOME}/.zprofile\"\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; \"${HOME}/.zprofile\"\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nNow test if Homebrew works:\nbrew --version\nYou should see the following:\nHomebrew 4.6.11\n\nResources\n\nHomebrew Documentation\n\n\n\n\n\n\n\nPython\n\nInstalling uv\nWe will be using Python for a large part of the course, and uv will be our Python package manager. Instead of installing Python separately on our machine, we will use uv to provision us with Python whenever we need to run it.\n\nWindowsmacOS\n\n\nIn the terminal, install uv with Winget:\nwinget install -e --id=astral-sh.uv\n\n\nIn the terminal install uv with Homebrew:\nbrew install uv\n\n\n\nTo check if uv installed successfully, type in the terminal:\nuv --version\nAnd you should see something like this\nuv 0.8.18 &lt;some-installer-specific-information&gt;\n\nResources\n\nInstallation | uv\n\n\n\n\nmarimo\nWe will be writing our code in a notebook app called marimo. marimo is itself a Python package, so we can use uv to install and run it. In particular, we will use the command uvx which will check if we have the latest version of marimo and everything else necessary to run it, even Python itself!\nuvx marimo --version\nAnd you should see:\n0.16.0\nEven better, try this:\nuvx marimo tutorial intro\nAnd your default browser should open a window showing marimo.\n\nFor now, let’s shut down marimo by clicking on the red x in the top right corner and then on the “Shutdown” button.\nNow you are ready to run Python code on your local machine!!!\n\nResources\n\nInstallation | marimo",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#optional-software",
-    "href": "setup.html#optional-software",
-    "title": "Setup: Tech stack",
-    "section": "Optional software",
-    "text": "Optional software\nIf you are interested in using a very common software development tool and platform for version control, check out Git and GitHub. We also have two examples with Zoom or your web browser on how to install and update everyday software with a package manager.\n\nGit and GitHub\nWe will be using the command line version of Git.\n\nWindowsmacOS\n\n\nGit is installed as part of Git Bash. Open your terminal, and install Git Bash with\nwinget install -e --id Git.Git\nRestart your terminal.\n\n\nOpen your terminal, and install Git with:\nbrew install git\n\n\n\nIn the terminal, type the following to check the Git version:\ngit --version\nYou should see something like this if everything is working correctly:\ngit version 2.51.0\n\nGitHub.com account\nSign up for a free account at GitHub.com if you don’t have one already. Your GitHub.com username is important, so here some advice on picking a username and below an image on how to find it again.\n\n\n\nConfiguring Git user info\nNext, we need to configure Git by telling it your name and email. To do this, provide your name and GitHub email by typing into the terminal:\ngit config --global user.name \"&lt;your-name&gt;\"\ngit config --global user.email \"&lt;your-github-email&gt;\"\n\n\n\n\n\n\nNote\n\n\n\nTo ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g., via the command code ~/.gitconfig) or by typing git config --list --global. You can quit this view by just pressing the q key on your keyboard.\n\n\n\n\nCreate your GitHub “Personal Access Token”\nThis is a bit tricky, so please make sure you follow these directions carefully.\n\nStart creating a personal access token (PAT) on GitHub.com either by\n\nClicking this link: https://github.com/settings/tokens/new\nNavigating to your tokens by following these steps:\n\nLog in to GitHub.com\nClick your picture in the top right and select “Settings”\nClick on “Developer Settings”\nClick on “Personal access tokens” and then on “Tokens (classic)”\nClick “Generate new token”\n\n\nGive the token a name in the note field, for example, CPSC 203\nChoose for expiration “Custom” and set the date to the end of this term: 2026-04-10\nSet the scope of the token to the “repo” level (see image below):\n\n\n\nPersonal access token settings\n\n\nClick “Generate new token”\nCopy the token that is shown to you. It is essentially a password for apps on your computer (for example, Git) to enable them to take actions on GitHub.com for you (in this case, clone a private repository to your computer). Treat this password like any other of your other passwords, so don’t share your token with anyone.\nSave this token somewhere safe on your computer, such as a password manager. You will not be able to come back to this page to get your token. If you forget or lose a token, you can just delete that token on GitHub.com where you manage all existing tokens and create another one: https://github.com/settings/tokens\n\n\n\n\nClone your first repository on your computer\nOpen the terminal, and then run the following command:\ngit clone https://github.com/firasm/test.git\nHopefully, if things work, you should be able to see a new folder created at that location. We will be talking more about what exactly you did over the next week and a bit, don’t worry!\n\n\n\n\n\n\nTip\n\n\n\nIf after running the code above, you see the error message:\nfatal: destination path 'test' already exists and is not an empty directory. \nIt means that you already attempted a clone before, and there is already a directory called test where you are trying to clone this repository. You will first need to delete that directory to try again. Open an Explorer (Windows) or Finder (macOS) window on your computer, navigate to the directory, right click the test directory and delete it. Alternatively, from the command line you can try:\nrm -rf test\nwhich will “remove” (using the rm command) the directory called test. The- is to specify additional options: r means “recursively” for all the files in the directory, and f means “force” which means don’t ask me for confirmation after deleting each file and folder.\n\n\n\n\n\nZoom\nSo far, we have been using the package manager to install software development tools. We can use the package manager to install other everyday software making it easier to find the correct version for your hardware or update to the latest release. For example, you might attend office hours or a livestream using Zoom Workplace and you should install the Zoom client locally on your machine.\n\nWindowsmacOS\n\n\nIn your terminal, use WinGet to install Zoom:\nwinget install -e --id Zoom.Zoom\n\n\nIn your terminal, use Homebrew to install Zoom:\nbrew install --cask zoom\n\n\n\nIt is important that you have the most recent version of Zoom installed, as we will be using many of the features that are only available in more recent versions. The latest version of Zoom is 6.6.0 (64511). For a lot of software, there is an option to check for updates.\n\nA package manager can directly update any software you have installed with it.\n\nWindowsmacOS\n\n\nwinget upgrade -e --id Zoom.Zoom\n\n\nbrew upgrade --cask zoom\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease note that if you have been relying on the “web version” of Zoom that works only in a browser, this will not work for this course! Please make sure to download the Zoom desktop client for your operating system to fully participate in the course.\n\n\n\n\nWeb browser\nYou are welcome to use most modern browsers that have a WebKit or Gecko backend. Safari (Mac only), Firefox, Vivaldi, Brave, Edge are all recommended. Google Chrome is not recommended because of the well-documented privacy and tracking issues with Google.\nOptional: try to install the browser also with the package manager! Use this website to find the install instruction for the browser of your choice:\n\nWindowsmacOS\n\n\nwinget.run | Finding winget packages made simple.\n\n\nHomebrew Formulae",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#attribution",
-    "href": "setup.html#attribution",
-    "title": "Setup: Tech stack",
-    "section": "Attribution",
-    "text": "Attribution\nThese instructions have been adapted and remixed from the original version provided by the UBC-Vancouver MDS Install stack under a CC-BY-SA 4.0 license. They were originally written by Anmol Jawandha but have since been updated by Stephan Koenig, Firas Moosvi, Joel Ostblom, Tomas Beuzen, Rodolfo Lourenzutti, Tiffany Timbers, and others.\n\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0.\nSoftware Carpentry\nOracle - How do I set or change the PATH system variable?\nNumerical Methods - Getting started\nEDUCE setup instructions",
-    "crumbs": [
-      "Resources",
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "summaries/08_weekly_summary.html",
-    "href": "summaries/08_weekly_summary.html",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "",
-    "text": "Welcome back from Reading Week! This week we discovered one of the most beautiful intersections of art, mathematics, and computer science: Voronoi diagrams. We turned ordinary photos into stunning pointillist masterpieces, learned about the queue data structure, and got our first glimpse of graphs!"
-  },
-  {
-    "objectID": "summaries/08_weekly_summary.html#your-growing-toolkit",
-    "href": "summaries/08_weekly_summary.html#your-growing-toolkit",
-    "title": "Week 8: Voronoi Art & Queues",
+    "objectID": "summaries/11_weekly_summary.html#your-growing-toolkit",
+    "href": "summaries/11_weekly_summary.html#your-growing-toolkit",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
     "section": "Your Growing Toolkit",
-    "text": "Your Growing Toolkit\nEvery problem we solve uses some combination of these tools:\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, timing analysis)\n\nThis week: Queues + Flood Fill → Efficient algorithmic art!"
+    "text": "Your Growing Toolkit\n\nRepresentation — how we encode meaning\nCollections — how we group things\nControl flow — how we make decisions and repeat\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost\n\nThis week: Weighted graphs + Dijkstra’s Algorithm + TSP — from theory to the real world!"
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#the-big-picture",
-    "href": "summaries/08_weekly_summary.html#the-big-picture",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "The Big Picture",
-    "text": "The Big Picture\nWe started with a beautiful question: How can we create art with algorithms? This led us to Voronoi diagrams — a mathematical structure that divides space based on nearest neighbors. We implemented this concept twice: first with a naive algorithm, then with a clever flood-fill approach using queues that’s dramatically faster!"
+    "objectID": "summaries/11_weekly_summary.html#one-last-look-at-sudoku",
+    "href": "summaries/11_weekly_summary.html#one-last-look-at-sudoku",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "One Last Look at Sudoku",
+    "text": "One Last Look at Sudoku\nWe started by closing the loop on Sudoku. We asked: could we be smarter? Constraint propagation, for instance, can prune most of the state space before we ever start searching. But there’s a deeper issue:\n\n\n\n\n\n\nImportantSudoku is NP-Complete\n\n\n\nAs the board grows (4×4 → 9×9 → 16×16 → 25×25…), the number of states explodes faster than any polynomial. Sudoku is known to be NP-Complete — a member of the class of problems where no one has found a guaranteed fast algorithm, and many believe none exists.\nThis doesn’t mean we give up! It means we use clever tricks: constraint propagation, better search orderings, heuristics. But for any general solver on large boards, worst-case cost is exponential."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#whats-a-voronoi-diagram",
-    "href": "summaries/08_weekly_summary.html#whats-a-voronoi-diagram",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "What’s a Voronoi Diagram?",
-    "text": "What’s a Voronoi Diagram?\n\n\nImagine you’re standing in Vancouver and want to find the nearest Tim Hortons. A Voronoi diagram divides the entire map into regions where every point in a region is closest to one particular location.\nMore formally: given a set of “centers” \\(c_1, c_2, \\ldots, c_k\\), each Voronoi region \\(R_j\\) contains all points that are closer to center \\(c_j\\) than to any other center.\nTogether, these regions tile the entire plane — every point belongs to exactly one region, and no point belongs to two regions!\n\n\n\n\nTim Hortons Voronoi map of Vancouver\n\n\n\n\n\n\n\n\n\n\nTipReal-World Applications\n\n\n\nVoronoi diagrams appear everywhere! Cell tower coverage, school district boundaries, wildlife territory analysis, crystal growth patterns, and even the spots on a giraffe. See more on Wikipedia."
+    "objectID": "summaries/11_weekly_summary.html#the-world-is-a-graph",
+    "href": "summaries/11_weekly_summary.html#the-world-is-a-graph",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "The World Is a Graph",
+    "text": "The World Is a Graph\nWith Sudoku behind us, we asked a new question: what if the graph isn’t made up — what if it’s the actual world?\n\n\n\n\n\nGeographic data: separate from visualization\n\n\n\nThe key insight: the data is separate from the visualization. Google Maps shows you a pretty picture. But underneath is a graph — intersections as vertices, roads as edges, distances as weights. Everything Google Maps does is graph algorithms on that data.\nWe get access to the same data for free."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#from-pointillism-to-algorithmic-art",
-    "href": "summaries/08_weekly_summary.html#from-pointillism-to-algorithmic-art",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "From Pointillism to Algorithmic Art",
-    "text": "From Pointillism to Algorithmic Art\n\n\n\n\n\nSeurat’s “A Sunday on La Grande Jatte”\n\n\n\nGeorges Seurat pioneered pointillism in the 1880s, creating images from thousands of tiny colored dots. We can create our own version using Voronoi diagrams!\nThe Algorithm:\n\nSelect a subset of points from the original image\nUse those points (with their colors) as centers\nBuild the Voronoi diagram, coloring each region with its center’s color\n\nThe quality of the resulting image depends on how many centers we choose and where we place them!\n\n\n\nThe Transformation Pipeline\n\n\n\nThe Voronoi art pipeline: original photo → sample random centers → fill Voronoi regions\n\n\nEach center “claims” all nearby pixels, coloring them with that center’s original color. More centers = more detail, but also more work!"
+    "objectID": "summaries/11_weekly_summary.html#openstreetmap-wikipedia-for-maps",
+    "href": "summaries/11_weekly_summary.html#openstreetmap-wikipedia-for-maps",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "OpenStreetMap: Wikipedia for Maps",
+    "text": "OpenStreetMap: Wikipedia for Maps\n\n\nOpenStreetMap (OSM) is the open-source alternative to Google Maps’ data. Like Wikipedia, it’s built and maintained by volunteers. Unlike Google, its data is free to use, query, and download.\nWe access it through a Python library called osmnx, which handles all the API calls and gives us a NetworkX graph:\nimport osmnx as ox\n\nplace_names = ['UBC', 'Vancouver', 'Stanley Park']\nox.geocode_to_gdf(place_names)\n\n\n\n\nA GeoDataFrame from osmnx\n\n\nThe result is a GeoDataFrame — a pandas DataFrame where one column stores geographic shapes (polygons for regions, points for locations). Each row is a place, and the geometry column holds its boundary on the map."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#planning-our-solution",
-    "href": "summaries/08_weekly_summary.html#planning-our-solution",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Planning Our Solution",
-    "text": "Planning Our Solution\nBefore diving into code, we thought carefully about our data types:\n\n\n\nConcept\nPython Representation\n\n\n\n\nPoint\nA tuple (x, y) representing pixel coordinates\n\n\nColor\nA tuple (r, g, b) for RGB values\n\n\nCenter\nA (Point, Color) pair — the location and its color\n\n\nCenters\nA list of Center tuples\n\n\nImage\nA 2D grid of Colors (using PIL/Pillow)\n\n\n\nData Flow:\n\nRead the original image into memory\nChoose random pixel locations as centers, grabbing their colors from the original\nBuild a new image by assigning each pixel to its nearest center’s color\nWrite the result to a file"
+    "objectID": "summaries/11_weekly_summary.html#from-map-to-graph",
+    "href": "summaries/11_weekly_summary.html#from-map-to-graph",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "From Map to Graph",
+    "text": "From Map to Graph\nThe pipeline from raw geography to graph algorithms has three stages:\n\n\n1. Assemble the data Use OSM, Statistics Canada, local open data portals, or other sources. Build a GeoDataFrame. This is mostly the art of wrangling geographic data.\n2. Compute on the data osmnx converts map data into a NetworkX graph where: - Nodes = intersections (with latitude/longitude) - Edges = road segments (with attributes: length, speed limit, one-way, etc.)\nThen apply graph algorithms: shortest paths, nearest nodes, connected components, anything NetworkX supports.\n3. Visualize - matplotlib for static maps - folium for interactive, zoomable, web-based maps\n\n\n\n\n\n\n\nTipThe Beautiful Abstraction\n\n\n\nOnce you’ve built the graph, the geography disappears. Finding the fastest route from UBC to the PNE is just finding a shortest path from one node to another. The road network is just a weighted directed graph. Everything we know about graphs applies directly."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#measuring-distance",
-    "href": "summaries/08_weekly_summary.html#measuring-distance",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Measuring Distance",
-    "text": "Measuring Distance\nTo find the “nearest” center, we need to measure distance between points. The Euclidean distance between two points \\((x_1, y_1)\\) and \\((x_2, y_2)\\) comes from the Pythagorean theorem:\n\\[d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\]\n\nExample: Which Center is Closer?\nSuppose we have a pixel at \\((5, 5)\\) and two centers:\n\nRed center at \\((2, 3)\\)\nBlue center at \\((8, 6)\\)\n\n\n\nDistance to Red: \\[d_{\\text{red}} = \\sqrt{(5-2)^2 + (5-3)^2} = \\sqrt{9 + 4} = \\sqrt{13} \\approx 3.6\\]\nDistance to Blue: \\[d_{\\text{blue}} = \\sqrt{(5-8)^2 + (5-6)^2} = \\sqrt{9 + 1} = \\sqrt{10} \\approx 3.2\\]\nThe pixel is closer to Blue!\n\n    0 1 2 3 4 5 6 7 8 9\n  0 · · · · · · · · · ·\n  1 · · · · · · · · · ·\n  2 · · · · · · · · · ·\n  3 · · R · · · · · · ·\n  4 · · · · · · · · · ·\n  5 · · · · · P · · · ·\n  6 · · · · · · · · B ·\n  7 · · · · · · · · · ·\n\n  R = Red center (2,3)\n  B = Blue center (8,6)\n  P = Pixel (5,5)\n\n\n\n\n\n\n\n\nTipA Clever Optimization: Skip the Square Root!\n\n\n\nComputing square roots is slow. But here’s the key insight: if \\(a &lt; b\\), then \\(a^2 &lt; b^2\\) (for positive numbers).\nSo instead of comparing \\(\\sqrt{13}\\) vs \\(\\sqrt{10}\\), we can compare \\(13\\) vs \\(10\\) directly!\n# Slow: uses square root\ndef distance(p1, p2):\n    return math.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)\n\n# Fast: squared distance (works for comparisons!)\ndef distance_squared(p1, p2):\n    return (p2[0] - p1[0])**2 + (p2[1] - p1[1])**2\nWe only care about which center is closest, not the actual distance value. Since squaring preserves the ordering, we can skip the expensive sqrt call entirely!"
+    "objectID": "summaries/11_weekly_summary.html#single-source-shortest-path",
+    "href": "summaries/11_weekly_summary.html#single-source-shortest-path",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Single Source Shortest Path",
+    "text": "Single Source Shortest Path\nThe question: given a starting location \\(s\\), what is the shortest route to every other intersection?\n\n\n\n\n\nThe shortest-path tree from a single source\n\n\n\nThis is the Single Source Shortest Path (SSSP) problem:\n\nInput: A directed graph \\(G\\) with non-negative edge weights, and a start vertex \\(s\\)\nOutput: A subgraph \\(G'\\) — the shortest (minimum total cost) path from \\(s\\) to every other vertex\n\nThe result isn’t just one path — it’s a whole tree rooted at \\(s\\), with a branch to every reachable vertex."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#the-naive-algorithm",
-    "href": "summaries/08_weekly_summary.html#the-naive-algorithm",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "The Naive Algorithm",
-    "text": "The Naive Algorithm\n\n\n\nGrid with three colored centers\n\n\nFor each pixel in the output image, we find the nearest center by checking the distance to every center:\nfor each pixel (x, y) in the image:\n    find the center c with minimum distance to (x, y)\n    color pixel (x, y) with the color of c\nThis works! But how efficient is it?\n\nComplexity Analysis\nLet \\(n\\) = image size (width × height) and \\(k\\) = number of centers:\n\n\n\n\n\n\n\nStep\nWork\n\n\n\n\n1. Read image\nProportional to \\(n\\) — touch each pixel once\n\n\n2. Choose centers\nProportional to \\(k\\) — pick k random points\n\n\n3. Build new image\nProportional to \\(n \\cdot k\\) — for each of n pixels, check all k centers\n\n\n4. Write image\nProportional to \\(n\\) — touch each pixel once\n\n\n\nTotal: Proportional to \\(n \\cdot k\\) — this gets slow when we want lots of centers!\nWith a 1-megapixel image and 10,000 centers, that’s 10 billion distance calculations. Can we do better? Yes!"
+    "objectID": "summaries/11_weekly_summary.html#the-algorithm",
+    "href": "summaries/11_weekly_summary.html#the-algorithm",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "The Algorithm",
+    "text": "The Algorithm\nEdsger Dijkstra invented his famous algorithm in 1959 — in just 20 minutes, without pen and paper, while on a coffee date. It remains one of the most elegant algorithms in all of computer science.\n\n\n\n\n\nA labeled graph for running Dijkstra’s\n\n\n\nSetup: - d[v] = best known distance from \\(s\\) to \\(v\\) (start at INF for all, 0 for \\(s\\)) - p[v] = predecessor of \\(v\\) on the shortest path (start at null)\nRepeat \\(n\\) times: 1. Find the unlabelled vertex \\(v\\) with the smallest d[v] 2. Label \\(v\\) (its shortest distance is now final) 3. For each unlabelled neighbor \\(w\\) of \\(v\\): - If d[v] + length(v,w) &lt; d[w]: - d[w] = d[v] + length(v,w) - p[w] = v\n\n\n\n\n\n\n\n\nTipFill in the blank\n\n\n\nThe key update: d[v] + length(v, w) &lt; d[w] — “can we reach w faster by going through v?”. If yes, update d[w] and record v as w’s new predecessor."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#a-faster-approach-flip-the-question",
-    "href": "summaries/08_weekly_summary.html#a-faster-approach-flip-the-question",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "A Faster Approach: Flip the Question! 🌊",
-    "text": "A Faster Approach: Flip the Question! 🌊\n\n\n\n\n\n\nImportantThe Key Insight\n\n\n\nInstead of asking “which center is closest to this pixel?”, we flip the question: start at each center and grow outward simultaneously!\n\n\n\n\n\n\n\nSingle flood fill from one center\n\n\nOne center: The color spreads outward like ripples in a pond.\n\n\n\n\nMultiple flood fills creating Voronoi regions\n\n\nMultiple centers: Colors grow simultaneously — the first to reach a pixel “claims” it!\n\n\nBy growing all regions at the same rate, the first color to reach a pixel wins. Each pixel is processed exactly once — no matter how many centers we have!"
+    "objectID": "summaries/11_weekly_summary.html#running-dijkstras-by-hand",
+    "href": "summaries/11_weekly_summary.html#running-dijkstras-by-hand",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Running Dijkstra’s by Hand",
+    "text": "Running Dijkstra’s by Hand\n\n\n\n\n\nA practice graph for Dijkstra’s algorithm\n\n\n\nRunning Dijkstra’s by hand on a small graph is the best way to build intuition. The greedy choice — always label the closest unlabelled vertex — is what makes it work.\nThree key observations: 1. Once a vertex is labelled, its shortest distance is final — it will never improve 2. d[] values only decrease, never increase 3. The predecessors p[] form a shortest-path tree"
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#meet-the-queue",
-    "href": "summaries/08_weekly_summary.html#meet-the-queue",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Meet the Queue 🐧",
-    "text": "Meet the Queue 🐧\nTo implement flood fill, we need a data structure that processes items in the order they arrived. Enter the queue — a “first in, first out” (FIFO) structure:\n\n\n\nPenguins waiting in line\n\n\nJust like penguins waiting for fish — first to arrive, first to be served!\n\n\n\nOperation\nDescription\n\n\n\n\nenqueue(k)\nAdd item k to the back of the line\n\n\ndequeue()\nRemove and return the item at the front\n\n\n\n\nIn Python: collections.deque\nPython’s deque (double-ended queue) is perfect for this:\nfrom collections import deque\n\nq = deque()           # Create an empty queue\nq.append(item)        # enqueue — add to right/back\nitem = q.popleft()    # dequeue — remove from left/front\nlen(q) == 0           # check if empty (or just: not q)\n\n\n\n\n\n\nNoteWhy not use a regular list?\n\n\n\nYou could use list.append() and list.pop(0), but pop(0) takes time proportional to \\(n\\) because it shifts all remaining elements. With deque, both operations take constant time!"
+    "objectID": "summaries/11_weekly_summary.html#fill-in-the-blank-dijkstra-vs-bfsdfs",
+    "href": "summaries/11_weekly_summary.html#fill-in-the-blank-dijkstra-vs-bfsdfs",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Fill in the Blank: Dijkstra vs BFS/DFS",
+    "text": "Fill in the Blank: Dijkstra vs BFS/DFS\n\n\n\n\n\n\nTipHow is Dijkstra similar to BFS/DFS?\n\n\n\nAll three algorithms explore a graph by maintaining a frontier and expanding it one vertex at a time. All three track which vertices have been “processed.” All three can find paths through a graph.\n\n\n\n\n\n\n\n\nImportantHow is Dijkstra different from BFS/DFS?\n\n\n\nBFS and DFS treat all edges as equal (or ignore weights entirely). Dijkstra uses a priority queue — instead of first-in-first-out (BFS) or last-in-first-out (DFS), it always processes the vertex with the smallest known distance. This is what makes it find shortest paths in weighted graphs."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#the-flood-fill-algorithm",
-    "href": "summaries/08_weekly_summary.html#the-flood-fill-algorithm",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "The Flood Fill Algorithm",
-    "text": "The Flood Fill Algorithm\nHere’s the magic! We start all centers in the queue, then grow outward:\nfrom collections import deque\n\ndef voronoi_fill(image, centers):\n    queue = deque()\n    visited = set()\n\n    # Start with all centers in the queue\n    for (x, y), color in centers:\n        queue.append(((x, y), color))\n        visited.add((x, y))\n        image[x, y] = color\n\n    # Process pixels in order\n    while queue:\n        (x, y), color = queue.popleft()\n\n        # Check all 4 neighbors\n        for nx, ny in [(x+1, y), (x-1, y), (x, y+1), (x, y-1)]:\n            if (nx, ny) not in visited and is_valid(nx, ny):\n                visited.add((nx, ny))\n                image[nx, ny] = color\n                queue.append(((nx, ny), color))\n\n\n\n\n\n\nNoteWhat makes a neighbor “valid”?\n\n\n\nA neighbor (nx, ny) is valid if:\n\nIt’s within the image bounds: 0 &lt;= nx &lt; width and 0 &lt;= ny &lt; height\nIt hasn’t been visited yet (checked via the visited set)"
+    "objectID": "summaries/11_weekly_summary.html#the-algorithm-family",
+    "href": "summaries/11_weekly_summary.html#the-algorithm-family",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "The Algorithm Family",
+    "text": "The Algorithm Family\n\n\n\n\n\n\n\n\n\n\nAlgorithm\nData Structure\nEdge Weights\nFinds Shortest?\nFrontier Strategy\n\n\n\n\nDFS\nStack\nignored\nno\ndive deep\n\n\nBFS\nQueue\nall equal\nyes (unweighted)\nexplore in layers\n\n\nDijkstra\nPriority Queue\nany non-negative\nyes (weighted)\nexplore by shortest known distance\n\n\n\nThree algorithms. One family. One swap in the data structure changes everything."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#why-does-this-work",
-    "href": "summaries/08_weekly_summary.html#why-does-this-work",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Why Does This Work?",
-    "text": "Why Does This Work?\nThe queue ensures we process pixels in order of distance from their center:\n\nAll centers start in the queue (distance 0)\nWe process a center, adding its immediate neighbors (distance 1)\nWe process those neighbors, adding their neighbors (distance 2)\nAnd so on…\n\nBecause all centers start together and grow at the same rate, a pixel is claimed by whichever center it’s actually closest to. The queue keeps everything synchronized!"
+    "objectID": "summaries/11_weekly_summary.html#running-errands-in-vancouver",
+    "href": "summaries/11_weekly_summary.html#running-errands-in-vancouver",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Running Errands in Vancouver",
+    "text": "Running Errands in Vancouver\nDijkstra gives us shortest paths between pairs of places. But what if you have a whole list of errands — the PNE, Science World, Granville Island, City Hall — and you need to visit all of them and get home?\n\n\n\n\n\nVancouver with errand locations\n\n\n\n\n\n\nJust the errand locations as dots\n\n\n\n\nThis is the Travelling Salesperson Problem (TSP): given a list of locations and the distances between each pair, find the shortest route that visits every location exactly once and returns to the start.\nFirst formally studied in 1930. Still not fully solved."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#complexity-of-flood-fill",
-    "href": "summaries/08_weekly_summary.html#complexity-of-flood-fill",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Complexity of Flood Fill",
-    "text": "Complexity of Flood Fill\n\n\n\n\n\n\n\nStep\nWork\n\n\n\n\n1. Read image\nProportional to \\(n\\)\n\n\n2. Choose centers\nProportional to \\(k\\)\n\n\n3. Build new image\nProportional to \\(n\\) — each pixel processed exactly once!\n\n\n4. Write image\nProportional to \\(n\\)\n\n\n\nTotal: Proportional to \\(n\\) — independent of the number of centers! 🎉\nThis is a massive improvement:\n\n\n\nApproach\nOperations (1M pixels, 10K centers)\n\n\n\n\nNaive\n10,000,000,000 (10 billion!)\n\n\nFlood Fill\n1,000,000 (1 million)\n\n\n\nThat’s 10,000× faster! Now we can use as many centers as we want."
+    "objectID": "summaries/11_weekly_summary.html#how-many-routes",
+    "href": "summaries/11_weekly_summary.html#how-many-routes",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "How Many Routes?",
+    "text": "How Many Routes?\nBefore we think about finding the best route, let’s count how many routes there are.\n\n\n\n\n\n\nTipFill in the blank\n\n\n\nWith 6 locations, how many different orderings are there?\n\nThe first stop: 5 choices (we can fix our start)\nThe second stop: 5 choices\nThe third stop: 4 choices\n…\n\nAnswer: \\((k-1)!\\) routes for \\(k\\) locations.\n\n\n\nLocations\nRoutes\n\n\n\n\n5\n24\n\n\n10\n362,880\n\n\n15\n87,178,291,200\n\n\n20\n60,822,550,204,416,000\n\n\n\nWith 20 errands, there are more possible routes than there are grains of sand on Earth. Brute-force is hopeless for large inputs."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#the-result",
-    "href": "summaries/08_weekly_summary.html#the-result",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "The Result",
-    "text": "The Result\n\n\n\nVoronoi art example\n\n\nBeautiful algorithmic art, efficiently computed! More centers = more detail, and our queue-based approach handles them all gracefully."
+    "objectID": "summaries/11_weekly_summary.html#the-demo-blog-around-the-world",
+    "href": "summaries/11_weekly_summary.html#the-demo-blog-around-the-world",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "The Demo Blog: Around the World",
+    "text": "The Demo Blog: Around the World\nWhat does a good TSP solution look like at scale?\n\n\n\nA solution visiting all world capitals\n\n\nA blog post on Medium used modern TSP heuristics to find a near-optimal tour through all world capitals — 90,414 km. Not proven optimal, but dramatically better than random. This is what decades of algorithmic research buys you."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#designing-solutions-key-questions",
-    "href": "summaries/08_weekly_summary.html#designing-solutions-key-questions",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Designing Solutions: Key Questions",
-    "text": "Designing Solutions: Key Questions\nWhen implementing the flood fill, we worked through these design questions:\n1. What should we put on the queue?\nA tuple of ((x, y), color) — the pixel location and the color it should receive.\n2. Which deque functions do we use?\n\nappend() to enqueue (add to back)\npopleft() to dequeue (remove from front)\n\n3. How do we check if the queue is empty?\n\nwhile queue: works because empty collections are falsy\nOr explicitly: while len(queue) &gt; 0:\n\n4. What are the “neighbors” of pixel (x,y)?\nThe 4-connected neighbors: (x+1, y), (x-1, y), (x, y+1), (x, y-1)\n5. What makes a neighbor “invalid”?\n\nOut of bounds: nx &lt; 0 or nx &gt;= width or ny &lt; 0 or ny &gt;= height\nAlready visited (already has a color)"
+    "objectID": "summaries/11_weekly_summary.html#our-plan-for-code",
+    "href": "summaries/11_weekly_summary.html#our-plan-for-code",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Our Plan for Code",
+    "text": "Our Plan for Code\nWe built a brute-force solver step by step:\n\n\n\nThe full pipeline for our TSP solution\n\n\n\n\n\n\n\n\nTipFill in the blank: the five steps\n\n\n\n\nAssemble the graph and errands — download the road network, geocode each errand location, find the nearest road node\nCompute pairwise distances — use Dijkstra (via nx.shortest_path_length) to find driving distance between every pair of errand nodes\nGenerate all permutations — use itertools.permutations to enumerate every possible tour\nFind the minimum route — loop through all tours, keep the shortest\nVisualize on map — assemble the turn-by-turn route, draw it on a folium map"
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#preview-graphs",
-    "href": "summaries/08_weekly_summary.html#preview-graphs",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Preview: Graphs 🕸️",
-    "text": "Preview: Graphs 🕸️\nHere’s a beautiful realization: the flood fill pattern we just learned is actually a famous algorithm called Breadth-First Search (BFS)!\nWe can think of an image as a graph:\n\nEach pixel is a vertex (node)\nEach adjacency (up/down/left/right) is an edge connecting neighboring vertices\n\n\n\n\n\n\nImage as a graph\n\n\n\nGraphs are one of the most versatile data structures in computer science. They model:\n\nSocial networks (people connected by friendships)\nMaps (intersections connected by roads)\nWeb pages (pages connected by links)\nGame states (positions connected by moves)\n\n\n\nNext week, we’ll explore graphs as a general structure for modeling all kinds of problems!"
+    "objectID": "summaries/11_weekly_summary.html#a-key-insight-dont-re-compute",
+    "href": "summaries/11_weekly_summary.html#a-key-insight-dont-re-compute",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "A Key Insight: Don’t Re-Compute",
+    "text": "A Key Insight: Don’t Re-Compute\nWhen assembling the turn-by-turn route, we pre-store the full path (not just the distance) for every pair. Then:\n\n\n\n\n\nWhy the starting point doesn’t matter for tour length\n\n\n\n\n\n\n\n\n\nImportantTour length is independent of start\n\n\n\nAny cyclic tour A → B → C → D → A has the same total length regardless of which node you call “home.” We can fix the start and only permute the remaining stops — reducing \\((k)!\\) tours to \\((k-1)!\\), a factor of \\(k\\) improvement!"
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#quick-reference",
-    "href": "summaries/08_weekly_summary.html#quick-reference",
-    "title": "Week 8: Voronoi Art & Queues",
-    "section": "Quick Reference",
-    "text": "Quick Reference\n\nQueue Operations\n\n\n\nOperation\ndeque Method\nDescription\n\n\n\n\nCreate\nq = deque()\nEmpty queue\n\n\nEnqueue\nq.append(x)\nAdd to back\n\n\nDequeue\nq.popleft()\nRemove from front\n\n\nPeek\nq[0]\nLook at front without removing\n\n\nIs empty?\nnot q or len(q) == 0\nCheck if empty\n\n\nSize\nlen(q)\nNumber of items\n\n\n\n\n\nStack vs Queue\n\n\n\n\n\n\n\n\n\n\nData Structure\nOrder\nAdd\nRemove\nAnalogy\n\n\n\n\nStack\nLIFO\npush (top)\npop (top)\nStack of plates\n\n\nQueue\nFIFO\nenqueue (back)\ndequeue (front)\nLine at coffee shop\n\n\n\n\n\nVoronoi Algorithm Comparison\n\n\n\nAlgorithm\nTime\nGood for\n\n\n\n\nNaive\nProportional to \\(n \\cdot k\\)\nFew centers\n\n\nFlood Fill\nProportional to \\(n\\)\nMany centers"
+    "objectID": "summaries/11_weekly_summary.html#lambda-functions",
+    "href": "summaries/11_weekly_summary.html#lambda-functions",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Lambda Functions",
+    "text": "Lambda Functions\nThe TSP code introduced a compact Python pattern: lambda (anonymous) functions.\ndferrands['latlong'] = dferrands.apply(\n    lambda row: ox.geocode(row['errand']),\n    axis=1\n)\nWhat’s happening:\n\ndf.apply(..., axis=1) runs a function once per row\nlambda row: ox.geocode(row['errand']) is a tiny inline function — no def, no name, just the logic\nThe return value becomes the entry in the new latlong column\n\nWhy lambda? When you only need a function in one place and it fits on one line, a lambda keeps the code tight and readable. You’ve already seen this with sorted(items, key=lambda x: x[1])."
   },
   {
-    "objectID": "summaries/08_weekly_summary.html#whats-next",
-    "href": "summaries/08_weekly_summary.html#whats-next",
-    "title": "Week 8: Voronoi Art & Queues",
+    "objectID": "summaries/11_weekly_summary.html#why-tsp-matters",
+    "href": "summaries/11_weekly_summary.html#why-tsp-matters",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
+    "section": "Why TSP Matters",
+    "text": "Why TSP Matters\nTSP isn’t just an academic puzzle. It touches almost every industry:\n\n\n\n\n\n\n\nIndustry\nApplication\n\n\n\n\n📦 Logistics\nUPS/FedEx/Amazon: saving 1 km/driver/day saves millions annually\n\n\n🍔 Food delivery\nUberEats/DoorDash multi-stop pickup with time windows\n\n\n🧬 Genomics\nDNA fragment ordering in genome assembly\n\n\n🚌 Transportation\nSchool bus routing, snowplow coverage\n\n\n🧪 Lab automation\nRobotic arm scheduling across multi-station workflows\n\n\n🏭 Manufacturing\nCNC tool paths — fewer moves = less waste and heat\n\n\n✈️ Airlines\nCrew scheduling: crews must return to base and meet rest rules\n\n\n🚑 Emergency services\nAmbulance routing — life-critical optimization\n\n\n\nThe reason TSP gets so much attention isn’t just its difficulty — it’s that solving it even a little bit better saves real money, time, and lives."
+  },
+  {
+    "objectID": "summaries/11_weekly_summary.html#whats-next",
+    "href": "summaries/11_weekly_summary.html#whats-next",
+    "title": "Week 11: Maps, Routes, and the Hardest Easy Problem",
     "section": "What’s Next?",
-    "text": "What’s Next?\nWeek 9: Graphs! We’ll formalize the graph data structure and learn more algorithms that build on BFS. Get ready to model all kinds of connected systems!\nExamlet 3: Coming up — book your CBTF slot!\nProject 1: Finish strong on your Pokémon Data Explorer!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html",
-    "href": "summaries/06_weekly_summary.html",
-    "title": "Week 6: Dictionaries",
-    "section": "",
-    "text": "This week we unlocked Python’s secret weapon: the dictionary! We discovered that dictionaries aren’t just for storing data — they’re a Swiss Army knife for solving problems that would otherwise require tedious nested loops. Fast lookups, automatic grouping, instant counting — dictionaries do it all!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#your-growing-toolkit",
-    "href": "summaries/06_weekly_summary.html#your-growing-toolkit",
-    "title": "Week 6: Dictionaries",
-    "section": "Your Growing Toolkit",
-    "text": "Your Growing Toolkit\nEvery problem we solve uses some combination of these tools:\n\nRepresentation — how we encode meaning (binary, types, RGB)\nCollections — how we group things (lists, tuples, dicts)\nControl flow — how we make decisions and repeat (if/else, loops)\nFunctions — how we name and reuse logic\nAbstraction — how we hide complexity\nEfficiency — how we measure cost (summations, timing analysis)\n\nThis week: Dictionaries + Patterns → Powerful, efficient data manipulation!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#the-big-picture",
-    "href": "summaries/06_weekly_summary.html#the-big-picture",
-    "title": "Week 6: Dictionaries",
-    "section": "The Big Picture",
-    "text": "The Big Picture\n\nWe started by discovering why dictionaries are lightning fast — constant-time lookup no matter how big they get! Then we mastered six patterns that pop up everywhere in real-world programming: records, membership, counting, complements, grouping, and translation."
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#why-dictionaries-rock",
-    "href": "summaries/06_weekly_summary.html#why-dictionaries-rock",
-    "title": "Week 6: Dictionaries",
-    "section": "Why Dictionaries Rock",
-    "text": "Why Dictionaries Rock\nWith a list of tuples, finding an item means checking each one… painfully:\n# List approach: check each item one by one 😩\nfruits = [(\"apple\", \"red\"), (\"banana\", \"yellow\"), (\"cherry\", \"red\")]\n\nfor fruit, color in fruits:\n    if fruit == \"apple\":\n        print(color)\n        break\nWith a dictionary? Jump straight to the answer!\n# Dictionary approach: instant lookup! 🎯\nfruits = {\"apple\": \"red\", \"banana\": \"yellow\", \"cherry\": \"red\"}\nprint(fruits[\"apple\"])  # BAM! Instant!\n\nThis speed difference becomes MASSIVE with thousands or millions of entries!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#watch-out-keyerror",
-    "href": "summaries/06_weekly_summary.html#watch-out-keyerror",
-    "title": "Week 6: Dictionaries",
-    "section": "Watch Out: KeyError!",
-    "text": "Watch Out: KeyError!\nWhat happens if you look up a key that doesn’t exist?\nsuspect = {\"name\": \"Prof. Histogram\", \"department\": \"Statistics\"}\n\ntry:\n    print(suspect[\"hobby\"])  # BOOM! 💥\nexcept KeyError as e:\n    print(f\"KeyError: {e} — that key doesn't exist!\")\nTwo solutions:\n\nCheck first: if \"hobby\" in suspect:\nUse defaultdict: It provides a default value for missing keys — no more crashes!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-0-records",
-    "href": "summaries/06_weekly_summary.html#pattern-0-records",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 0: Records",
-    "text": "Pattern 0: Records\nDictionaries work beautifully as named records — keys act as field names:\n# A list of records — each dict holds one entry\nsecurity_log = [\n    {\"person\": \"Prof. Histogram\", \"room\": \"Gallery A\", \"time\": \"7:00pm\"},\n    {\"person\": \"Dr. Correlation\", \"room\": \"Gallery B\", \"time\": \"7:15pm\"},\n    {\"person\": \"Prof. Histogram\", \"room\": \"Gallery B\", \"time\": \"7:30pm\"},\n]\n\n# Access by name, not position — so much clearer!\nfor log in security_log:\n    print(f\"{log['person']} entered {log['room']} at {log['time']}\")\nThis is exactly how our Billboard data was structured!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-1-membership",
-    "href": "summaries/06_weekly_summary.html#pattern-1-membership",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 1: Membership",
-    "text": "Pattern 1: Membership\nUse case: Track whether we’ve seen something before — lightning fast!\n\nThe Slow Way: Nested Loops\nFinding people who visited both Gallery A and Gallery B:\n# Check EVERY person in A against EVERY person in B 😱\nin_both = []\nfor person_a in gallery_a_visitors:      # Loop through A\n    for person_b in gallery_b_visitors:  # Loop through B\n        if person_a == person_b:\n            in_both.append(person_a)\nWith 10,000 people in each list: 100,000,000 comparisons! That’s a recipe for a coffee break.\n\n\nThe Fast Way: Dictionary Lookup\n\nfrom collections import defaultdict\n\n# Step 1: Build a \"seen\" dictionary — one pass through A\nin_gallery_a = defaultdict(bool)\nfor person in gallery_a_visitors:\n    in_gallery_a[person] = True\n\n# Step 2: Check Gallery B against our dictionary — one pass through B\nin_both = []\nfor person in gallery_b_visitors:\n    if in_gallery_a[person]:  # Instant lookup! No KeyError with defaultdict!\n        in_both.append(person)\nWith 10,000 in each: just 20,000 operations! That’s 5,000x faster!\ndefaultdict(bool) returns False for missing keys, avoiding KeyError."
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-2-counting",
-    "href": "summaries/06_weekly_summary.html#pattern-2-counting",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 2: Counting",
-    "text": "Pattern 2: Counting\nUse case: Count how many times each item appears — let Python do the work!\nfrom collections import Counter\n\nword = \"mississippi\"\ncounts = Counter(word)\n\nprint(counts)  # Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\nprint(counts.most_common(2))  # [('i', 4), ('s', 4)]\n\nCounter is a specialized dictionary that handles counting automatically. Perfect for frequency analysis — like counting letter occurrences to crack a cipher!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-3-complements",
-    "href": "summaries/06_weekly_summary.html#pattern-3-complements",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 3: Complements",
-    "text": "Pattern 3: Complements\nUse case: Find two numbers that add up to a target!\nfrom collections import defaultdict\n\nnumbers = [3, 7, 1, 9, 4, 6, 2]\ntarget = 10\n\nseen = defaultdict(bool)\nfor n in numbers:\n    complement = target - n\n    if seen[complement]:\n        print(f\"Found pair: {complement} + {n} = {target}\")\n    seen[n] = True\n\nAs we scan through, we remember what we’ve seen — and instantly check if the complement exists. This is the famous “two-sum” pattern!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-4-grouping",
-    "href": "summaries/06_weekly_summary.html#pattern-4-grouping",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 4: Grouping",
-    "text": "Pattern 4: Grouping\nUse case: Organize items into categories — like pandas groupby, but from scratch!\nfrom collections import defaultdict\n\nfruits = [\n    (\"apple\", \"red\"),\n    (\"banana\", \"yellow\"),\n    (\"cherry\", \"red\"),\n    (\"lemon\", \"yellow\"),\n]\n\nby_color = defaultdict(list)\nfor fruit, color in fruits:\n    by_color[color].append(fruit)\n\nprint(dict(by_color))\n# {'red': ['apple', 'cherry'], 'yellow': ['banana', 'lemon']}\n\ndefaultdict(list) automatically creates an empty list for missing keys — no more checking before appending!\n\nGrouping Records\nWhen your items are dictionaries, same pattern — just grab the key you want to group by:\nsuspects = [\n    {\"name\": \"Prof. Histogram\", \"alibi\": \"faculty meeting\"},\n    {\"name\": \"Mr. Regression\", \"alibi\": \"faculty meeting\"},\n    {\"name\": \"Ms. Outlier\", \"alibi\": \"working late\"},\n]\n\nby_alibi = defaultdict(list)\nfor suspect in suspects:\n    by_alibi[suspect[\"alibi\"]].append(suspect[\"name\"])\n\n# {'faculty meeting': ['Prof. Histogram', 'Mr. Regression'], 'working late': ['Ms. Outlier']}"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#pattern-5-translation",
-    "href": "summaries/06_weekly_summary.html#pattern-5-translation",
-    "title": "Week 6: Dictionaries",
-    "section": "Pattern 5: Translation",
-    "text": "Pattern 5: Translation\nUse case: Convert values from one representation to another — instantly!\nfrom collections import defaultdict\n\nword_to_emoji = defaultdict(str, {\n    \"sun\": \"☀️\", \"rain\": \"🌧️\", \"cloud\": \"☁️\",\n    \"happy\": \"😊\", \"sad\": \"😢\", \"love\": \"❤️\",\n    \"cat\": \"🐱\", \"dog\": \"🐶\", \"coffee\": \"☕\"\n})\n\nwords = [\"I\", \"love\", \"coffee\"]\nresult = []\nfor w in words:\n    emoji = word_to_emoji[w.lower()]\n    result.append(emoji if emoji else w)\n\nprint(\" \".join(result))  # I ❤️ ☕\nThe dictionary is the translation table — no formulas, just instant lookup!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#caesar-vs.-random-substitution",
-    "href": "summaries/06_weekly_summary.html#caesar-vs.-random-substitution",
-    "title": "Week 6: Dictionaries",
-    "section": "Caesar vs. Random Substitution",
-    "text": "Caesar vs. Random Substitution\nFor a simple Caesar cipher (shift by a fixed amount), we can use math:\ndef decode_caesar(text, shift):\n    result = \"\"\n    for char in text:\n        if char.isalpha():\n            position = ord(char) - ord('A')\n            new_position = (position - shift) % 26\n            result += chr(new_position + ord('A'))\n        else:\n            result += char\n    return result\n\nprint(decode_caesar(\"WKLV LV WKH FRGH\", 3))  # \"THIS IS THE CODE\"\nBut what about a random substitution cipher? No formula can help — we need a mapping dictionary!\n# The decryption key: cipher letter → plain letter\ndecrypt = {\n    \"X\": \"A\", \"W\": \"B\", \"E\": \"C\", \"R\": \"D\", \"Z\": \"E\",\n    \"Y\": \"F\", \"M\": \"G\", \"Q\": \"H\", \"P\": \"I\", \"J\": \"J\",\n    \"K\": \"K\", \"S\": \"L\", \"D\": \"M\", \"F\": \"N\", \"G\": \"O\",\n    \"H\": \"P\", \"B\": \"Q\", \"L\": \"R\", \"V\": \"S\", \"T\": \"T\",\n    \"U\": \"U\", \"C\": \"V\", \"N\": \"W\", \"A\": \"X\", \"O\": \"Y\", \"I\": \"Z\"\n}\n\nsecret_message = \"QXCZ X MLZXT LZXRPFM WLZXK\"\n\ndecoded = \"\"\nfor char in secret_message:\n    if char.isalpha():\n        decoded += decrypt[char]\n    else:\n        decoded += char\n\nprint(decoded)  # \"HAVE A GREAT READING BREAK\""
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#building-the-reverse-mapping",
-    "href": "summaries/06_weekly_summary.html#building-the-reverse-mapping",
-    "title": "Week 6: Dictionaries",
-    "section": "Building the Reverse Mapping",
-    "text": "Building the Reverse Mapping\nIf you have a decrypt dictionary (cipher → plain), you can build an encrypt dictionary (plain → cipher) by flipping it:\n# Given: decrypt maps cipher → plain\n# Build: encrypt maps plain → cipher\n\nencrypt = {}\nfor cipher_letter, plain_letter in decrypt.items():\n    encrypt[plain_letter] = cipher_letter\n\n# Now we can encode our own messages!\nmessage = \"HELLO\"\nencoded = \"\"\nfor char in message:\n    if char.isalpha():\n        encoded += encrypt[char]\n    else:\n        encoded += char\nTwo-way translation tables — dictionaries make it effortless!"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#the-six-dictionary-patterns",
-    "href": "summaries/06_weekly_summary.html#the-six-dictionary-patterns",
-    "title": "Week 6: Dictionaries",
-    "section": "The Six Dictionary Patterns",
-    "text": "The Six Dictionary Patterns\n\n\n\n\n\n\n\n\nPattern\nUse Case\nTechnique\n\n\n\n\nRecord\nStore named fields\n{\"name\": ..., \"age\": ...}\n\n\nMembership\nTrack what we’ve seen\ndefaultdict(bool), seen[x] = True\n\n\nCounting\nCount occurrences\nCounter(items)\n\n\nComplement\nFind matching pairs\nStore & check complements\n\n\nGrouping\nOrganize by category\ndefaultdict(list)\n\n\nTranslation\nConvert representations\nDirect key → value mapping"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#quick-reference",
-    "href": "summaries/06_weekly_summary.html#quick-reference",
-    "title": "Week 6: Dictionaries",
-    "section": "Quick Reference",
-    "text": "Quick Reference\n\nCreating Dictionaries\n\n\n\nTask\nCode\n\n\n\n\nEmpty dictionary\nd = {}\n\n\nWith initial values\nd = {\"a\": 1, \"b\": 2}\n\n\nDefault for missing keys\nd = defaultdict(bool)\n\n\nDefault empty list\nd = defaultdict(list)\n\n\nCounter\nc = Counter(items)\n\n\n\n\n\nDictionary Operations\n\n\n\nTask\nCode\n\n\n\n\nGet value\nd[key] or d.get(key, default)\n\n\nSet value\nd[key] = value\n\n\nCheck if key exists\nif key in d:\n\n\nGet all keys\nd.keys()\n\n\nGet all values\nd.values()\n\n\nGet key-value pairs\nd.items()\n\n\n\n\n\nLooping Over Dictionaries\n# Loop over keys\nfor key in d:\n    print(key)\n\n# Loop over values\nfor value in d.values():\n    print(value)\n\n# Loop over both\nfor key, value in d.items():\n    print(f\"{key}: {value}\")\n\n\ndefaultdict Types\n\n\n\nDefault Factory\nMissing Key Returns\nUse Case\n\n\n\n\ndefaultdict(bool)\nFalse\nMembership tracking\n\n\ndefaultdict(int)\n0\nCounting\n\n\ndefaultdict(list)\n[]\nGrouping\n\n\ndefaultdict(str)\n\"\"\nTranslation"
-  },
-  {
-    "objectID": "summaries/06_weekly_summary.html#whats-next",
-    "href": "summaries/06_weekly_summary.html#whats-next",
-    "title": "Week 6: Dictionaries",
-    "section": "What’s Next?",
-    "text": "What’s Next?\nReading Week — No Classes!\nEnjoy the break! When we return in Week 8, we’ll keep building on these foundations as you work toward Project 1.\nHave a great reading break!"
+    "text": "What’s Next?\nWe’ve climbed a steep ladder: from abstract graphs → weighted shortest paths → route optimization.\nWeek 12 puts it all together: the class activity takes TSP live on a real Vancouver road network, and we look forward to Project 3 — designing a workout route planner for the UBC campus using depth-first search.\nEX4 was this week — hope it went smoothly! Use PEX4 for more practice.\nProject 2 is due — great work getting it done!"
   },
   {
     "objectID": "summaries/03_weekly_summary.html",
