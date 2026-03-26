@@ -1134,13 +1134,6 @@
     "text": "TSP vs SSSP\n\n\n\n\n\n\n\n\nAspect\nSSSP (Single-Source Shortest Paths)\nTSP (Travelling Salesperson)\n\n\n\n\nGoal\nShortest route from one start to each vertex\nOne cheapest tour visiting all vertices and returning\n\n\nShape\nTree of paths from the source\nCycle through all vertices\n\n\nMust visit all?\nNo – each path can skip most vertices\nYes – must visit every vertex exactly once\n\n\nOverlap\nPaths often share edges\nTour is one sequence; no repeated visits\n\n\nDifficulty\nFast algorithms (e.g., Dijkstra)\nNP-hard; exact solution is hard for large graphs"
   },
   {
-    "objectID": "slides/12_thu_tsp.html#demo-blog",
-    "href": "slides/12_thu_tsp.html#demo-blog",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Demo Blog",
-    "text": "Demo Blog\nhttps://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552"
-  },
-  {
     "objectID": "slides/12_thu_tsp.html#plan-for-code",
     "href": "slides/12_thu_tsp.html#plan-for-code",
     "title": "Programming, problem solving, and algorithms",
@@ -1148,11 +1141,32 @@
     "text": "Plan for Code\nSteps to assemble our solution:\n \n\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n________________________________________\n\n\n\nassemble the graph and errands\ncreate pairwise distances\ncreate all possible permutations of paths\nfind minimum route and assemble turn-by-turn for that route\nvisualize on map"
   },
   {
-    "objectID": "slides/12_thu_tsp.html#a-technical-detail",
-    "href": "slides/12_thu_tsp.html#a-technical-detail",
+    "objectID": "slides/12_thu_tsp.html#errands",
+    "href": "slides/12_thu_tsp.html#errands",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Technical Detail",
-    "text": "A Technical Detail"
+    "section": "1. Errands",
+    "text": "1. Errands\nVerify references here:\nhttps://www.openstreetmap.org/"
+  },
+  {
+    "objectID": "slides/12_thu_tsp.html#create-pairwise-distances",
+    "href": "slides/12_thu_tsp.html#create-pairwise-distances",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "2. Create pairwise distances",
+    "text": "2. Create pairwise distances\nWhat structure should we use?\ndist['Vancouver']['Bellingham'] -&gt; int\npath['Vancouver']['Bellingham'] -&gt; list\nexample: dist['Van']['Bel'] = nx.shortest_path_length(G, 'Van', 'Bel', weight='length')"
+  },
+  {
+    "objectID": "slides/12_thu_tsp.html#a.-create-all-possible-orders",
+    "href": "slides/12_thu_tsp.html#a.-create-all-possible-orders",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "3A. Create all possible orders",
+    "text": "3A. Create all possible orders\ntours = list(itertools.permutations(list(dferrands['node'])))"
+  },
+  {
+    "objectID": "slides/12_thu_tsp.html#b.-tour-distance",
+    "href": "slides/12_thu_tsp.html#b.-tour-distance",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "3B. Tour Distance",
+    "text": "3B. Tour Distance\nWe assemble each candidate solution as an arrangement of all of the errands:\nEx: A D B E F C\nHow do we find the total distance if we do the errands in the suggested order?\ndfdist[A][D] + dfdist[D][B] + ... + dfdist[C][A]"
   },
   {
     "objectID": "slides/12_thu_tsp.html#demo",
@@ -1160,20 +1174,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo",
     "text": "Demo\nPrairieLearn Activity"
-  },
-  {
-    "objectID": "slides/12_thu_tsp.html#what-does-lambda-do",
-    "href": "slides/12_thu_tsp.html#what-does-lambda-do",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What Does lambda Do?",
-    "text": "What Does lambda Do?\ndferrands['latlong'] = dferrands.apply(\n                lambda row: ox.geocode(row['errand']),\n                axis=1\n              )\nGoal: Create a new column (latlong) and fill it with coordinates for each errand in the dataframe.\nHow it works:\n\ndf.apply(..., axis=1): Run a function once for each row.\nlambda row: ox.geocode(row['errand']): A tiny inline function. Read it as: “Given a row, look up the place name in row['errand'],geocode it, and return the (lat, lon).”\nThe returned value becomes the entry in the new latlong column.\n\nWhy lambda? We only need this function once, so we write it right where it’s used."
-  },
-  {
-    "objectID": "slides/12_thu_tsp.html#tour-distance",
-    "href": "slides/12_thu_tsp.html#tour-distance",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Tour Distance",
-    "text": "Tour Distance\nWe assemble each candidate solution as an arrangement of all of the errands:\nEx: A D B E F C\nHow do we find the total distance if we do the errands in the suggested order?"
   },
   {
     "objectID": "slides/12_thu_tsp.html#why-this-matters",
