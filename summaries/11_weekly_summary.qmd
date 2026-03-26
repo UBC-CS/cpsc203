@@ -2,7 +2,7 @@
 title: "Week 11: Maps, Routes, and the Hardest Easy Problem"
 ---
 
-Graphs went geographic this week. We took everything we know about vertices and edges and plugged in a real dataset: the road network of Vancouver. By Tuesday's end we could find the shortest driving route between any two points in the city. By Thursday we had confronted one of the most famous unsolved problems in computer science — and built a brute-force solution to it.
+Graphs went geographic this week. We took everything we know about vertices and edges and plugged in a real dataset: the road network of Vancouver. By the end of the week we could find the shortest driving route between any two points in the city — and had a new question brewing for Week 12.
 
 ## Your Growing Toolkit
 
@@ -13,7 +13,7 @@ Graphs went geographic this week. We took everything we know about vertices and 
 - [**Abstraction**]{.red} — how we hide complexity
 - [**Efficiency**]{.pink} — how we measure cost
 
-This week: [**Weighted graphs**]{.blue} + [**Dijkstra's Algorithm**]{.green} + [**TSP**]{.orange} — from theory to the real world!
+This week: [**Weighted graphs**]{.blue} + [**Dijkstra's Algorithm**]{.green} — graphs meet the real world!
 
 ---
 
@@ -246,161 +246,11 @@ Three algorithms. One family. One swap in the data structure changes everything.
 
 ---
 
-# Thursday: [The Travelling Salesperson]{.orange}
-
-## Running Errands in Vancouver
-
-Dijkstra gives us shortest paths between *pairs* of places. But what if you have a whole list of errands — the PNE, Science World, Granville Island, City Hall — and you need to visit all of them and get home?
-
-:::: {.columns style="column-gap: 2em;"}
-
-::: {.column width="48%"}
-
-![Vancouver with errand locations](/images/maps9van.png){fig-alt="A map of Vancouver with several errand locations marked."}
-
-:::
-
-::: {.column width="48%"}
-
-![Just the errand locations as dots](/images/maps9dots.png){fig-alt="The errand locations shown as dots without the map background."}
-
-:::
-
-::::
-
-This is the **Travelling Salesperson Problem (TSP)**: given a list of locations and the distances between each pair, find the shortest route that visits every location exactly once and returns to the start.
-
-*First formally studied in 1930. Still not fully solved.*
-
----
-
-## How Many Routes?
-
-Before we think about finding the best route, let's count how many routes there are.
-
-::: {.callout-tip}
-## Fill in the blank
-
-With 6 locations, how many different orderings are there?
-
-- The first stop: 5 choices (we can fix our start)
-- The second stop: 5 choices
-- The third stop: 4 choices
-- ...
-
-**Answer:** $(k-1)!$ routes for $k$ locations.
-
-| Locations | Routes |
-|-----------|--------|
-| 5 | 24 |
-| 10 | 362,880 |
-| 15 | 87,178,291,200 |
-| 20 | 60,822,550,204,416,000 |
-
-With 20 errands, there are more possible routes than there are grains of sand on Earth. **Brute-force is hopeless for large inputs.**
-:::
-
----
-
-## The Demo Blog: Around the World
-
-What does a *good* TSP solution look like at scale?
-
-![A solution visiting all world capitals](/images/maps9caps.png){fig-alt="A map of the world with a route connecting all capital cities in an optimized tour."}
-
-A [blog post on Medium](https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552) used modern TSP heuristics to find a near-optimal tour through all world capitals — **90,414 km**. Not proven optimal, but dramatically better than random. This is what decades of algorithmic research buys you.
-
----
-
-## Our Plan for Code
-
-We built a brute-force solver step by step:
-
-![The full pipeline for our TSP solution](/images/maps9chart.png){fig-alt="A flowchart showing the five steps of the TSP solution: assemble graph, compute pairwise distances, generate permutations, find minimum tour, visualize."}
-
-::: {.callout-tip}
-## Fill in the blank: the five steps
-
-1. **Assemble the graph and errands** — download the road network, geocode each errand location, find the nearest road node
-2. **Compute pairwise distances** — use Dijkstra (via `nx.shortest_path_length`) to find driving distance between every pair of errand nodes
-3. **Generate all permutations** — use `itertools.permutations` to enumerate every possible tour
-4. **Find the minimum route** — loop through all tours, keep the shortest
-5. **Visualize on map** — assemble the turn-by-turn route, draw it on a folium map
-:::
-
----
-
-## A Key Insight: Don't Re-Compute
-
-When assembling the turn-by-turn route, we pre-store the full path (not just the distance) for every pair. Then:
-
-:::: {.columns style="column-gap: 2em;"}
-
-::: {.column width="50%"}
-
-![Why the starting point doesn't matter for tour length](/images/maps9home.png){fig-alt="Two equivalent tours shown with different starting points, illustrating that tour length is independent of where you start."}
-
-:::
-
-::: {.column width="45%"}
-
-::: {.callout-important}
-## Tour length is independent of start
-
-Any cyclic tour `A → B → C → D → A` has the same total length regardless of which node you call "home." We can fix the start and only permute the remaining stops — reducing $(k)!$ tours to $(k-1)!$, a factor of $k$ improvement!
-:::
-
-:::
-
-::::
-
----
-
-## Lambda Functions
-
-The TSP code introduced a compact Python pattern: **lambda** (anonymous) functions.
-
-```python
-dferrands['latlong'] = dferrands.apply(
-    lambda row: ox.geocode(row['errand']),
-    axis=1
-)
-```
-
-**What's happening:**
-
-- `df.apply(..., axis=1)` runs a function once per row
-- `lambda row: ox.geocode(row['errand'])` is a tiny inline function — no `def`, no name, just the logic
-- The return value becomes the entry in the new `latlong` column
-
-**Why lambda?** When you only need a function in one place and it fits on one line, a lambda keeps the code tight and readable. You've already seen this with `sorted(items, key=lambda x: x[1])`.
-
----
-
-## Why TSP Matters
-
-TSP isn't just an academic puzzle. It touches almost every industry:
-
-| Industry | Application |
-|----------|-------------|
-| 📦 Logistics | UPS/FedEx/Amazon: saving 1 km/driver/day saves millions annually |
-| 🍔 Food delivery | UberEats/DoorDash multi-stop pickup with time windows |
-| 🧬 Genomics | DNA fragment ordering in genome assembly |
-| 🚌 Transportation | School bus routing, snowplow coverage |
-| 🧪 Lab automation | Robotic arm scheduling across multi-station workflows |
-| 🏭 Manufacturing | CNC tool paths — fewer moves = less waste and heat |
-| ✈️ Airlines | Crew scheduling: crews must return to base and meet rest rules |
-| 🚑 Emergency services | Ambulance routing — life-critical optimization |
-
-The reason TSP gets so much attention isn't just its difficulty — it's that solving it even a little bit better saves real money, time, and lives.
-
----
-
 ## What's Next?
 
-We've climbed a steep ladder: from abstract graphs → weighted shortest paths → route optimization.
+Dijkstra answers "what's the shortest route between two places?" — but a new question is forming: what if you have ten errands and need to visit all of them? That's a completely different problem, and it's one of the most famous in all of computer science.
 
-**Week 12** puts it all together: the class activity takes TSP live on a real Vancouver road network, and we look forward to Project 3 — designing a workout route planner for the UBC campus using depth-first search.
+**Week 12:** the Travelling Salesperson Problem — and building a real brute-force solver in Vancouver.
 
 **EX4 was this week** — hope it went smoothly! Use PEX4 for more practice.
 
