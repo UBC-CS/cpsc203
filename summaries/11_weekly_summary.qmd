@@ -1,0 +1,409 @@
+---
+title: "Week 11: Maps, Routes, and the Hardest Easy Problem"
+---
+
+Graphs went geographic this week. We took everything we know about vertices and edges and plugged in a real dataset: the road network of Vancouver. By Tuesday's end we could find the shortest driving route between any two points in the city. By Thursday we had confronted one of the most famous unsolved problems in computer science — and built a brute-force solution to it.
+
+## Your Growing Toolkit
+
+- [**Representation**]{.purple} — how we encode meaning
+- [**Collections**]{.blue} — how we group things
+- [**Control flow**]{.green} — how we make decisions and repeat
+- [**Functions**]{.orange} — how we name and reuse logic
+- [**Abstraction**]{.red} — how we hide complexity
+- [**Efficiency**]{.pink} — how we measure cost
+
+This week: [**Weighted graphs**]{.blue} + [**Dijkstra's Algorithm**]{.green} + [**TSP**]{.orange} — from theory to the real world!
+
+---
+
+# Tuesday: [From Sudoku to Street Maps]{.blue}
+
+## One Last Look at Sudoku
+
+We started by closing the loop on Sudoku. We asked: *could we be smarter?* Constraint propagation, for instance, can prune most of the state space before we ever start searching. But there's a deeper issue:
+
+::: {.callout-important}
+## Sudoku is NP-Complete
+
+As the board grows (4×4 → 9×9 → 16×16 → 25×25...), the number of states explodes faster than any polynomial. Sudoku is known to be **NP-Complete** — a member of the class of problems where no one has found a guaranteed fast algorithm, and many believe none exists.
+
+This doesn't mean we give up! It means we use clever tricks: constraint propagation, better search orderings, heuristics. But for any general solver on large boards, worst-case cost is exponential.
+:::
+
+---
+
+## The World Is a Graph
+
+With Sudoku behind us, we asked a new question: what if the graph isn't made up — what if it's the actual world?
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="55%"}
+
+![Geographic data: separate from visualization](/images/maps1data.png){fig-alt="A screenshot showing geographic map data — the underlying data is separate from how it's displayed." width="90%"}
+
+:::
+
+::: {.column width="40%"}
+
+The key insight: **the data is separate from the visualization**. Google Maps shows you a pretty picture. But underneath is a graph — intersections as vertices, roads as edges, distances as weights. Everything Google Maps does is graph algorithms on that data.
+
+We get access to the same data for free.
+
+:::
+
+::::
+
+---
+
+## OpenStreetMap: Wikipedia for Maps
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+
+**OpenStreetMap (OSM)** is the open-source alternative to Google Maps' *data*. Like Wikipedia, it's built and maintained by volunteers. Unlike Google, its data is free to use, query, and download.
+
+We access it through a Python library called **osmnx**, which handles all the API calls and gives us a NetworkX graph:
+
+```python
+import osmnx as ox
+
+place_names = ['UBC', 'Vancouver', 'Stanley Park']
+ox.geocode_to_gdf(place_names)
+```
+
+:::
+
+::: {.column width="45%"}
+
+![A GeoDataFrame from osmnx](/images/maps2gdf.png){fig-alt="A GeoDataFrame table showing geographic regions with geometry, bounding boxes, and place names."}
+
+The result is a **GeoDataFrame** — a pandas DataFrame where one column stores geographic shapes (polygons for regions, points for locations). Each row is a place, and the geometry column holds its boundary on the map.
+
+:::
+
+::::
+
+---
+
+## From Map to Graph
+
+The pipeline from raw geography to graph algorithms has three stages:
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="60%"}
+
+**1. Assemble the data**
+Use OSM, Statistics Canada, local open data portals, or other sources. Build a GeoDataFrame. This is mostly the art of wrangling geographic data.
+
+**2. Compute on the data**
+`osmnx` converts map data into a NetworkX graph where:
+- **Nodes** = intersections (with latitude/longitude)
+- **Edges** = road segments (with attributes: length, speed limit, one-way, etc.)
+
+Then apply graph algorithms: shortest paths, nearest nodes, connected components, anything NetworkX supports.
+
+**3. Visualize**
+- `matplotlib` for static maps
+- `folium` for interactive, zoomable, web-based maps
+
+:::
+
+::: {.column width="35%"}
+
+::: {.callout-tip}
+## The Beautiful Abstraction
+
+Once you've built the graph, the *geography disappears*. Finding the fastest route from UBC to the PNE is just finding a shortest path from one node to another. The road network is just a weighted directed graph. Everything we know about graphs applies directly.
+:::
+
+:::
+
+::::
+
+---
+
+# Dijkstra's Algorithm
+
+## Single Source Shortest Path
+
+The question: given a starting location $s$, what is the shortest route to *every other* intersection?
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+
+![The shortest-path tree from a single source](/images/maps3sssp.png){fig-alt="A graph showing shortest paths from a single source node, forming a tree."}
+
+:::
+
+::: {.column width="45%"}
+
+This is the **Single Source Shortest Path (SSSP)** problem:
+
+- **Input:** A directed graph $G$ with non-negative edge weights, and a start vertex $s$
+- **Output:** A subgraph $G'$ — the shortest (minimum total cost) path from $s$ to every other vertex
+
+The result isn't just one path — it's a whole **tree** rooted at $s$, with a branch to every reachable vertex.
+
+:::
+
+::::
+
+---
+
+## The Algorithm
+
+Edsger Dijkstra invented his famous algorithm in 1959 — in just 20 minutes, without pen and paper, while on a coffee date. It remains one of the most elegant algorithms in all of computer science.
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+
+![A labeled graph for running Dijkstra's](/images/maps4sssp.png){fig-alt="A weighted directed graph used to illustrate Dijkstra's algorithm step by step."}
+
+:::
+
+::: {.column width="45%"}
+
+**Setup:**
+- `d[v]` = best known distance from $s$ to $v$ (start at `INF` for all, `0` for $s$)
+- `p[v]` = predecessor of $v$ on the shortest path (start at `null`)
+
+**Repeat $n$ times:**
+1. Find the unlabelled vertex $v$ with the **smallest** `d[v]`
+2. **Label** $v$ (its shortest distance is now final)
+3. For each unlabelled neighbor $w$ of $v$:
+   - If `d[v] + length(v,w) < d[w]`:
+     - `d[w] = d[v] + length(v,w)`
+     - `p[w] = v`
+
+:::
+
+::::
+
+::: {.callout-tip}
+## Fill in the blank
+
+The key update: `d[v] + length(v, w) < d[w]` — *"can we reach `w` faster by going through `v`?"*. If yes, update `d[w]` and record `v` as `w`'s new predecessor.
+:::
+
+---
+
+## Running Dijkstra's by Hand
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="60%"}
+
+![A practice graph for Dijkstra's algorithm](/images/maps5sssp.png){fig-alt="A weighted graph for students to practice running Dijkstra's algorithm by hand."}
+
+:::
+
+::: {.column width="35%"}
+
+Running Dijkstra's by hand on a small graph is the best way to build intuition. The greedy choice — always label the closest unlabelled vertex — is what makes it work.
+
+**Three key observations:**
+1. Once a vertex is labelled, its shortest distance is **final** — it will never improve
+2. `d[]` values only **decrease**, never increase
+3. The predecessors `p[]` form a **shortest-path tree**
+
+:::
+
+::::
+
+---
+
+## Fill in the Blank: Dijkstra vs BFS/DFS
+
+::: {.callout-tip}
+## How is Dijkstra similar to BFS/DFS?
+
+All three algorithms **explore a graph** by maintaining a frontier and expanding it one vertex at a time. All three track which vertices have been "processed." All three can find paths through a graph.
+:::
+
+::: {.callout-important}
+## How is Dijkstra different from BFS/DFS?
+
+BFS and DFS treat all edges as equal (or ignore weights entirely). Dijkstra uses a **priority queue** — instead of first-in-first-out (BFS) or last-in-first-out (DFS), it always processes the vertex with the **smallest known distance**. This is what makes it find shortest paths in weighted graphs.
+:::
+
+---
+
+## The Algorithm Family
+
+| Algorithm | Data Structure | Edge Weights | Finds Shortest? | Frontier Strategy |
+|-----------|---------------|--------------|-----------------|-------------------|
+| **DFS** | Stack | ignored | no | dive deep |
+| **BFS** | Queue | all equal | yes (unweighted) | explore in layers |
+| **Dijkstra** | Priority Queue | any non-negative | yes (weighted) | explore by shortest known distance |
+
+Three algorithms. One family. One swap in the data structure changes everything.
+
+---
+
+# Thursday: [The Travelling Salesperson]{.orange}
+
+## Running Errands in Vancouver
+
+Dijkstra gives us shortest paths between *pairs* of places. But what if you have a whole list of errands — the PNE, Science World, Granville Island, City Hall — and you need to visit all of them and get home?
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="48%"}
+
+![Vancouver with errand locations](/images/maps9van.png){fig-alt="A map of Vancouver with several errand locations marked."}
+
+:::
+
+::: {.column width="48%"}
+
+![Just the errand locations as dots](/images/maps9dots.png){fig-alt="The errand locations shown as dots without the map background."}
+
+:::
+
+::::
+
+This is the **Travelling Salesperson Problem (TSP)**: given a list of locations and the distances between each pair, find the shortest route that visits every location exactly once and returns to the start.
+
+*First formally studied in 1930. Still not fully solved.*
+
+---
+
+## How Many Routes?
+
+Before we think about finding the best route, let's count how many routes there are.
+
+::: {.callout-tip}
+## Fill in the blank
+
+With 6 locations, how many different orderings are there?
+
+- The first stop: 5 choices (we can fix our start)
+- The second stop: 5 choices
+- The third stop: 4 choices
+- ...
+
+**Answer:** $(k-1)!$ routes for $k$ locations.
+
+| Locations | Routes |
+|-----------|--------|
+| 5 | 24 |
+| 10 | 362,880 |
+| 15 | 87,178,291,200 |
+| 20 | 60,822,550,204,416,000 |
+
+With 20 errands, there are more possible routes than there are grains of sand on Earth. **Brute-force is hopeless for large inputs.**
+:::
+
+---
+
+## The Demo Blog: Around the World
+
+What does a *good* TSP solution look like at scale?
+
+![A solution visiting all world capitals](/images/maps9caps.png){fig-alt="A map of the world with a route connecting all capital cities in an optimized tour."}
+
+A [blog post on Medium](https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552) used modern TSP heuristics to find a near-optimal tour through all world capitals — **90,414 km**. Not proven optimal, but dramatically better than random. This is what decades of algorithmic research buys you.
+
+---
+
+## Our Plan for Code
+
+We built a brute-force solver step by step:
+
+![The full pipeline for our TSP solution](/images/maps9chart.png){fig-alt="A flowchart showing the five steps of the TSP solution: assemble graph, compute pairwise distances, generate permutations, find minimum tour, visualize."}
+
+::: {.callout-tip}
+## Fill in the blank: the five steps
+
+1. **Assemble the graph and errands** — download the road network, geocode each errand location, find the nearest road node
+2. **Compute pairwise distances** — use Dijkstra (via `nx.shortest_path_length`) to find driving distance between every pair of errand nodes
+3. **Generate all permutations** — use `itertools.permutations` to enumerate every possible tour
+4. **Find the minimum route** — loop through all tours, keep the shortest
+5. **Visualize on map** — assemble the turn-by-turn route, draw it on a folium map
+:::
+
+---
+
+## A Key Insight: Don't Re-Compute
+
+When assembling the turn-by-turn route, we pre-store the full path (not just the distance) for every pair. Then:
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+
+![Why the starting point doesn't matter for tour length](/images/maps9home.png){fig-alt="Two equivalent tours shown with different starting points, illustrating that tour length is independent of where you start."}
+
+:::
+
+::: {.column width="45%"}
+
+::: {.callout-important}
+## Tour length is independent of start
+
+Any cyclic tour `A → B → C → D → A` has the same total length regardless of which node you call "home." We can fix the start and only permute the remaining stops — reducing $(k)!$ tours to $(k-1)!$, a factor of $k$ improvement!
+:::
+
+:::
+
+::::
+
+---
+
+## Lambda Functions
+
+The TSP code introduced a compact Python pattern: **lambda** (anonymous) functions.
+
+```python
+dferrands['latlong'] = dferrands.apply(
+    lambda row: ox.geocode(row['errand']),
+    axis=1
+)
+```
+
+**What's happening:**
+
+- `df.apply(..., axis=1)` runs a function once per row
+- `lambda row: ox.geocode(row['errand'])` is a tiny inline function — no `def`, no name, just the logic
+- The return value becomes the entry in the new `latlong` column
+
+**Why lambda?** When you only need a function in one place and it fits on one line, a lambda keeps the code tight and readable. You've already seen this with `sorted(items, key=lambda x: x[1])`.
+
+---
+
+## Why TSP Matters
+
+TSP isn't just an academic puzzle. It touches almost every industry:
+
+| Industry | Application |
+|----------|-------------|
+| 📦 Logistics | UPS/FedEx/Amazon: saving 1 km/driver/day saves millions annually |
+| 🍔 Food delivery | UberEats/DoorDash multi-stop pickup with time windows |
+| 🧬 Genomics | DNA fragment ordering in genome assembly |
+| 🚌 Transportation | School bus routing, snowplow coverage |
+| 🧪 Lab automation | Robotic arm scheduling across multi-station workflows |
+| 🏭 Manufacturing | CNC tool paths — fewer moves = less waste and heat |
+| ✈️ Airlines | Crew scheduling: crews must return to base and meet rest rules |
+| 🚑 Emergency services | Ambulance routing — life-critical optimization |
+
+The reason TSP gets so much attention isn't just its difficulty — it's that solving it even a little bit better saves real money, time, and lives.
+
+---
+
+## What's Next?
+
+We've climbed a steep ladder: from abstract graphs → weighted shortest paths → route optimization.
+
+**Week 12** puts it all together: the class activity takes TSP live on a real Vancouver road network, and we look forward to Project 3 — designing a workout route planner for the UBC campus using depth-first search.
+
+**EX4 was this week** — hope it went smoothly! Use PEX4 for more practice.
+
+**Project 2** is due — great work getting it done!
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
