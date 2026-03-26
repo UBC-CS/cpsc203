@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 10: Music, Markov, and Mazes – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-665ef5c5d77cfb05cd7a07c04fb2ab30.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bfe735afd4d1464c5a58396f81eeeb61.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-665ef5c5d77cfb05cd7a07c04fb2ab30.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e97fcac3222244c00620a98e0801b45e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2e453d1704b2aa6ad2876bdadeed7cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-e97fcac3222244c00620a98e0801b45e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 10: Music, Markov, and Mazes – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/ada.png">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="Portrait of Ada Lovelace.">
+<meta property="og:image:height" content="742">
+<meta property="og:image:width" content="862">
+<meta name="twitter:title" content="Week 10: Music, Markov, and Mazes – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/ada.png">
+<meta name="twitter:image:alt" content="Portrait of Ada Lovelace.">
+<meta name="twitter:image-height" content="742">
+<meta name="twitter:image-width" content="862">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 10: Music, Markov, and Mazes</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#your-growing-toolkit" id="toc-your-growing-toolkit" class="nav-link active" data-scroll-target="#your-growing-toolkit">Your Growing Toolkit</a></li>
+  <li><a href="#tuesday-a-computer-that-composes" id="toc-tuesday-a-computer-that-composes" class="nav-link" data-scroll-target="#tuesday-a-computer-that-composes">Tuesday: <span class="blue">A Computer That Composes</span></a>
+  <ul class="collapse">
+  <li><a href="#adas-prophecy" id="toc-adas-prophecy" class="nav-link" data-scroll-target="#adas-prophecy">Ada’s Prophecy</a></li>
+  <li><a href="#step-1-listen-to-the-music" id="toc-step-1-listen-to-the-music" class="nav-link" data-scroll-target="#step-1-listen-to-the-music">Step 1: Listen to the Music</a></li>
+  <li><a href="#step-2-capture-the-transitions" id="toc-step-2-capture-the-transitions" class="nav-link" data-scroll-target="#step-2-capture-the-transitions">Step 2: Capture the Transitions</a></li>
+  <li><a href="#step-3-build-the-generator" id="toc-step-3-build-the-generator" class="nav-link" data-scroll-target="#step-3-build-the-generator">Step 3: Build the Generator</a></li>
+  <li><a href="#the-big-idea-markov-chains" id="toc-the-big-idea-markov-chains" class="nav-link" data-scroll-target="#the-big-idea-markov-chains">The Big Idea: Markov Chains</a></li>
+  <li><a href="#markov-chains-are-graphs" id="toc-markov-chains-are-graphs" class="nav-link" data-scroll-target="#markov-chains-are-graphs">Markov Chains Are Graphs</a></li>
+  </ul></li>
+  <li><a href="#thursday-solving-sudoku-with-search" id="toc-thursday-solving-sudoku-with-search" class="nav-link" data-scroll-target="#thursday-solving-sudoku-with-search">Thursday: <span class="green">Solving Sudoku with Search</span></a>
+  <ul class="collapse">
+  <li><a href="#rush-hour-a-graph-in-disguise" id="toc-rush-hour-a-graph-in-disguise" class="nav-link" data-scroll-target="#rush-hour-a-graph-in-disguise">Rush Hour: A Graph in Disguise</a></li>
+  <li><a href="#representing-sudoku" id="toc-representing-sudoku" class="nav-link" data-scroll-target="#representing-sudoku">Representing Sudoku</a></li>
+  <li><a href="#the-state-space-is-enormous" id="toc-the-state-space-is-enormous" class="nav-link" data-scroll-target="#the-state-space-is-enormous">The State Space Is Enormous</a></li>
+  <li><a href="#depth-first-search-ariadnes-thread" id="toc-depth-first-search-ariadnes-thread" class="nav-link" data-scroll-target="#depth-first-search-ariadnes-thread">Depth-First Search: Ariadne’s Thread</a></li>
+  <li><a href="#stacks-dfs-in-code" id="toc-stacks-dfs-in-code" class="nav-link" data-scroll-target="#stacks-dfs-in-code">Stacks: DFS in Code</a></li>
+  <li><a href="#validating-a-move" id="toc-validating-a-move" class="nav-link" data-scroll-target="#validating-a-move">Validating a Move</a></li>
+  <li><a href="#finding-the-block" id="toc-finding-the-block" class="nav-link" data-scroll-target="#finding-the-block">Finding the Block</a></li>
+  <li><a href="#linearizing-the-grid" id="toc-linearizing-the-grid" class="nav-link" data-scroll-target="#linearizing-the-grid">Linearizing the Grid</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/10_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/10_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 10: Music, Markov, and Mazes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Last week we met graphs. This week — and for the rest of the term — we <em>use</em> them.</p>
+<p>Two very different problems this week: <em>can a computer compose music?</em> and <em>can a computer solve Sudoku?</em> Beneath their very different surfaces, both reduce to the same question: <strong>how do you navigate a space of possibilities?</strong> The answer is graphs. Music generation, puzzle solving, route planning, optimization — they’re all graph problems in disguise. This week is where that realization lands.</p>
+<section id="your-growing-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-growing-toolkit">Your Growing Toolkit</h2>
+<p>Every problem we solve uses some combination of these tools:</p>
+<ul>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost</li>
+</ul>
+<p>This week: <span class="blue"><strong>Markov Chains</strong></span> + <span class="green"><strong>Depth-First Search</strong></span> — two elegant ways to navigate a graph of possibilities!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The Rest of the Term: Graphs Applied
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Weeks 10–14 are all about putting graphs to work on real problems: music generation, puzzle solving, geographic maps, route planning, optimization. The vocabulary from Week 9 (<span class="math inline">\(V\)</span>, <span class="math inline">\(E\)</span>, paths, search) is now your power tool. Every week adds a new application.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="tuesday-a-computer-that-composes" class="level1">
+<h1>Tuesday: <span class="blue">A Computer That Composes</span></h1>
+<section id="adas-prophecy" class="level2">
+<h2 class="anchored" data-anchor-id="adas-prophecy">Ada’s Prophecy</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ada.png" class="img-fluid figure-img" alt="Portrait of Ada Lovelace."></p>
+<figcaption>Ada Lovelace, 1842</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>We opened with a remarkable quote. In 1842 — nearly a century before the first electronic computer — Ada Lovelace imagined what a programmable engine might do:</p>
+<blockquote class="blockquote">
+<p><em>“Supposing… that the fundamental relations of pitched sounds… were susceptible of such expression and adaptations, the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.”</em></p>
+</blockquote>
+<p>She was right. This week, we built exactly that.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-1-listen-to-the-music" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-listen-to-the-music">Step 1: Listen to the Music</h2>
+<p>Before generating music, we need to <em>understand</em> it — mathematically.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mhallnotes.png" class="img-fluid figure-img" alt="Sheet music showing the notes of Mary Had a Little Lamb."></p>
+<figcaption>The notes of Mary Had a Little Lamb</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p>We started with a classic: <strong>Mary Had a Little Lamb</strong>. The first step was to build a tally:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Note</th>
+<th style="text-align: center;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<p>Most notes in Mary are <strong>E</strong> or <strong>D</strong>. A random note generator that just sampled from this distribution would produce <em>something</em> that sounds like the song — but without any sense of melody.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-2-capture-the-transitions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-capture-the-transitions">Step 2: Capture the Transitions</h2>
+<p>The secret ingredient isn’t <em>which</em> notes appear — it’s <strong>which notes follow which</strong>.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/characterizingmary.png" class="img-fluid figure-img" alt="A transition table showing which notes follow which in Mary Had a Little Lamb."></p>
+<figcaption>Characterizing Mary by note transitions</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>Instead of counting each note in isolation, we count <strong>pairs</strong>: how often does E follow D? How often does D follow E? This gives us a <strong>transition table</strong> — a complete picture of the song’s structure.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The transition table stores, for each note, the probability that the <em>next</em> note will be each possible note. Given you just played D, what are the odds the next note is E? D again? C?</p>
+</div>
+</div>
+<p>This is all the information you need to generate new music that “sounds like” the original!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-3-build-the-generator" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-build-the-generator">Step 3: Build the Generator</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/musicgenerator.png" class="img-fluid figure-img" alt="Diagram showing the music generator algorithm using a transition table."></p>
+<figcaption>The music generator algorithm</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>The algorithm is beautifully simple:</p>
+<ol type="1">
+<li>Start on any note</li>
+<li>Look up that note’s row in the transition table</li>
+<li>Pick the next note <strong>randomly</strong>, weighted by the transition probabilities</li>
+<li>Repeat</li>
+</ol>
+<p>The result is a sequence of notes that respects the <em>statistical structure</em> of the original melody — not a copy, but a plausible variation.</p>
+</div>
+</div>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:48%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/buildingsong.png" class="img-fluid figure-img" alt="The music generator producing a sequence of notes one at a time."></p>
+<figcaption>Building up a song step by step</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/builtsong.png" class="img-fluid figure-img" alt="A complete sequence of notes output by the generator."></p>
+<figcaption>A complete generated song</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-big-idea-markov-chains" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-idea-markov-chains">The Big Idea: Markov Chains</h2>
+<p>What we just built has a name. A <strong>Markov chain</strong> is a random process where:</p>
+<blockquote class="blockquote">
+<p>The next state depends only on the current state — not on any history before it.</p>
+</blockquote>
+<p>This “memoryless” property is what makes Markov chains tractable. We don’t need to remember the whole song so far — just the current note.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Markov Chains Are Everywhere
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>🔍 <strong>PageRank</strong> — Google’s original search algorithm models a random web surfer following links. Pages with high probability of being visited get high rank.</li>
+<li>💬 <strong>Natural language processing</strong> — Some words are more likely to follow others. <em>“I just ate the whole desert”</em> is probably a spelling error. *“For dinner I ___“* is probably followed by <em>“ate”</em>.</li>
+<li>🧬 <strong>DNA sequencing</strong> — Nucleotide transitions follow statistical patterns used for alignment and error correction.</li>
+<li>⚗️ <strong>Chemical reaction simulation</strong> — Reaction probabilities model which molecules form next.</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="markov-chains-are-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="markov-chains-are-graphs">Markov Chains Are Graphs</h2>
+<p>Here’s the most elegant part. A transition table like ours can be read as an <strong>adjacency matrix</strong> — the representation of a graph!</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/transition.png" class="img-fluid figure-img" alt="A transition table showing note-to-note probabilities, interpretable as a graph adjacency matrix."></p>
+<figcaption>The transition table as an adjacency matrix</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Vertices:</strong> Each musical note (C, D, E, G, …) is a vertex.</p>
+<p><strong>Edges:</strong> There’s a directed edge from note <span class="math inline">\(u\)</span> to note <span class="math inline">\(v\)</span> if the transition probability from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span> is non-zero — i.e., <span class="math inline">\(v\)</span> ever follows <span class="math inline">\(u\)</span> in the song.</p>
+<p><strong>Special characteristics:</strong> The graph is <strong>directed</strong> (edges have direction — “E follows D” is different from “D follows E”) and <strong>weighted</strong> (each edge carries a probability). The probabilities on outgoing edges from each vertex sum to 1.</p>
+</div>
+</div>
+<p>A random walk on this graph <em>is</em> the Markov chain. See it in action at <a href="http://setosa.io/markov">setosa.io/markov</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="thursday-solving-sudoku-with-search" class="level1">
+<h1>Thursday: <span class="green">Solving Sudoku with Search</span></h1>
+<section id="rush-hour-a-graph-in-disguise" class="level2">
+<h2 class="anchored" data-anchor-id="rush-hour-a-graph-in-disguise">Rush Hour: A Graph in Disguise</h2>
+<p>We started Thursday by revisiting a puzzle from Week 9 — Rush Hour — but now with fresh eyes.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr5.png" class="img-fluid figure-img" alt="The Rush Hour game board with cars and trucks packed into a grid."></p>
+<figcaption>The Rush Hour puzzle board</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr5rh.png" class="img-fluid figure-img" alt="Rush Hour game states visualized as a graph."></p>
+<figcaption>Rush Hour as a graph</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><span class="math inline">\(V\)</span>:</strong> Every possible <strong>arrangement of all cars</strong> on the board is a vertex — a <strong>state</strong>.</p>
+<p><strong><span class="math inline">\(E\)</span>:</strong> Two states are connected by an edge if you can get from one to the other with a single legal move.</p>
+<p><strong>Path:</strong> A sequence of connected states — i.e., a solution to the puzzle!</p>
+</div>
+</div>
+<p>This is a <strong>state space graph</strong> — a graph where vertices are configurations and edges are transitions. To solve Rush Hour, you just need to find a path from the starting state to a winning state. Graph search <em>is</em> problem solving.</p>
+<hr>
+</section>
+<section id="representing-sudoku" class="level2">
+<h2 class="anchored" data-anchor-id="representing-sudoku">Representing Sudoku</h2>
+<p>Sudoku is a different puzzle, but the same idea applies. We need a <strong>representation</strong> — a way to describe the state of the game in a form the computer can work with.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su1smallgrid.png" class="img-fluid figure-img" alt="A partially-filled 4x4 Sudoku grid."></p>
+<figcaption>A 4×4 Sudoku grid</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>A natural representation: a 2D array (list of lists) where each cell contains either a number (already filled) or 0 (empty).</p>
+<p>The <strong>state space</strong> is the collection of all possible board configurations — every way the grid could possibly be filled in. Each configuration is a <strong>state</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>A vertex</strong> is any board configuration (partially filled or complete).</p>
+<p><strong>An edge (u, v)</strong> means: board <span class="math inline">\(v\)</span> can be reached from board <span class="math inline">\(u\)</span> by filling in <strong>one empty cell</strong> with a valid number.</p>
+<p><strong>How many neighbors</strong> does a given state have? At most 4 (for a 4×4 grid) — one for each valid digit that could go in the next empty cell.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-state-space-is-enormous" class="level2">
+<h2 class="anchored" data-anchor-id="the-state-space-is-enormous">The State Space Is Enormous</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su3many.png" class="img-fluid figure-img" alt="A tree of Sudoku states showing the explosion of possibilities."></p>
+<figcaption>Many possible Sudoku states</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>We can’t try every possible board — there are far too many. For a 9×9 Sudoku, the number of candidate grids is astronomical.</p>
+<p>Instead, we use <strong>depth-first search (DFS)</strong>: commit to a choice, go as deep as possible, and <strong>backtrack</strong> when we hit a dead end.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su2tictactoe.png" class="img-fluid figure-img" style="width:50.0%" alt="The complete state space tree of TicTacToe."></p>
+<figcaption>TicTacToe’s full state space</figcaption>
+</figure>
+</div>
+<p><em>(Even TicTacToe — a tiny puzzle — has a surprisingly big state space tree!)</em></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="depth-first-search-ariadnes-thread" class="level2">
+<h2 class="anchored" data-anchor-id="depth-first-search-ariadnes-thread">Depth-First Search: Ariadne’s Thread</h2>
+<p>DFS has a beautiful intuition: it’s like exploring a maze with a ball of thread.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:48%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su4ariadne.png" class="img-fluid figure-img" alt="Ariadne giving Theseus a thread to find his way through the labyrinth."></p>
+<figcaption>Ariadne’s thread — the mythological inspiration for DFS</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su5maze.png" class="img-fluid figure-img" alt="A maze being navigated with a depth-first search, showing backtracking."></p>
+<figcaption>A maze and its DFS traversal</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In the myth, Ariadne gives Theseus a thread so he can trace his path and back up when he reaches dead ends. DFS does the same thing computationally — it dives deep, and when it gets stuck, it <strong>backtracks</strong> along the same path.</p>
+<p><strong>The algorithm:</strong></p>
+<ul>
+<li>Move forward through states until you can’t go any further</li>
+<li>If the board is complete — you win! 🎉</li>
+<li>If the board is stuck — back up and try the next option at the most recent choice point</li>
+</ul>
+<hr>
+</section>
+<section id="stacks-dfs-in-code" class="level2">
+<h2 class="anchored" data-anchor-id="stacks-dfs-in-code">Stacks: DFS in Code</h2>
+<p>How do we implement “go deep, then backtrack”? With a <strong>stack</strong>.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<p>A stack is the programmatic manifestation of Ariadne’s thread. It works on a <strong>last-in, first-out (LIFO)</strong> principle — just like a stack of plates, or a PEZ dispenser:</p>
+<ul>
+<li><code>push(item)</code> — add to the top</li>
+<li><code>pop()</code> → <code>item</code> — remove from the top</li>
+</ul>
+<p>In Python, we use a <code>deque</code> with <code>append()</code> and <code>pop()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stack <span class="op">=</span> deque()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stack.append(item)   <span class="co"># push</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> stack.pop()   <span class="co"># pop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su6pez.png" class="img-fluid figure-img" alt="A PEZ candy dispenser showing how stacks work: last in, first out."></p>
+<figcaption>A PEZ dispenser — the perfect stack metaphor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>DFS vs BFS
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare to the <strong>queue</strong> (FIFO) we used for flood fill in Week 8:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 53%">
+<col style="width: 25%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Data Structure</th>
+<th>Order</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>BFS</strong></td>
+<td>Queue (<code>popleft</code>)</td>
+<td>Broad first</td>
+<td>Shortest path</td>
+</tr>
+<tr class="even">
+<td><strong>DFS</strong></td>
+<td>Stack (<code>pop</code>)</td>
+<td>Deep first</td>
+<td>Exhaustive search / backtracking</td>
+</tr>
+</tbody>
+</table>
+<p>One swap — <code>popleft()</code> ↔︎ <code>pop()</code> — and you get a completely different exploration strategy!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="validating-a-move" class="level2">
+<h2 class="anchored" data-anchor-id="validating-a-move">Validating a Move</h2>
+<p>Before placing a number in Sudoku, we need to check it’s valid. The rules say each number must appear exactly once in its <strong>row</strong>, <strong>column</strong>, and <strong>block</strong>.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su7numcheck.png" class="img-fluid figure-img" alt="A Sudoku grid with a candidate cell highlighted, showing row, column, and block checks."></p>
+<figcaption>Checking row, column, and block validity</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p>For a candidate value <code>num</code> at position <code>(x, y)</code>:</p>
+<ul>
+<li><strong>Row check:</strong> is <code>num</code> already in <code>grid[x]</code>?</li>
+<li><strong>Column check:</strong> is <code>num</code> already in <code>grid[:, y]</code>?</li>
+<li><strong>Block check:</strong> is <code>num</code> in the 3×3 (or 2×2) sub-grid containing <code>(x, y)</code>?</li>
+</ul>
+<p>For the block check, we need to find the <strong>region</strong> bounds. This is a satisfying little puzzle in itself!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="finding-the-block" class="level2">
+<h2 class="anchored" data-anchor-id="finding-the-block">Finding the Block</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/su8regions.png" class="img-fluid figure-img" alt="A 4x4 Sudoku grid with the four 2x2 block regions highlighted."></p>
+<figcaption>Region boundaries for a 4×4 Sudoku grid</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p>Given position <span class="math inline">\((x, y)\)</span> in an <span class="math inline">\(r^2 \times r^2\)</span> grid, the block it belongs to has bounds:</p>
+<p><span class="math display">\[\text{row range: } \left[\lfloor x/r \rfloor \cdot r \ : \ \lfloor x/r \rfloor \cdot r + r\right]\]</span> <span class="math display">\[\text{col range: } \left[\lfloor y/r \rfloor \cdot r \ : \ \lfloor y/r \rfloor \cdot r + r\right]\]</span></p>
+<p>In Python, <code>x // r</code> gives the integer quotient. For a 4×4 grid (<span class="math inline">\(r = 2\)</span>): position <span class="math inline">\((3, 1)\)</span> belongs to the block starting at row <span class="math inline">\(\lfloor 3/2 \rfloor \times 2 = 2\)</span>, column <span class="math inline">\(\lfloor 1/2 \rfloor \times 2 = 0\)</span>.</p>
+<p><strong>Python tidbit:</strong> <code>num in grid[r0:r1, c0:c1]</code> checks membership in a 2D region — exactly what we need!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="linearizing-the-grid" class="level2">
+<h2 class="anchored" data-anchor-id="linearizing-the-grid">Linearizing the Grid</h2>
+<p>One more elegant puzzle: as we search, we want to iterate through all cells in order. Instead of nested loops over rows and columns, we can use a single integer <code>p</code> from 0 to <span class="math inline">\(W \times H\)</span>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> postup(p):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> p <span class="op">//</span> states   <span class="co"># row</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> p <span class="op">%</span> states    <span class="co"># column</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A single number encodes a 2D position! This <code>//</code> and <code>%</code> pattern — integer division and remainder — appears constantly in programming whenever you need to convert between 1D and 2D indexing.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Pattern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think of <code>p</code> as a counter that scans left-to-right, top-to-bottom. Every time it passes <code>states</code> cells, it moves to the next row. <code>p // states</code> counts how many full rows have passed; <code>p % states</code> counts the position within the current row.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>The pattern is set. Every problem from here has the same shape: define your states (vertices), define your transitions (edges), search the graph.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Problem</th>
+<th>Graph angle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>Music generation, Sudoku</td>
+<td>Markov chains, state space search</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Geographic maps</td>
+<td>Road networks, shortest paths</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>TSP / errand planning</td>
+<td>Complete graphs, optimization</td>
+</tr>
+<tr class="even">
+<td>13–14</td>
+<td>Visualization, projects</td>
+<td>Putting it all together</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 11</strong> takes graphs from abstract to geographical — actual road networks, GPS coordinates, real shortest-path algorithms. Project 3 is a workout route planner for UBC campus!</p>
+<p><strong>Project 2</strong> deadline is coming up — finish strong! 💪</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/10_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/10_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
