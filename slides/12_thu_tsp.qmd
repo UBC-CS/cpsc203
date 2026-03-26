@@ -1,10 +1,10 @@
 ---
-date: 2025-11-25
+date: 2026-03-26
 ---
 
 ## Announcements
 
-# Travelling Salesperson Problem
+# Travelling Salesperson Problem -- CODE!
 
 ## TSP vs SSSP {data-background-image="/images/maps1data.png"}
 
@@ -20,12 +20,6 @@ SSSP: “many one-way routes from home (tree)” vs TSP: “one big round trip t
 | Overlap | Paths often **share edges** | Tour is one sequence; no repeated visits |
 | Difficulty | Fast algorithms (e.g., Dijkstra) | NP-hard; exact solution is hard for large graphs |
 
-
-## Demo Blog
-
-<https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552>
-
-![](/images/maps9caps.png)
 
 ## Plan for Code {data-background-image="/images/maps9chart.png"}
 
@@ -51,43 +45,45 @@ Steps to assemble our solution:
 5. visualize on map
 :::
 
-## A Technical Detail
+## 1. Errands
+
+Verify references here:
+
+<https://www.openstreetmap.org/>
+
+## 2. Create pairwise distances
+
+What structure should we use? 
+
+`dist['Vancouver']['Bellingham'] -> int`
+
+`path['Vancouver']['Bellingham'] -> list`
+
+example: `dist['Van']['Bel'] = nx.shortest_path_length(G, 'Van', 'Bel', weight='length')`
+
+## 3A. Create all possible orders
+
+`tours = list(itertools.permutations(list(dferrands['node'])))`
 
 ![](/images/maps9home.png)
 
-## Demo {.activity}
-
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2616092)
-
-## What Does `lambda` Do? {.smaller}
-
-``` python
-dferrands['latlong'] = dferrands.apply(
-                lambda row: ox.geocode(row['errand']),
-                axis=1
-              )
-```
-
-**Goal:** Create a new column (`latlong`) and fill it with coordinates for each errand in the dataframe.
-
-**How it works:**
-
-* `df.apply(..., axis=1)`:  Run a function once for each row.
-
-* `lambda row: ox.geocode(row['errand'])`: A tiny inline function. Read it as:
-"Given a row, look up the place name in `row['errand']`,geocode it, and return the (lat, lon)."
-
-* The returned value becomes the entry in the new latlong column.
-
-**Why lambda?** We only need this function once, so we write it right where it’s used.
-
-## Tour Distance
+## 3B. Tour Distance
 
 We assemble each candidate solution as an arrangement of all of the errands:
 
 Ex: `A D B E F C`
 
 How do we find the total distance if we do the errands in the suggested order?
+
+`dfdist[A][D] + dfdist[D][B] + ... + dfdist[C][A]`
+
+![](/images/maps9home.png)
+
+
+## Demo {.activity}
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2664909)
+
 
 ## Why This Matters {.smaller}
 
