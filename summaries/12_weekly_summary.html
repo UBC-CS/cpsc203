@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 11: Maps, Routes, and the Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms</title>
+<title>Week 12: The Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -141,19 +141,19 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles/styles.css">
-<meta property="og:title" content="Week 11: Maps, Routes, and the Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:title" content="Week 12: The Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/maps1data.png">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/maps9van.png">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta property="og:image:alt" content="A screenshot showing geographic map data — the underlying data is separate from how it's displayed.">
-<meta property="og:image:height" content="1614">
-<meta property="og:image:width" content="2352">
-<meta name="twitter:title" content="Week 11: Maps, Routes, and the Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="A map of Vancouver with nine errand locations marked.">
+<meta property="og:image:height" content="890">
+<meta property="og:image:width" content="948">
+<meta name="twitter:title" content="Week 12: The Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/maps1data.png">
-<meta name="twitter:image:alt" content="A screenshot showing geographic map data — the underlying data is separate from how it's displayed.">
-<meta name="twitter:image-height" content="1614">
-<meta name="twitter:image-width" content="2352">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/maps9van.png">
+<meta name="twitter:image:alt" content="A map of Vancouver with nine errand locations marked.">
+<meta name="twitter:image-height" content="890">
+<meta name="twitter:image-width" content="948">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -338,7 +338,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Week 11: Maps, Routes, and the Hardest Easy Problem</h1>
+          <h1 class="quarto-secondary-nav-title">Week 12: The Hardest Easy Problem</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -458,24 +458,27 @@ window.Quarto = {
    
   <ul>
   <li><a href="#your-growing-toolkit" id="toc-your-growing-toolkit" class="nav-link active" data-scroll-target="#your-growing-toolkit">Your Growing Toolkit</a></li>
-  <li><a href="#tuesday-from-sudoku-to-street-maps" id="toc-tuesday-from-sudoku-to-street-maps" class="nav-link" data-scroll-target="#tuesday-from-sudoku-to-street-maps">Tuesday: <span class="blue">From Sudoku to Street Maps</span></a>
+  <li><a href="#tuesday-meet-the-travelling-salesperson" id="toc-tuesday-meet-the-travelling-salesperson" class="nav-link" data-scroll-target="#tuesday-meet-the-travelling-salesperson">Tuesday: <span class="orange">Meet the Travelling Salesperson</span></a>
   <ul class="collapse">
-  <li><a href="#one-last-look-at-sudoku" id="toc-one-last-look-at-sudoku" class="nav-link" data-scroll-target="#one-last-look-at-sudoku">One Last Look at Sudoku</a></li>
-  <li><a href="#the-world-is-a-graph" id="toc-the-world-is-a-graph" class="nav-link" data-scroll-target="#the-world-is-a-graph">The World Is a Graph</a></li>
-  <li><a href="#openstreetmap-wikipedia-for-maps" id="toc-openstreetmap-wikipedia-for-maps" class="nav-link" data-scroll-target="#openstreetmap-wikipedia-for-maps">OpenStreetMap: Wikipedia for Maps</a></li>
-  <li><a href="#from-map-to-graph" id="toc-from-map-to-graph" class="nav-link" data-scroll-target="#from-map-to-graph">From Map to Graph</a></li>
+  <li><a href="#from-shortest-path-to-shortest-tour" id="toc-from-shortest-path-to-shortest-tour" class="nav-link" data-scroll-target="#from-shortest-path-to-shortest-tour">From Shortest Path to Shortest Tour</a></li>
+  <li><a href="#why-is-it-so-hard" id="toc-why-is-it-so-hard" class="nav-link" data-scroll-target="#why-is-it-so-hard">Why Is It So Hard?</a></li>
+  <li><a href="#what-a-great-solution-looks-like" id="toc-what-a-great-solution-looks-like" class="nav-link" data-scroll-target="#what-a-great-solution-looks-like">What a Great Solution Looks Like</a></li>
+  <li><a href="#sssp-vs-tsp-two-very-different-questions" id="toc-sssp-vs-tsp-two-very-different-questions" class="nav-link" data-scroll-target="#sssp-vs-tsp-two-very-different-questions">SSSP vs TSP: Two Very Different Questions</a></li>
+  <li><a href="#our-plan-five-steps" id="toc-our-plan-five-steps" class="nav-link" data-scroll-target="#our-plan-five-steps">Our Plan: Five Steps</a></li>
+  <li><a href="#step-2-the-distance-table" id="toc-step-2-the-distance-table" class="nav-link" data-scroll-target="#step-2-the-distance-table">Step 2: The Distance Table</a></li>
+  <li><a href="#step-3-permutations-and-a-clever-shortcut" id="toc-step-3-permutations-and-a-clever-shortcut" class="nav-link" data-scroll-target="#step-3-permutations-and-a-clever-shortcut">Step 3: Permutations and a Clever Shortcut</a></li>
+  <li><a href="#step-3b-tour-distance" id="toc-step-3b-tour-distance" class="nav-link" data-scroll-target="#step-3b-tour-distance">Step 3B: Tour Distance</a></li>
+  <li><a href="#lambda-functions-writing-less-saying-more" id="toc-lambda-functions-writing-less-saying-more" class="nav-link" data-scroll-target="#lambda-functions-writing-less-saying-more">Lambda Functions: Writing Less, Saying More</a></li>
   </ul></li>
-  <li><a href="#dijkstras-algorithm" id="toc-dijkstras-algorithm" class="nav-link" data-scroll-target="#dijkstras-algorithm">Dijkstra’s Algorithm</a>
+  <li><a href="#thursday-building-the-solver" id="toc-thursday-building-the-solver" class="nav-link" data-scroll-target="#thursday-building-the-solver">Thursday: <span class="green">Building the Solver</span></a>
   <ul class="collapse">
-  <li><a href="#single-source-shortest-path" id="toc-single-source-shortest-path" class="nav-link" data-scroll-target="#single-source-shortest-path">Single Source Shortest Path</a></li>
-  <li><a href="#the-algorithm" id="toc-the-algorithm" class="nav-link" data-scroll-target="#the-algorithm">The Algorithm</a></li>
-  <li><a href="#running-dijkstras-by-hand" id="toc-running-dijkstras-by-hand" class="nav-link" data-scroll-target="#running-dijkstras-by-hand">Running Dijkstra’s by Hand</a></li>
-  <li><a href="#fill-in-the-blank-dijkstra-vs-bfsdfs" id="toc-fill-in-the-blank-dijkstra-vs-bfsdfs" class="nav-link" data-scroll-target="#fill-in-the-blank-dijkstra-vs-bfsdfs">Fill in the Blank: Dijkstra vs BFS/DFS</a></li>
-  <li><a href="#the-algorithm-family" id="toc-the-algorithm-family" class="nav-link" data-scroll-target="#the-algorithm-family">The Algorithm Family</a></li>
+  <li><a href="#from-concept-to-code" id="toc-from-concept-to-code" class="nav-link" data-scroll-target="#from-concept-to-code">From Concept to Code</a></li>
+  <li><a href="#the-payoff-a-route-on-a-real-map" id="toc-the-payoff-a-route-on-a-real-map" class="nav-link" data-scroll-target="#the-payoff-a-route-on-a-real-map">The Payoff: A Route on a Real Map</a></li>
+  <li><a href="#why-tsp-matters" id="toc-why-tsp-matters" class="nav-link" data-scroll-target="#why-tsp-matters">Why TSP Matters</a></li>
   <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/11_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/11_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/12_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/12_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -483,7 +486,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Week 11: Maps, Routes, and the Hardest Easy Problem</h1>
+<h1 class="title d-none d-lg-block">Week 12: The Hardest Easy Problem</h1>
 </div>
 
 
@@ -500,7 +503,7 @@ window.Quarto = {
 </header>
 
 
-<p>Graphs went geographic this week. We took everything we know about vertices and edges and plugged in a real dataset: the road network of Vancouver. By the end of the week we could find the shortest driving route between any two points in the city — and had a new question brewing for Week 12.</p>
+<p>Dijkstra finds the shortest route between two places. This week we asked a harder question: what if you have <em>ten</em> places, and you need to visit all of them? This single tweak — from “shortest path” to “shortest tour” — turns a fast, elegant algorithm into one of the most notoriously difficult problems in computer science. Welcome to the Travelling Salesperson Problem.</p>
 <section id="your-growing-toolkit" class="level2">
 <h2 class="anchored" data-anchor-id="your-growing-toolkit">Your Growing Toolkit</h2>
 <ul>
@@ -511,252 +514,332 @@ window.Quarto = {
 <li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
 <li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost</li>
 </ul>
-<p>This week: <span class="blue"><strong>Weighted graphs</strong></span> + <span class="green"><strong>Dijkstra’s Algorithm</strong></span> — graphs meet the real world!</p>
+<p>This week: <span class="orange"><strong>TSP</strong></span> + <span class="blue"><strong>Permutations</strong></span> + <span class="green"><strong>Brute-force optimization</strong></span> — when the problem is hard, we start with the honest approach!</p>
 <hr>
 </section>
-<section id="tuesday-from-sudoku-to-street-maps" class="level1">
-<h1>Tuesday: <span class="blue">From Sudoku to Street Maps</span></h1>
-<section id="one-last-look-at-sudoku" class="level2">
-<h2 class="anchored" data-anchor-id="one-last-look-at-sudoku">One Last Look at Sudoku</h2>
-<p>We started by closing the loop on Sudoku. We asked: <em>could we be smarter?</em> Constraint propagation, for instance, can prune most of the state space before we ever start searching. But there’s a deeper issue:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Sudoku is NP-Complete
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As the board grows (4×4 → 9×9 → 16×16 → 25×25…), the number of states explodes faster than any polynomial. Sudoku is known to be <strong>NP-Complete</strong> — a member of the class of problems where no one has found a guaranteed fast algorithm, and many believe none exists.</p>
-<p>This doesn’t mean we give up! It means we use clever tricks: constraint propagation, better search orderings, heuristics. But for any general solver on large boards, worst-case cost is exponential.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="the-world-is-a-graph" class="level2">
-<h2 class="anchored" data-anchor-id="the-world-is-a-graph">The World Is a Graph</h2>
-<p>With Sudoku behind us, we asked a new question: what if the graph isn’t made up — what if it’s the actual world?</p>
+<section id="tuesday-meet-the-travelling-salesperson" class="level1">
+<h1>Tuesday: <span class="orange">Meet the Travelling Salesperson</span></h1>
+<section id="from-shortest-path-to-shortest-tour" class="level2">
+<h2 class="anchored" data-anchor-id="from-shortest-path-to-shortest-tour">From Shortest Path to Shortest Tour</h2>
+<p>Last week, Dijkstra gave us the answer to “how do I get from A to B as fast as possible?” Now imagine you’ve got nine Saturday errands — the PNE, Science World, Granville Island, City Hall, and five more stops scattered across Vancouver. You need to visit all of them and get home. What order do you do them in?</p>
 <div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:55%;">
+<div class="column" style="width:48%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/maps1data.png" class="img-fluid figure-img" style="width:90.0%" alt="A screenshot showing geographic map data — the underlying data is separate from how it's displayed."></p>
-<figcaption>Geographic data: separate from visualization</figcaption>
+<p><img src="../images/maps9van.png" class="img-fluid figure-img" alt="A map of Vancouver with nine errand locations marked."></p>
+<figcaption>Errand locations on a Vancouver map</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:40%;">
-<p>The key insight: <strong>the data is separate from the visualization</strong>. Google Maps shows you a pretty picture. But underneath is a graph — intersections as vertices, roads as edges, distances as weights. Everything Google Maps does is graph algorithms on that data.</p>
-<p>We get access to the same data for free.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="openstreetmap-wikipedia-for-maps" class="level2">
-<h2 class="anchored" data-anchor-id="openstreetmap-wikipedia-for-maps">OpenStreetMap: Wikipedia for Maps</h2>
-<div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:50%;">
-<p><strong>OpenStreetMap (OSM)</strong> is the open-source alternative to Google Maps’ <em>data</em>. Like Wikipedia, it’s built and maintained by volunteers. Unlike Google, its data is free to use, query, and download.</p>
-<p>We access it through a Python library called <strong>osmnx</strong>, which handles all the API calls and gives us a NetworkX graph:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> osmnx <span class="im">as</span> ox</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>place_names <span class="op">=</span> [<span class="st">'UBC'</span>, <span class="st">'Vancouver'</span>, <span class="st">'Stanley Park'</span>]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ox.geocode_to_gdf(place_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:48%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/maps2gdf.png" class="img-fluid figure-img" alt="A GeoDataFrame table showing geographic regions with geometry, bounding boxes, and place names."></p>
-<figcaption>A GeoDataFrame from osmnx</figcaption>
+<p><img src="../images/maps9dots.png" class="img-fluid figure-img" alt="The nine errand locations shown as dots, abstracted from the map."></p>
+<figcaption>The errand locations abstracted as dots</figcaption>
 </figure>
 </div>
-<p>The result is a <strong>GeoDataFrame</strong> — a pandas DataFrame where one column stores geographic shapes (polygons for regions, points for locations). Each row is a place, and the geometry column holds its boundary on the map.</p>
 </div>
 </div>
+<p>This is the <strong>Travelling Salesperson Problem (TSP)</strong>:</p>
+<blockquote class="blockquote">
+<p><em>Given a list of cities and the distances between each pair, what is the shortest possible route that visits each city exactly once and returns to the origin?</em></p>
+</blockquote>
+<p>First formally studied in 1930. Studied by thousands of researchers since. Still not fully solved.</p>
 <hr>
 </section>
-<section id="from-map-to-graph" class="level2">
-<h2 class="anchored" data-anchor-id="from-map-to-graph">From Map to Graph</h2>
-<p>The pipeline from raw geography to graph algorithms has three stages:</p>
-<div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:60%;">
-<p><strong>1. Assemble the data</strong> Use OSM, Statistics Canada, local open data portals, or other sources. Build a GeoDataFrame. This is mostly the art of wrangling geographic data.</p>
-<p><strong>2. Compute on the data</strong> <code>osmnx</code> converts map data into a NetworkX graph where: - <strong>Nodes</strong> = intersections (with latitude/longitude) - <strong>Edges</strong> = road segments (with attributes: length, speed limit, one-way, etc.)</p>
-<p>Then apply graph algorithms: shortest paths, nearest nodes, connected components, anything NetworkX supports.</p>
-<p><strong>3. Visualize</strong> - <code>matplotlib</code> for static maps - <code>folium</code> for interactive, zoomable, web-based maps</p>
-</div><div class="column" style="width:35%;">
+<section id="why-is-it-so-hard" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-it-so-hard">Why Is It So Hard?</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>The Beautiful Abstraction
+<span class="screen-reader-only">Tip</span>Fill in the blank: counting routes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Once you’ve built the graph, the <em>geography disappears</em>. Finding the fastest route from UBC to the PNE is just finding a shortest path from one node to another. The road network is just a weighted directed graph. Everything we know about graphs applies directly.</p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="dijkstras-algorithm" class="level1">
-<h1>Dijkstra’s Algorithm</h1>
-<section id="single-source-shortest-path" class="level2">
-<h2 class="anchored" data-anchor-id="single-source-shortest-path">Single Source Shortest Path</h2>
-<p>The question: given a starting location <span class="math inline">\(s\)</span>, what is the shortest route to <em>every other</em> intersection?</p>
-<div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/maps3sssp.png" class="img-fluid figure-img" alt="A graph showing shortest paths from a single source node, forming a tree."></p>
-<figcaption>The shortest-path tree from a single source</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:45%;">
-<p>This is the <strong>Single Source Shortest Path (SSSP)</strong> problem:</p>
+<p>With 6 locations, how many different tours are there? Fix the starting point (tour length doesn’t depend on where you start — more on that below). Then count the orderings of the remaining stops:</p>
 <ul>
-<li><strong>Input:</strong> A directed graph <span class="math inline">\(G\)</span> with non-negative edge weights, and a start vertex <span class="math inline">\(s\)</span></li>
-<li><strong>Output:</strong> A subgraph <span class="math inline">\(G'\)</span> — the shortest (minimum total cost) path from <span class="math inline">\(s\)</span> to every other vertex</li>
+<li>2nd stop: 5 choices</li>
+<li>3rd stop: 4 choices</li>
+<li>4th stop: 3 choices</li>
+<li>…</li>
 </ul>
-<p>The result isn’t just one path — it’s a whole <strong>tree</strong> rooted at <span class="math inline">\(s\)</span>, with a branch to every reachable vertex.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="the-algorithm" class="level2">
-<h2 class="anchored" data-anchor-id="the-algorithm">The Algorithm</h2>
-<p>Edsger Dijkstra invented his famous algorithm in 1959 — in just 20 minutes, without pen and paper, while on a coffee date. It remains one of the most elegant algorithms in all of computer science.</p>
-<div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/maps4sssp.png" class="img-fluid figure-img" alt="A weighted directed graph used to illustrate Dijkstra's algorithm step by step."></p>
-<figcaption>A labeled graph for running Dijkstra’s</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:45%;">
-<p><strong>Setup:</strong> - <code>d[v]</code> = best known distance from <span class="math inline">\(s\)</span> to <span class="math inline">\(v\)</span> (start at <code>INF</code> for all, <code>0</code> for <span class="math inline">\(s\)</span>) - <code>p[v]</code> = predecessor of <span class="math inline">\(v\)</span> on the shortest path (start at <code>null</code>)</p>
-<p><strong>Repeat <span class="math inline">\(n\)</span> times:</strong> 1. Find the unlabelled vertex <span class="math inline">\(v\)</span> with the <strong>smallest</strong> <code>d[v]</code> 2. <strong>Label</strong> <span class="math inline">\(v\)</span> (its shortest distance is now final) 3. For each unlabelled neighbor <span class="math inline">\(w\)</span> of <span class="math inline">\(v\)</span>: - If <code>d[v] + length(v,w) &lt; d[w]</code>: - <code>d[w] = d[v] + length(v,w)</code> - <code>p[w] = v</code></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Fill in the blank
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The key update: <code>d[v] + length(v, w) &lt; d[w]</code> — <em>“can we reach <code>w</code> faster by going through <code>v</code>?”</em>. If yes, update <code>d[w]</code> and record <code>v</code> as <code>w</code>’s new predecessor.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="running-dijkstras-by-hand" class="level2">
-<h2 class="anchored" data-anchor-id="running-dijkstras-by-hand">Running Dijkstra’s by Hand</h2>
-<div class="columns" style="column-gap: 2em;">
-<div class="column" style="width:60%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/maps5sssp.png" class="img-fluid figure-img" alt="A weighted graph for students to practice running Dijkstra's algorithm by hand."></p>
-<figcaption>A practice graph for Dijkstra’s algorithm</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:35%;">
-<p>Running Dijkstra’s by hand on a small graph is the best way to build intuition. The greedy choice — always label the closest unlabelled vertex — is what makes it work.</p>
-<p><strong>Three key observations:</strong> 1. Once a vertex is labelled, its shortest distance is <strong>final</strong> — it will never improve 2. <code>d[]</code> values only <strong>decrease</strong>, never increase 3. The predecessors <code>p[]</code> form a <strong>shortest-path tree</strong></p>
-</div>
-</div>
-<hr>
-</section>
-<section id="fill-in-the-blank-dijkstra-vs-bfsdfs" class="level2">
-<h2 class="anchored" data-anchor-id="fill-in-the-blank-dijkstra-vs-bfsdfs">Fill in the Blank: Dijkstra vs BFS/DFS</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How is Dijkstra similar to BFS/DFS?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All three algorithms <strong>explore a graph</strong> by maintaining a frontier and expanding it one vertex at a time. All three track which vertices have been “processed.” All three can find paths through a graph.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>How is Dijkstra different from BFS/DFS?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>BFS and DFS treat all edges as equal (or ignore weights entirely). Dijkstra uses a <strong>priority queue</strong> — instead of first-in-first-out (BFS) or last-in-first-out (DFS), it always processes the vertex with the <strong>smallest known distance</strong>. This is what makes it find shortest paths in weighted graphs.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="the-algorithm-family" class="level2">
-<h2 class="anchored" data-anchor-id="the-algorithm-family">The Algorithm Family</h2>
+<p><strong>Answer:</strong> <span class="math inline">\((k-1)!\)</span> tours for <span class="math inline">\(k\)</span> locations.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 18%">
-<col style="width: 22%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Algorithm</th>
-<th>Data Structure</th>
-<th>Edge Weights</th>
-<th>Finds Shortest?</th>
-<th>Frontier Strategy</th>
+<th>Locations</th>
+<th>Tours</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>DFS</strong></td>
-<td>Stack</td>
-<td>ignored</td>
-<td>no</td>
-<td>dive deep</td>
+<td>5</td>
+<td>24</td>
 </tr>
 <tr class="even">
-<td><strong>BFS</strong></td>
-<td>Queue</td>
-<td>all equal</td>
-<td>yes (unweighted)</td>
-<td>explore in layers</td>
+<td>10</td>
+<td>362,880</td>
 </tr>
 <tr class="odd">
-<td><strong>Dijkstra</strong></td>
-<td>Priority Queue</td>
-<td>any non-negative</td>
-<td>yes (weighted)</td>
-<td>explore by shortest known distance</td>
+<td>15</td>
+<td>87,178,291,200</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>60,822,550,204,416,000</td>
 </tr>
 </tbody>
 </table>
-<p>Three algorithms. One family. One swap in the data structure changes everything.</p>
+<p>With 20 errands, there are more candidate tours than grains of sand on Earth. <strong>Brute-force stops being feasible somewhere around 20 stops.</strong> This is why TSP is hard — and why it’s been studied for nearly a century.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>NP-Hard
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TSP is <strong>NP-hard</strong>: no one has found a fast algorithm that guarantees the optimal solution for large inputs, and most researchers believe none exists. (This is the famous P ≠ NP conjecture.) You can get excellent approximate solutions quickly, but proving you have the <em>best</em> tour is another matter entirely.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="what-a-great-solution-looks-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-great-solution-looks-like">What a Great Solution Looks Like</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/maps9caps.png" class="img-fluid figure-img" alt="A world map with a continuous route connecting all national capital cities in a near-optimal tour of 90,414 km."></p>
+<figcaption>An optimized tour through all world capitals</figcaption>
+</figure>
+</div>
+<p>This <a href="https://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552">blog post</a> used modern TSP heuristics to tour all world capitals in just <strong>90,414 km</strong>. That’s not proven optimal — but it’s the product of decades of algorithmic research. A random tour would be vastly longer. This is what good TSP approximation algorithms buy you.</p>
+<hr>
+</section>
+<section id="sssp-vs-tsp-two-very-different-questions" class="level2">
+<h2 class="anchored" data-anchor-id="sssp-vs-tsp-two-very-different-questions">SSSP vs TSP: Two Very Different Questions</h2>
+<p>Now that we know both algorithms, here’s the contrast in full:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 55%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>SSSP / Dijkstra</th>
+<th>TSP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Goal</strong></td>
+<td>Shortest route from one start to <strong>each</strong> vertex</td>
+<td>One <strong>cheapest tour</strong> visiting all vertices and returning</td>
+</tr>
+<tr class="even">
+<td><strong>Shape of result</strong></td>
+<td>A <strong>tree</strong> of paths from the source</td>
+<td>A <strong>cycle</strong> through all vertices</td>
+</tr>
+<tr class="odd">
+<td><strong>Must visit all?</strong></td>
+<td>No — each path can skip most vertices</td>
+<td>Yes — every vertex exactly once</td>
+</tr>
+<tr class="even">
+<td><strong>Difficulty</strong></td>
+<td>Fast! Dijkstra runs in <span class="math inline">\(O(n \log n)\)</span></td>
+<td>NP-hard — no known fast exact algorithm</td>
+</tr>
+</tbody>
+</table>
+<p>Same ingredients (a weighted graph), completely different problems.</p>
+<hr>
+</section>
+<section id="our-plan-five-steps" class="level2">
+<h2 class="anchored" data-anchor-id="our-plan-five-steps">Our Plan: Five Steps</h2>
+<p>We built the solution piece by piece. Each step is a clean, testable function:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/maps9chart.png" class="img-fluid figure-img" alt="A flowchart showing the five steps of the TSP brute-force solution."></p>
+<figcaption>The TSP solution pipeline</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: the five steps
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Assemble the graph and errands</strong> — download the Vancouver road network via OSM, geocode each errand address, snap it to the nearest road node</li>
+<li><strong>Compute pairwise distances</strong> — for every pair of errand nodes, run Dijkstra to find the driving distance <em>and</em> store the full turn-by-turn path</li>
+<li><strong>Generate all permutations</strong> — <code>itertools.permutations(nodes)</code> enumerates every possible visit order</li>
+<li><strong>Find the minimum tour</strong> — loop through all permutations, compute total distance, keep the shortest</li>
+<li><strong>Visualize</strong> — stitch the pre-computed paths together and draw the route on an interactive folium map</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-2-the-distance-table" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-the-distance-table">Step 2: The Distance Table</h2>
+<p>We need driving distances between every pair of errand locations. The structure:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dfdist[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → distance in metres</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dfdict[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → list of road nodes (turn-by-turn)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Using <code>nx.shortest_path_length</code> and <code>nx.shortest_path</code> with <code>weight='length'</code>, we fill both tables for all pairs. This step runs Dijkstra <span class="math inline">\(k^2\)</span> times — expensive upfront, but we only pay it once. Every subsequent tour calculation just looks up <code>dfdist[a][b]</code>.</p>
+<hr>
+</section>
+<section id="step-3-permutations-and-a-clever-shortcut" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-permutations-and-a-clever-shortcut">Step 3: Permutations and a Clever Shortcut</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/maps9home.png" class="img-fluid figure-img" alt="Two cyclic tours with the same stops in the same order but different starting points, showing they have identical total length."></p>
+<figcaption>Tour length is independent of starting point</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Starting point doesn’t change tour length
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The tour <code>A → B → C → D → A</code> has exactly the same total distance as <code>B → C → D → A → B</code>. It’s the same cycle, just entered at a different point.</p>
+<p>This means we can <strong>fix the starting location</strong> and only permute the remaining <span class="math inline">\(k-1\)</span> stops — shrinking <span class="math inline">\((k)!\)</span> tours down to <span class="math inline">\((k-1)!\)</span>, a factor-of-<span class="math inline">\(k\)</span> speedup.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-3b-tour-distance" class="level2">
+<h2 class="anchored" data-anchor-id="step-3b-tour-distance">Step 3B: Tour Distance</h2>
+<p>Given a tour ordering — say <code>A, D, B, E, F, C</code> — the total distance is:</p>
+<p><span class="math display">\[\text{dfdist}[A][D] + \text{dfdist}[D][B] + \text{dfdist}[B][E] + \text{dfdist}[E][F] + \text{dfdist}[F][C] + \text{dfdist}[C][A]\]</span></p>
+<p>Each leg uses a pre-computed Dijkstra shortest path. The last term wraps back around to the start — this is the cycle that makes it a <em>tour</em>, not just a path. In code: <code>dfdist[tour[k]][tour[(k+1) % len(tour)]]</code>.</p>
+<hr>
+</section>
+<section id="lambda-functions-writing-less-saying-more" class="level2">
+<h2 class="anchored" data-anchor-id="lambda-functions-writing-less-saying-more">Lambda Functions: Writing Less, Saying More</h2>
+<p>The TSP code leans on a compact Python feature: <strong>lambda</strong> (anonymous) functions.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dferrands[<span class="st">'latlong'</span>] <span class="op">=</span> dferrands.<span class="bu">apply</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: ox.geocode(row[<span class="st">'errand'</span>]),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    axis<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>df.apply(..., axis=1)</code> calls a function once per row of the DataFrame</li>
+<li><code>lambda row: ox.geocode(row['errand'])</code> is that function — defined right where it’s used, no <code>def</code>, no name</li>
+<li>The return value fills the new <code>latlong</code> column</li>
+</ul>
+<p><strong>Why lambda?</strong> When you only need a function in one place and it fits in one expression, a lambda keeps things tight and readable. You’ve already used this pattern with <code>sorted(items, key=lambda x: x[1])</code>.</p>
+<hr>
+</section>
+</section>
+<section id="thursday-building-the-solver" class="level1">
+<h1>Thursday: <span class="green">Building the Solver</span></h1>
+<section id="from-concept-to-code" class="level2">
+<h2 class="anchored" data-anchor-id="from-concept-to-code">From Concept to Code</h2>
+<p>Thursday was a working session — we took the five-step plan and built it live, step by step, in a real marimo notebook running on actual Vancouver road data.</p>
+<p>The class activity walked through each function:</p>
+<p><strong><code>compute_pairwise(G, nodes)</code></strong> — iterate over every pair of errand nodes, check <code>nx.has_path</code>, store the shortest path and length in nested dicts.</p>
+<p><strong><code>tourlength(tour, dfdist)</code></strong> — sum <code>dfdist[tour[k]][tour[(k+1) % len(tour)]]</code> for all <span class="math inline">\(k\)</span>, wrapping back to the start with modulo.</p>
+<p><strong><code>find_best_tour(tours, dfdist)</code></strong> — classic “find minimum” pattern: initialize with <code>tours[0]</code>, loop over all tours, update when you find a shorter one.</p>
+<p><strong><code>assemble_route(tour, dfdict)</code></strong> — stitch the pre-computed paths: start with <code>[tour[0]]</code>, then append <code>dfdict[tour[k]][next_stop][1:]</code> for each leg (the <code>[1:]</code> avoids duplicating the junction node).</p>
+<hr>
+</section>
+<section id="the-payoff-a-route-on-a-real-map" class="level2">
+<h2 class="anchored" data-anchor-id="the-payoff-a-route-on-a-real-map">The Payoff: A Route on a Real Map</h2>
+<p>After the solver runs, <code>assemble_route</code> stitches the pre-computed Dijkstra paths into a single turn-by-turn sequence of road nodes. Drop that into folium and you get a real, drivable route drawn on an interactive Vancouver map — the optimal order to run your Saturday errands, proven by exhaustive search.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why pre-compute and store paths?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When assembling the final route, you might be tempted to call <code>nx.shortest_path</code> again for each leg. But you already computed those paths in Step 2! Storing them in <code>dfdict</code> means assembly is just dict lookups — no repeated work, no risk of getting a different path.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="why-tsp-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-tsp-matters">Why TSP Matters</h2>
+<p>Ten errands feels like a toy problem. But the same algorithm structure applies everywhere:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Industry</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>📦 Logistics</td>
+<td>UPS saves millions annually by cutting even 1 km/driver/day</td>
+</tr>
+<tr class="even">
+<td>🍔 Food delivery</td>
+<td>UberEats/DoorDash multi-stop pickup with time windows</td>
+</tr>
+<tr class="odd">
+<td>🧬 Genomics</td>
+<td>DNA fragment ordering in genome assembly</td>
+</tr>
+<tr class="even">
+<td>🚌 Transportation</td>
+<td>School bus routing, snowplow and garbage truck coverage</td>
+</tr>
+<tr class="odd">
+<td>🧪 Lab automation</td>
+<td>Robotic arm scheduling across multi-station workflows</td>
+</tr>
+<tr class="even">
+<td>🏭 Manufacturing</td>
+<td>CNC tool path optimization — fewer moves = less wear and heat</td>
+</tr>
+<tr class="odd">
+<td>✈️ Airlines</td>
+<td>Crew scheduling: crews must return to base, meet rest rules</td>
+</tr>
+<tr class="even">
+<td>🚑 Emergency services</td>
+<td>Ambulance routing — seconds matter</td>
+</tr>
+</tbody>
+</table>
+<p>Brute-force only works up to about 20 stops. Beyond that, the field of <strong>combinatorial optimization</strong> has decades of clever approximation algorithms, heuristics, and special-purpose solvers — all built on the same foundation we laid this week.</p>
 <hr>
 </section>
 <section id="whats-next" class="level2">
 <h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
-<p>Dijkstra answers “what’s the shortest route between two places?” — but a new question is forming: what if you have ten errands and need to visit all of them? That’s a completely different problem, and it’s one of the most famous in all of computer science.</p>
-<p><strong>Week 12:</strong> the Travelling Salesperson Problem — and building a real brute-force solver in Vancouver.</p>
-<p><strong>EX4 was this week</strong> — hope it went smoothly! Use PEX4 for more practice.</p>
-<p><strong>Project 2</strong> is due — great work getting it done!</p>
+<p>We’ve now built a complete graph application from scratch: real map data → graph → algorithm → interactive visualization. That’s the full stack.</p>
+<p><strong>Project 3</strong> (Campus Walks) uses the same ideas but with depth-first search instead of brute-force enumeration — finding a workout route of a target length on the UBC road network, with a preference for going straight.</p>
+<p><strong>Week 13:</strong> data visualization — putting our results on the screen in a way that communicates clearly and beautifully.</p>
 <p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
 
 
@@ -1185,7 +1268,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/11_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/11_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/12_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/12_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
