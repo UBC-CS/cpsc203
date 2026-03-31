@@ -1,5 +1,5 @@
 ---
-date: 2025-11-27
+date: 2026-03-31
 ---
 
 ## Announcements
@@ -13,10 +13,10 @@ date: 2025-11-27
 ## Lexical Novelty {.smaller}
 
 ::::: columns 
-::: {.column}
+::: {.column width="40%"}
 ![](/images/vis2.png)
 :::
-::: {.column}
+::: {.column width="60%"}
 "Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel. In the below visualizations (in which each column represents a chapter and each small block a paragraph of text), I maintain a variable which represents novelty. When a paragraph contains more than 25% new terms (i.e. words that have not been observed thus far) this variable is set at its maximum of 1. Otherwise, the variable decays. The variable is used to colour the paragraph with red being 1.0 and blue being 0. The result is that we can get an idea of the introduction of new ideas in novels."  - Matthew Hurst
 :::
 :::::
@@ -98,7 +98,7 @@ We can separate the data (string) into any of these using a “tokenizer”
 
 \ 
 
-Translate: “Astrology. The governess was always\ngetting muddled with her astrolabe, and when she got specially muddled she would take it out\nof the Wart by rapping his knuckles. She did not rap Kay's knuckles, because when Kay grew\nolder”
+Translate: “Astrology. The governess was always\\n getting muddled with her astrolabe, and when she got specially muddled she would take it out\\n of the Wart by rapping his knuckles. She did not rap Kay's knuckles, because when Kay grew\\n older”
 
 \ 
 
@@ -344,7 +344,7 @@ eaten -> eat
 
 ## Demo {.activity}
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2666396)
 
 
 
