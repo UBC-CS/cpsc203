@@ -98,7 +98,7 @@ We can separate the data (string) into any of these using a “tokenizer”
 
 \ 
 
-Translate: “Astrology. The governess was always\\ngetting muddled with her astrolabe, and when she got specially muddled she would take it out\\nof the Wart by rapping his knuckles. She did not rap Kay's knuckles, because when Kay grew\\nolder”
+Translate: “Astrology. The governess was always\ngetting muddled with her astrolabe, and when she got specially muddled she would take it out\nof the Wart by rapping his knuckles. She did not rap Kay's knuckles, because when Kay grew\nolder”
 
 \ 
 
@@ -344,7 +344,7 @@ eaten -> eat
 
 ## Demo {.activity}
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2666396)
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732)
 
 
 

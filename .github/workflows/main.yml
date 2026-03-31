@@ -38,6 +38,8 @@ jobs:
 
     - name: Install R dependencies
       uses: r-lib/actions/setup-renv@v2
+      env:
+        RENV_CONFIG_PAK_ENABLED: "FALSE"
 
     - name: Install Python dependencies and render Quarto
       run: uv run quarto render
