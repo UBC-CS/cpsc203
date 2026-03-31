@@ -37,9 +37,7 @@ jobs:
         r-version: renv
 
     - name: Install R dependencies
-      uses: r-lib/actions/setup-renv@v2
-      env:
-        RENV_CONFIG_PAK_ENABLED: "FALSE"
+      run: Rscript -e "options(renv.config.pak.enabled = FALSE); renv::restore(prompt = FALSE)"
 
     - name: Install Python dependencies and render Quarto
       run: uv run quarto render
