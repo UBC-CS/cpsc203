@@ -3761,7 +3761,7 @@
     "href": "slides/13_tue_vislit.html#tokenization",
     "title": "Programming, problem solving, and algorithms",
     "section": "Tokenization",
-    "text": "Tokenization\n \nTranslate: “Astrology. The governess was alwaysmuddled with her astrolabe, and when she got specially muddled she would take it outthe Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
+    "text": "Tokenization\n \nTranslate: “Astrology. The governess was always\\n getting muddled with her astrolabe, and when she got specially muddled she would take it out\\n of the Wart by rapping his knuckles. She did not rap Kay’s knuckles, because when Kay grew\\n older”\n \nInto: [‘Astrology.’, ‘The’, ‘governess’, ‘was’, ‘always’, ‘getting’, ‘muddled’, ‘with’, ‘her’, ‘astrolabe’, ‘,’, ‘and’, ‘when’, ‘she’, ‘got’, ‘specially’, ‘muddled’, ‘she’, ‘would’, ‘take’, ‘it’, ‘out’, ‘of’, ‘the’, ‘Wart’, ‘by’, ‘rapping’, ‘his’, ‘knuckles.’, ‘She’, ‘did’, ‘not’, ‘rap’, ‘Kay’, “‘s”, ’knuckles’, ‘,’, ‘because’, ‘when’, ‘Kay’, ‘grew’, ‘older’]"
   },
   {
     "objectID": "slides/13_tue_vislit.html#demo",
