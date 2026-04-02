@@ -1,95 +1,84 @@
 ---
-date: 2025-12-02
+date: 2026-04-02
 ---
 
 ## Announcements
 
 # Text as Data
 
-## The Text-as-Data Pipeline {.smaller}
+## From Last Time
 
-**Data flow:**
+Resource for our nlp tool: [spaCy](https://spacy.io/usage/spacy-101)
 
-1. **Load** the text from a file
-2. **Tokenize**: split into words
-3. **Preprocess**:
-   - lowercase
-   - remove punctuation
-   - remove stopwords
-   - use **lemmas**
-4. **Count** frequencies
-5. **Visualize** as a bar chart
-6. **Interpret**: what do the counts tell us?
+ - Key observation: when a big string of text is run through the processor, many, many attributes are introduced!
 
-## Demo
+- Last time we counted word "token"s. Today: POS and NER. 
 
-::::: columns
-::: {.column width=70%}
-![](/images/tokens.png)
-:::
-::: {.column width=30%}
+## Parts of Speech
 
-\ 
+**Open class** — new words can always be added:
+Noun, Verb, Adjective, Adverb
 
-\ 
+**Closed class** — fixed, finite set:
+Preposition, Conjunction, Pronoun, Interjection
 
-Thirty most common tokens in the mystery text.
-:::
-:::::
+\
 
-## A Feasible Sequence
+Nouns subdivide: **proper** (Emma, Hartfield) vs **common** (village, house)
 
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="900" height="100" viewBox="0 0 900 100">
-<style>
-    .box {
-      rx: 15;
-      ry: 15;
-      stroke: #5b4c8a;
-      stroke-width: 2;
-    }
-    .box-light {
-      fill: #e3d7ff;
-    }
-    .box-mid {
-      fill: #c5b2ff;
-    }
-    .label {
-      font-family: "Helvetica", "Arial", sans-serif;
-      font-size: 18px;
-      text-anchor: middle;
-      dominant-baseline: middle;
-      fill: #2b2147;
-    }
-  </style>
-  <rect class="box box-mid" x="40" y="20" width="160" height="60" />
-  <text class="label" x="120" y="50">lower case</text>
-  <rect class="box box-mid" x="240" y="20" width="160" height="60" />
-  <text class="label" x="315" y="39">eliminate</text>
-  <text class="label" x="315" y="61">punctuation</text>
-  <rect class="box box-mid" x="440" y="20" width="160" height="60" />
-  <text class="label" x="520" y="39">remove stop</text>
-  <text class="label" x="520" y="61">words</text>
-  <rect class="box box-light" x="640" y="20" width="80" height="60" />
-  <text class="label" x="680" y="50">lemma</text>
-</svg>
+→ Proper nouns are often *named entities* — this is our bridge to NER
 
-::::: columns
-::: {.column width=70%}
-![](/images/lemmas.png)
-:::
-::: {.column width=30%}
+## POS Tagging is Hard
 
-* goes -> go
-* running -> run
-* eaten -> eat
+The word **"curling"** can be three different things depending on context:
 
-:::
-:::::
+\
 
-## Demo {.activity}
+*Plug in the* **curling** *iron.* → adjective (`JJ`)
 
-[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2618732)
+\
+
+*I want to learn to play* **curling**. → noun (`NN`)
+
+\
+
+*The ribbon is* **curling** *around the Maypole.* → verb (`VBG`)
+
+## spaCy POS: Two Levels {.smaller}
+
+spaCy gives you two levels of detail on every token:
+
+| Attribute | Grain | Example values |
+|-----------|-------|----------------|
+| `token.pos_` | Coarse (universal) | `NOUN`, `VERB`, `PROPN`, `ADJ`, `ADP` |
+| `token.tag_` | Fine (Penn Treebank) | `NN`, `VBD`, `NNP`, `JJ`, `IN` |
+
+\
+
+For the sentence *"Emma lost no time."*:
+
+```python
+[('Emma', 'PROPN'), ('lost', 'VERB'),
+ ('no',   'DET'),   ('time', 'NOUN'), ('.', 'PUNCT')]
+```
+
+`PROPN`: proper noun, a signal that this token might be a named entity
+
+## From POS to Named Entities
+
+POS tagging labels **every token** individually.
+
+\
+
+But named entities are often **multi-word spans**: *"Mr. Knightley"*, *"Hartfield"*, *"Emma Woodhouse"*
+
+\
+
+NER goes farther: it groups tokens into spans and assigns a **category**:
+
+* `PERSON` — people and characters
+* `LOC` / `GPE` — places
+* `ORG` — organizations
 
 ## Named Entity Recognition
 
@@ -119,9 +108,29 @@ Harriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and deci
 
 Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program.
 
+## IOB Encoding {.smaller}
+
+NER marks which tokens belong to an entity using **IOB tags**:
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| `B` | **B**eginning of an entity | `('Harriet', 'B', 'PERSON')` |
+| `I` | **I**nside (continuing) an entity | `('Smith', 'I', 'PERSON')` |
+| `O` | **O**utside — not part of any entity | `('was', 'O', '')` |
+
+\
+
+So *"Harriet Smith was late"* becomes:
+
+```python
+[('Harriet', 'B', 'PERSON'), ('Smith', 'I', 'PERSON'),
+ ('was',     'O', ''),       ('late',  'O', '')]
+```
+
+
 ## NER with SpaCy {.activity}
 
-2. The PL [activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910) contains a file called `ner_nb.py`. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.
+2. The PL [activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2667610) contains a file called `ner_nb.py`. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.
 
   a.  load a OFK excerpt from `ofk_ch1Short.txt`
 
@@ -135,105 +144,12 @@ Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about h
 
   e. If `sents` is the result of part c, what does `sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]` do?
 
+
 ## NER with SpaCy {.activity}
 
-  f. e. If `sents` is the result of part c, what does `sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]` do?
+  f. If `sents` is the result of part c, what does `ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]` do?
 
-
-  g. If `sents` is the result of part c, what does `ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]` do?
+  g. If `sents` is the result of part c, what does `sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]` do?
 
   h. If  `doc` is the result of part b, what does `names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]` do?
    
-## One Last Project
-
-Suppose we’d like to understand the bonds between pairs of people in a book!
-
-::::: columns
-::: {.column}
-* How can we infer connections between characters?
-* How can we draw a graph?
-:::
-::: {.column}
-![](/images/gr4.png)
-:::
-:::::
-
-## Friends?
-
-Given the text from a novel, how can we infer interaction or connections between characters?  Discuss this question, and write down your ideas. 
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-\ 
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-\ 
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-\ 
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-
-## We Are Not the First {.smaller}
-
-<center>
-[![](/images/socnet2.png)](https://nicholasdames.org/wp-content/uploads/2013/06/ACL2010-ElsonDamesMcKeown.pdf)
-</center>
-
-## Starting From the Goal
-
-\ 
-
-The social network graph will have...
-
-\ 
-
-Vertices:
-
-\ 
-
-Edges:
-
-## Edges
-
-We could consider every pair of people and check every paragraph for their presence. 
-
-* Do you like this plan?
-
-OR, we could
-
-1.   
-
-2.   
-
-## Edges
-
-```"I've heard of his family," said Ron darkly. "They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side." He turned to Hermione. "Can we help you with something?"
-```
-
-* What names appear?
-* What pairs should be tallied?
-* General observations:
-
-## Moving to the Middle
-
-\ 
-
-Given `[[RW, HG, HP], [RW, AD], [H, HP, HG]]`, 
-
-1. Could you create `[RW, HG, HP, AD, H]`?
-
-\ 
-
-2. and `{(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}`?
-
-## Demo {.activity}
-
-In the PL [activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910), load `socnet_nb.py`.
-
- 
-  
-
