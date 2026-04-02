@@ -1071,32 +1071,39 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/13_thu_vislit.html#the-text-as-data-pipeline",
-    "href": "slides/13_thu_vislit.html#the-text-as-data-pipeline",
+    "objectID": "slides/13_thu_vislit.html#from-last-time",
+    "href": "slides/13_thu_vislit.html#from-last-time",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Text-as-Data Pipeline",
-    "text": "The Text-as-Data Pipeline\nData flow:\n\nLoad the text from a file\nTokenize: split into words\nPreprocess:\n\nlowercase\nremove punctuation\nremove stopwords\nuse lemmas\n\nCount frequencies\nVisualize as a bar chart\nInterpret: what do the counts tell us?"
+    "section": "From Last Time",
+    "text": "From Last Time\nResource for our nlp tool: spaCy\n\nKey observation: when a big string of text is run through the processor, many, many attributes are introduced!\nLast time we counted word “token”s. Today: POS and NER."
   },
   {
-    "objectID": "slides/13_thu_vislit.html#demo",
-    "href": "slides/13_thu_vislit.html#demo",
+    "objectID": "slides/13_thu_vislit.html#parts-of-speech",
+    "href": "slides/13_thu_vislit.html#parts-of-speech",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\n\n\n\n\n \n \nThirty most common tokens in the mystery text."
+    "section": "Parts of Speech",
+    "text": "Parts of Speech\nOpen class — new words can always be added: Noun, Verb, Adjective, Adverb\nClosed class — fixed, finite set: Preposition, Conjunction, Pronoun, Interjection\n\n\nNouns subdivide: proper (Emma, Hartfield) vs common (village, house)\n→ Proper nouns are often named entities — this is our bridge to NER"
   },
   {
-    "objectID": "slides/13_thu_vislit.html#a-feasible-sequence",
-    "href": "slides/13_thu_vislit.html#a-feasible-sequence",
+    "objectID": "slides/13_thu_vislit.html#pos-tagging-is-hard",
+    "href": "slides/13_thu_vislit.html#pos-tagging-is-hard",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A Feasible Sequence",
-    "text": "A Feasible Sequence\n\n\n lower case  eliminate punctuation  remove stop words  lemma\n\n\n\n\n\n\ngoes -&gt; go\nrunning -&gt; run\neaten -&gt; eat"
+    "section": "POS Tagging is Hard",
+    "text": "POS Tagging is Hard\nThe word “curling” can be three different things depending on context:\n\n\nPlug in the curling iron. → adjective (JJ)\n\n\nI want to learn to play curling. → noun (NN)\n\n\nThe ribbon is curling around the Maypole. → verb (VBG)"
   },
   {
-    "objectID": "slides/13_thu_vislit.html#demo-1",
-    "href": "slides/13_thu_vislit.html#demo-1",
+    "objectID": "slides/13_thu_vislit.html#spacy-pos-two-levels",
+    "href": "slides/13_thu_vislit.html#spacy-pos-two-levels",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nPrairieLearn Activity"
+    "section": "spaCy POS: Two Levels",
+    "text": "spaCy POS: Two Levels\nspaCy gives you two levels of detail on every token:\n\n\n\n\n\n\n\n\nAttribute\nGrain\nExample values\n\n\n\n\ntoken.pos_\nCoarse (universal)\nNOUN, VERB, PROPN, ADJ, ADP\n\n\ntoken.tag_\nFine (Penn Treebank)\nNN, VBD, NNP, JJ, IN\n\n\n\n\n\nFor the sentence “Emma lost no time.”:\n[('Emma', 'PROPN'), ('lost', 'VERB'),\n ('no',   'DET'),   ('time', 'NOUN'), ('.', 'PUNCT')]\nPROPN: proper noun, a signal that this token might be a named entity"
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#from-pos-to-named-entities",
+    "href": "slides/13_thu_vislit.html#from-pos-to-named-entities",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "From POS to Named Entities",
+    "text": "From POS to Named Entities\nPOS tagging labels every token individually.\n\n\nBut named entities are often multi-word spans: “Mr. Knightley”, “Hartfield”, “Emma Woodhouse”\n\n\nNER goes farther: it groups tokens into spans and assigns a category:\n\nPERSON — people and characters\nLOC / GPE — places\nORG — organizations"
   },
   {
     "objectID": "slides/13_thu_vislit.html#named-entity-recognition",
@@ -1111,6 +1118,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "NER",
     "text": "NER\n\nUnderline all of the proper nouns (named entities) in this text:\n\nHarriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.\nTypical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program."
+  },
+  {
+    "objectID": "slides/13_thu_vislit.html#iob-encoding",
+    "href": "slides/13_thu_vislit.html#iob-encoding",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "IOB Encoding",
+    "text": "IOB Encoding\nNER marks which tokens belong to an entity using IOB tags:\n\n\n\nTag\nMeaning\nExample\n\n\n\n\nB\nBeginning of an entity\n('Harriet', 'B', 'PERSON')\n\n\nI\nInside (continuing) an entity\n('Smith', 'I', 'PERSON')\n\n\nO\nOutside — not part of any entity\n('was', 'O', '')\n\n\n\n\n\nSo “Harriet Smith was late” becomes:\n[('Harriet', 'B', 'PERSON'), ('Smith', 'I', 'PERSON'),\n ('was',     'O', ''),       ('late',  'O', '')]"
   },
   {
     "objectID": "slides/13_thu_vislit.html#ner-with-spacy",
@@ -1131,63 +1145,7 @@
     "href": "slides/13_thu_vislit.html#ner-with-spacy-2",
     "title": "Programming, problem solving, and algorithms",
     "section": "NER with SpaCy",
-    "text": "NER with SpaCy\n\n\nIf sents is the result of part c, what does sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents] do?\n\nIf sents is the result of part c, what does ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents] do?\nIf doc is the result of part b, what does names = [ent.text for ent in doc.ents if ent.label_ == \"PERSON\"] do?"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#one-last-project",
-    "href": "slides/13_thu_vislit.html#one-last-project",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "One Last Project",
-    "text": "One Last Project\nSuppose we’d like to understand the bonds between pairs of people in a book!\n\n\n\nHow can we infer connections between characters?\nHow can we draw a graph?"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#friends",
-    "href": "slides/13_thu_vislit.html#friends",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Friends?",
-    "text": "Friends?\nGiven the text from a novel, how can we infer interaction or connections between characters? Discuss this question, and write down your ideas.\n________________________________________\n \n________________________________________\n \n________________________________________\n \n________________________________________"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#we-are-not-the-first",
-    "href": "slides/13_thu_vislit.html#we-are-not-the-first",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "We Are Not the First",
-    "text": "We Are Not the First"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#starting-from-the-goal",
-    "href": "slides/13_thu_vislit.html#starting-from-the-goal",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Starting From the Goal",
-    "text": "Starting From the Goal\n \nThe social network graph will have…\n \nVertices:\n \nEdges:"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#edges",
-    "href": "slides/13_thu_vislit.html#edges",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Edges",
-    "text": "Edges\nWe could consider every pair of people and check every paragraph for their presence.\n\nDo you like this plan?\n\nOR, we could"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#edges-1",
-    "href": "slides/13_thu_vislit.html#edges-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Edges",
-    "text": "Edges\n\"I've heard of his family,\" said Ron darkly. \"They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side.\" He turned to Hermione. \"Can we help you with something?\"\n\nWhat names appear?\nWhat pairs should be tallied?\nGeneral observations:"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#moving-to-the-middle",
-    "href": "slides/13_thu_vislit.html#moving-to-the-middle",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Moving to the Middle",
-    "text": "Moving to the Middle\n \nGiven [[RW, HG, HP], [RW, AD], [H, HP, HG]],\n\nCould you create [RW, HG, HP, AD, H]?\n\n \n\nand {(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}?"
-  },
-  {
-    "objectID": "slides/13_thu_vislit.html#demo-2",
-    "href": "slides/13_thu_vislit.html#demo-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\nIn the PL activity, load socnet_nb.py."
+    "text": "NER with SpaCy\n\nIf sents is the result of part c, what does ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents] do?\nIf sents is the result of part c, what does sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents] do?\nIf doc is the result of part b, what does names = [ent.text for ent in doc.ents if ent.label_ == \"PERSON\"] do?"
   },
   {
     "objectID": "slides/10_thu_sudoku.html#announcements",
