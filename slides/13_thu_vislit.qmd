@@ -16,6 +16,19 @@ Resource for our nlp tool: [spaCy](https://spacy.io/usage/spacy-101)
 
 ## Parts of Speech
 
+::::: columns
+::: {.column width="50%"}
+
+Helps us understand the meaning of language.
+
+:::
+::: {.column width="30%"}
+![](/images/socnet1.png)
+:::
+:::::
+
+## Parts of Speech
+
 **Open class** — new words can always be added:
 Noun, Verb, Adjective, Adverb
 
@@ -64,7 +77,7 @@ For the sentence *"Emma lost no time."*:
 
 `PROPN`: proper noun, a signal that this token might be a named entity
 
-## From POS to Named Entities
+## From POS to Named Entities {.smaller}
 
 POS tagging labels **every token** individually.
 
@@ -80,10 +93,10 @@ NER goes farther: it groups tokens into spans and assigns a **category**:
 * `LOC` / `GPE` — places
 * `ORG` — organizations
 
-## Named Entity Recognition
+## Named Entity Recognition {.smaller}
 
 ::::: columns
-::: {.column}
+::: {.column width="50%"}
 Essentially: tagging proper nouns
 
 \ 
@@ -93,8 +106,8 @@ NER used for inferring relationships between entities:
 * PERSON *lives* LOCATION
 * LOCATION *has* ORGANIZATION
 :::
-::: {.column}
-![](/images/socnet1.png)
+::: {.column width="50%"}
+![](/images/emma1.png)
 :::
 :::::
 
