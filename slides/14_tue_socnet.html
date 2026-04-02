@@ -34,72 +34,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -226,100 +160,10 @@
 <h1>Text as Data</h1>
 
 </section>
-<section id="from-last-time" class="slide level2">
-<h2>From Last Time</h2>
-<p>Resource for our nlp tool: <a href="https://spacy.io/usage/spacy-101">spaCy</a></p>
-<ul>
-<li><p>Key observation: when a big string of text is run through the processor, many, many attributes are introduced!</p></li>
-<li><p>Last time we counted word “token”s. Today: POS and NER.</p></li>
-</ul>
-</section>
-<section id="parts-of-speech" class="slide level2">
-<h2>Parts of Speech</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Helps us understand the meaning of language.</p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="../images/socnet1.png"></p>
-</div></div>
-</section>
-<section id="parts-of-speech-1" class="slide level2">
-<h2>Parts of Speech</h2>
-<p><strong>Open class</strong> — new words can always be added: Noun, Verb, Adjective, Adverb</p>
-<p><strong>Closed class</strong> — fixed, finite set: Preposition, Conjunction, Pronoun, Interjection</p>
-<p><br>
-</p>
-<p>Nouns subdivide: <strong>proper</strong> (Emma, Hartfield) vs <strong>common</strong> (village, house)</p>
-<p>→ Proper nouns are often <em>named entities</em> — this is our bridge to NER</p>
-</section>
-<section id="pos-tagging-is-hard" class="slide level2">
-<h2>POS Tagging is Hard</h2>
-<p>The word <strong>“curling”</strong> can be three different things depending on context:</p>
-<p><br>
-</p>
-<p><em>Plug in the</em> <strong>curling</strong> <em>iron.</em> → adjective (<code>JJ</code>)</p>
-<p><br>
-</p>
-<p><em>I want to learn to play</em> <strong>curling</strong>. → noun (<code>NN</code>)</p>
-<p><br>
-</p>
-<p><em>The ribbon is</em> <strong>curling</strong> <em>around the Maypole.</em> → verb (<code>VBG</code>)</p>
-</section>
-<section id="spacy-pos-two-levels" class="slide level2 smaller">
-<h2>spaCy POS: Two Levels</h2>
-<p>spaCy gives you two levels of detail on every token:</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 32%">
-<col style="width: 20%">
-<col style="width: 47%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Grain</th>
-<th>Example values</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>token.pos_</code></td>
-<td>Coarse (universal)</td>
-<td><code>NOUN</code>, <code>VERB</code>, <code>PROPN</code>, <code>ADJ</code>, <code>ADP</code></td>
-</tr>
-<tr class="even">
-<td><code>token.tag_</code></td>
-<td>Fine (Penn Treebank)</td>
-<td><code>NN</code>, <code>VBD</code>, <code>NNP</code>, <code>JJ</code>, <code>IN</code></td>
-</tr>
-</tbody>
-</table>
-<p><br>
-</p>
-<p>For the sentence <em>“Emma lost no time.”</em>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>[(<span class="st">'Emma'</span>, <span class="st">'PROPN'</span>), (<span class="st">'lost'</span>, <span class="st">'VERB'</span>),</span>
-<span id="cb1-2"><a></a> (<span class="st">'no'</span>,   <span class="st">'DET'</span>),   (<span class="st">'time'</span>, <span class="st">'NOUN'</span>), (<span class="st">'.'</span>, <span class="st">'PUNCT'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>PROPN</code>: proper noun, a signal that this token might be a named entity</p>
-</section>
-<section id="from-pos-to-named-entities" class="slide level2 smaller">
-<h2>From POS to Named Entities</h2>
-<p>POS tagging labels <strong>every token</strong> individually.</p>
-<p><br>
-</p>
-<p>But named entities are often <strong>multi-word spans</strong>: <em>“Mr.&nbsp;Knightley”</em>, <em>“Hartfield”</em>, <em>“Emma Woodhouse”</em></p>
-<p><br>
-</p>
-<p>NER goes farther: it groups tokens into spans and assigns a <strong>category</strong>:</p>
-<ul>
-<li><code>PERSON</code> — people and characters</li>
-<li><code>LOC</code> / <code>GPE</code> — places</li>
-<li><code>ORG</code> — organizations</li>
-</ul>
-</section>
-<section id="named-entity-recognition" class="slide level2 smaller">
+<section id="named-entity-recognition" class="slide level2">
 <h2>Named Entity Recognition</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column">
 <p>Essentially: tagging proper nouns</p>
 <p>&nbsp;</p>
 <p>NER used for inferring relationships between entities:</p>
@@ -327,8 +171,8 @@
 <li>PERSON <em>lives</em> LOCATION</li>
 <li>LOCATION <em>has</em> ORGANIZATION</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../images/emma1.png"></p>
+</div><div class="column">
+<p><img data-src="../images/socnet1.png"></p>
 </div></div>
 </section>
 <section id="ner" class="slide level2">
@@ -339,45 +183,10 @@
 <pre><code>Harriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.</code></pre>
 <p>Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program.</p>
 </section>
-<section id="iob-encoding" class="slide level2 smaller">
-<h2>IOB Encoding</h2>
-<p>NER marks which tokens belong to an entity using <strong>IOB tags</strong>:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Tag</th>
-<th>Meaning</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>B</code></td>
-<td><strong>B</strong>eginning of an entity</td>
-<td><code>('Harriet', 'B', 'PERSON')</code></td>
-</tr>
-<tr class="even">
-<td><code>I</code></td>
-<td><strong>I</strong>nside (continuing) an entity</td>
-<td><code>('Smith', 'I', 'PERSON')</code></td>
-</tr>
-<tr class="odd">
-<td><code>O</code></td>
-<td><strong>O</strong>utside — not part of any entity</td>
-<td><code>('was', 'O', '')</code></td>
-</tr>
-</tbody>
-</table>
-<p><br>
-</p>
-<p>So <em>“Harriet Smith was late”</em> becomes:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>[(<span class="st">'Harriet'</span>, <span class="st">'B'</span>, <span class="st">'PERSON'</span>), (<span class="st">'Smith'</span>, <span class="st">'I'</span>, <span class="st">'PERSON'</span>),</span>
-<span id="cb3-2"><a></a> (<span class="st">'was'</span>,     <span class="st">'O'</span>, <span class="st">''</span>),       (<span class="st">'late'</span>,  <span class="st">'O'</span>, <span class="st">''</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 <section id="ner-with-spacy" class="slide level2 activity">
 <h2>NER with SpaCy</h2>
 <ol start="2" type="1">
-<li>The PL <a href="https://us.prairielearn.com/pl/course_instance/202804/assessment/2667610">activity</a> contains a file called <code>ner_nb.py</code>. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.</li>
+<li>The PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a> contains a file called <code>ner_nb.py</code>. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.</li>
 </ol>
 <ol type="a">
 <li><p>load a OFK excerpt from <code>ofk_ch1Short.txt</code></p></li>
@@ -395,10 +204,88 @@
 <section id="ner-with-spacy-2" class="slide level2 activity">
 <h2>NER with SpaCy</h2>
 <ol start="6" type="a">
+<li><ol start="5" type="a">
+<li>If <code>sents</code> is the result of part c, what does <code>sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]</code> do?</li>
+</ol></li>
 <li><p>If <code>sents</code> is the result of part c, what does <code>ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]</code> do?</p></li>
-<li><p>If <code>sents</code> is the result of part c, what does <code>sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]</code> do?</p></li>
 <li><p>If <code>doc</code> is the result of part b, what does <code>names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]</code> do?</p></li>
 </ol>
+</section>
+<section id="one-last-project" class="slide level2">
+<h2>One Last Project</h2>
+<p>Suppose we’d like to understand the bonds between pairs of people in a book!</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>How can we infer connections between characters?</li>
+<li>How can we draw a graph?</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../images/gr4.png"></p>
+</div></div>
+</section>
+<section id="friends" class="slide level2">
+<h2>Friends?</h2>
+<p>Given the text from a novel, how can we infer interaction or connections between characters? Discuss this question, and write down your ideas.</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+<p>&nbsp;</p>
+<p>________________________________________</p>
+</section>
+<section id="we-are-not-the-first" class="slide level2 smaller">
+<h2>We Are Not the First</h2>
+<center>
+<a href="https://nicholasdames.org/wp-content/uploads/2013/06/ACL2010-ElsonDamesMcKeown.pdf"><img data-src="../images/socnet2.png"></a>
+</center>
+</section>
+<section id="starting-from-the-goal" class="slide level2">
+<h2>Starting From the Goal</h2>
+<p>&nbsp;</p>
+<p>The social network graph will have…</p>
+<p>&nbsp;</p>
+<p>Vertices:</p>
+<p>&nbsp;</p>
+<p>Edges:</p>
+</section>
+<section id="edges" class="slide level2">
+<h2>Edges</h2>
+<p>We could consider every pair of people and check every paragraph for their presence.</p>
+<ul>
+<li>Do you like this plan?</li>
+</ul>
+<p>OR, we could</p>
+<ol type="1">
+<li></li>
+<li></li>
+</ol>
+</section>
+<section id="edges-1" class="slide level2">
+<h2>Edges</h2>
+<p><code>"I've heard of his family," said Ron darkly. "They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side." He turned to Hermione. "Can we help you with something?"</code></p>
+<ul>
+<li>What names appear?</li>
+<li>What pairs should be tallied?</li>
+<li>General observations:</li>
+</ul>
+</section>
+<section id="moving-to-the-middle" class="slide level2">
+<h2>Moving to the Middle</h2>
+<p>&nbsp;</p>
+<p>Given <code>[[RW, HG, HP], [RW, AD], [H, HP, HG]]</code>,</p>
+<ol type="1">
+<li>Could you create <code>[RW, HG, HP, AD, H]</code>?</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="2" type="1">
+<li>and <code>{(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}</code>?</li>
+</ol>
+</section>
+<section id="demo" class="slide level2 activity">
+<h2>Demo</h2>
+<p>In the PL <a href="https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910">activity</a>, load <code>socnet_nb.py</code>.</p>
 
 
 <script type="ojs-module-contents">
