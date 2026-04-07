@@ -5,59 +5,6 @@ date: 2026-04-02
 ## Announcements
 
 # Text as Data
-
-## Named Entity Recognition
-
-::::: columns
-::: {.column}
-Essentially: tagging proper nouns
-
-\ 
-
-NER used for inferring relationships between entities:
-
-* PERSON *lives* LOCATION
-* LOCATION *has* ORGANIZATION
-:::
-::: {.column}
-![](/images/socnet1.png)
-:::
-:::::
-
-## NER 
-
-1. Underline all of the proper nouns (named entities) in this text:
-
-```
-Harriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.
-```
-
-Typical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program.
-
-## NER with SpaCy {.activity}
-
-2. The PL [activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910) contains a file called `ner_nb.py`. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.
-
-  a.  load a OFK excerpt from `ofk_ch1Short.txt`
-
-  b.  create a spaCy doc object with `doc = nlp(textRaw)`
-
-## NER with SpaCy {.activity}
-
-  c. If `doc` is the result of part b, What does `sents = list(doc.sents)` do?
-
-  d. If `sents` is the result of part c, what does `sentWords = [[token.text for token in sent] for sent in sents]` do?
-
-  e. If `sents` is the result of part c, what does `sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]` do?
-
-## NER with SpaCy {.activity}
-
-  f. e. If `sents` is the result of part c, what does `sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]` do?
-
-
-  g. If `sents` is the result of part c, what does `ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]` do?
-
-  h. If  `doc` is the result of part b, what does `names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]` do?
    
 ## One Last Project
 
@@ -65,6 +12,7 @@ Suppose we’d like to understand the bonds between pairs of people in a book!
 
 ::::: columns
 ::: {.column}
+* How can we find characters in a story?
 * How can we infer connections between characters?
 * How can we draw a graph?
 :::
@@ -126,7 +74,7 @@ OR, we could
 
 ## Edges
 
-```"I've heard of his family," said Ron darkly. "They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side." He turned to Hermione. "Can we help you with something?"
+```"I'm glad," said Anne quickly. "I couldn't really feel proud of keeping head of little boys and girls of just nine or ten. I got up yesterday spelling 'ebullition.' Josie Pye was head and, mind you, she peeped in her book. Mr. Phillips didn't see her—he was looking at Prissy Andrews—but I did. I just swept her a look of freezing scorn and she got as red as a beet and spelled it wrong after all."
 ```
 
 * What names appear?
@@ -137,18 +85,19 @@ OR, we could
 
 \ 
 
-Given `[[RW, HG, HP], [RW, AD], [H, HP, HG]]`, 
+Given `[[AS, JP, MP], [MP, PA], [AS, JP]]`,
 
-1. Could you create `[RW, HG, HP, AD, H]`?
+1. Could you create `[AS, JP, MP, PA]`?
 
-\ 
+\
 
-2. and `{(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}`?
+2. and `{(AS,JP):2, (AS,MP):1, (JP,MP):1, (MP,PA):1}`?
 
 ## Demo {.activity}
 
-In the PL [activity](https://us.prairielearn.com/pl/course_instance/193300/assessment/2620910), load `socnet_nb.py`.
+In the PL [activity](https://us.prairielearn.com/pl/course_instance/202804/assessment/2669406), load `socnet_nb.py`.
 
  
   
+
 
