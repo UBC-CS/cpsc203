@@ -1645,46 +1645,11 @@
     "text": "Announcements"
   },
   {
-    "objectID": "slides/14_tue_socnet.html#named-entity-recognition",
-    "href": "slides/14_tue_socnet.html#named-entity-recognition",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Named Entity Recognition",
-    "text": "Named Entity Recognition\n\n\nEssentially: tagging proper nouns\n \nNER used for inferring relationships between entities:\n\nPERSON lives LOCATION\nLOCATION has ORGANIZATION"
-  },
-  {
-    "objectID": "slides/14_tue_socnet.html#ner",
-    "href": "slides/14_tue_socnet.html#ner",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "NER",
-    "text": "NER\n\nUnderline all of the proper nouns (named entities) in this text:\n\nHarriet Smith’s intimacy at Hartfield was soon a settled thing. Quick and decided in her ways, Emma lost no time in inviting, encouraging, and telling her to come very often; and as their acquaintance increased, so did their satisfaction in each other. As a walking companion, Emma had very early foreseen how useful she might find her. In that respect Mrs. Weston’s loss had been important. Her father never went beyond the shrubbery, where two divisions of the ground sufficed him for his long walk, or his short, as the year varied; and since Mrs. Weston’s marriage her exercise had been too much confined. She had ventured once alone to Randalls, but it was not pleasant; and a Harriet Smith, therefore, one whom she could summon at any time to a walk, would be a valuable addition to her privileges. But in every respect, as she saw more of her, she approved her, and was confirmed in all her kind designs.\nTypical categories of entities are PERSON, LOCATION, ORGANIZATION. Think about how you might discover each of the entities using a program."
-  },
-  {
-    "objectID": "slides/14_tue_socnet.html#ner-with-spacy",
-    "href": "slides/14_tue_socnet.html#ner-with-spacy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "NER with SpaCy",
-    "text": "NER with SpaCy\n\nThe PL activity contains a file called ner_nb.py. Modify and execute this file to answer the following questions. In each case, sketch an example of the output, and explain it briefly in English.\n\n\nload a OFK excerpt from ofk_ch1Short.txt\ncreate a spaCy doc object with doc = nlp(textRaw)"
-  },
-  {
-    "objectID": "slides/14_tue_socnet.html#ner-with-spacy-1",
-    "href": "slides/14_tue_socnet.html#ner-with-spacy-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "NER with SpaCy",
-    "text": "NER with SpaCy\n\nIf doc is the result of part b, What does sents = list(doc.sents) do?\nIf sents is the result of part c, what does sentWords = [[token.text for token in sent] for sent in sents] do?\nIf sents is the result of part c, what does sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents] do?"
-  },
-  {
-    "objectID": "slides/14_tue_socnet.html#ner-with-spacy-2",
-    "href": "slides/14_tue_socnet.html#ner-with-spacy-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "NER with SpaCy",
-    "text": "NER with SpaCy\n\n\nIf sents is the result of part c, what does sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents] do?\n\nIf sents is the result of part c, what does ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents] do?\nIf doc is the result of part b, what does names = [ent.text for ent in doc.ents if ent.label_ == \"PERSON\"] do?"
-  },
-  {
     "objectID": "slides/14_tue_socnet.html#one-last-project",
     "href": "slides/14_tue_socnet.html#one-last-project",
     "title": "Programming, problem solving, and algorithms",
     "section": "One Last Project",
-    "text": "One Last Project\nSuppose we’d like to understand the bonds between pairs of people in a book!\n\n\n\nHow can we infer connections between characters?\nHow can we draw a graph?"
+    "text": "One Last Project\nSuppose we’d like to understand the bonds between pairs of people in a book!\n\n\n\nHow can we find characters in a story?\nHow can we infer connections between characters?\nHow can we draw a graph?"
   },
   {
     "objectID": "slides/14_tue_socnet.html#friends",
@@ -1719,14 +1684,14 @@
     "href": "slides/14_tue_socnet.html#edges-1",
     "title": "Programming, problem solving, and algorithms",
     "section": "Edges",
-    "text": "Edges\n\"I've heard of his family,\" said Ron darkly. \"They were some of the first to come back to our side after You-Know-Who disappeared. Said they'd been bewitched. My dad doesn't believe it. He says Malfoy's father didn't need an excuse to go over to the Dark Side.\" He turned to Hermione. \"Can we help you with something?\"\n\nWhat names appear?\nWhat pairs should be tallied?\nGeneral observations:"
+    "text": "Edges\n\"I'm glad,\" said Anne quickly. \"I couldn't really feel proud of keeping head of little boys and girls of just nine or ten. I got up yesterday spelling 'ebullition.' Josie Pye was head and, mind you, she peeped in her book. Mr. Phillips didn't see her—he was looking at Prissy Andrews—but I did. I just swept her a look of freezing scorn and she got as red as a beet and spelled it wrong after all.\"\n\nWhat names appear?\nWhat pairs should be tallied?\nGeneral observations:"
   },
   {
     "objectID": "slides/14_tue_socnet.html#moving-to-the-middle",
     "href": "slides/14_tue_socnet.html#moving-to-the-middle",
     "title": "Programming, problem solving, and algorithms",
     "section": "Moving to the Middle",
-    "text": "Moving to the Middle\n \nGiven [[RW, HG, HP], [RW, AD], [H, HP, HG]],\n\nCould you create [RW, HG, HP, AD, H]?\n\n \n\nand {(RW,HG):1, (RW,HP):1, (HG,HP):2, (RW,AD):1, (H,HP):1, (H,HG):1}?"
+    "text": "Moving to the Middle\n \nGiven [[AS, JP, MP], [MP, PA], [AS, JP]],\n\nCould you create [AS, JP, MP, PA]?\n\n\n\n\nand {(AS,JP):2, (AS,MP):1, (JP,MP):1, (MP,PA):1}?"
   },
   {
     "objectID": "slides/14_tue_socnet.html#demo",
