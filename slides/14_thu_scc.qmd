@@ -267,7 +267,15 @@ These two images are connected through superpixels. And I only found that connec
 Mutually beneficial. The connections go both ways — that's what makes them *strongly* connected.
 :::
 
-## A Diversity Diversion
+## A Diversity Diversion {.smaller}
+
+Diverse teams improve results:
+
+- Cognitive Diversity and Speed: cognitively diverse teams solve problems up to 3x faster and consider 48% more solutions (HBR/SA).
+
+- Reduced Groupthink and Bias: groups with diverse members are more likely to correct errors and avoid groupthink, making them more accurate in decisions (NLI).
+
+- Innovation Boost: cognitive diversity can improve team innovation by 20% (JoAP).
 
 **Inherent** diversity: characteristics we're born with or into.
 
