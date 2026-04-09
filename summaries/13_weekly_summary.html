@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> Lab: Create your own website! – CPSC 203: Programming, problem solving, and algorithms</title>
+<title>Week 13: Words, Words, Words – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -112,12 +112,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles/styles.css">
-<meta property="og:title" content=" Lab: Create your own website! – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:title" content="Week 13: Words, Words, Words – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/vis2.png">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:title" content=" Lab: Create your own website! – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="A heat-map style visualization showing chapter-by-paragraph novelty in shades of red to blue.">
+<meta property="og:image:height" content="1342">
+<meta property="og:image:width" content="1422">
+<meta name="twitter:title" content="Week 13: Words, Words, Words – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/vis2.png">
+<meta name="twitter:image:alt" content="A heat-map style visualization showing chapter-by-paragraph novelty in shades of red to blue.">
+<meta name="twitter:image-height" content="1342">
+<meta name="twitter:image-width" content="1422">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -301,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Lab: Create your own website!</h1>
+          <h1 class="quarto-secondary-nav-title">Week 13: Words, Words, Words</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -420,11 +428,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-structure-of-quarto-document" id="toc-basic-structure-of-quarto-document" class="nav-link active" data-scroll-target="#basic-structure-of-quarto-document">Basic structure of Quarto document</a></li>
-  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</a></li>
-  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</a></li>
+  <li><a href="#your-growing-toolkit" id="toc-your-growing-toolkit" class="nav-link active" data-scroll-target="#your-growing-toolkit">Your Growing Toolkit</a></li>
+  <li><a href="#tuesday-visualizing-literature" id="toc-tuesday-visualizing-literature" class="nav-link" data-scroll-target="#tuesday-visualizing-literature">Tuesday: <span class="orange">Visualizing Literature</span></a>
+  <ul class="collapse">
+  <li><a href="#what-can-a-novel-look-like" id="toc-what-can-a-novel-look-like" class="nav-link" data-scroll-target="#what-can-a-novel-look-like">What Can a Novel Look Like?</a></li>
+  <li><a href="#the-text-as-data-pipeline" id="toc-the-text-as-data-pipeline" class="nav-link" data-scroll-target="#the-text-as-data-pipeline">The Text-as-Data Pipeline</a></li>
+  <li><a href="#watching-the-pipeline-work" id="toc-watching-the-pipeline-work" class="nav-link" data-scroll-target="#watching-the-pipeline-work">Watching the Pipeline Work</a></li>
+  <li><a href="#tokenization-harder-than-it-looks" id="toc-tokenization-harder-than-it-looks" class="nav-link" data-scroll-target="#tokenization-harder-than-it-looks">Tokenization: Harder Than It Looks</a></li>
+  <li><a href="#stopwords-common-useful" id="toc-stopwords-common-useful" class="nav-link" data-scroll-target="#stopwords-common-useful">Stopwords: Common ≠ Useful</a></li>
+  <li><a href="#lemmas-the-root-of-the-matter" id="toc-lemmas-the-root-of-the-matter" class="nav-link" data-scroll-target="#lemmas-the-root-of-the-matter">Lemmas: The Root of the Matter</a></li>
+  </ul></li>
+  <li><a href="#thursday-parts-of-speech-named-entities" id="toc-thursday-parts-of-speech-named-entities" class="nav-link" data-scroll-target="#thursday-parts-of-speech-named-entities">Thursday: <span class="green">Parts of Speech + Named Entities</span></a>
+  <ul class="collapse">
+  <li><a href="#spacys-richer-picture" id="toc-spacys-richer-picture" class="nav-link" data-scroll-target="#spacys-richer-picture">spaCy’s Richer Picture</a></li>
+  <li><a href="#parts-of-speech" id="toc-parts-of-speech" class="nav-link" data-scroll-target="#parts-of-speech">Parts of Speech</a></li>
+  <li><a href="#pos-tagging-is-hard-the-curling-problem" id="toc-pos-tagging-is-hard-the-curling-problem" class="nav-link" data-scroll-target="#pos-tagging-is-hard-the-curling-problem">POS Tagging is Hard: The Curling Problem</a></li>
+  <li><a href="#two-levels-of-pos-detail" id="toc-two-levels-of-pos-detail" class="nav-link" data-scroll-target="#two-levels-of-pos-detail">Two Levels of POS Detail</a></li>
+  <li><a href="#from-pos-to-named-entities" id="toc-from-pos-to-named-entities" class="nav-link" data-scroll-target="#from-pos-to-named-entities">From POS to Named Entities</a></li>
+  <li><a href="#iob-encoding-marking-entity-spans" id="toc-iob-encoding-marking-entity-spans" class="nav-link" data-scroll-target="#iob-encoding-marking-entity-spans">IOB Encoding: Marking Entity Spans</a></li>
+  <li><a href="#ner-in-action-exploring-a-novel" id="toc-ner-in-action-exploring-a-novel" class="nav-link" data-scroll-target="#ner-in-action-exploring-a-novel">NER in Action: Exploring a Novel</a></li>
+  <li><a href="#character-frequency-whos-in-this-book" id="toc-character-frequency-whos-in-this-book" class="nav-link" data-scroll-target="#character-frequency-whos-in-this-book">Character Frequency: Who’s in This Book?</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/labs/02_create-website.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/labs/02_create-website.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/13_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/13_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -432,7 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Lab: Create your own website!</h1>
+<h1 class="title d-none d-lg-block">Week 13: Words, Words, Words</h1>
 </div>
 
 
@@ -449,53 +476,501 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="basic-structure-of-quarto-document" class="level2">
-<h2 class="anchored" data-anchor-id="basic-structure-of-quarto-document">Basic structure of Quarto document</h2>
-<p>We are going to create a website using a Quarto. Quarto documents are a mix of natural language and executed code and this pattern is called <strong>literate programming</strong>. A Quarto document usually contains:</p>
+<p>A novel is just a very long string. This week we asked: what can you <em>compute</em> from that string? The answer turned out to be a lot — frequency charts, character maps, sentiment arcs, named-entity networks — and the pipeline for getting there is exactly the kind of systematic data transformation you’ve been building all term. We also discovered that understanding English well enough to process it automatically is surprisingly hard, which is why spaCy exists.</p>
+<section id="your-growing-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-growing-toolkit">Your Growing Toolkit</h2>
 <ul>
-<li>Text formatted in Markdown.</li>
-<li>Code is fenced as code chunk between <code>```{r}</code> and <code>```</code>.</li>
-<li>Metadata as YAML with the format <code>key: value</code>. You can find metadata in the header of the document fenced by <code>---</code>, or in code chunks starting with <code>#|</code>.</li>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Untitled"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Quarto enables you to weave together content and executable code into</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>a finished document. To learn more about Quarto see <span class="ot">&lt;https://quarto.org&gt;</span>.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: calculation</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This week: <span class="orange"><strong>Text as Data</strong></span> + <span class="blue"><strong>NLP pipelines</strong></span> + <span class="green"><strong>Named Entity Recognition</strong></span> — language is messy; we build machinery to tame it!</p>
+<hr>
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps" class="level2">
-<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7461736b203e7d7d-steps"><iconify-icon role="img" inline="" icon="fa6-solid:list-check" aria-label="Icon list-check from fa6-solid Iconify.design set." title="Icon list-check from fa6-solid Iconify.design set."></iconify-icon> Steps</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Open your workspace: <a href="https://us.prairielearn.com/pl/course_instance/202804/assessment/2631211">us.prairielearn.com/pl/course_instance/202804/assessment/2631211</a>.</label></li>
-<li><label><input type="checkbox">Create <code>index.qmd</code>.</label></li>
-<li><label><input type="checkbox">Click the “Render” button on top.</label></li>
-<li><label><input type="checkbox">Download the output directory <code>_site</code>.</label></li>
-<li><label><input type="checkbox">Open Netlify Drop: <a href="https://app.netlify.com/drop">app.netlify.com/drop</a>.</label></li>
-<li><label><input type="checkbox">Drag and drop the downloaded <code>_site</code> onto Netlify Drop.</label></li>
-<li><label><input type="checkbox">Post the link to your website in the comments below.</label></li>
-</ul>
+<section id="tuesday-visualizing-literature" class="level1">
+<h1>Tuesday: <span class="orange">Visualizing Literature</span></h1>
+<section id="what-can-a-novel-look-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-can-a-novel-look-like">What Can a Novel Look Like?</h2>
+<p>We opened with a question: if a novel is just text, what can we <em>see</em> in it? Researchers in computational literary studies have built some stunning visualizations that reveal structure invisible to a casual reader.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vis2.png" class="img-fluid figure-img" alt="A heat-map style visualization showing chapter-by-paragraph novelty in shades of red to blue."></p>
+<figcaption>Lexical novelty across chapters and paragraphs — red = lots of new words, blue = familiar territory</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vis3.png" class="img-fluid figure-img" alt="A co-occurrence matrix or network for words in a novel."></p>
+<figcaption>Word co-occurrence: which words appear near each other most often?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vis4.png" class="img-fluid figure-img" alt="A radial arc diagram showing where characters are mentioned throughout a book."></p>
+<figcaption>Cross-references: arcs connecting mentions of the same character across a whole novel</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vis5.png" class="img-fluid figure-img" alt="A line chart showing positive/negative sentiment across a novel's chapters."></p>
+<figcaption>Sentiment arc: emotional tone chapter by chapter</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vis6.png" class="img-fluid figure-img" alt="A map showing the real-world locations mentioned in a novel."></p>
+<figcaption>Geographical mapping: where does the story physically take place?</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p><em>“Novels are full of new characters, new locations and new expressions. The discourse between characters involves new ideas being exchanged. We can get a hint of this by tracking the introduction of new terms in a novel.”</em> — Matthew Hurst</p>
+</blockquote>
+<hr>
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources" class="level2">
-<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e7265736f75726365203e7d7d-resources"><iconify-icon role="img" inline="" icon="fa6-solid:bookmark" aria-label="Icon bookmark from fa6-solid Iconify.design set." title="Icon bookmark from fa6-solid Iconify.design set."></iconify-icon> Resources</h2>
+<section id="the-text-as-data-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="the-text-as-data-pipeline">The Text-as-Data Pipeline</h2>
+<p>A novel is just characters. Before we can do anything interesting, we need to clean and structure the text. Here’s the full pipeline:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: the six-step pipeline
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Load</strong> the text from a <code>.txt</code> file into one big Python string</li>
+<li><strong>Tokenize</strong>: split into words (and punctuation, and numbers…)</li>
+<li><strong>Preprocess</strong> — four sub-steps in sequence:
 <ul>
-<li><a href="https://daringfireball.net/projects/markdown/">Daring Fireball: Markdown</a></li>
-<li><a href="https://commonmark.org/help/tutorial/">Interactive Commonmark Markdown tutorial</a></li>
-<li><a href="https://quarto.org/">Quarto documentation</a></li>
-<li><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto Workshop</a> including the <a href="https://github.com/jthomasmock/quarto-workshop">material</a> and this video:</li>
+<li><strong>Lowercase</strong> — unify “Valor” and “valor” into one tally</li>
+<li><strong>Remove punctuation</strong> — drop tokens that aren’t alphabetic (handles “father.”, “!”, “Dr.” correctly)</li>
+<li><strong>Remove stopwords</strong> — discard common, uninformative words (“the”, “and”, “was”) using spaCy’s curated list</li>
+<li><strong>Lemmatize</strong> — reduce words to their base form: “going” → “go”, “eaten” → “eat”, “running” → “run”</li>
+</ul></li>
+<li><strong>Count</strong> frequencies with <code>Counter</code></li>
+<li><strong>Visualize</strong> as a bar chart</li>
+<li><strong>Interpret</strong>: what do the counts actually tell you about this book?</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="watching-the-pipeline-work" class="level2">
+<h2 class="anchored" data-anchor-id="watching-the-pipeline-work">Watching the Pipeline Work</h2>
+<p>Here’s what happens to our mystery text at each stage. Each bar chart shows the 30 most common items:</p>
+<div class="columns" style="column-gap: 1em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tokens.png" class="img-fluid figure-img" alt="Bar chart of the 30 most common tokens including punctuation and capitalized words."></p>
+<figcaption>Raw tokens: punctuation and capitalization dominate the top of the list</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/lowercase.png" class="img-fluid figure-img" alt="Bar chart after lowercasing, showing merged counts."></p>
+<figcaption>After lowercasing: “valor” and “Valor” now counted together</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns" style="column-gap: 1em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/minuspunctuation.png" class="img-fluid figure-img" alt="Bar chart with punctuation tokens removed."></p>
+<figcaption>After removing punctuation: commas and periods are gone</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/minusstopwords.png" class="img-fluid figure-img" alt="Bar chart after removing common stopwords."></p>
+<figcaption>After removing stopwords: meaningful words start to surface</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/lemmas.png" class="img-fluid figure-img" alt="Bar chart of lemmatized word frequencies, showing the core vocabulary of the text."></p>
+<figcaption>After lemmatization: the final cleaned word frequency — now we can see what the book is actually about</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Why this order?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sequence <strong>lowercase → punctuation → stopwords → lemma</strong> matters. Stopword lists are lowercase, so you must lowercase first. Lemmatization works better on clean alphabetic tokens, so remove punctuation before you lemmatize. The order isn’t arbitrary — each step prepares the data for the next.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="tokenization-harder-than-it-looks" class="level2">
+<h2 class="anchored" data-anchor-id="tokenization-harder-than-it-looks">Tokenization: Harder Than It Looks</h2>
+<p>Splitting “I want to go” into <code>['I', 'want', 'to', 'go']</code> seems trivial. But what about:</p>
+<pre><code>"Astrology. The governess was always
+getting muddled with her astrolabe, and when she got specially
+muddled she would take it out of the Wart by rapping his knuckles."</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: tokenization result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>spaCy’s tokenizer produces:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Astrology'</span>, <span class="st">'.'</span>, <span class="st">'The'</span>, <span class="st">'governess'</span>, <span class="st">'was'</span>, <span class="st">'always'</span>, <span class="st">'getting'</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'muddled'</span>, <span class="st">'with'</span>, <span class="st">'her'</span>, <span class="st">'astrolabe'</span>, <span class="st">','</span>, <span class="st">'and'</span>, <span class="st">'when'</span>, <span class="st">'she'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'got'</span>, <span class="st">'specially'</span>, <span class="st">'muddled'</span>, <span class="st">'she'</span>, <span class="st">'would'</span>, <span class="st">'take'</span>, <span class="st">'it'</span>, <span class="st">'out'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'of'</span>, <span class="st">'the'</span>, <span class="st">'Wart'</span>, <span class="st">'by'</span>, <span class="st">'rapping'</span>, <span class="st">'his'</span>, <span class="st">'knuckles'</span>, <span class="st">'.'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Key insight: the period after “Astrology” is its <em>own</em> token — not glued to the word. The same is true of commas. This is why removing punctuation is a separate step: the tokenizer has already isolated them. And “Dr.”, “$3.50”, and “!” all work correctly because the tokenizer knows about abbreviations and special characters.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="stopwords-common-useful" class="level2">
+<h2 class="anchored" data-anchor-id="stopwords-common-useful">Stopwords: Common ≠ Useful</h2>
+<p>SpaCy comes with a list of ~300 English stopwords compiled from large corpora — words so common they add noise rather than signal: “the”, “a”, “and”, “was”, “of”, “in”, “it”, “to”, “with”…</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spacy.lang.en.stop_words <span class="im">import</span> STOP_WORDS</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>words_without_stopwords <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> words <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> STOP_WORDS]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The more sophisticated approach is <strong>tf-idf</strong> (term frequency–inverse document frequency): instead of a fixed stopword list, it automatically downweights words that are common <em>across all your documents</em>. A word that appears in every book is not informative about <em>this</em> book.</p>
+<hr>
+</section>
+<section id="lemmas-the-root-of-the-matter" class="level2">
+<h2 class="anchored" data-anchor-id="lemmas-the-root-of-the-matter">Lemmas: The Root of the Matter</h2>
+<p>A <strong>lemma</strong> is the dictionary form of a word:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Raw token</th>
+<th>Lemma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>going</td>
+<td>go</td>
+</tr>
+<tr class="even">
+<td>went</td>
+<td>go</td>
+</tr>
+<tr class="odd">
+<td>running</td>
+<td>run</td>
+</tr>
+<tr class="even">
+<td>ran</td>
+<td>run</td>
+</tr>
+<tr class="odd">
+<td>eaten</td>
+<td>eat</td>
+</tr>
+<tr class="even">
+<td>better</td>
+<td>good</td>
+</tr>
+</tbody>
+</table>
+<p>Without lemmatization, “go”, “goes”, “going”, “went”, and “gone” each get their own tally. With lemmatization, they all count toward the same root. This gives a much more accurate picture of what ideas dominate the text.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/minusstopwords90.png" class="img-fluid figure-img" alt="Bar chart of 90 words after stopword removal."></p>
+<figcaption>Top 90 words after removing stopwords</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/lemmas90.png" class="img-fluid figure-img" alt="Bar chart of 90 lemmatized words."></p>
+<figcaption>Top 90 lemmas — the final cleaned vocabulary</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="thursday-parts-of-speech-named-entities" class="level1">
+<h1>Thursday: <span class="green">Parts of Speech + Named Entities</span></h1>
+<section id="spacys-richer-picture" class="level2">
+<h2 class="anchored" data-anchor-id="spacys-richer-picture">spaCy’s Richer Picture</h2>
+<p>Last time, we counted words. Today we went deeper: spaCy doesn’t just split your text into tokens — it <em>understands</em> them. When you run <code>nlp(text)</code>, every token gets labeled with its grammatical role and its role in named entity spans.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"Emma lost no time."</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>[(t.text, t.pos_) <span class="cf">for</span> t <span class="kw">in</span> doc]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># → [('Emma', 'PROPN'), ('lost', 'VERB'), ('no', 'DET'), ('time', 'NOUN'), ('.', 'PUNCT')]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>PROPN</code> = proper noun — a strong signal that this token might be a named entity!</p>
+<hr>
+</section>
+<section id="parts-of-speech" class="level2">
+<h2 class="anchored" data-anchor-id="parts-of-speech">Parts of Speech</h2>
+<p>English words divide into two kinds:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 27%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Open class</strong></td>
+<td>New words can always be added</td>
+<td>Noun, Verb, Adjective, Adverb</td>
+</tr>
+<tr class="even">
+<td><strong>Closed class</strong></td>
+<td>Fixed, finite set</td>
+<td>Preposition, Conjunction, Pronoun, Interjection</td>
+</tr>
+</tbody>
+</table>
+<p>Nouns subdivide further: <strong>proper</strong> (Emma, Hartfield, London) vs <strong>common</strong> (village, house, carriage). Proper nouns are often <em>named entities</em> — that’s our bridge from POS tagging to NER.</p>
+<hr>
+</section>
+<section id="pos-tagging-is-hard-the-curling-problem" class="level2">
+<h2 class="anchored" data-anchor-id="pos-tagging-is-hard-the-curling-problem">POS Tagging is Hard: The Curling Problem</h2>
+<p>The same word can be different parts of speech depending on context. SpaCy needs to look at the whole sentence to decide:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: “curling” in three roles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Plug in the</em> <strong>curling</strong> <em>iron.</em> → <strong>adjective</strong> (<code>JJ</code>) — modifies “iron”</li>
+<li><em>I want to learn to play</em> <strong>curling</strong>. → <strong>noun</strong> (<code>NN</code>) — the sport</li>
+<li><em>The ribbon is</em> <strong>curling</strong> <em>around the Maypole.</em> → <strong>verb</strong> (<code>VBG</code>) — present participle</li>
 </ul>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/yvi5uXQMvu4?si=kpSWaw19CudBB_uu" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Context is everything. A word-by-word classifier would get this wrong. SpaCy uses a neural model trained on millions of sentences to disambiguate.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="two-levels-of-pos-detail" class="level2">
+<h2 class="anchored" data-anchor-id="two-levels-of-pos-detail">Two Levels of POS Detail</h2>
+<p>SpaCy gives you a choice of how fine-grained you want to be:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Grain</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>token.pos_</code></td>
+<td>Coarse (universal)</td>
+<td><code>NOUN</code>, <code>VERB</code>, <code>PROPN</code>, <code>ADJ</code>, <code>ADP</code></td>
+</tr>
+<tr class="even">
+<td><code>token.tag_</code></td>
+<td>Fine (Penn Treebank)</td>
+<td><code>NN</code>, <code>VBD</code>, <code>NNP</code>, <code>JJ</code>, <code>IN</code></td>
+</tr>
+</tbody>
+</table>
+<p>Use <code>pos_</code> for most tasks; reach for <code>tag_</code> when you need fine distinctions like singular vs plural noun, or past vs present tense.</p>
+<hr>
+</section>
+<section id="from-pos-to-named-entities" class="level2">
+<h2 class="anchored" data-anchor-id="from-pos-to-named-entities">From POS to Named Entities</h2>
+<p>POS tagging labels every token <em>individually</em>. But named entities are often <strong>multi-word spans</strong>: “Mr.&nbsp;Knightley”, “Emma Woodhouse”, “Hartfield”, “Box Hill”.</p>
+<p>NER goes one step further: it groups runs of tokens into spans and assigns a <strong>semantic category</strong>:</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PERSON</code></td>
+<td>People and characters</td>
+<td>Emma Woodhouse</td>
+</tr>
+<tr class="even">
+<td><code>GPE</code></td>
+<td>Geo-political entity (city, country)</td>
+<td>London</td>
+</tr>
+<tr class="odd">
+<td><code>LOC</code></td>
+<td>Location (non-GPE)</td>
+<td>Hartfield</td>
+</tr>
+<tr class="even">
+<td><code>ORG</code></td>
+<td>Organization</td>
+<td>The Crown</td>
+</tr>
+</tbody>
+</table>
+<p>NER is then used to infer relationships: PERSON <em>lives at</em> LOCATION, PERSON <em>meets</em> PERSON.</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/emma1.png" class="img-fluid figure-img" alt="A passage from Emma with named entities highlighted in color by category."></p>
+<figcaption>SpaCy’s displacy visualizer renders named entities as colored spans directly in the text</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="iob-encoding-marking-entity-spans" class="level2">
+<h2 class="anchored" data-anchor-id="iob-encoding-marking-entity-spans">IOB Encoding: Marking Entity Spans</h2>
+<p>How does spaCy mark which tokens belong to a multi-word entity? With <strong>IOB tags</strong>:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: IOB encoding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>B</code></td>
+<td><strong>B</strong>eginning of an entity</td>
+<td><code>('Harriet', 'B', 'PERSON')</code></td>
+</tr>
+<tr class="even">
+<td><code>I</code></td>
+<td><strong>I</strong>nside (continuing) an entity</td>
+<td><code>('Smith', 'I', 'PERSON')</code></td>
+</tr>
+<tr class="odd">
+<td><code>O</code></td>
+<td><strong>O</strong>utside — not part of any entity</td>
+<td><code>('was', 'O', '')</code></td>
+</tr>
+</tbody>
+</table>
+<p>So <em>“Harriet Smith was late”</em> becomes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[(<span class="st">'Harriet'</span>, <span class="st">'B'</span>, <span class="st">'PERSON'</span>), (<span class="st">'Smith'</span>, <span class="st">'I'</span>, <span class="st">'PERSON'</span>),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> (<span class="st">'was'</span>,     <span class="st">'O'</span>, <span class="st">''</span>),       (<span class="st">'late'</span>,  <span class="st">'O'</span>, <span class="st">''</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>B</code> marks the start of a span; subsequent tokens in the same span get <code>I</code>; everything else gets <code>O</code>. This lets spaCy reconstruct full multi-word names from the token stream.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="ner-in-action-exploring-a-novel" class="level2">
+<h2 class="anchored" data-anchor-id="ner-in-action-exploring-a-novel">NER in Action: Exploring a Novel</h2>
+<p>The Thursday activity used <code>ner_nb.py</code> to run NER on a chapter from <em>Of Kings and Fools</em>. Here’s the progression:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: what each expression returns
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(textRaw)   <span class="co"># process the whole chapter at once</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong><code>sents = list(doc.sents)</code></strong> → a list of spaCy <code>Span</code> objects, one per sentence</p>
+<p><strong><code>sentWords = [[token.text for token in sent] for sent in sents]</code></strong> → a list of lists of strings — each inner list is one sentence broken into words</p>
+<p><strong><code>sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]</code></strong> → same structure, but each word is paired with its POS tag</p>
+<p><strong><code>ents_by_sent = [[(ent.text, ent.label_) for ent in sent.ents] for sent in sents]</code></strong> → for each sentence, a list of (entity_text, entity_type) pairs — only named entity tokens, not plain words</p>
+<p><strong><code>sentWordsNER = [[(token.text, token.ent_iob_, token.ent_type_) for token in sent] for sent in sents]</code></strong> → every token, annotated with its IOB tag and entity type (empty string for O tokens)</p>
+<p><strong><code>names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]</code></strong> → a flat list of every person-name mention in the whole chapter</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="character-frequency-whos-in-this-book" class="level2">
+<h2 class="anchored" data-anchor-id="character-frequency-whos-in-this-book">Character Frequency: Who’s in This Book?</h2>
+<p>Once you have all the person mentions, you can count them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>name_counts <span class="op">=</span> Counter(names)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>top30 <span class="op">=</span> <span class="bu">dict</span>(name_counts.most_common(<span class="dv">30</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The result is a frequency table of character mentions — essentially a cast list ranked by how much screen time each character gets. This is exactly the kind of insight that would take hours to compile by hand but runs in seconds computationally.</p>
+<p>The activity also hinted at what’s coming in Week 14:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>persons_by_sent <span class="op">=</span> [</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    [ent.text <span class="cf">for</span> ent <span class="kw">in</span> sent.ents <span class="cf">if</span> ent.label_ <span class="op">==</span> <span class="st">"PERSON"</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sent <span class="kw">in</span> sents</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This groups characters <em>by sentence</em> — and when two characters appear in the same sentence, that’s evidence they interact. Build a graph where characters are vertices and co-appearances are edges, and you have a <strong>social network inferred from text</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/socnet2.png" class="img-fluid figure-img" alt="The title page of a research paper on extracting social networks from literary texts."></p>
+<figcaption>The research paper that inspired this approach — inferring social networks from literature</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>In Week 14 we build on this: using NER to find all the character co-occurrences in a novel and draw the resulting social network as a graph. The pipeline is: text → NER → co-occurrence counting → graph → visualization. You’ve now seen every piece of that pipeline.</p>
+<p>And then it’s the last class of the term — which means it’s time to talk about the bigger picture of what you’ve built this semester and what to do with it next.</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -920,7 +1395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/labs/02_create-website.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/labs/02_create-website.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/13_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/13_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
