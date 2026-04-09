@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 14: Connections – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2b91fda96fc4217d309e4768f8eb8023.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b00097fbe245c0658e8e1284714b1aa3.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2b91fda96fc4217d309e4768f8eb8023.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5ff2ea560eabcaebdaa22fb45eeecc82.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-9f8425f6da19d912e0b9c642b4a1a086.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5ff2ea560eabcaebdaa22fb45eeecc82.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 14: Connections – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/gr4.png">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="A graph showing nodes as character names and edges connecting characters who co-appear.">
+<meta property="og:image:height" content="1020">
+<meta property="og:image:width" content="1572">
+<meta name="twitter:title" content="Week 14: Connections – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/gr4.png">
+<meta name="twitter:image:alt" content="A graph showing nodes as character names and edges connecting characters who co-appear.">
+<meta name="twitter:image-height" content="1020">
+<meta name="twitter:image-width" content="1572">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 14: Connections</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#your-completed-toolkit" id="toc-your-completed-toolkit" class="nav-link active" data-scroll-target="#your-completed-toolkit">Your (Completed!) Toolkit</a></li>
+  <li><a href="#tuesday-inferring-a-social-network-from-a-novel" id="toc-tuesday-inferring-a-social-network-from-a-novel" class="nav-link" data-scroll-target="#tuesday-inferring-a-social-network-from-a-novel">Tuesday: <span class="orange">Inferring a Social Network from a Novel</span></a>
+  <ul class="collapse">
+  <li><a href="#from-text-to-graph" id="toc-from-text-to-graph" class="nav-link" data-scroll-target="#from-text-to-graph">From Text to Graph</a></li>
+  <li><a href="#the-pipeline-four-functions-to-implement" id="toc-the-pipeline-four-functions-to-implement" class="nav-link" data-scroll-target="#the-pipeline-four-functions-to-implement">The Pipeline: Four Functions to Implement</a></li>
+  <li><a href="#step-1-getparagraphs" id="toc-step-1-getparagraphs" class="nav-link" data-scroll-target="#step-1-getparagraphs">Step 1: <code>getParagraphs</code></a></li>
+  <li><a href="#step-2-getpeople" id="toc-step-2-getpeople" class="nav-link" data-scroll-target="#step-2-getpeople">Step 2: <code>getPeople</code></a></li>
+  <li><a href="#step-3-getparapeople" id="toc-step-3-getparapeople" class="nav-link" data-scroll-target="#step-3-getparapeople">Step 3: <code>getParaPeople</code></a></li>
+  <li><a href="#step-4-countpairs" id="toc-step-4-countpairs" class="nav-link" data-scroll-target="#step-4-countpairs">Step 4: <code>countPairs</code></a></li>
+  <li><a href="#steps-56-buildgraph-and-drawgraph-provided" id="toc-steps-56-buildgraph-and-drawgraph-provided" class="nav-link" data-scroll-target="#steps-56-buildgraph-and-drawgraph-provided">Steps 5–6: <code>buildGraph</code> and <code>drawGraph</code> (provided)</a></li>
+  <li><a href="#the-full-pipeline-in-action" id="toc-the-full-pipeline-in-action" class="nav-link" data-scroll-target="#the-full-pipeline-in-action">The Full Pipeline in Action</a></li>
+  </ul></li>
+  <li><a href="#thursday-strongly-connected-components" id="toc-thursday-strongly-connected-components" class="nav-link" data-scroll-target="#thursday-strongly-connected-components">Thursday: <span class="green">Strongly Connected Components</span></a>
+  <ul class="collapse">
+  <li><a href="#a-story-about-following-curiosity" id="toc-a-story-about-following-curiosity" class="nav-link" data-scroll-target="#a-story-about-following-curiosity">A Story About Following Curiosity</a></li>
+  <li><a href="#it-started-with-national-parks" id="toc-it-started-with-national-parks" class="nav-link" data-scroll-target="#it-started-with-national-parks">It Started With National Parks</a></li>
+  <li><a href="#voronoi-wasnt-quite-right" id="toc-voronoi-wasnt-quite-right" class="nav-link" data-scroll-target="#voronoi-wasnt-quite-right">Voronoi Wasn’t Quite Right</a></li>
+  <li><a href="#pointillism-as-a-stepping-stone" id="toc-pointillism-as-a-stepping-stone" class="nav-link" data-scroll-target="#pointillism-as-a-stepping-stone">Pointillism as a Stepping Stone</a></li>
+  <li><a href="#phone-a-friend-superpixels" id="toc-phone-a-friend-superpixels" class="nav-link" data-scroll-target="#phone-a-friend-superpixels">Phone a Friend → Superpixels</a></li>
+  <li><a href="#then-came-the-second-question" id="toc-then-came-the-second-question" class="nav-link" data-scroll-target="#then-came-the-second-question">Then Came the Second Question</a></li>
+  <li><a href="#the-gerrymandering-detour" id="toc-the-gerrymandering-detour" class="nav-link" data-scroll-target="#the-gerrymandering-detour">The Gerrymandering Detour</a></li>
+  <li><a href="#which-is-fair-the-three-scenarios" id="toc-which-is-fair-the-three-scenarios" class="nav-link" data-scroll-target="#which-is-fair-the-three-scenarios">Which is Fair? The Three Scenarios</a></li>
+  <li><a href="#the-efficiency-gap-a-metric-for-fairness" id="toc-the-efficiency-gap-a-metric-for-fairness" class="nav-link" data-scroll-target="#the-efficiency-gap-a-metric-for-fairness">The Efficiency Gap: A Metric for Fairness</a></li>
+  <li><a href="#the-rabbit-hole-closes-and-opens-again" id="toc-the-rabbit-hole-closes-and-opens-again" class="nav-link" data-scroll-target="#the-rabbit-hole-closes-and-opens-again">The Rabbit Hole Closes… and Opens Again</a></li>
+  <li><a href="#strong-connectivity" id="toc-strong-connectivity" class="nav-link" data-scroll-target="#strong-connectivity">Strong Connectivity</a></li>
+  <li><a href="#a-diversity-diversion" id="toc-a-diversity-diversion" class="nav-link" data-scroll-target="#a-diversity-diversion">A Diversity Diversion</a></li>
+  <li><a href="#your-joyful-interests-are-not-a-distraction" id="toc-your-joyful-interests-are-not-a-distraction" class="nav-link" data-scroll-target="#your-joyful-interests-are-not-a-distraction">Your Joyful Interests Are Not a Distraction</a></li>
+  <li><a href="#the-full-course-arc" id="toc-the-full-course-arc" class="nav-link" data-scroll-target="#the-full-course-arc">The Full Course Arc</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/14_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/14_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 14: Connections</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Two very different classes this week, held together by a single theme: <em>connections</em>. On Tuesday we built a social network from a novel — a graph where characters are vertices and shared paragraphs are edges. On Thursday we zoomed out and asked the bigger question: why does following your curiosity across completely unrelated domains keep paying off? Both days were about discovering that things you thought had nothing to do with each other turn out to be deeply, <em>strongly</em> connected.</p>
+<section id="your-completed-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-completed-toolkit">Your (Completed!) Toolkit</h2>
+<ul>
+<li><span class="purple"><strong>Representation</strong></span> — how we encode meaning</li>
+<li><span class="blue"><strong>Collections</strong></span> — how we group things</li>
+<li><span class="green"><strong>Control flow</strong></span> — how we make decisions and repeat</li>
+<li><span class="orange"><strong>Functions</strong></span> — how we name and reuse logic</li>
+<li><span class="red"><strong>Abstraction</strong></span> — how we hide complexity</li>
+<li><span class="pink"><strong>Efficiency</strong></span> — how we measure cost</li>
+</ul>
+<p>This week: <span class="orange"><strong>Social Networks</strong></span> + <span class="blue"><strong>NLP pipelines</strong></span> + <span class="green"><strong>Acquired Diversity</strong></span> — the whole term in one week!</p>
+<hr>
+</section>
+<section id="tuesday-inferring-a-social-network-from-a-novel" class="level1">
+<h1>Tuesday: <span class="orange">Inferring a Social Network from a Novel</span></h1>
+<section id="from-text-to-graph" class="level2">
+<h2 class="anchored" data-anchor-id="from-text-to-graph">From Text to Graph</h2>
+<p>Last week we learned that spaCy can find character names in a text. This week we asked the natural follow-up: if two characters appear in the same paragraph, they probably know each other — or at least interact. Do that for every paragraph in a whole novel, count how often each pair appears together, and you have the ingredients for a social network.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<p>The goal: a graph like this, automatically inferred from the text.</p>
+<ul>
+<li><strong>Vertices:</strong> characters (people recognized by spaCy NER)</li>
+<li><strong>Edges:</strong> pairs of characters who appear together in at least <em>n</em> paragraphs</li>
+<li><strong>Edge weight:</strong> how many paragraphs they share — a proxy for relationship strength</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/gr4.png" class="img-fluid figure-img" alt="A graph showing nodes as character names and edges connecting characters who co-appear."></p>
+<figcaption>A social network graph drawn from character co-occurrences in a novel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The research behind this idea is real — the paper below (Elson, Dames &amp; McKeown, ACL 2010) analyzed social networks in 19th-century fiction and found that dialogue proximity predicts character relationships:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/socnet2.png" class="img-fluid figure-img" alt="Title page of the ACL 2010 paper on inferring social networks from Victorian novels."></p>
+<figcaption>The paper that inspired this approach: inferring social networks from literature</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="the-pipeline-four-functions-to-implement" class="level2">
+<h2 class="anchored" data-anchor-id="the-pipeline-four-functions-to-implement">The Pipeline: Four Functions to Implement</h2>
+<p>The full pipeline had six stages, but only the first four needed your code. The last two (<code>buildGraph</code>, <code>drawGraph</code>) were provided.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The pipeline, end to end
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre><code>loadText  →  getParagraphs  →  getParaPeople  →  countPairs  →  buildGraph  →  drawGraph</code></pre>
+<ol type="1">
+<li><strong>Load</strong> the raw novel text from a <code>.txt</code> file</li>
+<li><strong>Split into paragraphs</strong> — blank lines separate them</li>
+<li><strong>Find the people</strong> in each paragraph using spaCy NER</li>
+<li><strong>Count co-occurrences</strong> — how many paragraphs does each pair share?</li>
+<li><strong>Build the graph</strong> — keep only pairs above a threshold</li>
+<li><strong>Draw and export</strong> — visualize the network, save as JSON for D3</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-1-getparagraphs" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-getparagraphs">Step 1: <code>getParagraphs</code></h2>
+<p>Paragraphs in plain-text files are separated by blank lines — which in Python look like <code>"\n\n"</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getParagraphs</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParagraphs(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Split text into non-empty paragraphs (blocks separated by blank lines)."""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p.strip() <span class="cf">for</span> p <span class="kw">in</span> text.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>) <span class="cf">if</span> p.strip()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Split on double-newline, strip whitespace from each chunk, discard any empty results. Three lines of text separated by blank lines → <code>["First paragraph", "Second paragraph", "Third paragraph"]</code>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-2-getpeople" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-getpeople">Step 2: <code>getPeople</code></h2>
+<p>Given a single paragraph string, return all the person names spaCy finds in it.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getPeople</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getPeople(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a list of PERSON names found in a single string of text."""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(text)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [ent.text <span class="cf">for</span> ent <span class="kw">in</span> doc.ents <span class="cf">if</span> ent.label_ <span class="op">==</span> <span class="st">"PERSON"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run the string through the NLP pipeline, filter entities to just <code>"PERSON"</code>, collect their text. For <em>“Anne ran to meet Diana at the gate.”</em> this returns <code>['Anne', 'Diana']</code>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-3-getparapeople" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-getparapeople">Step 3: <code>getParaPeople</code></h2>
+<p>Apply <code>getPeople</code> to every paragraph — one line of code using a list comprehension.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getParaPeople</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParaPeople(paragraphs: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Apply getPeople to every paragraph; return a list-of-lists."""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [getPeople(p) <span class="cf">for</span> p <span class="kw">in</span> paragraphs]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Input: <code>["Anne ran to meet Diana.", "The sky was blue."]</code> Output: <code>[['Anne', 'Diana'], []]</code></p>
+<p>The empty list for the second paragraph is correct — no people mentioned there.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-4-countpairs" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-countpairs">Step 4: <code>countPairs</code></h2>
+<p>This is the most interesting function. Given the list of lists, count how many paragraphs each <em>pair</em> of characters shares.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>countPairs</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countPairs(paraPeople: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count co-occurrences of name pairs across paragraphs."""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    pairCounts <span class="op">=</span> defaultdict(<span class="bu">int</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> people <span class="kw">in</span> paraPeople:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        unique <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">set</span>(people))          <span class="co"># deduplicate + sort → canonical order</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, s <span class="kw">in</span> <span class="bu">enumerate</span>(unique):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> t <span class="kw">in</span> unique[i <span class="op">+</span> <span class="dv">1</span>:]:          <span class="co"># only pairs (i,j) with j &gt; i → no duplicates</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                pairCounts[(s, t)] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pairCounts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Why <code>sorted(set(...))</code>?</strong></p>
+<ul>
+<li><code>set()</code> removes duplicates: if “Anne” is mentioned three times in one paragraph, she still counts once for pairing purposes</li>
+<li><code>sorted()</code> gives canonical alphabetical order: the pair is always <code>("Anne", "Diana")</code>, never sometimes <code>("Diana", "Anne")</code> — so both appearances tally to the same key</li>
+</ul>
+<p><strong>Why only <code>unique[i+1:]</code>?</strong> If we looped over all pairs, we’d count (Anne, Diana) and (Diana, Anne) as separate keys — double-counting. By only looking at people who come <em>after</em> <code>s</code> in the sorted list, each pair is counted exactly once.</p>
+<p>For <code>[["Alice", "Bob"], ["Alice", "Bob", "Carol"]]</code>: → <code>{("Alice", "Bob"): 2, ("Alice", "Carol"): 1, ("Bob", "Carol"): 1}</code></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="steps-56-buildgraph-and-drawgraph-provided" class="level2">
+<h2 class="anchored" data-anchor-id="steps-56-buildgraph-and-drawgraph-provided">Steps 5–6: <code>buildGraph</code> and <code>drawGraph</code> (provided)</h2>
+<p><code>buildGraph</code> filters the pair counts by a threshold (default: 5) and builds a NetworkX graph. Edge weight = co-occurrence count.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buildGraph(pairCounts: <span class="bu">dict</span>, threshold: <span class="bu">int</span> <span class="op">=</span> <span class="dv">5</span>) <span class="op">-&gt;</span> nx.Graph:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    G <span class="op">=</span> nx.Graph()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (u, v), w <span class="kw">in</span> pairCounts.items():</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> w <span class="op">&gt;</span> threshold:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            G.add_edge(u, v, weight<span class="op">=</span>w)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> G</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>drawGraph</code> uses NetworkX’s spring layout to position nodes, scaling <strong>node size</strong> by degree (highly connected characters are bigger) and <strong>edge width</strong> by weight (frequently co-occurring pairs have thicker lines):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>node_sizes  <span class="op">=</span> [<span class="dv">300</span> <span class="op">+</span> degrees[n] <span class="op">*</span> <span class="dv">80</span> <span class="cf">for</span> n <span class="kw">in</span> G.nodes()]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>edge_widths <span class="op">=</span> [<span class="fl">1.0</span> <span class="op">+</span> <span class="fl">3.0</span> <span class="op">*</span> (w <span class="op">/</span> max_w) <span class="cf">for</span> w <span class="kw">in</span> edge_weights]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The threshold matters a lot: set it too low and the graph is a hairball; set it too high and you lose minor characters. Try different values and see what you find!</p>
+<hr>
+</section>
+<section id="the-full-pipeline-in-action" class="level2">
+<h2 class="anchored" data-anchor-id="the-full-pipeline-in-action">The Full Pipeline in Action</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text       <span class="op">=</span> loadText(<span class="st">"anne.txt"</span>)           <span class="co"># try emma.txt or attwn.txt too!</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>paragraphs <span class="op">=</span> getParagraphs(text)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>paraPeople <span class="op">=</span> getParaPeople(paragraphs)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>pairCounts <span class="op">=</span> countPairs(paraPeople)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>G          <span class="op">=</span> buildGraph(pairCounts, threshold<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>drawGraph(G)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>exportGraph(G)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run it on <em>Anne of Green Gables</em>, <em>Emma</em>, or <em>At the World’s End</em> and you get a different social universe every time. The protagonist always sits at the center; supporting characters cluster around them; isolated characters who rarely interact with anyone appear on the periphery.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>A note on NER accuracy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>spaCy’s <code>en_core_web_sm</code> model is trained on news text, not 19th-century novels. It will occasionally miss character names (especially unusual ones) or misclassify place names as people. Real literary NLP research uses custom-trained models or dictionary lookups from the book’s dramatis personae. For our purposes, it works surprisingly well — but don’t be alarmed if a character or two is missing.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="thursday-strongly-connected-components" class="level1">
+<h1>Thursday: <span class="green">Strongly Connected Components</span></h1>
+<section id="a-story-about-following-curiosity" class="level2">
+<h2 class="anchored" data-anchor-id="a-story-about-following-curiosity">A Story About Following Curiosity</h2>
+<p>Thursday was the last lecture of the term, and it was a little different. Instead of new technical content, it was a story about how following your interests across seemingly unrelated domains keeps paying off in unexpected ways. The technical concept at the heart of it — <strong>strong connectivity</strong> — turned out to be a perfect metaphor for what we were describing.</p>
+<hr>
+</section>
+<section id="it-started-with-national-parks" class="level2">
+<h2 class="anchored" data-anchor-id="it-started-with-national-parks">It Started With National Parks</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/badlands.jpg" class="img-fluid figure-img" alt="A sweeping photograph of the Badlands."></p>
+<figcaption>Badlands National Park</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/painter.jpg" class="img-fluid figure-img" alt="An artist painting outdoors in a national park."></p>
+<figcaption>A plein-air painter at work</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The starting point: photographs from national parks, a desire to turn them into something that looks like stained glass — <em>algorithmically</em>. Not painting by hand. Coding it.</p>
+<hr>
+</section>
+<section id="voronoi-wasnt-quite-right" class="level2">
+<h2 class="anchored" data-anchor-id="voronoi-wasnt-quite-right">Voronoi Wasn’t Quite Right</h2>
+<p>We already know Voronoi diagrams. The idea was to use Voronoi regions as the “panes” of the stained glass. Here’s how that went:</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/skyline_voronoi.png" class="img-fluid figure-img" alt="A city skyline image processed with a Voronoi diagram overlay."></p>
+<figcaption>Voronoi applied to a city skyline — the regions are too rectangular</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/totem_poles.png" class="img-fluid figure-img" alt="Totem pole image with Voronoi regions overlaid."></p>
+<figcaption>Voronoi applied to totem poles — still doesn’t honor color boundaries</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The problem: Voronoi cells are seeded randomly, so they cut right across color boundaries rather than following them. What we really want is regions that are <strong>equal sized, continuous, compact, and honor image boundaries</strong>.</p>
+<hr>
+</section>
+<section id="pointillism-as-a-stepping-stone" class="level2">
+<h2 class="anchored" data-anchor-id="pointillism-as-a-stepping-stone">Pointillism as a Stepping Stone</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/cherry_original.jpg" class="img-fluid figure-img" alt="Original photograph of cherry blossoms at UBC."></p>
+<figcaption>UBC cherry blossoms — original photo</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/cherry_pointillist.jpg" class="img-fluid figure-img" alt="The same cherry blossom photo rendered as pointillist dots using Voronoi."></p>
+<figcaption>Pointillist rendering using Voronoi regions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Voronoi <em>does</em> work beautifully as pointillism — using the centroid color of each region as a single dot. But for stained glass, we need the regions to <em>hug</em> the color boundaries. Time to ask for help.</p>
+<hr>
+</section>
+<section id="phone-a-friend-superpixels" class="level2">
+<h2 class="anchored" data-anchor-id="phone-a-friend-superpixels">Phone a Friend → Superpixels</h2>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/daf.png" class="img-fluid figure-img" alt="Portrait of DAF."></p>
+<figcaption>DAF, who had the answer</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<blockquote class="blockquote">
+<p>“What you need are <em>superpixels</em>!”</p>
+</blockquote>
+<p>Superpixels are an image-processing technique: groups of pixels clustered together into <strong>equal-sized, continuous, compact regions that honor color boundaries</strong>. The SLIC algorithm (Simple Linear Iterative Clustering) runs k-means in 5D space — (x, y, r, g, b) — so it naturally groups spatially close, similar-colored pixels together.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/rose_garden_superpix.png" class="img-fluid figure-img" alt="A rose garden image segmented into superpixels, showing roughly equal-sized color regions that follow flower boundaries."></p>
+<figcaption>Superpixels applied to a rose garden — each colored region is one superpixel</figcaption>
+</figure>
+</div>
+<p><strong>Equal sized. Continuous. Compact. Honoring boundaries.</strong> Exactly what stained glass needs. And Python’s <code>skimage</code> library has SLIC built right in.</p>
+<hr>
+</section>
+<section id="then-came-the-second-question" class="level2">
+<h2 class="anchored" data-anchor-id="then-came-the-second-question">Then Came the Second Question</h2>
+<blockquote class="blockquote">
+<p>“How will you know if you’ve done a good job?”</p>
+</blockquote>
+<p>This question opened a completely unexpected rabbit hole. What does it mean for a partition of an image into regions to be <em>good</em>? This led directly to… gerrymandering.</p>
+<hr>
+</section>
+<section id="the-gerrymandering-detour" class="level2">
+<h2 class="anchored" data-anchor-id="the-gerrymandering-detour">The Gerrymandering Detour</h2>
+<p>Gerrymandering is the drawing of political district boundaries to give one party an unfair advantage. The connection to superpixels: both problems are about dividing a 2D space into regions, and in both cases you want regions that are <strong>equal sized, continuous, and compact</strong>.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/nc_gerrymandered.png" class="img-fluid figure-img" alt="A map of North Carolina's gerrymandered congressional districts, showing irregular, fragmented shapes."></p>
+<figcaption>North Carolina — gerrymandered districts: fragmented, non-compact</figcaption>
+</figure>
+</div>
+<p><strong>Gerrymandered</strong> ✗ — districts are not compact</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/nc_compact.png" class="img-fluid figure-img" alt="An alternative map of North Carolina with compact, roughly equal-sized districts."></p>
+<figcaption>North Carolina — compact redistricting</figcaption>
+</figure>
+</div>
+<p><strong>Compact</strong> ✓ — districts follow natural geography</p>
+</div>
+</div>
+<p>Canada solved this problem in 1964 by requiring each province to form an <strong>independent panel</strong> to draw boundaries — no politicians involved. The result: much more compact, geographically sensible districts.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/canada_districts.png" class="img-fluid figure-img" alt="A map of Canada showing electoral districts that are large and geographically sensible."></p>
+<figcaption>Canadian electoral districts — large, compact, following natural geography</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>In 1964, Canada passed a law requiring each province to form an independent panel to draw district boundaries.</p>
+<p>The lighter, larger regions are a direct result: districts that reflect geography rather than political strategy.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="which-is-fair-the-three-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="which-is-fair-the-three-scenarios">Which is Fair? The Three Scenarios</h2>
+<p>Take 50 people, 60% blue and 40% red, and divide them into 5 districts. Three ways to draw the lines produce very different outcomes:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/gerry_explained1.png" class="img-fluid figure-img" alt="Diagram showing 50 people divided into 5 districts with proportional representation."></p>
+<figcaption>Scenario 1: Proportional representation — 3 blue districts, 2 red</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/gerry_explained2.png" class="img-fluid figure-img" alt="Diagram showing voters packed so blue wins all 5 districts."></p>
+<figcaption>Scenario 2: Packing — all 5 districts go blue, even though 40% of voters are red</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/gerry_explained3.png" class="img-fluid figure-img" alt="Diagram showing voters cracked across districts so red wins despite minority status."></p>
+<figcaption>Scenario 3: Cracking — red wins 3 districts despite being the minority</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The shape of the district determines the outcome
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The same 50 people, with the same party affiliations, produce completely different election results depending on where the lines are drawn. This is gerrymandering: using geometry as a political weapon.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-efficiency-gap-a-metric-for-fairness" class="level2">
+<h2 class="anchored" data-anchor-id="the-efficiency-gap-a-metric-for-fairness">The Efficiency Gap: A Metric for Fairness</h2>
+<p>Can we <em>quantify</em> how gerrymandered a map is? Yes — with <strong>wasted votes</strong>:</p>
+<ul>
+<li>Any vote <strong>above 50%</strong> for the district winner is wasted (the winner didn’t need them)</li>
+<li>Any vote <strong>for the loser</strong> is wasted (they didn’t count toward anything)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The efficiency gap formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>For each district: count votes above 50% for the winner + all votes for the loser</li>
+<li>Sum wasted votes by party across all districts</li>
+<li><strong>Efficiency gap</strong> = |Party A wasted − Party B wasted| / total votes cast</li>
+</ol>
+<p>A perfectly fair map has gap ≈ 0. A gerrymandered map has a large gap — one party systematically wastes far more votes than the other.</p>
+<p><strong>We want to minimize the gap!</strong></p>
+</div>
+</div>
+<p>This concept was formalized in a peer-reviewed paper and has been cited in actual court cases challenging gerrymandered maps:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/gerrypaper.png" class="img-fluid figure-img" alt="The title page of the efficiency gap research paper."></p>
+<figcaption>The efficiency gap paper — formalized as a legal and mathematical tool</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="the-rabbit-hole-closes-and-opens-again" class="level2">
+<h2 class="anchored" data-anchor-id="the-rabbit-hole-closes-and-opens-again">The Rabbit Hole Closes… and Opens Again</h2>
+<p>Here’s where it gets delightful. The efficiency gap was developed to measure fairness in political districting. But the idea — counting “misclassified” items and penalizing the algorithm for it — applies <em>directly</em> to pixel clustering.</p>
+<p><strong>Wasted votes = pixels assigned to the wrong superpixel region.</strong></p>
+<p>The efficiency gap formula, slightly reinterpreted, becomes a cost function for evaluating how well a superpixel algorithm honored the color boundaries of the original image. The political science problem illuminated the computer vision problem, and vice versa.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/gerry_explained3.png" class="img-fluid figure-img" alt="Cracking diagram used as a metaphor for pixel misclassification."></p>
+<figcaption>The cracking scenario — a lens for thinking about misclassified pixels</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p><strong>The rabbit hole questions:</strong></p>
+<ol type="1">
+<li>What would Nate Silver do with the gap?</li>
+<li>What happens in the limit?</li>
+<li>What happens in a multi-party system?</li>
+<li>Is there a maximum-likelihood estimator for the gap?</li>
+<li><strong>Can I apply this within a clustering algorithm on pixels?</strong></li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="strong-connectivity" class="level2">
+<h2 class="anchored" data-anchor-id="strong-connectivity">Strong Connectivity</h2>
+<div class="columns">
+<div class="column" style="width:38%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/tiffany_tree.jpg" class="img-fluid figure-img" alt="A Tiffany-style stained glass tree in jewel-toned colors."></p>
+<figcaption>A Tiffany stained glass tree — the original artistic goal</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:20%;">
+<div style="text-align:center; font-size:4em; line-height:1;">
+<p>→<br>←</p>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/charter.png" class="img-fluid figure-img" alt="The Canadian Charter of Rights and Freedoms document."></p>
+<figcaption>The Canadian Charter of Rights and Freedoms — what gerrymandering threatens</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A Tiffany stained glass tree and the Canadian Charter of Rights and Freedoms. Two things that have nothing to do with each other — except that the quest for one led directly to a deeper understanding of the other.</p>
+<p>The arrows go <strong>both ways</strong>. The stained glass ambition raised the question of how to evaluate clustering quality, which led to gerrymandering, which led to the efficiency gap, which fed back as a new tool for the original image segmentation problem.</p>
+<p>That bidirectional influence — where learning flows in both directions — is what graph theorists call <strong>strong connectivity</strong>. Two vertices are strongly connected if you can get from each one to the other. In the graph of ideas, stained glass and electoral fairness are now in the same strongly connected component.</p>
+<hr>
+</section>
+<section id="a-diversity-diversion" class="level2">
+<h2 class="anchored" data-anchor-id="a-diversity-diversion">A Diversity Diversion</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Diverse teams really do outperform
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Speed:</strong> Cognitively diverse teams solve problems up to <strong>3× faster</strong> and consider <strong>48% more solutions</strong> (HBR/Scientific American)</li>
+<li><strong>Accuracy:</strong> Groups with diverse members are more likely to correct errors and avoid groupthink (NeuroLeadership Institute)</li>
+<li><strong>Innovation:</strong> Cognitive diversity can improve team innovation by <strong>20%</strong> (Journal of Applied Psychology)</li>
+</ul>
+<p>Most of this research focuses on <strong>inherent diversity</strong> — characteristics we’re born with or into. But this talk was about something different.</p>
+</div>
+</div>
+<p><strong>Acquired diversity</strong> is the breadth of your interests, experiences, and connections. Travel. Books and games. Music. Art. Food. Coding for fun. Building something. Planting a garden.</p>
+<p>The connections between stained glass, Voronoi diagrams, image clustering, and electoral fairness didn’t come from a plan. They came from following curiosity — from having enough acquired diversity that when a new problem appeared, the old one lit up in recognition.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scc/aquireddiversity.png" class="img-fluid figure-img" alt="A diagram showing a web of connections radiating outward from a central point, representing acquired diversity."></p>
+<figcaption>The expanding universe of acquired connections</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p><em>“We cannot predict which connections will be important — so build as many as you can. Do things for beauty, for fun, or because you are afraid of them.”</em></p>
+</blockquote>
+<hr>
+</section>
+<section id="your-joyful-interests-are-not-a-distraction" class="level2">
+<h2 class="anchored" data-anchor-id="your-joyful-interests-are-not-a-distraction">Your Joyful Interests Are Not a Distraction</h2>
+<p>Here is something worth holding onto as you move through your career:</p>
+<p>The things you love <em>for their own sake</em> — the chess, the crosswords, the cycling, the music, the Taylor Swift deep dives, whatever it is for you — are not in competition with your professional skills. They are <strong>the source of them</strong>.</p>
+<div class="columns" style="column-gap: 2em;">
+<div class="column" style="width:25%;">
+<p><img src="../images/scc/chess.png" class="img-fluid" alt="A chess board."></p>
+</div><div class="column" style="width:25%;">
+<p><img src="../images/scc/crossword.png" class="img-fluid" alt="A crossword puzzle."></p>
+</div><div class="column" style="width:25%;">
+<p><img src="../images/scc/bicycle.png" class="img-fluid" alt="A bicycle."></p>
+</div><div class="column" style="width:25%;">
+<p><img src="../images/scc/taylor_swift.jpg" class="img-fluid" alt="Taylor Swift."></p>
+</div>
+</div>
+<p>The story of stained glass → superpixels → gerrymandering → efficiency gap → better clustering is not unusual. It is the <em>normal</em> way that breakthroughs happen. Someone who loves two things finds that one explains the other. Someone bored at a concert has an algorithm idea. Someone gardening realizes the solution to a data structure problem they’d been stuck on for weeks.</p>
+<p>You are not wasting time when you pursue things that delight you. You are building the cross-domain vocabulary that will make you unexpectedly, disproportionately good at your required tasks. The chess player sees search trees differently. The musician hears rhythm in loops. The crossword solver is comfortable with constraint satisfaction. The cyclist knows what it feels like to optimize over a long, bumpy route.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The argument, stated plainly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Expertise in one domain gives you <strong>metaphors, intuitions, and tools</strong> that transfer to other domains in ways you cannot predict in advance. The only way to have those cross-domain tools when you need them is to acquire them <em>before</em> you need them — which means following your interests now, without justification, and trusting that the connections will emerge.</p>
+<p><strong>Your curiosity is not frivolous. It is your competitive advantage.</strong></p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><em>Do things for beauty, for fun, or because you are afraid of them. We cannot predict which connections will be important — so build as many as you can.</em></p>
+</blockquote>
+<hr>
+</section>
+<section id="the-full-course-arc" class="level2">
+<h2 class="anchored" data-anchor-id="the-full-course-arc">The Full Course Arc</h2>
+<div class="columns" style="column-gap: 1.5em;">
+<div class="column" style="width:48%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Algorithms and efficiency</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Representation, lists, strings</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Classes, friendship graphs</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Bracelets, loops, recursion</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Pandas, data analysis</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Dictionaries</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><em>Reading week</em></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:48%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8</td>
+<td>Graphs, BFS, DFS</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Voronoi, weighted graphs</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Sudoku, constraint solving</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Maps, Dijkstra’s algorithm</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>TSP, permutations</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>Text as data, NLP, NER</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>Social networks, SCC</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>From counting bracelet patterns to inferring social networks from Victorian novels — it’s been quite a journey. The toolkit you’ve built is real, and it will keep paying off in ways you can’t predict yet.</p>
+<p><span class="hexagon-red"></span><span class="hexagon-orange"></span><span class="hexagon-yellow"></span><span class="hexagon-green"></span><span class="hexagon-blue"></span><span class="hexagon-violet"></span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/14_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/14_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
