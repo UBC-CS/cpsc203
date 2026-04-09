@@ -1,0 +1,537 @@
+---
+title: "Week 14: Connections"
+---
+
+Two very different classes this week, held together by a single theme: *connections*. On Tuesday we built a social network from a novel — a graph where characters are vertices and shared paragraphs are edges. On Thursday we zoomed out and asked the bigger question: why does following your curiosity across completely unrelated domains keep paying off? Both days were about discovering that things you thought had nothing to do with each other turn out to be deeply, *strongly* connected.
+
+## Your (Completed!) Toolkit
+
+- [**Representation**]{.purple} — how we encode meaning
+- [**Collections**]{.blue} — how we group things
+- [**Control flow**]{.green} — how we make decisions and repeat
+- [**Functions**]{.orange} — how we name and reuse logic
+- [**Abstraction**]{.red} — how we hide complexity
+- [**Efficiency**]{.pink} — how we measure cost
+
+This week: [**Social Networks**]{.orange} + [**NLP pipelines**]{.blue} + [**Acquired Diversity**]{.green} — the whole term in one week!
+
+---
+
+# Tuesday: [Inferring a Social Network from a Novel]{.orange}
+
+## From Text to Graph
+
+Last week we learned that spaCy can find character names in a text. This week we asked the natural follow-up: if two characters appear in the same paragraph, they probably know each other — or at least interact. Do that for every paragraph in a whole novel, count how often each pair appears together, and you have the ingredients for a social network.
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="55%"}
+
+The goal: a graph like this, automatically inferred from the text.
+
+- **Vertices:** characters (people recognized by spaCy NER)
+- **Edges:** pairs of characters who appear together in at least *n* paragraphs
+- **Edge weight:** how many paragraphs they share — a proxy for relationship strength
+
+:::
+
+::: {.column width="45%"}
+
+![A social network graph drawn from character co-occurrences in a novel](/images/gr4.png){fig-alt="A graph showing nodes as character names and edges connecting characters who co-appear."}
+
+:::
+
+::::
+
+The research behind this idea is real — the paper below (Elson, Dames & McKeown, ACL 2010) analyzed social networks in 19th-century fiction and found that dialogue proximity predicts character relationships:
+
+![The paper that inspired this approach: inferring social networks from literature](/images/socnet2.png){fig-alt="Title page of the ACL 2010 paper on inferring social networks from Victorian novels."}
+
+---
+
+## The Pipeline: Four Functions to Implement
+
+The full pipeline had six stages, but only the first four needed your code. The last two (`buildGraph`, `drawGraph`) were provided.
+
+::: {.callout-tip}
+## The pipeline, end to end
+
+```
+loadText  →  getParagraphs  →  getParaPeople  →  countPairs  →  buildGraph  →  drawGraph
+```
+
+1. **Load** the raw novel text from a `.txt` file
+2. **Split into paragraphs** — blank lines separate them
+3. **Find the people** in each paragraph using spaCy NER
+4. **Count co-occurrences** — how many paragraphs does each pair share?
+5. **Build the graph** — keep only pairs above a threshold
+6. **Draw and export** — visualize the network, save as JSON for D3
+:::
+
+---
+
+## Step 1: `getParagraphs`
+
+Paragraphs in plain-text files are separated by blank lines — which in Python look like `"\n\n"`.
+
+::: {.callout-tip}
+## Fill in the blank: `getParagraphs`
+
+```python
+def getParagraphs(text: str) -> list:
+    """Split text into non-empty paragraphs (blocks separated by blank lines)."""
+    return [p.strip() for p in text.split("\n\n") if p.strip()]
+```
+
+Split on double-newline, strip whitespace from each chunk, discard any empty results. Three lines of text separated by blank lines → `["First paragraph", "Second paragraph", "Third paragraph"]`.
+:::
+
+---
+
+## Step 2: `getPeople`
+
+Given a single paragraph string, return all the person names spaCy finds in it.
+
+::: {.callout-tip}
+## Fill in the blank: `getPeople`
+
+```python
+def getPeople(text: str) -> list:
+    """Return a list of PERSON names found in a single string of text."""
+    doc = nlp(text)
+    return [ent.text for ent in doc.ents if ent.label_ == "PERSON"]
+```
+
+Run the string through the NLP pipeline, filter entities to just `"PERSON"`, collect their text. For *"Anne ran to meet Diana at the gate."* this returns `['Anne', 'Diana']`.
+:::
+
+---
+
+## Step 3: `getParaPeople`
+
+Apply `getPeople` to every paragraph — one line of code using a list comprehension.
+
+::: {.callout-tip}
+## Fill in the blank: `getParaPeople`
+
+```python
+def getParaPeople(paragraphs: list) -> list:
+    """Apply getPeople to every paragraph; return a list-of-lists."""
+    return [getPeople(p) for p in paragraphs]
+```
+
+Input: `["Anne ran to meet Diana.", "The sky was blue."]`
+Output: `[['Anne', 'Diana'], []]`
+
+The empty list for the second paragraph is correct — no people mentioned there.
+:::
+
+---
+
+## Step 4: `countPairs`
+
+This is the most interesting function. Given the list of lists, count how many paragraphs each *pair* of characters shares.
+
+::: {.callout-tip}
+## Fill in the blank: `countPairs`
+
+```python
+def countPairs(paraPeople: list) -> dict:
+    """Count co-occurrences of name pairs across paragraphs."""
+    pairCounts = defaultdict(int)
+    for people in paraPeople:
+        unique = sorted(set(people))          # deduplicate + sort → canonical order
+        for i, s in enumerate(unique):
+            for t in unique[i + 1:]:          # only pairs (i,j) with j > i → no duplicates
+                pairCounts[(s, t)] += 1
+    return pairCounts
+```
+
+**Why `sorted(set(...))`?**
+
+- `set()` removes duplicates: if "Anne" is mentioned three times in one paragraph, she still counts once for pairing purposes
+- `sorted()` gives canonical alphabetical order: the pair is always `("Anne", "Diana")`, never sometimes `("Diana", "Anne")` — so both appearances tally to the same key
+
+**Why only `unique[i+1:]`?**
+If we looped over all pairs, we'd count (Anne, Diana) and (Diana, Anne) as separate keys — double-counting. By only looking at people who come *after* `s` in the sorted list, each pair is counted exactly once.
+
+For `[["Alice", "Bob"], ["Alice", "Bob", "Carol"]]`:
+→ `{("Alice", "Bob"): 2, ("Alice", "Carol"): 1, ("Bob", "Carol"): 1}`
+:::
+
+---
+
+## Steps 5–6: `buildGraph` and `drawGraph` (provided)
+
+`buildGraph` filters the pair counts by a threshold (default: 5) and builds a NetworkX graph. Edge weight = co-occurrence count.
+
+```python
+def buildGraph(pairCounts: dict, threshold: int = 5) -> nx.Graph:
+    G = nx.Graph()
+    for (u, v), w in pairCounts.items():
+        if w > threshold:
+            G.add_edge(u, v, weight=w)
+    return G
+```
+
+`drawGraph` uses NetworkX's spring layout to position nodes, scaling **node size** by degree (highly connected characters are bigger) and **edge width** by weight (frequently co-occurring pairs have thicker lines):
+
+```python
+node_sizes  = [300 + degrees[n] * 80 for n in G.nodes()]
+edge_widths = [1.0 + 3.0 * (w / max_w) for w in edge_weights]
+```
+
+The threshold matters a lot: set it too low and the graph is a hairball; set it too high and you lose minor characters. Try different values and see what you find!
+
+---
+
+## The Full Pipeline in Action
+
+```python
+text       = loadText("anne.txt")           # try emma.txt or attwn.txt too!
+paragraphs = getParagraphs(text)
+paraPeople = getParaPeople(paragraphs)
+pairCounts = countPairs(paraPeople)
+G          = buildGraph(pairCounts, threshold=5)
+drawGraph(G)
+exportGraph(G)
+```
+
+Run it on *Anne of Green Gables*, *Emma*, or *At the World's End* and you get a different social universe every time. The protagonist always sits at the center; supporting characters cluster around them; isolated characters who rarely interact with anyone appear on the periphery.
+
+::: {.callout-important}
+## A note on NER accuracy
+
+spaCy's `en_core_web_sm` model is trained on news text, not 19th-century novels. It will occasionally miss character names (especially unusual ones) or misclassify place names as people. Real literary NLP research uses custom-trained models or dictionary lookups from the book's dramatis personae. For our purposes, it works surprisingly well — but don't be alarmed if a character or two is missing.
+:::
+
+---
+
+# Thursday: [Strongly Connected Components]{.green}
+
+## A Story About Following Curiosity
+
+Thursday was the last lecture of the term, and it was a little different. Instead of new technical content, it was a story about how following your interests across seemingly unrelated domains keeps paying off in unexpected ways. The technical concept at the heart of it — **strong connectivity** — turned out to be a perfect metaphor for what we were describing.
+
+---
+
+## It Started With National Parks
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="55%"}
+![Badlands National Park](/images/scc/badlands.jpg){fig-alt="A sweeping photograph of the Badlands."}
+:::
+
+::: {.column width="45%"}
+![A plein-air painter at work](/images/scc/painter.jpg){fig-alt="An artist painting outdoors in a national park."}
+:::
+
+::::
+
+The starting point: photographs from national parks, a desire to turn them into something that looks like stained glass — *algorithmically*. Not painting by hand. Coding it.
+
+---
+
+## Voronoi Wasn't Quite Right
+
+We already know Voronoi diagrams. The idea was to use Voronoi regions as the "panes" of the stained glass. Here's how that went:
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+![Voronoi applied to a city skyline — the regions are too rectangular](/images/scc/skyline_voronoi.png){fig-alt="A city skyline image processed with a Voronoi diagram overlay."}
+:::
+
+::: {.column width="50%"}
+![Voronoi applied to totem poles — still doesn't honor color boundaries](/images/scc/totem_poles.png){fig-alt="Totem pole image with Voronoi regions overlaid."}
+:::
+
+::::
+
+The problem: Voronoi cells are seeded randomly, so they cut right across color boundaries rather than following them. What we really want is regions that are **equal sized, continuous, compact, and honor image boundaries**.
+
+---
+
+## Pointillism as a Stepping Stone
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+![UBC cherry blossoms — original photo](/images/scc/cherry_original.jpg){fig-alt="Original photograph of cherry blossoms at UBC."}
+:::
+
+::: {.column width="50%"}
+![Pointillist rendering using Voronoi regions](/images/scc/cherry_pointillist.jpg){fig-alt="The same cherry blossom photo rendered as pointillist dots using Voronoi."}
+:::
+
+::::
+
+Voronoi *does* work beautifully as pointillism — using the centroid color of each region as a single dot. But for stained glass, we need the regions to *hug* the color boundaries. Time to ask for help.
+
+---
+
+## Phone a Friend → Superpixels
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+![DAF, who had the answer](/images/daf.png){fig-alt="Portrait of DAF."}
+:::
+
+::: {.column width="50%"}
+
+> "What you need are *superpixels*!"
+
+Superpixels are an image-processing technique: groups of pixels clustered together into **equal-sized, continuous, compact regions that honor color boundaries**. The SLIC algorithm (Simple Linear Iterative Clustering) runs k-means in 5D space — (x, y, r, g, b) — so it naturally groups spatially close, similar-colored pixels together.
+
+:::
+
+::::
+
+![Superpixels applied to a rose garden — each colored region is one superpixel](/images/scc/rose_garden_superpix.png){fig-align="center" fig-alt="A rose garden image segmented into superpixels, showing roughly equal-sized color regions that follow flower boundaries."}
+
+**Equal sized. Continuous. Compact. Honoring boundaries.** Exactly what stained glass needs. And Python's `skimage` library has SLIC built right in.
+
+---
+
+## Then Came the Second Question
+
+> "How will you know if you've done a good job?"
+
+This question opened a completely unexpected rabbit hole. What does it mean for a partition of an image into regions to be *good*? This led directly to... gerrymandering.
+
+---
+
+## The Gerrymandering Detour
+
+Gerrymandering is the drawing of political district boundaries to give one party an unfair advantage. The connection to superpixels: both problems are about dividing a 2D space into regions, and in both cases you want regions that are **equal sized, continuous, and compact**.
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+![North Carolina — gerrymandered districts: fragmented, non-compact](/images/scc/nc_gerrymandered.png){fig-alt="A map of North Carolina's gerrymandered congressional districts, showing irregular, fragmented shapes."}
+
+**Gerrymandered** ✗ — districts are not compact
+:::
+
+::: {.column width="50%"}
+![North Carolina — compact redistricting](/images/scc/nc_compact.png){fig-alt="An alternative map of North Carolina with compact, roughly equal-sized districts."}
+
+**Compact** ✓ — districts follow natural geography
+:::
+
+::::
+
+Canada solved this problem in 1964 by requiring each province to form an **independent panel** to draw boundaries — no politicians involved. The result: much more compact, geographically sensible districts.
+
+:::: {.columns style="column-gap: 2em;"}
+
+::: {.column width="50%"}
+![Canadian electoral districts — large, compact, following natural geography](/images/scc/canada_districts.png){fig-alt="A map of Canada showing electoral districts that are large and geographically sensible."}
+:::
+
+::: {.column width="50%"}
+
+In 1964, Canada passed a law requiring each province to form an independent panel to draw district boundaries.
+
+The lighter, larger regions are a direct result: districts that reflect geography rather than political strategy.
+
+:::
+
+::::
+
+---
+
+## Which is Fair? The Three Scenarios
+
+Take 50 people, 60% blue and 40% red, and divide them into 5 districts. Three ways to draw the lines produce very different outcomes:
+
+![Scenario 1: Proportional representation — 3 blue districts, 2 red](/images/scc/gerry_explained1.png){fig-align="center" fig-alt="Diagram showing 50 people divided into 5 districts with proportional representation."}
+
+![Scenario 2: Packing — all 5 districts go blue, even though 40% of voters are red](/images/scc/gerry_explained2.png){fig-align="center" fig-alt="Diagram showing voters packed so blue wins all 5 districts."}
+
+![Scenario 3: Cracking — red wins 3 districts despite being the minority](/images/scc/gerry_explained3.png){fig-align="center" fig-alt="Diagram showing voters cracked across districts so red wins despite minority status."}
+
+::: {.callout-important}
+## The shape of the district determines the outcome
+
+The same 50 people, with the same party affiliations, produce completely different election results depending on where the lines are drawn. This is gerrymandering: using geometry as a political weapon.
+:::
+
+---
+
+## The Efficiency Gap: A Metric for Fairness
+
+Can we *quantify* how gerrymandered a map is? Yes — with **wasted votes**:
+
+- Any vote **above 50%** for the district winner is wasted (the winner didn't need them)
+- Any vote **for the loser** is wasted (they didn't count toward anything)
+
+::: {.callout-tip}
+## The efficiency gap formula
+
+1. For each district: count votes above 50% for the winner + all votes for the loser
+2. Sum wasted votes by party across all districts
+3. **Efficiency gap** = |Party A wasted − Party B wasted| / total votes cast
+
+A perfectly fair map has gap ≈ 0. A gerrymandered map has a large gap — one party systematically wastes far more votes than the other.
+
+**We want to minimize the gap!**
+:::
+
+This concept was formalized in a peer-reviewed paper and has been cited in actual court cases challenging gerrymandered maps:
+
+![The efficiency gap paper — formalized as a legal and mathematical tool](/images/scc/gerrypaper.png){fig-align="center" fig-alt="The title page of the efficiency gap research paper."}
+
+---
+
+## The Rabbit Hole Closes... and Opens Again
+
+Here's where it gets delightful. The efficiency gap was developed to measure fairness in political districting. But the idea — counting "misclassified" items and penalizing the algorithm for it — applies *directly* to pixel clustering.
+
+**Wasted votes = pixels assigned to the wrong superpixel region.**
+
+The efficiency gap formula, slightly reinterpreted, becomes a cost function for evaluating how well a superpixel algorithm honored the color boundaries of the original image. The political science problem illuminated the computer vision problem, and vice versa.
+
+::::: columns
+::: {.column width="60%"}
+![The cracking scenario — a lens for thinking about misclassified pixels](/images/scc/gerry_explained3.png){fig-alt="Cracking diagram used as a metaphor for pixel misclassification."}
+:::
+::: {.column width="40%"}
+
+**The rabbit hole questions:**
+
+1. What would Nate Silver do with the gap?
+2. What happens in the limit?
+3. What happens in a multi-party system?
+4. Is there a maximum-likelihood estimator for the gap?
+5. **Can I apply this within a clustering algorithm on pixels?**
+
+:::
+:::::
+
+---
+
+## Strong Connectivity
+
+::::: columns
+::: {.column width="38%"}
+![A Tiffany stained glass tree — the original artistic goal](/images/scc/tiffany_tree.jpg){fig-alt="A Tiffany-style stained glass tree in jewel-toned colors."}
+:::
+::: {.column width="20%"}
+
+::: {style="text-align:center; font-size:4em; line-height:1;"}
+→<br>←
+:::
+
+:::
+::: {.column width="42%"}
+![The Canadian Charter of Rights and Freedoms — what gerrymandering threatens](/images/scc/charter.png){fig-alt="The Canadian Charter of Rights and Freedoms document."}
+:::
+:::::
+
+A Tiffany stained glass tree and the Canadian Charter of Rights and Freedoms. Two things that have nothing to do with each other — except that the quest for one led directly to a deeper understanding of the other.
+
+The arrows go **both ways**. The stained glass ambition raised the question of how to evaluate clustering quality, which led to gerrymandering, which led to the efficiency gap, which fed back as a new tool for the original image segmentation problem.
+
+That bidirectional influence — where learning flows in both directions — is what graph theorists call **strong connectivity**. Two vertices are strongly connected if you can get from each one to the other. In the graph of ideas, stained glass and electoral fairness are now in the same strongly connected component.
+
+---
+
+## A Diversity Diversion
+
+::: {.callout-note}
+## Diverse teams really do outperform
+
+- **Speed:** Cognitively diverse teams solve problems up to **3× faster** and consider **48% more solutions** (HBR/Scientific American)
+- **Accuracy:** Groups with diverse members are more likely to correct errors and avoid groupthink (NeuroLeadership Institute)
+- **Innovation:** Cognitive diversity can improve team innovation by **20%** (Journal of Applied Psychology)
+
+Most of this research focuses on **inherent diversity** — characteristics we're born with or into. But this talk was about something different.
+:::
+
+**Acquired diversity** is the breadth of your interests, experiences, and connections. Travel. Books and games. Music. Art. Food. Coding for fun. Building something. Planting a garden.
+
+The connections between stained glass, Voronoi diagrams, image clustering, and electoral fairness didn't come from a plan. They came from following curiosity — from having enough acquired diversity that when a new problem appeared, the old one lit up in recognition.
+
+![The expanding universe of acquired connections](/images/scc/aquireddiversity.png){fig-align="center" fig-alt="A diagram showing a web of connections radiating outward from a central point, representing acquired diversity."}
+
+> *"We cannot predict which connections will be important — so build as many as you can. Do things for beauty, for fun, or because you are afraid of them."*
+
+---
+
+## Your Joyful Interests Are Not a Distraction
+
+Here is something worth holding onto as you move through your career:
+
+The things you love *for their own sake* — the chess, the crosswords, the cycling, the music, the Taylor Swift deep dives, whatever it is for you — are not in competition with your professional skills. They are **the source of them**.
+
+:::: {.columns style="column-gap: 2em;"}
+::: {.column width="25%"}
+![](/images/scc/chess.png){fig-alt="A chess board."}
+:::
+::: {.column width="25%"}
+![](/images/scc/crossword.png){fig-alt="A crossword puzzle."}
+:::
+::: {.column width="25%"}
+![](/images/scc/bicycle.png){fig-alt="A bicycle."}
+:::
+::: {.column width="25%"}
+![](/images/scc/taylor_swift.jpg){fig-alt="Taylor Swift."}
+:::
+::::
+
+The story of stained glass → superpixels → gerrymandering → efficiency gap → better clustering is not unusual. It is the *normal* way that breakthroughs happen. Someone who loves two things finds that one explains the other. Someone bored at a concert has an algorithm idea. Someone gardening realizes the solution to a data structure problem they'd been stuck on for weeks.
+
+You are not wasting time when you pursue things that delight you. You are building the cross-domain vocabulary that will make you unexpectedly, disproportionately good at your required tasks. The chess player sees search trees differently. The musician hears rhythm in loops. The crossword solver is comfortable with constraint satisfaction. The cyclist knows what it feels like to optimize over a long, bumpy route.
+
+::: {.callout-tip}
+## The argument, stated plainly
+
+Expertise in one domain gives you **metaphors, intuitions, and tools** that transfer to other domains in ways you cannot predict in advance. The only way to have those cross-domain tools when you need them is to acquire them *before* you need them — which means following your interests now, without justification, and trusting that the connections will emerge.
+
+**Your curiosity is not frivolous. It is your competitive advantage.**
+:::
+
+> *Do things for beauty, for fun, or because you are afraid of them. We cannot predict which connections will be important — so build as many as you can.*
+
+---
+
+## The Full Course Arc
+
+:::: {.columns style="column-gap: 1.5em;"}
+
+::: {.column width="48%"}
+
+| Week | Topic |
+|------|-------|
+| 1 | Algorithms and efficiency |
+| 2 | Representation, lists, strings |
+| 3 | Classes, friendship graphs |
+| 4 | Bracelets, loops, recursion |
+| 5 | Pandas, data analysis |
+| 6 | Dictionaries |
+| 7 | *Reading week* |
+
+:::
+
+::: {.column width="48%"}
+
+| Week | Topic |
+|------|-------|
+| 8 | Graphs, BFS, DFS |
+| 9 | Voronoi, weighted graphs |
+| 10 | Sudoku, constraint solving |
+| 11 | Maps, Dijkstra's algorithm |
+| 12 | TSP, permutations |
+| 13 | Text as data, NLP, NER |
+| 14 | Social networks, SCC |
+
+:::
+
+::::
+
+From counting bracelet patterns to inferring social networks from Victorian novels — it's been quite a journey. The toolkit you've built is real, and it will keep paying off in ways you can't predict yet.
+
+[]{.hexagon-red}[]{.hexagon-orange}[]{.hexagon-yellow}[]{.hexagon-green}[]{.hexagon-blue}[]{.hexagon-violet}
