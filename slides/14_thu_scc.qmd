@@ -1,0 +1,305 @@
+---
+date: 2026-04-09
+---
+
+# Strongly Connected Components {background-image="/images/scc/scc_graph.svg" background-position="95% center" background-size="45%"}
+
+
+
+## I ♥ National Parks
+
+::::: columns
+::: {.column width="55%"}
+![](/images/scc/badlands.jpg)
+:::
+::: {.column width="45%"}
+![](/images/scc/painter.jpg)
+:::
+:::::
+
+::: {.notes}
+I have no skills. But I have a lot of ideas, and one of them involves taking photographs from the national parks and turning them into things that look like stained glass — algorithmically.
+:::
+
+## Pointillism
+
+::::: columns
+::: {.column width="50%"}
+![](/images/scc/cherry_original.jpg)
+:::
+::: {.column width="50%"}
+![](/images/scc/cherry_pointillist.jpg)
+:::
+:::::
+
+::: {.notes}
+Voronoi cells as art. The original photo of UBC cherry blossoms, and a pointillist rendering using Voronoi regions.
+:::
+
+## Stained Glass?
+
+![](/images/scc/skyline_voronoi.png)
+
+::: {.notes}
+Not quite. The regions are too rectangular — they don't honor the color boundaries in the image the way stained glass would.
+:::
+
+## Stained Glass?
+
+![](/images/scc/totem_poles.png)
+
+::: {.notes}
+Still not quite. The Voronoi approach doesn't know about the image content — it just divides space.
+
+What we really want: equal sized, continuous, compact regions that *honor boundaries*.
+:::
+
+## Phone a Friend
+
+::::: columns
+::: {.column width="50%"}
+![](/images/daf.png)
+:::
+::: {.column width="50%"}
+
+\ 
+
+"What you need are *superpixels*!"
+
+:::
+:::::
+
+
+
+## Superpixels
+
+![](/images/scc/rose_garden_superpix.png){fig-align="center" width="100%"}
+
+**Equal sized, continuous, compact regions that honor boundaries.**
+
+
+::: {.notes}
+So I went to ask DAF for advice. He said two things. First: use superpixels. Superpixels are an image summary technique — groups of pixels clustered together in similar-sized regions that honor color boundaries. The simplest algorithm is exactly what you'd expect: k-means in 5D space (x, y, r, g, b) with a scale parameter.
+
+Second: how will you know when you've done a good job?
+
+Yay Python — skimage has the SLIC superpixels algorithm built in.
+:::
+
+## Phone a Friend
+
+::::: columns
+::: {.column width="50%"}
+![](/images/daf.png)
+:::
+::: {.column width="50%"}
+
+\ 
+
+"How will you know if you've done a good job?"
+
+:::
+:::::
+
+# Gerrymandering
+
+## Gerrymandering
+
+::::: columns
+::: {.column width="50%"}
+![NC — gerrymandered](/images/scc/nc_gerrymandered.png)
+:::
+::: {.column width="50%"}
+![NC — compact](/images/scc/nc_compact.png)
+:::
+:::::
+
+**Equal sized, continuous, compact regions?**
+
+::: {.notes}
+The question "how will you know if you've done a good job?" brought me to gerrymandering — the redrawing of political boundaries to provide advantage to certain parties.
+
+Gerrymandering = NOT equal sized, continuous, compact regions.
+:::
+
+## Canada Fixed It
+
+
+::::: columns
+::: {.column width="50%"}
+![](/images/scc/canada_districts.png)
+:::
+::: {.column width="50%"}
+
+In 1964 a law was passed requiring each province to form an independent panel to draw boundaries.
+:::
+:::::
+
+::: {.notes}
+Source: Washington Post / WonkBlog. The lighter, larger regions in Canada vs. the fragmented mess in parts of the US. Canada's independent redistricting commissions produce much more compact districts.
+:::
+
+## Which is fair?
+
+![](/images/scc/gerry_explained1.png){fig-align="center"}
+
+::: {.notes}
+Three ways to divide 50 people into 5 districts. 60% blue, 40% red population.
+
+1. Perfect representation: 3 blue, 2 red districts — proportional
+2. Compact but unfair (packing): 5 blue, 0 red — blue "wastes" votes
+3. Neither compact nor fair (cracking): 2 blue, 3 red — red wins despite being the minority
+
+The shape of the district determines the outcome.
+:::
+
+## Which is fair?
+
+![](/images/scc/gerry_explained2.png){fig-align="center"}
+
+::: {.notes}
+Three ways to divide 50 people into 5 districts. 60% blue, 40% red population.
+
+1. Perfect representation: 3 blue, 2 red districts — proportional
+2. Compact but unfair (packing): 5 blue, 0 red — blue "wastes" votes
+3. Neither compact nor fair (cracking): 2 blue, 3 red — red wins despite being the minority
+
+The shape of the district determines the outcome.
+:::
+
+## Which is fair?
+
+![](/images/scc/gerry_explained3.png){fig-align="center"}
+
+::: {.notes}
+Three ways to divide 50 people into 5 districts. 60% blue, 40% red population.
+
+1. Perfect representation: 3 blue, 2 red districts — proportional
+2. Compact but unfair (packing): 5 blue, 0 red — blue "wastes" votes
+3. Neither compact nor fair (cracking): 2 blue, 3 red — red wins despite being the minority
+
+The shape of the district determines the outcome.
+:::
+
+
+## How will you know if you've done a good job? {.smaller}
+
+For each district, count **wasted votes**:
+
+Observe:
+
+- Any vote over 50% for the district winner is wasted.
+- Any vote over 0% for the district loser is wasted.
+
+Suggests a simple metric of quality!
+
+For each district:
+
+- Count votes over 50% for district winner
+- Count votes for district loser
+- Sum wasted votes for each party
+- Find difference between two numbers as fraction of votes cast
+
+
+::: {.notes}
+Go district by district, counting how many votes the winner got above 50% — anything higher was a waste. Then count the loser's votes, because all those went down the tubes. Add up all the waste by party statewide, then take the difference as a percentage of votes cast.
+
+Want to minimize the gap!
+:::
+
+## Efficiency Gap 
+
+![](/images/scc/gerrypaper.png){fig-align="center"}
+
+## The Rabbit Hole {.smaller}
+
+::::: columns
+::: {.column width="60%"}
+
+![](/images/scc/gerry_explained3.png){fig-align="center"}
+
+:::
+::: {.column width="40%"}
+What should we do with the gap?
+
+1. What would Nate Silver do?
+2. What happens in the limit?
+3. What happens in a multi-party system?
+4. Is there an MLE for the gap?
+5. Can I apply this within a clustering algorithm on pixels?
+
+:::
+:::::
+
+::: {.notes}
+
+The key insight: a cost of misclassifying voters can be directly applied to pixels! Wasted pixels = pixels assigned to the wrong superpixel region.
+:::
+
+::: {.notes}
+And here's the connection. My understanding of gerrymandering was increased by my personal quest for stained glass, and what I learned about gerrymandering will inform my future artistic decisions.
+
+THIS HAPPENS ALL THE TIME, EVERYWHERE.
+:::
+
+## Strong Connectivity
+
+::::: columns
+::: {.column width="38%"}
+![](/images/scc/tiffany_tree.jpg)
+:::
+::: {.column width="20%"}
+
+::: {style="text-align:center; font-size:4em; line-height:1;"}
+→<br>←
+:::
+:::
+::: {.column width="42%"}
+![](/images/scc/charter.png)
+:::
+:::::
+
+::: {.notes}
+The Tiffany stained glass tree — the thing I originally wanted to make. And the Canadian Charter of Rights and Freedoms — the thing gerrymandering threatens.
+
+These two images are connected through superpixels. And I only found that connection because I followed my curiosity from one domain into another.
+
+Mutually beneficial. The connections go both ways — that's what makes them *strongly* connected.
+:::
+
+## A Diversity Diversion
+
+**Inherent** diversity: characteristics we're born with or into.
+
+**Acquired** diversity: the breadth of our interests, experiences, and connections.
+
+::: {.notes}
+The field of CS demands constant innovation, and diverse teams are more innovative. That's mostly argued in terms of inherent diversity. But this talk is about acquired diversity.
+
+The part that makes this relevant: the connections between these problems arise from completely different problem domains. You all have diverse interests. The purpose of this talk is to convince you that they are deeply worthwhile — that they are NEVER a waste of time. You cannot predict the ways in which they will make you smarter.
+:::
+
+## A Diversity Diversion
+
+![](/images/scc/aquireddiversity.png)
+
+
+
+::: {.notes}
+Travel. Books and games. Food. Exercise. Music. Arts. Learn about other cultures. Build something. Plant a garden.
+
+Sometimes the connections are with ideas, sometimes with people, sometimes with places.
+
+It is this broad definition of diversity — diversity of connections — that I hope for you in your future.
+
+We cannot predict which connections will be important — so build as many as you can.
+
+Do things for beauty, for fun, or because you are afraid of them.
+:::
+
+## Gratitude
+
+Thank you for being so bright and so fun to teach.
+
+Thank you for all the ways you're going to make the world a better place.
+
