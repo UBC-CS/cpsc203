@@ -2,20 +2,19 @@ course:
   code: "CPSC 203"
   title: "Programming, problem solving, and algorithms"
   full-title: "CPSC 203: Programming, problem solving, and algorithms"
-  term: "2025 W2"
-  term-end-date: "2026-04-10"
-  time: "Tue/Thu 11am"
+  term: "2026 W1"
+  term-end-date: "TODO-2026W1-TERM-END-DATE"
+  time: "TODO-CONFIRM-2026W1-TIME"
   location: >
-    HR MacMillan Building (MCML, [Wayfinding at UBC](https://maps.ubc.ca/?code=MCML),
-    [Google Maps](https://maps.app.goo.gl/ygAdaiBoed4kAvDq7)), Rm 360
+    TODO-CONFIRM-2026W1-LOCATION
   website: "https://ubc-cs.github.io/cpsc203"
   repo: "https://github.com/UBC-CS/cpsc203"
-  lms: "https://canvas.ubc.ca/courses/176702"
-  piazza: "https://piazza.com/ubc.ca/winterterm22025/cpsc203"
-  prairielearn: "https://us.prairielearn.com/pl/course_instance/202804"
+  lms: "TODO-2026W1-CANVAS-URL"
+  piazza: "TODO-2026W1-PIAZZA-URL"
+  prairielearn: "TODO-2026W1-PRAIRIELEARN-URL"
 instructor:
-  name: "Dr. Cinda Heeren"
-  pronouns: "She, Her"
+  name: "TODO-2026W1-INSTRUCTOR-NAME"
+  pronouns: "TODO-2026W1-INSTRUCTOR-PRONOUNS"
 software:
   bash: "5.3.3(1)"
   bash-year: "2025"

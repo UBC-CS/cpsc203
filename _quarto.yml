@@ -51,11 +51,11 @@ website:
         contents:
           - href: setup.qmd
             text: "Setup"
-          - href: "https://canvas.ubc.ca/courses/176702"
+          - href: "TODO-2026W1-CANVAS-URL"
             text: "Canvas"
-          - href: "https://piazza.com/ubc.ca/winterterm22025/cpsc203"
+          - href: "TODO-2026W1-PIAZZA-URL"
             text: "Piazza"
-          - href: "https://us.prairielearn.com/pl/course_instance/202804"
+          - href: "TODO-2026W1-PRAIRIELEARN-URL"
             text: "PrairieLearn"
           - href: "https://us.prairietest.com"
             text: "PrairieTest"

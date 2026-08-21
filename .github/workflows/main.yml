@@ -42,10 +42,11 @@ jobs:
     - name: Install Python dependencies and render Quarto
       run: uv run quarto render
 
+    # Uses keep_files so that permanent archived term snapshots (e.g. /2025w2/)
+    # on the gh-pages branch survive future deploys of the current site.
     - name: Publish Quarto project
-      uses: quarto-dev/quarto-actions/publish@v2
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        render: false
-        target: gh-pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
+        keep_files: true
