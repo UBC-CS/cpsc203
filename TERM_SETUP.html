@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Announcements – CPSC 203: Programming, problem solving, and algorithms</title>
+<title>term_setup – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,70 +71,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-description','listing-date','listing-image','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="alternate" type="application/rss+xml" title="CPSC 203: Programming, problem solving, and algorithms" href="announcements.xml" data-external="1"><meta property="og:title" content="Announcements – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:title" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:title" content="Announcements – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:title" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -321,7 +263,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Announcements</h1>
+          <h1 class="quarto-secondary-nav-title"></h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -359,7 +301,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./announcements.html" class="sidebar-item-text sidebar-link active">
+  <a href="./announcements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
@@ -436,41 +378,61 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#term-transition-checklist" id="toc-term-transition-checklist" class="nav-link active" data-scroll-target="#term-transition-checklist">Term transition checklist</a>
+  <ul class="collapse">
+  <li><a href="#archive-the-outgoing-term" id="toc-archive-the-outgoing-term" class="nav-link" data-scroll-target="#archive-the-outgoing-term">1. Archive the outgoing term</a></li>
+  <li><a href="#reset-cpsc203-the-website-for-the-incoming-term" id="toc-reset-cpsc203-the-website-for-the-incoming-term" class="nav-link" data-scroll-target="#reset-cpsc203-the-website-for-the-incoming-term">2. Reset <code>cpsc203</code> (the website) for the incoming term</a></li>
+  <li><a href="#pl-ubc-cpsc203" id="toc-pl-ubc-cpsc203" class="nav-link" data-scroll-target="#pl-ubc-cpsc203">3. <code>pl-ubc-cpsc203</code></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/TERM_SETUP.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/TERM_SETUP.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">Announcements</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
 
+<section id="term-transition-checklist" class="level1">
+<h1>Term transition checklist</h1>
+<p>How to archive a finished term and reset this site for the next one. Written during the 2025W2 → 2026W1 handoff; keep it updated if the process changes.</p>
+<section id="archive-the-outgoing-term" class="level2">
+<h2 class="anchored" data-anchor-id="archive-the-outgoing-term">1. Archive the outgoing term</h2>
+<ol type="1">
+<li>Tag the final commit on <code>main</code> in both <code>cpsc203</code> and <code>cpsc203-root</code>: <code>git tag -a &lt;termcode&gt;-final -m "Final snapshot of &lt;term&gt;" main &amp;&amp; git push origin &lt;termcode&gt;-final</code></li>
+<li>Render the site from that tag (<code>quarto render</code> with the repo in that state).</li>
+<li>Copy the rendered <code>_site/</code> output into a permanent subfolder on the <code>gh-pages</code> branch, e.g.&nbsp;<code>&lt;termcode&gt;/</code> (checkout <code>gh-pages</code> in a worktree, <code>cp -R _site/. &lt;termcode&gt;/</code>, commit, push). Quarto’s generated links are page-relative, so this works without any special <code>output-dir</code> config — just spot-check a couple of nested pages (e.g.&nbsp;a slide deck) locally before pushing, since a large copy is expensive to redo.</li>
+<li>The deploy workflow (<code>.github/workflows/main.yml</code>) publishes with <code>keep_files: true</code> (via <code>peaceiris/actions-gh-pages</code>), so archived subfolders are never touched by future deploys of the live site. Don’t revert that flag — without it, the next deploy wipes every past archive.</li>
+<li>Result: the old term stays permanently browsable at <code>https://ubc-cs.github.io/cpsc203/&lt;termcode&gt;/</code>, and the exact source is recoverable via the git tag.</li>
+</ol>
+<p><code>pl-ubc-cpsc203</code> does not need this treatment — PrairieLearn already keeps terms side by side under <code>courseInstances/&lt;termcode&gt;/</code>, nothing is ever overwritten there.</p>
+</section>
+<section id="reset-cpsc203-the-website-for-the-incoming-term" class="level2">
+<h2 class="anchored" data-anchor-id="reset-cpsc203-the-website-for-the-incoming-term">2. Reset <code>cpsc203</code> (the website) for the incoming term</h2>
+<p>Only logistics data gets cleared — it’s genuinely dead once the term ends. <strong>Slides (<code>slides/</code>) and weekly summaries (<code>summaries/</code>) are NOT wiped</strong>; they stay in the tree and get edited forward in place as the new term proceeds, same as they were built up during the outgoing term. That’s also what keeps the old term’s material easily visible in the working tree, on top of the hosted archive from step 1.</p>
+<p>Files touched, and what to check:</p>
+<ul>
+<li><strong><code>data/schedule.csv</code></strong> — reset to a blank skeleton (dates and all video/lab/POTW/project/exam links cleared; week numbers and the reading week marker kept). Fill in real dates once the UBC academic calendar for the term is known, and links as each PrairieLearn assessment / recording is created.</li>
+<li><strong><code>_variables.yml</code></strong> — <code>term</code>, <code>term-end-date</code>, <code>time</code>, <code>location</code>, <code>lms</code> (Canvas), <code>piazza</code>, <code>prairielearn</code>, and <code>instructor.name</code> / <code>instructor.pronouns</code> are all placeholders (<code>TODO-...</code>). Fill in once Canvas/Piazza/PrairieLearn course instances exist and the instructor for the term is confirmed.</li>
+<li><strong><code>_quarto.yml</code></strong> — the sidebar nav hardcodes the same Canvas/Piazza/ PrairieLearn URLs a second time (<code>website.sidebar.tools</code> section); update those too.</li>
+<li><strong><code>syllabus.qmd</code></strong> — no hardcoded dates as of the 2025W2→2026W1 reset, but re-check in case that changes.</li>
+</ul>
+<p>To find everything still needing a real value: <code>grep -rn "TODO-2026W1\|TODO-CONFIRM" .</code> (swap the term code each cycle).</p>
+</section>
+<section id="pl-ubc-cpsc203" class="level2">
+<h2 class="anchored" data-anchor-id="pl-ubc-cpsc203">3. <code>pl-ubc-cpsc203</code></h2>
+<p>Create the new course instance by copying the previous term’s <code>courseInstances/&lt;termcode&gt;/</code> folder and updating <code>infoCourseInstance.json</code> (dates, long/short name). The shared <code>questions/</code> bank does not need touching — it’s reused across terms and improved in place.</p>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
 
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -891,7 +853,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/announcements.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/announcements.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/TERM_SETUP.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/TERM_SETUP.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
