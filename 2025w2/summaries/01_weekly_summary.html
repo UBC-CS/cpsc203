@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 1: Elegance, Efficiency, and the Art of Problem Solving – CPSC 203: Programming, problem solving, and algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e170f91ef3a08c24ebee02e6bb09b870.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ca170342d084372d1a2d7738b4009412.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Week 1: Elegance, Efficiency, and the Art of Problem Solving – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta property="og:image" content="https://ubc-cs.github.io/cpsc203/images/tangram-square.png">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:image:alt" content="The different geometric shapes of a tangram form a square.">
+<meta property="og:image:height" content="732">
+<meta property="og:image:width" content="730">
+<meta name="twitter:title" content="Week 1: Elegance, Efficiency, and the Art of Problem Solving – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
+<meta name="twitter:image" content="https://ubc-cs.github.io/cpsc203/images/tangram-square.png">
+<meta name="twitter:image:alt" content="The different geometric shapes of a tangram form a square.">
+<meta name="twitter:image-height" content="732">
+<meta name="twitter:image-width" content="730">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Week 1: Elegance, Efficiency, and the Art of Problem Solving</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">CPSC 203: Programming, problem solving, and algorithms</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../announcements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Announcements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://canvas.ubc.ca/courses/176702" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canvas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piazza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairielearn.com/pl/course_instance/202804" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieLearn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://us.prairietest.com" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PrairieTest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://cbtf.ubc.ca/students/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CBTF</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-algorithmic-thinking" id="toc-what-is-algorithmic-thinking" class="nav-link active" data-scroll-target="#what-is-algorithmic-thinking">What is Algorithmic Thinking?</a>
+  <ul class="collapse">
+  <li><a href="#the-flashlight-game-a-case-study-in-efficiency" id="toc-the-flashlight-game-a-case-study-in-efficiency" class="nav-link" data-scroll-target="#the-flashlight-game-a-case-study-in-efficiency">The Flashlight Game: A Case Study in Efficiency</a></li>
+  </ul></li>
+  <li><a href="#tangrams-the-power-of-fundamental-building-blocks" id="toc-tangrams-the-power-of-fundamental-building-blocks" class="nav-link" data-scroll-target="#tangrams-the-power-of-fundamental-building-blocks">Tangrams: The Power of Fundamental Building Blocks</a></li>
+  <li><a href="#elegance-in-design-and-code" id="toc-elegance-in-design-and-code" class="nav-link" data-scroll-target="#elegance-in-design-and-code">Elegance in Design and Code</a>
+  <ul class="collapse">
+  <li><a href="#the-scissors-test" id="toc-the-scissors-test" class="nav-link" data-scroll-target="#the-scissors-test">The Scissors Test</a></li>
+  <li><a href="#elegance-in-computing" id="toc-elegance-in-computing" class="nav-link" data-scroll-target="#elegance-in-computing">Elegance in Computing</a></li>
+  </ul></li>
+  <li><a href="#handcraft-a-bridge-between-art-and-algorithm" id="toc-handcraft-a-bridge-between-art-and-algorithm" class="nav-link" data-scroll-target="#handcraft-a-bridge-between-art-and-algorithm">Handcraft: A Bridge Between Art and Algorithm</a>
+  <ul class="collapse">
+  <li><a href="#knitting-patterns-as-algorithms" id="toc-knitting-patterns-as-algorithms" class="nav-link" data-scroll-target="#knitting-patterns-as-algorithms">Knitting Patterns as Algorithms</a></li>
+  </ul></li>
+  <li><a href="#quantifying-work-understanding-growth" id="toc-quantifying-work-understanding-growth" class="nav-link" data-scroll-target="#quantifying-work-understanding-growth">Quantifying Work: Understanding Growth</a>
+  <ul class="collapse">
+  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example">A Simple Example</a></li>
+  <li><a href="#from-stitches-to-code" id="toc-from-stitches-to-code" class="nav-link" data-scroll-target="#from-stitches-to-code">From Stitches to Code</a></li>
+  <li><a href="#why-this-matters-making-it-visual" id="toc-why-this-matters-making-it-visual" class="nav-link" data-scroll-target="#why-this-matters-making-it-visual">Why This Matters: Making it Visual</a></li>
+  </ul></li>
+  <li><a href="#the-mathematics-of-efficiency" id="toc-the-mathematics-of-efficiency" class="nav-link" data-scroll-target="#the-mathematics-of-efficiency">The Mathematics of Efficiency</a>
+  <ul class="collapse">
+  <li><a href="#a-dramatic-illustration" id="toc-a-dramatic-illustration" class="nav-link" data-scroll-target="#a-dramatic-illustration">A Dramatic Illustration</a></li>
+  <li><a href="#understanding-what-n-represents" id="toc-understanding-what-n-represents" class="nav-link" data-scroll-target="#understanding-what-n-represents">Understanding What <span class="math inline">\(n\)</span> Represents</a></li>
+  </ul></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting It All Together</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/01_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/01_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Week 1: Elegance, Efficiency, and the Art of Problem Solving</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Welcome to the first week of CPSC 203! This week is all about developing a new way of thinking—one that will serve you well throughout your journey in computer science and beyond. We’re going to explore what it means to think algorithmically, what makes a solution elegant, and why efficiency matters when solving problems with code.</p>
+<section id="what-is-algorithmic-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-algorithmic-thinking">What is Algorithmic Thinking?</h2>
+<p>Before we write a single line of code, let’s talk about what it means to think like a computer scientist. At its core, <strong>algorithmic thinking</strong> is about breaking problems down into clear, repeatable steps that can be followed to reach a solution. It’s a way of approaching problems that combines creativity with precision.</p>
+<p>Think about following a recipe. A good recipe doesn’t just say “make cookies”—it tells you exactly what ingredients you need, in what order to combine them, at what temperature to bake them, and for how long. That’s algorithmic thinking: taking a complex goal (delicious cookies) and breaking it down into manageable, executable steps.</p>
+<p>If you’ve taken an introductory programming course, you might have learned systematic design processes—recipes for turning problem statements into working code. That’s algorithmic thinking in action! This term, we’re going to build on that foundation by asking new questions: not just <em>does my code work?</em> but <em>how well does it work?</em> and <em>how elegant is my solution?</em></p>
+<p>But here’s where it gets interesting: there are often many different recipes for chocolate chip cookies. Some are faster, some use fewer dishes, some produce chewier cookies, and some produce crispier ones. Similarly, for most computational problems, there are multiple valid solutions—and part of becoming a skilled programmer is learning to evaluate which solution is best for your particular situation.</p>
+<section id="the-flashlight-game-a-case-study-in-efficiency" class="level3">
+<h3 class="anchored" data-anchor-id="the-flashlight-game-a-case-study-in-efficiency">The Flashlight Game: A Case Study in Efficiency</h3>
+<p>Let’s make this concrete with an example. Imagine we’re in a lecture hall with 150 students, and we want to narrow the group down to just 10 people using yes/no questions. Each question works like this:</p>
+<ul>
+<li>A student poses a binary (yes/no) question</li>
+<li>Everyone who answers “yes” turns on their phone’s flashlight</li>
+<li>Those people are now “on vacation”—they’re done and can relax</li>
+<li>The remaining people (who said “no”) continue playing</li>
+</ul>
+<p>There’s a catch though: each question must eliminate <strong>at least 5 people</strong> but <strong>no more than half</strong> of the remaining group. These constraints force us to be strategic.</p>
+<section id="analyzing-the-best-and-worst-cases" class="level4">
+<h4 class="anchored" data-anchor-id="analyzing-the-best-and-worst-cases">Analyzing the Best and Worst Cases</h4>
+<p>Let’s think about this mathematically. We start with 150 people and want to get down to 10.</p>
+<p><strong>Best case scenario:</strong> What if we’re really clever and each question eliminates exactly half the group?</p>
+<ul>
+<li>Start: 150 people</li>
+<li>After question 1: 75 people (eliminated 75)</li>
+<li>After question 2: 37-38 people (eliminated ~37)</li>
+<li>After question 3: 18-19 people (eliminated ~19)</li>
+<li>After question 4: 9-10 people (eliminated ~9)</li>
+</ul>
+<p>We’re done in about 4 questions! Notice that we’re repeatedly dividing by 2, which is why we can express this mathematically as <span class="math inline">\(\log_2(150/10) \approx 4\)</span> questions.</p>
+<p><strong>Worst case scenario:</strong> What if we’re unlucky and can only eliminate the minimum (5 people) each round?</p>
+<ul>
+<li>We need to eliminate 140 people total (150 - 10 = 140)</li>
+<li>Eliminating 5 per round: 140 ÷ 5 = 28 rounds</li>
+</ul>
+<p>That’s quite a difference! Same problem, same rules, but vastly different efficiency depending on our strategy.</p>
+</section>
+<section id="why-stop-at-10" class="level4">
+<h4 class="anchored" data-anchor-id="why-stop-at-10">Why Stop at 10?</h4>
+<p>You might wonder: why stop at 10 people instead of continuing until just one person remains? This reveals an important principle in algorithm design: <strong>once a problem becomes small enough, we can solve it by brute force</strong>.</p>
+<p>With 10 people remaining, we could easily just go around the room and ask each person directly. The overhead of crafting clever binary questions isn’t worth it anymore. This principle—divide a large problem efficiently, then handle the small pieces directly—appears throughout computer science.</p>
+</section>
+</section>
+</section>
+<section id="tangrams-the-power-of-fundamental-building-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="tangrams-the-power-of-fundamental-building-blocks">Tangrams: The Power of Fundamental Building Blocks</h2>
+<div class="quarto-layout-panel" data-layout="[35.7,5,59.3]">
+<div class="quarto-layout-row quarto-layout-valign-center">
+<div class="quarto-layout-cell" style="flex-basis: 35.7%;justify-content: center;">
+<p><img src="../images/tangram-square.png" class="img-fluid" alt="The different geometric shapes of a tangram form a square."></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 5.0%;justify-content: flex-start;">
+<p><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" style="font-size: 2em;" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 59.3%;justify-content: center;">
+<p><img src="../images/tangram-house.png" class="img-fluid" alt="The different geometric shapes of a tangram form a house."></p>
+</div>
+</div>
+</div>
+<p>Tangrams are an ancient Chinese puzzle consisting of seven geometric pieces: five triangles (two large, one medium, two small), one square, and one parallelogram. These seven pieces can be rearranged to form an astonishing variety of shapes—animals, people, objects, abstract designs.</p>
+<p>The beauty of tangrams is that <strong>the pieces never change</strong>. You’re not getting new pieces for each puzzle. Instead, you’re learning to see how the same fundamental components can be combined in different ways to solve different problems.</p>
+<p>This is exactly how programming works.</p>
+<p>When you write Python code, you’re working with a relatively small set of fundamental building blocks:</p>
+<ul>
+<li><strong>Variables</strong> to store information</li>
+<li><strong>Conditionals</strong> (<code>if</code>/<code>else</code>) to make decisions</li>
+<li><strong>Loops</strong> (<code>for</code>/<code>while</code>) to repeat actions</li>
+<li><strong>Functions</strong> to organize and reuse code</li>
+<li><strong>Data structures</strong> (lists, dictionaries, sets) to organize information</li>
+</ul>
+<p>Just like tangram pieces, these building blocks don’t change. What changes is how you arrange them. A loop inside a conditional gives you different behavior than a conditional inside a loop. A function that calls another function creates different possibilities than two independent functions.</p>
+<p>The journey of learning to program is partly about mastering these individual pieces, but more importantly, it’s about developing the intuition for how to combine them effectively. The more comfortable you become with the fundamental building blocks, the more sophisticated the problems you can solve. <strong>But what separates a working solution from a <em>beautiful</em> solution? Let’s explore that next.</strong></p>
+</section>
+<section id="elegance-in-design-and-code" class="level2">
+<h2 class="anchored" data-anchor-id="elegance-in-design-and-code">Elegance in Design and Code</h2>
+<p>We’ve talked about combining fundamental building blocks to solve problems. Now let’s pause and consider a seemingly philosophical question: <strong>What makes something elegant?</strong></p>
+<p>This isn’t an idle question. In your previous coursework, you learned <em>systematic</em> approaches to design—how to reliably go from problem to solution. Now we’re adding another dimension: <strong>elegance</strong>—a quality we should actively pursue in our code, our algorithms, and our problem-solving approaches. You might not fully recognize it yet (that intuition develops with practice), but you can start to see what it looks like. So what does it mean?</p>
+<section id="the-scissors-test" class="level3">
+<h3 class="anchored" data-anchor-id="the-scissors-test">The Scissors Test</h3>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="../images/two-scissors.jpg" class="img-fluid" alt="A set of scissors."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/non-functional-scissors.jpg" class="img-fluid" alt="A pair of scissors with a single merged handle instead of two, making it impossible to open and close the blades."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/assorted-scissors.png" class="img-fluid" alt="A variety of scissors in different colours."></p>
+</div>
+</div>
+<p>Look at these three examples of scissors:</p>
+<ol type="1">
+<li><p><strong>Classic scissors</strong> (left): Two handles, two blades, a simple pivot point. This design has remained virtually unchanged for thousands of years. Why? Because it perfectly embodies its function. Every element serves a purpose, and no element is wasted.</p></li>
+<li><p><strong>Merged-handle scissors</strong> (center): Visually interesting, perhaps artistic, but completely non-functional. The handles are merged into one piece, making it impossible to open and close the blades. It fails the fundamental test of scissors: it cannot cut.</p></li>
+<li><p><strong>Colorful scissors</strong> (right): These add variety and personality through color, but notice that the underlying elegant design remains intact. The essential mechanism—the part that makes scissors work—is preserved.</p></li>
+</ol>
+<p>From these examples, we can extract what elegance means: <strong>form perfectly matched to function, with no unnecessary complexity</strong>.</p>
+</section>
+<section id="elegance-in-computing" class="level3">
+<h3 class="anchored" data-anchor-id="elegance-in-computing">Elegance in Computing</h3>
+<p>In the context of software development, elegance emerges from the intersection of two qualities:</p>
+<p><strong>Ingenuity</strong> — The problems we encounter are rarely solved by simply copying solutions we’ve seen before. We need creativity to adapt our tools to new challenges, to see unexpected connections, and to find novel approaches.</p>
+<p><strong>Simplicity</strong> — Code is fundamentally a form of communication with other humans (your future self included!). If your solution is so complex that others cannot understand it, they will rewrite it rather than maintain it. Complexity creates friction; simplicity invites collaboration.</p>
+<p>Steve Jobs captured this beautifully:</p>
+<blockquote class="blockquote">
+<p>“Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.”</p>
+</blockquote>
+<p>Notice that he says it takes “a lot of hard work” to make something simple. Simplicity isn’t about taking shortcuts or doing less thinking—it’s about thinking so clearly that you can strip away everything non-essential.</p>
+<p>When you write code, ask yourself:</p>
+<ul>
+<li><strong>Does each part serve a clear purpose?</strong> Like the pivot in scissors, every line of code should contribute to the solution.</li>
+<li><strong>Can someone else understand what I’m doing?</strong> If not, can you simplify or add clarifying comments?</li>
+<li><strong>Am I solving the problem, or am I showing off?</strong> Clever code is not always good code.</li>
+</ul>
+</section>
+</section>
+<section id="handcraft-a-bridge-between-art-and-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="handcraft-a-bridge-between-art-and-algorithm">Handcraft: A Bridge Between Art and Algorithm</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="../images/quilt.jpg" class="img-fluid" alt="A quilt in different colours---green and pink---and patterns---paisley and flowers."></p>
+<p><img src="../images/doily.jpg" class="img-fluid" alt="A white doily with a spiral pattern on a wooden surface."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/pinecone-pen.jpg" class="img-fluid" alt="A pen made from pinecone."></p>
+<p><img src="../images/shirt.jpg" class="img-fluid" alt="A vibrant woven textile with intricate geometric patterns in various colours, the main being red."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/paper-violin.jpg" class="img-fluid" alt="A violin made from intricately quilled green paper with a bow."></p>
+<p><img src="../images/crochet-bike.jpg" class="img-fluid" alt="A bicycle covered in crocheted yarn in various colours."></p>
+</div>
+</div>
+<p>Traditional handcrafts—quilting, knitting, crochet, weaving, paper art—might seem far removed from computer science, but they share deep structural similarities with programming. <strong>If you learned design processes in your intro course, think of handcraft as another lens on the same ideas: turning systematic instructions into creative artifacts.</strong> Understanding these connections can help us think more clearly about what we do when we write code.</p>
+<p>Consider what these crafts involve:</p>
+<ul>
+<li><strong>Patterns:</strong> A quilt block is a pattern that repeats. A knitting stitch is a pattern that repeats. In programming, we call this iteration and loops.</li>
+<li><strong>Ingenuity:</strong> Working within constraints (limited yarn colors, fixed paper size) requires creativity. Same with programming.</li>
+<li><strong>Resource management:</strong> You have finite yarn, limited time. In computing, we have finite memory, limited processing power.</li>
+<li><strong>Instructions:</strong> A knitting pattern is a sequence of instructions that, if followed precisely, produces a specific result. Sound familiar?</li>
+</ul>
+<section id="knitting-patterns-as-algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="knitting-patterns-as-algorithms">Knitting Patterns as Algorithms</h3>
+<p>Let’s look at an actual knitting pattern and see just how similar it is to code:</p>
+<p><img src="../images/sherbet-stripes.png" class="img-fluid" alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."></p>
+<p>Here’s a typical instruction: “Cast on 4 stitches. Row 1: Knit across. Row 2: Knit 1, yarn over, knit to end. Repeat Row 2 until you have 40 stitches.”</p>
+<p>Let’s translate this into programming concepts:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cast on 4 stitches</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stitches <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Row 1: Knit across</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>knit_row()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Repeat Row 2 until you have 40 stitches</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> stitches <span class="op">&lt;</span> <span class="dv">40</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    knit(<span class="dv">1</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    yarn_over()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    knit_to_end()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    stitches <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This isn’t just a superficial similarity—the <strong>structure of thought</strong> is identical. We have:</p>
+<ul>
+<li><strong>Initialization:</strong> Setting up the initial state (casting on)</li>
+<li><strong>Sequence:</strong> Steps that happen in order</li>
+<li><strong>Iteration:</strong> Repeating actions (the loop)</li>
+<li><strong>Conditions:</strong> Knowing when to stop</li>
+</ul>
+<p>The language of craft instructions and the language of programming are both trying to achieve the same thing: <strong>precise, unambiguous communication of a process</strong>.</p>
+</section>
+</section>
+<section id="quantifying-work-understanding-growth" class="level2">
+<h2 class="anchored" data-anchor-id="quantifying-work-understanding-growth">Quantifying Work: Understanding Growth</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="../images/colourful-knitted-striped-dishcloth.jpg" class="img-fluid" alt="A knitted dishcloth with diagonal stripes in orange, green, yellow, and teal."></p>
+<p><img src="../images/knitted-dishcloth-with-eyelets.jpg" class="img-fluid" alt="A teal knitted dishcloth with a lace pattern of diagonal eyelets."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/knitted-dishcloth-with-dragon-design.jpg" class="img-fluid" alt="A green knitted dishcloth featuring a textured dragon design."></p>
+<p><img src="../images/knitted-dishcloth-with-diamond-lace-pattern.jpg" class="img-fluid" alt="A purple knitted dishcloth featuring a diamond lace pattern."></p>
+</div><div class="column" style="width:33%;">
+<p><img src="../images/knitted-dishcloth-with-metroid-power-up-design.jpg" class="img-fluid" alt="A teal knitted dishcloth featuring a raised power-up design from the video game Metroid."></p>
+<p><img src="../images/knitted-dishcloth-with-heart-pattern.jpg" class="img-fluid" alt="A blue knitted dishcloth featuring a repeating heart pattern."></p>
+</div>
+</div>
+<p>Now we come to one of the most important concepts in computer science: <strong>understanding how the amount of work grows as the problem size increases</strong>.</p>
+<p>Let’s stick with our knitting metaphor. Suppose you’re knitting a square dishcloth where each side has <span class="math inline">\(n\)</span> stitches. How much total work (total stitches) do you need to do?</p>
+<section id="a-simple-example" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-example">A Simple Example</h3>
+<p>Let’s try some concrete numbers:</p>
+<ul>
+<li>A <span class="math inline">\(10 \times 10\)</span> cloth has 10 rows, each with 10 stitches = <span class="math inline">\(10 \times 10 = 100\)</span> total stitches</li>
+<li>A <span class="math inline">\(20 \times 20\)</span> cloth has 20 rows, each with 20 stitches = <span class="math inline">\(20 \times 20 = 400\)</span> total stitches</li>
+<li>A <span class="math inline">\(40 \times 40\)</span> cloth has 40 rows, each with 40 stitches = <span class="math inline">\(40 \times 40 = 1,600\)</span> total stitches</li>
+<li>An <span class="math inline">\(80 \times 80\)</span> cloth has 80 rows, each with 80 stitches = <span class="math inline">\(80 \times 80 = 6,400\)</span> total stitches</li>
+</ul>
+<p>Notice the pattern:</p>
+<ul>
+<li>When we <strong>doubled</strong> the size from 10 to 20, the work <strong>quadrupled</strong> (100 → 400)</li>
+<li>When we <strong>doubled</strong> again from 20 to 40, the work <strong>quadrupled</strong> again (400 → 1,600)</li>
+<li>When we <strong>doubled</strong> once more from 40 to 80, the work <strong>quadrupled</strong> once more (1,600 → 6,400)</li>
+</ul>
+<p>This is what we mean when we say the work grows as <span class="math inline">\(n^2\)</span> (pronounced “n squared”). The relationship between the size and the work isn’t linear—it’s quadratic.</p>
+</section>
+<section id="from-stitches-to-code" class="level3">
+<h3 class="anchored" data-anchor-id="from-stitches-to-code">From Stitches to Code</h3>
+<p>Here’s how we’d express this same idea in Python:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> knit_square_count(n):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    stitches <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(n):          <span class="co"># n rows</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(n):      <span class="co"># n stitches per row</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            stitches <span class="op">+=</span> <span class="dv">1</span>         <span class="co"># one unit of work</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> stitches               <span class="co"># total = n × n = n²</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s break down why this is <span class="math inline">\(n^2\)</span>:</p>
+<ol type="1">
+<li>The <strong>outer loop</strong> runs <span class="math inline">\(n\)</span> times (once for each row)</li>
+<li>For each iteration of the outer loop, the <strong>inner loop</strong> runs <span class="math inline">\(n\)</span> times (once for each stitch in that row)</li>
+<li>The line <code>stitches += 1</code> executes <span class="math inline">\(n \times n = n^2\)</span> times total</li>
+</ol>
+<p>The nested loop structure directly corresponds to the mathematical relationship. One loop gives you linear growth (<span class="math inline">\(n\)</span>), two nested loops give you quadratic growth (<span class="math inline">\(n^2\)</span>), three nested loops would give you cubic growth (<span class="math inline">\(n^3\)</span>), and so on.</p>
+</section>
+<section id="why-this-matters-making-it-visual" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters-making-it-visual">Why This Matters: Making it Visual</h3>
+<p>We could also write this function to actually show the square being built:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> knit_square_print(n):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        current_row <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            current_row <span class="op">+=</span> <span class="st">"X"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(current_row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you call <code>knit_square_print(5)</code>, you’ll see:</p>
+<pre><code>XXXXX
+XXXXX
+XXXXX
+XXXXX
+XXXXX</code></pre>
+<p>Each <code>X</code> represents one “unit of work.” Counting the X’s gives you the total work: <span class="math inline">\(5^2 = 25\)</span> operations.</p>
+</section>
+</section>
+<section id="the-mathematics-of-efficiency" class="level2">
+<h2 class="anchored" data-anchor-id="the-mathematics-of-efficiency">The Mathematics of Efficiency</h2>
+<p>Now let’s connect this to computer science more broadly. When we analyze algorithms, we ask: <strong>“As the input size grows, how does the running time grow?”</strong></p>
+<p>This question leads us to mathematical functions that describe growth rates. The most common ones you’ll encounter are:</p>
+<ul>
+<li><strong><span class="math inline">\(n\)</span></strong> (linear): Work grows directly with input size
+<ul>
+<li>Example: Reading through a list once</li>
+</ul></li>
+<li><strong><span class="math inline">\(n \log n\)</span></strong> (log-linear): Slightly more than linear
+<ul>
+<li>Example: Efficient sorting algorithms like mergesort</li>
+</ul></li>
+<li><strong><span class="math inline">\(n^2\)</span></strong> (quadratic): Work grows with the square of input size
+<ul>
+<li>Example: Comparing every pair of items in a list</li>
+</ul></li>
+<li><strong><span class="math inline">\(n^3\)</span></strong> (cubic): Work grows with the cube of input size
+<ul>
+<li>Example: Comparing every triple of items</li>
+</ul></li>
+<li><strong><span class="math inline">\(2^n\)</span></strong> (exponential): Work doubles with each additional input
+<ul>
+<li>Example: Trying every possible subset of items</li>
+</ul></li>
+</ul>
+<section id="a-dramatic-illustration" class="level3">
+<h3 class="anchored" data-anchor-id="a-dramatic-illustration">A Dramatic Illustration</h3>
+<p>Let’s imagine we have a computer that can perform <span class="math inline">\(10^{12}\)</span> (one trillion) operations per second. This is roughly comparable to modern high-performance hardware. How long would different algorithms take?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1,000</th>
+<th>n = 10,000</th>
+<th>n = 10<sup>12</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>1 s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n \log n\)</span></td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-7</sup> s</td>
+<td>40 s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(n^2\)</span></td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-4</sup> s</td>
+<td><strong>10<sup>12</sup> s</strong></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n^3\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-3</sup> s</td>
+<td>1 s</td>
+<td><strong>10<sup>24</sup> s</strong></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^n\)</span></td>
+<td>10<sup>-9</sup> s</td>
+<td><strong>10<sup>18</sup> s</strong></td>
+<td><strong>10<sup>289</sup> s</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s put those big numbers in perspective:</p>
+<ul>
+<li><strong><span class="math inline">\(n^2\)</span> with a trillion items:</strong> <span class="math inline">\(10^{12}\)</span> seconds ≈ <strong>32,000 years</strong>. Civilization as we know it hasn’t existed that long.</li>
+<li><strong><span class="math inline">\(n^3\)</span> with a trillion items:</strong> <span class="math inline">\(10^{24}\)</span> seconds ≈ <strong>longer than the universe has existed</strong>. This is meaningless to wait for.</li>
+<li><strong><span class="math inline">\(2^n\)</span> with just 100 items:</strong> <span class="math inline">\(10^{18}\)</span> seconds ≈ <strong>a billion years</strong>. Our sun will have died long before this completes.</li>
+</ul>
+<p>For small inputs (like <span class="math inline">\(n = 10\)</span>), everything is so fast that efficiency doesn’t matter. But as problems scale—and modern problems do scale to billions or trillions of items—the growth rate becomes absolutely critical.</p>
+<p>This is why we care so much about algorithmic efficiency. An elegant, efficient algorithm isn’t just intellectually satisfying—it can mean the difference between a problem that completes in seconds versus one that would outlive civilizations.</p>
+<p>Don’t worry if this feels like a lot to absorb at once—these ideas will recur throughout the term. Every time we analyze an algorithm, we’ll ask: <em>what’s the growth rate?</em> By the end of the course, this kind of analysis will feel second nature. For now, the key takeaway is simple: <strong>the structure of our loops and the growth rate of our algorithms have real, dramatic consequences.</strong></p>
+</section>
+<section id="understanding-what-n-represents" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-what-n-represents">Understanding What <span class="math inline">\(n\)</span> Represents</h3>
+<p>It’s important to note that “<span class="math inline">\(n\)</span>” is a variable that represents the “size” of your input, but what that means depends on the problem:</p>
+<ul>
+<li>For searching through a list, <span class="math inline">\(n\)</span> might be the number of items in the list</li>
+<li>For our knitting example, <span class="math inline">\(n\)</span> represents the side length of the square</li>
+<li>For processing an image, <span class="math inline">\(n\)</span> might be the number of pixels</li>
+<li>For analyzing social networks, <span class="math inline">\(n\)</span> might be the number of people</li>
+</ul>
+<p>The key insight is always the same: <strong>how does the work scale as this size parameter increases?</strong></p>
+</section>
+</section>
+<section id="putting-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-all-together">Putting It All Together</h2>
+<p>This week, we’ve covered a lot of ground. Let’s recap the key ideas:</p>
+<ol type="1">
+<li><p><strong>Algorithmic thinking</strong> is about breaking problems into clear, repeatable steps. The Flashlight Game showed us that different strategies (halving vs.&nbsp;eliminating 5 at a time) lead to vastly different efficiency.</p></li>
+<li><p><strong>Fundamental building blocks</strong> (like tangram pieces or programming constructs) can be combined in countless ways. Mastery comes from understanding how to arrange them effectively.</p></li>
+<li><p><strong>Elegance</strong> emerges from the intersection of ingenuity and simplicity. Like well-designed scissors, elegant code has every element serving a clear purpose with no unnecessary complexity.</p></li>
+<li><p><strong>Handcraft provides a powerful metaphor</strong> for understanding programming. Knitting patterns are algorithms, stitches are operations, and the structure of craft instructions mirrors the structure of code.</p></li>
+<li><p><strong>Growth rates matter profoundly.</strong> Understanding whether your solution is <span class="math inline">\(n\)</span>, <span class="math inline">\(n^2\)</span>, or <span class="math inline">\(2^n\)</span> determines whether it will finish in seconds or outlive the sun.</p></li>
+</ol>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>These concepts form the foundation for everything we’ll do this term. <strong>Next week, we’ll put theory into practice.</strong> We’ll start applying these ideas in Python as we begin our first exploration. You’ll write actual code, work with real problems, and see how these abstract principles—efficiency, elegance, algorithmic thinking—manifest in concrete programs. <strong>The real fun begins when we start building things.</strong></p>
+<p>As you move forward, keep coming back to these questions:</p>
+<ul>
+<li><strong>Am I thinking algorithmically?</strong> Can I break this problem into clear steps?</li>
+<li><strong>Is my solution elegant?</strong> Does it balance ingenuity with simplicity?</li>
+<li><strong>How will this scale?</strong> If my input grows 10x or 100x, what happens to my running time?</li>
+</ul>
+<p><strong>You already know how to design programs. This term, you’ll learn how to design them <em>well</em>.</strong> Welcome to the journey of learning to think like a computer scientist. The view from here is remarkable.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Unless specified otherwise, all content of this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons" aria-label="Icon creative-commons from fa6-brands Iconify.design set." title="Icon creative-commons from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-by" aria-label="Icon creative-commons-by from fa6-brands Iconify.design set." title="Icon creative-commons-by from fa6-brands Iconify.design set."></iconify-icon> <iconify-icon role="img" inline="" icon="fa6-brands:creative-commons-sa" aria-label="Icon creative-commons-sa from fa6-brands Iconify.design set." title="Icon creative-commons-sa from fa6-brands Iconify.design set."></iconify-icon></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/summaries/01_weekly_summary.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/summaries/01_weekly_summary.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

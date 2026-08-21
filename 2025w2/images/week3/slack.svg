@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 265">
+  <!-- Formula -->
+  <text x="250" y="25" font-family="system-ui" font-size="14" fill="#333" text-anchor="middle">circumference = 2 × π × radius</text>
+
+  <!-- Bracelet circle -->
+  <circle cx="180" cy="120" r="70" fill="none" stroke="#795548" stroke-width="4"/>
+
+  <!-- Beads on bracelet -->
+  <circle cx="180" cy="50" r="18" fill="#f44336" stroke="#b71c1c" stroke-width="2"/>
+  <circle cx="235" cy="90" r="14" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+  <circle cx="220" cy="175" r="16" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Slack annotation -->
+  <rect x="300" y="85" width="180" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="1" rx="6"/>
+  <text x="390" y="105" font-family="system-ui" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">slack = leftover</text>
+  <text x="390" y="120" font-family="system-ui" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">string between</text>
+  <text x="390" y="135" font-family="system-ui" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">the beads</text>
+
+  <!-- Arrow pointing to gap -->
+  <line x1="300" y1="120" x2="250" y2="130" stroke="#e65100" stroke-width="2"/>
+  <polygon points="250,130 258,125 258,135" fill="#e65100"/>
+
+  <!-- Formula box -->
+  <rect x="50" y="195" width="400" height="20" fill="#f5f5f5" rx="4"/>
+  <text x="250" y="210" font-family="monospace" font-size="11" fill="#333" text-anchor="middle">slack = circumference - (sum of all diameters)</text>
+
+  <!-- Conditions -->
+  <text x="100" y="240" font-family="system-ui" font-size="10" fill="#c62828">If slack &lt; 0, the beads don't fit!</text>
+  <text x="100" y="255" font-family="system-ui" font-size="10" fill="#2e7d32">If slack ≥ 0, we have room (and distribute the slack evenly as gaps)</text>
+</svg>

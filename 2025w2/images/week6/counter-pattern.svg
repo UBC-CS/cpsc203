@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 14px; }
+    .letter { font-family: 'Fira Code', monospace; font-size: 18px; font-weight: bold; }
+  </style>
+
+  <!-- Input string -->
+  <text x="50" y="30" class="label" fill="#1976d2">Input:</text>
+  <text x="100" y="30" class="code">"mississippi"</text>
+
+  <!-- Letters -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="15" y="22" text-anchor="middle" class="letter" fill="#1976d2">m</text>
+
+    <rect x="35" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="50" y="22" text-anchor="middle" class="letter" fill="#1976d2">i</text>
+
+    <rect x="70" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="85" y="22" text-anchor="middle" class="letter" fill="#1976d2">s</text>
+
+    <rect x="105" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="120" y="22" text-anchor="middle" class="letter" fill="#1976d2">s</text>
+
+    <rect x="140" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="155" y="22" text-anchor="middle" class="letter" fill="#1976d2">i</text>
+
+    <rect x="175" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="190" y="22" text-anchor="middle" class="letter" fill="#1976d2">s</text>
+
+    <rect x="210" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="225" y="22" text-anchor="middle" class="letter" fill="#1976d2">s</text>
+
+    <rect x="245" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="260" y="22" text-anchor="middle" class="letter" fill="#1976d2">i</text>
+
+    <rect x="280" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="295" y="22" text-anchor="middle" class="letter" fill="#1976d2">p</text>
+
+    <rect x="315" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="330" y="22" text-anchor="middle" class="letter" fill="#1976d2">p</text>
+
+    <rect x="350" y="0" width="30" height="30" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="365" y="22" text-anchor="middle" class="letter" fill="#1976d2">i</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 250 95 L 250 115" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="270" y="110" class="small">Counter()</text>
+
+  <!-- Output Counter -->
+  <g transform="translate(50, 130)">
+    <rect x="0" y="0" width="60" height="50" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="30" y="20" text-anchor="middle" class="letter" fill="#f57c00">i</text>
+    <text x="30" y="42" text-anchor="middle" class="label" fill="#f57c00">4</text>
+
+    <rect x="70" y="0" width="60" height="50" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="100" y="20" text-anchor="middle" class="letter" fill="#f57c00">s</text>
+    <text x="100" y="42" text-anchor="middle" class="label" fill="#f57c00">4</text>
+
+    <rect x="140" y="0" width="60" height="50" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="170" y="20" text-anchor="middle" class="letter" fill="#f57c00">p</text>
+    <text x="170" y="42" text-anchor="middle" class="label" fill="#f57c00">2</text>
+
+    <rect x="210" y="0" width="60" height="50" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="240" y="20" text-anchor="middle" class="letter" fill="#f57c00">m</text>
+    <text x="240" y="42" text-anchor="middle" class="label" fill="#f57c00">1</text>
+  </g>
+
+  <text x="450" y="165" class="label" fill="#f57c00">Instant frequency table!</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

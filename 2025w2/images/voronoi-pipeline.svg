@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #343a40; stroke-width: 2; rx: 8; }
+      .label { font-family: 'Open Sans', sans-serif; font-size: 14px; fill: #343a40; text-anchor: middle; }
+      .sublabel { font-family: 'Open Sans', sans-serif; font-size: 11px; fill: #6c757d; text-anchor: middle; }
+      .arrow { fill: none; stroke: #495057; stroke-width: 3; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <!-- Box 1: Original Photo -->
+  <rect x="20" y="30" width="200" height="140" class="box"/>
+  <!-- Simplified photo representation - gradient rectangles -->
+  <rect x="35" y="45" width="170" height="95" fill="#87CEEB"/>
+  <rect x="35" y="100" width="170" height="40" fill="#228B22"/>
+  <circle cx="170" cy="70" r="20" fill="#FFD700"/>
+  <text x="120" y="165" class="label">Original Photo</text>
+  <text x="120" y="182" class="sublabel">(millions of pixels)</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 230 100 L 280 100" class="arrow"/>
+
+  <!-- Box 2: Sample Centers -->
+  <rect x="290" y="30" width="200" height="140" class="box"/>
+  <!-- Dots representing sampled centers -->
+  <circle cx="330" cy="60" r="6" fill="#e74c3c"/>
+  <circle cx="380" cy="75" r="6" fill="#3498db"/>
+  <circle cx="420" cy="55" r="6" fill="#2ecc71"/>
+  <circle cx="350" cy="100" r="6" fill="#f39c12"/>
+  <circle cx="400" cy="95" r="6" fill="#9b59b6"/>
+  <circle cx="450" cy="80" r="6" fill="#1abc9c"/>
+  <circle cx="340" cy="130" r="6" fill="#e67e22"/>
+  <circle cx="390" cy="125" r="6" fill="#34495e"/>
+  <circle cx="440" cy="115" r="6" fill="#e74c3c"/>
+  <circle cx="460" cy="140" r="6" fill="#3498db"/>
+  <circle cx="320" cy="85" r="6" fill="#2ecc71"/>
+  <circle cx="370" cy="145" r="6" fill="#f39c12"/>
+  <text x="390" y="165" class="label">Sample Centers</text>
+  <text x="390" y="182" class="sublabel">(k random points with colors)</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 500 100 L 550 100" class="arrow"/>
+
+  <!-- Box 3: Voronoi Art -->
+  <rect x="560" y="30" width="200" height="140" class="box"/>
+  <!-- Voronoi-style regions -->
+  <polygon points="575,45 620,45 640,80 610,110 575,95" fill="#e74c3c"/>
+  <polygon points="620,45 680,45 690,70 640,80" fill="#3498db"/>
+  <polygon points="680,45 745,45 745,85 690,70" fill="#2ecc71"/>
+  <polygon points="575,95 610,110 600,140 575,140" fill="#f39c12"/>
+  <polygon points="610,110 640,80 690,70 700,120 650,140 600,140" fill="#9b59b6"/>
+  <polygon points="690,70 745,85 745,120 700,120" fill="#1abc9c"/>
+  <polygon points="575,140 600,140 620,155 575,155" fill="#e67e22"/>
+  <polygon points="600,140 650,140 660,155 620,155" fill="#34495e"/>
+  <polygon points="650,140 700,120 745,120 745,155 660,155" fill="#e74c3c"/>
+  <text x="660" y="165" class="label">Voronoi Art!</text>
+  <text x="660" y="182" class="sublabel">(each region = one color)</text>
+</svg>

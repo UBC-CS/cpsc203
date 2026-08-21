@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 10px; }
+    .box { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 1; }
+    .box-a { fill: #3498db; }
+    .box-b { fill: #e74c3c; }
+    .arrow { stroke: #7f8c8d; stroke-width: 1.5; fill: none; }
+    .check { fill: #27ae60; }
+  </style>
+
+  <!-- Title -->
+  <text x="250" y="25" text-anchor="middle" class="title">Nested Loop: Check Every Pair</text>
+
+  <!-- Gallery A column -->
+  <text x="80" y="55" text-anchor="middle" class="label">Gallery A</text>
+  <rect x="40" y="65" width="80" height="25" rx="3" class="box box-a" opacity="0.7"/>
+  <text x="80" y="82" text-anchor="middle" class="small" fill="white">Person 1</text>
+  <rect x="40" y="95" width="80" height="25" rx="3" class="box box-a" opacity="0.7"/>
+  <text x="80" y="112" text-anchor="middle" class="small" fill="white">Person 2</text>
+  <rect x="40" y="125" width="80" height="25" rx="3" class="box box-a" opacity="0.7"/>
+  <text x="80" y="142" text-anchor="middle" class="small" fill="white">Person 3</text>
+  <text x="80" y="170" text-anchor="middle" class="small">...</text>
+  <rect x="40" y="180" width="80" height="25" rx="3" class="box box-a" opacity="0.7"/>
+  <text x="80" y="197" text-anchor="middle" class="small" fill="white">Person N</text>
+
+  <!-- Gallery B column -->
+  <text x="420" y="55" text-anchor="middle" class="label">Gallery B</text>
+  <rect x="380" y="65" width="80" height="25" rx="3" class="box box-b" opacity="0.7"/>
+  <text x="420" y="82" text-anchor="middle" class="small" fill="white">Person 1</text>
+  <rect x="380" y="95" width="80" height="25" rx="3" class="box box-b" opacity="0.7"/>
+  <text x="420" y="112" text-anchor="middle" class="small" fill="white">Person 2</text>
+  <rect x="380" y="125" width="80" height="25" rx="3" class="box box-b" opacity="0.7"/>
+  <text x="420" y="142" text-anchor="middle" class="small" fill="white">Person 3</text>
+  <text x="420" y="170" text-anchor="middle" class="small">...</text>
+  <rect x="380" y="180" width="80" height="25" rx="3" class="box box-b" opacity="0.7"/>
+  <text x="420" y="197" text-anchor="middle" class="small" fill="white">Person M</text>
+
+  <!-- Arrows showing comparisons -->
+  <path d="M 120 77 L 380 77" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 120 77 L 380 107" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 120 77 L 380 137" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 120 77 L 380 192" class="arrow" marker-end="url(#arrowhead)" stroke-dasharray="4"/>
+
+  <path d="M 120 107 L 380 77" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 120 107 L 380 107" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 120 107 L 380 137" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- Complexity note -->
+  <rect x="150" y="230" width="200" height="50" rx="5" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <text x="250" y="250" text-anchor="middle" class="label">N × M comparisons</text>
+  <text x="250" y="268" text-anchor="middle" class="small">10,000 × 10,000 = 100 million!</text>
+</svg>

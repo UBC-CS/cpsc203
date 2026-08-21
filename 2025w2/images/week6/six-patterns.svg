@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 10px; }
+    .icon { font-size: 24px; }
+  </style>
+
+  <text x="400" y="25" text-anchor="middle" class="title">The Six Dictionary Patterns</text>
+
+  <!-- Row 1 -->
+  <!-- Pattern 0: Records -->
+  <rect x="30" y="50" width="120" height="90" rx="10" fill="#e1bee7" stroke="#8e24aa" stroke-width="2"/>
+  <text x="90" y="75" text-anchor="middle" class="icon">📋</text>
+  <text x="90" y="100" text-anchor="middle" class="label" fill="#8e24aa">Records</text>
+  <text x="90" y="115" text-anchor="middle" class="small">Named fields</text>
+  <text x="90" y="130" text-anchor="middle" class="small">{"name": ...}</text>
+
+  <!-- Pattern 1: Membership -->
+  <rect x="170" y="50" width="120" height="90" rx="10" fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="230" y="75" text-anchor="middle" class="icon">✓</text>
+  <text x="230" y="100" text-anchor="middle" class="label" fill="#388e3c">Membership</text>
+  <text x="230" y="115" text-anchor="middle" class="small">Track seen items</text>
+  <text x="230" y="130" text-anchor="middle" class="small">seen[x] = True</text>
+
+  <!-- Pattern 2: Counting -->
+  <rect x="310" y="50" width="120" height="90" rx="10" fill="#ffe0b2" stroke="#f57c00" stroke-width="2"/>
+  <text x="370" y="75" text-anchor="middle" class="icon">🔢</text>
+  <text x="370" y="100" text-anchor="middle" class="label" fill="#f57c00">Counting</text>
+  <text x="370" y="115" text-anchor="middle" class="small">Frequencies</text>
+  <text x="370" y="130" text-anchor="middle" class="small">Counter(items)</text>
+
+  <!-- Row 2 -->
+  <!-- Pattern 3: Complements -->
+  <rect x="170" y="160" width="120" height="90" rx="10" fill="#f8bbd9" stroke="#c2185b" stroke-width="2"/>
+  <text x="230" y="185" text-anchor="middle" class="icon">🎯</text>
+  <text x="230" y="210" text-anchor="middle" class="label" fill="#c2185b">Complements</text>
+  <text x="230" y="225" text-anchor="middle" class="small">Find pairs</text>
+  <text x="230" y="240" text-anchor="middle" class="small">target - n</text>
+
+  <!-- Pattern 4: Grouping -->
+  <rect x="310" y="160" width="120" height="90" rx="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+  <text x="370" y="185" text-anchor="middle" class="icon">📁</text>
+  <text x="370" y="210" text-anchor="middle" class="label" fill="#c62828">Grouping</text>
+  <text x="370" y="225" text-anchor="middle" class="small">Categorize</text>
+  <text x="370" y="240" text-anchor="middle" class="small">defaultdict(list)</text>
+
+  <!-- Pattern 5: Translation -->
+  <rect x="450" y="160" width="120" height="90" rx="10" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+  <text x="510" y="185" text-anchor="middle" class="icon">🔄</text>
+  <text x="510" y="210" text-anchor="middle" class="label" fill="#1976d2">Translation</text>
+  <text x="510" y="225" text-anchor="middle" class="small">Convert values</text>
+  <text x="510" y="240" text-anchor="middle" class="small">key → value</text>
+
+  <!-- Connecting lines suggestion -->
+  <path d="M 90 140 Q 90 150 170 160" stroke="#ccc" stroke-width="1" fill="none" stroke-dasharray="4"/>
+  <path d="M 230 140 L 230 160" stroke="#ccc" stroke-width="1" fill="none" stroke-dasharray="4"/>
+  <path d="M 370 140 L 370 160" stroke="#ccc" stroke-width="1" fill="none" stroke-dasharray="4"/>
+  <path d="M 370 140 Q 410 150 450 160" stroke="#ccc" stroke-width="1" fill="none" stroke-dasharray="4"/>
+
+  <!-- Summary text -->
+  <text x="630" y="130" text-anchor="middle" class="label" fill="#666">Master these</text>
+  <text x="630" y="150" text-anchor="middle" class="label" fill="#666">six patterns</text>
+  <text x="630" y="170" text-anchor="middle" class="label" fill="#666">and you can</text>
+  <text x="630" y="190" text-anchor="middle" class="label" fill="#666">solve almost</text>
+  <text x="630" y="210" text-anchor="middle" class="label" fill="#666">anything!</text>
+</svg>

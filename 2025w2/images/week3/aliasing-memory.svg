@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+  <!-- Title -->
+  <text x="200" y="20" font-family="system-ui" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Both names point to the same object in memory</text>
+
+  <!-- grid variable -->
+  <rect x="30" y="40" width="60" height="24" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="4"/>
+  <text x="60" y="57" font-family="monospace" font-size="12" fill="#e65100" text-anchor="middle">grid</text>
+
+  <!-- Arrow from grid -->
+  <line x1="90" y1="52" x2="140" y2="52" stroke="#e65100" stroke-width="2"/>
+  <polygon points="140,52 132,47 132,57" fill="#e65100"/>
+
+  <!-- backup variable -->
+  <rect x="30" y="130" width="60" height="24" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="4"/>
+  <text x="60" y="147" font-family="monospace" font-size="12" fill="#1565c0" text-anchor="middle">backup</text>
+
+  <!-- Arrow from backup -->
+  <path d="M 90 142 L 120 142 L 120 90 L 140 90" stroke="#1565c0" stroke-width="2" fill="none"/>
+  <polygon points="140,90 132,85 132,95" fill="#1565c0"/>
+
+  <!-- Outer list -->
+  <rect x="145" y="40" width="110" height="50" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="4"/>
+  <text x="200" y="60" font-family="monospace" font-size="11" fill="#333" text-anchor="middle">[ ───, ─── ]</text>
+
+  <!-- Arrows to inner lists -->
+  <line x1="175" y1="70" x2="175" y2="115" stroke="#666" stroke-width="2"/>
+  <polygon points="175,115 170,107 180,107" fill="#666"/>
+
+  <line x1="225" y1="70" x2="300" y2="115" stroke="#666" stroke-width="2"/>
+  <polygon points="300,115 291,111 295,121" fill="#666"/>
+
+  <!-- Inner list 1 -->
+  <rect x="145" y="120" width="60" height="30" fill="#ffebee" stroke="#c62828" stroke-width="2" rx="4"/>
+  <text x="175" y="140" font-family="monospace" font-size="12" fill="#c62828" text-anchor="middle" font-weight="bold">[99, 2]</text>
+
+  <!-- Inner list 2 -->
+  <rect x="270" y="120" width="60" height="30" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="4"/>
+  <text x="300" y="140" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">[3, 4]</text>
+
+  <!-- Annotation -->
+  <text x="175" y="168" font-family="system-ui" font-size="10" fill="#c62828" text-anchor="middle" font-style="italic">↑ Changing this affects BOTH names!</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <style>
+    .title { font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: bold; }
+    .label { font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: bold; }
+    .small { font-family: 'Open Sans', sans-serif; font-size: 11px; }
+    .code { font-family: 'Fira Code', monospace; font-size: 9px; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">Putting It All Together</text>
+
+  <!-- Tuesday concepts -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="320" height="120" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" class="label" fill="#1976d2">Tuesday: DataFrame Basics</text>
+
+    <circle cx="30" cy="55" r="8" fill="#1976d2"/>
+    <text x="50" y="59" class="small">Filter: df[condition]</text>
+
+    <circle cx="30" cy="80" r="8" fill="#1976d2"/>
+    <text x="50" y="84" class="small">Aggregate: .mean(), .max(), .min()</text>
+
+    <circle cx="30" cy="105" r="8" fill="#1976d2"/>
+    <text x="50" y="109" class="small">Find extremes: .idxmax() + .loc[]</text>
+  </g>
+
+  <!-- Thursday concepts -->
+  <g transform="translate(430, 60)">
+    <rect x="0" y="0" width="320" height="120" rx="10" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" class="label" fill="#f57c00">Thursday: Visualization</text>
+
+    <circle cx="30" cy="55" r="8" fill="#f57c00"/>
+    <text x="50" y="59" class="small">Multi-week data (52 weeks!)</text>
+
+    <circle cx="30" cy="80" r="8" fill="#f57c00"/>
+    <text x="50" y="84" class="small">List membership: .isin()</text>
+
+    <circle cx="30" cy="105" r="8" fill="#f57c00"/>
+    <text x="50" y="109" class="small">Reshape for plotting: .unstack()</text>
+  </g>
+
+  <!-- Combined workflow -->
+  <g transform="translate(100, 210)">
+    <rect x="0" y="0" width="600" height="120" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="300" y="25" text-anchor="middle" class="label" fill="#2e7d32">The Analysis Pipeline</text>
+
+    <rect x="20" y="45" width="100" height="50" rx="5" fill="#bbdefb" stroke="#1976d2"/>
+    <text x="70" y="68" text-anchor="middle" class="small">Load</text>
+    <text x="70" y="82" text-anchor="middle" class="code">read_csv()</text>
+
+    <path d="M 125 70 L 145 70" stroke="#666" stroke-width="2" marker-end="url(#arrow5)"/>
+
+    <rect x="150" y="45" width="100" height="50" rx="5" fill="#bbdefb" stroke="#1976d2"/>
+    <text x="200" y="68" text-anchor="middle" class="small">Filter</text>
+    <text x="200" y="82" text-anchor="middle" class="code">df[cond]</text>
+
+    <path d="M 255 70 L 275 70" stroke="#666" stroke-width="2" marker-end="url(#arrow5)"/>
+
+    <rect x="280" y="45" width="100" height="50" rx="5" fill="#ffe0b2" stroke="#f57c00"/>
+    <text x="330" y="68" text-anchor="middle" class="small">Reshape</text>
+    <text x="330" y="82" text-anchor="middle" class="code">groupby/unstack</text>
+
+    <path d="M 385 70 L 405 70" stroke="#666" stroke-width="2" marker-end="url(#arrow5)"/>
+
+    <rect x="410" y="45" width="100" height="50" rx="5" fill="#c8e6c9" stroke="#2e7d32"/>
+    <text x="460" y="68" text-anchor="middle" class="small">Visualize</text>
+    <text x="460" y="82" text-anchor="middle" class="code">.plot()</text>
+
+    <path d="M 515 70 L 535 70" stroke="#666" stroke-width="2" marker-end="url(#arrow5)"/>
+
+    <rect x="540" y="45" width="40" height="50" rx="5" fill="#f5f5f5" stroke="#666"/>
+    <text x="560" y="75" text-anchor="middle" class="small">📊</text>
+  </g>
+
+  <defs>
+    <marker id="arrow5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

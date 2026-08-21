@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>CPSC 203: Programming, problem solving, and algorithms</title>
+<link>https://ubc-cs.github.io/cpsc203/announcements.html</link>
+<atom:link href="https://ubc-cs.github.io/cpsc203/announcements.xml" rel="self" type="application/rss+xml"/>
+<description>Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia
+</description>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Fri, 21 Aug 2026 17:17:58 GMT</lastBuildDate>
+</channel>
+</rss>

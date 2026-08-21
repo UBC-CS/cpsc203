@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+  <!-- Wrong mental model -->
+  <text x="100" y="25" font-family="system-ui" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">WRONG mental model</text>
+
+  <!-- Box 1 -->
+  <rect x="30" y="50" width="60" height="30" fill="#fee" stroke="#c44" stroke-width="2" rx="4"/>
+  <text x="60" y="70" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">[a, b]</text>
+  <text x="10" y="70" font-family="monospace" font-size="14" fill="#c44" font-weight="bold">m1</text>
+
+  <!-- Box 2 -->
+  <rect x="30" y="100" width="60" height="30" fill="#fee" stroke="#c44" stroke-width="2" rx="4"/>
+  <text x="60" y="120" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">[a, b]</text>
+  <text x="10" y="120" font-family="monospace" font-size="14" fill="#c44" font-weight="bold">m2</text>
+
+  <text x="60" y="160" font-family="system-ui" font-size="11" fill="#888" text-anchor="middle">Two separate boxes?</text>
+
+  <!-- Divider -->
+  <line x1="200" y1="40" x2="200" y2="180" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Correct mental model -->
+  <text x="350" y="25" font-family="system-ui" font-size="14" font-weight="bold" fill="#2a6" text-anchor="middle">CORRECT mental model</text>
+
+  <!-- The actual list object -->
+  <rect x="320" y="70" width="80" height="35" fill="#e8f5e9" stroke="#2a6" stroke-width="2" rx="4"/>
+  <text x="360" y="93" font-family="monospace" font-size="12" fill="#333" text-anchor="middle">[a, b]</text>
+
+  <!-- m1 arrow -->
+  <text x="260" y="65" font-family="monospace" font-size="14" fill="#2a6" font-weight="bold">m1</text>
+  <line x1="280" y1="62" x2="315" y2="80" stroke="#2a6" stroke-width="2"/>
+  <polygon points="315,80 305,78 308,85" fill="#2a6"/>
+
+  <!-- m2 arrow -->
+  <text x="260" y="115" font-family="monospace" font-size="14" fill="#2a6" font-weight="bold">m2</text>
+  <line x1="280" y1="112" x2="315" y2="97" stroke="#2a6" stroke-width="2"/>
+  <polygon points="315,97 305,100 308,93" fill="#2a6"/>
+
+  <text x="350" y="160" font-family="system-ui" font-size="11" fill="#2a6" text-anchor="middle" font-weight="bold">Two names, ONE object!</text>
+</svg>

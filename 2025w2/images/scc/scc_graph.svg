@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 470" width="520" height="470">
+  <defs>
+    <filter id="es" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="1.5" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <filter id="ns" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3.5" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <rect width="520" height="470" fill="white"/>
+  <path d="M197.1,21.2 C166.0,-0.5 125.8,-1.4 93.6,21.2" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M268.7,119.9 C237.6,98.2 197.4,97.4 165.2,119.9" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M250.6,255.8 C281.8,276.6 321.7,277.5 354.1,255.3" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M354.1,218.1 C323.2,195.5 282.6,194.8 250.6,217.6" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M322.5,354.8 C353.1,376.2 392.5,377.1 424.4,354.8" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M268.7,317.1 C237.6,295.3 197.4,294.5 165.2,317.0" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M221.4,406.3 C217.5,376.2 204.1,353.3 172.5,344.9" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M141.6,364.4 C143.9,395.5 157.5,419.1 189.4,426.7" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M262.6,347.4 C240.1,355.2 224.9,375.7 224.4,406.2" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M259.0,442.0 C327.0,455.8 403.2,414.5 435.6,361.6" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M224.4,265.5 C224.8,293.0 233.7,314.4 262.6,324.4" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M330.0,327.2 C355.9,320.7 375.0,298.0 378.4,265.4" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M298.7,167.4 C302.0,197.6 315.2,220.5 346.8,228.2" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M141.4,167.4 C144.6,197.6 157.9,220.5 189.5,228.2" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M224.5,68.8 C224.9,96.2 233.7,117.4 262.5,127.4" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M67.1,68.8 C67.6,96.2 76.4,117.4 105.2,127.4" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <path d="M172.7,130.2 C198.5,123.7 217.6,101.2 221.0,68.7" fill="none" stroke="#333" stroke-width="2.0" filter="url(#es)"/>
+  <ellipse cx="66.7" cy="40.0" rx="26.2" ry="18.7" fill="#2F63B9" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="66.7" y="45.0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">A</text>
+  <ellipse cx="224.0" cy="40.0" rx="26.2" ry="18.7" fill="#2F63B9" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="224.0" y="45.0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">B</text>
+  <ellipse cx="138.3" cy="138.8" rx="26.2" ry="18.7" fill="#2F63B9" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="138.3" y="143.8" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">C</text>
+  <ellipse cx="295.6" cy="138.8" rx="26.2" ry="18.7" fill="#2F63B9" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="295.6" y="143.8" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">D</text>
+  <ellipse cx="224.0" cy="236.7" rx="26.2" ry="18.7" fill="#DA791B" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="224.0" y="241.7" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">E</text>
+  <ellipse cx="381.3" cy="236.7" rx="26.2" ry="18.7" fill="#DA791B" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="381.3" y="241.7" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">F</text>
+  <ellipse cx="295.6" cy="335.9" rx="26.2" ry="18.7" fill="#DA791B" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="295.6" y="340.9" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">G</text>
+  <ellipse cx="138.3" cy="335.8" rx="26.2" ry="18.7" fill="#0097A7" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="138.3" y="340.8" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">H</text>
+  <ellipse cx="224.0" cy="434.9" rx="26.2" ry="18.7" fill="#0097A7" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="224.0" y="439.9" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">I</text>
+  <ellipse cx="451.3" cy="335.9" rx="26.2" ry="18.7" fill="#7030A0" stroke="white" stroke-width="2.5" filter="url(#ns)"/>
+  <text x="451.3" y="340.9" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">J</text>
+  <path d="M93.6,21.2 L97.5,14.6 L101.1,19.8 Z" fill="#333" stroke="none"/>
+  <path d="M165.2,119.9 L169.1,113.3 L172.7,118.5 Z" fill="#333" stroke="none"/>
+  <path d="M354.1,255.3 L350.1,261.9 L346.6,256.7 Z" fill="#333" stroke="none"/>
+  <path d="M250.6,217.6 L254.5,211.0 L258.1,216.1 Z" fill="#333" stroke="none"/>
+  <path d="M424.4,354.8 L420.5,361.4 L416.8,356.2 Z" fill="#333" stroke="none"/>
+  <path d="M165.2,317.0 L169.1,310.4 L172.7,315.6 Z" fill="#333" stroke="none"/>
+  <path d="M172.5,344.9 L180.1,343.7 L178.4,349.8 Z" fill="#333" stroke="none"/>
+  <path d="M189.4,426.7 L181.8,428.1 L183.3,422.0 Z" fill="#333" stroke="none"/>
+  <path d="M224.4,406.2 L221.4,399.1 L227.7,399.2 Z" fill="#333" stroke="none"/>
+  <path d="M435.6,361.6 L434.6,369.2 L429.2,365.9 Z" fill="#333" stroke="none"/>
+  <path d="M262.6,324.4 L254.9,325.1 L257.0,319.2 Z" fill="#333" stroke="none"/>
+  <path d="M378.4,265.4 L380.8,272.6 L374.5,272.0 Z" fill="#333" stroke="none"/>
+  <path d="M346.8,228.2 L339.3,229.6 L340.8,223.5 Z" fill="#333" stroke="none"/>
+  <path d="M189.5,228.2 L181.9,229.6 L183.4,223.5 Z" fill="#333" stroke="none"/>
+  <path d="M262.5,127.4 L254.9,128.1 L256.9,122.1 Z" fill="#333" stroke="none"/>
+  <path d="M105.2,127.4 L97.6,128.1 L99.6,122.1 Z" fill="#333" stroke="none"/>
+  <path d="M221.0,68.7 L223.4,75.9 L217.1,75.3 Z" fill="#333" stroke="none"/>
+</svg>
