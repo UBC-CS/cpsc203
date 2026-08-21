@@ -41,7 +41,12 @@ Files touched, and what to check:
   video/lab/POTW/project/exam links cleared; week numbers and the reading
   week marker kept). Fill in real dates once the UBC academic calendar for
   the term is known, and links as each PrairieLearn assessment / recording
-  is created.
+  is created. **Leave `date` and `exam_available` genuinely empty, not
+  `"TBD"`** — `index.qmd` parses both with `col_date()`, and any
+  non-date string fails to parse and leaks a raw readr warning onto the
+  live page (bit us in the 2025W2→2026W1 reset). Non-date columns like
+  `part` can safely hold a text placeholder like `"TBD"` since they're
+  `col_character()`.
 - **`_variables.yml`** — `term`, `term-end-date`, `time`, `location`,
   `lms` (Canvas), `piazza`, `prairielearn`, and `instructor.name` /
   `instructor.pronouns` are all placeholders (`TODO-...`). Fill in once
