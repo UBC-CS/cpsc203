@@ -6,13 +6,13 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
 <link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="dcterms.date" content="2026-01-16">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
@@ -22,10 +22,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -100,7 +106,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1f5a29cc93a101a36bbeaa5a04d9450b.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -238,56 +244,56 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5w
 </script>
 </div>
 <aside class="notes">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
-<span id="cb1-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>Pixel <span class="op">=</span> <span class="bu">tuple</span>[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co">'''Input: Pixel p</span></span>
-<span id="cb1-8"><a></a><span class="co">   Output: Pixel</span></span>
-<span id="cb1-9"><a></a><span class="co">   Function: If the pixel has high red value, then don't change it, otherwise</span></span>
-<span id="cb1-10"><a></a><span class="co">   fade the pixel to grey.  Note, to grey a pixel, set all color channels to</span></span>
-<span id="cb1-11"><a></a><span class="co">   the average of the 3.</span></span>
-<span id="cb1-12"><a></a><span class="co">'''</span></span>
-<span id="cb1-13"><a></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
-<span id="cb1-14"><a></a>    <span class="co"># setup -- extract the color channels as ints</span></span>
-<span id="cb1-15"><a></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
-<span id="cb1-16"><a></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
-<span id="cb1-17"><a></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
-<span id="cb1-18"><a></a>    <span class="co"># compute grey</span></span>
-<span id="cb1-19"><a></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue)<span class="op">//</span><span class="dv">3</span></span>
-<span id="cb1-20"><a></a></span>
-<span id="cb1-21"><a></a>    <span class="co"># conditionally change the pixel to grey</span></span>
-<span id="cb1-22"><a></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
-<span id="cb1-23"><a></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
-<span id="cb1-24"><a></a></span>
-<span id="cb1-25"><a></a>    <span class="co"># return updated pixel</span></span>
-<span id="cb1-26"><a></a>    <span class="cf">return</span> (red, green, blue)</span>
-<span id="cb1-27"><a></a></span>
-<span id="cb1-28"><a></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
-<span id="cb1-29"><a></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>] <span class="co"># grab the height and width of the image</span></span>
-<span id="cb1-30"><a></a>    out <span class="op">=</span> img.copy()     <span class="co"># write to a copy</span></span>
-<span id="cb1-31"><a></a></span>
-<span id="cb1-32"><a></a>    <span class="co"># traverse every pixel in the image and change it!</span></span>
-<span id="cb1-33"><a></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
-<span id="cb1-34"><a></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
-<span id="cb1-35"><a></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row,col])</span>
-<span id="cb1-36"><a></a></span>
-<span id="cb1-37"><a></a>    <span class="co"># return image with changed pixels</span></span>
-<span id="cb1-38"><a></a>    <span class="cf">return</span> out</span>
-<span id="cb1-39"><a></a></span>
-<span id="cb1-40"><a></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb1-41"><a></a></span>
-<span id="cb1-42"><a></a>    img <span class="op">=</span> io.imread(<span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span>)[..., :<span class="dv">3</span>]     <span class="co"># keep first 3 channels (RGB)</span></span>
-<span id="cb1-43"><a></a></span>
-<span id="cb1-44"><a></a>    out <span class="op">=</span> fancify(img)</span>
-<span id="cb1-45"><a></a></span>
-<span id="cb1-46"><a></a>    plt.imshow(out)</span>
-<span id="cb1-47"><a></a>    plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb1-48"><a></a>    plt.show()</span>
-<span id="cb1-49"><a></a></span>
-<span id="cb1-50"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a aria-label="4"></a></span>
+<span id="cb1-5"><a aria-label="5"></a>Pixel <span class="op">=</span> <span class="bu">tuple</span>[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
+<span id="cb1-6"><a aria-label="6"></a></span>
+<span id="cb1-7"><a aria-label="7"></a><span class="co">'''Input: Pixel p</span></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="co">   Output: Pixel</span></span>
+<span id="cb1-9"><a aria-label="9"></a><span class="co">   Function: If the pixel has high red value, then don't change it, otherwise</span></span>
+<span id="cb1-10"><a aria-label="10"></a><span class="co">   fade the pixel to grey.  Note, to grey a pixel, set all color channels to</span></span>
+<span id="cb1-11"><a aria-label="11"></a><span class="co">   the average of the 3.</span></span>
+<span id="cb1-12"><a aria-label="12"></a><span class="co">'''</span></span>
+<span id="cb1-13"><a aria-label="13"></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
+<span id="cb1-14"><a aria-label="14"></a>    <span class="co"># setup -- extract the color channels as ints</span></span>
+<span id="cb1-15"><a aria-label="15"></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
+<span id="cb1-16"><a aria-label="16"></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
+<span id="cb1-17"><a aria-label="17"></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
+<span id="cb1-18"><a aria-label="18"></a>    <span class="co"># compute grey</span></span>
+<span id="cb1-19"><a aria-label="19"></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue)<span class="op">//</span><span class="dv">3</span></span>
+<span id="cb1-20"><a aria-label="20"></a></span>
+<span id="cb1-21"><a aria-label="21"></a>    <span class="co"># conditionally change the pixel to grey</span></span>
+<span id="cb1-22"><a aria-label="22"></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
+<span id="cb1-23"><a aria-label="23"></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
+<span id="cb1-24"><a aria-label="24"></a></span>
+<span id="cb1-25"><a aria-label="25"></a>    <span class="co"># return updated pixel</span></span>
+<span id="cb1-26"><a aria-label="26"></a>    <span class="cf">return</span> (red, green, blue)</span>
+<span id="cb1-27"><a aria-label="27"></a></span>
+<span id="cb1-28"><a aria-label="28"></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb1-29"><a aria-label="29"></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>] <span class="co"># grab the height and width of the image</span></span>
+<span id="cb1-30"><a aria-label="30"></a>    out <span class="op">=</span> img.copy()     <span class="co"># write to a copy</span></span>
+<span id="cb1-31"><a aria-label="31"></a></span>
+<span id="cb1-32"><a aria-label="32"></a>    <span class="co"># traverse every pixel in the image and change it!</span></span>
+<span id="cb1-33"><a aria-label="33"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
+<span id="cb1-34"><a aria-label="34"></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
+<span id="cb1-35"><a aria-label="35"></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row,col])</span>
+<span id="cb1-36"><a aria-label="36"></a></span>
+<span id="cb1-37"><a aria-label="37"></a>    <span class="co"># return image with changed pixels</span></span>
+<span id="cb1-38"><a aria-label="38"></a>    <span class="cf">return</span> out</span>
+<span id="cb1-39"><a aria-label="39"></a></span>
+<span id="cb1-40"><a aria-label="40"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-41"><a aria-label="41"></a></span>
+<span id="cb1-42"><a aria-label="42"></a>    img <span class="op">=</span> io.imread(<span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span>)[..., :<span class="dv">3</span>]     <span class="co"># keep first 3 channels (RGB)</span></span>
+<span id="cb1-43"><a aria-label="43"></a></span>
+<span id="cb1-44"><a aria-label="44"></a>    out <span class="op">=</span> fancify(img)</span>
+<span id="cb1-45"><a aria-label="45"></a></span>
+<span id="cb1-46"><a aria-label="46"></a>    plt.imshow(out)</span>
+<span id="cb1-47"><a aria-label="47"></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb1-48"><a aria-label="48"></a>    plt.show()</span>
+<span id="cb1-49"><a aria-label="49"></a></span>
+<span id="cb1-50"><a aria-label="50"></a>main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -309,7 +315,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5w
 <li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
 <li>What happens if you boost pixels that are LOW in red instead of high?</li>
 </ol>
-<div id="timer_8cc152a7fcb25cae4712a903eef936b55853cf76" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_153081a9e7f1e0b72d65102a9c2422f571d80453" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -435,7 +441,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBDcmVhdGUgc29tZSBiZWFk
 </script>
 </div>
 </section>
-<section id="your-turn-beads" class="slide level2 activity">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads" class="slide level2 activity">
 <h2><iconify-icon role="img" inline="" icon="fa6-solid:comments" aria-label="Icon comments from fa6-solid Iconify.design set." title="Icon comments from fa6-solid Iconify.design set."></iconify-icon> Your turn: Beads</h2>
 <p>What would these print?</p>
 <div>
@@ -446,7 +452,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBDcmVhdGUgc29tZSBiZWFk
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYjEgPSBCZWFkKHJhZGl1cz00LjAsIGNvbG9yPSgxMDAsIDEwMCwgMTAwKSlcbmIyID0gQmVhZChyYWRpdXM9Ni4wLCBjb2xvcj0oMjU1LCAxMjgsIDApKVxuXG5wcmludChiMS5yYWRpdXMgKyBiMi5yYWRpdXMpICAgICAgICAjIF9fX19fX19cbnByaW50KGIyLmNvbG9yWzBdKSAgICAgICAgICAgICAgICAgICMgX19fX19fX1xucHJpbnQoYjEucmFkaXVzICogMikgICAgICAgICAgICAgICAgIyBfX19fX19fIn0=
 </script>
 </div>
-<div id="timer_8cc152a7fcb25cae4712a903eef936b55853cf76" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_153081a9e7f1e0b72d65102a9c2422f571d80453" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -713,7 +719,7 @@ W10=
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -798,13 +804,14 @@ W10=
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

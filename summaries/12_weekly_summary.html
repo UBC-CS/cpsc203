@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Week 12: The Hardest Easy Problem – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -71,14 +77,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e170f91ef3a08c24ebee02e6bb09b870.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d55ad538553833994e65ea0dc4f9e74e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca170342d084372d1a2d7738b4009412.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fb472fd2029dca8955286876ffb892b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -108,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -121,7 +127,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -551,7 +557,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: counting routes
+<span class="screen-reader-only">Tip</span>Fill in the blank: counting routes
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -598,7 +604,7 @@ Fill in the blank: counting routes
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-NP-Hard
+<span class="screen-reader-only">Important</span>NP-Hard
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -675,7 +681,7 @@ NP-Hard
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: the five steps
+<span class="screen-reader-only">Tip</span>Fill in the blank: the five steps
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -693,8 +699,8 @@ Fill in the blank: the five steps
 <section id="step-2-the-distance-table" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-the-distance-table">Step 2: The Distance Table</h2>
 <p>We need driving distances between every pair of errand locations. The structure:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dfdist[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → distance in metres</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dfdict[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → list of road nodes (turn-by-turn)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dfdist[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → distance in metres</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dfdict[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>]  <span class="co"># → list of road nodes (turn-by-turn)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Using <code>nx.shortest_path_length</code> and <code>nx.shortest_path</code> with <code>weight='length'</code>, we fill both tables for all pairs. This step runs Dijkstra <span class="math inline">\(k^2\)</span> times — expensive upfront, but we only pay it once. Every subsequent tour calculation just looks up <code>dfdist[a][b]</code>.</p>
 <hr>
 </section>
@@ -715,7 +721,7 @@ Fill in the blank: the five steps
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Starting point doesn’t change tour length
+<span class="screen-reader-only">Important</span>Starting point doesn’t change tour length
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -737,10 +743,10 @@ Starting point doesn’t change tour length
 <section id="lambda-functions-writing-less-saying-more" class="level2">
 <h2 class="anchored" data-anchor-id="lambda-functions-writing-less-saying-more">Lambda Functions: Writing Less, Saying More</h2>
 <p>The TSP code leans on a compact Python feature: <strong>lambda</strong> (anonymous) functions.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dferrands[<span class="st">'latlong'</span>] <span class="op">=</span> dferrands.<span class="bu">apply</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dferrands[<span class="st">'latlong'</span>] <span class="op">=</span> dferrands.<span class="bu">apply</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: ox.geocode(row[<span class="st">'errand'</span>]),</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    axis<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>df.apply(..., axis=1)</code> calls a function once per row of the DataFrame</li>
 <li><code>lambda row: ox.geocode(row['errand'])</code> is that function — defined right where it’s used, no <code>def</code>, no name</li>
@@ -771,7 +777,7 @@ Starting point doesn’t change tour length
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why pre-compute and store paths?
+<span class="screen-reader-only">Tip</span>Why pre-compute and store paths?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -908,13 +914,14 @@ Why pre-compute and store paths?
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

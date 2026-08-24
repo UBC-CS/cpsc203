@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Week 13: Words, Words, Words – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -71,14 +77,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e170f91ef3a08c24ebee02e6bb09b870.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d55ad538553833994e65ea0dc4f9e74e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca170342d084372d1a2d7738b4009412.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fb472fd2029dca8955286876ffb892b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -546,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: the six-step pipeline
+<span class="screen-reader-only">Tip</span>Fill in the blank: the six-step pipeline
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -617,7 +623,7 @@ Fill in the blank: the six-step pipeline
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why this order?
+<span class="screen-reader-only">Important</span>Why this order?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -638,15 +644,15 @@ muddled she would take it out of the Wart by rapping his knuckles."</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: tokenization result
+<span class="screen-reader-only">Tip</span>Fill in the blank: tokenization result
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>spaCy’s tokenizer produces:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Astrology'</span>, <span class="st">'.'</span>, <span class="st">'The'</span>, <span class="st">'governess'</span>, <span class="st">'was'</span>, <span class="st">'always'</span>, <span class="st">'getting'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Astrology'</span>, <span class="st">'.'</span>, <span class="st">'The'</span>, <span class="st">'governess'</span>, <span class="st">'was'</span>, <span class="st">'always'</span>, <span class="st">'getting'</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'muddled'</span>, <span class="st">'with'</span>, <span class="st">'her'</span>, <span class="st">'astrolabe'</span>, <span class="st">','</span>, <span class="st">'and'</span>, <span class="st">'when'</span>, <span class="st">'she'</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'got'</span>, <span class="st">'specially'</span>, <span class="st">'muddled'</span>, <span class="st">'she'</span>, <span class="st">'would'</span>, <span class="st">'take'</span>, <span class="st">'it'</span>, <span class="st">'out'</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'of'</span>, <span class="st">'the'</span>, <span class="st">'Wart'</span>, <span class="st">'by'</span>, <span class="st">'rapping'</span>, <span class="st">'his'</span>, <span class="st">'knuckles'</span>, <span class="st">'.'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'of'</span>, <span class="st">'the'</span>, <span class="st">'Wart'</span>, <span class="st">'by'</span>, <span class="st">'rapping'</span>, <span class="st">'his'</span>, <span class="st">'knuckles'</span>, <span class="st">'.'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Key insight: the period after “Astrology” is its <em>own</em> token — not glued to the word. The same is true of commas. This is why removing punctuation is a separate step: the tokenizer has already isolated them. And “Dr.”, “$3.50”, and “!” all work correctly because the tokenizer knows about abbreviations and special characters.</p>
 </div>
 </div>
@@ -655,8 +661,8 @@ Fill in the blank: tokenization result
 <section id="stopwords-common-useful" class="level2">
 <h2 class="anchored" data-anchor-id="stopwords-common-useful">Stopwords: Common ≠ Useful</h2>
 <p>SpaCy comes with a list of ~300 English stopwords compiled from large corpora — words so common they add noise rather than signal: “the”, “a”, “and”, “was”, “of”, “in”, “it”, “to”, “with”…</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spacy.lang.en.stop_words <span class="im">import</span> STOP_WORDS</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>words_without_stopwords <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> words <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> STOP_WORDS]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spacy.lang.en.stop_words <span class="im">import</span> STOP_WORDS</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>words_without_stopwords <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> words <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> STOP_WORDS]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The more sophisticated approach is <strong>tf-idf</strong> (term frequency–inverse document frequency): instead of a fixed stopword list, it automatically downweights words that are common <em>across all your documents</em>. A word that appears in every book is not informative about <em>this</em> book.</p>
 <hr>
 </section>
@@ -723,12 +729,12 @@ Fill in the blank: tokenization result
 <section id="spacys-richer-picture" class="level2">
 <h2 class="anchored" data-anchor-id="spacys-richer-picture">spaCy’s Richer Picture</h2>
 <p>Last time, we counted words. Today we went deeper: spaCy doesn’t just split your text into tokens — it <em>understands</em> them. When you run <code>nlp(text)</code>, every token gets labeled with its grammatical role and its role in named entity spans.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"Emma lost no time."</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>[(t.text, t.pos_) <span class="cf">for</span> t <span class="kw">in</span> doc]</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># → [('Emma', 'PROPN'), ('lost', 'VERB'), ('no', 'DET'), ('time', 'NOUN'), ('.', 'PUNCT')]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># → [('Emma', 'PROPN'), ('lost', 'VERB'), ('no', 'DET'), ('time', 'NOUN'), ('.', 'PUNCT')]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>PROPN</code> = proper noun — a strong signal that this token might be a named entity!</p>
 <hr>
 </section>
@@ -773,7 +779,7 @@ Fill in the blank: tokenization result
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: “curling” in three roles
+<span class="screen-reader-only">Tip</span>Fill in the blank: “curling” in three roles
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -877,7 +883,7 @@ Fill in the blank: “curling” in three roles
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: IOB encoding
+<span class="screen-reader-only">Tip</span>Fill in the blank: IOB encoding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -908,8 +914,8 @@ Fill in the blank: IOB encoding
 </tbody>
 </table>
 <p>So <em>“Harriet Smith was late”</em> becomes:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[(<span class="st">'Harriet'</span>, <span class="st">'B'</span>, <span class="st">'PERSON'</span>), (<span class="st">'Smith'</span>, <span class="st">'I'</span>, <span class="st">'PERSON'</span>),</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> (<span class="st">'was'</span>,     <span class="st">'O'</span>, <span class="st">''</span>),       (<span class="st">'late'</span>,  <span class="st">'O'</span>, <span class="st">''</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[(<span class="st">'Harriet'</span>, <span class="st">'B'</span>, <span class="st">'PERSON'</span>), (<span class="st">'Smith'</span>, <span class="st">'I'</span>, <span class="st">'PERSON'</span>),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> (<span class="st">'was'</span>,     <span class="st">'O'</span>, <span class="st">''</span>),       (<span class="st">'late'</span>,  <span class="st">'O'</span>, <span class="st">''</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>B</code> marks the start of a span; subsequent tokens in the same span get <code>I</code>; everything else gets <code>O</code>. This lets spaCy reconstruct full multi-word names from the token stream.</p>
 </div>
 </div>
@@ -924,11 +930,11 @@ Fill in the blank: IOB encoding
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: what each expression returns
+<span class="screen-reader-only">Tip</span>Fill in the blank: what each expression returns
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(textRaw)   <span class="co"># process the whole chapter at once</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(textRaw)   <span class="co"># process the whole chapter at once</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong><code>sents = list(doc.sents)</code></strong> → a list of spaCy <code>Span</code> objects, one per sentence</p>
 <p><strong><code>sentWords = [[token.text for token in sent] for sent in sents]</code></strong> → a list of lists of strings — each inner list is one sentence broken into words</p>
 <p><strong><code>sentWordsPOS = [[(token.text, token.pos_) for token in sent] for sent in sents]</code></strong> → same structure, but each word is paired with its POS tag</p>
@@ -942,15 +948,15 @@ Fill in the blank: what each expression returns
 <section id="character-frequency-whos-in-this-book" class="level2">
 <h2 class="anchored" data-anchor-id="character-frequency-whos-in-this-book">Character Frequency: Who’s in This Book?</h2>
 <p>Once you have all the person mentions, you can count them:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>name_counts <span class="op">=</span> Counter(names)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>top30 <span class="op">=</span> <span class="bu">dict</span>(name_counts.most_common(<span class="dv">30</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>top30 <span class="op">=</span> <span class="bu">dict</span>(name_counts.most_common(<span class="dv">30</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The result is a frequency table of character mentions — essentially a cast list ranked by how much screen time each character gets. This is exactly the kind of insight that would take hours to compile by hand but runs in seconds computationally.</p>
 <p>The activity also hinted at what’s coming in Week 14:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>persons_by_sent <span class="op">=</span> [</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>persons_by_sent <span class="op">=</span> [</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    [ent.text <span class="cf">for</span> ent <span class="kw">in</span> sent.ents <span class="cf">if</span> ent.label_ <span class="op">==</span> <span class="st">"PERSON"</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sent <span class="kw">in</span> sents</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This groups characters <em>by sentence</em> — and when two characters appear in the same sentence, that’s evidence they interact. Build a graph where characters are vertices and co-appearances are edges, and you have a <strong>social network inferred from text</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1035,13 +1041,14 @@ Fill in the blank: what each expression returns
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

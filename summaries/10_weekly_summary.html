@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Week 10: Music, Markov, and Mazes – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -71,14 +77,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e170f91ef3a08c24ebee02e6bb09b870.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d55ad538553833994e65ea0dc4f9e74e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca170342d084372d1a2d7738b4009412.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fb472fd2029dca8955286876ffb892b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -108,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -121,7 +127,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -522,7 +528,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Rest of the Term: Graphs Applied
+<span class="screen-reader-only">Note</span>The Rest of the Term: Graphs Applied
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -616,7 +622,7 @@ The Rest of the Term: Graphs Applied
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank
+<span class="screen-reader-only">Tip</span>Fill in the blank
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -681,7 +687,7 @@ Fill in the blank
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Markov Chains Are Everywhere
+<span class="screen-reader-only">Important</span>Markov Chains Are Everywhere
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -713,7 +719,7 @@ Markov Chains Are Everywhere
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank
+<span class="screen-reader-only">Tip</span>Fill in the blank
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -756,7 +762,7 @@ Fill in the blank
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank
+<span class="screen-reader-only">Tip</span>Fill in the blank
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -788,7 +794,7 @@ Fill in the blank
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank
+<span class="screen-reader-only">Tip</span>Fill in the blank
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -865,9 +871,9 @@ Fill in the blank
 <li><code>pop()</code> → <code>item</code> — remove from the top</li>
 </ul>
 <p>In Python, we use a <code>deque</code> with <code>append()</code> and <code>pop()</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stack <span class="op">=</span> deque()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stack <span class="op">=</span> deque()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stack.append(item)   <span class="co"># push</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> stack.pop()   <span class="co"># pop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> stack.pop()   <span class="co"># pop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -883,7 +889,7 @@ Fill in the blank
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-DFS vs BFS
+<span class="screen-reader-only">Important</span>DFS vs BFS
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -968,10 +974,10 @@ DFS vs BFS
 <section id="linearizing-the-grid" class="level2">
 <h2 class="anchored" data-anchor-id="linearizing-the-grid">Linearizing the Grid</h2>
 <p>One more elegant puzzle: as we search, we want to iterate through all cells in order. Instead of nested loops over rows and columns, we can use a single integer <code>p</code> from 0 to <span class="math inline">\(W \times H\)</span>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> postup(p):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> postup(p):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> p <span class="op">//</span> states   <span class="co"># row</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> p <span class="op">%</span> states    <span class="co"># column</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A single number encodes a 2D position! This <code>//</code> and <code>%</code> pattern — integer division and remainder — appears constantly in programming whenever you need to convert between 1D and 2D indexing.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -979,7 +985,7 @@ DFS vs BFS
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Pattern
+<span class="screen-reader-only">Tip</span>The Pattern
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1095,13 +1101,14 @@ The Pattern
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

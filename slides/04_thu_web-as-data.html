@@ -6,13 +6,13 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
 <link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="dcterms.date" content="2026-01-29">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
@@ -22,10 +22,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -100,7 +106,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1f5a29cc93a101a36bbeaa5a04d9450b.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -253,7 +259,7 @@
 <ol start="2" type="1">
 <li>Use the sketch to describe what happens when you load your favourite web page.</li>
 </ol>
-<div id="timer_438dbdf7a1de57bf400711621af06b72ce570997" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_c182419a8eaff3082da304759f0a6ab7d2d569e0" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -319,23 +325,23 @@
 </section>
 <section id="anatomy-of-html" class="slide level2">
 <h2>Anatomy of HTML</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb1-2"><a></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>The Dormouse's story<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a></a>        <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>The Dormouse's story<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb1-10"><a></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"story"</span><span class="dt">&gt;</span></span>
-<span id="cb1-11"><a></a>        Once upon a time there were two little sisters. Their names were </span>
-<span id="cb1-12"><a></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://example.com/elsie"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sister"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"link1"</span><span class="dt">&gt;</span>Elsie<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>, </span>
-<span id="cb1-13"><a></a>        and <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://example.com/lacie"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sister"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"link2"</span><span class="dt">&gt;</span>Lacie<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>, </span>
-<span id="cb1-14"><a></a>        and they lived at the bottom of a well.</span>
-<span id="cb1-15"><a></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb1-16"><a></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-17"><a></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a aria-label="1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a aria-label="4"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>The Dormouse's story<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-7"><a aria-label="7"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a aria-label="8"></a>        <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>The Dormouse's story<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a aria-label="9"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a aria-label="10"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"story"</span><span class="dt">&gt;</span></span>
+<span id="cb1-11"><a aria-label="11"></a>        Once upon a time there were two little sisters. Their names were </span>
+<span id="cb1-12"><a aria-label="12"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://example.com/elsie"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sister"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"link1"</span><span class="dt">&gt;</span>Elsie<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>, </span>
+<span id="cb1-13"><a aria-label="13"></a>        and <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://example.com/lacie"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sister"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"link2"</span><span class="dt">&gt;</span>Lacie<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>, </span>
+<span id="cb1-14"><a aria-label="14"></a>        and they lived at the bottom of a well.</span>
+<span id="cb1-15"><a aria-label="15"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-16"><a aria-label="16"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-17"><a aria-label="17"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Walkthrough of how tags are like parentheses around text elements.</p>
 <p>Python can be used to extract data from the HTML source.</p>
@@ -353,74 +359,74 @@
 </section>
 <section id="billboard-hot-100-page-source" class="slide level2">
 <h2>Billboard Hot 100 page source</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item piano-content-overlay__gated-item"</span><span class="ot"> data-rank</span><span class="op">=</span><span class="st">"49"</span><span class="ot"> data-artist</span><span class="op">=</span><span class="st">"Taylor Swift"</span><span class="ot"> data-title</span><span class="op">=</span><span class="st">"Lover"</span><span class="ot"> data-has-content</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__first-row chart-list-item__cursor-pointer"</span><span class="dt">&gt;</span></span>
-<span id="cb2-3"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__position chart-list-item__position--centered"</span><span class="dt">&gt;</span></span>
-<span id="cb2-4"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__rank"</span><span class="dt">&gt;</span>49<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-5"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__award"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-6"><a></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-7"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__image-wrapper"</span><span class="dt">&gt;</span></span>
-<span id="cb2-8"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__trend-icon"</span><span class="dt">&gt;</span></span>
-<span id="cb2-9"><a></a>                <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd"</span></span>
-<span id="cb2-10"><a></a><span class="ot">                     srcset</span><span class="op">=</span><span class="st">"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down-mobile.svg?df89925e3b37f64521bd 30w, https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd 38w"</span></span>
-<span id="cb2-11"><a></a><span class="ot">                     sizes</span><span class="op">=</span><span class="st">"(min-width: 768px) 38px, 30px"</span><span class="dt">&gt;</span></span>
-<span id="cb2-12"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-13"><a></a>            <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="</span></span>
-<span id="cb2-14"><a></a><span class="ot">                 data-src</span><span class="op">=</span><span class="st">"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg"</span></span>
-<span id="cb2-15"><a></a><span class="ot">                 data-srcset</span><span class="op">=</span><span class="st">"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg 53w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-106x106.jpg 106w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-87x87.jpg 87w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-174x174.jpg 174w"</span></span>
-<span id="cb2-16"><a></a><span class="ot">                 sizes</span><span class="op">=</span><span class="st">"(max-width: 767px) 72px, (min-width: 768px) 86px"</span></span>
-<span id="cb2-17"><a></a><span class="ot">                 class</span><span class="op">=</span><span class="st">"chart-list-item__image"</span></span>
-<span id="cb2-18"><a></a><span class="ot">                 alt</span><span class="op">=</span><span class="st">"Taylor Swift Lover Billboard Hot 100"</span><span class="dt">&gt;</span></span>
-<span id="cb2-19"><a></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-20"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__text-wrapper"</span><span class="dt">&gt;</span></span>
-<span id="cb2-21"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__text"</span><span class="dt">&gt;</span></span>
-<span id="cb2-22"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__title"</span><span class="dt">&gt;</span></span>
-<span id="cb2-23"><a></a>                    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__title-text"</span><span class="dt">&gt;</span></span>
-<span id="cb2-24"><a></a>                        Lover</span>
-<span id="cb2-25"><a></a>                    <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb2-26"><a></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-27"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__artist"</span><span class="dt">&gt;</span></span>
-<span id="cb2-28"><a></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/music/taylor-swift"</span><span class="dt">&gt;</span></span>
-<span id="cb2-29"><a></a>                        Taylor Swift</span>
-<span id="cb2-30"><a></a>                    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb2-31"><a></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-32"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__lyrics"</span><span class="dt">&gt;</span></span>
-<span id="cb2-33"><a></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.billboard.com/articles/news/lyrics/7950218/ready-for-it-taylor-swift-lyrics"</span><span class="dt">&gt;</span></span>
-<span id="cb2-34"><a></a>                        <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"hidden-mobile show-expanded-mobile-inline"</span><span class="dt">&gt;</span>Song <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>Lyrics</span>
-<span id="cb2-35"><a></a>                    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb2-36"><a></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-37"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-38"><a></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-39"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__chevron-wrapper"</span><span class="dt">&gt;</span></span>
-<span id="cb2-40"><a></a>            <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa fa-chevron-down"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span></span>
-<span id="cb2-41"><a></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-42"><a></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-43"><a></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__extra-info"</span><span class="dt">&gt;</span></span>
-<span id="cb2-44"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__extra-info-shadow"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-45"><a></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats"</span><span class="dt">&gt;</span></span>
-<span id="cb2-46"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--first-cell"</span><span class="dt">&gt;</span></span>
-<span id="cb2-47"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-48"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__last-week"</span><span class="dt">&gt;</span>23<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-49"><a></a>                LAST WEEK</span>
-<span id="cb2-50"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-51"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user"</span><span class="dt">&gt;</span></span>
-<span id="cb2-52"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-53"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__last-week"</span><span class="dt">&gt;</span>10<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-54"><a></a>                TWO WEEKS AGO</span>
-<span id="cb2-55"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-56"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user"</span><span class="dt">&gt;</span></span>
-<span id="cb2-57"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-line-chart"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-58"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__weeks-at-one"</span><span class="dt">&gt;</span>10<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-59"><a></a>                PEAK POSITION</span>
-<span id="cb2-60"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-61"><a></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--no-border-right"</span><span class="dt">&gt;</span></span>
-<span id="cb2-62"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-clock-o"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-63"><a></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__weeks-on-chart"</span><span class="dt">&gt;</span>4<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-64"><a></a>                WEEKS ON CHART</span>
-<span id="cb2-65"><a></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-66"><a></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-67"><a></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb2-68"><a></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a aria-label="1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item piano-content-overlay__gated-item"</span><span class="ot"> data-rank</span><span class="op">=</span><span class="st">"49"</span><span class="ot"> data-artist</span><span class="op">=</span><span class="st">"Taylor Swift"</span><span class="ot"> data-title</span><span class="op">=</span><span class="st">"Lover"</span><span class="ot"> data-has-content</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span></span>
+<span id="cb2-2"><a aria-label="2"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__first-row chart-list-item__cursor-pointer"</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a aria-label="3"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__position chart-list-item__position--centered"</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a aria-label="4"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__rank"</span><span class="dt">&gt;</span>49<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__award"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a aria-label="6"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a aria-label="7"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__image-wrapper"</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a aria-label="8"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__trend-icon"</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a aria-label="9"></a>                <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd"</span></span>
+<span id="cb2-10"><a aria-label="10"></a><span class="ot">                     srcset</span><span class="op">=</span><span class="st">"https://assets.billboard.com/assets/1568911107/images/charts/arrow-down-mobile.svg?df89925e3b37f64521bd 30w, https://assets.billboard.com/assets/1568911107/images/charts/arrow-down.svg?df89925e3b37f64521bd 38w"</span></span>
+<span id="cb2-11"><a aria-label="11"></a><span class="ot">                     sizes</span><span class="op">=</span><span class="st">"(min-width: 768px) 38px, 30px"</span><span class="dt">&gt;</span></span>
+<span id="cb2-12"><a aria-label="12"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-13"><a aria-label="13"></a>            <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="</span></span>
+<span id="cb2-14"><a aria-label="14"></a><span class="ot">                 data-src</span><span class="op">=</span><span class="st">"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg"</span></span>
+<span id="cb2-15"><a aria-label="15"></a><span class="ot">                 data-srcset</span><span class="op">=</span><span class="st">"https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-53x53.jpg 53w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-106x106.jpg 106w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-87x87.jpg 87w, https://charts-static.billboard.com/img/2019/08/taylor-swift-p7u-lover-tuk-174x174.jpg 174w"</span></span>
+<span id="cb2-16"><a aria-label="16"></a><span class="ot">                 sizes</span><span class="op">=</span><span class="st">"(max-width: 767px) 72px, (min-width: 768px) 86px"</span></span>
+<span id="cb2-17"><a aria-label="17"></a><span class="ot">                 class</span><span class="op">=</span><span class="st">"chart-list-item__image"</span></span>
+<span id="cb2-18"><a aria-label="18"></a><span class="ot">                 alt</span><span class="op">=</span><span class="st">"Taylor Swift Lover Billboard Hot 100"</span><span class="dt">&gt;</span></span>
+<span id="cb2-19"><a aria-label="19"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-20"><a aria-label="20"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__text-wrapper"</span><span class="dt">&gt;</span></span>
+<span id="cb2-21"><a aria-label="21"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__text"</span><span class="dt">&gt;</span></span>
+<span id="cb2-22"><a aria-label="22"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__title"</span><span class="dt">&gt;</span></span>
+<span id="cb2-23"><a aria-label="23"></a>                    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__title-text"</span><span class="dt">&gt;</span></span>
+<span id="cb2-24"><a aria-label="24"></a>                        Lover</span>
+<span id="cb2-25"><a aria-label="25"></a>                    <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb2-26"><a aria-label="26"></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-27"><a aria-label="27"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__artist"</span><span class="dt">&gt;</span></span>
+<span id="cb2-28"><a aria-label="28"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/music/taylor-swift"</span><span class="dt">&gt;</span></span>
+<span id="cb2-29"><a aria-label="29"></a>                        Taylor Swift</span>
+<span id="cb2-30"><a aria-label="30"></a>                    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb2-31"><a aria-label="31"></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-32"><a aria-label="32"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__lyrics"</span><span class="dt">&gt;</span></span>
+<span id="cb2-33"><a aria-label="33"></a>                    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.billboard.com/articles/news/lyrics/7950218/ready-for-it-taylor-swift-lyrics"</span><span class="dt">&gt;</span></span>
+<span id="cb2-34"><a aria-label="34"></a>                        <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"hidden-mobile show-expanded-mobile-inline"</span><span class="dt">&gt;</span>Song <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>Lyrics</span>
+<span id="cb2-35"><a aria-label="35"></a>                    <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb2-36"><a aria-label="36"></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-37"><a aria-label="37"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-38"><a aria-label="38"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-39"><a aria-label="39"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__chevron-wrapper"</span><span class="dt">&gt;</span></span>
+<span id="cb2-40"><a aria-label="40"></a>            <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa fa-chevron-down"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span></span>
+<span id="cb2-41"><a aria-label="41"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-42"><a aria-label="42"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-43"><a aria-label="43"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__extra-info"</span><span class="dt">&gt;</span></span>
+<span id="cb2-44"><a aria-label="44"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__extra-info-shadow"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-45"><a aria-label="45"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats"</span><span class="dt">&gt;</span></span>
+<span id="cb2-46"><a aria-label="46"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--first-cell"</span><span class="dt">&gt;</span></span>
+<span id="cb2-47"><a aria-label="47"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-48"><a aria-label="48"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__last-week"</span><span class="dt">&gt;</span>23<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-49"><a aria-label="49"></a>                LAST WEEK</span>
+<span id="cb2-50"><a aria-label="50"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-51"><a aria-label="51"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user"</span><span class="dt">&gt;</span></span>
+<span id="cb2-52"><a aria-label="52"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-arrow-up fa-rotate-45"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-53"><a aria-label="53"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__last-week"</span><span class="dt">&gt;</span>10<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-54"><a aria-label="54"></a>                TWO WEEKS AGO</span>
+<span id="cb2-55"><a aria-label="55"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-56"><a aria-label="56"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user"</span><span class="dt">&gt;</span></span>
+<span id="cb2-57"><a aria-label="57"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-line-chart"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-58"><a aria-label="58"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__weeks-at-one"</span><span class="dt">&gt;</span>10<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-59"><a aria-label="59"></a>                PEAK POSITION</span>
+<span id="cb2-60"><a aria-label="60"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-61"><a aria-label="61"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-cell basic-user chart-list-item__stats-cell--no-border-right"</span><span class="dt">&gt;</span></span>
+<span id="cb2-62"><a aria-label="62"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__stats-icon fa fa-clock-o"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-63"><a aria-label="63"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"chart-list-item__weeks-on-chart"</span><span class="dt">&gt;</span>4<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-64"><a aria-label="64"></a>                WEEKS ON CHART</span>
+<span id="cb2-65"><a aria-label="65"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-66"><a aria-label="66"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-67"><a aria-label="67"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-68"><a aria-label="68"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Using this page source as data is called <em>scraping</em> a web page.</p>
 </section>
 <section id="beautiful-soup" class="slide level2">
@@ -429,17 +435,17 @@
 <p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" class="uri">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></p>
 <p><br>
 </p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb3-2"><a></a><span class="im">import</span> requests</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># assumes requests handled by simple_get function that returns an html document.</span></span>
-<span id="cb3-5"><a></a>html <span class="op">=</span> simple_get(<span class="st">"https://www.billboard.com/charts/hot-100"</span> <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> date)</span>
-<span id="cb3-6"><a></a>soup <span class="op">=</span> BeautifulSoup(html, <span class="st">'html.parser'</span>)</span>
-<span id="cb3-7"><a></a>mydivs <span class="op">=</span> soup.findAll(<span class="st">"div"</span>, {<span class="st">"class"</span>: <span class="st">"chart-list-item"</span>}) <span class="op">//</span> <span class="bu">all</span> the data <span class="kw">is</span> here<span class="op">!!</span></span>
-<span id="cb3-8"><a></a></span>
-<span id="cb3-9"><a></a><span class="cf">for</span> div <span class="kw">in</span> mydivs:</span>
-<span id="cb3-10"><a></a>    <span class="co"># assumes we have defined a Song class</span></span>
-<span id="cb3-11"><a></a>    s <span class="op">=</span> Song(div.attrs[<span class="st">'data-title'</span>], div.attrs[<span class="st">'data-artist'</span>], <span class="bu">int</span>(div.attrs[<span class="st">'data-rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb3-2"><a aria-label="2"></a><span class="im">import</span> requests</span>
+<span id="cb3-3"><a aria-label="3"></a></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="co"># assumes requests handled by simple_get function that returns an html document.</span></span>
+<span id="cb3-5"><a aria-label="5"></a>html <span class="op">=</span> simple_get(<span class="st">"https://www.billboard.com/charts/hot-100"</span> <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> date)</span>
+<span id="cb3-6"><a aria-label="6"></a>soup <span class="op">=</span> BeautifulSoup(html, <span class="st">'html.parser'</span>)</span>
+<span id="cb3-7"><a aria-label="7"></a>mydivs <span class="op">=</span> soup.findAll(<span class="st">"div"</span>, {<span class="st">"class"</span>: <span class="st">"chart-list-item"</span>}) <span class="op">//</span> <span class="bu">all</span> the data <span class="kw">is</span> here<span class="op">!!</span></span>
+<span id="cb3-8"><a aria-label="8"></a></span>
+<span id="cb3-9"><a aria-label="9"></a><span class="cf">for</span> div <span class="kw">in</span> mydivs:</span>
+<span id="cb3-10"><a aria-label="10"></a>    <span class="co"># assumes we have defined a Song class</span></span>
+<span id="cb3-11"><a aria-label="11"></a>    s <span class="op">=</span> Song(div.attrs[<span class="st">'data-title'</span>], div.attrs[<span class="st">'data-artist'</span>], <span class="bu">int</span>(div.attrs[<span class="st">'data-rank'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br>
 </p>
 <p>Still very messy! Remedy? <a href="https://github.com/guoguo12/billboard-charts" class="uri">https://github.com/guoguo12/billboard-charts</a></p>
@@ -714,7 +720,7 @@ W10=
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -799,13 +805,14 @@ W10=
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

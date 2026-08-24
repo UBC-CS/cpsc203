@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Week 14: Connections – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -71,14 +77,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e170f91ef3a08c24ebee02e6bb09b870.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-90c2643ab6f776117e85fdd60cb25922.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d55ad538553833994e65ea0dc4f9e74e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca170342d084372d1a2d7738b4009412.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-038e70977e581ceca0a97b27a2aaf5c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fb472fd2029dca8955286876ffb892b9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f940847dab5a61eea1228625ffd75757.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -534,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The pipeline, end to end
+<span class="screen-reader-only">Tip</span>The pipeline, end to end
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -560,13 +566,13 @@ The pipeline, end to end
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: <code>getParagraphs</code>
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getParagraphs</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParagraphs(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParagraphs(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Split text into non-empty paragraphs (blocks separated by blank lines)."""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p.strip() <span class="cf">for</span> p <span class="kw">in</span> text.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>) <span class="cf">if</span> p.strip()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p.strip() <span class="cf">for</span> p <span class="kw">in</span> text.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>) <span class="cf">if</span> p.strip()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Split on double-newline, strip whitespace from each chunk, discard any empty results. Three lines of text separated by blank lines → <code>["First paragraph", "Second paragraph", "Third paragraph"]</code>.</p>
 </div>
 </div>
@@ -581,14 +587,14 @@ Fill in the blank: <code>getParagraphs</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: <code>getPeople</code>
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getPeople</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getPeople(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getPeople(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a list of PERSON names found in a single string of text."""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(text)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [ent.text <span class="cf">for</span> ent <span class="kw">in</span> doc.ents <span class="cf">if</span> ent.label_ <span class="op">==</span> <span class="st">"PERSON"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [ent.text <span class="cf">for</span> ent <span class="kw">in</span> doc.ents <span class="cf">if</span> ent.label_ <span class="op">==</span> <span class="st">"PERSON"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Run the string through the NLP pipeline, filter entities to just <code>"PERSON"</code>, collect their text. For <em>“Anne ran to meet Diana at the gate.”</em> this returns <code>['Anne', 'Diana']</code>.</p>
 </div>
 </div>
@@ -603,13 +609,13 @@ Fill in the blank: <code>getPeople</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: <code>getParaPeople</code>
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>getParaPeople</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParaPeople(paragraphs: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getParaPeople(paragraphs: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Apply getPeople to every paragraph; return a list-of-lists."""</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [getPeople(p) <span class="cf">for</span> p <span class="kw">in</span> paragraphs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [getPeople(p) <span class="cf">for</span> p <span class="kw">in</span> paragraphs]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Input: <code>["Anne ran to meet Diana.", "The sky was blue."]</code> Output: <code>[['Anne', 'Diana'], []]</code></p>
 <p>The empty list for the second paragraph is correct — no people mentioned there.</p>
 </div>
@@ -625,11 +631,11 @@ Fill in the blank: <code>getParaPeople</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fill in the blank: <code>countPairs</code>
+<span class="screen-reader-only">Tip</span>Fill in the blank: <code>countPairs</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countPairs(paraPeople: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countPairs(paraPeople: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count co-occurrences of name pairs across paragraphs."""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    pairCounts <span class="op">=</span> defaultdict(<span class="bu">int</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> people <span class="kw">in</span> paraPeople:</span>
@@ -637,7 +643,7 @@ Fill in the blank: <code>countPairs</code>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, s <span class="kw">in</span> <span class="bu">enumerate</span>(unique):</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> t <span class="kw">in</span> unique[i <span class="op">+</span> <span class="dv">1</span>:]:          <span class="co"># only pairs (i,j) with j &gt; i → no duplicates</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                pairCounts[(s, t)] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pairCounts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pairCounts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Why <code>sorted(set(...))</code>?</strong></p>
 <ul>
 <li><code>set()</code> removes duplicates: if “Anne” is mentioned three times in one paragraph, she still counts once for pairing purposes</li>
@@ -652,27 +658,27 @@ Fill in the blank: <code>countPairs</code>
 <section id="steps-56-buildgraph-and-drawgraph-provided" class="level2">
 <h2 class="anchored" data-anchor-id="steps-56-buildgraph-and-drawgraph-provided">Steps 5–6: <code>buildGraph</code> and <code>drawGraph</code> (provided)</h2>
 <p><code>buildGraph</code> filters the pair counts by a threshold (default: 5) and builds a NetworkX graph. Edge weight = co-occurrence count.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buildGraph(pairCounts: <span class="bu">dict</span>, threshold: <span class="bu">int</span> <span class="op">=</span> <span class="dv">5</span>) <span class="op">-&gt;</span> nx.Graph:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buildGraph(pairCounts: <span class="bu">dict</span>, threshold: <span class="bu">int</span> <span class="op">=</span> <span class="dv">5</span>) <span class="op">-&gt;</span> nx.Graph:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    G <span class="op">=</span> nx.Graph()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (u, v), w <span class="kw">in</span> pairCounts.items():</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> w <span class="op">&gt;</span> threshold:</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            G.add_edge(u, v, weight<span class="op">=</span>w)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> G</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> G</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>drawGraph</code> uses NetworkX’s spring layout to position nodes, scaling <strong>node size</strong> by degree (highly connected characters are bigger) and <strong>edge width</strong> by weight (frequently co-occurring pairs have thicker lines):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>node_sizes  <span class="op">=</span> [<span class="dv">300</span> <span class="op">+</span> degrees[n] <span class="op">*</span> <span class="dv">80</span> <span class="cf">for</span> n <span class="kw">in</span> G.nodes()]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>edge_widths <span class="op">=</span> [<span class="fl">1.0</span> <span class="op">+</span> <span class="fl">3.0</span> <span class="op">*</span> (w <span class="op">/</span> max_w) <span class="cf">for</span> w <span class="kw">in</span> edge_weights]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>node_sizes  <span class="op">=</span> [<span class="dv">300</span> <span class="op">+</span> degrees[n] <span class="op">*</span> <span class="dv">80</span> <span class="cf">for</span> n <span class="kw">in</span> G.nodes()]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>edge_widths <span class="op">=</span> [<span class="fl">1.0</span> <span class="op">+</span> <span class="fl">3.0</span> <span class="op">*</span> (w <span class="op">/</span> max_w) <span class="cf">for</span> w <span class="kw">in</span> edge_weights]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The threshold matters a lot: set it too low and the graph is a hairball; set it too high and you lose minor characters. Try different values and see what you find!</p>
 <hr>
 </section>
 <section id="the-full-pipeline-in-action" class="level2">
 <h2 class="anchored" data-anchor-id="the-full-pipeline-in-action">The Full Pipeline in Action</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text       <span class="op">=</span> loadText(<span class="st">"anne.txt"</span>)           <span class="co"># try emma.txt or attwn.txt too!</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text       <span class="op">=</span> loadText(<span class="st">"anne.txt"</span>)           <span class="co"># try emma.txt or attwn.txt too!</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>paragraphs <span class="op">=</span> getParagraphs(text)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>paraPeople <span class="op">=</span> getParaPeople(paragraphs)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>pairCounts <span class="op">=</span> countPairs(paraPeople)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>G          <span class="op">=</span> buildGraph(pairCounts, threshold<span class="op">=</span><span class="dv">5</span>)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>drawGraph(G)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>exportGraph(G)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>exportGraph(G)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Run it on <em>Anne of Green Gables</em>, <em>Emma</em>, or <em>At the World’s End</em> and you get a different social universe every time. The protagonist always sits at the center; supporting characters cluster around them; isolated characters who rarely interact with anyone appear on the periphery.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -680,7 +686,7 @@ Fill in the blank: <code>countPairs</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-A note on NER accuracy
+<span class="screen-reader-only">Important</span>A note on NER accuracy
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -863,7 +869,7 @@ A note on NER accuracy
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The shape of the district determines the outcome
+<span class="screen-reader-only">Important</span>The shape of the district determines the outcome
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -885,7 +891,7 @@ The shape of the district determines the outcome
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The efficiency gap formula
+<span class="screen-reader-only">Tip</span>The efficiency gap formula
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -969,7 +975,7 @@ The efficiency gap formula
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Diverse teams really do outperform
+<span class="screen-reader-only">Note</span>Diverse teams really do outperform
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1017,7 +1023,7 @@ Diverse teams really do outperform
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The argument, stated plainly
+<span class="screen-reader-only">Tip</span>The argument, stated plainly
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1185,13 +1191,14 @@ The argument, stated plainly
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
