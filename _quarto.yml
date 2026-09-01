@@ -57,8 +57,8 @@ website:
             text: "PrairieLearn"
           - href: "https://us.prairietest.com"
             text: "PrairieTest"
-          - href: "https://cbtf.ubc.ca/students/"
-            text: "CBTF"
+          - href: "https://orca.ubc.ca/students/"
+            text: "ORCA"
       - href: about.qmd
         text: About
 
