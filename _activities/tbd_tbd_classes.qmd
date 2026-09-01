@@ -1,6 +1,0 @@
----
-title: >
-  {{< var icon.computer-activity >}} More on data classes and member functions
----
-
-We will work on the various data classes to define a handcraft in the [Class Activity 3B]({{< var course.prairielearn >}}/assessment/2495515) and [Class Activity 4A]({{< var course.prairielearn >}}/assessment/2495516) workspaces.

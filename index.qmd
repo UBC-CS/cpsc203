@@ -1,12 +1,5 @@
 ---
 title: "{{< var course.full-title >}}"
-listing:
-  id: most-recent-announcement
-  contents: posts
-  sort: "date desc"
-  type: default
-  max-items: 1
-  fields: [title, subtitle, description, date, image, reading-time]
 execute:
   freeze: false
 ---
@@ -28,11 +21,6 @@ execute:
 Livestream <a href="https://canvas.ubc.ca/courses/176702/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
 :::::
-
-## Weekly announcement
-
-::: {#most-recent-announcement}
-:::
 
 ```{r}
 #| label: setup
@@ -101,9 +89,21 @@ schedule <- read_csv(
   left_join(resources, by = join_by(week), na_matches = "never") |>
   # Add missing slide columns if they don't exist (no slides yet)
   mutate(
-    tue_slides = if ("tue_slides" %in% names(pick(everything()))) tue_slides else NA_character_,
-    thu_slides = if ("thu_slides" %in% names(pick(everything()))) thu_slides else NA_character_,
-    weekly_summaries = if ("weekly_summaries" %in% names(pick(everything()))) weekly_summaries else NA_character_
+    tue_slides = if ("tue_slides" %in% names(pick(everything()))) {
+      tue_slides
+    } else {
+      NA_character_
+    },
+    thu_slides = if ("thu_slides" %in% names(pick(everything()))) {
+      thu_slides
+    } else {
+      NA_character_
+    },
+    weekly_summaries = if ("weekly_summaries" %in% names(pick(everything()))) {
+      weekly_summaries
+    } else {
+      NA_character_
+    }
   ) |>
   relocate(tue_slides, .before = tue_activity) |>
   relocate(thu_slides, .before = thu_activity) |>
@@ -134,9 +134,14 @@ schedule <- read_csv(
       # Exam booking not yet live - show name without link
       !is.na(exam) ~ as.character(exam),
       # Practice material (in week before examlet) - only link if URL exists
-      !is.na(exam_practice) & str_starts(exam_practice, "http") ~ glue("[{fa('pen-to-square')}]({exam_practice})"),
+      !is.na(exam_practice) & str_starts(exam_practice, "http") ~ glue(
+        "[{fa('pen-to-square')}]({exam_practice})"
+      ),
       # Practice material placeholder (no URL yet) - show faded icon
-      !is.na(exam_practice) ~ as.character(fa("pen-to-square", fill_opacity = 0.1)),
+      !is.na(exam_practice) ~ as.character(fa(
+        "pen-to-square",
+        fill_opacity = 0.1
+      )),
       .default = NA_character_
     )
   )

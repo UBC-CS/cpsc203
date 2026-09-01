@@ -1,5 +1,0 @@
-| Team Member                  | Pronounce as       | Contact          | Office Hour                                                                                                            |
-|------------------------------|--------------------|------------------|------------------------------------------------------------------------------------------------------------------------|
-| {{ INSTRUCTOR }}; Instructor | {{ PRONOUNCE }}    | {{ FORUM_LINK }} | See Piazza ["Office Hours Schedule"](https://piazza.com/class/m5m1kbw121f3ii/post/26) |
-| {{ TA2 }}                    | {{ TA2pronounce }} | {{ FORUM_LINK }} | See Piazza ["Office Hours Schedule"](https://piazza.com/class/m5m1kbw121f3ii/post/26) |                                                          |
-| {{ TA1 }}                    | {{ TA1pronounce }} | {{ FORUM_LINK }} | See Piazza ["Office Hours Schedule"](https://piazza.com/class/m5m1kbw121f3ii/post/26) |

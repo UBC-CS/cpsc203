@@ -41,8 +41,6 @@ website:
     contents:
       - section: "Course information"
         contents:
-          - href: announcements.qmd
-            text: "Announcements"
           - href: syllabus.qmd
             text: "Syllabus"
           - href: index.qmd

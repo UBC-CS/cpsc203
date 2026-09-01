@@ -1,8 +1,0 @@
----
-title: "{{< var icon.resource >}} Pre-activity: Course resources"
----
-
-Bookmark these course resources:
-
--   [{{< iconify simple-icons:canvas >}} Canvas](https://canvas.ubc.ca/courses/130127)
--   [PrairLearn](https://ca.prairielearn.com/pl/course_instance/6665)

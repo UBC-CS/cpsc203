@@ -1,6 +1,0 @@
----
-title: >
-  {{< var icon.computer-activity >}} More on pandas
----
-
-We continue our exploration of pandas in [Class Activity 5B]({{< var course.prairielearn >}}/assessment/2495518).

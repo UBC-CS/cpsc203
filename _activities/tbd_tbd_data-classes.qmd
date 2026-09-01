@@ -1,5 +1,0 @@
----
-title: "{{< var icon.computer-activity >}} Data classes"
----
-
-Explore the `Student` data class in the [Class Activity 3B]({{< var course.prairielearn >}}/assessment/2495515) using the VSCode workspace.
