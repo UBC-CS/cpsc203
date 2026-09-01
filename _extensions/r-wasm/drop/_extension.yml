@@ -18,4 +18,5 @@ contributes:
             packages: []
           pyodide:
             packages: []
-source: r-wasm/quarto-drop
+source: r-wasm/quarto-drop@d3b3cb3
+source-type: registry

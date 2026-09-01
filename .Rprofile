@@ -1,10 +1,5 @@
 # Use Posit Package Manager
-options(
-  renv.settings.ppm.enabled = TRUE,
-  renv.config.pak.enabled = TRUE,
-  renv.config.ppm.enabled = TRUE,
-  renv.config.ppm.default = TRUE
-)
+options(renv.config.pak.enabled = TRUE)
 
 # Use renv
 source("renv/activate.R")
