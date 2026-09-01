@@ -115,7 +115,7 @@ schedule <- read_csv(
     ),
     show_week = case_when(
       # Show at least the first week in schedule
-      date == min(date) ~ TRUE,
+      date == min(date, na.rm = TRUE) ~ TRUE,
       # Show upcoming week on the Saturday before
       saturday_before <= current_date ~ TRUE,
       .default = FALSE
@@ -153,15 +153,15 @@ schedule <- read_csv(
 
 schedule |>
   mutate(
+    # Remove any resources from future weeks
+    across(
+      starts_with(c("tue", "thu", "lab", "potw", "weekly_summaries")),
+      \(column) if_else(show_week, column, NA)
+    ),
     week = if_else(
       !is.na(weekly_summaries),
       glue("[{week} {fa('circle-info')}]({weekly_summaries})"),
       week
-    ),
-    # Remove any resources from future weeks
-    across(
-      starts_with(c("tue", "thu", "lab", "potw")),
-      \(column) if_else(show_week, column, NA)
     ),
     # Always show project names (as cold links) - they're visible for planning
   ) |>
