@@ -7,18 +7,18 @@ execute:
 **Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
 
 ::::: columns
-::: {.column width="50%"}
+::: {.column width="40%"}
 **Contact**\
-📧 [cheeren\@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)\
-⏰ Mon 2–4pm [appointment](https://canvas.ubc.ca/calendar)\
-🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+📧 [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})\
+⏰ TBA\
+🏢 {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
 :::
 
-::: {.column width="50%"}
-**Class**\
+::: {.column width="60%"}
+**Lectures**\
+\
 {{< var course.time >}}\
-[360 HR MacMillan Building](https://maps.ubc.ca/?code=MCML)\
-Livestream <a href="https://canvas.ubc.ca/courses/176702/external_tools/61556"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+{{< var course.location >}}\
 :::
 :::::
 
