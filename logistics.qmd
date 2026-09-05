@@ -23,7 +23,7 @@ title: "Logistics"
 * [Email the instructor](mailto:{{< var instructor.email >}}) for personal or confidential matters.
   * Note that email may not be monitored in the evenings, overnight or on weekends.
 
-## IRL
+## In Real Life
 
 * Course lectures: {{< var course.time >}} in {{< var course.location >}}.
   * Lectures should be recorded and links will be posted to the [course website]({{< var course.website >}}) when they become available.  Unfortunately, we make no guarantees about the quality of the recording.
@@ -67,7 +67,7 @@ You can also review [UBC's framework for preventing communicable disease](https:
 
 Being a student can be exciting and stimulating, but it can also be stressful and exhausting.  Try to lead a balanced lifestyle, with time spent not just on studying but also exercising, socializing and eating well.  There are many supports to help you stay healthy and maintain your wellbeing; for example, see the resources linked from UBC's [student services](https://students.ubc.ca/health/) and the Faculty of Science's [mental health and wellbeing](https://science.ubc.ca/students/wellbeing) webpages.
 
-## Course Disruption Contigency Plan
+## Course Disruptions
 
 In-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on [UBC's campus notifications](https://www.ubc.ca/campus-notifications/). Please check there often during times when an extreme weather event could disrupt our course activities.
 

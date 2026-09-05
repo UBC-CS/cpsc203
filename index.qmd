@@ -4,6 +4,8 @@ execute:
   freeze: false
 ---
 
+**BEWARE: Course website is still under construction.  Links may be broken or may lead to material from previous terms.**
+
 See sidebar for syllabus, logistics, and links to other course resources.
 
 ```{r}
