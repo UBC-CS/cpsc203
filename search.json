@@ -2529,7 +2529,7 @@
     "href": "index.html",
     "title": "CPSC 203: Programming, problem solving, and algorithms",
     "section": "",
-    "text": "See sidebar for syllabus, logistics, and links to other course resources.\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nSep 7\n\n\n\n\n\n\n\n\n\n\n    02\nSep 14\n\n\n\n\n\n\n\n\n\n\n    03\nSep 21\n\n\n\n\n\n\n\n\n\n\n    04\nSep 28\n\n\n\n\n\n\n\n\n\n\n    05\nOct 5\n\n\n\n\n\n\n\n\n\n\n    06\nOct 12\n\n\n\n\n\n\n\n\n\n\n    07\nOct 19\n\n\n\n\n\n\n\n\n\n\n    08\nOct 26\n\n\n\n\n\n\n\n\n\n\n    09\nNov 2\n\n\n\n\n\n\n\n\n\n\n    10\nNov 9\n\n\n\n\n\n\n\n\n\n\n    11\nNov 16\n\n\n\n\n\n\n\n\n\n\n    12\nNov 23\n\n\n\n\n\n\n\n\n\n\n    13\nNov 30\n\n\n\n\n\n\n\n\n\n\n    14\nDec 7",
+    "text": "BEWARE: Course website is still under construction. Links may be broken or may lead to material from previous terms.\nSee sidebar for syllabus, logistics, and links to other course resources.\n\n\n\n\n\n  \n    \n      Week\n      Mon\n      \n        Tue\n      \n      \n        Thu\n      \n      Lab\n      POTW\n      Project\n      Examlet\n    \n    \n      S\n      A\n      V\n      S\n      A\n      V\n    \n  \n  \n    01 \nSep 7\n\n\n\n\n\n\n\n\n\n\n    02\nSep 14\n\n\n\n\n\n\n\n\n\n\n    03\nSep 21\n\n\n\n\n\n\n\n\n\n\n    04\nSep 28\n\n\n\n\n\n\n\n\n\n\n    05\nOct 5\n\n\n\n\n\n\n\n\n\n\n    06\nOct 12\n\n\n\n\n\n\n\n\n\n\n    07\nOct 19\n\n\n\n\n\n\n\n\n\n\n    08\nOct 26\n\n\n\n\n\n\n\n\n\n\n    09\nNov 2\n\n\n\n\n\n\n\n\n\n\n    10\nNov 9\n\n\n\n\n\n\n\n\n\n\n    11\nNov 16\n\n\n\n\n\n\n\n\n\n\n    12\nNov 23\n\n\n\n\n\n\n\n\n\n\n    13\nNov 30\n\n\n\n\n\n\n\n\n\n\n    14\nDec 7",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4150,11 +4150,11 @@
     ]
   },
   {
-    "objectID": "logistics.html#irl",
-    "href": "logistics.html#irl",
+    "objectID": "logistics.html#in-real-life",
+    "href": "logistics.html#in-real-life",
     "title": "Logistics",
-    "section": "IRL",
-    "text": "IRL\n\nCourse lectures: Tuesday / Thursday 15:30 - 17:00 in ESB 1012.\n\nLectures should be recorded and links will be posted to the course website when they become available. Unfortunately, we make no guarantees about the quality of the recording.\n\nLabs: All students should be registered in a lab section.\n\nStudents attending labs will work in groups to complete PrairieLearn assessments.\nThe material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can do the things we talk about in lecture.\nThere are roughly 10 assessed labs during the term, and they begin in week 2. See the course website for the schedule.\nSome weeks do not have a scheduled lab assessment. Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.",
+    "section": "In Real Life",
+    "text": "In Real Life\n\nCourse lectures: Tuesday / Thursday 15:30 - 17:00 in ESB 1012.\n\nLectures should be recorded and links will be posted to the course website when they become available. Unfortunately, we make no guarantees about the quality of the recording.\n\nLabs: All students should be registered in a lab section.\n\nStudents attending labs will work in groups to complete PrairieLearn assessments.\nThe material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can do the things we talk about in lecture.\nThere are roughly 10 assessed labs during the term, and they begin in week 2. See the course website for the schedule.\nSome weeks do not have a scheduled lab assessment. Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.",
     "crumbs": [
       "Course information",
       "Logistics"
@@ -4205,11 +4205,11 @@
     ]
   },
   {
-    "objectID": "logistics.html#course-disruption-contigency-plan",
-    "href": "logistics.html#course-disruption-contigency-plan",
+    "objectID": "logistics.html#course-disruptions",
+    "href": "logistics.html#course-disruptions",
     "title": "Logistics",
-    "section": "Course Disruption Contigency Plan",
-    "text": "Course Disruption Contigency Plan\nIn-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on UBC’s campus notifications. Please check there often during times when an extreme weather event could disrupt our course activities.\nIn the event of a disruption to in-person activities, please monitor Piazza for futher instructions. Unless otherwise announced, PrairieLearn due dates remain unchanged. Remember to submit your assessments on time.",
+    "section": "Course Disruptions",
+    "text": "Course Disruptions\nIn-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on UBC’s campus notifications. Please check there often during times when an extreme weather event could disrupt our course activities.\nIn the event of a disruption to in-person activities, please monitor Piazza for futher instructions. Unless otherwise announced, PrairieLearn due dates remain unchanged. Remember to submit your assessments on time.",
     "crumbs": [
       "Course information",
       "Logistics"
