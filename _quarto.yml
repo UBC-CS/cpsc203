@@ -43,14 +43,16 @@ website:
         contents:
           - href: syllabus.qmd
             text: "Syllabus"
+          - href: logistics.qmd
+            text: "Logistics"
           - href: index.qmd
             text: "Schedule"
       - section: "Resources"
         contents:
-          - href: setup.qmd
-            text: "Setup"
-          - href: "TODO-2026W1-CANVAS-URL"
-            text: "Canvas"
+#          - href: setup.qmd
+#            text: "Setup"
+#          - href: "TODO-2026W1-CANVAS-URL"
+#            text: "Canvas"
           - href: "TODO-2026W1-PIAZZA-URL"
             text: "Piazza"
           - href: "TODO-2026W1-PRAIRIELEARN-URL"

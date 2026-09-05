@@ -4,23 +4,7 @@ execute:
   freeze: false
 ---
 
-**Instructor:** {{< var instructor.name >}} ({{< var instructor.pronouns >}})\
-
-::::: columns
-::: {.column width="40%"}
-**Contact**\
-📧 [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})\
-⏰ TBA\
-🏢 {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
-:::
-
-::: {.column width="60%"}
-**Lectures**\
-\
-{{< var course.time >}}\
-{{< var course.location >}}\
-:::
-:::::
+See sidebar for syllabus, logistics, and links to other course resources.
 
 ```{r}
 #| label: setup

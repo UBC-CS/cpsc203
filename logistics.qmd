@@ -1,0 +1,74 @@
+---
+title: "Logistics"
+---
+
+## Teaching Team
+
+* Instructor: **{{< var instructor.name >}}** ({{< var instructor.pronouns >}})
+  * Email: [{{< var instructor.email >}}](mailto:{{< var instructor.email >}}).
+  * Office: {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
+  * Office hours: TBA
+
+* TA: **TBA**
+  * Email: [](mailto:)  
+  * Office:
+  * Office Hours: 
+
+## Communication
+
+* Outside of lectures, most course communication will occur through [Piazza]({{< var course.piazza >}}).
+  * Class announcements (such as deadline updates or cancelled activities) will be posted here.
+  * If you have a question that does not involve personal or confidential matters, ask it here.
+  * Because Piazza is monitored by the whole teaching team as well as your fellow students, you are more likely to get a quick answer to your question through Piazza than through email. 
+* [Email the instructor](mailto:{{< var instructor.email >}}) for personal or confidential matters.
+  * Note that email may not be monitored in the evenings, overnight or on weekends.
+
+## IRL
+
+* Course lectures: {{< var course.time >}} in {{< var course.location >}}.
+  * Lectures should be recorded and links will be posted to the [course website]({{< var course.website >}}) when they become available.  Unfortunately, we make no guarantees about the quality of the recording.
+* Labs: All students should be registered in a lab section.
+  * Students attending labs will work in groups to complete PrairieLearn assessments.
+  * The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can **do** the things we talk about in lecture.
+  * There are roughly 10 assessed labs during the term, and they begin in week 2.  See the [course website]({{< var course.website >}}) for the schedule.
+  * Some weeks do not have a scheduled lab assessment.  Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.
+
+## Online
+
+* [Course website]({{< var course.website >}}): Course schedule.  Here you can find
+  * Lecture slides and summaries.
+  * Lecture video recordings.  Typically available within 12 hours of the end of lecture.
+  * Direct links to PrairieLearn for lecture activities, labs, POTWs, projects and practice examlets.
+* [Piazza]({{< var course.piazza >}}): Discussion forums.  Use this if you want to communicate with your fellow students or the teaching team.  Course announcements will also be sent through Piazza.
+* [PrairieLearn]({{< var course.prairielearn >}}): Lecture activities and all course assessments are performed here.  You can find your assessment scores, as well as review most past assessments.
+* [PrairieTest]({{< var course.prairietest >}}): Use this system to self-schedule the five examlets and the final exam assessments.  The assessments themselves are performed in ORCA (Open Resource Centre for Assessments).  See the [ORCA website](https://orca.ubc.ca/students/) for more information.
+* [Canvas]({{< var course.lms >}}): Although there is a Canvas course page, we will not be using it.  *Do not send messages through Canvas to the teaching team; such messages will not be answered.* Use Piazza instead.
+
+## Accessibility
+
+If you have a disability or ongoing medical condition that may require accommodations, please contact the [UBC Centre for Accessibility](https://students.ubc.ca/about-student-services/centre-for-accessibility/) to determine your eligibility and receive an accommodation letter.
+
+Most exam related accommodations can be [managed at ORCA](https://orca.ubc.ca/students/cfa-accommodations/).  Students with such accommodations should self-schedule assessments through [PrairieTest]({{< var course.prairietest >}}); **do not** book assessments with the CfA.  If you have an exam accommodation which cannot be handled through ORCA please contact the instructor directly at least a week in advance of any assessment.
+
+If you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to contact the instructor directly.
+
+## Illness
+
+Do not attend lectures, labs or ORCA if you have an illness that could be transmitted to your classmates, such as a respiratory infection (for example, a cold).  The course is structured so that you can prioritize your health and still succeed.
+  * Lectures are recorded.
+  * Lab assessments, POTWs and projects are submitted online through [PrairieLearn]({{< var course.prairielearn >}}).
+  * See the [ORCA procedure for missed exams](https://orca.ubc.ca/students/missed-exams/) if you miss your scheduled examlet or final exam session.
+
+If you miss more than a week of class, please contact the instructor as soon as possible to discussion options.  In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to [UBC’s policy on Academic Concession](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession) for details.
+
+You can also review [UBC's framework for preventing communicable disease](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession).
+
+## Wellness
+
+Being a student can be exciting and stimulating, but it can also be stressful and exhausting.  Try to lead a balanced lifestyle, with time spent not just on studying but also exercising, socializing and eating well.  There are many supports to help you stay healthy and maintain your wellbeing; for example, see the resources linked from UBC's [student services](https://students.ubc.ca/health/) and the Faculty of Science's [mental health and wellbeing](https://science.ubc.ca/students/wellbeing) webpages.
+
+## Course Disruption Contigency Plan
+
+In-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on [UBC's campus notifications](https://www.ubc.ca/campus-notifications/). Please check there often during times when an extreme weather event could disrupt our course activities.
+
+In the event of a disruption to in-person activities, please monitor [Piazza]({{< var course.piazza >}}) for futher instructions.  Unless otherwise announced, PrairieLearn due dates remain unchanged.  Remember to submit your assessments on time.
