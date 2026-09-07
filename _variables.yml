@@ -10,14 +10,15 @@ course:
   website: "https://ubc-cs.github.io/cpsc203"
   repo: "https://github.com/UBC-CS/cpsc203"
   lms: "https://canvas.ubc.ca/courses/193007"
-  piazza: "TODO-2026W1-PIAZZA-URL"
-  prairielearn: "TODO-2026W1-PRAIRIELEARN-URL"
+  piazza: "https://piazza.com/ubc.ca/winterterm12026/cpsc203"
+  prairielearn: "https://us.prairielearn.com/pl/course_instance/202804"
   prairietest: "https://us.prairietest.com/"
 instructor:
   name: "Ian Mitchell"
   pronouns: "he / him"
   email: "ian.mitchell@ubc.ca"
   office: "ICCS 223"
+  zoom: "https://ubc.zoom.us/j/65969452211?pwd=qDvbPeHVM5zecipqWK58ck618HnmqO.1"
 # software:
 #   bash: "5.3.3(1)"
 #   bash-year: "2025"
