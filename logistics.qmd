@@ -9,10 +9,17 @@ title: "Logistics"
   * Office: {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a>
   * Office hours: TBA
 
-* TA: **TBA**
-  * Email: [](mailto:)  
-  * Office:
-  * Office Hours: 
+* TA: **Markus Chu**
+  <!-- * Email: [markus18@student.ubc.ca](mailto:markus18@student.ubc.ca) -->
+  * Office Hours: TBA
+
+* TA: **Jayden Lieu**
+  <!-- * Email: [jlieu02@student.ubc.ca](mailto:jlieu02@student.ubc.ca) -->
+  * Office Hours: TBA
+
+* TA: **Timothy Solnyshkin**
+  <!-- * Email: [tsolnysh@students.cs.ubc.ca](mailto:tsolnysh@students.cs.ubc.ca) -->
+  * Office Hours: TBA
 
 ## Communication
 
@@ -22,6 +29,7 @@ title: "Logistics"
   * Because Piazza is monitored by the whole teaching team as well as your fellow students, you are more likely to get a quick answer to your question through Piazza than through email. 
 * [Email the instructor](mailto:{{< var instructor.email >}}) for personal or confidential matters.
   * Note that email may not be monitored in the evenings, overnight or on weekends.
+  * You should not need to email the TAs directly.  Use Piazza.
 
 ## In Real Life
 
