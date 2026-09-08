@@ -67,7 +67,7 @@ Do not attend lectures, labs or ORCA if you have an illness that could be transm
   * Lab assessments, POTWs and projects are submitted online through [PrairieLearn]({{< var course.prairielearn >}}).
   * See the [ORCA procedure for missed exams](https://orca.ubc.ca/students/missed-exams/) if you miss your scheduled examlet or final exam session.
 
-If you miss more than a week of class, please contact the instructor as soon as possible to discussion options.  In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to [UBC’s policy on Academic Concession](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession) for details.
+If you miss more than a week of class, please contact the instructor as soon as possible to discuss options.  In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to [UBC’s policy on Academic Concession](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession) for details.
 
 You can also review [UBC's framework for preventing communicable disease](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession).
 
@@ -79,4 +79,4 @@ Being a student can be exciting and stimulating, but it can also be stressful an
 
 In-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on [UBC's campus notifications](https://www.ubc.ca/campus-notifications/). Please check there often during times when an extreme weather event could disrupt our course activities.
 
-In the event of a disruption to in-person activities, please monitor [Piazza]({{< var course.piazza >}}) for futher instructions.  Unless otherwise announced, PrairieLearn due dates remain unchanged.  Remember to submit your assessments on time.
+In the event of a disruption to in-person activities, please monitor [Piazza]({{< var course.piazza >}}) for further instructions.  Unless otherwise announced, PrairieLearn due dates remain unchanged.  Remember to submit your assessments on time.

@@ -101,7 +101,7 @@ Additional resources for learning with integrity can be found on the [UBC Academ
 
 ## Use of Artificial Intelligence Tools
 
-The term "Generative Artificial Intelligence" (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.
+The term "Generative Artificial Intelligence" (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.
 
 The use of GenAI in CPSC 203 is permitted in some contexts and forbidden in others:
 
