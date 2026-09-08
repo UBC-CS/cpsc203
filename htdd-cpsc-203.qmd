@@ -1,0 +1,245 @@
+---
+title: "CPSC 203 HtDP Reference"
+format: html
+---
+
+<!-- Adapted from CPSC 103 exam reference sheet.  Initial conversion by MS CoPilot.  -->
+
+## How to Design Functions Recipe
+
+1. Write the stub, including the signature, purpose, and typecheck annotation.
+2. Write examples.
+3. Write or copy the template.
+4. Code the function body.
+5. Test and debug until correct.
+
+## How to Design Data Recipe
+
+Identify the inherent structure of the information.
+
+1. Write a **data type definition** with type comments where Python's types are not specific enough.
+2. Write an **interpretation** comment that describes the correspondence between information and data.
+3. Write one or more **examples** of the data.
+4. Write a **template** for a one-argument function operating on data of this type.
+
+## Data Definition Selection Guide
+
+| When the form of the information to be represented... | Use this data definition... |
+|---|---|
+| cannot be separated into meaningful pieces (is "atomic") | Simple Atomic Data |
+| is numbers within a certain range | Interval |
+| consists of a fixed number of distinct items | Enumeration |
+| is information in one of the other forms except for one special case | Optional |
+| consists of two or more types of information that naturally belong together | Compound |
+| is of arbitrary (unknown) size | Arbitrary-Sized |
+
+## Data Types
+
+### Simple Atomic Data
+
+**Definition:**
+
+```python
+XXX = type
+```
+
+**Template:**
+
+```python
+return ...(x)
+```
+
+### Interval
+
+**Definition:**
+
+```python
+XXX = int  # in range ...
+```
+
+**Template:**
+
+```python
+return ...(x)
+```
+
+### Enumeration
+
+**Definition:**
+
+```python
+from enum import Enum
+
+XXX = Enum('XXX', ['A', 'B'])
+```
+
+**Template:**
+
+```python
+if x == XXX.A:
+    return ...
+elif x == XXX.B:
+    return ...
+```
+
+### Optional
+
+**Definition:**
+
+```python
+from typing import Optional
+
+XXX = Optional[type]
+```
+
+**Template:**
+
+```python
+if x is None:
+    return ...
+else:
+    return ...(x)
+```
+
+### Compound
+
+**Definition:**
+
+```python
+from typing import NamedTuple
+
+XXX = NamedTuple('XXX', [('a', type), ('b', type)])
+```
+
+**Template:**
+
+```python
+return ...(x.a, x.b)
+```
+
+### Arbitrary-Sized
+
+**Definition:**
+
+```python
+from typing import List
+
+XXX = List[type]
+```
+
+**Template:**
+
+```python
+# description of the accumulator
+acc = ...  # type: ...
+for x in lox:
+    acc = ...(x, acc)
+return ...(acc)
+```
+
+<!-- Commenting out the rest of the material because it is targeted at the final project in CPSC 103 and depends rather heavily on the `cs103` module. -->
+<!--
+## Parsing Function Signatures
+
+```python
+parse_int(s: str) -> Optional[int]
+# convert string to int; None for non-integer str
+
+parse_float(s: str) -> Optional[float]
+# convert string to float; None for non-float str
+```
+
+Example:
+
+```python
+parse_int("5")  # evaluates to 5
+```
+
+## Visualization Function Signatures
+
+```python
+pyplot.plot(x_data: List[float], y_data: List[float])
+pyplot.xlabel(label: str)
+pyplot.ylabel(label: str)
+pyplot.title(title: str)
+```
+
+Example:
+
+```python
+pyplot.title("My Favorite Plot")
+```
+
+## How to Design Analysis Programs Recipe
+
+### Planning
+
+1. Identify the information in the file your program will read.
+2. Write a description of what your program will produce.
+3. Write or draw examples of what your program will produce.
+
+### Building the Program
+
+1. Design data definitions.
+2. Design a function to read the information and store it as data.
+3. Design functions to analyze the data.
+
+## Analysis Program Template
+
+```python
+from cs103 import *
+from typing import NamedTuple, List
+import csv
+
+##################
+# Data Definitions
+
+Consumed = ...
+# List[Consumed]
+# interp. a list of Consumed
+
+LOC0 = []
+
+@typecheck
+def fn_for_loc(loc: List[Consumed]) -> ...:
+    ...
+
+##################
+# Functions
+
+@typecheck
+def main(filename: str) -> ...:
+    """
+    Reads the file from given filename, analyzes the data,
+    returns the result
+    """
+    return analyze(read(filename))
+
+@typecheck
+def read(filename: str) -> List[Consumed]:
+    """
+    reads information from the specified file and returns ...
+    """
+    loc = []  # type: List[Consumed]
+
+    with open(filename) as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+
+        for row in reader:
+            c = Consumed(row[0], ..., row[n])
+            loc.append(c)
+
+    return loc
+
+@typecheck
+def analyze(loc: List[Consumed]) -> Produced:
+    return ...
+
+start_testing()
+expect(..., ...)
+expect(..., ...)
+expect(..., ...)
+summary()
+```
+-->
