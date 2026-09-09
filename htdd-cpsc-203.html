@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Logistics – CPSC 203: Programming, problem solving, and algorithms</title>
+<title>CPSC 203 HtDP Reference – CPSC 203: Programming, problem solving, and algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,10 +115,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content="Logistics – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:title" content="CPSC 203 HtDP Reference – CPSC 203: Programming, problem solving, and algorithms">
 <meta property="og:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
-<meta name="twitter:title" content="Logistics – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:title" content="CPSC 203 HtDP Reference – CPSC 203: Programming, problem solving, and algorithms">
 <meta name="twitter:description" content="Course website for CPSC 203 of the Department of Computer Science at the University of British Columbia">
 <meta name="twitter:card" content="summary">
 </head>
@@ -269,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Logistics</h1>
+          <h1 class="quarto-secondary-nav-title">CPSC 203 HtDP Reference</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -313,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./logistics.html" class="sidebar-item-text sidebar-link active">
+  <a href="./logistics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Logistics</span></a>
   </div>
 </li>
@@ -376,16 +411,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#teaching-team" id="toc-teaching-team" class="nav-link active" data-scroll-target="#teaching-team">Teaching Team</a></li>
-  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
-  <li><a href="#in-real-life" id="toc-in-real-life" class="nav-link" data-scroll-target="#in-real-life">In Real Life</a></li>
-  <li><a href="#online" id="toc-online" class="nav-link" data-scroll-target="#online">Online</a></li>
-  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
-  <li><a href="#illness" id="toc-illness" class="nav-link" data-scroll-target="#illness">Illness</a></li>
-  <li><a href="#wellness" id="toc-wellness" class="nav-link" data-scroll-target="#wellness">Wellness</a></li>
-  <li><a href="#course-disruptions" id="toc-course-disruptions" class="nav-link" data-scroll-target="#course-disruptions">Course Disruptions</a></li>
+  <li><a href="#how-to-design-functions-recipe" id="toc-how-to-design-functions-recipe" class="nav-link active" data-scroll-target="#how-to-design-functions-recipe">How to Design Functions Recipe</a></li>
+  <li><a href="#how-to-design-data-recipe" id="toc-how-to-design-data-recipe" class="nav-link" data-scroll-target="#how-to-design-data-recipe">How to Design Data Recipe</a></li>
+  <li><a href="#data-definition-selection-guide" id="toc-data-definition-selection-guide" class="nav-link" data-scroll-target="#data-definition-selection-guide">Data Definition Selection Guide</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a>
+  <ul class="collapse">
+  <li><a href="#simple-atomic-data" id="toc-simple-atomic-data" class="nav-link" data-scroll-target="#simple-atomic-data">Simple Atomic Data</a></li>
+  <li><a href="#interval" id="toc-interval" class="nav-link" data-scroll-target="#interval">Interval</a></li>
+  <li><a href="#enumeration" id="toc-enumeration" class="nav-link" data-scroll-target="#enumeration">Enumeration</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  <li><a href="#compound" id="toc-compound" class="nav-link" data-scroll-target="#compound">Compound</a></li>
+  <li><a href="#arbitrary-sized" id="toc-arbitrary-sized" class="nav-link" data-scroll-target="#arbitrary-sized">Arbitrary-Sized</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/logistics.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/logistics.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/htdd-cpsc-203.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/htdd-cpsc-203.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -393,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Logistics</h1>
+<h1 class="title d-none d-lg-block">CPSC 203 HtDP Reference</h1>
 </div>
 
 
@@ -410,98 +449,238 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="teaching-team" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-team">Teaching Team</h2>
-<ul>
-<li>Instructor: <strong>Ian Mitchell</strong> (he / him)
-<ul>
-<li>Email: <a href="mailto:ian.mitchell@ubc.ca">ian.mitchell@ubc.ca</a>.</li>
-<li>Office: ICCS 223 or <a href="https://ubc.zoom.us/j/65969452211?pwd=qDvbPeHVM5zecipqWK58ck618HnmqO.1"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a></li>
-<li>Office hours: TBA</li>
-</ul></li>
-<li>TA: <strong>Markus Chu</strong> <!-- * Email: [markus18@student.ubc.ca](mailto:markus18@student.ubc.ca) -->
-<ul>
-<li>Office Hours: TBA</li>
-</ul></li>
-<li>TA: <strong>Jayden Lieu</strong> <!-- * Email: [jlieu02@student.ubc.ca](mailto:jlieu02@student.ubc.ca) -->
-<ul>
-<li>Office Hours: TBA</li>
-</ul></li>
-<li>TA: <strong>Timothy Solnyshkin</strong> <!-- * Email: [tsolnysh@students.cs.ubc.ca](mailto:tsolnysh@students.cs.ubc.ca) -->
-<ul>
-<li>Office Hours: TBA</li>
-</ul></li>
-</ul>
+<!-- Adapted from CPSC 103 exam reference sheet.  Initial conversion by MS CoPilot.  -->
+<section id="how-to-design-functions-recipe" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-design-functions-recipe">How to Design Functions Recipe</h2>
+<ol type="1">
+<li>Write the stub, including the signature, purpose, and typecheck annotation.</li>
+<li>Write examples.</li>
+<li>Write or copy the template.</li>
+<li>Code the function body.</li>
+<li>Test and debug until correct.</li>
+</ol>
 </section>
-<section id="communication" class="level2">
-<h2 class="anchored" data-anchor-id="communication">Communication</h2>
-<ul>
-<li>Outside of lectures, most course communication will occur through <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">Piazza</a>.
-<ul>
-<li>Class announcements (such as deadline updates or cancelled activities) will be posted here.</li>
-<li>If you have a question that does not involve personal or confidential matters, ask it here.</li>
-<li>Because Piazza is monitored by the whole teaching team as well as your fellow students, you are more likely to get a quick answer to your question through Piazza than through email.</li>
-</ul></li>
-<li><a href="mailto:ian.mitchell@ubc.ca">Email the instructor</a> for personal or confidential matters.
-<ul>
-<li>Note that email may not be monitored in the evenings, overnight or on weekends.</li>
-<li>You should not need to email the TAs directly. Use Piazza.</li>
-</ul></li>
-</ul>
+<section id="how-to-design-data-recipe" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-design-data-recipe">How to Design Data Recipe</h2>
+<p>Identify the inherent structure of the information.</p>
+<ol type="1">
+<li>Write a <strong>data type definition</strong> with type comments where Python’s types are not specific enough.</li>
+<li>Write an <strong>interpretation</strong> comment that describes the correspondence between information and data.</li>
+<li>Write one or more <strong>examples</strong> of the data.</li>
+<li>Write a <strong>template</strong> for a one-argument function operating on data of this type.</li>
+</ol>
 </section>
-<section id="in-real-life" class="level2">
-<h2 class="anchored" data-anchor-id="in-real-life">In Real Life</h2>
-<ul>
-<li>Course lectures: Tuesday / Thursday 15:30 - 17:00 in <a href="https://learningspaces.ubc.ca/classrooms/esb-1012/">ESB 1012</a>.
-<ul>
-<li>Lectures should be recorded and links will be posted to the <a href="https://ubc-cs.github.io/cpsc203">course website</a> when they become available. Unfortunately, we make no guarantees about the quality of the recording.</li>
-</ul></li>
-<li>Labs: All students should be registered in a lab section.
-<ul>
-<li>Students attending labs will work in groups to complete PrairieLearn assessments.</li>
-<li>The material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can <strong>do</strong> the things we talk about in lecture.</li>
-<li>There are roughly 10 assessed labs during the term, and they begin in week 2. See the <a href="https://ubc-cs.github.io/cpsc203">course website</a> for the schedule.</li>
-<li>Some weeks do not have a scheduled lab assessment. Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.</li>
-</ul></li>
-</ul>
+<section id="data-definition-selection-guide" class="level2">
+<h2 class="anchored" data-anchor-id="data-definition-selection-guide">Data Definition Selection Guide</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>When the form of the information to be represented…</th>
+<th>Use this data definition…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cannot be separated into meaningful pieces (is “atomic”)</td>
+<td>Simple Atomic Data</td>
+</tr>
+<tr class="even">
+<td>is numbers within a certain range</td>
+<td>Interval</td>
+</tr>
+<tr class="odd">
+<td>consists of a fixed number of distinct items</td>
+<td>Enumeration</td>
+</tr>
+<tr class="even">
+<td>is information in one of the other forms except for one special case</td>
+<td>Optional</td>
+</tr>
+<tr class="odd">
+<td>consists of two or more types of information that naturally belong together</td>
+<td>Compound</td>
+</tr>
+<tr class="even">
+<td>is of arbitrary (unknown) size</td>
+<td>Arbitrary-Sized</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="online" class="level2">
-<h2 class="anchored" data-anchor-id="online">Online</h2>
-<ul>
-<li><a href="https://ubc-cs.github.io/cpsc203">Course website</a>: Course schedule. Here you can find
-<ul>
-<li>Lecture slides and summaries.</li>
-<li>Lecture video recordings. Typically available within 12 hours of the end of lecture.</li>
-<li>Direct links to PrairieLearn for lecture activities, labs, POTWs, projects and practice examlets.</li>
-</ul></li>
-<li><a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">Piazza</a>: Discussion forums. Use this if you want to communicate with your fellow students or the teaching team. Course announcements will also be sent through Piazza.</li>
-<li><a href="https://us.prairielearn.com/pl/course_instance/202804">PrairieLearn</a>: Lecture activities and all course assessments are performed here. You can find your assessment scores, as well as review most past assessments.</li>
-<li><a href="https://us.prairietest.com/">PrairieTest</a>: Use this system to self-schedule the five examlets and the final exam assessments. The assessments themselves are performed in ORCA (Open Resource Centre for Assessments). See the <a href="https://orca.ubc.ca/students/">ORCA website</a> for more information.</li>
-<li><a href="https://canvas.ubc.ca/courses/193007">Canvas</a>: Although there is a Canvas course page, we will not be using it. <em>Do not send messages through Canvas to the teaching team; such messages will not be answered.</em> Use Piazza instead.</li>
-</ul>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data Types</h2>
+<section id="simple-atomic-data" class="level3">
+<h3 class="anchored" data-anchor-id="simple-atomic-data">Simple Atomic Data</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">type</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="accessibility" class="level2">
-<h2 class="anchored" data-anchor-id="accessibility">Accessibility</h2>
-<p>If you have a disability or ongoing medical condition that may require accommodations, please contact the <a href="https://students.ubc.ca/about-student-services/centre-for-accessibility/">UBC Centre for Accessibility</a> to determine your eligibility and receive an accommodation letter.</p>
-<p>Most exam related accommodations can be <a href="https://orca.ubc.ca/students/cfa-accommodations/">managed at ORCA</a>. Students with such accommodations should self-schedule assessments through <a href="https://us.prairietest.com/">PrairieTest</a>; <strong>do not</strong> book assessments with the CfA. If you have an exam accommodation which cannot be handled through ORCA please contact the instructor directly at least a week in advance of any assessment.</p>
-<p>If you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to contact the instructor directly.</p>
+<section id="interval" class="level3">
+<h3 class="anchored" data-anchor-id="interval">Interval</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">int</span>  <span class="co"># in range ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="illness" class="level2">
-<h2 class="anchored" data-anchor-id="illness">Illness</h2>
-<p>Do not attend lectures, labs or ORCA if you have an illness that could be transmitted to your classmates, such as a respiratory infection (for example, a cold). The course is structured so that you can prioritize your health and still succeed. * Lectures are recorded. * Lab assessments, POTWs and projects are submitted online through <a href="https://us.prairielearn.com/pl/course_instance/202804">PrairieLearn</a>. * See the <a href="https://orca.ubc.ca/students/missed-exams/">ORCA procedure for missed exams</a> if you miss your scheduled examlet or final exam session.</p>
-<p>If you miss more than a week of class, please contact the instructor as soon as possible to discuss options. In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to <a href="https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession">UBC’s policy on Academic Concession</a> for details.</p>
-<p>You can also review <a href="https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations/academic-concession">UBC’s framework for preventing communicable disease</a>.</p>
+<section id="enumeration" class="level3">
+<h3 class="anchored" data-anchor-id="enumeration">Enumeration</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> enum <span class="im">import</span> Enum</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> Enum(<span class="st">'XXX'</span>, [<span class="st">'A'</span>, <span class="st">'B'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> XXX.A:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ...</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">==</span> XXX.B:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="wellness" class="level2">
-<h2 class="anchored" data-anchor-id="wellness">Wellness</h2>
-<p>Being a student can be exciting and stimulating, but it can also be stressful and exhausting. Try to lead a balanced lifestyle, with time spent not just on studying but also exercising, socializing and eating well. There are many supports to help you stay healthy and maintain your wellbeing; for example, see the resources linked from UBC’s <a href="https://students.ubc.ca/health/">student services</a> and the Faculty of Science’s <a href="https://science.ubc.ca/students/wellbeing">mental health and wellbeing</a> webpages.</p>
+<section id="optional" class="level3">
+<h3 class="anchored" data-anchor-id="optional">Optional</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> Optional</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> Optional[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ...</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ...(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="course-disruptions" class="level2">
-<h2 class="anchored" data-anchor-id="course-disruptions">Course Disruptions</h2>
-<p>In-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on <a href="https://www.ubc.ca/campus-notifications/">UBC’s campus notifications</a>. Please check there often during times when an extreme weather event could disrupt our course activities.</p>
-<p>In the event of a disruption to in-person activities, please monitor <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">Piazza</a> for further instructions. Unless otherwise announced, PrairieLearn due dates remain unchanged. Remember to submit your assessments on time.</p>
+<section id="compound" class="level3">
+<h3 class="anchored" data-anchor-id="compound">Compound</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> NamedTuple</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> NamedTuple(<span class="st">'XXX'</span>, [(<span class="st">'a'</span>, <span class="bu">type</span>), (<span class="st">'b'</span>, <span class="bu">type</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x.a, x.b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="arbitrary-sized" class="level3">
+<h3 class="anchored" data-anchor-id="arbitrary-sized">Arbitrary-Sized</h3>
+<p><strong>Definition:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> List</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> List[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># description of the accumulator</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>acc <span class="op">=</span> ...  <span class="co"># type: ...</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> lox:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> ...(x, acc)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(acc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- Commenting out the rest of the material because it is targeted at the final project in CPSC 103 and depends rather heavily on the `cs103` module. -->
+<!--
+## Parsing Function Signatures
+
+```python
+parse_int(s: str) -> Optional[int]
+# convert string to int; None for non-integer str
+
+parse_float(s: str) -> Optional[float]
+# convert string to float; None for non-float str
+```
+
+Example:
+
+```python
+parse_int("5")  # evaluates to 5
+```
+
+## Visualization Function Signatures
+
+```python
+pyplot.plot(x_data: List[float], y_data: List[float])
+pyplot.xlabel(label: str)
+pyplot.ylabel(label: str)
+pyplot.title(title: str)
+```
+
+Example:
+
+```python
+pyplot.title("My Favorite Plot")
+```
+
+## How to Design Analysis Programs Recipe
+
+### Planning
+
+1. Identify the information in the file your program will read.
+2. Write a description of what your program will produce.
+3. Write or draw examples of what your program will produce.
+
+### Building the Program
+
+1. Design data definitions.
+2. Design a function to read the information and store it as data.
+3. Design functions to analyze the data.
+
+## Analysis Program Template
+
+```python
+from cs103 import *
+from typing import NamedTuple, List
+import csv
+
+##################
+# Data Definitions
+
+Consumed = ...
+# List[Consumed]
+# interp. a list of Consumed
+
+LOC0 = []
+
+@typecheck
+def fn_for_loc(loc: List[Consumed]) -> ...:
+    ...
+
+##################
+# Functions
+
+@typecheck
+def main(filename: str) -> ...:
+    """
+    Reads the file from given filename, analyzes the data,
+    returns the result
+    """
+    return analyze(read(filename))
+
+@typecheck
+def read(filename: str) -> List[Consumed]:
+    """
+    reads information from the specified file and returns ...
+    """
+    loc = []  # type: List[Consumed]
+
+    with open(filename) as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+
+        for row in reader:
+            c = Consumed(row[0], ..., row[n])
+            loc.append(c)
+
+    return loc
+
+@typecheck
+def analyze(loc: List[Consumed]) -> Produced:
+    return ...
+
+start_testing()
+expect(..., ...)
+expect(..., ...)
+expect(..., ...)
+summary()
+```
+-->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -926,7 +1105,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/logistics.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/logistics.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/htdd-cpsc-203.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/htdd-cpsc-203.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
