@@ -58,15 +58,21 @@ Your final grade in the course is generated from the following assessments:
 
 | Item                 | Weight          | Due date(s)       |
 |----------------------|-----------------|-------------------|
-| Problems of the Week (POTWs) | 10% (10 x 1%)   | Sundays at 11:59 PM   |
-| Labs                 | 5% (10 x 0.5%)  | Sundays at 11:59 PM   |
-| Programming Projects | 9% (3 x 3%)     | Three in the term |
-| Examlets             | 50% (5 x 10%)   | \~ Bi-weekly      |
-| Final Exam           | 26%             | TBD               |
+| Problems of the Week (POTWs) | 10% (10 x 1%)   | Sundays at 8:00 PM   |
+| Labs                 | 5% (10 x 0.5%)  | Sundays at 8:00 PM   |
+| Programming Projects | 9% (3 x 3%)     | Three weeks long, Mondays at 8:00 PM |
+| Examlets             | 50% (5 x 10%)   | Roughly biweekly, self-scheduled Thursday through Monday      |
+| Final Exam           | 26%             | Self-scheduled during five day window TBA               |
 
-You must pass the final exam (50%) to pass the course. 
+Students must satisfy **all** of the following conditions to pass the course:
 
-Students who have not submitted at least 50% of the required assessments prior to the final exam may be refused permission to write the final exam.
+* Achieve a grade of at least 50% on the lab component.
+* Achieve a grade of at least 50% on the examlet and final exam components together.
+* Achieve a grade of at least 40% on the final exam.
+
+If a student does not satisfy all conditions, they will be assigned the **lower** of 45% or their earned final grade as their course grade.
+
+Students who have not submitted at least half of the lab, POTWs and examlet assessments prior to the final exam may be refused permission to write the final exam.
 
 
 ## Academic Integrity
