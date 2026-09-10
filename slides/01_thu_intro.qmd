@@ -1,0 +1,297 @@
+---
+date: 2026-09-10
+---
+
+## Warning
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+- This course uses slides.
+  - It is familiar and easy way to learn, but often leads to poor understanding and retention.
+:::
+
+::: {.column width="20%"}
+
+![](/images/doggy-snooze.png){width=5cm}
+
+:::
+
+::::
+
+- Learning is a contact sport!
+  - You will be surprised, confused, angry, and sad on the path to enlightenment
+
+::: {.center}
+
+![](/images/doggy-surprised.png){width=5cm}
+![](/images/doggy-confused.png){width=5cm}
+![](/images/doggy-angry.png){width=5cm}
+![](/images/doggy-crying.png){width=5cm}
+![](/images/doggy-enlighted.png){width=5cm}
+
+:::
+
+
+## How Learning Works
+
+::: {.center}
+
+![](/images/how-learning-works.png){height="15cm"}
+
+:::
+
+# Introductions
+
+## Teaching Staff
+
+* Instructor: **{{< var instructor.name >}}** ({{< var instructor.pronouns >}})
+  * Email: [{{< var instructor.email >}}](mailto:{{< var instructor.email >}}).
+  * Office: {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:24px; vertical-align:middle;"></a>
+  * Office hours: TBA
+
+* TA: **Markus Chu**
+  <!-- * Email: [markus18@student.ubc.ca](mailto:markus18@student.ubc.ca) -->
+  * Office Hours: TBA
+
+* TA: **Jayden Lieu**
+  <!-- * Email: [jlieu02@student.ubc.ca](mailto:jlieu02@student.ubc.ca) -->
+  * Office Hours: TBA
+
+* TA: **Timothy Solnyshkin**
+  <!-- * Email: [tsolnysh@students.cs.ubc.ca](mailto:tsolnysh@students.cs.ubc.ca) -->
+  * Office Hours: TBA
+
+
+## You!
+
+* Turn to your neighbor and introduce yourself 👋  
+* Together, come up with **one binary question** that you think will divide the class **about in half**  
+
+* Examples:  
+  * Coke or Pepsi?  
+  * Spaghetti or Sushi?  
+  * Morning person or Night owl?  
+
+## Let's Play a Game
+
+**Rules:**
+
+* Everyone starts with their hand up
+* Each turn, a student poses a _valid_ yes/no question  
+  + **YES** = Put your hand down
+  + **NO** = Keep it up
+* **YES** people are now on vacation 🌴 (your hand stays down from now on — relax and enjoy!)  
+
+* A question is _valid_ if more than four and less than half the remaining people say "yes"
+
+**End of Game:**
+
+* We stop when **ten or fewer people** remain in play
+* Everyone else is happily **on vacation** 🌴  
+
+::: notes
+
+How to Count
+
+Start w 150 (say)
+pose question 1, 5 <= k1 <= 150/2 down -> 150-k1 remain. 
+pose 2, 5 <= k2 down <= (150-k1)/2 -> 150-k1-k2 remain. 
+pose question 3, 5 <= k3 <= (150-k1-k2)/2 -> 150-k1-k2-k3 remain. etc. 
+
+:::
+
+## Debrief 💡
+
+Punchline questions:  
+
+* What is the minimum number of questions?
+
+* What is the maximum number of questions?
+
+*  Why did we stop at 10 instead of 1?
+
+* Why did we do this game?
+
+
+::: notes
+
+- Best case: keep halving ⇒ about **log₂(150/10) ≈ 4 rounds**  
+- Worst case: only 5 eliminated each round ⇒ ~28 rounds  
+- Stopping at 10 = “small enough to brute force”  
+  → common strategy in algorithms  
+
+:::
+
+# The Course
+
+## Where to start?
+
+Course Website: [{{< var course.website >}}]({{< var course.website >}})
+
+PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
+
+Piazza: [{{< var course.piazza >}}]({{< var course.piazza >}})
+
+~~Not Canvas: [{{< var course.lms >}}]({{< var course.lms >}})~~
+
+
+## About This Course
+
+This course will teach you a bunch of different things!
+
+- (More) Python!
+- New data types and patterns: classes, dictionaries, tables, graphs
+- Data science: pandas, data frames, visualizations
+- Algorithms and complexity
+- Art and creativity: lots of examples!
+- Tools and Techniques(?): Terminal, marimo, PrairieLearn, unit tests, Markdown, Git, 
+
+
+## Schedule, Syllabus and Logistics
+
+[{{< var course.website >}}]({{< var course.website >}})
+
+::: notes
+
+* Show 2025W2 schedule to see how the table will fill out.
+* Show grading policy.
+
+:::
+
+## Course Components: Lecture and Take-Home
+
+All elements are accessed through [PrairieLearn]({{< var course.prairielearn >}}).
+
+- Lectures: Tuesdays and Thursdays, in-class activities based on problem solving and design.
+- Labs: Mondays / Tuesdays / Thursdays, practice on lecture material.
+  * Released on Sunday night, due the following Sunday night.
+- Problems of the week (POTW): One per (week)day, ~ 50 / term.
+  * Released in batches of five on Sunday night, due the following Sunday night.
+- Projects: Three total, involve more substantial programming practice.
+  * Released on Monday morning, due three weeks later.
+
+## Course Components 2: Invigilated {.smaller}
+
+- Examlets: Five, roughly every two weeks.
+  * Schedule your own 50 minute block.
+  * Available Thursday through Monday.
+- Final Exam:
+  * Schedule your own 110(?) minute block.
+  * Available during a five day window TBA.
+  * Practice version released a week before.
+* You will physically go to an [ORCA](https://orca.ubc.ca/students/) facility.
+* Scheduling is done through [PrairieTest]({{< var course.prairietest >}}).
+  * Opens Tuesday at 10:00am, two weeks before the assessment.
+* Practice versions released through [PrairieLearn]({{< var course.prairielearn >}}) a week before.
+
+
+## Semester overview {.smaller}
+
++-----------+-------------------+-------------------------------+------------------------------+-----------------------+----------------------------+
+| Handcraft | Billboard Hot 100 | The Overstory and Pointillism | Artificial Music Composition | Road Trip Planning    | Spiderman's Social Network |
++===========+===================+===============================+==============================+=======================+============================+
+| Design    | Web Scraping      | Voronoi Diagrams              | Markov Chains                | Traveling Salesperson | Natural Language           |
+|           |                   |                               |                              |                       |                            |
+| Objects   | Data Frames       | Efficiency                    | Random Numbers               | Intractable Problems  |                            |
+|           |                   |                               |                              |                       |                            |
+| Iteration | MatPlotLib        |                               | Graphs                       |                       |                            |
++-----------+-------------------+-------------------------------+------------------------------+-----------------------+----------------------------+
+
+This course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design.
+Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging.
+You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving.
+
+# How to Succeed in CPSC 203
+
+## On the use of computers in class
+
+Laptop use is encouraged in CPSC 203 lectures and labs 
+
+However, there is a restriction:
+
+- You may **only** use your laptop (or other screens, such as phones) for CPSC 203 material. 
+  * Using screens for other purposes has been shown to reduce your learning and **lower your grades**.
+  * Using screens for other purposes has also been shown to **reduce the grades of those around you**.
+- If you have something urgent to do, just leave the classroom!
+
+## How to Study
+
+- This is **learn by doing** material!
+  - Passively watching videos / live coding and reading our solutions will not be enough.
+  - You must solve the problems yourself and write out their solutions.
+- There are many opportunities for you to practice:
+  - In lecture, labs, POTWs, practice examlets, projects, ...
+
+## From a Former CPSC 110 Student (Applies to CPSC 203 too)
+
+> It's funny how repetition in actually doing the work leads to it all of a sudden making sense to me. I can't explain it. I don't have a sense of growing understanding. I have confusion, repetition, and suddenly a sense of understanding. It's not coming through watching or reading, though. It comes from replicating what I've watched several times. This has happened repeatedly for me in this class. I start the week with a sense of accomplishment, well being, peace of mind, and confidence from the victory over last week's homework. I am then submerged in doubt, confusion, and erm, terror. (Why not be melodramatic?) Suddenly there is a working epiphany and I have victory again.
+
+## Possible sources of negative emotions
+
+- Feeling confused about a topic.
+- Feeling of falling behind/not having enough time.
+- Some external event.
+- Something else.
+
+**We can usually find a solution!**
+
+- Talk to us!
+
+## Don't Be Afraid to Try (and Fail)!
+
+::: {.center}
+
+![](/images/how-much-you-learn.jpeg){height="15cm"}
+
+:::
+
+# Elegance
+
+::: notes
+
+* A concept that informs our approach to problems and analysis of our solutions.
+* A poser: What does it mean for something to be **elegant**?
+
+:::
+
+## Elegance Example?
+
+Scissors
+
+:::::: columns
+::: {.column width="33%"}
+![](/images/two-scissors.jpg){fig-alt="A set of scissors."}
+:::
+
+::: {.column width="33%"}
+![](/images/non-functional-scissors.jpg){fig-alt="A pair of scissors with a single merged handle instead of two making it impossible to open and close blades."}
+:::
+
+::: {.column width="33%"}
+![](/images/assorted-scissors.png){fig-alt="A variety of scissors in different colours."}
+:::
+::::::
+
+::: notes
+questions we leave with... can something be elegant if it's not functional? 
+:::
+
+# Summary
+
+## Conclusions
+
+Today we have begun to introduce some of the themes and ideas that we'll see all term long:
+
+1. Counting steps: What's the best that can happen? What's the worst? 
+
+2. Course schedule, syllabus and logistics.
+
+3. Elegance.
+
+## Get Yourself Registered
+
+PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
+
+Piazza: [{{< var course.piazza >}}]({{< var course.piazza >}})
