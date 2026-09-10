@@ -4,7 +4,7 @@ execute:
   freeze: false
 ---
 
-**BEWARE: Course website is still under construction.  Links may be broken or may lead to material from previous terms.**
+**New:** Please complete the [start of term survey](https://ubc.ca1.qualtrics.com/jfe/form/SV_6hX61fl8UHPT8mq).
 
 See sidebar for syllabus, logistics, and links to other course resources.
 
