@@ -8,6 +8,8 @@ execute:
 
 See sidebar for syllabus, logistics, and links to other course resources.
 
+Links and dates for future items may change.
+
 ```{r}
 #| label: setup
 #| echo: false

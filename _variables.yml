@@ -11,7 +11,7 @@ course:
   repo: "https://github.com/UBC-CS/cpsc203"
   lms: "https://canvas.ubc.ca/courses/193007"
   piazza: "https://piazza.com/ubc.ca/winterterm12026/cpsc203"
-  prairielearn: "https://us.prairielearn.com/pl/course_instance/202804"
+  prairielearn: "https://us.prairielearn.com/pl/course_instance/228149"
   prairietest: "https://us.prairietest.com/"
 instructor:
   name: "Ian Mitchell"
