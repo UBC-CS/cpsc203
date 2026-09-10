@@ -74,7 +74,7 @@ date: 2026-09-10
   * Spaghetti or Sushi?  
   * Morning person or Night owl?  
 
-## Let's Play a Game
+## Let's Play a Game {.smaller}
 
 **Rules:**
 
@@ -295,3 +295,9 @@ Today we have begun to introduce some of the themes and ideas that we'll see all
 PrairieLearn:  [{{< var course.prairielearn >}}]({{< var course.prairielearn >}})
 
 Piazza: [{{< var course.piazza >}}]({{< var course.piazza >}})
+
+::: notes
+
+* Tell the students to go to each of these sites and register.
+
+:::
