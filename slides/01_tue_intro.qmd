@@ -6,17 +6,23 @@ date: 2026-01-06
 
 ## Teaching Staff
 
-- **Prof: Cinda Heeren**
-  📧 [cheeren@cs.ubc.ca](mailto:cheeren@cs.ubc.ca)
-   ⏰ Mon 2–4pm · 🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:20px; vertical-align:middle;"></a>
+* Instructor: **{{< var instructor.name >}}** ({{< var instructor.pronouns >}})
+  * Email: [{{< var instructor.email >}}](mailto:{{< var instructor.email >}}).
+  * Office: {{< var instructor.office >}} or <a href="{{< var instructor.zoom >}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:24px; vertical-align:middle;"></a>
+  * Office hours: TBA
 
-- **TA: Minh Anh Nguyen**
-  📧 [](mailto:)
-  ⏰ TBD · 🏢 TBD
+* TA: **Markus Chu**
+  <!-- * Email: [markus18@student.ubc.ca](mailto:markus18@student.ubc.ca) -->
+  * Office Hours: TBA
 
-- **TA: Paulette Koronkevich**
-  📧 [](mailto:)
-  ⏰ TBD · 🏢 TBD
+* TA: **Jayden Lieu**
+  <!-- * Email: [jlieu02@student.ubc.ca](mailto:jlieu02@student.ubc.ca) -->
+  * Office Hours: TBA
+
+* TA: **Timothy Solnyshkin**
+  <!-- * Email: [tsolnysh@students.cs.ubc.ca](mailto:tsolnysh@students.cs.ubc.ca) -->
+  * Office Hours: TBA
+
 
 ## You! {.smaller}
 
