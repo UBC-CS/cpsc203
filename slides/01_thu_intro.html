@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
-<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="dcterms.date" content="2026-01-06">
+  <meta name="dcterms.date" content="2026-09-10">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -155,7 +153,36 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 6, 2026</p>
+  <p class="date">September 10, 2026</p>
+</section>
+<section id="warning" class="slide level2">
+<h2>Warning</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<ul>
+<li>This course uses slides.
+<ul>
+<li>It is familiar and easy way to learn, but often leads to poor understanding and retention.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:20%;">
+<p><img data-src="../images/doggy-snooze.png" style="width:5cm"></p>
+</div></div>
+<ul>
+<li>Learning is a contact sport!
+<ul>
+<li>You will be surprised, confused, angry, and sad on the path to enlightenment</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img data-src="../images/doggy-surprised.png" style="width:5cm"> <img data-src="../images/doggy-confused.png" style="width:5cm"> <img data-src="../images/doggy-angry.png" style="width:5cm"> <img data-src="../images/doggy-crying.png" style="width:5cm"> <img data-src="../images/doggy-enlighted.png" style="width:5cm"></p>
+</div>
+</section>
+<section id="how-learning-works" class="slide level2">
+<h2>How Learning Works</h2>
+<div class="center">
+<p><img data-src="../images/how-learning-works.png" style="height:15cm"></p>
+</div>
 </section>
 <section>
 <section id="introductions" class="title-slide slide level1 center">
@@ -185,55 +212,43 @@
 </ul></li>
 </ul>
 </section>
-<section id="you" class="slide level2 smaller">
+<section id="you" class="slide level2">
 <h2>You!</h2>
 <ul>
-<li>Turn to your neighbor and introduce yourself 👋<br>
-</li>
-<li>Together, come up with <strong>one binary question</strong><br>
-that you think will divide the class <strong>about in half</strong></li>
-</ul>
-<p>Examples:</p>
+<li><p>Turn to your neighbor and introduce yourself 👋<br>
+</p></li>
+<li><p>Together, come up with <strong>one binary question</strong> that you think will divide the class <strong>about in half</strong></p></li>
+<li><p>Examples:</p>
 <ul>
 <li>Coke or Pepsi?<br>
 </li>
 <li>Spaghetti or Sushi?<br>
 </li>
 <li>Morning person or Night owl?</li>
+</ul></li>
 </ul>
 </section>
-<section id="the-flashlight-game" class="slide level2 smaller">
-<h2>The Flashlight Game 🔦</h2>
+<section id="lets-play-a-game" class="slide level2">
+<h2>Let’s Play a Game</h2>
 <p><strong>Rules:</strong></p>
 <ul>
-<li>Everyone starts <strong>in play</strong><br>
-</li>
-<li>Each turn, a student poses a <em>valid</em> yes/no question
+<li><p>Everyone starts with their hand up</p></li>
+<li><p>Each turn, a student poses a <em>valid</em> yes/no question</p>
 <ul>
-<li><strong>YES</strong> = turn on your phone flashlight<br>
-</li>
-<li><strong>NO</strong> = keep it dark<br>
-</li>
+<li><strong>YES</strong> = Put your hand down</li>
+<li><strong>NO</strong> = Keep it up</li>
 </ul></li>
-<li><strong>YES</strong> people are now on vacation 🌴<br>
-(light stays off from now on — relax and enjoy!)</li>
+<li><p><strong>YES</strong> people are now on vacation 🌴 (your hand stays down from now on — relax and enjoy!)</p></li>
+<li><p>A question is <em>valid</em> if more than four and less than half the remaining people say “yes”</p></li>
 </ul>
-<p>A question is <em>valid</em> if it puts <strong>at least 5</strong> and <strong>no more than half of the current group</strong> on vacation.</p>
 <p><strong>End of Game:</strong></p>
 <ul>
-<li>We stop when <strong>10 or fewer people</strong> remain in play</li>
+<li>We stop when <strong>ten or fewer people</strong> remain in play</li>
 <li>Everyone else is happily <strong>on vacation</strong> 🌴</li>
 </ul>
 <aside class="notes">
 <p>How to Count</p>
-<ul>
-<li>I only need to count the lights (YES)<br>
-</li>
-<li>The rest (dark screens) = NO<br>
-</li>
-<li>Eliminated = never light up again</li>
-</ul>
-<p>Start w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 lights -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 lights &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc.</p>
+<p>Start w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 down -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 down &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -249,12 +264,12 @@ that you think will divide the class <strong>about in half</strong></li>
 <section id="debrief" class="slide level2">
 <h2>Debrief 💡</h2>
 <p>Punchline questions:</p>
-<ol type="1">
-<li><p>We know we will need at least ______ questions.</p></li>
-<li><p>We know we will need no more than ______ questions.</p></li>
+<ul>
+<li><p>What is the minimum number of questions?</p></li>
+<li><p>What is the maximum number of questions?</p></li>
 <li><p>Why did we stop at 10 instead of 1?</p></li>
-<li><p>Why did we do this?</p></li>
-</ol>
+<li><p>Why did we do this game?</p></li>
+</ul>
 <aside class="notes">
 <ul>
 <li>Best case: keep halving ⇒ about <strong>log₂(150/10) ≈ 4 rounds</strong><br>
@@ -275,278 +290,91 @@ that you think will divide the class <strong>about in half</strong></li>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="the-course" class="title-slide slide level1 center">
+<h1>The Course</h1>
+
 </section>
-<section id="where-to-start" class="slide level2 center">
+<section id="where-to-start" class="slide level2">
 <h2>Where to start?</h2>
-<p>Canvas: <a href="https://canvas.ubc.ca/courses/193007">https://canvas.ubc.ca/courses/193007</a></p>
 <p>Course Website: <a href="https://ubc-cs.github.io/cpsc203">https://ubc-cs.github.io/cpsc203</a></p>
 <p>PrairieLearn: <a href="https://us.prairielearn.com/pl/course_instance/228149">https://us.prairielearn.com/pl/course_instance/228149</a></p>
+<p>Piazza: <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">https://piazza.com/ubc.ca/winterterm12026/cpsc203</a></p>
+<p><del>Not Canvas: <a href="https://canvas.ubc.ca/courses/193007">https://canvas.ubc.ca/courses/193007</a></del></p>
 </section>
 <section id="about-this-course" class="slide level2">
 <h2>About This Course</h2>
 <p>This course will teach you a bunch of different things!</p>
 <ul>
-<li>Tools: Terminal, Markdown, Git, marimo, PrairieLearn</li>
-<li>Computer science: Python (!!!), efficiency, web scraping, graphs</li>
+<li>(More) Python!</li>
+<li>New data types and patterns: classes, dictionaries, tables, graphs</li>
 <li>Data science: pandas, data frames, visualizations</li>
-<li>Algorithms: many algorithms!</li>
+<li>Algorithms and complexity</li>
 <li>Art and creativity: lots of examples!</li>
+<li>Tools and Techniques(?): Terminal, marimo, PrairieLearn, unit tests, Markdown, Git,</li>
 </ul>
 </section>
-<section id="term-schedule" class="slide level2">
-<h2>Term Schedule</h2>
-<!-- CSS: include once -->
-<style>
-  .pill{display:inline-block; min-width:28px; padding:2px 6px; border-radius:4px; text-align:center; font-weight:600; line-height:1;}
-  .pill--off{background:#ddd; color:#111;}
-  .pill--class{background:purple; color:#fff;}
-  .pill--lab{background:dodgerblue; color:#fff;}
-  .pill--exam{background:seagreen; color:#fff;}
-  .pill--potw{background:#facc15; color:#111;}      /* yellow */
-  .pill--practice{background:#ef4444; color:#fff;}  /* red */
-</style>
-<div class="columns">
-<div class="column" style="width: 80%; font-size: 50%;">
-<table class="caption-top">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 5%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 17%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th>Monday</th>
-<th style="text-align: center;">T</th>
-<th style="text-align: center;">R</th>
-<th style="text-align: center;">Lab</th>
-<th style="text-align: center;">Examlet</th>
-<th style="text-align: center;">POTW</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td>1/5/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td>1/12/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td>1/19/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td>1/26/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td>2/2/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td>2/9/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td>2/16/2026</td>
-<td style="text-align: center;"><span class="pill pill--off" title="Reading Week">&nbsp;</span></td>
-<td style="text-align: center;"><span class="pill pill--off" title="Reading Week">&nbsp;</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td>2/23/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td>3/2/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td>3/9/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">11</td>
-<td>3/16/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">12</td>
-<td>3/23/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">13</td>
-<td>3/30/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--exam" title="Examlet">🤩</span></td>
-<td style="text-align: center;"><span class="pill pill--potw" title="POTW">🏎️</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">14</td>
-<td>4/6/2026</td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--class" title="Lecture">🎉</span></td>
-<td style="text-align: center;"><span class="pill pill--lab" title="Lab/Tutorial">🪄</span></td>
-<td style="text-align: center;"><span class="pill pill--practice" title="Practice">🏋️</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div></div>
-</section>
-<section id="evaluation" class="slide level2">
-<h2>Evaluation</h2>
-<div class="small-font-size">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Weight</th>
-<th>Due date(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Problems of the Week</td>
-<td>10% (10 x 1%)</td>
-<td>Sundays at 11:59 PM</td>
-</tr>
-<tr class="even">
-<td>Labs</td>
-<td>5% (10 x 0.5%)</td>
-<td>Sundays at 11:59 PM</td>
-</tr>
-<tr class="odd">
-<td>Programming Projects</td>
-<td>9% (3 x 3%)</td>
-<td>Three in the term</td>
-</tr>
-<tr class="even">
-<td>Examlets.</td>
-<td>50% (5 x 10%)</td>
-<td>~ Bi-weekly</td>
-</tr>
-<tr class="odd">
-<td>Final Exam</td>
-<td>26%</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="communications" class="slide level2">
-<h2>Communications</h2>
-<div style="font-size: 80%;">
+<section id="schedule-syllabus-and-logistics" class="slide level2">
+<h2>Schedule, Syllabus and Logistics</h2>
+<p><a href="https://ubc-cs.github.io/cpsc203">https://ubc-cs.github.io/cpsc203</a></p>
+<aside class="notes">
 <ul>
-<li><p>📧 <strong>Email</strong> <a href="mailto:cheeren@cs.ubc.ca">cheeren@cs.ubc.ca</a><br>
-Checked daily. Please place “CPSC203” in subject!</p></li>
-<li><p><a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203"> <img src="https://tse2.mm.bing.net/th/id/OIP.usjgslq1FEPq7pholcHorQD6D6?pid=Api" alt="Piazza" style="height:20px; vertical-align:middle;"> </a> <strong>Piazza</strong> <a href="https://piazza.com/ubc.ca/winterterm22025/cpsc203">piazza.com/ubc.ca/winterterm22025/cpsc203</a> Post questions for quick response.</p></li>
-<li><p>🏫 <strong>Office Hours</strong></p></li>
+<li>Show 2025W2 schedule to see how the table will fill out.</li>
+<li>Show grading policy.</li>
 </ul>
-<div style="margin:auto; width:fit-content;">
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 32%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Time</th>
-<th>Location &amp; Zoom</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Cinda</td>
-<td>Mon 2–4pm</td>
-<td>🏢 ICCS 233 · <a href="https://ubc.zoom.us/j/5393867685?pwd=N01ZS2dLbVorQkRzcDRuNTdwQmRYUT09"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:16px; vertical-align:middle;"></a></td>
-</tr>
-<tr class="even">
-<td>Minh Anh</td>
-<td>TBD</td>
-<td>🏢 TBD</td>
-</tr>
-<tr class="odd">
-<td>Paulette</td>
-<td>TBD</td>
-<td>🏢 TBD</td>
-</tr>
-</tbody>
-</table>
-</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="course-components-lecture-and-take-home" class="slide level2">
+<h2>Course Components: Lecture and Take-Home</h2>
+<p>All elements are accessed through <a href="https://us.prairielearn.com/pl/course_instance/228149">PrairieLearn</a>.</p>
 <ul>
-<li>🌐 <strong>Course Website</strong> <a href="https://ubc-cs.github.io/cpsc203/">https://ubc-cs.github.io/cpsc203/</a><br>
-Syllabus, schedule, resources</li>
+<li>Lectures: Tuesdays and Thursdays, in-class activities based on problem solving and design.</li>
+<li>Labs: Mondays / Tuesdays / Thursdays, practice on lecture material.
+<ul>
+<li>Released on Sunday night, due the following Sunday night.</li>
+</ul></li>
+<li>Problems of the week (POTW): One per (week)day, ~ 50 / term.
+<ul>
+<li>Released in batches of five on Sunday night, due the following Sunday night.</li>
+</ul></li>
+<li>Projects: Three total, involve more substantial programming practice.
+<ul>
+<li>Released on Monday morning, due three weeks later.</li>
+</ul></li>
 </ul>
-</div>
+</section>
+<section id="course-components-2-invigilated" class="slide level2 smaller">
+<h2>Course Components 2: Invigilated</h2>
+<ul>
+<li>Examlets: Five, roughly every two weeks.
+<ul>
+<li>Schedule your own 50 minute block.</li>
+<li>Available Thursday through Monday.</li>
+</ul></li>
+<li>Final Exam:
+<ul>
+<li>Schedule your own 110(?) minute block.</li>
+<li>Available during a five day window TBA.</li>
+<li>Practice version released a week before.</li>
+</ul></li>
+<li>You will physically go to an <a href="https://orca.ubc.ca/students/">ORCA</a> facility.</li>
+<li>Scheduling is done through <a href="https://us.prairietest.com/">PrairieTest</a>.
+<ul>
+<li>Opens Tuesday at 10:00am, two weeks before the assessment.</li>
+</ul></li>
+<li>Practice versions released through <a href="https://us.prairielearn.com/pl/course_instance/228149">PrairieLearn</a> a week before.</li>
+</ul>
 </section>
 <section id="semester-overview" class="slide level2 smaller">
 <h2>Semester overview</h2>
@@ -589,49 +417,83 @@ Syllabus, schedule, resources</li>
 </tbody>
 </table>
 <p>This course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving.</p>
+</section></section>
+<section>
+<section id="how-to-succeed-in-cpsc-203" class="title-slide slide level1 center">
+<h1>How to Succeed in CPSC 203</h1>
+
 </section>
-<section id="tangrams" class="slide level2">
-<h2>Tangrams</h2>
-<div class="quarto-layout-panel" data-layout="[35.7,5,59.3]">
-<div class="quarto-layout-row quarto-layout-valign-center">
-<div class="quarto-layout-cell" style="flex-basis: 35.7%;justify-content: center;">
-<p><img data-src="../images/tangram-square.png" alt="The different geometric shapes of a tangram form a square."></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 5.0%;justify-content: flex-start;">
-<p><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" style="font-size: 2em;" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 59.3%;justify-content: center;">
-<p><img data-src="../images/tangram-house.png" alt="The different geometric shapes of a tangram form a house"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-tangrams" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: tangrams</h2>
-<ol type="1">
-<li><p>Define a small working group of size up to 4.</p></li>
-<li><p>One of you share: <a href="https://mathigon.org/tangram" class="uri">https://mathigon.org/tangram</a></p></li>
-<li><p>Solve as many as you’d like, together</p></li>
-<li><p>Speculate together on why you’re doing this!!</p></li>
-</ol>
-<countdown-timer id="timer_798695b74be80923c16c66fa3d4cb1c90acb8f96" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
-</section>
-<section id="tangrams-why" class="slide level2 smaller">
-<h2>Tangrams: Why?</h2>
-<p><strong>Key insight:</strong> The pieces never change. You’re learning to see how the same fundamental components can be combined differently to solve different problems.</p>
-<p>This is exactly how programming works:</p>
+<section id="on-the-use-of-computers-in-class" class="slide level2">
+<h2>On the use of computers in class</h2>
+<p>Laptop use is&nbsp;encouraged in CPSC 203 lectures and labs&nbsp;</p>
+<p>However, there is a restriction:</p>
 <ul>
-<li><strong>Decomposition:</strong> Breaking complex problems into simpler pieces</li>
-<li><strong>Reusability:</strong> The same building blocks (variables, loops, conditionals, functions) solve countless different problems</li>
-<li><strong>Composition:</strong> Different arrangements of the same pieces create different solutions</li>
+<li>You may&nbsp;<strong>only</strong> use your laptop (or other screens, such as phones) for CPSC 203 material.
+<ul>
+<li>Using screens for other purposes has been shown to reduce your learning and <strong>lower your grades</strong>.</li>
+<li>Using screens for other purposes has&nbsp;also been shown to <strong>reduce the grades of those around you</strong>.</li>
+</ul></li>
+<li>If you have something urgent to do, just leave the classroom!</li>
 </ul>
-<p>Just like tangram pieces, programming constructs don’t change. What changes is how you arrange them.</p>
 </section>
-<section id="elegance" class="slide level2">
-<h2>Elegance</h2>
-<p>We’re going to spend some time on another conceptual metaphor…</p>
-<p>A poser: What does it mean for something to be <strong>elegant</strong>?</p>
+<section id="how-to-study" class="slide level2">
+<h2>How to Study</h2>
+<ul>
+<li>This is <strong>learn by doing</strong> material!
+<ul>
+<li>Passively watching videos / live coding and reading our solutions will not be enough.</li>
+<li>You must solve the problems yourself and write out their solutions.</li>
+</ul></li>
+<li>There are many opportunities for you to practice:
+<ul>
+<li>In lecture, labs, POTWs, practice examlets, projects, …</li>
+</ul></li>
+</ul>
+</section>
+<section id="from-a-former-cpsc-110-student-applies-to-cpsc-203-too" class="slide level2">
+<h2>From a Former CPSC 110 Student (Applies to CPSC 203 too)</h2>
+<blockquote>
+<p>It’s funny how repetition in actually doing the work leads to it all of a sudden making sense to me. I can’t explain it. I don’t have a sense of growing understanding. I have confusion, repetition, and suddenly a sense of understanding. It’s not coming through watching or reading, though. It comes from replicating what I’ve watched several times. This has happened repeatedly for me in this class. I start the week with a sense of accomplishment, well being, peace of mind, and confidence from the victory over last week’s homework. I am then submerged in doubt, confusion, and erm, terror. (Why not be melodramatic?) Suddenly there is a working epiphany and I have victory again.</p>
+</blockquote>
+</section>
+<section id="possible-sources-of-negative-emotions" class="slide level2">
+<h2>Possible sources of negative emotions</h2>
+<ul>
+<li>Feeling confused about a topic.</li>
+<li>Feeling of falling behind/not having enough time.</li>
+<li>Some external event.</li>
+<li>Something else.</li>
+</ul>
+<p><strong>We can usually find a solution!</strong></p>
+<ul>
+<li>Talk to us!</li>
+</ul>
+</section>
+<section id="dont-be-afraid-to-try-and-fail" class="slide level2">
+<h2>Don’t Be Afraid to Try (and Fail)!</h2>
+<div class="center">
+<p><img data-src="../images/how-much-you-learn.jpeg" style="height:15cm"></p>
+</div>
+</section></section>
+<section>
+<section id="elegance" class="title-slide slide level1 center">
+<h1>Elegance</h1>
+<aside class="notes">
+<ul>
+<li>A concept that informs our approach to problems and analysis of our solutions.</li>
+<li>A poser: What does it mean for something to be <strong>elegant</strong>?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="elegance-example" class="slide level2">
 <h2>Elegance Example?</h2>
@@ -657,20 +519,25 @@ Syllabus, schedule, resources</li>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
 <p>Today we have begun to introduce some of the themes and ideas that we’ll see all term long:</p>
 <ol type="1">
-<li><p>Counting steps: what’s the best that can happen? what’s the worst?</p></li>
-<li><p>Design of Programmatic solutions:</p>
-<ul>
-<li>decomposition</li>
-<li>reusability</li>
-<li>creativity</li>
-</ul></li>
-<li><p>Elegance?? WHY?</p></li>
+<li><p>Counting steps: What’s the best that can happen? What’s the worst?</p></li>
+<li><p>Course schedule, syllabus and logistics.</p></li>
+<li><p>Elegance.</p></li>
 </ol>
+</section>
+<section id="get-yourself-registered" class="slide level2">
+<h2>Get Yourself Registered</h2>
+<p>PrairieLearn: <a href="https://us.prairielearn.com/pl/course_instance/228149">https://us.prairielearn.com/pl/course_instance/228149</a></p>
+<p>Piazza: <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">https://piazza.com/ubc.ca/winterterm12026/cpsc203</a></p>
 
 
 <script type="ojs-module-contents">
