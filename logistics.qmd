@@ -11,15 +11,15 @@ title: "Logistics"
 
 * TA: **Markus Chu**
   <!-- * Email: [markus18@student.ubc.ca](mailto:markus18@student.ubc.ca) -->
-  * Office Hours: TBA
+  * Office Hours: Fridays, 1pm - 2pm in ICCS x151.
 
 * TA: **Jayden Lieu**
   <!-- * Email: [jlieu02@student.ubc.ca](mailto:jlieu02@student.ubc.ca) -->
-  * Office Hours: TBA
+  * Office Hours: Wednesdays, 2pm - 3pm in ICCS x339
 
 * TA: **Timothy Solnyshkin**
   <!-- * Email: [tsolnysh@students.cs.ubc.ca](mailto:tsolnysh@students.cs.ubc.ca) -->
-  * Office Hours: TBA
+  * Office Hours: Thursdays, 1pm - 2pm in ICCS x341
 
 ## Communication
 
