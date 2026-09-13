@@ -63,6 +63,7 @@ If you have a specific concern about accessing course materials or if you would 
 ## Illness
 
 Do not attend lectures, labs or ORCA if you have an illness that could be transmitted to your classmates, such as a respiratory infection (for example, a cold).  The course is structured so that you can prioritize your health and still succeed.
+
   * Lectures are recorded.
   * Lab assessments, POTWs and projects are submitted online through [PrairieLearn]({{< var course.prairielearn >}}).
   * See the [ORCA procedure for missed exams](https://orca.ubc.ca/students/missed-exams/) if you miss your scheduled examlet or final exam session.
