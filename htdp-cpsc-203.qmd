@@ -5,6 +5,24 @@ format: html
 
 <!-- Adapted from CPSC 103 exam reference sheet.  Initial conversion by MS CoPilot.  -->
 
+<!-- Blame Ian for this document -->
+
+This reference document is adapted from an old version of the CPSC 103 reference.  It has been updated to use some modern notation, and to add some data types that we will encounter in CPSC 203.
+
+For CPSC 203, **these recipes and templates are meant as guidance only.** You are **not** required to follow them in your code.
+
+That said, the templates and particularly the recipes are an **excellent** way to structure your design and implementation of programs.  
+
+You can also use them to try to understand existing programs.  When you encounter a program that you need to modify, your first step is definitely **not** to start editing the code.  Instead:
+
+* Think about what data type(s) the program is manipulating.  In particular, look for the compound and arbitrary-sized data types; furthermore, you are likely to encounter not just `NamedTuple` and `list`, but also classes, dictionaries, dataframes, and graphs.  If the data types are not documented (either in an existing library or the code itself), write yourself some HtDD-like notes so you can better understand them.
+* Look for code patterns which resemble common templates.  For example, when working through a `list` or `dict`, does the code directly access only certain elements by index / key (treating the data like a compound) or does the code iterate over all elements (treating the data like arbitrary-sized)?
+* Does the code introduce new templates / patterns that you haven't seen before?  If so, try to write down an abstract version of the pattern(s) so you can better understand them.
+* As you introduce your modifications:
+  * Make sure any new data types are documented (either in existing libraries or in the code itself).  Just because the original programmer was lazy does not mean you should be too.
+  * Try to set things up so that you either stay entirely within the existing template / pattern, or introduce a separate template / pattern (likely in a new function or class).  Doing a mixture of both will make it harder to judge the correctness of your modification, and harder for subsequent maintainers (including future you) to understand the implementation.
+  * If you need a mixture of both inside and outside the template / pattern, do them one at a time, test them, and be sure to document your design in the code / comments.
+
 ## How to Design Functions Recipe
 
 1. Write the stub, including the signature, purpose, and typecheck annotation.
@@ -33,17 +51,17 @@ Identify the inherent structure of the information.
 | consists of two or more types of information that naturally belong together | Compound |
 | is of arbitrary (unknown) size | Arbitrary-Sized |
 
-## Data Types
+## Basic Data Types
 
 ### Simple Atomic Data
 
-**Definition:**
+#### Definition
 
 ```python
 XXX = type
 ```
 
-**Template:**
+#### Template
 
 ```python
 return ...(x)
@@ -51,13 +69,13 @@ return ...(x)
 
 ### Interval
 
-**Definition:**
+#### Definition
 
 ```python
 XXX = int  # in range ...
 ```
 
-**Template:**
+#### Template
 
 ```python
 return ...(x)
@@ -65,7 +83,7 @@ return ...(x)
 
 ### Enumeration
 
-**Definition:**
+#### Definition
 
 ```python
 from enum import Enum
@@ -73,7 +91,7 @@ from enum import Enum
 XXX = Enum('XXX', ['A', 'B'])
 ```
 
-**Template:**
+#### Template
 
 ```python
 if x == XXX.A:
@@ -84,15 +102,20 @@ elif x == XXX.B:
 
 ### Optional
 
-**Definition:**
+#### Definition
 
+* new approach using modern union notation:
+```python
+XXX = type | None
+```
+
+* old approach from `typing` module:
 ```python
 from typing import Optional
-
 XXX = Optional[type]
 ```
 
-**Template:**
+#### Template
 
 ```python
 if x is None:
@@ -101,9 +124,23 @@ else:
     return ...(x)
 ```
 
-### Compound
+## Compound Data Types
 
-**Definition:**
+* Used when you have several data values which should be managed together.
+
+### NamedTuple
+
+#### Definition
+
+* Approach using class syntax (also allows default field values):
+```python
+from typing import NamedTuple
+class XXX(NamedTuple):
+    a: type
+    b: type
+```
+
+* Approach using `NamedTuple` function:
 
 ```python
 from typing import NamedTuple
@@ -111,23 +148,50 @@ from typing import NamedTuple
 XXX = NamedTuple('XXX', [('a', type), ('b', type)])
 ```
 
-**Template:**
+#### Template
 
 ```python
 return ...(x.a, x.b)
 ```
 
-### Arbitrary-Sized
+### List and Dictionary
 
-**Definition:**
+* Sometimes you wish to extract individual elements of a `list` or `dict` using hardcoded indexes rather than treating those data structures as arbitrarily sized.
+
+#### List Template
 
 ```python
-from typing import List
-
-XXX = List[type]
+return ...(x[0], x[1], x[2], ...)
 ```
 
-**Template:**
+#### Dictionary Template
+
+```python
+return ...(x['a'], x['b'], x['c'], ...)
+```
+
+
+## Arbitrary-Sized Data Types
+
+* Used when you have an amount of data which is not known in advance.
+
+### Lists
+
+* Lists are mutable.
+* Lists may contain elements of any type, but we encourage you to use lists containing a single type.
+* The elements of a list maintain their order.
+* Lists may contain multiple copies of a single item.
+* Elements of a `list` named `x` are indexed with the integer interval `[0, len(x)]`.
+
+#### Definition
+
+* Note: this data type name starts with a lower case `l`, and no need to import from `typing` module.
+
+```python
+XXX = list[type]
+```
+
+#### Template
 
 ```python
 # description of the accumulator
@@ -136,6 +200,37 @@ for x in lox:
     acc = ...(x, acc)
 return ...(acc)
 ```
+
+### Tuples 
+
+* The `tuple` data type is basically an immutable list.
+
+#### Definition
+
+```python
+XXX = tuple[type]
+```
+
+#### Template
+
+```python
+# description of the accumulator
+acc = ...  # type: ...
+for x in lox:
+    acc = ...(x, acc)
+return ...(acc)
+```
+
+
+### Dictionaries
+
+TBA
+
+### Sets
+
+TBA
+
+
 
 <!-- Commenting out the rest of the material because it is targeted at the final project in CPSC 103 and depends rather heavily on the `cs103` module. -->
 <!--

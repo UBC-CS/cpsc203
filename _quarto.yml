@@ -61,6 +61,8 @@ website:
             text: "PrairieTest"
           - href: "https://orca.ubc.ca/students/"
             text: "ORCA"
+      - href: htdp-cpsc-203.qmd
+        text: "Design Recipes and Data Types"
       - href: about.qmd
         text: About
 
