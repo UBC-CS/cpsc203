@@ -19,6 +19,13 @@ date: 2026-09-15
   * Book your slot for the first examlet (Thur Oct 1 - Mon Oct 5).
   * Students with accommodations: If you cannot see your accommodation when you try to book a slot, email me.
 
+::: notes
+
+* Show survey results.
+* Show Syllabus GenAI update, and possibly logistics and schedule updates.
+
+:::
+
 ## Today's Plan…
 
 - Correctness isn't everything…
@@ -184,9 +191,6 @@ If we have $n$ items in our list, how long does this procedure take?
 
 ::: notes
 Metaphor for software development---ingenuity, function, simplicity, resource constraints.  And sometimes things are not entirely correct.
-
-Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.
-
 :::
 
 ## Knitting
@@ -200,6 +204,11 @@ The language used to communicate patterns uses exactly the same fundamental cons
 ![](/images/sherbet-stripes.png){fig-alt="Knitting pattern instructions for a Sherbet Stripes dishcloth with an image of the finished texture."}
 :::
 :::::
+
+::: notes
+Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.
+:::
+
 
 ## Knitting: examples
 
@@ -276,7 +285,7 @@ We usually denote this input size using the variable $n$.
 ::: {.notes}
 * In this example we choose to label $n$ as the side-length in stitches, but other choices are possible.
 * We don't care so much about units, so we communicate using the largest order term
-  * A scarf which is always $3n \cross n$ takes time $3n^2$ to knit, we ignore the 3 when we're talking about algorithms. It's the squared part that really determines how waiting time increases as the problem size increases.
+  * A scarf which is always $3n \times n$ takes time $3n^2$ to knit, we ignore the 3 when we're talking about algorithms. It's the squared part that really determines how waiting time increases as the problem size increases.
   * We say that the variable term "dominates".
 
 But why did we introduce a "parameter"? What happened to the rows and stitches? What does this have to do with a computer processing data? 
@@ -347,6 +356,7 @@ print(knit_square_count(5))
 Walk through code.  Yes, we are mutating variable `cloth`, and we generally discourage mutation.  Are we mutating the string to which `cloth` refers?
 
 Count work to arrive at $n^2$ conclusion.
+
 * Which line is executed most frequently? 
 * How many times is outer `for` loop executed?
 * How many total times is line 5 (inner `for` loop) executed?
@@ -368,13 +378,13 @@ The degree (in n) makes a very big difference!
 | n^3^ | 1000 s ~ 16½ min | 10^6^ s ~ 11½ days | 10^9^ s ~ 31½ years |
 | 2^n^ | 1024 s ~ 17 min | ~10^30^ s | ~10^301^ s |
 
-Notes: "log" = log_2 and the age of the universe: ~10^18 s
+Notes: "log" is base 2, and the age of the universe: ~10^18^ s
 
 ::: {.notes}
 Log factors are great!
 Linear (power 1) is good.
-Powers 2+ (polynomial) is okay as long as n is reasonably small.
-If n is in the exponent, forget about it…
+Powers 2+ (polynomial) is okay as long as $n$ is reasonably small.
+If $n$ is in the exponent, forget about it…
 :::
 
 
@@ -382,8 +392,6 @@ If n is in the exponent, forget about it…
 ## Quantifying the task...
 
 But computers are much faster. Suppose we can "knit" 10^12^ stitches / s
-
-The amount of computation we do inside our algorithm actually matters!
 
 | time \\ n | 10 | 100 | 1000 | 10^6^ | 10^12^ |
 |---|---|---|---|---|---|
@@ -396,16 +404,18 @@ The amount of computation we do inside our algorithm actually matters!
 
 Notes: proteins fold in ~10^-6^ s and the age of the universe: ~10^18^ s
 
+So the amount of computation we do inside our algorithm actually matters as our data increases.
+
 ::: {.notes}
-A fast laptop might achieve 10^12 flops. Fastest supercomputer is 2198 x 10^15 flops.
+A fast laptop might achieve 10^12^ flops. Fastest supercomputer is 2198 x 10^15^ flops.
 
-If our rag/data size is 1000, and we need to compute $n^3$ steps/stitches (like knitting a cube!!), then the total time is 1000^3/10^12 == 10^-3 or one thousandth of a second. Nbd.
+If our cloth/data size is 1000, and we need to compute $n^3$ steps/stitches (like knitting a cube!!), then the total time is 1000^3^/10^12^ == 10^-3^ or one thousandth of a second. NBD
 
-BUT let's look at bigger data. 10^12 (~128gb … pretty big) 10^12 mm == 10^6 km (for reference, 384,400 km to the moon or 149(10^6) km to the sun.  Knitting something that big would take 10^12 seconds ~32000 years. The sun will long since have burnt out by 10^18
+BUT let's look at bigger data. 10^12^ (~128gb … pretty big) 10^12^ mm == 10^6^ km (for reference, 384,400 km to the moon or 149(10^6^) km to the sun.  Knitting something that big would take 10^12^ seconds or ~32000 years. The sun will long since have burnt out by 10^18^
 
 Punchline -- we don't want to do $2^n$ amount of computation, and we need creative approaches for big data.
 
-Recap -- we've seen a problem whose size we characterize by $n^2$, we'll see problems whose time we characterize by $n$, for sure, and later in the term, we'll see a problem which is very simply stated, whose size we characterize by $2^n$. :(
+Recap -- we've seen a problem whose size we characterize by $n^2$, we'll see problems whose time we characterize by $n$, for sure, and later in the term, we'll see a problem which is very simply stated, whose size we characterize by $2^n$. ☹
 :::
 
 # Colour
@@ -420,4 +430,6 @@ What's your favorite colour?  [Psychological interpretation](http://www.playbuzz
 
 Does that colour influence your dress/decor/purchases?  [Cultural interpretation](http://markedbydesign.net/blog/meaning-in-color/)
 
-
+::: notes
+Normal computer images do **none** of these three things (although it does take advantage of how human biology detects light).
+:::
