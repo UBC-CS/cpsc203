@@ -14,7 +14,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="dcterms.date" content="2026-01-08">
+  <meta name="dcterms.date" content="2026-09-15">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -39,6 +39,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -155,96 +221,84 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">January 8, 2026</p>
+  <p class="date">September 15, 2026</p>
 </section>
-<section id="announcements" class="slide level2 smaller">
+<section id="announcements" class="slide level2 medium">
 <h2>Announcements</h2>
 <ul>
-<li><p>Website live – please let me know if you see errors!</p></li>
-<li><p>POTW starts next week! <a href="https://us.prairielearn.com/pl/course_instance/202804" class="uri">https://us.prairielearn.com/pl/course_instance/202804</a></p></li>
-<li><p>Labs start next week. Answer the qualtrics survey!!</p></li>
-<li><p>Enroll in CPSC203 on <strong>PrairieTest</strong>: <a href="https://us.prairietest.com" class="uri">https://us.prairietest.com</a></p></li>
-</ul>
-<aside class="notes">
-<p><strong>Summary</strong></p>
-<p>In this introductory class, we use metaphors and abstractions to characterize problem decomposition, code as a communication mechanism, and computational efficiency. We continue our exploration of the idea of elegance, making connections to problem solving and code. Then, we learn a mechanism for measuring efficiency, and talk briefly about why it’s important to consider. The discussion about efficiency is followed by a diversion into color representation. Finally, we look at some code! The day concludes with a sequence of Python examples designed to clear the cobwebs on lists – our first data structure!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="learning-outcomes" class="slide level2">
-<h2>Learning outcomes</h2>
-<ol type="1">
-<li><p>We connect the idea of “elegance” to common items and to software design!</p></li>
-<li><p>The <em>time</em> it takes to solve a problem is one way of measuring the size of a problem. That time can often be described by simple mathematical function.</p></li>
-</ol>
-</section>
-<section id="elegance-continuing-the-discussion" class="slide level2">
-<h2>Elegance: Continuing the discussion</h2>
-<p>On Tuesday we introduced <strong>elegance</strong> as a conceptual metaphor for software engineering.</p>
-<p>We looked at the scissors example—form perfectly matched to function, with no unnecessary complexity.</p>
-<p>Today, we’re going to dig deeper into this idea:</p>
+<li><p>Results of course survey.</p></li>
+<li><p>Updates to <a href="https://ubc-cs.github.io/cpsc203">CPSC 203 course website</a>.</p>
 <ul>
-<li>What does elegance look like across different contexts?</li>
-<li>How do we define it more precisely?</li>
-<li>How does this apply to the way we solve problems in computing?</li>
+<li><a href="https://ubc-cs.github.io/cpsc203/logistics.html">Logistics</a>: TA office hours.</li>
+<li><a href="https://ubc-cs.github.io/cpsc203/syllabus.html">Syllabus</a>: Course policy on AI use.</li>
+<li><a href="https://ubc-cs.github.io/cpsc203">Schedule</a>: Links to slides, videos, labs, POTWs, …</li>
+</ul></li>
+<li><p>Monitor (and post to) <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">Piazza</a>.</p></li>
+<li><p>POTW is available on <a href="https://piazza.com/ubc.ca/winterterm12026/cpsc203">PrairieLearn</a>.</p></li>
+<li><p>Enroll in CPSC203 on <a href="https://us.prairietest.com/">PrairieTest</a>.</p>
+<ul>
+<li>Book your slot for the first examlet (Thur Oct 1 - Mon Oct 5).</li>
+<li>Students with accommodations: If you cannot see your accommodation when you try to book a slot, email me.</li>
+</ul></li>
 </ul>
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-elegance" class="slide level2 activity smaller">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Elegance</h2>
-<p>Find 2 images, one which exemplifies your definition of elegance, and another, of the same type of subject, which decidedly does not.</p>
-<ol type="1">
-<li><p>Navigate to the Elegance Gallery: <a href="https://tinyurl.com/eleganceGallery2025w2" class="uri">https://tinyurl.com/eleganceGallery2025w2</a></p></li>
-<li><p>Claim an available slide by entering a title.</p></li>
-<li><p>Upload your images, and then you’re done!</p></li>
-<li><p>I will move slides to the COMPLETED section of the gallery.</p></li>
-</ol>
-<countdown-timer id="timer_c8a2fae2c9eaf1ec73638460bba448a966523b70" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
-<aside class="notes">
-<p>(Gallery walk)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="todays-plan" class="slide level2">
+<h2>Today’s Plan…</h2>
+<ul>
+<li>Correctness isn’t everything…</li>
+<li>Knitting</li>
+<li>Work / effort / complexity</li>
+<li>Simplicity / elegance / abstraction</li>
+<li>Colour (if we get to it)</li>
+</ul>
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c6964206c6170746f702d636f6465203e7d7d-your-turn-elegancedefinition" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Elegance—definition</h2>
-<p>Gallery: <a href="https://tinyurl.com/eleganceGallery2025w2" class="uri">https://tinyurl.com/eleganceGallery2025w2</a></p>
-<p>After looking at the images in the gallery, reflect and write a short definition of the word <em>elegance</em>:</p>
-<p><a href="https://forms.gle/MUkpWeGBdxYfnJT37" class="uri">https://forms.gle/MUkpWeGBdxYfnJT37</a></p>
-<countdown-timer id="timer_c8a2fae2c9eaf1ec73638460bba448a966523b70" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
-</section>
-<section id="elegance-in-software-design" class="slide level2">
-<h2>Elegance in software design</h2>
-<p>How does this apply to the way we solve problems in computing?</p>
-<p>I<span class="fragment" data-fragment-index="1">n</span>g<span class="fragment" data-fragment-index="1">e</span>n<span class="fragment" data-fragment-index="1">u</span>i<span class="fragment" data-fragment-index="1">t</span>y:</p>
-<p><br>
-<br>
-</p>
-<p>S<span class="fragment" data-fragment-index="1">i</span>m<span class="fragment" data-fragment-index="1">p</span>l<span class="fragment" data-fragment-index="1">i</span>c<span class="fragment" data-fragment-index="1">i</span>t<span class="fragment" data-fragment-index="1">y</span>:</p>
+<section>
+<section id="correctness-isnt-everything" class="title-slide slide level1 center">
+<h1>Correctness isn’t Everything</h1>
 
+</section>
+<section id="lets-go-shopping-version-1" class="slide level2">
+<h2>Let’s Go Shopping (version 1)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>define shopping_trip1(grocery_list: List[food_item])</span>
+<span id="cb1-2"><a aria-label="2"></a>                      <span class="op">-&gt;</span> pantry_list: List[food_item]:</span>
+<span id="cb1-3"><a aria-label="3"></a></span>
+<span id="cb1-4"><a aria-label="4"></a>  <span class="co"># List of food in the pantry so far.</span></span>
+<span id="cb1-5"><a aria-label="5"></a>  pantry_list <span class="op">=</span> []</span>
+<span id="cb1-6"><a aria-label="6"></a></span>
+<span id="cb1-7"><a aria-label="7"></a>  <span class="cf">for</span> item_on_grocery_list <span class="kw">in</span> grocery_list:</span>
+<span id="cb1-8"><a aria-label="8"></a>    <span class="co"># Take paper with single item to the store.</span></span>
+<span id="cb1-9"><a aria-label="9"></a>    item_at_store <span class="op">=</span> go_to_store(item_on_grocery_list)</span>
+<span id="cb1-10"><a aria-label="10"></a>    <span class="co"># Get the item from the shelf.</span></span>
+<span id="cb1-11"><a aria-label="11"></a>    item_in_cart <span class="op">=</span> pick_at_store(item_at_store)</span>
+<span id="cb1-12"><a aria-label="12"></a>    <span class="co"># Bring the item home.</span></span>
+<span id="cb1-13"><a aria-label="13"></a>    item_at_home <span class="op">=</span> return_from_store(item_in_cart)</span>
+<span id="cb1-14"><a aria-label="14"></a>    <span class="co"># Put the item away.</span></span>
+<span id="cb1-15"><a aria-label="15"></a>    pantry_list.append(put_in_pantry(item_at_home))</span>
+<span id="cb1-16"><a aria-label="16"></a></span>
+<span id="cb1-17"><a aria-label="17"></a>  <span class="cf">return</span> pantry_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource scheme number-lines code-with-copy"><code class="sourceCode scheme"><span id="cb2-1"><a aria-label="1"></a>(<span class="ex">define</span><span class="fu"> shopping-trip1 </span>grocery-list</span>
+<span id="cb2-2"><a aria-label="2"></a>  (<span class="kw">cond</span> <span class="op">[</span>(empty? grocery-list) '()<span class="op">]</span>,</span>
+<span id="cb2-3"><a aria-label="3"></a>        <span class="op">[</span><span class="kw">else</span></span>
+<span id="cb2-4"><a aria-label="4"></a>          (<span class="kw">cons</span> (put-in-pantry</span>
+<span id="cb2-5"><a aria-label="5"></a>                  (return-from-store</span>
+<span id="cb2-6"><a aria-label="6"></a>                    (pick-at-store</span>
+<span id="cb2-7"><a aria-label="7"></a>                      (go-to-store (first grocery-list)))))</span>
+<span id="cb2-8"><a aria-label="8"></a>                (shopping-trip1 (rest grocery-list)))<span class="op">]</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="div" style="margin-top: 150px; font-size: large">
+<p>I am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items</p>
+</div>
+</div></div>
+<p>If we have <span class="math inline">\(n\)</span> items in our list, how long does this procedure take?</p>
 <aside class="notes">
-<ol type="1">
-<li>INGENUITY — The problems themselves are no longer straightforward examples of things we’ve seen before. Class is about creating a larger set of tools and the confident deployment of them.</li>
-<li>SIMPLICITY — Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect).</li>
-</ol>
+<ul>
+<li>How long to <code>go_to_store</code>?</li>
+<li>How long to <code>pick_at_store</code>?</li>
+<li>How long to <code>return_from_store</code>?</li>
+<li>How long to <code>put_in_pantry</code>?</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -256,16 +310,61 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<aside><div>
-<p>For further reading: <a href="https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/" class="uri">https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/</a></p>
-</div></aside></section>
-<section id="section" class="slide level2 center" data-background-image="../images/steve-jobs.jpg" data-background-opacity="0.3" data-background-size="contain" data-background-position="bottom right" data-menu-title="Steve Jobs quote">
-<h2></h2>
-<blockquote>
-<p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
-<p>— <strong>Steve Jobs</strong></p>
-</blockquote>
 </section>
+<section id="lets-go-shopping-version-2" class="slide level2">
+<h2>Let’s Go Shopping (version 2)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>define shopping_trip2(grocery_list: List[food_item])</span>
+<span id="cb3-2"><a aria-label="2"></a>                      <span class="op">-&gt;</span> pantry_list: List[food_item]:</span>
+<span id="cb3-3"><a aria-label="3"></a></span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="co"># Take piece of paper with list to the store.</span></span>
+<span id="cb3-5"><a aria-label="5"></a>  grocery_list_at_store <span class="op">=</span> go_to_store(grocery_list)</span>
+<span id="cb3-6"><a aria-label="6"></a></span>
+<span id="cb3-7"><a aria-label="7"></a>  <span class="co"># Get all items on the list into the cart.</span></span>
+<span id="cb3-8"><a aria-label="8"></a>  cart_list <span class="op">=</span> []</span>
+<span id="cb3-9"><a aria-label="9"></a>  <span class="cf">for</span> item_at_store <span class="kw">in</span> grocery_list_at_store:</span>
+<span id="cb3-10"><a aria-label="10"></a>    cart_list.append(pick_at_store(item_at_store))</span>
+<span id="cb3-11"><a aria-label="11"></a></span>
+<span id="cb3-12"><a aria-label="12"></a>  <span class="co"># Bring the items home.</span></span>
+<span id="cb3-13"><a aria-label="13"></a>  grocery_bags_at_home <span class="op">=</span> return_from_store(cart_list)</span>
+<span id="cb3-14"><a aria-label="14"></a></span>
+<span id="cb3-15"><a aria-label="15"></a>  <span class="co"># Put the items away.</span></span>
+<span id="cb3-16"><a aria-label="16"></a>  pantry_list <span class="op">=</span> []</span>
+<span id="cb3-17"><a aria-label="17"></a>  <span class="cf">for</span> item_at_home <span class="kw">in</span> grocery_bags_at_home:</span>
+<span id="cb3-18"><a aria-label="18"></a>    pantry_list.append(put_in_pantry(item_at_home))</span>
+<span id="cb3-19"><a aria-label="19"></a></span>
+<span id="cb3-20"><a aria-label="20"></a>  <span class="cf">return</span> pantry_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource scheme number-lines code-with-copy"><code class="sourceCode scheme"><span id="cb4-1"><a aria-label="1"></a>(<span class="ex">define</span><span class="fu"> shopping-trip2 </span>grocery-list</span>
+<span id="cb4-2"><a aria-label="2"></a>  (<span class="kw">let</span> (<span class="op">[</span>grocery-list-at-store (go-to-store grocery-list)<span class="op">]</span>)</span>
+<span id="cb4-3"><a aria-label="3"></a>    (put-in-pantry</span>
+<span id="cb4-4"><a aria-label="4"></a>      (return-from-store</span>
+<span id="cb4-5"><a aria-label="5"></a>        (pick-at-store grocery-list-at-store)))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="div" style="margin-top: 200px; font-size: large">
+<p>I am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items</p>
+</div>
+</div></div>
+<p>If we have <span class="math inline">\(n\)</span> items in our list, how long does this procedure take?</p>
+<aside class="notes">
+<ul>
+<li><p>Go to the store just once.</p></li>
+<li><p>Return from the store just once.</p></li>
+<li><p>As <span class="math inline">\(n\)</span> gets larger, total time will increasingly be determined by those parts of the procedure which depend on <span class="math inline">\(n\)</span>.</p></li>
+<li><p>For large <span class="math inline">\(n\)</span>, we can essentially ignore the stuff which grows more slowly (or not at all) with <span class="math inline">\(n\)</span>.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="handcraft" class="title-slide slide level1 center">
 <h1>Handcraft</h1>
@@ -285,12 +384,8 @@
 <p><img data-src="../images/crochet-bike.jpg" alt="A bicycle covered in crocheted yarn in various colours."></p>
 </div></div>
 <aside class="notes">
-<p>Metaphor for software development—ingenuity, function, simplicity, resource constraints. But also a direct parallel. Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.</p>
-<ul>
-<li>Quilt—patterns</li>
-<li>Crochet—2 different kinds</li>
-<li>Paper—Friend’s artistry</li>
-</ul>
+<p>Metaphor for software development—ingenuity, function, simplicity, resource constraints. And sometimes things are not entirely correct.</p>
+<p>Knitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -327,7 +422,6 @@
 </div></div>
 <aside class="notes">
 <p>Show <span class="math inline">\(40 \times 40\)</span>, but then transition into <span class="math inline">\(n \times n\)</span>—“one difference between a knitting project and our problems we solve”</p>
-<p>Axis of algorithmic quality includes</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -354,7 +448,7 @@
 </ol>
 </div></div>
 <p>General idea: quantify the size of the problem (<span class="math inline">\(n\)</span>) and consider the cost of our task <em>as that size increases</em>.</p>
-<countdown-timer id="timer_c8a2fae2c9eaf1ec73638460bba448a966523b70" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_9787d4fbca243ba5774ab221344c53e971a69e78" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>Draw the parabola in 4. Point out that quadratic is slower than exponential growth.</p>
@@ -370,28 +464,31 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="quantifying-the-task-1" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>If we are solving a problem <u>____________</u> for a given input, we can parameterize the running time of the solution by the size of the input.</p>
+<section id="quantifying-the-task-1" class="slide level2 medium">
+<h2>Quantifying the task…</h2>
+<p>If we are solving a problem / writing an algorithm for an input of arbitrary size, we can parameterize the running time of the solution by the size of the input.</p>
 <p>We usually denote this input size using the variable <span class="math inline">\(n\)</span>.</p>
 <div class="columns">
 <div class="column" style="width:25%;">
 <p><img data-src="../images/pixelated-chevron-knitting-pattern.jpg" alt="A pixelated knitting pattern."></p>
 </div><div class="column" style="width:75%;">
-<p>Discussion:</p>
-<ol type="1">
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<ul>
+<li>We need to specify what <span class="math inline">\(n\)</span> represents (in this case the length of each side of the square).</li>
+<li>Sometimes we need multiple parameters to describe the size of the problem (such as <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>).</li>
+<li>We pay attention to only the degree of n (so if a scarf takes <span class="math inline">\(3n^2 + 12n\)</span> time, we are only interested in the fact it is <span class="math inline">\(n^2\)</span>)</li>
+</ul>
 </div></div>
 <aside class="notes">
-<p>First blank: or write an algorithm</p>
-<ol type="1">
-<li>In this example we choose to label <span class="math inline">\(n\)</span> as the side-length</li>
-<li>We don’t care so much about units, so we communicate using the largest order term so a scarf which is always 3<span class="math inline">\(n\)</span> x <span class="math inline">\(n\)</span> takes time 3<span class="math inline">\(n^2\)</span> to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how long we’ll have to wait. We say that the variable term “dominates”.</li>
-<li>Sometimes we have more than one parameter</li>
-</ol>
+<ul>
+<li>In this example we choose to label <span class="math inline">\(n\)</span> as the side-length in stitches, but other choices are possible.</li>
+<li>We don’t care so much about units, so we communicate using the largest order term
+<ul>
+<li>A scarf which is always <span class="math inline">\(3n \cross n\)</span> takes time <span class="math inline">\(3n^2\)</span> to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how waiting time increases as the problem size increases.</li>
+<li>We say that the variable term “dominates”.</li>
+</ul></li>
+</ul>
+<p>But why did we introduce a “parameter”? What happened to the rows and stitches? What does this have to do with a computer processing data?</p>
+<p>We are seeking to understand the effort / efficiency / complexity of solving the problem / running the algorithm in a simple / elegant manner, where we have abstracted away the clutter of the details of the problem.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -403,6 +500,33 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="section" class="slide level2 center" data-background-image="../images/steve-jobs.jpg" data-background-opacity="0.3" data-background-size="contain" data-background-position="bottom right" data-menu-title="Steve Jobs quote" data-font-size="medium">
+<h2></h2>
+<blockquote>
+<p>Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with <strong>elegant</strong> solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.</p>
+<p>— <strong>Steve Jobs</strong></p>
+</blockquote>
+<aside class="notes">
+<p>In this course we will be seeking simplicity and elegance not only in our algorithms, but also in how we analyze them. In particular, when looking at the complexity of an algorithm we will ignore the constants and dominated terms.</p>
+<p>Our software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect)</p>
+<p>It would be nide to include this link, but I cannot figure out how to adjust the font size to make room. For further reading: <a href="https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/" class="uri">https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/</a></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="analyzing-complexity" class="title-slide slide level1 center">
+<h1>Analyzing Complexity</h1>
+
 </section>
 <section id="handcraft-and-code" class="slide level2 smaller">
 <h2>Handcraft and Code</h2>
@@ -419,172 +543,17 @@
 <li><p>Total work is <span class="math inline">\(n^2\)</span></p></li>
 </ul>
 </div></div>
-<div class="columns">
-<div class="column" style="width:60%;">
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGtuaXRfc3F1YXJlX2NvdW50KG4pOlxuICAgIHN0aXRjaGVzID0gMFxuICAgIGZvciByb3cgaW4gcmFuZ2Uobik6ICAgICAgICAgICMgbiByb3dzXG4gICAgICAgIGZvciBjb2wgaW4gcmFuZ2Uobik6ICAgICAgIyBuIHN0aXRjaGVzIHBlciByb3dcbiAgICAgICAgICAgIHN0aXRjaGVzICs9IDEgICAgICAgICAjIHVuaXQgd29ya1xuICAgIHJldHVybiBzdGl0Y2hlcyAgICAgICAgICAgICAgICMgPSBuKm4ifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGtuaXRfc3F1YXJlX2NvdW50KG4pOlxuICAgIGNsb3RoID0gXCJcIlxuICAgIGZvciByb3cgaW4gcmFuZ2Uobik6ICAgICAgICAgICMgbiByb3dzXG4gICAgICAgIGZvciBjb2wgaW4gcmFuZ2Uobik6ICAgICAgIyBuIHN0aXRjaGVzIHBlciByb3dcbiAgICAgICAgICAgIGNsb3RoICs9IFwiWFwiICAgICAgICAgICMgdW5pdCB3b3JrXG4gICAgICAgIGNsb3RoICs9IFwiXFxuXCIgICAgICAgICAgICAgIyBnbyB0byBuZXh0IHJvd1xuICAgIHJldHVybiBjbG90aFxuXG5wcmludChrbml0X3NxdWFyZV9jb3VudCg1KSkifQ==
 </script>
 </div>
-</div><div class="column" style="display: flex; justify-content: center; align-items: center;">
-<table style="border-collapse: collapse; width: 250px; height: 250px;">
-<tbody><tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-<td style="border: 1px solid black;">
-</td>
-</tr>
-</tbody></table>
-</div></div>
 <aside class="notes">
-<p>def knit_square_print(n): for r in range(n): row = “” for c in range(n):<br>
-row += ‘X’<br>
-print(row)</p>
-<p>script: walk through existing code. counting stitches is the same as counting time.</p>
-<p>which line is executed most frequently? how many times is outer forloop executed? how many times is line (inner for loop) executed?</p>
-<p>let’s demonstrate the work with ascii art! change code incrementally produce one row at a time. (add empty row) for each column, add a “stitch” row done, so print it out.</p>
-<p>have we done more work? a little, but the most frequent line happens the same number of times.</p>
+<p>Walk through code. Yes, we are mutating variable <code>cloth</code>, and we generally discourage mutation. Are we mutating the string to which <code>cloth</code> refers?</p>
+<p>Count work to arrive at <span class="math inline">\(n^2\)</span> conclusion. * Which line is executed most frequently? * How many times is outer <code>for</code> loop executed? * How many total times is line 5 (inner <code>for</code> loop) executed?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -598,76 +567,60 @@ print(row)</p>
       }</style></aside>
 </section>
 <section id="quantifying-the-task-2" class="slide level2">
-<h2>Quantifying the Task</h2>
-<p>Suppose we can knit 10<sup>12</sup> stitches per second…</p>
+<h2>Quantifying the task…</h2>
+<p>Suppose we can knit 1 (= 10<sup>0</sup>) stitches per second….</p>
+<p>The degree (in n) makes a very big difference!</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th></th>
+<th>time \ n</th>
 <th>10</th>
 <th>100</th>
 <th>1000</th>
-<th>10,000</th>
-<th>10<sup>12</sup></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>10<sup>-11</sup>s</td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>1 s</td>
+<td>log n</td>
+<td>~3 s</td>
+<td>~6½ s</td>
+<td>~10 s</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n \log n\)</span></td>
-<td>10<sup>-11</sup> s</td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-7</sup> s</td>
-<td>40 s</td>
+<td>n</td>
+<td>10 s</td>
+<td>10<sup>2</sup> s ~ 1½ min</td>
+<td>10<sup>3</sup> s ~ 16½ min</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(n^2\)</span></td>
-<td>10<sup>-10</sup> s</td>
-<td>10<sup>-8</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-4</sup> s</td>
-<td>10<sup>12</sup> s</td>
+<td>n log n</td>
+<td>3(10) s ~ ½ min</td>
+<td>6(10<sup>2</sup>) s ~ 10 min</td>
+<td>10<sup>4</sup> s ~ 2½ hours</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n^3\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>-6</sup> s</td>
-<td>10<sup>-3</sup> s</td>
-<td>1 s</td>
-<td>10<sup>24</sup> s</td>
+<td>n<sup>2</sup></td>
+<td>100 s ~ 1½ min</td>
+<td>10<sup>4</sup> s ~ 2½ hours</td>
+<td>10<sup>6</sup> s ~ 11½ days</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(2^n\)</span></td>
-<td>10<sup>-9</sup> s</td>
-<td>10<sup>18</sup> s</td>
-<td>10<sup>289</sup> s</td>
-<td></td>
-<td></td>
+<td>n<sup>3</sup></td>
+<td>1000 s ~ 16½ min</td>
+<td>10<sup>6</sup> s ~ 11½ days</td>
+<td>10<sup>9</sup> s ~ 31½ years</td>
+</tr>
+<tr class="even">
+<td>2<sup>n</sup></td>
+<td>1024 s ~ 17 min</td>
+<td>~10<sup>30</sup> s</td>
+<td>~10<sup>301</sup> s</td>
 </tr>
 </tbody>
 </table>
-<p>The amount of computation we do inside our algorithm actually matters!</p>
+<p>Notes: “log” = log_2 and the age of the universe: ~10^18 s</p>
 <aside class="notes">
-<p>Why does this matter?</p>
-<p>Annotate:</p>
-<ol type="1">
-<li>Each stitch takes a tiny tiny fraction of a second 1/10<sup>12</sup> = 10<sup>-12</sup> (fastest machine is 415 x 10<sup>15</sup>).</li>
-<li><span class="math inline">\(n\)</span> is size parameter for our computation.</li>
-<li><span class="math inline">\(T(n)\)</span> is the amount of time our computation takes.</li>
-</ol>
-<p>Choose one to illustrate if our rag/data size is 1000, and we need to compute n<sup>3</sup> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3</sup>/10<sup>12</sup> = 10<sup>-3</sup> a thousandth of a second. Nbd.</p>
-<p>BUT let’s look at bigger data. 10<sup>12</sup> (~128gb pretty big) 10<sup>12</sup> mm = 1M km, 384,400 km to the moon. 149M km to the sun. So knitting something that big would take 10<sup>12</sup> s = ~32000 years. The sun will long since have burnt out by 10<sup>18</sup> s</p>
-<p>Punchline—we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
-<p>Recap—we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. 🙁</p>
-<p>NOTE: <span class="math inline">\(\log\)</span> is <span class="math inline">\(\log_2\)</span>. And <span class="math inline">\(\log 1000 = 10\)</span>.</p>
+<p>Log factors are great! Linear (power 1) is good. Powers 2+ (polynomial) is okay as long as n is reasonably small. If n is in the exponent, forget about it…</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -680,14 +633,110 @@ print(row)</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="words-and-ideas" class="slide level2">
-<h2>Words and Ideas</h2>
-<ul>
-<li><p>Elegance</p></li>
-<li><p>Growth of simple functions over time</p></li>
-<li><p>Representing complexity of a problem using time</p></li>
-<li><p>Running time of a Python function</p></li>
-</ul>
+<section id="quantifying-the-task-3" class="slide level2">
+<h2>Quantifying the task…</h2>
+<p>But computers are much faster. Suppose we can “knit” 10<sup>12</sup> stitches / s</p>
+<p>The amount of computation we do inside our algorithm actually matters!</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>time \ n</th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+<th>10<sup>6</sup></th>
+<th>10<sup>12</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>log n</td>
+<td>~3(10<sup>-12</sup>) s</td>
+<td>~6½(10<sup>-12</sup>) s</td>
+<td>~10(10<sup>-12</sup>) s</td>
+<td>~20(10<sup>-12</sup>) s</td>
+<td>~40(10<sup>-12</sup>) s</td>
+</tr>
+<tr class="even">
+<td>n</td>
+<td>10<sup>-11</sup> s</td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>1 s</td>
+</tr>
+<tr class="odd">
+<td>n log n</td>
+<td>3(10<sup>-11</sup>) s</td>
+<td>6(10<sup>-10</sup>) s</td>
+<td>10<sup>-8</sup> s</td>
+<td>~20(10<sup>-6</sup>) s</td>
+<td>~40 s</td>
+</tr>
+<tr class="even">
+<td>n<sup>2</sup></td>
+<td>10<sup>-10</sup> s</td>
+<td>10<sup>-8</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>1 s</td>
+<td>10<sup>12</sup> s</td>
+</tr>
+<tr class="odd">
+<td>n<sup>3</sup></td>
+<td>10<sup>-9</sup> s</td>
+<td>10<sup>-6</sup> s</td>
+<td>10<sup>-3</sup> s</td>
+<td>10<sup>6</sup> s</td>
+<td>10<sup>24</sup> s</td>
+</tr>
+<tr class="even">
+<td>2<sup>n</sup></td>
+<td>~10<sup>-9</sup> s</td>
+<td>~10<sup>18</sup> s</td>
+<td>~10<sup>289</sup> s</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Notes: proteins fold in ~10<sup>-6</sup> s and the age of the universe: ~10<sup>18</sup> s</p>
+<aside class="notes">
+<p>A fast laptop might achieve 10^12 flops. Fastest supercomputer is 2198 x 10^15 flops.</p>
+<p>If our rag/data size is 1000, and we need to compute <span class="math inline">\(n^3\)</span> steps/stitches (like knitting a cube!!), then the total time is 1000<sup>3/10</sup>12 == 10^-3 or one thousandth of a second. Nbd.</p>
+<p>BUT let’s look at bigger data. 10^12 (~128gb … pretty big) 10^12 mm == 10^6 km (for reference, 384,400 km to the moon or 149(10^6) km to the sun. Knitting something that big would take 10^12 seconds ~32000 years. The sun will long since have burnt out by 10^18</p>
+<p>Punchline – we don’t want to do <span class="math inline">\(2^n\)</span> amount of computation, and we need creative approaches for big data.</p>
+<p>Recap – we’ve seen a problem whose size we characterize by <span class="math inline">\(n^2\)</span>, we’ll see problems whose time we characterize by <span class="math inline">\(n\)</span>, for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by <span class="math inline">\(2^n\)</span>. :(</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="colour" class="title-slide slide level1 center">
+<h1>Colour</h1>
+
+</section>
+<section id="colour-interpretation" class="slide level2 smaller">
+<h2>Colour Interpretation</h2>
+
+<img data-src="../images/electromagnetic-spectrum.png" class="r-stretch"><p>How does light wavelength become colour? <a href="https://en.wikipedia.org/wiki/Color_vision">Biological interpretation</a></p>
+<p>What’s your favorite colour? <a href="http://www.playbuzz.com/jon10/what-color-matches-your-personality">Psychological interpretation</a></p>
+<p>Does that colour influence your dress/decor/purchases? <a href="http://markedbydesign.net/blog/meaning-in-color/">Cultural interpretation</a></p>
 
 
 <script type="pyodide-data">
