@@ -4,8 +4,6 @@ execute:
   freeze: false
 ---
 
-**New:** Please complete the [start of term survey](https://ubc.ca1.qualtrics.com/jfe/form/SV_6hX61fl8UHPT8mq).
-
 See sidebar for syllabus, logistics, and links to other course resources.
 
 Links and dates for future items may change.
