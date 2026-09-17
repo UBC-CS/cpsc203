@@ -1,0 +1,466 @@
+---
+date: 2026-09-17
+---
+
+## Announcements
+
+* POTW1 and Lab1 are due **Sunday at 8pm**.
+  * POTW2 and Lab2 will become available after that.
+
+* Enroll in CPSC203 on [PrairieTest]({{< var course.prairietest >}}).
+  * Book your slot for examlet 1 (Thur Oct 1 - Mon Oct 5).
+  * Students with accommodations: If you cannot see your accommodation when you try to book a slot, email me.
+
+* First practice examlet will become available on Monday.
+  * Covers same material as examlet 1.
+
+<!-- 
+-   Python resources posted to piazza.
+-->
+
+## Today's Plan
+
+- Data vs Information
+  - Symbols can have multiple meanings
+- Representation in computers
+  - Computer hardware interprets electrical signals as binary digits ("bits").
+  - We can use bits to represent numbers, and numbers to represent virtually anything.
+
+::: notes
+**Summary**
+
+Today we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code.
+:::
+
+# Data vs Information
+
+## Data vs Information
+
+::: center
+![](/images/data-information-diagram.svg){width="75%"}
+:::
+
+* You care about information.
+* Programs can process data
+
+::: notes
+The definition of "information" and "data" are a bit slippery, because what is information in one context might be data in another.  For a particular problem, the data is what the program can process while the information is what the human cares about.  Note that the representation / interpretation might be trivial: If the information is numbers, then the data is probably the same number (forboding...).
+
+Also: Humans will still have to transform information into knowledge and/or action...
+:::
+
+## Multiple Interpretations
+
+- What do the following English words mean?
+  - produce
+  - contest
+  - object
+  - console
+
+- What does this colour mean? []{.hexagon-red} 
+
+::: notes
+- With interpretation (noun or verb), the word meaning becomes clear.
+
+- Red can mean many things
+  - emotion: anger, joy, love, mourning (depends on your cultural background)
+  - politics: communism, socialism (but: Republicans???)
+  - safety: danger, stop
+  - finance: loss or debt
+:::
+
+## Multiple Representations 
+
+::: {.incremental}
+- How can we represent this colour? []{.hexagon-red}
+
+:::::: {.columns}
+::: {.column}
+- Words
+
+  ::: {.nonincremental}
+  - red (english)
+  - rouge (french)
+  - ckʷim (hən̓q̓əmin̓əm̓)
+  - pula (tagalog)
+  - 红色 (simplified Chinese)
+  :::
+:::
+
+::: {.column}
+- Numbers
+
+  ::: {.nonincremental}
+  - `(255, 0, 0)`
+  - `#FF0000`
+  :::
+:::
+
+::::::
+
+:::
+
+::: notes
+- light of a certain wavelength
+- an object which reflects those wavelengths, such as a fabric swatch
+- blood(?)
+- hən̓q̓əmin̓əm̓ is the language of the Musqueam people.
+:::
+
+## How to Design Data / Functions / Programs
+
+- Let's review [HtDD / HtDF / HtDF recipes](https://ubc-cs.github.io/cpsc203/htdp-cpsc-203.html)
+
+# Computer Representation
+
+## Representation
+
+Today we're exploring a fundamental question: How do we *represent* the world as data?
+
+Note that "representation" has (at least) two meanings:
+
+- **Technical**: How computers encode rich concepts (like colour) as numbers
+- **Social**: Who is represented in this discipline, and why it matters
+
+
+::: notes
+Course content will focus on the former.
+
+As a field, computer science continues to struggle with the latter.  I encourage you all, both in the course and beyond, to stamp your own interpretations and ideas on the field even if the incumbents might not agree.  While the demographics of computing have been historically narrow, the field also has an unmatched enthusiasm for innovation and "breaking things".
+:::
+
+## Computer Data
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+What does data look like to a computer?
+
+::: {.incremental}
+- Detect [voltage levels](https://en.wikipedia.org/wiki/Voltage) (actually the presence of electrical charges in tiny [capacitors](https://en.wikipedia.org/wiki/Capacitor)).
+
+- [Analog](https://en.wikipedia.org/wiki/Analog_signal) vs [digital](https://en.wikipedia.org/wiki/Digital_signal): [What's the difference](https://www.diffen.com/difference/Analog_vs_Digital)?
+
+- Binary digits --> "[bits](https://en.wikipedia.org/wiki/Bit)"
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+![](/images/ssd.jpg){fig-alt="Close-up of a solid-state drive (SSD) circuit board showing memory chips and connectors."}
+
+:::
+
+:::
+
+<!-- Not clear that this article is still relevant.
+::: footer
+<https://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/>
+:::
+-->
+
+::: notes
+- Picture the capacitors as little cups containing water.
+  - Discuss analog vs digital interpretation of the amount of water.
+- Positive and negative charges interpreted as 1 and 0, which leads us to "binary"
+  - Discuss why we decided to go with binary, as opposed to decimal or something else.  (Actually, in some systems they use other powers of 2.)
+:::
+
+## But Humans use Decimal Numbers
+
+- Most common approach to representing numbers for humans is the [Hindu-Arabic numeral system](https://en.wikipedia.org/wiki/Hindu%E2%80%93Arabic_numeral_system).
+  - It is a [positional system](https://en.wikipedia.org/wiki/Positional_notation) using 10 as the [radix](https://en.wikipedia.org/wiki/Radix).
+  - Often called [base-10 or decimal](https://en.wikipedia.org/wiki/Decimal).
+
+|       |       |       |       |
+|-------|-------|-------|-------|
+| 3     | 1     | 5     | 7     |
+| 10^3^ = 1000 | 10^2^ = 100 | 10^1^ = 10 | 10^0^ = 1 |
+
+::: notes
+Write out full english version of the decimal number.
+:::
+
+
+## Converting between Bases
+
+- We can use other bases.
+  - The Babylonians used [base-60](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals).
+  - Computers use [base-2 or binary](https://en.wikipedia.org/wiki/Binary_number).
+
+|  |  |  |  |
+|------------------|------------------|------------------|------------------|
+| 1 | 1 | 0 | 1 |
+| [2]^3^ = 8 | [2]^2^ = 4 | [2]^1^ = 2 | [2]^0^ = 1 |
+
+::: notes
+Convert the binary number to decimal.
+:::
+
+## {{< iconify fa6-solid comments >}} Your turn: Thinking about bits {.activity}
+
+- What's the largest number you can represent with 4 bits?
+- How many bits do you need to represent 120?
+- If I give you one more bit, what happens to how many numbers you can represent?
+- How high can you count on your fingers? and toes?
+- As the number $k$ grows, how does the number of digits grow?
+
+{{< countdown minutes=3 >}}
+
+::: notes
+- Largest with 4 bits: 15 (1111).
+- Bits for 120: 7 bits (120 < 128 = 2^7).
+- One more bit: DOUBLES the numbers you can represent!
+- Remember 2^10^ about 1000, 2^20^ = 10^6^. 
+- Complexity (number of digits) grows as $\log k$.
+- What about non-positional number systems?
+  - Tally or roman numerals grow as $k$ (even for Roman numerals, since the largest single digit is "M" = one thousand).
+:::
+
+## From bits to... everything?
+
+We can represent integers, so we can assign integers to any other (discrete) data
+
+- Text: [ASCII](https://en.wikipedia.org/wiki/ASCII) or [Unicode](https://en.wikipedia.org/wiki/Unicode) (aka UTF-8, UTF-16, UTF-32)
+- [Sound](https://en.wikipedia.org/wiki/Digital_audio) (amplitude samples)
+- [Images](https://en.wikipedia.org/wiki/Digital_image) (pixel colours)
+- [Video](https://en.wikipedia.org/wiki/Digital_video) (sequences of images)
+- Humans (UBC student numbers, [social insurance numbers](https://en.wikipedia.org/wiki/Social_insurance_number), [national identification number](https://en.wikipedia.org/wiki/National_identification_number), ...)
+
+Let's see how this works with **colour**.
+
+::: notes
+How many different characters can we represent with UTF-32?  Just 1,112,064 (even though 2^32^ = 4 billion).
+:::
+
+# Colour
+
+## Colour Interpretation {.smaller}
+
+::: center
+![](/images/electromagnetic-spectrum.png)
+:::
+
+How does light wavelength become colour?  [Biological interpretation](https://en.wikipedia.org/wiki/Color_vision)
+
+What's your favorite colour?  [Psychological interpretation](http://www.playbuzz.com/jon10/what-color-matches-your-personality)
+
+Does that colour influence your dress/decor/purchases?  [Cultural interpretation](http://markedbydesign.net/blog/meaning-in-color/)
+
+::: notes
+Normal computer images do **none** of these three things (although it does take advantage of how human biology detects light).
+:::
+
+
+## Colour Representation
+
+Can we use integers to represent colours?
+
+One way: RGB (red, green, blue), where each "component" is in range 0 through 255.
+
+ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
+
+Fun calculator for colour values: <https://colorizer.org>
+
+How many bits for 256 values?
+
+## Colour Representation Example {.medium}
+
+::: center
+`0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1`
+:::
+
+- What colour is this? []{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-orange}
+
+- Easier to read if we use *hexadecimal* (base-16) representation:
+
+  - A hex "digit" is one of `0123456789abcdef`
+  - One hex digit can represent the same as four binary digits
+
+::: center
+`0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1`
+
+`   5    |    b    |    5    |    b    |    5    |   b`
+:::
+
+::: notes
+None of these colours: This is a shade of grey.
+:::
+
+## Practice
+
+What colour is this 24-bit number?
+
+::: center
+`0110 0111 0100 1110 1010 0111`
+:::
+
+\
+\
+
+- First: convert to hex using digits `0123456789abcdef`
+
+::: notes
+Walk through conversion on board:
+- First 8 bits (0110 0111) = Red channel
+- Next 8 bits (0100 1110) = Green channel
+- Last 8 bits (1010 0111) = Blue channel
+- Convert each 4-bit group to hex digit
+- Result: #674ea7
+:::
+
+## Colour and Code {.smaller}
+
+Make [the poppies](https://www.epicgardening.com/spring-wildflowers-from-seed/) pop!
+
+::: center
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies." width="40%"}
+:::
+
+For each pixel
+
+- If its red colour channel is high (over 200, say), then leave it as is.
+- Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.
+
+## Colour and Code
+
+```{pyodide}
+import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the colour channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+
+    # compute grey 
+
+
+    # conditionally change the pixel to grey
+
+
+    # return updated pixel
+    return (red, green, blue)
+
+''' Input: np.ndarray representing an image
+    Output: an np.ndarray representing an image
+    Function: Create a new image by appling the boost_red_pixel 
+    function to every pixel in the original, and saving the 
+    result to the copy.
+'''
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy -- easy way to get the size right
+
+    # traverse every pixel in the image and write to the copy!
+    
+
+
+    # return image with changed pixels
+    return out
+
+def main() -> None:
+    
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
+    
+    out = fancify(img)            # make a new fancy image
+
+    plt.imshow(out)               # output the results
+    plt.axis('off')
+    plt.show()
+
+main()
+```
+
+::: notes
+``` python
+import numpy as np
+from skimage import io
+import matplotlib.pyplot as plt
+
+Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
+
+'''Input: Pixel p
+   Output: Pixel
+   Function: If the pixel has high red value, then don't change it, otherwise
+   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
+   the average of the 3.
+'''
+def boost_red_pixel(p: Pixel) -> Pixel:
+    # setup -- extract the colour channels as ints
+    red = int(p[0])
+    green = int(p[1])
+    blue = int(p[2])
+    # compute grey 
+    grey = (red + green + blue)//3
+
+    # conditionally change the pixel to grey
+    if red < 200:
+        red = green = blue = grey
+
+    # return updated pixel
+    return (red, green, blue)
+
+def fancify(img: np.ndarray) -> np.ndarray:
+    H, W = img.shape[:2] # grab the height and width of the image
+    out = img.copy()     # write to a copy
+
+    # traverse every pixel in the image and change it!
+    for row in range(H):
+        for col in range(W):
+            out[row, col] = boost_red_pixel(img[row,col])
+
+    # return image with changed pixels
+    return out
+
+def main() -> None:
+    
+    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)
+    
+    out = fancify(img)
+  
+    plt.imshow(out)
+    plt.axis('off')
+    plt.show()
+  
+main()
+```
+:::
+
+## {{< var icon.computer-activity >}} Your turn: Change image or boost {.activity}
+
+Experiment with the code! Try one or more of these:
+
+1. Find a different image URL and boost a different colour (green? blue?)
+2. Change the threshold value (try 150 instead of 200)
+3. Instead of greying, try inverting: `red = 255 - red`
+4. What happens if you boost pixels that are LOW in red instead of high?
+
+{{< countdown minutes=5 >}}
+
+## What you learned today {.medium}
+
+You've discovered something profound:
+
+- Information can be represented as data, data can be interpreted as information
+- Computers store all data as **bits** (0s and 1s)
+- Bits can represent **integers** (using binary, base 2)
+- Integers can represent **colours** (RGB: three numbers 0-255)
+- Which means bits can represent **images** (grids of pixels)
+- You can write **code** to manipulate those images!
+
+From electrical signals to making poppies pop!
