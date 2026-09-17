@@ -418,18 +418,3 @@ Punchline -- we don't want to do $2^n$ amount of computation, and we need creati
 Recap -- we've seen a problem whose size we characterize by $n^2$, we'll see problems whose time we characterize by $n$, for sure, and later in the term, we'll see a problem which is very simply stated, whose size we characterize by $2^n$. ☹
 :::
 
-# Colour
-
-## Colour Interpretation {.smaller}
-
-![](/images/electromagnetic-spectrum.png)
-
-How does light wavelength become colour?  [Biological interpretation](https://en.wikipedia.org/wiki/Color_vision)
-
-What's your favorite colour?  [Psychological interpretation](http://www.playbuzz.com/jon10/what-color-matches-your-personality)
-
-Does that colour influence your dress/decor/purchases?  [Cultural interpretation](http://markedbydesign.net/blog/meaning-in-color/)
-
-::: notes
-Normal computer images do **none** of these three things (although it does take advantage of how human biology detects light).
-:::
