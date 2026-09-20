@@ -254,18 +254,69 @@ Does that colour influence your dress/decor/purchases?  [Cultural interpretation
 Normal computer images do **none** of these three things (although it does take advantage of how human biology detects light).
 :::
 
+## Human Colour Perception {.medium}
+
+- Human color vision has three channels
+  - Our brain experiences color based on the intensity of light detected by “red”, “green” and “blue” cone cells in our retinas
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+- If we are shown a yellow wavelength
+  - L cones will respond strongly
+  - M cones will respond almost as strongly
+  - S cones will respond weakly
+- To fake a yellow wavelength (for a human)
+  - Show a lot of a red wavelength
+  - Show a little less of a green wavelength
+  - Show little or no blue wavelength
+
+:::
+
+::: {.column width="40%"}
+\
+
+![](/images/cone-wavelengths.png)
+
+:::
+
+:::
 
 ## Colour Representation
 
-Can we use integers to represent colours?
+- So we only need to figure out how to manage blends of three colors!
 
-One way: RGB (red, green, blue), where each "component" is in range 0 through 255.
+- Can we use integers to represent colours?
+  - One way: RGB or (red, green, blue), where each "component" is integer in the range 0 through 255.
+  - For example: (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}?
+  - Fun calculator for colour values: <https://colorizer.org>
 
-ex. (`255, 0, 127`) == [[]{.swatch-purple} []{.swatch-cyan} []{.swatch-lime} []{.swatch-pink} []{.swatch-apricot}]{style="position: relative; top: 11px;"}
+- Why 256 possible values?
 
-Fun calculator for colour values: <https://colorizer.org>
+::: notes
+- Early computer colour might only use 5 bits / channel (so slightly less than 16 bits).
+  - 8 bits / channel is convenient as (1) computers actually work with data on a byte (or even word = 32 or 64 bit) level and (2) it is sufficient that humans don't notice the gradations.
+:::
 
-How many bits for 256 values?
+## Aside: Other Colour Representations {.medium}
+
+- There are alternative ways to represent colour.
+  - HSV (hue, saturation, value) is closer to how humans usually pick colours.
+  - CMY (cyan, magenta, yellow) for reflective colour.
+  - Sometimes you want more than three channels: 
+    - "Alpha" for controlling transparency.
+    - CMYK to allow for proper black.
+    - Additional wavelengths for sensors operating outside human capability.
+
+::: notes
+- HSV:
+  - Hue (H): The color family, measured in degrees from 0° to 360° on a color wheel (0° is red, 120° is green, and 240° is blue).
+  - Saturation (S): The purity or intensity of the color, ranging from 0% (gray) to 100% (vivid, pure color).
+  - Value (V): The brightness or lightness of the color, ranging from 0% (absolute black) to 100% (full brightness).
+- CMYK is used for printers.
+- "Multi-spectral" images are used widely in geosensing and astronomy.
+:::
 
 ## Colour Representation Example {.medium}
 
@@ -312,155 +363,3 @@ Walk through conversion on board:
 - Result: #674ea7
 :::
 
-## Colour and Code {.smaller}
-
-Make [the poppies](https://www.epicgardening.com/spring-wildflowers-from-seed/) pop!
-
-::: center
-![](/images/poppyfield.jpg){fig-alt="A field of red poppies." width="40%"}
-:::
-
-For each pixel
-
-- If its red colour channel is high (over 200, say), then leave it as is.
-- Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.
-
-## Colour and Code
-
-```{pyodide}
-import numpy as np
-from skimage import io
-import matplotlib.pyplot as plt
-
-Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
-
-'''Input: Pixel p
-   Output: Pixel
-   Function: If the pixel has high red value, then don't change it, otherwise
-   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
-   the average of the 3.
-'''
-def boost_red_pixel(p: Pixel) -> Pixel:
-    # setup -- extract the colour channels as ints
-    red = int(p[0])
-    green = int(p[1])
-    blue = int(p[2])
-
-    # compute grey 
-
-
-    # conditionally change the pixel to grey
-
-
-    # return updated pixel
-    return (red, green, blue)
-
-''' Input: np.ndarray representing an image
-    Output: an np.ndarray representing an image
-    Function: Create a new image by appling the boost_red_pixel 
-    function to every pixel in the original, and saving the 
-    result to the copy.
-'''
-
-def fancify(img: np.ndarray) -> np.ndarray:
-    H, W = img.shape[:2] # grab the height and width of the image
-    out = img.copy()     # write to a copy -- easy way to get the size right
-
-    # traverse every pixel in the image and write to the copy!
-    
-
-
-    # return image with changed pixels
-    return out
-
-def main() -> None:
-    
-    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # read from website, keep first 3 channels (RGB)
-    
-    out = fancify(img)            # make a new fancy image
-
-    plt.imshow(out)               # output the results
-    plt.axis('off')
-    plt.show()
-
-main()
-```
-
-::: notes
-``` python
-import numpy as np
-from skimage import io
-import matplotlib.pyplot as plt
-
-Pixel = tuple[np.uint8, np.uint8, np.uint8]  # (r, g, b)
-
-'''Input: Pixel p
-   Output: Pixel
-   Function: If the pixel has high red value, then don't change it, otherwise
-   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to
-   the average of the 3.
-'''
-def boost_red_pixel(p: Pixel) -> Pixel:
-    # setup -- extract the colour channels as ints
-    red = int(p[0])
-    green = int(p[1])
-    blue = int(p[2])
-    # compute grey 
-    grey = (red + green + blue)//3
-
-    # conditionally change the pixel to grey
-    if red < 200:
-        red = green = blue = grey
-
-    # return updated pixel
-    return (red, green, blue)
-
-def fancify(img: np.ndarray) -> np.ndarray:
-    H, W = img.shape[:2] # grab the height and width of the image
-    out = img.copy()     # write to a copy
-
-    # traverse every pixel in the image and change it!
-    for row in range(H):
-        for col in range(W):
-            out[row, col] = boost_red_pixel(img[row,col])
-
-    # return image with changed pixels
-    return out
-
-def main() -> None:
-    
-    img = io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]     # keep first 3 channels (RGB)
-    
-    out = fancify(img)
-  
-    plt.imshow(out)
-    plt.axis('off')
-    plt.show()
-  
-main()
-```
-:::
-
-## {{< var icon.computer-activity >}} Your turn: Change image or boost {.activity}
-
-Experiment with the code! Try one or more of these:
-
-1. Find a different image URL and boost a different colour (green? blue?)
-2. Change the threshold value (try 150 instead of 200)
-3. Instead of greying, try inverting: `red = 255 - red`
-4. What happens if you boost pixels that are LOW in red instead of high?
-
-{{< countdown minutes=5 >}}
-
-## What you learned today {.medium}
-
-You've discovered something profound:
-
-- Information can be represented as data, data can be interpreted as information
-- Computers store all data as **bits** (0s and 1s)
-- Bits can represent **integers** (using binary, base 2)
-- Integers can represent **colours** (RGB: three numbers 0-255)
-- Which means bits can represent **images** (grids of pixels)
-- You can write **code** to manipulate those images!
-
-From electrical signals to making poppies pop!
