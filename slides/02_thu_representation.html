@@ -39,72 +39,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -549,7 +483,7 @@
 <li>How high can you count on your fingers? and toes?</li>
 <li>As the number <span class="math inline">\(k\)</span> grows, how does the number of digits grow?</li>
 </ul>
-<countdown-timer id="timer_10116c78db7c98adceacd877a7c3b8631cfb710b" minutes="03" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_803e56f4d89a89a005c05e89657d54d9f7a80eb7" minutes="03" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <ul>
@@ -627,13 +561,104 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="human-colour-perception" class="slide level2 medium">
+<h2>Human Colour Perception</h2>
+<ul>
+<li>Human color vision has three channels
+<ul>
+<li>Our brain experiences color based on the intensity of light detected by “red”, “green” and “blue” cone cells in our retinas</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>If we are shown a yellow wavelength
+<ul>
+<li>L cones will respond strongly</li>
+<li>M cones will respond almost as strongly</li>
+<li>S cones will respond weakly</li>
+</ul></li>
+<li>To fake a yellow wavelength (for a human)
+<ul>
+<li>Show a lot of a red wavelength</li>
+<li>Show a little less of a green wavelength</li>
+<li>Show little or no blue wavelength</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><br>
+</p>
+<p><img data-src="../images/cone-wavelengths.png"></p>
+</div></div>
+</section>
 <section id="colour-representation" class="slide level2">
 <h2>Colour Representation</h2>
-<p>Can we use integers to represent colours?</p>
-<p>One way: RGB (red, green, blue), where each “component” is in range 0 through 255.</p>
-<p>ex. (<code>255, 0, 127</code>) == <span style="position: relative; top: 11px;"><span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-apricot"></span></span></p>
-<p>Fun calculator for colour values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></p>
-<p>How many bits for 256 values?</p>
+<ul>
+<li><p>So we only need to figure out how to manage blends of three colors!</p></li>
+<li><p>Can we use integers to represent colours?</p>
+<ul>
+<li>One way: RGB or (red, green, blue), where each “component” is integer in the range 0 through 255.</li>
+<li>For example: (<code>255, 0, 127</code>) == <span style="position: relative; top: 11px;"><span class="swatch-purple"></span> <span class="swatch-cyan"></span> <span class="swatch-lime"></span> <span class="swatch-pink"></span> <span class="swatch-apricot"></span></span>?</li>
+<li>Fun calculator for colour values: <a href="https://colorizer.org" class="uri">https://colorizer.org</a></li>
+</ul></li>
+<li><p>Why 256 possible values?</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Early computer colour might only use 5 bits / channel (so slightly less than 16 bits).
+<ul>
+<li>8 bits / channel is convenient as (1) computers actually work with data on a byte (or even word = 32 or 64 bit) level and (2) it is sufficient that humans don’t notice the gradations.</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aside-other-colour-representations" class="slide level2 medium">
+<h2>Aside: Other Colour Representations</h2>
+<ul>
+<li>There are alternative ways to represent colour.
+<ul>
+<li>HSV (hue, saturation, value) is closer to how humans usually pick colours.</li>
+<li>CMY (cyan, magenta, yellow) for reflective colour.</li>
+<li>Sometimes you want more than three channels:
+<ul>
+<li>“Alpha” for controlling transparency.</li>
+<li>CMYK to allow for proper black.</li>
+<li>Additional wavelengths for sensors operating outside human capability.</li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>HSV:
+<ul>
+<li>Hue (H): The color family, measured in degrees from 0° to 360° on a color wheel (0° is red, 120° is green, and 240° is blue).</li>
+<li>Saturation (S): The purity or intensity of the color, ranging from 0% (gray) to 100% (vivid, pure color).</li>
+<li>Value (V): The brightness or lightness of the color, ranging from 0% (absolute black) to 100% (full brightness).</li>
+</ul></li>
+<li>CMYK is used for printers.</li>
+<li>“Multi-spectral” images are used widely in geosensing and astronomy.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="colour-representation-example" class="slide level2 medium">
 <h2>Colour Representation Example</h2>
@@ -691,123 +716,10 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="colour-and-code" class="slide level2 smaller">
-<h2>Colour and Code</h2>
-<p>Make <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/">the poppies</a> pop!</p>
-<div class="center">
-<p><img data-src="../images/poppyfield.jpg" style="width:40.0%" alt="A field of red poppies."></p>
-</div>
-<p>For each pixel</p>
-<ul>
-<li>If its red colour channel is high (over 200, say), then leave it as is.</li>
-<li>Otherwise, change the pixel to grey by setting all 3 colour channels to the average of their original values.</li>
-</ul>
-</section>
-<section id="colour-and-code-1" class="slide level2">
-<h2>Colour and Code</h2>
-<div>
-<div id="pyodide-1" class="exercise-cell">
-
-</div>
-<script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5wXG5mcm9tIHNraW1hZ2UgaW1wb3J0IGlvXG5pbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5cblBpeGVsID0gdHVwbGVbbnAudWludDgsIG5wLnVpbnQ4LCBucC51aW50OF0gICMgKHIsIGcsIGIpXG5cbicnJ0lucHV0OiBQaXhlbCBwXG4gICBPdXRwdXQ6IFBpeGVsXG4gICBGdW5jdGlvbjogSWYgdGhlIHBpeGVsIGhhcyBoaWdoIHJlZCB2YWx1ZSwgdGhlbiBkb24ndCBjaGFuZ2UgaXQsIG90aGVyd2lzZVxuICAgZmFkZSB0aGUgcGl4ZWwgdG8gZ3JleS4gIE5vdGUsIHRvIGdyZXkgYSBwaXhlbCwgc2V0IGFsbCBjb2xvdXIgY2hhbm5lbHMgdG9cbiAgIHRoZSBhdmVyYWdlIG9mIHRoZSAzLlxuJycnXG5kZWYgYm9vc3RfcmVkX3BpeGVsKHA6IFBpeGVsKSAtPiBQaXhlbDpcbiAgICAjIHNldHVwIC0tIGV4dHJhY3QgdGhlIGNvbG91ciBjaGFubmVscyBhcyBpbnRzXG4gICAgcmVkID0gaW50KHBbMF0pXG4gICAgZ3JlZW4gPSBpbnQocFsxXSlcbiAgICBibHVlID0gaW50KHBbMl0pXG5cbiAgICAjIGNvbXB1dGUgZ3JleSBcblxuXG4gICAgIyBjb25kaXRpb25hbGx5IGNoYW5nZSB0aGUgcGl4ZWwgdG8gZ3JleVxuXG5cbiAgICAjIHJldHVybiB1cGRhdGVkIHBpeGVsXG4gICAgcmV0dXJuIChyZWQsIGdyZWVuLCBibHVlKVxuXG4nJycgSW5wdXQ6IG5wLm5kYXJyYXkgcmVwcmVzZW50aW5nIGFuIGltYWdlXG4gICAgT3V0cHV0OiBhbiBucC5uZGFycmF5IHJlcHJlc2VudGluZyBhbiBpbWFnZVxuICAgIEZ1bmN0aW9uOiBDcmVhdGUgYSBuZXcgaW1hZ2UgYnkgYXBwbGluZyB0aGUgYm9vc3RfcmVkX3BpeGVsIFxuICAgIGZ1bmN0aW9uIHRvIGV2ZXJ5IHBpeGVsIGluIHRoZSBvcmlnaW5hbCwgYW5kIHNhdmluZyB0aGUgXG4gICAgcmVzdWx0IHRvIHRoZSBjb3B5LlxuJycnXG5cbmRlZiBmYW5jaWZ5KGltZzogbnAubmRhcnJheSkgLT4gbnAubmRhcnJheTpcbiAgICBILCBXID0gaW1nLnNoYXBlWzoyXSAjIGdyYWIgdGhlIGhlaWdodCBhbmQgd2lkdGggb2YgdGhlIGltYWdlXG4gICAgb3V0ID0gaW1nLmNvcHkoKSAgICAgIyB3cml0ZSB0byBhIGNvcHkgLS0gZWFzeSB3YXkgdG8gZ2V0IHRoZSBzaXplIHJpZ2h0XG5cbiAgICAjIHRyYXZlcnNlIGV2ZXJ5IHBpeGVsIGluIHRoZSBpbWFnZSBhbmQgd3JpdGUgdG8gdGhlIGNvcHkhXG4gICAgXG5cblxuICAgICMgcmV0dXJuIGltYWdlIHdpdGggY2hhbmdlZCBwaXhlbHNcbiAgICByZXR1cm4gb3V0XG5cbmRlZiBtYWluKCkgLT4gTm9uZTpcbiAgICBcbiAgICBpbWcgPSBpby5pbXJlYWQoJ2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9VQkMtQ1MvY3BzYzIwMy9yZWZzL2hlYWRzL21haW4vaW1hZ2VzL3BvcHB5ZmllbGQuanBnJylbLi4uLCA6M10gICAgICMgcmVhZCBmcm9tIHdlYnNpdGUsIGtlZXAgZmlyc3QgMyBjaGFubmVscyAoUkdCKVxuICAgIFxuICAgIG91dCA9IGZhbmNpZnkoaW1nKSAgICAgICAgICAgICMgbWFrZSBhIG5ldyBmYW5jeSBpbWFnZVxuXG4gICAgcGx0Lmltc2hvdyhvdXQpICAgICAgICAgICAgICAgIyBvdXRwdXQgdGhlIHJlc3VsdHNcbiAgICBwbHQuYXhpcygnb2ZmJylcbiAgICBwbHQuc2hvdygpXG5cbm1haW4oKSJ9
-</script>
-</div>
-<aside class="notes">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a aria-label="2"></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
-<span id="cb1-3"><a aria-label="3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a aria-label="4"></a></span>
-<span id="cb1-5"><a aria-label="5"></a>Pixel <span class="op">=</span> <span class="bu">tuple</span>[np.uint8, np.uint8, np.uint8]  <span class="co"># (r, g, b)</span></span>
-<span id="cb1-6"><a aria-label="6"></a></span>
-<span id="cb1-7"><a aria-label="7"></a><span class="co">'''Input: Pixel p</span></span>
-<span id="cb1-8"><a aria-label="8"></a><span class="co">   Output: Pixel</span></span>
-<span id="cb1-9"><a aria-label="9"></a><span class="co">   Function: If the pixel has high red value, then don't change it, otherwise</span></span>
-<span id="cb1-10"><a aria-label="10"></a><span class="co">   fade the pixel to grey.  Note, to grey a pixel, set all colour channels to</span></span>
-<span id="cb1-11"><a aria-label="11"></a><span class="co">   the average of the 3.</span></span>
-<span id="cb1-12"><a aria-label="12"></a><span class="co">'''</span></span>
-<span id="cb1-13"><a aria-label="13"></a><span class="kw">def</span> boost_red_pixel(p: Pixel) <span class="op">-&gt;</span> Pixel:</span>
-<span id="cb1-14"><a aria-label="14"></a>    <span class="co"># setup -- extract the colour channels as ints</span></span>
-<span id="cb1-15"><a aria-label="15"></a>    red <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">0</span>])</span>
-<span id="cb1-16"><a aria-label="16"></a>    green <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">1</span>])</span>
-<span id="cb1-17"><a aria-label="17"></a>    blue <span class="op">=</span> <span class="bu">int</span>(p[<span class="dv">2</span>])</span>
-<span id="cb1-18"><a aria-label="18"></a>    <span class="co"># compute grey </span></span>
-<span id="cb1-19"><a aria-label="19"></a>    grey <span class="op">=</span> (red <span class="op">+</span> green <span class="op">+</span> blue)<span class="op">//</span><span class="dv">3</span></span>
-<span id="cb1-20"><a aria-label="20"></a></span>
-<span id="cb1-21"><a aria-label="21"></a>    <span class="co"># conditionally change the pixel to grey</span></span>
-<span id="cb1-22"><a aria-label="22"></a>    <span class="cf">if</span> red <span class="op">&lt;</span> <span class="dv">200</span>:</span>
-<span id="cb1-23"><a aria-label="23"></a>        red <span class="op">=</span> green <span class="op">=</span> blue <span class="op">=</span> grey</span>
-<span id="cb1-24"><a aria-label="24"></a></span>
-<span id="cb1-25"><a aria-label="25"></a>    <span class="co"># return updated pixel</span></span>
-<span id="cb1-26"><a aria-label="26"></a>    <span class="cf">return</span> (red, green, blue)</span>
-<span id="cb1-27"><a aria-label="27"></a></span>
-<span id="cb1-28"><a aria-label="28"></a><span class="kw">def</span> fancify(img: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
-<span id="cb1-29"><a aria-label="29"></a>    H, W <span class="op">=</span> img.shape[:<span class="dv">2</span>] <span class="co"># grab the height and width of the image</span></span>
-<span id="cb1-30"><a aria-label="30"></a>    out <span class="op">=</span> img.copy()     <span class="co"># write to a copy</span></span>
-<span id="cb1-31"><a aria-label="31"></a></span>
-<span id="cb1-32"><a aria-label="32"></a>    <span class="co"># traverse every pixel in the image and change it!</span></span>
-<span id="cb1-33"><a aria-label="33"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(H):</span>
-<span id="cb1-34"><a aria-label="34"></a>        <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(W):</span>
-<span id="cb1-35"><a aria-label="35"></a>            out[row, col] <span class="op">=</span> boost_red_pixel(img[row,col])</span>
-<span id="cb1-36"><a aria-label="36"></a></span>
-<span id="cb1-37"><a aria-label="37"></a>    <span class="co"># return image with changed pixels</span></span>
-<span id="cb1-38"><a aria-label="38"></a>    <span class="cf">return</span> out</span>
-<span id="cb1-39"><a aria-label="39"></a></span>
-<span id="cb1-40"><a aria-label="40"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb1-41"><a aria-label="41"></a>    </span>
-<span id="cb1-42"><a aria-label="42"></a>    img <span class="op">=</span> io.imread(<span class="st">'https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg'</span>)[..., :<span class="dv">3</span>]     <span class="co"># keep first 3 channels (RGB)</span></span>
-<span id="cb1-43"><a aria-label="43"></a>    </span>
-<span id="cb1-44"><a aria-label="44"></a>    out <span class="op">=</span> fancify(img)</span>
-<span id="cb1-45"><a aria-label="45"></a>  </span>
-<span id="cb1-46"><a aria-label="46"></a>    plt.imshow(out)</span>
-<span id="cb1-47"><a aria-label="47"></a>    plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb1-48"><a aria-label="48"></a>    plt.show()</span>
-<span id="cb1-49"><a aria-label="49"></a>  </span>
-<span id="cb1-50"><a aria-label="50"></a>main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c207661722069636f6e2e636f6d70757465722d6163746976697479203e7d7d-your-turn-change-image-or-boost" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:laptop-code" aria-label="Icon laptop-code from fa6-solid Iconify.design set." title="Icon laptop-code from fa6-solid Iconify.design set."></iconify-icon> Your turn: Change image or boost</h2>
-<p>Experiment with the code! Try one or more of these:</p>
-<ol type="1">
-<li>Find a different image URL and boost a different colour (green? blue?)</li>
-<li>Change the threshold value (try 150 instead of 200)</li>
-<li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
-<li>What happens if you boost pixels that are LOW in red instead of high?</li>
-</ol>
-<countdown-timer id="timer_10116c78db7c98adceacd877a7c3b8631cfb710b" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
-</section>
-<section id="what-you-learned-today" class="slide level2 medium">
-<h2>What you learned today</h2>
-<p>You’ve discovered something profound:</p>
-<ul>
-<li>Information can be represented as data, data can be interpreted as information</li>
-<li>Computers store all data as <strong>bits</strong> (0s and 1s)</li>
-<li>Bits can represent <strong>integers</strong> (using binary, base 2)</li>
-<li>Integers can represent <strong>colours</strong> (RGB: three numbers 0-255)</li>
-<li>Which means bits can represent <strong>images</strong> (grids of pixels)</li>
-<li>You can write <strong>code</strong> to manipulate those images!</li>
-</ul>
-<p>From electrical signals to making poppies pop!</p>
 
 
-<script type="pyodide-data">
-eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
-</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+eyJjb250ZW50cyI6W119
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
