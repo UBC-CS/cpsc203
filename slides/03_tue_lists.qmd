@@ -1,0 +1,227 @@
+---
+date: 2026-09-22
+---
+
+## Announcements
+
+- Lab 2 and POTW 2 now available.
+
+- Practice examlet 1 now available.
+
+- Treat "Problems of the Week" as "Problems of the Day": Spend 15 minutes to do a little programming each day.
+
+## Marimo
+
+We will be using [marimo](https://marimo.io/) for our more involved Python coding exercises.
+
+- Similar to [Jupyter Lab](https://jupyter.org/) from CPSC 103, but has some (beneficial) differences.
+
+Open the [**List Activity**](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722864/) on PrairieLearn and choose the *List Mysteries* question.
+
+::: notes
+Demonstrate opening the activity, the workspace, and the `marimo_v_jupyter` file.
+
+Identify features which are the same as Jupyter (for students who haven't used Jupyter) and features which are different (for students who have).
+:::
+
+# Python Lists
+
+## {{< iconify fa6-solid computer >}} List Activity {.activity}
+
+Let's explore some surprising list behaviors.
+
+Inside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we'll review together.
+
+Be curious. Feel free to experiment by changing things!
+
+Write down surprising behaviors.
+
+{{< countdown minutes=10 >}}
+
+::: notes
+Week3_tue_lists activity - covers aliasing, append vs extend, list comprehension
+:::
+
+## Lists: A Quick Review
+
+Lists are **ordered collections** that can hold any type of data.
+
+```{pyodide}
+provinces = ['British Columbia', 'Alberta', 'Ontario']
+numbers = [1, 2, 3, 4, 5]
+mixed = ['hello', 42, 3.14, True]
+```
+
+We can:
+
+- Access elements by index: `provinces[0]`
+- Slice: `numbers[1:3]`
+- Get length: `len(provinces)`
+
+## Adding to Lists
+
+``` {pyodide}
+provinces = ['British Columbia']
+
+# These work differently!
+provinces.append('Alberta')           # adds one element
+provinces.extend(['Ontario', 'Quebec'])  # adds each element
+
+maritime = provinces + ['NS']         # new list!
+provinces[0] = 'BC'
+print(maritime[0])                    # still 'British Columbia'
+```
+
+What about `provinces.append(['Ontario', 'Quebec'])`?
+
+## List Aliasing
+
+``` {pyodide}
+grid = [[1, 2], [3, 4]]
+backup = grid
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[99, 2], [3, 4]] -- surprise!
+```
+
+Assignment doesn't copy lists!
+
+- It creates another **reference** to the same list.
+- Let's look at that in [Python Tutor](https://pythontutor.com/visualize.html#)
+
+## Shallow Copy
+
+``` {pyodide}
+grid = [[1, 2], [3, 4]]
+backup = grid.copy()     # shallow copy - NEW outer list
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[99, 2], [3, 4]] -- still linked!
+```
+
+`copy()` only copies the outer list. The inner lists are still shared!
+
+## Deep Copy
+
+``` {pyodide}
+import copy
+
+grid = [[1, 2], [3, 4]]
+backup = copy.deepcopy(grid)   # copies EVERYTHING
+
+grid[0][0] = 99
+
+print(grid)      # [[99, 2], [3, 4]]
+print(backup)    # [[1, 2], [3, 4]] -- truly independent!
+```
+
+Use `deepcopy()` when you have nested structures (lists of lists, lists of objects).
+
+## References
+
+Variables are **names** that refer to objects in memory.
+
+``` {pyodide}
+m1 = ['a', 'b']    # m1 refers to a list object
+m2 = m1            # m2 refers to the SAME object
+m3 = m1.copy()     # m3 refers to a NEW object (shallow)
+```
+
+Think of it like sticky notes on boxes - `m1` and `m2` are two sticky notes on the **same** box.
+
+## List Comprehensions
+
+A compact way to create lists:
+
+``` {pyodide}
+# Instead of this:
+squares = []
+for x in range(5):
+    squares.append(x ** 2)
+
+# Write this:
+squares = [x ** 2 for x in range(5)]
+```
+
+Both produce: `[0, 1, 4, 9, 16]`
+
+## List Comprehensions with Conditions
+
+``` {pyodide}
+# Filter: only include if condition is true
+evens = [x for x in range(10) if x % 2 == 0]
+# [0, 2, 4, 6, 8]
+
+# Transform based on condition
+signs = [x if x % 2 == 0 else -x for x in range(5)]
+# [0, -1, 2, -3, 4]
+```
+
+Notice the difference: `if` at the **end** filters, `if/else` **before** `for` transforms.
+
+
+# Colour Representations
+
+## Colour and Code {.smaller}
+
+Make the poppies pop!
+
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
+
+PC: <https://www.epicgardening.com/spring-wildflowers-from-seed/>
+
+Examine each pixel.
+If its red color channel is high (over 200, say), then leave it as is.
+Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values.
+
+## Colour and Code
+
+If necessary, go back and review the slides on colour representation from previous lecture.
+
+Open the [**List Activity**](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722864/) on PrairieLearn and choose the *Make the Poppies Grow* question.
+
+<!-- Cinda originally had the code for this example in a pyodide environment,
+     but Ian felt that it was a very long piece of code to work with on slides.
+     Ian has moved it to a new question within the CA1 class activity on PL.
+
+     If you want to put the code back in the slide deck, the key difference is that you will
+     want to get the image from a URL.  Here's the original code for that:
+
+     ```python
+     img = skimage.io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
+     ```
+-->
+
+::: notes
+Reminding students of how to read code.  If you were starting from blank page, you would *not* take this approach.  May feel like I'm throwing you in the deep end, but that's what happens when you read somebody else's code...
+- Lines at the top define what libraries we are going to use.  How do we know what to call them?
+- Tuple notation.  New atomic type `np.uint8`.  Is this a compound or arbitrary-size data type?  Depends on context: extracting red channel is compound, averaging is arbitrary size.
+- Then a bunch of function definitions.  How do we know what code is within a function?
+- Finally at the bottom, a single executable line `main()`.
+- In `main`: Examine the syntax of `io.imread` call.  Google for `skimage.io`.  Google for `ndarray`.  Google for `ndarray ... notation`.
+  - Reminder about Python slicing notation.  How are we treating this array?  Last dimension as compound (we only want first three slices), other dimensions (in this case height and width) as arbitrary size.
+- In `fancify`: Look at `img.shape`.  Reminder about assigning multiple values (also allows function to return multiple values through a tuple).
+  - We are treating image as an arbitrary-sized, so we are going to use looping.  For looping, we need an accumulator.
+  - We usually manipulate images in 2D -- lists of lists -- so we'll have nested loops.
+  - Rather than looping over the elements of the image, we'll loop over the indexes of the elements and then extract the element of interest using indexing.
+  - Reminder of `range` function.
+  - Do the loops traverse the image by rows or columns?  Rows.  Why is it (rows, columns)?  We just need to pick one and stick with it.  Note that doesn't agree with (x,y) notation.  Everybody gets it wrong regularly...
+- In `boost_red_pixels` why convert to `int`?  Avoids overflow in addition.
+- In final image, why are yellows still present?
+:::
+
+## Your turn: Change image or boost {.activity}
+
+Experiment with the code! Try one or more of these:
+
+1. Find a different image URL and boost a different color (green? blue?)
+2. Change the threshold value (try 150 instead of 200)
+3. Instead of greying, try inverting: `red = 255 - red`
+4. What happens if you boost pixels that are LOW in red instead of high?
+
+{{< countdown minutes=12 >}}
+
