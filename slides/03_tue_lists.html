@@ -198,7 +198,7 @@
 <p>Inside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.</p>
 <p>Be curious. Feel free to experiment by changing things!</p>
 <p>Write down surprising behaviors.</p>
-<countdown-timer id="timer_0bccbc64304b7b3370a09794d42de6ea9c97d934" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_67539e3dbd88f379278f9076d3d95d7419539257" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>Week3_tue_lists activity - covers aliasing, append vs extend, list comprehension</p>
@@ -321,59 +321,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGaWx0ZXI6IG9ubHkgaW5j
 </script>
 </div>
 <p>Notice the difference: <code>if</code> at the <strong>end</strong> filters, <code>if/else</code> <strong>before</strong> <code>for</code> transforms.</p>
-</section></section>
-<section>
-<section id="colour-representations" class="title-slide slide level1 center">
-<h1>Colour Representations</h1>
-
-</section>
-<section id="colour-and-code" class="slide level2 smaller">
-<h2>Colour and Code</h2>
-<p>Make the poppies pop!</p>
-
-<img data-src="../images/poppyfield.jpg" alt="A field of red poppies." class="r-stretch"><p>PC: <a href="https://www.epicgardening.com/spring-wildflowers-from-seed/" class="uri">https://www.epicgardening.com/spring-wildflowers-from-seed/</a></p>
-<p>Examine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values.</p>
-</section>
-<section id="colour-and-code-1" class="slide level2">
-<h2>Colour and Code</h2>
-<p>If necessary, go back and review the slides on colour representation from previous lecture.</p>
-<p>Open the <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722864/"><strong>List Activity</strong></a> on PrairieLearn and choose the <em>Make the Poppies Grow</em> question.</p>
-<!-- Cinda originally had the code for this example in a pyodide environment,
-     but Ian felt that it was a very long piece of code to work with on slides.
-     Ian has moved it to a new question within the CA1 class activity on PL.
-
-     If you want to put the code back in the slide deck, the key difference is that you will
-     want to get the image from a URL.  Here's the original code for that:
-
-     ```python
-     img = skimage.io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
-     ```
--->
-<aside class="notes">
-<p>Reminding students of how to read code. If you were starting from blank page, you would <em>not</em> take this approach. May feel like I’m throwing you in the deep end, but that’s what happens when you read somebody else’s code… - Lines at the top define what libraries we are going to use. How do we know what to call them? - Tuple notation. New atomic type <code>np.uint8</code>. Is this a compound or arbitrary-size data type? Depends on context: extracting red channel is compound, averaging is arbitrary size. - Then a bunch of function definitions. How do we know what code is within a function? - Finally at the bottom, a single executable line <code>main()</code>. - In <code>main</code>: Examine the syntax of <code>io.imread</code> call. Google for <code>skimage.io</code>. Google for <code>ndarray</code>. Google for <code>ndarray ... notation</code>. - Reminder about Python slicing notation. How are we treating this array? Last dimension as compound (we only want first three slices), other dimensions (in this case height and width) as arbitrary size. - In <code>fancify</code>: Look at <code>img.shape</code>. Reminder about assigning multiple values (also allows function to return multiple values through a tuple). - We are treating image as an arbitrary-sized, so we are going to use looping. For looping, we need an accumulator. - We usually manipulate images in 2D – lists of lists – so we’ll have nested loops. - Rather than looping over the elements of the image, we’ll loop over the indexes of the elements and then extract the element of interest using indexing. - Reminder of <code>range</code> function. - Do the loops traverse the image by rows or columns? Rows. Why is it (rows, columns)? We just need to pick one and stick with it. Note that doesn’t agree with (x,y) notation. Everybody gets it wrong regularly… - In <code>boost_red_pixels</code> why convert to <code>int</code>? Avoids overflow in addition. - In final image, why are yellows still present?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-turn-change-image-or-boost" class="slide level2 activity">
-<h2>Your turn: Change image or boost</h2>
-<p>Experiment with the code! Try one or more of these:</p>
-<ol type="1">
-<li>Find a different image URL and boost a different color (green? blue?)</li>
-<li>Change the threshold value (try 150 instead of 200)</li>
-<li>Instead of greying, try inverting: <code>red = 255 - red</code></li>
-<li>What happens if you boost pixels that are LOW in red instead of high?</li>
-</ol>
-<countdown-timer id="timer_0bccbc64304b7b3370a09794d42de6ea9c97d934" minutes="12" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
 
 
 <script type="pyodide-data">

@@ -82,9 +82,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-713b0136666c1ca4047413a70816f99a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-560bda54c27545e63d21634f9d70bbc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4e0437750606f2f3401c7fda4c45b964.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-560bda54c27545e63d21634f9d70bbc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cd98d7d7c670dd9cc7a06a2b4d318cbf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f1d1cfe898b2ec815d5ae744ff4831b8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-cd98d7d7c670dd9cc7a06a2b4d318cbf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -113,6 +113,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles/styles.css">
 <meta property="og:title" content="CPSC 203 HtDP Reference – CPSC 203: Programming, problem solving, and algorithms">
@@ -430,14 +459,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#compound-data-types" id="toc-compound-data-types" class="nav-link" data-scroll-target="#compound-data-types">Compound Data Types</a>
   <ul class="collapse">
   <li><a href="#namedtuple" id="toc-namedtuple" class="nav-link" data-scroll-target="#namedtuple">NamedTuple</a></li>
+  <li><a href="#dataclass" id="toc-dataclass" class="nav-link" data-scroll-target="#dataclass">DataClass</a></li>
   <li><a href="#list-and-dictionary" id="toc-list-and-dictionary" class="nav-link" data-scroll-target="#list-and-dictionary">List and Dictionary</a></li>
   </ul></li>
   <li><a href="#arbitrary-sized-data-types" id="toc-arbitrary-sized-data-types" class="nav-link" data-scroll-target="#arbitrary-sized-data-types">Arbitrary-Sized Data Types</a>
   <ul class="collapse">
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
-  <li><a href="#tuples" id="toc-tuples" class="nav-link" data-scroll-target="#tuples">Tuples</a></li>
-  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries">Dictionaries</a></li>
-  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets">Sets</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list">List</a></li>
+  <li><a href="#tuple" id="toc-tuple" class="nav-link" data-scroll-target="#tuple">Tuple</a></li>
+  <li><a href="#dictionary" id="toc-dictionary" class="nav-link" data-scroll-target="#dictionary">Dictionary</a></li>
+  <li><a href="#set" id="toc-set" class="nav-link" data-scroll-target="#set">Set</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-CS/cpsc203/blob/main/htdp-cpsc-203.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-CS/cpsc203/edit/main/htdp-cpsc-203.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/UBC-CS/cpsc203/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -547,6 +577,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="basic-data-types">Basic Data Types</h2>
 <section id="simple-atomic-data" class="level3">
 <h3 class="anchored" data-anchor-id="simple-atomic-data">Simple Atomic Data</h3>
+<ul>
+<li>Simple atomic types are immutable.</li>
+<li>This data type includes Python’s built-in types <code>int</code>, <code>bool</code>, <code>str</code>, <code>float</code>, <code>complex</code>.
+<ul>
+<li>The number of bits required to store values of these types will in general depend on the hardware on which the program is running.</li>
+<li>For some types, such as <code>str</code> and <code>int</code>, the number of bits depends on the value being stored.</li>
+</ul></li>
+<li>You would also use this pattern for more specialized (part of a Python library) but still simple data types (they represent a single piece of information). For example, the <code>Numpy</code> library for numerical computing (typically imported with the statement <code>import numpy as np</code>) includes data types which store a specific number of bits:
+<ul>
+<li>Integers <code>np.int8</code>, <code>np.int16</code>, <code>np.int32</code> and <code>np.int64</code>. These data types are stored with 8, 16, 32 and 64 bits respectively. An <code>int</code> with <span class="math inline">\(k\)</span> bits can store any integer in the range <span class="math inline">\([ -2^{k-1}, +2^{k-1}-1 ]\)</span>.</li>
+<li>Unsigned integers <code>np.uint8</code>, <code>np.uint16</code>, <code>np.uint32</code> and <code>np.uint64</code>. A <code>uint</code> with <span class="math inline">\(k\)</span> bits can store any integer in the range <span class="math inline">\([ 0, +2^k-1 ]\)</span>.</li>
+<li>Floating point <code>np.float16</code>, <code>np.float32</code> and <code>np.float64</code>. For more information on how floating point numbers are stored (and hence the range of values that they can represent), see <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">Floating Point arithmetic</a>.</li>
+<li>Complex floating point numbers <code>np.complex64</code> and <code>np.complex128</code>.</li>
+<li>Boolean <code>np.bool_</code>, which is stored in 8 bits.</li>
+</ul></li>
+<li>When you are working with a single piece of atomic data, you should not worry about the amount of storage that is used. It is only when you are working with large (arbitrary-sized) collections of data (for example, very large lists of integers) that you <em>might</em> want to use a data type that uses a fixed and restricted number of bits.</li>
+</ul>
 <section id="definition" class="level4">
 <h4 class="anchored" data-anchor-id="definition">Definition</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">type</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -558,6 +605,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="interval" class="level3">
 <h3 class="anchored" data-anchor-id="interval">Interval</h3>
+<ul>
+<li>This data type is intended to be used for numerical atomic data which lies within a pre-specified range of values.</li>
+<li>There are ways of enforcing the range, but like the type notation system in Python we generally just document the range in the code but do not explicitly enforce it.</li>
+</ul>
 <section id="definition-1" class="level4">
 <h4 class="anchored" data-anchor-id="definition-1">Definition</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">int</span>  <span class="co"># in range ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -613,6 +664,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="namedtuple" class="level3">
 <h3 class="anchored" data-anchor-id="namedtuple">NamedTuple</h3>
+<ul>
+<li>NamedTuples are immutable (they are a fancy version of a tuple).</li>
+</ul>
 <section id="definition-4" class="level4">
 <h4 class="anchored" data-anchor-id="definition-4">Definition</h4>
 <ul>
@@ -634,18 +688,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x.a, x.b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
+<section id="dataclass" class="level3">
+<h3 class="anchored" data-anchor-id="dataclass">DataClass</h3>
+<ul>
+<li>Dataclasses are mutable. If you want an immutable dataclass, use <code>@dataclass(frozen = true)</code> in the decorator before the <code>class</code> statement</li>
+<li>Dataclasses can contain both data (“attributes” or “member data”) and functions (“methods” or “member functions”).</li>
+</ul>
+<section id="definition-5" class="level4">
+<h4 class="anchored" data-anchor-id="definition-5">Definition</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> XXX:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    a: <span class="bu">type</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    b: <span class="bu">type</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> f(<span class="va">self</span>, ...) <span class="op">-&gt;</span> ...:</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ...(<span class="va">self</span>.a, <span class="va">self</span>.b, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="template-5" class="level4">
+<h4 class="anchored" data-anchor-id="template-5">Template</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x.a, x.b, x.f(...))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
 <section id="list-and-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="list-and-dictionary">List and Dictionary</h3>
 <ul>
 <li>Sometimes you wish to extract individual elements of a <code>list</code> or <code>dict</code> using hardcoded indexes rather than treating those data structures as arbitrarily sized.</li>
+<li>The definition of the data type is the same as for the arbitrary-sized case (see below) but the template is different (in other words, we use the data in a different manner).</li>
 </ul>
 <section id="list-template" class="level4">
 <h4 class="anchored" data-anchor-id="list-template">List Template</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x[<span class="dv">0</span>], x[<span class="dv">1</span>], x[<span class="dv">2</span>], ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x[<span class="dv">0</span>], x[<span class="dv">1</span>], x[<span class="dv">2</span>], ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dictionary-template" class="level4">
 <h4 class="anchored" data-anchor-id="dictionary-template">Dictionary Template</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x[<span class="st">'a'</span>], x[<span class="st">'b'</span>], x[<span class="st">'c'</span>], ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(x[<span class="st">'a'</span>], x[<span class="st">'b'</span>], x[<span class="st">'c'</span>], ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 </section>
@@ -654,8 +732,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Used when you have an amount of data which is not known in advance.</li>
 </ul>
-<section id="lists" class="level3">
-<h3 class="anchored" data-anchor-id="lists">Lists</h3>
+<section id="list" class="level3">
+<h3 class="anchored" data-anchor-id="list">List</h3>
 <ul>
 <li>Lists are mutable.</li>
 <li>Lists may contain elements of any type, but we encourage you to use lists containing a single type.</li>
@@ -663,30 +741,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Lists may contain multiple copies of a single item.</li>
 <li>Elements of a <code>list</code> named <code>x</code> are indexed with the integer interval <code>[0, len(x)]</code>.</li>
 </ul>
-<section id="definition-5" class="level4">
-<h4 class="anchored" data-anchor-id="definition-5">Definition</h4>
+<section id="definition-6" class="level4">
+<h4 class="anchored" data-anchor-id="definition-6">Definition</h4>
 <ul>
 <li>Note: this data type name starts with a lower case <code>l</code>, and no need to import from <code>typing</code> module.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">list</span>[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="template-5" class="level4">
-<h4 class="anchored" data-anchor-id="template-5">Template</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># description of the accumulator</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>acc <span class="op">=</span> ...  <span class="co"># type: ...</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> lox:</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> ...(x, acc)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(acc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="tuples" class="level3">
-<h3 class="anchored" data-anchor-id="tuples">Tuples</h3>
-<ul>
-<li>The <code>tuple</code> data type is basically an immutable list.</li>
-</ul>
-<section id="definition-6" class="level4">
-<h4 class="anchored" data-anchor-id="definition-6">Definition</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">tuple</span>[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">list</span>[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="template-6" class="level4">
 <h4 class="anchored" data-anchor-id="template-6">Template</h4>
@@ -697,12 +757,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(acc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="dictionaries" class="level3">
-<h3 class="anchored" data-anchor-id="dictionaries">Dictionaries</h3>
+<section id="tuple" class="level3">
+<h3 class="anchored" data-anchor-id="tuple">Tuple</h3>
+<ul>
+<li>The <code>tuple</code> data type is basically an immutable list.</li>
+</ul>
+<section id="definition-7" class="level4">
+<h4 class="anchored" data-anchor-id="definition-7">Definition</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>XXX <span class="op">=</span> <span class="bu">tuple</span>[<span class="bu">type</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="template-7" class="level4">
+<h4 class="anchored" data-anchor-id="template-7">Template</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># description of the accumulator</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>acc <span class="op">=</span> ...  <span class="co"># type: ...</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> lox:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> ...(x, acc)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> ...(acc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="dictionary">Dictionary</h3>
 <p>TBA</p>
 </section>
-<section id="sets" class="level3">
-<h3 class="anchored" data-anchor-id="sets">Sets</h3>
+<section id="set" class="level3">
+<h3 class="anchored" data-anchor-id="set">Set</h3>
 <p>TBA</p>
 <!-- Commenting out the rest of the material because it is targeted at the final project in CPSC 103 and depends rather heavily on the `cs103` module. -->
 <!--
