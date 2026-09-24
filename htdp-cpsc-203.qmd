@@ -55,6 +55,18 @@ Identify the inherent structure of the information.
 
 ### Simple Atomic Data
 
+- Simple atomic types are immutable.
+- This data type includes Python's built-in types `int`, `bool`, `str`, `float`, `complex`.
+  - The number of bits required to store values of these types will in general depend on the hardware on which the program is running.
+  - For some types, such as `str` and `int`, the number of bits depends on the value being stored.
+- You would also use this pattern for more specialized (part of a Python library) but still simple data types (they represent a single piece of information).  For example, the `Numpy` library for numerical computing (typically imported with the statement `import numpy as np`) includes data types which store a specific number of bits:
+  - Integers `np.int8`, `np.int16`, `np.int32` and `np.int64`.  These data types are stored with 8, 16, 32 and 64 bits respectively.  An `int` with $k$ bits can store any integer in the range $[ -2^{k-1}, +2^{k-1}-1 ]$.
+  - Unsigned integers  `np.uint8`, `np.uint16`, `np.uint32` and `np.uint64`.    A `uint` with $k$ bits can store any integer in the range $[ 0, +2^k-1 ]$.
+  - Floating point  `np.float16`, `np.float32` and `np.float64`.  For more information on how floating point numbers are stored (and hence the range of values that they can represent), see [Floating Point arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic).
+  - Complex floating point numbers `np.complex64` and `np.complex128`.
+  - Boolean `np.bool_`, which is stored in 8 bits.
+- When you are working with a single piece of atomic data, you should not worry about the amount of storage that is used.  It is only when you are working with large (arbitrary-sized) collections of data (for example, very large lists of integers) that you *might* want to use a data type that uses a fixed and restricted number of bits.
+
 #### Definition
 
 ```python
@@ -68,6 +80,9 @@ return ...(x)
 ```
 
 ### Interval
+
+- This data type is intended to be used for numerical atomic data which lies within a pre-specified range of values.
+- There are ways of enforcing the range, but like the type notation system in Python we generally just document the range in the code but do not explicitly enforce it.
 
 #### Definition
 
@@ -130,6 +145,8 @@ else:
 
 ### NamedTuple
 
+- NamedTuples are immutable (they are a fancy version of a tuple).
+
 #### Definition
 
 * Approach using class syntax (also allows default field values):
@@ -154,9 +171,35 @@ XXX = NamedTuple('XXX', [('a', type), ('b', type)])
 return ...(x.a, x.b)
 ```
 
+### DataClass
+
+- Dataclasses are mutable.  If you want an immutable dataclass, use `@dataclass(frozen = true)` in the decorator before the `class` statement
+- Dataclasses can contain both data ("attributes" or "member data") and functions ("methods" or "member functions").
+
+#### Definition
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class XXX:
+    a: type
+    b: type
+
+    def f(self, ...) -> ...:
+        return ...(self.a, self.b, ...)
+```
+
+#### Template
+
+```python
+return ...(x.a, x.b, x.f(...))
+```
+
 ### List and Dictionary
 
-* Sometimes you wish to extract individual elements of a `list` or `dict` using hardcoded indexes rather than treating those data structures as arbitrarily sized.
+- Sometimes you wish to extract individual elements of a `list` or `dict` using hardcoded indexes rather than treating those data structures as arbitrarily sized.
+- The definition of the data type is the same as for the arbitrary-sized case (see below) but the template is different (in other words, we use the data in a different manner).
 
 #### List Template
 
@@ -175,7 +218,7 @@ return ...(x['a'], x['b'], x['c'], ...)
 
 * Used when you have an amount of data which is not known in advance.
 
-### Lists
+### List
 
 * Lists are mutable.
 * Lists may contain elements of any type, but we encourage you to use lists containing a single type.
@@ -201,7 +244,7 @@ for x in lox:
 return ...(acc)
 ```
 
-### Tuples 
+### Tuple 
 
 * The `tuple` data type is basically an immutable list.
 
@@ -222,11 +265,11 @@ return ...(acc)
 ```
 
 
-### Dictionaries
+### Dictionary
 
 TBA
 
-### Sets
+### Set
 
 TBA
 
