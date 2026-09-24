@@ -1,0 +1,477 @@
+---
+date: 2026-09-24
+---
+
+## Announcements
+
+- POTW 2 and 3...
+
+- Registration for examlet 1.
+
+
+<!-- Ian doesn't see the point of this puzzle break, so he deleted it.
+
+## A little math puzzle break
+
+$1 + 3 + 5 + \ldots + 1337$ = [\_\_\_\_\_\_\_\_\_\_\_\_]{.underline}
+
+\
+
+How many terms?
+
+::: notes
+Always always start this conversation from k=1, not zero.
+:::
+
+## puzzle continued...
+
+English description:
+
+The sum of the first $k$ odd integers is [\_\_\_\_\_\_\_\_]{.underline}
+
+What about $11 + 13 + \ldots + 23$?
+
+\
+
+\
+
+And $2 + 4 + 6 + \ldots + 1338$?
+
+-->
+
+# Colour Representations (Revisited)
+
+## Colour and Code {.smaller}
+
+Make the poppies pop!
+
+![](/images/poppyfield.jpg){fig-alt="A field of red poppies."}
+
+PC: <https://www.epicgardening.com/spring-wildflowers-from-seed/>
+
+Examine each pixel.
+If its red color channel is high (over 200, say), then leave it as is.
+Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values.
+
+## Colour and Code
+
+If necessary, go back and review the slides on colour representation from previous lecture.
+
+Open the [**List Activity**](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722864/) on PrairieLearn and choose the *Make the Poppies Grow* question.
+
+Examples of [programming idiom](https://en.wikipedia.org/wiki/Programming_idiom):
+
+- "A commonly-used way to code a relatively small construct in a particular programming context."
+- "Using the idioms for a programming context helps a team work together since they lower the cognitive load of the resulting code."
+
+<!-- Cinda originally had the code for this example in a pyodide environment,
+     but Ian felt that it was a very long piece of code to work with on slides.
+     Ian has moved it to a new question within the CA1 class activity on PL.
+
+     If you want to put the code back in the slide deck, the key difference is that you will
+     want to get the image from a URL.  Here's the original code for that:
+
+     ```python
+     img = skimage.io.imread('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/images/poppyfield.jpg')[..., :3]
+     ```
+-->
+
+::: notes
+Reminding students of how to read code.  
+
+- If you were starting from blank page, you would *not* take this approach.
+  - May feel like I'm throwing you in the deep end, but that's what happens when you read somebody else's code...
+- "Idiom" is used slightly differently in programming than in linguistics.
+- The normal Python idiom is to put all the libraries at the top of the file (rather than just before they are used).
+  - You don't need to do that in marimo because of the dependency check feature.
+  - Common libraries often have idiomatic names (such as `np` for `numpy`).
+- Tuple notation.  New atomic type `np.uint8`.  Is this a compound or arbitrary-size data type?  Depends on context: extracting red channel is compound, averaging is arbitrary size.
+- Then a bunch of function definitions.  How do we know what code is within a function?
+- In final cell: What does the `with` statement do?  Equivalent to `let` in Dr. Racket.  In practical terms, it ensures that the file is closed when the block ends.
+  - Examine the syntax of `Image.open` call.  Google for `PIL.Image`.  Google for `np.array`.  
+- In `fancify`: Look at `img.shape`.  Reminder about assigning multiple values (also allows function to return multiple values through a tuple).
+  - We are treating image as an arbitrary-sized, so we are going to use looping.  For looping, we need an accumulator.
+  - We usually manipulate images in 2D -- lists of lists -- so we'll have nested loops.
+  - Rather than looping over the elements of the image, we'll loop over the indexes of the elements and then extract the element of interest using indexing.
+  - Reminder of `range` function.
+  - Do the loops traverse the image by rows or columns?  Rows.  Why is it (rows, columns)?  We just need to pick one and stick with it.  Note that doesn't agree with (x,y) notation.  Everybody gets it wrong regularly...
+- In `boost_red_pixels` why convert to `int`?  Avoids overflow in addition.
+- In final image, why are yellows still present?
+:::
+
+## Your turn: Change image or boost {.activity}
+
+Experiment with the code! Try one or more of these:
+
+1. Find a different image URL and boost a different color (green? blue?)
+2. Change the threshold value (try 150 instead of 200)
+3. Instead of greying, try inverting: `red = 255 - red`
+4. What happens if you boost pixels that are LOW in red instead of high?
+
+{{< countdown minutes=12 >}}
+
+
+# Data Classes
+
+## Compound Data Types {.medium}
+
+So far we have focused on
+
+- *Simple atomic* types, such as built-ins `int`, `str` or library types `np.uint8`.
+- *Arbitrary-sized* types, such as `list` or `tuple`.
+
+But we often want to store a fixed number of pieces of information which naturally belong together.
+
+  - Representing a UBC student might require a student number, a first name, a last name, a date of birth, etc.
+  - Representing a car might require a make, a model, a colour, a license plate, etc.
+  - A license plate might require a jurisdiction and a plate "number".
+
+For that, we use *compound* data types.
+
+## Our Example: A Bead Bracelet
+
+![](/images/bracelet.png){.r-stretch fig-alt="A colorful beaded bracelet."}
+
+What data describes a **bead**?
+
+What data describes a **bracelet**?
+
+::: notes
+Bead: radius, color
+Bracelet: radius, list of beads
+:::
+
+## Previously in CPSC 103 or CPSC 110
+
+In CPSC 103, we used `NamedTuple` to create a compound type:
+```python
+from typing import NamedTuple
+Bead = NamedTuple('Bead', [('r', float), ('c', tuple[int, int, int])])
+B1 = Bead(5.0, (255, 0, 255))
+
+def circumference(b: Bead) -> float:
+    return 2 * math.pi * b.r
+```
+
+In CPSC 110, we used `define-struct` to create a compound type:
+```scheme
+(@htdd Bead)
+(define-struct bead (r, c))
+;; Bead is (make-bead Float Color)
+;; interp. A bead with radius r and RGB colour c
+(define B1 (make-bead 5.0 `(255, 0, 255)))
+
+(define (circumference b)
+  (* 2 pi (bead-r b)))
+```
+
+::: notes
+If you did not take CPSC 103 or 110, don't worry about these examples.
+
+- We recommend that everybody use dataclasses going forward.
+
+There is an alternative notation for `NamedTuple` using the `class` statement.
+
+- See design recipes at course webpage.
+- It will make more sense once we look at dataclasses.
+- There are some pros/cons to using `NamedTuple` instead of `dataclass`, but the alternative class-based notation for `NamedTuple` is definitely more idiomatic.
+:::
+
+## Dataclasses in Python
+
+A **dataclass** bundles related data together into a custom type.
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]  # RGB
+```
+
+This creates a new type called `Bead` with two attributes.
+
+::: notes
+What type is colour: atomic, arbitrary sized, ...?  While it is a tuple, we are treating it (mostly) as compound rather than arbitrary sized because:
+
+- It always has three values.
+- The values each have a distinct meaning (red, green or blue).
+- Should we have created a `Colour` data type?
+:::
+
+## Creating Bead Objects
+
+``` {pyodide}
+from dataclasses import dataclass
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+# Create some beads
+red_bead = Bead(radius=5.0, colour=(255, 0, 0))
+blue_bead = Bead(radius=3.0, colour=(0, 0, 255))
+big_green = Bead(radius=8.0, colour=(0, 200, 0))
+
+# Access attributes:
+print(red_bead.radius)
+print(blue_bead.colour)
+print(red_bead)
+```
+
+::: notes
+Why use `@dataclass` rather than just regular Python classes?
+
+- Dataclasses automatically generate a bunch of annoying but important methods, such as the constructor and a display routine (useful when you want to print).
+- They have some constraints, but nothing that will come up in CPSC 203.
+- Our recommendation:
+  - If you are creating your own class, use dataclass.
+  - If you are using somebody else's class, pretend it is a dataclass until you are forced not to.
+:::
+
+## Vocabulary
+
+- In CPSC 103 / 110 we talked about a *type* vs an *instance* of that type.
+  - A *type* is a category of data, and explains how that data maps to information (the representation and interpretation).  For example, an `int` is a type for storing integers.
+  - An *instance* is a concrete example of a type.  For example, the value `42` is an instance of the type `int`.
+
+- In Python (and many other languages) compound types use special terminology.
+  - The type is called a *class*.
+  - An instance of a class is called an *object*.
+
+## {{< iconify fa6-solid comments >}} Your Turn: Beads {.activity}
+
+What would these print?
+
+``` {pyodide}
+b1 = Bead(radius=4.0, colour=(100, 100, 100))
+b2 = Bead(radius=6.0, colour=(255, 128, 0))
+
+print(b1.radius + b2.radius)        # _______
+print(b2.colour[0])                  # _______
+print(b1.radius * 2)                # _______
+```
+
+{{< countdown minutes=2 >}}
+
+::: notes
+Answers: 10.0, 255, 8.0
+:::
+
+## Adding Behavior: Methods
+
+A dataclass can also have **methods**.
+
+``` {pyodide}
+from dataclasses import dataclass
+from matplotlib.patches import Circle
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+# Declare a Bead.
+
+# Print its diameter.
+```
+::: notes
+What is this `self` parameter?
+
+- The first parameter of any method contains the object on which this method was called.  Python idiom is to use the name `self` for this parameter.
+- Calling a method with dot notation is also standard Python idiom, but you could also call it through the class: `print(Bead.diameter(b))`.  Note that you need to explicitly include the bead object as the first parameter in this case.
+:::
+
+## Adding Behavior: More Methods {.smaller}
+
+Add a `draw` method:
+
+``` {pyodide}
+from dataclasses import dataclass
+from matplotlib.patches import Circle
+
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float:
+        return 2 * self.radius
+
+    def draw(self, ax, x: float, y: float) -> None:
+        """Draw this bead centered at (x, y) on the given axes."""
+        r, g, b = self.colour
+        circle = Circle((x, y), self.radius, color=(r / 255, g / 255, b / 255))
+        ax.add_patch(circle)
+```
+
+
+## Demo
+
+``` {pyodide}
+import matplotlib.pyplot as plt
+
+red_bead = Bead(radius=5.0, colour=(255, 0, 0))
+blue_bead = Bead(radius=3.0, colour=(0, 0, 255))
+
+# Draw two beads
+fig, ax = plt.subplots()
+
+red_bead.draw(ax, 0, 0)
+blue_bead.draw(ax, 0, 8)
+
+ax.set_aspect("equal")
+ax.autoscale()
+plt.axis("off")
+plt.show()
+```
+
+::: notes
+- During an exam, we would not expect you to remember how to write the stuff we're doing with `matplotlib` in this code.
+- You should definitely remember how to create and use a `dataclass`.
+:::
+
+## Questions?
+
+Now that you know about `dataclass` how would you design a `Bracelet`?
+
+::: notes
+What are the attributes of a bracelet?
+
+- Radius?  Amount of string?
+- List of beads.
+
+What are the methods of a bracelet?
+
+- Add beads to the bracelet.
+- Draw the bracelet.
+:::
+
+## The Bracelet
+
+A bracelet contains **a list of beads** and has a **radius**.
+
+``` {pyodide}
+@dataclass
+class Bracelet:
+    radius: float           # radius of the bracelet circle
+    beads: list[Bead]       # the beads on the bracelet
+```
+
+This is **composition**: a Bracelet *contains* Beads.
+
+## Creating a Bracelet
+
+``` {pyodide}
+@dataclass
+class Bracelet:
+    radius: float           # radius of the bracelet circle
+    beads: list[Bead]       # the beads on the bracelet
+    
+# First, create some beads
+b1 = Bead(radius=5.0, colour=(255, 0, 0))
+b2 = Bead(radius=3.0, colour=(0, 255, 37))
+b3 = Bead(radius=4.0, colour=(0, 0, 255))
+
+# Create a bracelet with those beads
+# Access the beads inside the bracelet
+
+```
+
+## Does it fit?
+
+![](/images/bracelet_fits.png){.r-stretch}
+
+The beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference. We refer to the extra string as *slack*.
+
+## How much slack?
+
+``` {pyodide}
+import math
+
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float:
+        return 2 * math.pi * self.radius
+
+    def slack(self) -> float: 
+        """ circumference - sum of diameters"""
+        pass
+```
+
+## Adding beads safely
+
+We only want to add a bead if it fits!
+
+``` {pyodide}
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float: ...
+    def slack(self) -> float: ...
+
+    def string_bead(self, bead: Bead) -> bool:
+        """Add a bead only if it fits. Returns True if added."""
+        pass
+```
+
+## Drawing the bracelet
+
+![](/images/bracelet_layout.png){.r-stretch}
+
+## The Full Picture {.smaller}
+
+``` python
+@dataclass
+class Bead:
+    radius: float
+    colour: tuple[int, int, int]
+
+    def diameter(self) -> float: ...
+    def draw(self, ax, x: float, y: float) -> None: ...
+
+@dataclass
+class Bracelet:
+    radius: float
+    beads: list[Bead]
+
+    def circumference(self) -> float: ...
+    def slack(self) -> float: ...
+    def string_bead(self, bead: Bead) -> bool: ...
+    def remove_bead(self, index: int) -> Bead: ...
+    def draw(self) -> None: ...
+```
+
+## {{< iconify fa6-solid computer >}} Your Turn: Experiment {.activity}
+
+Try the [**Bracelet Activity**](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722863/) on PrairieLearn!
+
+{{< countdown minutes=10 >}}
+
+## Design Strategy for Dataclasses
+
+1.  Identify the **objects** in your problem (nouns).
+
+2.  List the **data** each object needs (attributes).
+
+3.  List the **operations** each object supports (methods).
+
+4.  Decide which object is responsible for what.
+
+5.  Implement and test incrementally.
+
+::: notes
+When we say "object" in this list, we mean the normal definition of the word not the programming language definition. 
+
+- Would "thing" be less confusing?
+:::
