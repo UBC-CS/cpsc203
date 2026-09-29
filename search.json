@@ -2727,76 +2727,6 @@
     "text": "Demo\n\n\n\n\n\n\n\n\nDuring an exam, we would not expect you to remember how to write the stuff we’re doing with matplotlib in this code.\nYou should definitely remember how to create and use a dataclass."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#questions",
-    "href": "slides/03_thu_dataclasses.html#questions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Questions?",
-    "text": "Questions?\nNow that you know about dataclass how would you design a Bracelet?\n\nWhat are the attributes of a bracelet?\n\nRadius? Amount of string?\nList of beads.\n\nWhat are the methods of a bracelet?\n\nAdd beads to the bracelet.\nDraw the bracelet."
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#the-bracelet",
-    "href": "slides/03_thu_dataclasses.html#the-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Bracelet",
-    "text": "The Bracelet\nA bracelet contains a list of beads and has a radius.\n\n\n\n\n\n\nThis is composition: a Bracelet contains Beads."
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#creating-a-bracelet",
-    "href": "slides/03_thu_dataclasses.html#creating-a-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Creating a Bracelet",
-    "text": "Creating a Bracelet"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#does-it-fit",
-    "href": "slides/03_thu_dataclasses.html#does-it-fit",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Does it fit?",
-    "text": "Does it fit?\n\nThe beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference. We refer to the extra string as slack."
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#how-much-slack",
-    "href": "slides/03_thu_dataclasses.html#how-much-slack",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How much slack?",
-    "text": "How much slack?"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#adding-beads-safely",
-    "href": "slides/03_thu_dataclasses.html#adding-beads-safely",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding beads safely",
-    "text": "Adding beads safely\nWe only want to add a bead if it fits!"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#drawing-the-bracelet",
-    "href": "slides/03_thu_dataclasses.html#drawing-the-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Drawing the bracelet",
-    "text": "Drawing the bracelet"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#the-full-picture",
-    "href": "slides/03_thu_dataclasses.html#the-full-picture",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The Full Picture",
-    "text": "The Full Picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ..."
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-experiment",
-    "href": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-experiment",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your Turn: Experiment",
-    "text": "Your Turn: Experiment\nTry the Bracelet Activity on PrairieLearn!"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#design-strategy-for-dataclasses",
-    "href": "slides/03_thu_dataclasses.html#design-strategy-for-dataclasses",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design Strategy for Dataclasses",
-    "text": "Design Strategy for Dataclasses\n\nIdentify the objects in your problem (nouns).\nList the data each object needs (attributes).\nList the operations each object supports (methods).\nDecide which object is responsible for what.\nImplement and test incrementally.\n\n\nWhen we say “object” in this list, we mean the normal definition of the word not the programming language definition.\n\nWould “thing” be less confusing?"
-  },
-  {
     "objectID": "slides/01_thu_intro.html#warning",
     "href": "slides/01_thu_intro.html#warning",
     "title": "Programming, problem solving, and algorithms",
@@ -2937,83 +2867,6 @@
     "text": "Get Yourself Registered\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\n\n\nTell the students to go to each of these sites and register."
   },
   {
-    "objectID": "slides/03_tue_lists.html#announcements",
-    "href": "slides/03_tue_lists.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#marimo",
-    "href": "slides/03_tue_lists.html#marimo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Marimo",
-    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " List Activity",
-    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
-    "href": "slides/03_tue_lists.html#lists-a-quick-review",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Lists: A Quick Review",
-    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#adding-to-lists",
-    "href": "slides/03_tue_lists.html#adding-to-lists",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding to Lists",
-    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-aliasing",
-    "href": "slides/03_tue_lists.html#list-aliasing",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Aliasing",
-    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#shallow-copy",
-    "href": "slides/03_tue_lists.html#shallow-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Shallow Copy",
-    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#deep-copy",
-    "href": "slides/03_tue_lists.html#deep-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Deep Copy",
-    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#references",
-    "href": "slides/03_tue_lists.html#references",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "References",
-    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions",
-    "href": "slides/03_tue_lists.html#list-comprehensions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions",
-    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions with Conditions",
-    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
-  },
-  {
     "objectID": "slides/02_tue_efficiency.html#announcements",
     "href": "slides/02_tue_efficiency.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -3103,6 +2956,216 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Quantifying the task…",
     "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#announcements",
+    "href": "slides/03_tue_lists.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#marimo",
+    "href": "slides/03_tue_lists.html#marimo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Marimo",
+    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " List Activity",
+    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
+    "href": "slides/03_tue_lists.html#lists-a-quick-review",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Lists: A Quick Review",
+    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#adding-to-lists",
+    "href": "slides/03_tue_lists.html#adding-to-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding to Lists",
+    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-aliasing",
+    "href": "slides/03_tue_lists.html#list-aliasing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Aliasing",
+    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#shallow-copy",
+    "href": "slides/03_tue_lists.html#shallow-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Shallow Copy",
+    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#deep-copy",
+    "href": "slides/03_tue_lists.html#deep-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Deep Copy",
+    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#references",
+    "href": "slides/03_tue_lists.html#references",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "References",
+    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions",
+    "href": "slides/03_tue_lists.html#list-comprehensions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions with Conditions",
+    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#announcements",
+    "href": "slides/04_tue_bracelet.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nTake examlet 1 in ORCA between Thursday Oct 1 and Monday Oct 5.\nBook your slot for examlet 2."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
+    "href": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quick recap: Dataclasses",
+    "text": "Quick recap: Dataclasses\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\n\nAttributes: data stored in the object (radius, colour)\nMethods: functions that belong to the class (diameter)\n\n\nSo a dataclass is a compound data type.\n\nMore general than the compound data types from CPSC 103 / 110 because it allows not just attributes but also methods.\nReminder about the self parameter for all methods."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#a-bead-bracelet",
+    "href": "slides/04_tue_bracelet.html#a-bead-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A bead bracelet",
+    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color\nBracelet: radius, list of beads"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#creating-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#creating-a-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Creating a Bracelet",
+    "text": "Creating a Bracelet\n\n\n\n\n\n\n\nAn example of composing data types: a Bracelet contains a list of bead. We use (de)composition to solve big problems a piece at a time.\nUse dot and index notation to access deep inside the bracelet:\nbr = Bracelet(20, [b1, b2, b3])\nprint(br.beads[1].colour[2])\nAside: The pyodide environment used in the slides maintains its state through multiple slides unless you click start over.\n\nIf you are used to Jupyter, then think of each slide as a cell.\n\nIn this case we already ran a cell which defined Bead, so we don’t need to do it again.\nNote that you may get unexpected errors if you skip cells or run them out of order."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#does-it-fit",
+    "href": "slides/04_tue_bracelet.html#does-it-fit",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Does it Fit?",
+    "text": "Does it Fit?\n\n\nWe choose to say that the beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference of the bracelet.\nWe will refer to any extra string as slack.\n\n\n\n\nIn reality, if we fill up the bracelet then the beads will slightly overlap because of the curvature of the bracelet string. We ignore it for simplicity."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#how-much-slack",
+    "href": "slides/04_tue_bracelet.html#how-much-slack",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "How Much Slack?",
+    "text": "How Much Slack?\n\n\n\n\n\n\n\nWrite a dummy call from br before implementation. It will fail because slack is not an attribute or method. Note that we are redefining the Bracelet class every time we re-run that class definition. But the br object will still be using the old version of the class unless we recreate it after the redefinition. br = Bracelet(20, [b1, b2, b3])\nTry the dummy call. Point out that Cinda’s stub uses the pass statement. If the stub is executed, what will be returned?\nBetter to return a value of the appropriate type. Even better to return an unusual value so that the stub will be noticed. (Even better to throw an unimplemented exception, but that’s beyond this course). What is a good choice in this case? I would choose 0.0."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#adding-beads-safely",
+    "href": "slides/04_tue_bracelet.html#adding-beads-safely",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding beads safely",
+    "text": "Adding beads safely\nWe only want to add a bead if it fits!\n\n\n\n\n\n\n\nFix Cinda’s pass then write a dummy call."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#removing-beads",
+    "href": "slides/04_tue_bracelet.html#removing-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Removing beads",
+    "text": "Removing beads\nWhat if we want to swap out a bead?\n\n\n\n\n\n\n\nJump to next slide and then back here to implement. Just write a valid return value, not full implementation.\n\nWhen you mutate an object, you should probably not return that object. Consider string_bead and remove_bead above."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
+    "href": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Python: Removing Elements from a List",
+    "text": "Useful Python: Removing Elements from a List\nLists have a method called pop(index) that removes and returns the item at that index.\n\n\n\n\n\n\n\nLike append, pop mutates the list.\nUnlike append, pop returns something other than None.\n\n\nWait a minute! Lists have methods? In fact, every type that you have already seen in Python is actually class, and most have methods. In particular, you have used list and string methods extensively (such as str.upper()).\n\nSo if you have other aliases for this list, then they will see the removal.\nWhy does append return None rather than the updated list? To remind you that it is mutating the list."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#drawing-the-bracelet",
+    "href": "slides/04_tue_bracelet.html#drawing-the-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Drawing the bracelet",
+    "text": "Drawing the bracelet\n\n\nIn the activity workspace we provide some code to draw the bracelet.\n\nWe will not expect you to write such code, but we will expect you to run it if we provide it."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#the-full-picture",
+    "href": "slides/04_tue_bracelet.html#the-full-picture",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The full picture",
+    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ...\n\nSo we have defined two classes, each with some attributes and methods. Now it is your turn to implement some of the stub methods."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Implement Bracelet",
+    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity (continued) on PrairieLearn!\nImplement these methods:\n\ncircumference() - return \\(2 \\pi r\\).\nslack() - circumference minus total bead diameters.\nstring_bead(bead) - add bead if it fits, return True/False.\nremove_bead(index) - remove and return the bead at index.\n\nIf you finish early, try Tasks 4 & 5 (brighten methods)!"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
+    "href": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Extending functionality: Name bracelets",
+    "text": "Extending functionality: Name bracelets\n\n\nWhat if we want to make a friendship bracelet with someone’s name on it?\n\nLet’s create a bead that can hold a letter."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#adding-letters-to-beads",
+    "href": "slides/04_tue_bracelet.html#adding-letters-to-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding letters to beads",
+    "text": "Adding letters to beads\nLet’s add an optional letter attribute to our Bead class:\n\n\n\n\n\n\n\nWhy is the letter attribute “optional”?\n\nIt isn’t really: All (new) Bead objects will have a letter attribute, but if no value is assigned to that attribute then it will be given the default value (in this case the empty string).\nThe programmer still needs to correctly handle the default depending on context.\nOptional in the same way that function parameters with a default are optional."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
+    "href": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Python: the enumerate() Function",
+    "text": "Useful Python: the enumerate() Function\nSometimes you want both the index and the value of each element as you iterate through a list.\n\n\n\n\n\n\nenumerate() gives you tuples of (index, value) as you loop."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#naming-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#naming-a-bracelet",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Naming a bracelet",
+    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:\n\n\n\n\n\n\nWhy reversed? So the name reads correctly around the circle!\n\nWhy not use word.reverse() instead of reversed(word)?\n\nIf word is a string, then there is no reverse method.\nIf word were a list, then there is a reverse method. But that would mutate the list in place and then return None. Definitely not what we want to do."
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#using-name",
+    "href": "slides/04_tue_bracelet.html#using-name",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Using name()",
+    "text": "Using name()"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " Your turn: Letter beads",
+    "text": "Your turn: Letter beads\nBack to PrairieLearn - try Task 6: Letter Beads!"
+  },
+  {
+    "objectID": "slides/04_tue_bracelet.html#design-strategies",
+    "href": "slides/04_tue_bracelet.html#design-strategies",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Design Strategies",
+    "text": "Design Strategies\n\nIdentify the objects in your problem (nouns).\nList the data each object needs (attributes).\nList the operations each object supports (methods).\nDecide which object is responsible for what.\nImplement and test incrementally.\n\n\nWhen we say “object” in this list, we mean the normal definition of the word not the programming language definition.\n\nWould “thing” be less confusing?"
   },
   {
     "objectID": "slides/02_thu_representation.html#announcements",
