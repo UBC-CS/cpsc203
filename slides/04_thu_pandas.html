@@ -348,7 +348,7 @@
 <li>Each line is one row of the table.</li>
 <li>Each column contains the information between commas.
 <ul>
-<li>Strings containing spaces or unusual symbols (such as commas) surrounded by double quotes.</li>
+<li>Strings containing spaces or unusual symbols (such as commas) may be surrounded by double quotes.</li>
 </ul></li>
 <li>Use extension <code>.csv</code> for files with this formatting.</li>
 </ul>
@@ -359,9 +359,13 @@
 <span id="cb1-5"><a aria-label="5"></a>2026-01-31,Golden,"HUNTR/X: EJAE, Audrey Nuna &amp; REI AMI",4,1,3,False,31</span>
 <span id="cb1-6"><a aria-label="6"></a>2026-01-31,Ordinary,Alex Warren,5,1,5,False,49</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>Spreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.</p>
+<ul>
+<li>Show CSV file in text editor.</li>
+<li>Spreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.
 <ul>
 <li>CSV can only store simple data. The fancier formats allow for equations, plots, etc.</li>
+<li>Show CSV in Excel.</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -385,6 +389,19 @@
 <li>Write read and parse functions to get the data from the file.</li>
 <li>Write analyze and visualize functions to process the data and produce output.</li>
 </ul>
+<aside class="notes">
+<p>Go back to the table and identify the type for each column of the Hot 100 data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="cpsc-103-approach-example" class="slide level2">
 <h2>CPSC 103 Approach Example</h2>
@@ -672,7 +689,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG4jIEZpbHRlciBmb3IgVGF5
 </div>
 </div></div>
 <aside class="notes">
-<p>Parse through <code>df[df['artist'].str.contains('Taylor')]</code>.</p>
+<p>Parse through <code>df[df['artist'].str.contains('Taylor')]</code>. Show what <code>df['artist'].str.contains('Taylor')</code> returns.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -705,6 +722,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG4jIFNvbmdzIHRoYXQgcGVh
 </script>
 </div>
 </div></div>
+<aside class="notes">
+<p>Parse through <code>df[df['peakPos'] == 1]</code>. Show what <code>df['peakPos'] == 1</code> returns.</p>
+<p>Parse through <code>peaked_at_one[['rank', 'title', 'peakPos']].head()</code>. Why the double <code>[[</code>? The outer set is indicating that we are going to index, while the inner set is creating a <code>list[str]</code>. Why use <code>head()</code>?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="demo-2-aggregation-mean-max-min" class="title-slide slide level1 center">
@@ -768,7 +799,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG50b3AxMCA9IGRmW2RmWydy
 <aside class="notes">
 <p>You could do the filter, column select and aggregation all in one statement, rather than creating the intermediate variable <code>top10</code>.</p>
 <ul>
-<li>Remember: Your goal is human readability, not minimum number of lines of code.</li>
+<li>However, remember that your goal is human readability, not minimum number of lines of code.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -855,7 +886,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG4jIEV4Y2x1ZGUgbmV3IHNv
 <li>New song at #23: <code>0 - 23 = -23</code></li>
 <li>Looks like it <strong>fell</strong> 23 spots!</li>
 </ul>
-<p><strong>Solution:</strong> Filter them out first, or use <code>isNew</code>.</p>
+<p><strong>Solution:</strong> Filter them out first.</p>
 </div><div class="column" style="width:50%;">
 <div>
 <div id="pyodide-14" class="exercise-cell">
@@ -866,6 +897,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG4jIE5ldyBzb25ncyBoYXZl
 </script>
 </div>
 </div></div>
+<aside class="notes">
+<p>It is not unusual to have special values in tabular data that denote something weird. Ideally, it would be encoded with an Optional data type, so the weird case would not be a valid (if unusual) value for the not-weird case. But it can sometimes be infeasible to do it the smart way.</p>
+<p>We need to identify and filter out such weird cases <strong>before</strong> we accidentally include them in some otherwise reasonable operation (such as arithmetic).</p>
+<p>Here is a case where you might want to create a new column <code>isNew</code> which has precomputed which songs are new.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="lets-write-code" class="slide level2 activity">
 <h2>Let’s Write Code</h2>

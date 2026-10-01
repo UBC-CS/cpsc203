@@ -939,14 +939,14 @@
     "href": "slides/04_thu_pandas.html#csv-format",
     "title": "Programming, problem solving, and algorithms",
     "section": "CSV Format",
-    "text": "CSV Format\nAcronym for comma separated values\n\nEach line is one row of the table.\nEach column contains the information between commas.\n\nStrings containing spaces or unusual symbols (such as commas) surrounded by double quotes.\n\nUse extension .csv for files with this formatting.\n\ndate,title,artist,rank,peakPos,lastPos,isNew,weeks\n2026-01-31,I Just Might,Bruno Mars,1,1,1,False,2\n2026-01-31,Man I Need,Olivia Dean,2,2,4,False,22\n2026-01-31,The Fate Of Ophelia,Taylor Swift,3,1,2,False,16\n2026-01-31,Golden,\"HUNTR/X: EJAE, Audrey Nuna & REI AMI\",4,1,3,False,31\n2026-01-31,Ordinary,Alex Warren,5,1,5,False,49\n\nSpreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.\n\nCSV can only store simple data. The fancier formats allow for equations, plots, etc."
+    "text": "CSV Format\nAcronym for comma separated values\n\nEach line is one row of the table.\nEach column contains the information between commas.\n\nStrings containing spaces or unusual symbols (such as commas) may be surrounded by double quotes.\n\nUse extension .csv for files with this formatting.\n\ndate,title,artist,rank,peakPos,lastPos,isNew,weeks\n2026-01-31,I Just Might,Bruno Mars,1,1,1,False,2\n2026-01-31,Man I Need,Olivia Dean,2,2,4,False,22\n2026-01-31,The Fate Of Ophelia,Taylor Swift,3,1,2,False,16\n2026-01-31,Golden,\"HUNTR/X: EJAE, Audrey Nuna & REI AMI\",4,1,3,False,31\n2026-01-31,Ordinary,Alex Warren,5,1,5,False,49\n\n\nShow CSV file in text editor.\nSpreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.\n\nCSV can only store simple data. The fancier formats allow for equations, plots, etc.\nShow CSV in Excel."
   },
   {
     "objectID": "slides/04_thu_pandas.html#processing-tabular-data-in-cpsc-103",
     "href": "slides/04_thu_pandas.html#processing-tabular-data-in-cpsc-103",
     "title": "Programming, problem solving, and algorithms",
     "section": "Processing Tabular Data in CPSC 103",
-    "text": "Processing Tabular Data in CPSC 103\nTypical CPSC 103 workflow for CSV files:\n\nIdentify or create a data type for the information in each column of interest.\nCreate Compound data type to store a row.\nCreate List[Compound] data type to store the full data set.\nWrite read and parse functions to get the data from the file.\nWrite analyze and visualize functions to process the data and produce output."
+    "text": "Processing Tabular Data in CPSC 103\nTypical CPSC 103 workflow for CSV files:\n\nIdentify or create a data type for the information in each column of interest.\nCreate Compound data type to store a row.\nCreate List[Compound] data type to store the full data set.\nWrite read and parse functions to get the data from the file.\nWrite analyze and visualize functions to process the data and produce output.\n\n\nGo back to the table and identify the type for each column of the Hot 100 data."
   },
   {
     "objectID": "slides/04_thu_pandas.html#cpsc-103-approach-example",
@@ -1023,14 +1023,14 @@
     "href": "slides/04_thu_pandas.html#demo-how-many-taylor-swift-songs",
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo: How many Taylor Swift songs?",
-    "text": "Demo: How many Taylor Swift songs?\n\n\nGoal: Count songs by a specific artist.\nStrategy:\n\nFilter rows where artist contains “Taylor”\nCount the resulting rows\n\n\n\n\n\n\n\n\n\n\nParse through df[df['artist'].str.contains('Taylor')]."
+    "text": "Demo: How many Taylor Swift songs?\n\n\nGoal: Count songs by a specific artist.\nStrategy:\n\nFilter rows where artist contains “Taylor”\nCount the resulting rows\n\n\n\n\n\n\n\n\n\n\nParse through df[df['artist'].str.contains('Taylor')]. Show what df['artist'].str.contains('Taylor') returns."
   },
   {
     "objectID": "slides/04_thu_pandas.html#demo-how-many-songs-at-1-peak",
     "href": "slides/04_thu_pandas.html#demo-how-many-songs-at-1-peak",
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo: How many songs at #1 peak?",
-    "text": "Demo: How many songs at #1 peak?\n\n\nGoal: Count songs that peaked at #1.\nStrategy:\n\nFilter where peakPos == 1\nCount with len() or .shape[0]"
+    "text": "Demo: How many songs at #1 peak?\n\n\nGoal: Count songs that peaked at #1.\nStrategy:\n\nFilter where peakPos == 1\nCount with len() or .shape[0]\n\n\n\n\n\n\n\n\n\n\nParse through df[df['peakPos'] == 1]. Show what df['peakPos'] == 1 returns.\nParse through peaked_at_one[['rank', 'title', 'peakPos']].head(). Why the double [[? The outer set is indicating that we are going to index, while the inner set is creating a list[str]. Why use head()?"
   },
   {
     "objectID": "slides/04_thu_pandas.html#demo-average-weeks-on-chart",
@@ -1044,7 +1044,7 @@
     "href": "slides/04_thu_pandas.html#demo-average-weeks-for-top-10-only",
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo: Average weeks for top 10 only",
-    "text": "Demo: Average weeks for top 10 only\n\n\nGoal: Average weeks, but only for top 10 songs.\nStrategy:\n\nFilter first: df[df['rank'] &lt;= 10]\nThen aggregate: ['weeks'].mean()\n\n\n\n\n\n\n\n\n\n\nYou could do the filter, column select and aggregation all in one statement, rather than creating the intermediate variable top10.\n\nRemember: Your goal is human readability, not minimum number of lines of code."
+    "text": "Demo: Average weeks for top 10 only\n\n\nGoal: Average weeks, but only for top 10 songs.\nStrategy:\n\nFilter first: df[df['rank'] &lt;= 10]\nThen aggregate: ['weeks'].mean()\n\n\n\n\n\n\n\n\n\n\nYou could do the filter, column select and aggregation all in one statement, rather than creating the intermediate variable top10.\n\nHowever, remember that your goal is human readability, not minimum number of lines of code."
   },
   {
     "objectID": "slides/04_thu_pandas.html#demo-longest-running-song",
@@ -1065,7 +1065,7 @@
     "href": "slides/04_thu_pandas.html#handling-special-values",
     "title": "Programming, problem solving, and algorithms",
     "section": "Handling special values",
-    "text": "Handling special values\n\n\nThe lastPos = 0 problem\nNew songs weren’t on the chart last week, so lastPos = 0.\nIf we compute change = lastPos - rank:\n\nNew song at #23: 0 - 23 = -23\nLooks like it fell 23 spots!\n\nSolution: Filter them out first, or use isNew."
+    "text": "Handling special values\n\n\nThe lastPos = 0 problem\nNew songs weren’t on the chart last week, so lastPos = 0.\nIf we compute change = lastPos - rank:\n\nNew song at #23: 0 - 23 = -23\nLooks like it fell 23 spots!\n\nSolution: Filter them out first.\n\n\n\n\n\n\n\n\n\nIt is not unusual to have special values in tabular data that denote something weird. Ideally, it would be encoded with an Optional data type, so the weird case would not be a valid (if unusual) value for the not-weird case. But it can sometimes be infeasible to do it the smart way.\nWe need to identify and filter out such weird cases before we accidentally include them in some otherwise reasonable operation (such as arithmetic).\nHere is a case where you might want to create a new column isNew which has precomputed which songs are new."
   },
   {
     "objectID": "slides/04_thu_pandas.html#lets-write-code",
