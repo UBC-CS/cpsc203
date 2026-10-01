@@ -3063,6 +3063,13 @@
     "text": "Creating a Bracelet\n\n\n\n\n\n\n\nAn example of composing data types: a Bracelet contains a list of bead. We use (de)composition to solve big problems a piece at a time.\nUse dot and index notation to access deep inside the bracelet:\nbr = Bracelet(20, [b1, b2, b3])\nprint(br.beads[1].colour[2])\nAside: The pyodide environment used in the slides maintains its state through multiple slides unless you click start over.\n\nIf you are used to Jupyter, then think of each slide as a cell.\n\nIn this case we already ran a cell which defined Bead, so we don’t need to do it again.\nNote that you may get unexpected errors if you skip cells or run them out of order."
   },
   {
+    "objectID": "slides/04_tue_bracelet.html#adding-a-method",
+    "href": "slides/04_tue_bracelet.html#adding-a-method",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding a Method",
+    "text": "Adding a Method\n\n\n\n\n\n\n\nWrite a test call from br before implementation. It will fail because circumference is not an attribute or method. Note that we are redefining the Bracelet class every time we re-run that class definition. But the br object will still be using the old version of the class unless we recreate it after the redefinition. br = Bracelet(20, [b1, b2, b3])\nTry the dummy call. Point out that Cinda’s stub uses the pass statement. If the stub is executed, what will be returned? Python doesn’t check whether your type annotation is satisfied; that type annotation is just for the programmer’s benefit. There are ways to check, but we won’t use them in CPSC 203.\nMethods should use the compound function template. Show that in HtDP, including the self.attribute notation. We will keep self.radius and then write the implementation."
+  },
+  {
     "objectID": "slides/04_tue_bracelet.html#does-it-fit",
     "href": "slides/04_tue_bracelet.html#does-it-fit",
     "title": "Programming, problem solving, and algorithms",
@@ -3074,14 +3081,14 @@
     "href": "slides/04_tue_bracelet.html#how-much-slack",
     "title": "Programming, problem solving, and algorithms",
     "section": "How Much Slack?",
-    "text": "How Much Slack?\n\n\n\n\n\n\n\nWrite a dummy call from br before implementation. It will fail because slack is not an attribute or method. Note that we are redefining the Bracelet class every time we re-run that class definition. But the br object will still be using the old version of the class unless we recreate it after the redefinition. br = Bracelet(20, [b1, b2, b3])\nTry the dummy call. Point out that Cinda’s stub uses the pass statement. If the stub is executed, what will be returned?\nBetter to return a value of the appropriate type. Even better to return an unusual value so that the stub will be noticed. (Even better to throw an unimplemented exception, but that’s beyond this course). What is a good choice in this case? I would choose 0.0."
+    "text": "How Much Slack?\n\n\n\n\n\n\n\nReplace pass with a return value of appropriate type.\nThen look at HtDP for the compound data type template. We will keep self.beads and self.circumference. But self.beads is itself a complex data type. In CPSC 103 / 110 we would have told you to write a helper, such as sum_of_bead_diameters In CPSC 203, we’ll just add the list arbitrary sized template into this function. Specialize the template but do not finish the implementation.\nPoint out the difference between self.circumference and self.circumference()."
   },
   {
     "objectID": "slides/04_tue_bracelet.html#adding-beads-safely",
     "href": "slides/04_tue_bracelet.html#adding-beads-safely",
     "title": "Programming, problem solving, and algorithms",
     "section": "Adding beads safely",
-    "text": "Adding beads safely\nWe only want to add a bead if it fits!\n\n\n\n\n\n\n\nFix Cinda’s pass then write a dummy call."
+    "text": "Adding beads safely\nWe only want to add a bead if it fits!\n\n\n\n\n\n\n\nFix Cinda’s pass then write a dummy call.\nWhat template would we use? We need to combine the compound template for Bracelet with the compound template for Bead, since we need some information from both arguments."
   },
   {
     "objectID": "slides/04_tue_bracelet.html#removing-beads",
