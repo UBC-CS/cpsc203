@@ -52,7 +52,7 @@ Acronym for [*comma separated values*](https://en.wikipedia.org/wiki/Comma-separ
 
 - Each line is one row of the table.
 - Each column contains the information between commas.
-  - Strings containing spaces or unusual symbols (such as commas) surrounded by double quotes.
+  - Strings containing spaces or unusual symbols (such as commas) may be surrounded by double quotes.
 - Use extension `.csv` for files with this formatting.
 
 ```csv
@@ -65,9 +65,10 @@ date,title,artist,rank,peakPos,lastPos,isNew,weeks
 ```
 
 ::: notes
-Spreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.
-
-- CSV can only store simple data.  The fancier formats allow for equations, plots, etc.
+- Show CSV file in text editor.
+- Spreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.
+  - CSV can only store simple data.  The fancier formats allow for equations, plots, etc.
+  - Show CSV in Excel.
 :::
 
 ## Processing Tabular Data in CPSC 103
@@ -79,6 +80,10 @@ Typical CPSC 103 workflow for CSV files:
   - Create List[Compound] data type to store the full data set.
   - Write read and parse functions to get the data from the file.
   - Write analyze and visualize functions to process the data and produce output.
+
+::: notes
+Go back to the table and identify the type for each column of the Hot 100 data.
+:::
 
 ## CPSC 103 Approach Example
 
@@ -318,7 +323,7 @@ print(taylor[['rank', 'title']])
 :::::
 
 ::: notes
-Parse through `df[df['artist'].str.contains('Taylor')]`.
+Parse through `df[df['artist'].str.contains('Taylor')]`.  Show what `df['artist'].str.contains('Taylor')` returns.
 :::
 
 ## Demo: How many songs at #1 peak? {.smaller}
@@ -343,6 +348,12 @@ print(peaked_at_one[['rank', 'title', 'peakPos']].head())
 ```
 :::
 :::::
+
+::: notes
+Parse through `df[df['peakPos'] == 1]`.  Show what `df['peakPos'] == 1` returns.
+
+Parse through `peaked_at_one[['rank', 'title', 'peakPos']].head()`.  Why the double `[[`?  The outer set is indicating that we are going to index, while the inner set is creating a `list[str]`.  Why use `head()`?
+:::
 
 # Demo 2: Aggregation (mean, max, min)
 
@@ -401,7 +412,7 @@ print(f"Average weeks (top 10): {avg_weeks_top10:.1f}")
 ::: notes
 You could do the filter, column select and aggregation all in one statement, rather than creating the intermediate variable `top10`.
 
-- Remember: Your goal is human readability, not minimum number of lines of code.
+- However, remember that your goal is human readability, not minimum number of lines of code.
 :::
 
 # Demo 3: Finding extremes with idxmax
@@ -482,7 +493,7 @@ If we compute `change = lastPos - rank`:
 - New song at #23: `0 - 23 = -23`
 - Looks like it **fell** 23 spots!
 
-**Solution:** Filter them out first, or use `isNew`.
+**Solution:** Filter them out first.
 :::
 
 ::: {.column width="50%"}
@@ -495,6 +506,14 @@ print(new_songs[['rank', 'title', 'lastPos', 'isNew']])
 ```
 :::
 :::::
+
+::: notes
+It is not unusual to have special values in tabular data that denote something weird.  Ideally, it would be encoded with an Optional data type, so the weird case would not be a valid (if unusual) value for the not-weird case.  But it can sometimes be infeasible to do it the smart way.
+
+We need to identify and filter out such weird cases **before** we accidentally include them in some otherwise reasonable operation (such as arithmetic).
+
+Here is a case where you might want to create a new column `isNew` which has precomputed which songs are new.
+:::
 
 
 ## Let's Write Code {.activity}
