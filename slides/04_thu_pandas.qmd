@@ -1,0 +1,638 @@
+---
+date: 2026-10-01
+pyodide:
+  packages:
+    - pandas
+    - matplotlib
+---
+
+## Announcements
+
+- You must sit Examlet 1 in ORCA between today and Monday.
+- POTWs 
+
+## Where Are We?
+
+What have we covered so far in CPSC 203?
+
+- Complexity.
+  - How does the amount of work grow as the size of the problem grows?
+- Data representation.
+  - Computers represent everything as binary integers.
+  - We can map other types of data to numbers: characters, colours, etc.
+- Arbitrary sized data: Lists and tuples.
+- Compound data: Dataclasses.
+
+## Today
+
+- Tabular data: `dataframes` and the `pandas` library
+- Dates and times: `datetime` library
+
+# Pandas and Data Frames
+
+## Tabular Data {.smaller}
+
+We often encounter data in tabular form.
+
+- Consider the [Billboard Hot 100](https://www.billboard.com/charts/hot-100/).
+
+- The data from the week of January 31, 2026:
+
+| date | title | artist | rank | peakPos | lastPos | isNew | weeks |
+|---|---|---|---|---|---|---|---|
+| 2026-01-31 | I Just Might | Bruno Mars | 1 | 1 | 1 | False | 2 |
+| 2026-01-31 | Man I Need | Olivia Dean | 2 | 2 | 4 | False | 22 |
+| 2026-01-31 | The Fate Of Ophelia | Taylor Swift | 3 | 1 | 2 | False | 16 |
+| 2026-01-31 | Golden | HUNTR/X: EJAE, Audrey Nuna & REI AMI | 4 | 1 | 3 | False | 31 |
+| 2026-01-31 | Ordinary | Alex Warren | 5 | 1 | 5 | False | 49 |
+
+## CSV Format
+
+Acronym for [*comma separated values*](https://en.wikipedia.org/wiki/Comma-separated_values)
+
+- Each line is one row of the table.
+- Each column contains the information between commas.
+  - Strings containing spaces or unusual symbols (such as commas) surrounded by double quotes.
+- Use extension `.csv` for files with this formatting.
+
+```csv
+date,title,artist,rank,peakPos,lastPos,isNew,weeks
+2026-01-31,I Just Might,Bruno Mars,1,1,1,False,2
+2026-01-31,Man I Need,Olivia Dean,2,2,4,False,22
+2026-01-31,The Fate Of Ophelia,Taylor Swift,3,1,2,False,16
+2026-01-31,Golden,"HUNTR/X: EJAE, Audrey Nuna & REI AMI",4,1,3,False,31
+2026-01-31,Ordinary,Alex Warren,5,1,5,False,49
+```
+
+::: notes
+Spreadsheet programs (MS Excel, Google sheets) can read and write CSV files, but usually choose to store their data in more complex formats.
+
+- CSV can only store simple data.  The fancier formats allow for equations, plots, etc.
+:::
+
+## Processing Tabular Data in CPSC 103
+
+Typical CPSC 103 workflow for CSV files:
+
+  - Identify or create a data type for the information in each column of interest.
+  - Create Compound data type to store a row.
+  - Create List[Compound] data type to store the full data set.
+  - Write read and parse functions to get the data from the file.
+  - Write analyze and visualize functions to process the data and produce output.
+
+## CPSC 103 Approach Example
+
+Create a compound for each row of the Hot 100:
+```python
+from dataclasses import dataclass
+
+@dataclass
+Class Song:
+        date: date
+        title: str
+        artist: str
+        rank: int
+        peakPos: int
+        lastPos: int
+        isNew: bool
+        weeks: int
+```
+
+Create a `list[Song]` to store the table.
+
+::: notes
+In CPSC 103, we treated tables as arbitrary size (list) containing one compound for each row.
+
+This approach is very general, in that the compound can contain other things: another compound, or even an arbitrary size.  
+
+For example, what if you wanted to store the audio of the song in each row?  Each song has a different length.
+
+That said, in practice most of the tables we deal with have atomic data (or other simple data) as entries.  CSV files, for example, cannot store complex data entries.  These are the situations when we can draw upon tools that are specialized for tabular data.
+:::
+
+## CPSC 103 Queries
+
+Answering a query about the data in the table requires loop(s).
+
+For example: What is the name of the artist of the song which has been on the chart for the most weeks?
+
+```python
+# chartlist: list[Song]
+# Find artist on charts the longest
+most_weeks = 0
+most_artist = ''
+for song in chartlist:
+    if song.weeks > most_weeks:
+        most_weeks = song.weeks
+        most_artist = song.artist
+
+print(most_artist, most_weeks)
+```
+
+::: notes
+Go to HtDP and look at the templates for `list` and `compound`.
+:::
+
+## CPSC 103 Approach: Pros and Cons
+
+  - Pro: You think carefully about the information and the data representation before coding.
+  - Pro: You practice your HtDD and HtDF processes and get correct implementations.
+  - Con: Your code is very specific to a single data set.
+  - Con: You can easily manipulate rows, but not columns.
+  - Con: New functions and loops are required for even simple filter or map operations.
+  - Con: Your code is not particularly efficient.
+
+
+## Alternative: List of Dictionaries {.medium}
+
+``` {pyodide}
+#| setup: true
+#| exercise: billboard
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+chartlist = df.to_dict('records')
+```
+
+- Each row is represented as a dictionary.  
+- The keys of the dictionary are the column names.
+- The table is a list of dictionaries.
+
+``` {pyodide}
+#| exercise: billboard
+# chartlist: list of song dictionaries
+# Find artist on charts the longest
+most_weeks = 0
+most_artist = ''
+for song in chartlist:
+    if song['weeks'] > most_weeks:
+        most_weeks = song['weeks']
+        most_artist = song['artist']
+
+print(most_artist, most_weeks)
+```
+
+## A Better Way: DataFrames
+
+A **DataFrame** is a 2D table: rows = records, columns = attributes.
+
+DataFrames have **built-in operations** for filtering, aggregating, and more.
+
+``` {pyodide}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/UBC-CS/cpsc203/refs/heads/main/data/bill_2026-01-31.csv')
+df.head(10)
+```
+
+## `.csv` files for Pandas
+
+If our data is in a `.csv` file:
+
+```python
+df = pd.read_csv('billboard.csv')
+```
+
+`.csv` files **must** have *attribute names* in row 1, and data beginning in row 2.
+
+```default
+title,artist,rank,last_week,...
+Die With A Smile,Lady Gaga,1,1,...
+APT.,Rose & Bruno Mars,2,2,...
+```
+
+``` {pyodide}
+# What columns (attributes) do we have?
+print(df.columns.tolist())
+```
+
+
+## The Payoff: One-Liners! {.smaller}
+
+| Task | With loops | With DataFrames |
+|------|------------|-----------------|
+| Count new songs | 5+ lines | `df[df['isNew']].shape[0]` |
+| Average peak | 4 lines | `df['peakPos'].mean()` |
+| Filter long-running | 4 lines | `df[df['weeks'] > 10]` |
+| Find biggest mover | 8+ lines | `df.loc[df['gradient'].abs().idxmax()]` |
+
+
+
+##  {background-iframe="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" background-interactive="true" data-menu-title="pandas cheat sheet"}
+
+::: notes
+So what does the template look like for dataframes?  Its complicated...
+
+Remember that we sometimes use the arbitrary-size template for lists, and sometimes we use the compound template?  For dataframes, there are many, many common templates.
+
+The Pandas cheat sheet encompasses them all, but it will take some practice before you can easily read it.
+
+You will have access to the cheat sheet during exams in which you are expected to use dataframes.
+:::
+
+## Selecting rows {.smaller}
+
+::::: columns
+::: {.column width="30%"}
+![](/images/pandas-subset-rows.png){fig-alt="pandas cheat sheet section on selecting rows in pandas data frames."}
+
+:::
+
+::: {.column width="70%"}
+
+-   `df[df[col] > val]` — filter by condition
+
+``` {pyodide}
+# Songs on chart more than 20 weeks
+long_runners = df[df['weeks'] > 20]
+print(long_runners[['title', 'weeks']])
+```
+
+-   `df.nlargest(n, col)` — top n by column
+
+``` {pyodide}
+# Top 5 by weeks on chart
+print(df.nlargest(5, 'weeks')[['title', 'weeks']])
+```
+
+:::
+:::::
+
+::: notes
+- By far the most common is filter by condition.
+- I sometimes use `head`, `tail` or `iloc` to look at example rows when the table is too big to look at all at once.
+:::
+
+## Adding a column {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+-   `df['new_col'] = expression`
+
+    Adds a column to the DataFrame containing the computed value for every row.
+
+-   `df[df['new_col'] > val]`
+
+    Filter rows by the new column.
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+# Add a "gradient" column 
+df['gradient'] = df['lastPos'] - df['rank']
+
+# Find songs that rose more than 10 spots
+risers = df[df['gradient'] > 10]
+print(risers[['title', 'rank', 'last_week', 'gradient']])
+```
+:::
+:::::
+
+::: notes
+*Very* useful to create columns containing intermediate expressions when you are working on a complex map, filter or aggregation.
+:::
+
+
+# Demo 1: Counting with a condition
+
+## Demo: How many Taylor Swift songs? {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Count songs by a specific artist.
+
+**Strategy:**
+
+1. Filter rows where artist contains "Taylor"
+2. Count the resulting rows
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+# Filter for Taylor Swift
+taylor = df[df['artist'].str.contains('Taylor')]
+print(f"Taylor Swift has {len(taylor)} songs on the chart:")
+print(taylor[['rank', 'title']])
+```
+:::
+:::::
+
+::: notes
+Parse through `df[df['artist'].str.contains('Taylor')]`.
+:::
+
+## Demo: How many songs at #1 peak? {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Count songs that peaked at #1.
+
+**Strategy:**
+
+1. Filter where `peakPos == 1`
+2. Count with `len()` or `.shape[0]`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+# Songs that peaked at #1
+peaked_at_one = df[df['peakPos'] == 1]
+print(f"Songs that peaked at #1: {len(peaked_at_one)}")
+print(peaked_at_one[['rank', 'title', 'peakPos']].head())
+```
+:::
+:::::
+
+# Demo 2: Aggregation (mean, max, min)
+
+## Demo: Average weeks on chart {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Find the average weeks on chart.
+
+**Strategy:**
+
+- Select a column: `df['weeks']`
+- Apply aggregation: `.mean()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+avg_weeks = df['weeks'].mean()
+print(f"Average weeks on chart: {avg_weeks:.1f}")
+
+# Also useful: min, max, median
+print(f"Min: {df['weeks'].min()}, Max: {df['weeks'].max()}")
+```
+:::
+:::::
+
+::: notes
+Explain the `:.1f` notation for floating point numbers.
+:::
+
+## Demo: Average weeks for top 10 only {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Average weeks, but only for top 10 songs.
+
+**Strategy:**
+
+1. Filter first: `df[df['rank'] <= 10]`
+2. Then aggregate: `['weeks'].mean()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+top10 = df[df['rank'] <= 10]
+avg_weeks_top10 = top10['weeks'].mean()
+
+print(f"Average weeks (all songs): {df['weeks'].mean():.1f}")
+print(f"Average weeks (top 10): {avg_weeks_top10:.1f}")
+```
+:::
+:::::
+
+::: notes
+You could do the filter, column select and aggregation all in one statement, rather than creating the intermediate variable `top10`.
+
+- Remember: Your goal is human readability, not minimum number of lines of code.
+:::
+
+# Demo 3: Finding extremes with idxmax
+
+## Demo: Longest-running song {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Find the song with the most weeks on chart.
+
+**Strategy:**
+
+- `idxmax()` returns the **row index** of the maximum
+- `df.loc[idx]` retrieves that row
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+# Find index of max weeks
+idx = df['weeks'].idxmax()
+longest = df.loc[idx]
+
+print(f"Longest-running song:")
+print(f"  {longest['title']} by {longest['artist']}")
+print(f"  {longest['weeks']} weeks, currently #{longest['rank']}")
+```
+:::
+:::::
+
+::: notes
+This combination of `idxmax` and `loc` is a common dataframes pattern.
+:::
+
+## Demo: Biggest riser this week {.smaller}
+
+::::: columns
+::: {.column width="40%"}
+**Goal:** Which song moved up the most?
+
+**Problem:** New songs have `lastPos = 0` (they weren't on the chart last week).
+
+**Strategy:**
+
+1. Filter out new songs first
+2. Compute change: `lastPos - rank`
+3. Find max with `idxmax()`
+:::
+
+::: {.column width="60%"}
+``` {pyodide}
+
+# Exclude new songs (lastPos == 0 means "not on chart last week")
+returning = df[df['lastPos'] > 0].copy()
+
+# Positive = rose, negative = fell
+returning['change'] = returning['lastPos'] - returning['rank']
+
+# Find biggest riser
+idx = returning['change'].idxmax()
+riser = returning.loc[idx]
+print(f"Biggest riser: {riser['title']}")
+print(f"  #{riser['lastPos']} → #{riser['rank']} (up {riser['change']} spots)")
+```
+:::
+:::::
+
+## Handling special values {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+**The `lastPos = 0` problem**
+
+New songs weren't on the chart last week, so `lastPos = 0`.
+
+If we compute `change = lastPos - rank`:
+
+- New song at #23: `0 - 23 = -23`
+- Looks like it **fell** 23 spots!
+
+**Solution:** Filter them out first, or use `isNew`.
+:::
+
+::: {.column width="50%"}
+``` {pyodide}
+
+# New songs have lastPos = 0
+new_songs = df[df['lastPos'] == 0]
+print("New songs (lastPos = 0):")
+print(new_songs[['rank', 'title', 'lastPos', 'isNew']])
+```
+:::
+:::::
+
+
+## Let's Write Code {.activity}
+
+Open CA5.1 Billboard, and load `STUDENT_nb.py`.
+
+[PrairieLearn Activity](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722850/)
+
+
+## Pandas and Dataframes: A Sharp Blade
+
+Compared to the CPSC 103 process, Pandas:
+
+- Allows us to quickly<sup>†</sup> perform complex data manipulations.
+- Allows us to quickly<sup>†</sup> generate bugs that are difficult to spot and even harder to remove.
+
+::: aside
+<sup>†</sup> In terms of both coding and execution speed.
+:::
+
+# Dates and Times
+
+## Warm Up {.smaller}
+
+**`datetime`**: a Python library that simplifies date computation. 
+
+**Objects we need**
+
+* `date` — a calendar day (year-month-day)
+* `timedelta` — a number of days you can add/subtract 
+
+**Core calls**
+
+* `today=date.today()`: today’s date 
+* `today.weekday()`: an integer **0..6** with **Mon=0, ... , Sun=6**
+* `today - timedelta(days=k)`: the date **k days earlier**
+
+Ref: <https://docs.python.org/3/library/datetime.html>
+
+::: notes
+**Billboard constraint**
+- The library expects **Saturday** chart dates. We need the **most recent Saturday** at or before today.
+:::
+
+## Last Saturday {.smaller}
+
+Let $w =$ `today.weekday()` $\in \{0,\dots,6\}$ and note **Saturday $= 5$**.
+
+
+::::: columns
+:::: {.column width="60%"}
+
+
+**offset:** How many days to step *back* to reach Saturday.
+
+* If today is **Saturday** ($w=5$): offset $=0$
+* If today is **Sunday** ($w=6$): offset $=1$
+* If today is **Monday** ($w=0$): offset $=2$
+
+$$
+\texttt{offset} = (w - 5)\bmod 7
+$$
+
+$$
+\texttt{lastSaturday} = \texttt{today} - \texttt{timedelta(days=offset)}.
+$$
+
+::::
+:::: {.column width="20%"}
+
+![](/images/clock7.svg){width="100%"}
+
+::::
+:::::
+
+<!-- Inline SVG week strip (Mon=0 … Sun=6; Sat=5 highlighted) -->
+<svg viewBox="0 0 820 120" width="90%" role="img" aria-label="Weekday indices Mon=0 ... Sun=6; Saturday=5">
+  <style>
+    .b { font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; }
+    .d { font: 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial; }
+  </style>
+  <!-- boxes -->
+  <g fill="#f7f7f7" stroke="#444">
+    <rect x="10"  y="20" width="100" height="60" rx="10"/>
+    <rect x="120" y="20" width="100" height="60" rx="10"/>
+    <rect x="230" y="20" width="100" height="60" rx="10"/>
+    <rect x="340" y="20" width="100" height="60" rx="10"/>
+    <rect x="450" y="20" width="100" height="60" rx="10"/>
+    <rect x="560" y="20" width="100" height="60" rx="10" fill="#fff8e1" stroke="#b8860b" stroke-width="2"/>
+    <rect x="670" y="20" width="100" height="60" rx="10"/>
+  </g>
+  <!-- labels -->
+  <g class="b" text-anchor="middle" fill="#111">
+    <text x="60"  y="48">Mon</text><text x="60"  y="74" class="d">0</text>
+    <text x="170" y="48">Tue</text><text x="170" y="74" class="d">1</text>
+    <text x="280" y="48">Wed</text><text x="280" y="74" class="d">2</text>
+    <text x="390" y="48">Thu</text><text x="390" y="74" class="d">3</text>
+    <text x="500" y="48">Fri</text><text  x="500" y="74" class="d">4</text>
+    <text x="610" y="48">Sat</text><text  x="610" y="74" class="d">5</text>
+    <text x="720" y="48">Sun</text><text  x="720" y="74" class="d">6</text>
+  </g>
+</svg>
+
+::: notes
+Write the clock on a piece of paper, and count around it (counter-clockwise because we are subtracting).  Demo for Tuesday or Wednesday.
+
+Addition / subtraction on a clock (rather than an infinite number line) is modular arithmetic.
+:::
+
+## Code 
+
+``` {pyodide}
+from datetime import date, timedelta
+
+def getLastSaturday(day):
+    w = day.weekday()                        # Mon=0, ..., Sat=5, Sun=6
+    offset = (w - 5) % 7                     # days since the most recent Saturday
+    return day - timedelta(days=offset)      # step back by that many days
+
+today = date.today()
+lastSatDate = getLastSaturday(today)
+print(f"Last Saturday's date was: {lastSatDate}")
+
+```
+
+::: notes
+Modify to Mark Carney's birthday `today = date(year=1965,month=3,day=16)` (born in Fort Smith, NWT).  That was a Tuesday, so previous Saturday is March 13.
+:::
+
+
+## Resources
+
+<https://pymotw.com/2/datetime/>
+
+<https://www.dataschool.io/best-python-pandas-resources/>
+
+<https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>
+
+<https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
+
+
