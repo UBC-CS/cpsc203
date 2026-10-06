@@ -1,0 +1,229 @@
+---
+date: 2026-10-06
+pyodide:
+  packages:
+    - pandas
+    - matplotlib
+---
+
+## Announcements
+
+- Practice examlet 2 is available.  
+- Examlet 2 **next** week (Thursday Oct 15 to Monday October 19).
+- Lab 4 and POTW 4 due Sunday October 11, 8pm.
+- Project 1 due Monday October 26, 8pm.
+
+# Part 1: Song History
+
+## The Question
+
+Given a year of charts,
+
+* What do the paths of the number ones look like?
+
+* Do most songs debut at the top? How fast do they fall?
+
+We can quantify these things, and analyze them, but a picture will help us see if there's anything interesting in the data.
+
+::: notes
+We are asking harder questions about our data:
+
+* Working with multiple weeks of data.
+* Visualizing song trajectories.
+
+In the process, we will practice the stuff we learned previously, and learn some new stuff.
+:::
+
+
+## First: Sketch Where We Are Going
+
+Draw a loose sketch of how you might visualize the paths through the Hot 100 chart for all songs which hit #1.
+
+- What are some reasonable axes?
+- Imagine what the path of *one* song looks like.
+- How many paths are there for all songs?
+
+::: notes
+- x-axis is time, y-axis is rank.  But #1 should be at the top on the y-axis.
+- One line per song.
+- What happens when a song does not have a rank?
+:::
+
+## Key Steps
+
+1. Assemble the data we want to analyze.
+1. Find the list of Number 1 songs.
+1. For each of those songs, make a list of their ranks over time.
+1. Rearrange the data into a form suitable for plotting.
+1. Generate the plot.
+
+- Launch [Class Activity: Billboard (Visualization)](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722849/) in PrairieLearn.
+- Open `challenge1_nb.py`.
+
+
+## Step 3: Filter for Multiple Possible Values
+
+We have a list of song titles that hit #1.
+
+Now we want **all** rows for those songs — their complete chart history.
+
+## Useful Pandas: `.isin()` {.medium}
+
+`.isin(list)` method returns `True` for rows where the value appears in the list.
+
+``` {pyodide}
+#| echo: false
+import pandas as pd
+students = pd.DataFrame({
+    'name': ['Bluey', 'Dora', 'Arthur', 'Peppa', 'Elmo', 'Moana', 'Bingo', 'Diego', 'Boots', 'Bandit'],
+    'major': ['ECON', 'BIOC', 'PHAS', 'EOSC', 'PSYC', 'MATH', 'ECON', 'BIOC', 'PHAS', 'PSYC']
+})
+```
+
+:::: {.columns}
+::: {.column width="45%"}
+We've already loaded some data behind the scenes...
+``` {pyodide}
+students
+```
+:::
+::: {.column width="55%"}
+``` {pyodide}
+majors_to_find = ['ECON', 'PHAS']
+found_students = students[students['major'].isin(majors_to_find)]
+found_students
+```
+:::
+::::
+
+
+## Step 4: Reshaping for Plotting
+
+::: {.columns}
+::: {.column}
+Our data looks like this:
+
+- One row per song per week.
+- Multiple rows for each week.
+- Multiple rows for each song.
+
+| date | title | rank |
+|------|-------|------|
+| 2025-01-04 | Song A | 1 |
+| 2025-01-04 | Song B | 15 |
+| 2025-01-11 | Song A | 3 |
+| 2025-01-11 | Song B | 1 |
+:::
+
+::: {.column}
+But for plotting we want
+
+- One row per week (x-axis value).
+- One column per song (one line).
+- Rank is no longer a column.
+
+| date | Song A | Song B |
+|------|--------|--------|
+| 2025-01-04 | 1 | 15 |
+| 2025-01-11 | 3 | 1 |
+:::
+
+:::
+
+::: notes
+Pivoting is a very common operation on tabular data.
+
+- The unique entries in one input column (or perhaps a combination of input columns) become the rows of the output.
+- The unique entries in another input column (or perhaps a combination of input columns) become the columns of the output.
+- Some aggregation of the entries in yet another column (or perhaps a combination of input columns) for the matching rows become the entries of the output.
+- This case is a particularly simple pivot because each entry in the output table corresponds to a single row of the input table.
+
+This part of the code is magic Pandas for me.
+:::
+
+## Useful Pandas
+
+- `groupby()` method organizes rows into groups.  In this case, one group per (date, title) pair.
+  - Result is a `Series` with a multi-level index (date, title).
+  - Each group has exactly one row, so `sum()` method just extracts that row's value.
+- `unstack()` method takes the inner index level (title) and makes it into columns in a `DataFrame`.
+  - Now each column is a song, each row is a date!
+
+## Try It Yourself {.activity}
+
+- Launch [Class Activity: Billboard (Visualization)](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722849/) in PrairieLearn.
+- Open `STUDENT_viz_nb.py` and work through "Part 1: Visualizing Chart Trajectories".
+
+Basically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch.
+
+## Visualization Discussion
+
+* What patterns do you see in the #1 songs?
+* Do most songs debut at the top?
+* How quickly do they typically fall?
+* Any songs with unusual trajectories?
+
+# Part 2: Staying Power
+
+## The Question
+
+Does a **strong debut** mean a song will stick around longer?
+
+Or do **slow climbers** have more staying power?
+
+Let's investigate with a scatter plot!
+
+## Key Steps
+
+1. Assemble the data we want to analyze.
+1. Find the debut position of each song.
+1. Find the total number of weeks each song stayed on the chart.
+1. Rearrange the data into a form suitable for plotting.
+1. Generate the plot.
+
+- Launch [Class Activity: Billboard (Visualization)](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722849/) in PrairieLearn.
+- Open `challenge2_nb.py`.
+
+## Useful Pandas
+
+- `rename()` method allows you to rename columns.
+- `toframe()` method can convert a `Series` into a `DataFrame`.
+- `pd.merge()` function can combine the data in two tables.
+
+::: notes
+- Often we don't need to worry about `Series` vs `DataFrame`.  Pandas is surprisingly forgiving.
+:::
+
+## Visualization Discussion
+
+- Is there a correlation between debut position and staying power?
+- Any outliers — songs that debuted low but stayed forever?
+- Or songs that debuted at #1 but disappeared quickly?
+
+Practice for yourself:
+
+- Launch [Class Activity: Billboard (Visualization)](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722849/) in PrairieLearn.
+- Open `STUDENT_viz_nb.py` and work through "Part 2: Staying Power".
+
+Basically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch.
+
+
+## Summary
+
+| Concept | Code |
+|---------|------|
+| Filter by condition | `df[df['rank'] == 1]` |
+| Get unique values | `df['title'].unique()` |
+| Filter by list | `df[df['title'].isin(list)]` |
+| Reshape for plotting | `.groupby([...]).unstack()` |
+| Combining tables | `pd.merge()` |
+
+## Resources
+
+<https://pymotw.com/2/datetime/>
+
+<https://www.dataschool.io/best-python-pandas-resources/>
+
+<https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>
+
+<https://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot>
