@@ -9,12 +9,10 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.19">
 
-  <meta name="dcterms.date" content="2026-09-22">
+  <meta name="dcterms.date" content="2026-10-08">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -39,6 +37,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cf7abb54ac857841f37fccdb992a2c4e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -155,26 +219,70 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 22, 2026</p>
+  <p class="date">October 8, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>Lab 2 and POTW 2 now available.</p></li>
-<li><p>Practice examlet 1 now available.</p></li>
-<li><p>Treat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day.</p></li>
+<li>Labs next week: Monday labs are cancelled due to the holiday. Students can go to another lab section.</li>
+<li>Practice examlet 2 is available.<br>
+</li>
+<li>Examlet 2 <strong>next</strong> week (Thursday Oct 15 to Monday October 19).</li>
+<li>Lab 4 and POTW 4 due Sunday October 11, 8pm.</li>
+<li>Project 1 due Monday October 26, 8pm.</li>
 </ul>
 </section>
-<section id="marimo" class="slide level2">
-<h2>Marimo</h2>
-<p>We will be using <a href="https://marimo.io/">marimo</a> for our more involved Python coding exercises.</p>
+<section id="the-setup-the-great-data-heist." class="slide level2">
+<h2>The Setup: The Great Data Heist.</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Last night, someone broke into the <strong>Vancouver Museum of Data Science</strong>.</p>
+<p>The thief stole the legendary <strong>Golden DataFrame</strong> — an artifact said to contain the answers to all data questions.</p>
+<p>You’ve been called in as <strong>data detectives</strong> to solve the case.</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=300.png"></p>
+</div></div>
+</section>
+<section id="your-tool-the-dictionary" class="slide level2">
+<h2>Your Tool: The Dictionary</h2>
+<p>Dictionaries are Python’s data structure for storing <a href="https://en.wikipedia.org/wiki/Name%E2%80%93value_pair">key-value pairs</a>.</p>
 <ul>
-<li>Similar to <a href="https://jupyter.org/">Jupyter Lab</a> from CPSC 103, but has some (beneficial) differences.</li>
+<li>Given the <em>key</em>, we would like to quickly retrieve the corresponding <em>value</em>.</li>
 </ul>
-<p>Open the <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722864/"><strong>List Activity</strong></a> on PrairieLearn and choose the <em>List Mysteries</em> question.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>name</td>
+<td>Prof.&nbsp;Histogram</td>
+</tr>
+<tr class="even">
+<td>department</td>
+<td>Statistics</td>
+</tr>
+<tr class="odd">
+<td>alibi</td>
+<td>was at the faculty meeting</td>
+</tr>
+<tr class="even">
+<td>motive</td>
+<td>jealousy of the DataFrame’s power</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722852/">Class Activity: Dictionary Heist</a> in PrairieLearn.</li>
+<li>Open <code>data_heist_dictionaries.py</code>.</li>
+</ul>
 <aside class="notes">
-<p>Demonstrate opening the activity, the workspace, and the <code>marimo_v_jupyter</code> file.</p>
-<p>Identify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have).</p>
+<p>Work through the <code>Dictionary basics</code> cell.</p>
+<p>So we have a collection of data (the values) which should be managed together (the dictionary).</p>
+<p>Why does that look familiar?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -188,20 +296,53 @@
       }</style></aside>
 </section>
 <section>
-<section id="python-lists" class="title-slide slide level1 center">
-<h1>Python Lists</h1>
+<section id="dictionaries-as-compound-data-representations" class="title-slide slide level1 center">
+<h1>Dictionaries as Compound Data Representations</h1>
 
 </section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity" class="slide level2 activity">
-<h2><iconify-icon role="img" inline="" icon="fa6-solid:computer" aria-label="Icon computer from fa6-solid Iconify.design set." title="Icon computer from fa6-solid Iconify.design set."></iconify-icon> List Activity</h2>
-<p>Let’s explore some surprising list behaviors.</p>
-<p>Inside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.</p>
-<p>Be curious. Feel free to experiment by changing things!</p>
-<p>Write down surprising behaviors.</p>
-<countdown-timer id="timer_49360eaf77ab765a3482952ea8e338d7bd1e5110" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
- </countdown-timer>
+<section id="compound-data" class="slide level2">
+<h2>Compound Data</h2>
+<p>Dictionaries / key-value lookup is yet another way to represent compound data:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Representation</th>
+<th>Elements</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>lists</td>
+<td>integer indexes 0 to <span class="math inline">\(n\)</span></td>
+<td>values</td>
+</tr>
+<tr class="even">
+<td>namedtuples</td>
+<td>fields</td>
+<td>values</td>
+</tr>
+<tr class="odd">
+<td>dataclasses</td>
+<td>attributes</td>
+<td>values</td>
+</tr>
+<tr class="even">
+<td>row of a dataframe</td>
+<td>columns</td>
+<td>values</td>
+</tr>
+<tr class="odd">
+<td>dictionary</td>
+<td>keys</td>
+<td>values</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
-<p>Week3_tue_lists activity - covers aliasing, append vs extend, list comprehension</p>
+<p>Why so many alternatives? Compound data is really important!</p>
+<p>Different representations have different levels of formality, different effort to construct, different capabilities, different efficiencies, …</p>
+<p>As an example, lists are great when you only need to index by consecutive integers starting from zero, or slices. But they are terrible if you want to give your elements more meaningful names.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -214,113 +355,455 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="lists-a-quick-review" class="slide level2">
-<h2>Lists: A Quick Review</h2>
-<p>Lists are <strong>ordered collections</strong> that can hold any type of data.</p>
+<section id="billboard-hot-100-data-as-a-dictionary" class="slide level2">
+<h2>Billboard Hot 100 Data as a Dictionary</h2>
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJvdmluY2VzID0gWydCcml0aXNoIENvbHVtYmlhJywgJ0FsYmVydGEnLCAnT250YXJpbyddXG5udW1iZXJzID0gWzEsIDIsIDMsIDQsIDVdXG5taXhlZCA9IFsnaGVsbG8nLCA0MiwgMy4xNCwgVHJ1ZV0ifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBBIGxpc3Qgb2YgZGljdGlvbmFyaWVzIOKAlCBlYWNoIGRpY3QgaXMgYSBcInJlY29yZFwiIHdpdGggbmFtZWQgZmllbGRzXG5zb25ncyA9IFtcbiAgICB7XCJ0aXRsZVwiOiBcIkRpZSBXaXRoIEEgU21pbGVcIiwgXCJhcnRpc3RcIjogXCJCcnVubyBNYXJzXCIsIFwicmFua1wiOiAxfSxcbiAgICB7XCJ0aXRsZVwiOiBcIkFQVC5cIiwgXCJhcnRpc3RcIjogXCJSb3NlXCIsIFwicmFua1wiOiAyfSxcbiAgICB7XCJ0aXRsZVwiOiBcIkJpcmRzIG9mIGEgRmVhdGhlclwiLCBcImFydGlzdFwiOiBcIkJpbGxpZSBFaWxpc2hcIiwgXCJyYW5rXCI6IDN9LFxuXVxuXG4jIEFjY2VzcyBmaWVsZHMgYnkgbmFtZSwgbm90IHBvc2l0aW9uXG5mb3Igc29uZyBpbiBzb25nczpcbiAgICBwcmludChmXCJ7c29uZ1sncmFuayddfS4ge3NvbmdbJ3RpdGxlJ119IGJ5IHtzb25nWydhcnRpc3QnXX1cIikifQ==
 </script>
 </div>
-<p>We can:</p>
-<ul>
-<li>Access elements by index: <code>provinces[0]</code></li>
-<li>Slice: <code>numbers[1:3]</code></li>
-<li>Get length: <code>len(provinces)</code></li>
-</ul>
 </section>
-<section id="adding-to-lists" class="slide level2">
-<h2>Adding to Lists</h2>
+<section id="why-dictionaries-for-compound-data" class="slide level2 medium">
+<h2>Why Dictionaries (for Compound Data)?</h2>
+<p>Dictionaries are probably <em>the most common</em> Python representation for compound data because</p>
+<ul>
+<li>They require no overhead to create (no class definition).</li>
+<li>Have very simple and compact syntax.</li>
+<li>Are extremely efficient for common operations on a single piece of compound data.
+<ul>
+<li>In particular, looking up a key takes the same amount of time regardless of the number of keys in the dictionary.</li>
+</ul></li>
+</ul>
+<p>And the less you have to think about your data structure, the better. Right?</p>
+<aside class="notes">
+<p>As an example, consider what happens if you ask for an element which doesn’t exist.</p>
+<ul>
+<li>For lists, the only possible error is to ask for an index beyond <span class="math inline">\(n\)</span>. Common, but usually easy to avoid / debug.</li>
+<li>For namedtuples and dataclasses, it is possible to figure out before running the code that the field / attribute doesn’t exist. (Regular Python won’t notice until you run, but some editors or lint scanners will warn you.)</li>
+<li>For dataframes and dictionaries, you cannot check until runtime. Work through the <code>missing key</code> cell.</li>
+</ul>
+<p>We used namedtuples for compound data in CPSC 103 because</p>
+<ul>
+<li>We wanted you to document your fields before you started using them.</li>
+<li>We did not want to introduce class notation.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="dictionaries-as-key-value-lookup" class="title-slide slide level1 center">
+<h1>Dictionaries as Key-Value Lookup</h1>
+
+</section>
+<section id="not-just-a-one-trick-pony" class="slide level2">
+<h2>Not Just a One-Trick Pony</h2>
+<p>Dictionaries / key-value lookup is useful for solving other common problems.</p>
+<ul>
+<li>Tracking membership.</li>
+<li>Counting appearances / frequencies.</li>
+<li>Representing a map over a discrete domain.</li>
+<li>Grouping by category.</li>
+</ul>
+<aside class="notes">
+<p>Remember that we often use lists for arbitrary sized data, but we sometimes use them for compound data?</p>
+<p>We sometimes use dictionaries for compound data. In these cases the keys are known at design time and the values are the data.</p>
+<p>But we also use dictionaries for solving other problems. In these cases both the keys <strong>and</strong> the values are part of the data representation. We generally won’t know either at design time, so the ability to create them at run-time is a feature.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="room-1-membership-and-intersection" class="title-slide slide level1 center">
+<h1>🚪 Room 1: Membership and Intersection</h1>
+
+</section>
+<section id="common-pattern-tracking-membership" class="slide level2">
+<h2>Common Pattern: Tracking Membership</h2>
+<p>For example: Have we seen this item before?</p>
 <div>
 <div id="pyodide-2" class="exercise-cell">
 
 </div>
 <script type="pyodide-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJvdmluY2VzID0gWydCcml0aXNoIENvbHVtYmlhJ11cblxuIyBUaGVzZSB3b3JrIGRpZmZlcmVudGx5IVxucHJvdmluY2VzLmFwcGVuZCgnQWxiZXJ0YScpICAgICAgICAgICAjIGFkZHMgb25lIGVsZW1lbnRcbnByb3ZpbmNlcy5leHRlbmQoWydPbnRhcmlvJywgJ1F1ZWJlYyddKSAgIyBhZGRzIGVhY2ggZWxlbWVudFxuXG5tYXJpdGltZSA9IHByb3ZpbmNlcyArIFsnTlMnXSAgICAgICAgICMgbmV3IGxpc3QhXG5wcm92aW5jZXNbMF0gPSAnQkMnXG5wcmludChtYXJpdGltZVswXSkgICAgICAgICAgICAgICAgICAgICMgc3RpbGwgJ0JyaXRpc2ggQ29sdW1iaWEnIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVmYXVsdGRpY3RcblxuIyBkZWZhdWx0ZGljdChib29sKSByZXR1cm5zIEZhbHNlIGZvciBtaXNzaW5nIGtleXNcbnNlZW4gPSBkZWZhdWx0ZGljdChib29sKVxuXG4jIE1hcmsgc29tZXRoaW5nIGFzIHNlZW5cbnNlZW5bXCJhcHBsZVwiXSA9IFRydWVcbnNlZW5bXCJiYW5hbmFcIl0gPSBUcnVlXG5cbiMgQ2hlY2sgaWYgd2UndmUgc2VlbiBpdCDigJQgbm8gS2V5RXJyb3IhXG5pZiBzZWVuW1wiYXBwbGVcIl06XG4gICAgcHJpbnQoXCJXZSd2ZSBzZWVuIGFwcGxlIGJlZm9yZSFcIilcblxuaWYgbm90IHNlZW5bXCJjaGVycnlcIl06XG4gICAgcHJpbnQoXCJDaGVycnkgaXMgbmV3IHRvIHVzXCIpIn0=
 </script>
 </div>
-<p>What about <code>provinces.append(['Ontario', 'Quebec'])</code>?</p>
+<p><code>defaultdict(bool)</code> returns <code>False</code> for missing keys — no KeyError!</p>
 </section>
-<section id="list-aliasing" class="slide level2">
-<h2>List Aliasing</h2>
+<section id="approach-1-using-lists" class="slide level2 medium">
+<h2>Approach 1: Using Lists</h2>
+<p>The thief visited <strong>both</strong> Gallery A and Gallery B before the theft.</p>
+<p><strong>Your mission:</strong> Find everyone who was in BOTH rooms.</p>
+<p>Let’s try using just lists:</p>
+<ol type="1">
+<li>Construct a list of everybody who visited Gallery A.</li>
+<li>Construct a list of everybody who visited Gallery B.</li>
+<li>For every person in list A:
+<ol type="1">
+<li>For every person in list B:
+<ol type="1">
+<li>If they match, add them to the intersection list.</li>
+</ol></li>
+</ol></li>
+</ol>
+<aside class="notes">
+<p>Work through <code>Intersection using Lists</code> cell.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-problem-with-nested-loops" class="slide level2">
+<h2>The Problem with Nested Loops</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/nested_loop_check.svg"></p>
+</div><div class="column">
+<ul>
+<li>With 10 people in Gallery A and 12 in Gallery B: <strong>10 × 12 = 120 comparisons</strong></li>
+<li>With 10,000 in each: <strong>100,000,000 comparisons!</strong></li>
+<li>With <span class="math inline">\(n\)</span> people in Gallery A and <span class="math inline">\(m\)</span> in Gallery B?</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>But what if we used <code>in</code> keyword <strong>instead</strong> of the second loop?</p>
+<p>Same time for lists because checking membership for a list value requires time proportional to the length of the list.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="approach-2-using-dictionaries" class="slide level2">
+<h2>Approach 2: Using Dictionaries</h2>
+<p>Let’s try using dictionaries (and lists):</p>
+<ol type="1">
+<li>Construct a dictionary of everybody who visited Gallery A.</li>
+<li>Construct a list of everybody who visited Gallery B.</li>
+<li>For every person in list B:
+<ol type="1">
+<li>If they are in dictionary A, add them to the intersection list.</li>
+</ol></li>
+</ol>
+<aside class="notes">
+<p>Do we use the person’s name as the key or the value? - Looking up a key (or equivalently, testing ‘in’) in a dictionary is constant time. - Looking up a value in a dictionary requires the same time as looking up a value in a list.</p>
+<p>Work through <code>Intersection using Dictionary</code> cell.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-is-this-faster" class="slide level2">
+<h2>Why Is This Faster?</h2>
+<ul>
+<li><strong>Step 1:</strong> Look at each Gallery A person once → 10 operations</li>
+<li><strong>Step 2:</strong> Look at each Gallery B person once → 12 operations</li>
+<li><strong>Total:</strong> 10 + 12 = <strong>22 operations</strong> (not 120!)</li>
+</ul>
+<p>Dictionary lookup is <strong>instant</strong> — it doesn’t matter how many keys are stored!</p>
+</section>
+<section id="common-pattern-set-intersection" class="slide level2">
+<h2>Common Pattern: Set Intersection</h2>
+
+<img data-src="../images/venn_intersection.svg" class="r-stretch"><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb1-2"><a aria-label="2"></a>seen_in_first <span class="op">=</span> defaultdict(<span class="bu">bool</span>)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="cf">for</span> item <span class="kw">in</span> first_list:</span>
+<span id="cb1-4"><a aria-label="4"></a>    seen_in_first[item] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-5"><a aria-label="5"></a></span>
+<span id="cb1-6"><a aria-label="6"></a>in_both <span class="op">=</span> [item <span class="cf">for</span> item <span class="kw">in</span> second_list <span class="cf">if</span> seen_in_first[item]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Use when:</strong> Finding common elements, detecting duplicates</p>
+</section></section>
+<section>
+<section id="room-2-appearances-and-frequencies" class="title-slide slide level1 center">
+<h1>🚪 Room 2: Appearances and Frequencies</h1>
+
+</section>
+<section id="pattern-counting-frequencies" class="slide level2">
+<h2>Pattern: Counting Frequencies</h2>
+<p><strong>Use case:</strong> Count how many times each item appears.</p>
 <div>
 <div id="pyodide-3" class="exercise-cell">
 
 </div>
 <script type="pyodide-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZ3JpZCA9IFtbMSwgMl0sIFszLCA0XV1cbmJhY2t1cCA9IGdyaWRcblxuZ3JpZFswXVswXSA9IDk5XG5cbnByaW50KGdyaWQpICAgICAgIyBbWzk5LCAyXSwgWzMsIDRdXVxucHJpbnQoYmFja3VwKSAgICAjIFtbOTksIDJdLCBbMywgNF1dIC0tIHN1cnByaXNlISJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBDb3VudGluZyBsZXR0ZXJzIGluIGEgd29yZCDigJQgdGhlIGhhcmQgd2F5XG53b3JkID0gXCJtaXNzaXNzaXBwaVwiXG5jb3VudHMgPSB7fVxuXG5mb3IgbGV0dGVyIGluIHdvcmQ6XG4gICAgaWYgbGV0dGVyIGluIGNvdW50czpcbiAgICAgICAgY291bnRzW2xldHRlcl0gKz0gMVxuICAgIGVsc2U6XG4gICAgICAgIGNvdW50c1tsZXR0ZXJdID0gMVxuXG5wcmludChjb3VudHMpIn0=
 </script>
 </div>
-<p>Assignment doesn’t copy lists!</p>
-<ul>
-<li>It creates another <strong>reference</strong> to the same list.</li>
-<li>Let’s look at that in <a href="https://pythontutor.com/visualize.html#">Python Tutor</a></li>
-</ul>
+<aside class="notes">
+<p>What would happen if we didn’t include the check in the <code>if</code> statement? <code>KeyError</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="shallow-copy" class="slide level2">
-<h2>Shallow Copy</h2>
+<section id="avoid-the-extra-check" class="slide level2">
+<h2>Avoid the Extra Check?</h2>
+<p>Could use a <code>defaultdict(int)</code>, which would assign value of 0 to any missing key.</p>
+<p>Alternatively, this pattern appears so often that there is an even more specialized version of a dictionary: <code>Counter</code>.</p>
 <div>
 <div id="pyodide-4" class="exercise-cell">
 
 </div>
 <script type="pyodide-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZ3JpZCA9IFtbMSwgMl0sIFszLCA0XV1cbmJhY2t1cCA9IGdyaWQuY29weSgpICAgICAjIHNoYWxsb3cgY29weSAtIE5FVyBvdXRlciBsaXN0XG5cbmdyaWRbMF1bMF0gPSA5OVxuXG5wcmludChncmlkKSAgICAgICMgW1s5OSwgMl0sIFszLCA0XV1cbnByaW50KGJhY2t1cCkgICAgIyBbWzk5LCAyXSwgWzMsIDRdXSAtLSBzdGlsbCBsaW5rZWQhIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgQ291bnRlclxuXG53b3JkID0gXCJtaXNzaXNzaXBwaVwiXG5jb3VudHMgPSBDb3VudGVyKHdvcmQpXG5cbnByaW50KGNvdW50cylcbnByaW50KGZcIk1vc3QgY29tbW9uOiB7Y291bnRzLm1vc3RfY29tbW9uKDIpfVwiKSJ9
 </script>
 </div>
-<p><code>copy()</code> only copies the outer list. The inner lists are still shared!</p>
+<aside class="notes">
+<p>If you create a new <code>Counter</code> object and pass in something iterable (such as a list or string) whose values are immutable (such as any simple atomic data), then <code>Counter</code> will do its job automagically.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="deep-copy" class="slide level2">
-<h2>Deep Copy</h2>
+<section id="room-2-the-cipher" class="slide level2">
+<h2>Room 2: The Cipher</h2>
+<p>You found a mysterious note left by the thief:</p>
+<pre><code>WKLV LV WKH FRGH: GLDJRQDO</code></pre>
+<p>It appears to be a <strong>substitution cipher</strong>. The thief replaced each letter with another.</p>
+</section>
+<section id="frequency-analysis" class="slide level2">
+<h2>Frequency Analysis</h2>
+<p>In English, some letters appear more often than others:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Letter</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E</td>
+<td>12.7%</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>9.1%</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>8.2%</td>
+</tr>
+<tr class="even">
+<td>O</td>
+<td>7.5%</td>
+</tr>
+<tr class="odd">
+<td>I</td>
+<td>7.0%</td>
+</tr>
+</tbody>
+</table>
+<p>If we count the letters in the cipher, the most common one is probably E!</p>
+<aside class="notes">
+<p>Work through the</p>
+<p>In fact, the mysterious note was a Caesar cipher — each letter shifted by the same amount. The shift was -3 and the message was “THIS IS THE CODE: DIAGONAL”. The most common letter turns out to be ‘I’…</p>
+<p>It is not surprising that the frequency counting technique doesn’t work on short messages. And Caesar ciphers are terrible. On Thursday we will look at more interesting ciphers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- 
+Ian removed a whole batch of slides here which showed how to shift letters by integer offsets to implement a Caesar cypher.  It may be interesting, but it had nothing to do with dictionaries...
+-->
+</section></section>
+<section>
+<section id="room-3-finding-complements" class="title-slide slide level1 center">
+<h1>🚪 Room 3: Finding Complements</h1>
+
+</section>
+<section id="pattern-finding-complements" class="slide level2">
+<h2>Pattern: Finding Complements</h2>
+<p><strong>Use case:</strong> Find two numbers that add up to a target.</p>
 <div>
 <div id="pyodide-5" class="exercise-cell">
 
 </div>
 <script type="pyodide-5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IGNvcHlcblxuZ3JpZCA9IFtbMSwgMl0sIFszLCA0XV1cbmJhY2t1cCA9IGNvcHkuZGVlcGNvcHkoZ3JpZCkgICAjIGNvcGllcyBFVkVSWVRISU5HXG5cbmdyaWRbMF1bMF0gPSA5OVxuXG5wcmludChncmlkKSAgICAgICMgW1s5OSwgMl0sIFszLCA0XV1cbnByaW50KGJhY2t1cCkgICAgIyBbWzEsIDJdLCBbMywgNF1dIC0tIHRydWx5IGluZGVwZW5kZW50ISJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFszLCA3LCAxLCA5LCA0LCA2LCAyXVxudGFyZ2V0ID0gMTBcblxuIyBGb3IgZWFjaCBudW1iZXIsIHdoYXQgZG8gd2UgTkVFRCB0byBmaW5kP1xuZm9yIG4gaW4gbnVtYmVyczpcbiAgICBjb21wbGVtZW50ID0gdGFyZ2V0IC0gblxuICAgIHByaW50KGZcIntufSBuZWVkcyB7Y29tcGxlbWVudH0gdG8gbWFrZSB7dGFyZ2V0fVwiKSJ9
 </script>
 </div>
-<p>Use <code>deepcopy()</code> when you have nested structures (lists of lists, lists of objects).</p>
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<p>Variables are <strong>names</strong> that refer to objects in memory.</p>
+<section id="the-complement-pattern" class="slide level2">
+<h2>The Complement Pattern</h2>
 <div>
 <div id="pyodide-6" class="exercise-cell">
 
 </div>
 <script type="pyodide-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibTEgPSBbJ2EnLCAnYiddICAgICMgbTEgcmVmZXJzIHRvIGEgbGlzdCBvYmplY3Rcbm0yID0gbTEgICAgICAgICAgICAjIG0yIHJlZmVycyB0byB0aGUgU0FNRSBvYmplY3Rcbm0zID0gbTEuY29weSgpICAgICAjIG0zIHJlZmVycyB0byBhIE5FVyBvYmplY3QgKHNoYWxsb3cpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVmYXVsdGRpY3RcblxubnVtYmVycyA9IFszLCA3LCAxLCA5LCA0LCA2LCAyXVxudGFyZ2V0ID0gMTBcblxuc2VlbiA9IGRlZmF1bHRkaWN0KGJvb2wpXG5mb3IgbiBpbiBudW1iZXJzOlxuICAgIGNvbXBsZW1lbnQgPSB0YXJnZXQgLSBuXG4gICAgaWYgc2Vlbltjb21wbGVtZW50XTogICMgTm8gS2V5RXJyb3Igd2l0aCBkZWZhdWx0ZGljdCFcbiAgICAgICAgcHJpbnQoZlwiRm91bmQgcGFpcjoge2NvbXBsZW1lbnR9ICsge259ID0ge3RhcmdldH1cIilcbiAgICBzZWVuW25dID0gVHJ1ZSJ9
 </script>
 </div>
-<p>Think of it like sticky notes on boxes - <code>m1</code> and <code>m2</code> are two sticky notes on the <strong>same</strong> box.</p>
+<p>As we scan, we remember what we’ve seen and check if the complement exists!</p>
 </section>
-<section id="list-comprehensions" class="slide level2">
-<h2>List Comprehensions</h2>
-<p>A compact way to create lists:</p>
+<section id="room-3-the-vault" class="slide level2">
+<h2>Room 3: The Vault</h2>
+<p>The vault has a two-dial combination lock.</p>
+<p>Each dial shows a number, and they must <strong>multiply</strong> to 435,599.</p>
+<p>The thief left behind a piece of paper with two lists:</p>
+<ul>
+<li>125, 204, 214, 242, 328, 350, 381, 659, 754, 854, 859</li>
+<li>130, 132, 189, 195, 323, 532, 658, 661, 704, 792, 858</li>
+</ul>
+<p>Find the two numbers (one from each list) that open the vault!</p>
+<aside class="notes">
+<p>There is no reason that “complement” has to be in terms of addition. As long as we have an inverse operator, we can use dictionaries to quickly find the answer.</p>
+<p>Work through ‘Finding Complements’ cells.</p>
+<p>When we open the vault, we find a note: “The alibi is the key”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="room-4-grouping" class="title-slide slide level1 center">
+<h1>🚪 Room 4: Grouping</h1>
+
+</section>
+<section id="pattern-grouping-by-category" class="slide level2">
+<h2>Pattern: Grouping by Category</h2>
+<p><strong>Use case:</strong> Organize items into categories (like pandas’ <code>groupby</code>!).</p>
 <div>
 <div id="pyodide-7" class="exercise-cell">
 
 </div>
 <script type="pyodide-7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBJbnN0ZWFkIG9mIHRoaXM6XG5zcXVhcmVzID0gW11cbmZvciB4IGluIHJhbmdlKDUpOlxuICAgIHNxdWFyZXMuYXBwZW5kKHggKiogMilcblxuIyBXcml0ZSB0aGlzOlxuc3F1YXJlcyA9IFt4ICoqIDIgZm9yIHggaW4gcmFuZ2UoNSldIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVmYXVsdGRpY3RcblxuZnJ1aXRzID0gW1xuICAgIChcImFwcGxlXCIsIFwicmVkXCIpLFxuICAgIChcImJhbmFuYVwiLCBcInllbGxvd1wiKSxcbiAgICAoXCJjaGVycnlcIiwgXCJyZWRcIiksXG4gICAgKFwibGVtb25cIiwgXCJ5ZWxsb3dcIiksXG4gICAgKFwiZ3JhcGVcIiwgXCJwdXJwbGVcIilcbl1cblxuYnlfY29sb3IgPSBkZWZhdWx0ZGljdChsaXN0KSAgIyBNaXNzaW5nIGtleXMgYXV0by1jcmVhdGUgZW1wdHkgbGlzdHNcbmZvciBmcnVpdCwgY29sb3IgaW4gZnJ1aXRzOlxuICAgIGJ5X2NvbG9yW2NvbG9yXS5hcHBlbmQoZnJ1aXQpXG5cbnByaW50KGRpY3QoYnlfY29sb3IpKSJ9
 </script>
 </div>
-<p>Both produce: <code>[0, 1, 4, 9, 16]</code></p>
+<aside class="notes">
+<p>Our data in this case is a list of tuples. We want our categories to be the second elements and our values to be the first elements.</p>
+<p>Why <code>defaultdict(list)</code>? Without it you get a <code>KeyError</code>.</p>
+<p><code>defaultdict(list)</code> automatically creates an empty list for missing keys!</p>
+<p>The trickiest part of using <code>defaultdict</code> is deciding the type of the values and the corresponding initialization value. Often we are using the value as an accumulator, so we will initialize with a suitably “empty” accumulator: 0 for numbers, empty string for strings, empty list for lists, … Often the default value of the accumulator type is correct, but sometimes you may need to specify a different default value (for example, if you are computing a product then you want to start with 1 instead of 0).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="list-comprehensions-with-conditions" class="slide level2">
-<h2>List Comprehensions with Conditions</h2>
+<section id="room-4-the-suspect-board" class="slide level2">
+<h2>Room 4: The Suspect Board</h2>
+<p>We have testimony from five suspects about where they were at 8pm:</p>
 <div>
 <div id="pyodide-8" class="exercise-cell">
 
 </div>
 <script type="pyodide-8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGaWx0ZXI6IG9ubHkgaW5jbHVkZSBpZiBjb25kaXRpb24gaXMgdHJ1ZVxuZXZlbnMgPSBbeCBmb3IgeCBpbiByYW5nZSgxMCkgaWYgeCAlIDIgPT0gMF1cbiMgWzAsIDIsIDQsIDYsIDhdXG5cbiMgVHJhbnNmb3JtIGJhc2VkIG9uIGNvbmRpdGlvblxuc2lnbnMgPSBbeCBpZiB4ICUgMiA9PSAwIGVsc2UgLXggZm9yIHggaW4gcmFuZ2UoNSldXG4jIFswLCAtMSwgMiwgLTMsIDRdIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3VzcGVjdHMgPSBbXG4gICAge1wibmFtZVwiOiBcIlByb2YuIEhpc3RvZ3JhbVwiLCBcImFsaWJpXCI6IFwiZmFjdWx0eSBtZWV0aW5nXCIsIFwidmVyaWZpZWRcIjogRmFsc2V9LFxuICAgIHtcIm5hbWVcIjogXCJEci4gQ29ycmVsYXRpb25cIiwgXCJhbGliaVwiOiBcImF0IGEgbW92aWVcIiwgXCJ2ZXJpZmllZFwiOiBUcnVlfSxcbiAgICB7XCJuYW1lXCI6IFwiTXMuIE91dGxpZXJcIiwgXCJhbGliaVwiOiBcIndvcmtpbmcgbGF0ZVwiLCBcInZlcmlmaWVkXCI6IEZhbHNlfSxcbiAgICB7XCJuYW1lXCI6IFwiTXIuIFJlZ3Jlc3Npb25cIiwgXCJhbGliaVwiOiBcImZhY3VsdHkgbWVldGluZ1wiLCBcInZlcmlmaWVkXCI6IEZhbHNlfSxcbiAgICB7XCJuYW1lXCI6IFwiRGVhbiBCYXllc1wiLCBcImFsaWJpXCI6IFwiYXQgdGhlIGd5bVwiLCBcInZlcmlmaWVkXCI6IFRydWV9LFxuXSJ9
 </script>
 </div>
-<p>Notice the difference: <code>if</code> at the <strong>end</strong> filters, <code>if/else</code> <strong>before</strong> <code>for</code> transforms.</p>
+<p>Group suspects by their alibi to find who was together!</p>
+<aside class="notes">
+<p>What categories will we use for our groups? What values do we want to put inside those groups?</p>
+<p>What key-value pairs from the input will generate the keys in our group dictionary?</p>
+<p>What key-value pairs from the input will generate the values in our group dictionary? What form will these values take?</p>
+<p>Work through <code>Room 4</code> cells.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lets-practice" class="slide level2 activity">
+<h2>Let’s Practice!</h2>
+<ul>
+<li>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722852/">Class Activity: Dictionary Heist</a> in PrairieLearn.</li>
+<li>Open <code>STUDENT_heist_nb.py</code>. You’ll solve 4 puzzles with LARGE datasets.</li>
+</ul>
+<p><em>Inspired by <a href="https://adventofcode.com/">Advent of Code</a> puzzles!</em></p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>Dictionaries give you <strong>fast lookup by key</strong>.</p>
+<p>The patterns we learned:</p>
+<ol type="1">
+<li><strong>Record</strong> — Store compound data</li>
+<li><strong>Membership</strong> — Have I seen this before? (<code>defaultdict(bool)</code>)</li>
+<li><strong>Counting</strong> — How many of each? (<code>Counter</code>)</li>
+<li><strong>Complement</strong> — Find the matching pair</li>
+<li><strong>Grouping</strong> — Organize by category (<code>defaultdict(list)</code>)</li>
+</ol>
 
 
 <script type="pyodide-data">

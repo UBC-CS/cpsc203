@@ -2769,6 +2769,251 @@
     "text": "Get Yourself Registered\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\n\n\nTell the students to go to each of these sites and register."
   },
   {
+    "objectID": "slides/05_thu_dictionaries.html#announcements",
+    "href": "slides/05_thu_dictionaries.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nLabs next week: Monday labs are cancelled due to the holiday. Students can go to another lab section.\nPractice examlet 2 is available.\n\nExamlet 2 next week (Thursday Oct 15 to Monday October 19).\nLab 4 and POTW 4 due Sunday October 11, 8pm.\nProject 1 due Monday October 26, 8pm."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#the-setup-the-great-data-heist.",
+    "href": "slides/05_thu_dictionaries.html#the-setup-the-great-data-heist.",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Setup: The Great Data Heist.",
+    "text": "The Setup: The Great Data Heist.\n\n\nLast night, someone broke into the Vancouver Museum of Data Science.\nThe thief stole the legendary Golden DataFrame — an artifact said to contain the answers to all data questions.\nYou’ve been called in as data detectives to solve the case."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#your-tool-the-dictionary",
+    "href": "slides/05_thu_dictionaries.html#your-tool-the-dictionary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Your Tool: The Dictionary",
+    "text": "Your Tool: The Dictionary\nDictionaries are Python’s data structure for storing key-value pairs.\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nKey\nValue\n\n\n\n\nname\nProf. Histogram\n\n\ndepartment\nStatistics\n\n\nalibi\nwas at the faculty meeting\n\n\nmotive\njealousy of the DataFrame’s power\n\n\n\n\nLaunch Class Activity: Dictionary Heist in PrairieLearn.\nOpen data_heist_dictionaries.py.\n\n\nWork through the Dictionary basics cell.\nSo we have a collection of data (the values) which should be managed together (the dictionary).\nWhy does that look familiar?"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#compound-data",
+    "href": "slides/05_thu_dictionaries.html#compound-data",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Compound Data",
+    "text": "Compound Data\nDictionaries / key-value lookup is yet another way to represent compound data:\n\n\n\nRepresentation\nElements\nData\n\n\n\n\nlists\ninteger indexes 0 to \\(n\\)\nvalues\n\n\nnamedtuples\nfields\nvalues\n\n\ndataclasses\nattributes\nvalues\n\n\nrow of a dataframe\ncolumns\nvalues\n\n\ndictionary\nkeys\nvalues\n\n\n\n\nWhy so many alternatives? Compound data is really important!\nDifferent representations have different levels of formality, different effort to construct, different capabilities, different efficiencies, …\nAs an example, lists are great when you only need to index by consecutive integers starting from zero, or slices. But they are terrible if you want to give your elements more meaningful names."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#billboard-hot-100-data-as-a-dictionary",
+    "href": "slides/05_thu_dictionaries.html#billboard-hot-100-data-as-a-dictionary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Billboard Hot 100 Data as a Dictionary",
+    "text": "Billboard Hot 100 Data as a Dictionary"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#why-dictionaries-for-compound-data",
+    "href": "slides/05_thu_dictionaries.html#why-dictionaries-for-compound-data",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why Dictionaries (for Compound Data)?",
+    "text": "Why Dictionaries (for Compound Data)?\nDictionaries are probably the most common Python representation for compound data because\n\nThey require no overhead to create (no class definition).\nHave very simple and compact syntax.\nAre extremely efficient for common operations on a single piece of compound data.\n\nIn particular, looking up a key takes the same amount of time regardless of the number of keys in the dictionary.\n\n\nAnd the less you have to think about your data structure, the better. Right?\n\nAs an example, consider what happens if you ask for an element which doesn’t exist.\n\nFor lists, the only possible error is to ask for an index beyond \\(n\\). Common, but usually easy to avoid / debug.\nFor namedtuples and dataclasses, it is possible to figure out before running the code that the field / attribute doesn’t exist. (Regular Python won’t notice until you run, but some editors or lint scanners will warn you.)\nFor dataframes and dictionaries, you cannot check until runtime. Work through the missing key cell.\n\nWe used namedtuples for compound data in CPSC 103 because\n\nWe wanted you to document your fields before you started using them.\nWe did not want to introduce class notation."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#not-just-a-one-trick-pony",
+    "href": "slides/05_thu_dictionaries.html#not-just-a-one-trick-pony",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Not Just a One-Trick Pony",
+    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nTracking membership.\nCounting appearances / frequencies.\nRepresenting a map over a discrete domain.\nGrouping by category.\n\n\nRemember that we often use lists for arbitrary sized data, but we sometimes use them for compound data?\nWe sometimes use dictionaries for compound data. In these cases the keys are known at design time and the values are the data.\nBut we also use dictionaries for solving other problems. In these cases both the keys and the values are part of the data representation. We generally won’t know either at design time, so the ability to create them at run-time is a feature."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#common-pattern-tracking-membership",
+    "href": "slides/05_thu_dictionaries.html#common-pattern-tracking-membership",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Common Pattern: Tracking Membership",
+    "text": "Common Pattern: Tracking Membership\nFor example: Have we seen this item before?\n\n\n\n\n\n\ndefaultdict(bool) returns False for missing keys — no KeyError!"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#approach-1-using-lists",
+    "href": "slides/05_thu_dictionaries.html#approach-1-using-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Approach 1: Using Lists",
+    "text": "Approach 1: Using Lists\nThe thief visited both Gallery A and Gallery B before the theft.\nYour mission: Find everyone who was in BOTH rooms.\nLet’s try using just lists:\n\nConstruct a list of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list A:\n\nFor every person in list B:\n\nIf they match, add them to the intersection list.\n\n\n\n\nWork through Intersection using Lists cell."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#the-problem-with-nested-loops",
+    "href": "slides/05_thu_dictionaries.html#the-problem-with-nested-loops",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Problem with Nested Loops",
+    "text": "The Problem with Nested Loops\n\n\n\n\n\nWith 10 people in Gallery A and 12 in Gallery B: 10 × 12 = 120 comparisons\nWith 10,000 in each: 100,000,000 comparisons!\nWith \\(n\\) people in Gallery A and \\(m\\) in Gallery B?\n\n\n\nBut what if we used in keyword instead of the second loop?\nSame time for lists because checking membership for a list value requires time proportional to the length of the list."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#approach-2-using-dictionaries",
+    "href": "slides/05_thu_dictionaries.html#approach-2-using-dictionaries",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Approach 2: Using Dictionaries",
+    "text": "Approach 2: Using Dictionaries\nLet’s try using dictionaries (and lists):\n\nConstruct a dictionary of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list B:\n\nIf they are in dictionary A, add them to the intersection list.\n\n\n\nDo we use the person’s name as the key or the value? - Looking up a key (or equivalently, testing ‘in’) in a dictionary is constant time. - Looking up a value in a dictionary requires the same time as looking up a value in a list.\nWork through Intersection using Dictionary cell."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#why-is-this-faster",
+    "href": "slides/05_thu_dictionaries.html#why-is-this-faster",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why Is This Faster?",
+    "text": "Why Is This Faster?\n\nStep 1: Look at each Gallery A person once → 10 operations\nStep 2: Look at each Gallery B person once → 12 operations\nTotal: 10 + 12 = 22 operations (not 120!)\n\nDictionary lookup is instant — it doesn’t matter how many keys are stored!"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#common-pattern-set-intersection",
+    "href": "slides/05_thu_dictionaries.html#common-pattern-set-intersection",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Common Pattern: Set Intersection",
+    "text": "Common Pattern: Set Intersection\n\nfrom collections import defaultdict\nseen_in_first = defaultdict(bool)\nfor item in first_list:\n    seen_in_first[item] = True\n\nin_both = [item for item in second_list if seen_in_first[item]]\nUse when: Finding common elements, detecting duplicates"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#pattern-counting-frequencies",
+    "href": "slides/05_thu_dictionaries.html#pattern-counting-frequencies",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Pattern: Counting Frequencies",
+    "text": "Pattern: Counting Frequencies\nUse case: Count how many times each item appears.\n\n\n\n\n\n\n\nWhat would happen if we didn’t include the check in the if statement? KeyError."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#avoid-the-extra-check",
+    "href": "slides/05_thu_dictionaries.html#avoid-the-extra-check",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Avoid the Extra Check?",
+    "text": "Avoid the Extra Check?\nCould use a defaultdict(int), which would assign value of 0 to any missing key.\nAlternatively, this pattern appears so often that there is an even more specialized version of a dictionary: Counter.\n\n\n\n\n\n\n\nIf you create a new Counter object and pass in something iterable (such as a list or string) whose values are immutable (such as any simple atomic data), then Counter will do its job automagically."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#room-2-the-cipher",
+    "href": "slides/05_thu_dictionaries.html#room-2-the-cipher",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Room 2: The Cipher",
+    "text": "Room 2: The Cipher\nYou found a mysterious note left by the thief:\nWKLV LV WKH FRGH: GLDJRQDO\nIt appears to be a substitution cipher. The thief replaced each letter with another."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#frequency-analysis",
+    "href": "slides/05_thu_dictionaries.html#frequency-analysis",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Frequency Analysis",
+    "text": "Frequency Analysis\nIn English, some letters appear more often than others:\n\n\n\nLetter\nFrequency\n\n\n\n\nE\n12.7%\n\n\nT\n9.1%\n\n\nA\n8.2%\n\n\nO\n7.5%\n\n\nI\n7.0%\n\n\n\nIf we count the letters in the cipher, the most common one is probably E!\n\nWork through the\nIn fact, the mysterious note was a Caesar cipher — each letter shifted by the same amount. The shift was -3 and the message was “THIS IS THE CODE: DIAGONAL”. The most common letter turns out to be ‘I’…\nIt is not surprising that the frequency counting technique doesn’t work on short messages. And Caesar ciphers are terrible. On Thursday we will look at more interesting ciphers."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#pattern-finding-complements",
+    "href": "slides/05_thu_dictionaries.html#pattern-finding-complements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Pattern: Finding Complements",
+    "text": "Pattern: Finding Complements\nUse case: Find two numbers that add up to a target."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#the-complement-pattern",
+    "href": "slides/05_thu_dictionaries.html#the-complement-pattern",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Complement Pattern",
+    "text": "The Complement Pattern\n\n\n\n\n\n\nAs we scan, we remember what we’ve seen and check if the complement exists!"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#room-3-the-vault",
+    "href": "slides/05_thu_dictionaries.html#room-3-the-vault",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Room 3: The Vault",
+    "text": "Room 3: The Vault\nThe vault has a two-dial combination lock.\nEach dial shows a number, and they must multiply to 435,599.\nThe thief left behind a piece of paper with two lists:\n\n125, 204, 214, 242, 328, 350, 381, 659, 754, 854, 859\n130, 132, 189, 195, 323, 532, 658, 661, 704, 792, 858\n\nFind the two numbers (one from each list) that open the vault!\n\nThere is no reason that “complement” has to be in terms of addition. As long as we have an inverse operator, we can use dictionaries to quickly find the answer.\nWork through ‘Finding Complements’ cells.\nWhen we open the vault, we find a note: “The alibi is the key”."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#pattern-grouping-by-category",
+    "href": "slides/05_thu_dictionaries.html#pattern-grouping-by-category",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Pattern: Grouping by Category",
+    "text": "Pattern: Grouping by Category\nUse case: Organize items into categories (like pandas’ groupby!).\n\n\n\n\n\n\n\nOur data in this case is a list of tuples. We want our categories to be the second elements and our values to be the first elements.\nWhy defaultdict(list)? Without it you get a KeyError.\ndefaultdict(list) automatically creates an empty list for missing keys!\nThe trickiest part of using defaultdict is deciding the type of the values and the corresponding initialization value. Often we are using the value as an accumulator, so we will initialize with a suitably “empty” accumulator: 0 for numbers, empty string for strings, empty list for lists, … Often the default value of the accumulator type is correct, but sometimes you may need to specify a different default value (for example, if you are computing a product then you want to start with 1 instead of 0)."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#room-4-the-suspect-board",
+    "href": "slides/05_thu_dictionaries.html#room-4-the-suspect-board",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Room 4: The Suspect Board",
+    "text": "Room 4: The Suspect Board\nWe have testimony from five suspects about where they were at 8pm:\n\n\n\n\n\n\nGroup suspects by their alibi to find who was together!\n\nWhat categories will we use for our groups? What values do we want to put inside those groups?\nWhat key-value pairs from the input will generate the keys in our group dictionary?\nWhat key-value pairs from the input will generate the values in our group dictionary? What form will these values take?\nWork through Room 4 cells."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#lets-practice",
+    "href": "slides/05_thu_dictionaries.html#lets-practice",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\n\nLaunch Class Activity: Dictionary Heist in PrairieLearn.\nOpen STUDENT_heist_nb.py. You’ll solve 4 puzzles with LARGE datasets.\n\nInspired by Advent of Code puzzles!"
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#summary",
+    "href": "slides/05_thu_dictionaries.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary",
+    "text": "Summary\nDictionaries give you fast lookup by key.\nThe patterns we learned:\n\nRecord — Store compound data\nMembership — Have I seen this before? (defaultdict(bool))\nCounting — How many of each? (Counter)\nComplement — Find the matching pair\nGrouping — Organize by category (defaultdict(list))"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#announcements",
+    "href": "slides/03_tue_lists.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#marimo",
+    "href": "slides/03_tue_lists.html#marimo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Marimo",
+    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " List Activity",
+    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
+    "href": "slides/03_tue_lists.html#lists-a-quick-review",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Lists: A Quick Review",
+    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#adding-to-lists",
+    "href": "slides/03_tue_lists.html#adding-to-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding to Lists",
+    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-aliasing",
+    "href": "slides/03_tue_lists.html#list-aliasing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Aliasing",
+    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#shallow-copy",
+    "href": "slides/03_tue_lists.html#shallow-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Shallow Copy",
+    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#deep-copy",
+    "href": "slides/03_tue_lists.html#deep-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Deep Copy",
+    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#references",
+    "href": "slides/03_tue_lists.html#references",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "References",
+    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions",
+    "href": "slides/03_tue_lists.html#list-comprehensions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions with Conditions",
+    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
+  },
+  {
     "objectID": "slides/02_tue_efficiency.html#announcements",
     "href": "slides/02_tue_efficiency.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -2858,83 +3103,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Quantifying the task…",
     "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#announcements",
-    "href": "slides/03_tue_lists.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#marimo",
-    "href": "slides/03_tue_lists.html#marimo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Marimo",
-    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " List Activity",
-    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
-    "href": "slides/03_tue_lists.html#lists-a-quick-review",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Lists: A Quick Review",
-    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#adding-to-lists",
-    "href": "slides/03_tue_lists.html#adding-to-lists",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding to Lists",
-    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-aliasing",
-    "href": "slides/03_tue_lists.html#list-aliasing",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Aliasing",
-    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#shallow-copy",
-    "href": "slides/03_tue_lists.html#shallow-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Shallow Copy",
-    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#deep-copy",
-    "href": "slides/03_tue_lists.html#deep-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Deep Copy",
-    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#references",
-    "href": "slides/03_tue_lists.html#references",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "References",
-    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions",
-    "href": "slides/03_tue_lists.html#list-comprehensions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions",
-    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions with Conditions",
-    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
   },
   {
     "objectID": "slides/04_tue_bracelet.html#announcements",
