@@ -2843,7 +2843,7 @@
     "href": "slides/05_thu_dictionaries.html#approach-2-using-dictionaries",
     "title": "Programming, problem solving, and algorithms",
     "section": "Approach 2: Using Dictionaries",
-    "text": "Approach 2: Using Dictionaries\nLet’s try using dictionaries (and lists):\n\nConstruct a dictionary of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list B:\n\nIf they are in dictionary A, add them to the intersection list.\n\n\n\nDo we use the person’s name as the key or the value? - Looking up a key (or equivalently, testing ‘in’) in a dictionary is constant time. - Looking up a value in a dictionary requires the same time as looking up a value in a list.\nWork through Intersection using Dictionary cell."
+    "text": "Approach 2: Using Dictionaries\nLet’s try using dictionaries (and lists):\n\nConstruct a dictionary of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list B:\n\nIf they are in dictionary A, add them to the intersection list.\n\n\n\nDo we use the person’s name as the key or the value?\n\nLooking up a key (or equivalently, testing ‘in’) in a dictionary is constant time.\nLooking up a value in a dictionary requires the same time as looking up a value in a list.\n\nWork through Intersection using Dictionary cell."
   },
   {
     "objectID": "slides/05_thu_dictionaries.html#why-is-this-faster",
@@ -2857,7 +2857,14 @@
     "href": "slides/05_thu_dictionaries.html#common-pattern-set-intersection",
     "title": "Programming, problem solving, and algorithms",
     "section": "Common Pattern: Set Intersection",
-    "text": "Common Pattern: Set Intersection\n\nfrom collections import defaultdict\nseen_in_first = defaultdict(bool)\nfor item in first_list:\n    seen_in_first[item] = True\n\nin_both = [item for item in second_list if seen_in_first[item]]\nUse when: Finding common elements, detecting duplicates"
+    "text": "Common Pattern: Set Intersection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse when: Finding common elements, detecting duplicates\n\nThere is some hidden code which created the two lists of numbers.\nWhat type would we have to use for the data values if we wanted to represent the IDs as shown in the figure? String."
+  },
+  {
+    "objectID": "slides/05_thu_dictionaries.html#alternative-python-sets",
+    "href": "slides/05_thu_dictionaries.html#alternative-python-sets",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Alternative: Python Sets",
+    "text": "Alternative: Python Sets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThere is also a frozenset, which is a set which cannot be mutated after creation.\nSets are a more natural way of implementing the intersection pattern and many others. I encourage you to use them. But they are a relatively recent addition to the language so you will still see a lot of code which uses dictionaries when sets would make more sense. And our focus today is on key-value pairs / dictionaries, so we won’t discuss them further."
   },
   {
     "objectID": "slides/05_thu_dictionaries.html#pattern-counting-frequencies",
