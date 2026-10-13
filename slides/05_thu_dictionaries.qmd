@@ -5,9 +5,6 @@ pyodide:
     - pandas
 ---
 
-<!-- Not clear that the "Great Data Heist" wrapper is worth the overhead...
--->
-
 ## Announcements
 
 - Labs next week: Monday labs are cancelled due to the holiday.  Students can go to another lab section.
@@ -17,6 +14,9 @@ pyodide:
 - Project 1 due Monday October 26, 8pm.
 
 ## The Setup: The Great Data Heist.
+
+<!-- Not clear that the "Great Data Heist" wrapper is worth the overhead...
+-->
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -100,6 +100,7 @@ import pandas as pd
 songs_df = pd.DataFrame(songs)
 songs_df
 ```
+:::
 
 ## Why Dictionaries (for Compound Data)? {.medium}
 
