@@ -1,0 +1,426 @@
+---
+date: 2026-10-13
+pyodide:
+  packages:
+    - dataclasses
+---
+
+## Announcements
+
+- Examlet 2 runs today through Sunday.
+- Lab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.
+  - If your scheduled lab was yesterday, you can still attend:
+    - T1F: Tue, 18:00 - 19:30.
+    - T1E: Thu, 9:30 - 11:00.
+- Project 1 due Monday, October 26 (~two weeks).
+
+
+::: notes
+There was a misconfiguration for examlet 2: Starts today, ends on Sunday.  But you've had the material (dataclasses and lists) for more than a week, so no big deal.
+:::
+
+# Key-Value Lookup {.medium}
+
+## [Key-Value Pairs](https://en.wikipedia.org/wiki/Name%E2%80%93value_pair)
+
+::: {.columns}
+
+::: {.column width="50%"}
+- Given the *key*, we would like to quickly retrieve the corresponding *value*.
+
+\
+
+- Launch [Class Activity: Grouping & Encoding](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722851/) in PrairieLearn.
+- Open `key_value_patterns.py`.
+:::
+
+::: {.column width="50%"}
+::: {layout-align="center"}
+| Key | Value |
+|-----|-------|
+| name | Ian Mitchell |
+| department | Computer Science |
+| program | M.Sc. |
+| start date | 1995-09-01 |
+| terms | 7 |
+| domestic student | yes |
+| ⋮ | ⋮ |
+:::
+:::
+
+:::
+
+
+## Representing Key-Value Pairs
+
+- How could we represent this information?  Don't say "dictionary".
+
+  ::: {.incremental}
+  - What type for the whole set of data?
+  - What type for each row of data?
+  - What type for the keys?
+  - What type for the values?
+  :::
+
+::: notes
+- Arbitrary size / list.
+- Compound with two elements: key and value.
+- String.
+- Anything.  Can use `typing.Any` to formally recognize that type, although it is essentially the Python default.
+
+See alternative representation as two lists of the same length.  Not recommended, but this approach was often used in older languages where compound data was syntactically difficult.
+:::
+
+## Efficiency of List Representations
+
+If there are $n$ key-value pairs in the store, how long does it take to:
+
+- Look up the value associated with a key?
+- Determine whether a key is in the store?
+- Add a key-value pair?
+
+::: {.incremental}
+- A Python `dict` can perform any of these operations in constant time for any $n$.
+:::
+
+::: notes
+- $O(n)$.
+- $O(n)$ (even though you can write it without a loop using the `in` keyword).
+- $O(1)$.
+- Note that using `in` on a dictionary is $O(1)$.  
+
+You cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation.  That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation.  At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency.
+:::
+
+
+# Dictionary Patterns
+
+## Not Just a One-Trick Pony {.medium}
+
+Dictionaries / key-value lookup is useful for solving other common problems.
+
+- [Compound data.]{style="color: blue;"}
+- [Tracking membership.]{style="color: blue;"}
+- [Counting appearances / frequencies.]{style="color: blue;"}
+- [Finding complements.]{style="color: blue;"}
+- [Grouping by (discrete) category.]{style="color: blue;"}
+- [Representing a map or translation over a discrete domain.]{style="color: green;"}
+
+[See slides / class activity from last lecture for the first five.]{style="color: blue;"}
+
+[Today: Translation / mapping.]{style="color: green;"}
+
+::: notes
+Note that there is nothing special about dictionaries and compound data: 
+
+- Any key-value lookup representation could be used for compound data.
+- Any compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).
+
+Okay, all done discussing (bad) ways of implementing key-value lookup.  Now let's return to the ways we can use it.
+
+If necessary, go back and complete any patterns that were not completed in the previous lecture.
+:::
+
+## Common Pattern: Translation/Mapping
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Use case:** Convert values from one representation to another.
+
+\
+
+Example: Go through a string and replace any word which has an emoji equivalent.
+
+\
+
+Example: Substitution cypher.
+:::
+
+::: {.column width="40%"}
+::: {layout-align="center"}
+| word | emoji |
+|------|-------|
+| sun | ☀️ | 
+| rain | 🌧️ | 
+| cloud | ☁️ |
+| happy | 😊 |
+| sad | 😢 |
+| love | ❤️ |
+| cat | 🐱 |
+| dog | 🐶 |
+| coffee | ☕ | 
+:::
+:::
+
+:::
+
+::: notes
+Emoji substitution:
+
+- `split()` defaults to separating on any whitespace character (space, newline, tab).
+- `join()` uses the separator string (in this case a single space character) between each string in the list.  You could use an empty string as separator if you just want to paste the words together.
+- Note that "coffee" is not caught because it has the comma at the end.
+  - For demo purposes, remove the comma manually.
+  - Removing that comma is a little tricky, and putting it back is even trickier.  We aren't going in to the details; suffice to say that written text is annoying to parse in its full generality.
+
+Decryption:
+
+- That message isn't appropriate for this term, since the reading break isn't for several more weeks.
+- How would we encode a different message?  Not easy to do with the existing dictionary, since we would want to look up values and return the matching key.
+::: 
+
+## Let's Practice! {.activity}
+
+Open today's activity. You'll solve 2 new puzzles.
+
+- Launch [Class Activity: Grouping & Encoding](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722851/) in PrairieLearn.
+- Open `STUDENT_dict_patterns_nb.py`.
+
+## Summary
+
+Dictionaries give you **fast lookup by key** — whether you have 100 items or 100,000.
+
+| Pattern | Use Case | Technique |
+|---------|----------|-----------|
+| **Record** | Store named fields | `{"name": ..., "age": ...}` |
+| **Membership** | Track what we've seen | `seen[x] = True` |
+| **Counting** | Count occurrences | `Counter(items)` |
+| **Complement** | Find pairs | Store & check complements |
+| **Grouping** | Organize by category | `defaultdict(list)` |
+| **Translation** | Convert values | Direct key → value mapping |
+
+## Oh No!
+
+In CPSC 103 / 110: One code template for each data type.
+
+In CPSC 203:
+
+- Compound data could be stored as NamedTuples / DataClasses, lists / tuples, or dictionaries.
+  - Slightly different syntax, but same basic template.
+
+- Key-value pairs can be stored as dictionaries.
+  - Notably different code template depending on the task.
+  - Sometimes the problem information is not in the form of a key-value pair.
+
+::: notes
+Show HtDP page for compound data types.
+
+Already in form of key-value pairs: Records, translation.
+
+Need to create form of key-value pairs: Membership, counting, complement, grouping.
+
+We could have solved all of these patterns with list (and maybe compound) data types, but the result would be *much* less efficient ($O(n^2)$ instead of $O(n)$).
+
+Going forward, we will see some additional data structures where we are adding complexity and/or data beyond what is strictly necessary in order to achieve reasonable efficiency.
+:::
+
+
+# Aside: Python Magic Methods
+
+## Python Magic Methods
+
+Remember: Any piece of data in Python is an object that belongs to a class.
+
+You will often see references to methods with two underscore characters before and after the name; for example, `__init__()`, `__str__()`, `__len()__`.
+
+- Called *dunder* (short for *double underscore*) or *magic* methods.
+- **Do not** make up your own method names with the double underscore notation.
+- You can definitely implement these methods for your own classes.
+
+::: notes
+You will run into these methods in the Python documentation.
+
+You can write other methods with dunder names, but you will just confuse everybody.
+
+By using dataclasses, you get reasonable implementations of several of these methods for free; for example, `__init__()` and `__str__()`.
+:::
+
+## Example Magic Methods
+
+Magic methods are used by Python to implement internal behaviours and operator overloading.
+
+- When you call `print(x)`, Python displays the result of `x.__str__()`.
+- When you call `len(x)`, Python returns the result of `x.__len__()`.
+- When you write `x + y`, Python will call `x.__add__(y)`.
+- When you write `x[i]`, Python will call `x.__getitem__(i)`.
+- When you write `x[i] = y`, Python will call `x.__setitem__(i, y)`.
+- ...
+
+::: notes
+Most Python operators are just *syntactic sugar* for method calls; in other words, a way of writing method calls which is easier for humans to read.
+:::
+
+# Aside: Class Hierarchies and Interfaces
+
+## Class Hierarchies
+
+Remember: Any piece of data in Python is an object that belongs to a class.
+
+When we have a bunch of related classes, we often organize them in a hierarchy.
+
+  - Classes have a *parent* or *superclass* from which they *inherit* attributes and methods.
+    - If a class definition does not list a superclass, then it inherits from Python's `object` class.
+  - Classes can have *children* or *subclasses* which implement (or even change) their methods and attributes.
+
+::: notes
+Do you need to know how to build or even use class hierarchies for the exam?  No.
+
+It is useful to know this vocabulary when reading Python documentation / explanations, and also to understand interfaces.
+:::
+
+## Why Class Hierarchies?
+
+Conceptually, the idea is that you can work with an object as if it was an instance of the parent class rather than needing to know to which specific child class it belongs.
+
+In particular, different children might:
+
+- Store their data in different ways.
+- Store different data.
+- Implement the same method in different ways.
+
+But the user only needs to know the common method's signature (typically given in the parent class).
+
+::: notes
+Formal hierarchies are important in strongly typed languages, such as C++ or Java.  In those languages the type of every object must be known in advance, so the ability to pretend to be a parent type is powerful.
+
+Python uses informal "duck typing" (if it walks like a duck and quacks like a duck, it is a duck), so you don't need to formally be an object of a child class in order for this trick to work.
+:::
+
+
+## Class Hierarchy Example
+
+``` {pyodide}
+from dataclasses import dataclass
+
+@dataclass
+class student:
+    first_name: str
+    last_name: str
+    student_number: int
+    degree: str
+
+    def full_name(self) -> str:
+        return self.first_name + " " + self.last_name
+
+@dataclass
+class undergraduate(student):
+    standing: int  # range 1..4.
+    program: str
+
+    def program_name(self) -> str:
+        return self.degree + ' in ' + self.program
+
+@dataclass
+class graduate(student):
+    department: str
+
+    def program_name(self) -> str:
+        return self.degree + ' in ' + self.department
+
+s1 = undergraduate('Alice','Spears',1234,'B.Sc',4,'Biology')
+s2 = graduate('Brittany','Monroe',5678,'M.Sc','Mathematics')
+print(s1.full_name() + ' is ' + s1.program_name())
+print(s2.full_name() + ' is ' + s2.program_name())
+```
+
+::: notes
+Again, we will not expect you to be able to write or even read class hierarchies like this.  I am presenting it to explain some common vocabulary.
+:::
+
+## Interfaces
+
+A contract specifying which method(s) a child class should implement.
+
+- An interface is *not* a class.
+- It provides only the signature(s) of the required method(s), not implementation(s).
+- You cannot create an object instantiating an interface.
+
+You can create classes which inherit from / implement an interface.
+
+- Make sure that the class implements the required method(s).
+- When you instantiate an object, it will implement the interface.
+
+::: notes
+Often we would like a group of different objects to implement the same methods, but we don't want to have a full parent class.
+
+In Python the distinction is mostly for human design purposes: We use "interfaces" for relatively light-weight contracts without common data representations, and "superclasses" for more complex data representations.
+
+Python also has an intermediate category, *abstract base classes*, which cannot be instantiated but which can contain attributes and method implementations.
+
+Do you need to know how to build interfaces for the exam?  No
+
+It is useful to know this vocabulary when reading Python documentation / explanations.  In particular, I do want you to understand what I mean when I mention `iterable` or `hashable` objects.
+:::
+
+## Useful Interface: `iterable`
+
+- Intuition: If you can write a `for` loop over the elements of the object.
+- Contract: Object implements the `__iter__(self)` method.
+- Practical effects:
+  - You can write loops: `for item in x: ...`
+  - You can write list comprehensions.
+  - You can trivially convert to a list: `list(x)` or `tuple(x)`.
+
+::: notes
+We will not expect you to implement classes which have the `iterable` interface.
+
+I want you to be able to understand what I mean when I say "any iterable / hashable object", rather than always having to say "list" / "immutable object" and feel uncomfortable about it.
+:::
+
+## Examples of `iterable`
+
+Examples:
+
+- `list`, `tuple`, `str`.  Elements will always come out in the same order in which they were created.
+- `set`.  Elements may come out in a different order.
+- `dict`.  The iteration is over the keys, and elements may come out in a different order.
+- The objects returned by `range()` and `enumerate()`.
+- Files, pandas `Series` and `DataFrames`, and many more.
+
+::: notes
+When you write a loop over an iterable object, you can think of it as a list.  But behind the scenes Python does **not** create a list but rather works with the data in its existing representation.
+
+In particular, `range(n)` doesn't need memory proportional to $n$; instead, it just keeps track of the current element, how to get to the next element, and when to stop.  If you type `list(range(n))`, then you will create a list and use memory proportional to $n$.
+:::
+
+## Useful Interface: `hashable`
+
+- Intuition: An object that is immutable.
+- Contract: Object implements the `__hash__(self)` and `__eq__(self, other)` methods.
+- Technical details: A magic number (the *hash value*) with a constant number of digits can be computed from the object such that:
+  - You will **always** get the **same** number for this object.
+  - You will (almost) **always** get a **different** number for any other object.
+- Practical effects:
+  - The object can be used as a key in a dictionary or added to a set.
+  - The programmer need not worry about aliasing or function side-effects.
+
+::: notes
+There are objects which are immutable but not hashable and vice versa, but the former are rare and the latter are rare and almost always a bad idea, so we'll ignore the distinction.
+
+The size (storage requirement) of a hash value is constant no matter how much data is in the corresponding 
+object.
+
+The way that dictionaries / sets can look things up so fast is because they use the hash value like an index.
+
+It is okay if you *very occasionally* get the same number from two different objects.  This is called a *hash collision*, and you can check for it with a subsequent call to `__eq__()`.  More important is that objects whose data is *similar* should produce *very different* hash values.  That means computing the hash value may be expensive for a large object (such as a long tuple).
+
+As a side note: The hash value only needs to stay constant during a single run of the program.  Python may produce different hash values on different runs.
+
+Aliasing and side-effects are an issue because the data in an object can change without an explicit reference to the object.  But immutable objects cannot change, so the problem disappears.
+:::
+
+## Examples of `hashable`
+
+- All the simple atomic types: `int`, `str`, `bool`, `float`, `NoneType`.
+- `NamedTuples` (but *not* dataclasses).
+- Many basic mutable types have an immutable version.
+  - For example: `tuple`, `frozenset`, (as of Python 3.15) `frozendict`.
+- The union of other immutable types.
+  - For example, optional type: `some_type | None`.
+
+::: notes
+Python 3.15.0 was released 2026-10-09 (last Friday).
+
+The reason that `dict` will rearrange the order of the keys: The order depends on the hash value.
+:::
