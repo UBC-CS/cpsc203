@@ -2769,6 +2769,307 @@
     "text": "Get Yourself Registered\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\n\n\nTell the students to go to each of these sites and register."
   },
   {
+    "objectID": "slides/06_tue_dictionaries.html#announcements",
+    "href": "slides/06_tue_dictionaries.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nExamlet 2 runs today through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\n\nIf your scheduled lab was yesterday, you can still attend:\n\nT1F: Tue, 18:00 - 19:30.\nT1E: Thu, 9:30 - 11:00.\n\n\nProject 1 due Monday, October 26 (~two weeks).\n\n\nThere was a misconfiguration for examlet 2: Starts today, ends on Sunday. But you’ve had the material (dataclasses and lists) for more than a week, so no big deal."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Key-Value Pairs",
+    "text": "Key-Value Pairs\n\n\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen key_value_patterns.py.\n\n\n\n\n\n\nKey\nValue\n\n\n\n\nname\nIan Mitchell\n\n\ndepartment\nComputer Science\n\n\nprogram\nM.Sc.\n\n\nstart date\n1995-09-01\n\n\nterms\n7\n\n\ndomestic student\nyes\n\n\n⋮\n⋮"
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Representing Key-Value Pairs",
+    "text": "Representing Key-Value Pairs\n\nHow could we represent this information? Don’t say “dictionary”.\n\nWhat type for the whole set of data?\nWhat type for each row of data?\nWhat type for the keys?\nWhat type for the values?\n\n\n\n\nArbitrary size / list.\nCompound with two elements: key and value.\nString.\nAnything. Can use typing.Any to formally recognize that type, although it is essentially the Python default.\n\nSee alternative representation as two lists of the same length. Not recommended, but this approach was often used in older languages where compound data was syntactically difficult."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "href": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Efficiency of List Representations",
+    "text": "Efficiency of List Representations\nIf there are \\(n\\) key-value pairs in the store, how long does it take to:\n\nLook up the value associated with a key?\nDetermine whether a key is in the store?\nAdd a key-value pair?\n\n\nA Python dict can perform any of these operations in constant time for any \\(n\\).\n\n\n\n\\(O(n)\\).\n\\(O(n)\\) (even though you can write it without a loop using the in keyword).\n\\(O(1)\\).\nNote that using in on a dictionary is \\(O(1)\\).\n\nYou cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation. That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation. At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "href": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Not Just a One-Trick Pony",
+    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nCompound data.\nTracking membership.\nCounting appearances / frequencies.\nFinding complements.\nGrouping by (discrete) category.\nRepresenting a map or translation over a discrete domain.\n\nSee slides / class activity from last lecture for the first five.\nToday: Translation / mapping.\n\nNote that there is nothing special about dictionaries and compound data:\n\nAny key-value lookup representation could be used for compound data.\nAny compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).\n\nOkay, all done discussing (bad) ways of implementing key-value lookup. Now let’s return to the ways we can use it.\nIf necessary, go back and complete any patterns that were not completed in the previous lecture."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
+    "href": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Common Pattern: Translation/Mapping",
+    "text": "Common Pattern: Translation/Mapping\n\n\nUse case: Convert values from one representation to another.\n\n\nExample: Go through a string and replace any word which has an emoji equivalent.\n\n\nExample: Substitution cypher.\n\n\n\n\n\nword\nemoji\n\n\n\n\nsun\n☀️\n\n\nrain\n🌧️\n\n\ncloud\n☁️\n\n\nhappy\n😊\n\n\nsad\n😢\n\n\nlove\n❤️\n\n\ncat\n🐱\n\n\ndog\n🐶\n\n\ncoffee\n☕\n\n\n\n\n\n\nEmoji substitution:\n\nsplit() defaults to separating on any whitespace character (space, newline, tab).\njoin() uses the separator string (in this case a single space character) between each string in the list. You could use an empty string as separator if you just want to paste the words together.\nNote that “coffee” is not caught because it has the comma at the end.\n\nFor demo purposes, remove the comma manually.\nRemoving that comma is a little tricky, and putting it back is even trickier. We aren’t going in to the details; suffice to say that written text is annoying to parse in its full generality.\n\n\nDecryption:\n\nThat message isn’t appropriate for this term, since the reading break isn’t for several more weeks.\nHow would we encode a different message? Not easy to do with the existing dictionary, since we would want to look up values and return the matching key."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#lets-practice",
+    "href": "slides/06_tue_dictionaries.html#lets-practice",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\nOpen today’s activity. You’ll solve 2 new puzzles.\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen STUDENT_dict_patterns_nb.py."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#summary",
+    "href": "slides/06_tue_dictionaries.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary",
+    "text": "Summary\nDictionaries give you fast lookup by key — whether you have 100 items or 100,000.\n\n\n\nPattern\nUse Case\nTechnique\n\n\n\n\nRecord\nStore named fields\n{\"name\": ..., \"age\": ...}\n\n\nMembership\nTrack what we’ve seen\nseen[x] = True\n\n\nCounting\nCount occurrences\nCounter(items)\n\n\nComplement\nFind pairs\nStore & check complements\n\n\nGrouping\nOrganize by category\ndefaultdict(list)\n\n\nTranslation\nConvert values\nDirect key → value mapping"
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#oh-no",
+    "href": "slides/06_tue_dictionaries.html#oh-no",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Oh No!",
+    "text": "Oh No!\nIn CPSC 103 / 110: One code template for each data type.\nIn CPSC 203:\n\nCompound data could be stored as NamedTuples / DataClasses, lists / tuples, or dictionaries.\n\nSlightly different syntax, but same basic template.\n\nKey-value pairs can be stored as dictionaries.\n\nNotably different code template depending on the task.\nSometimes the problem information is not in the form of a key-value pair.\n\n\n\nShow HtDP page for compound data types.\nAlready in form of key-value pairs: Records, translation.\nNeed to create form of key-value pairs: Membership, counting, complement, grouping.\nWe could have solved all of these patterns with list (and maybe compound) data types, but the result would be much less efficient (\\(O(n^2)\\) instead of \\(O(n)\\)).\nGoing forward, we will see some additional data structures where we are adding complexity and/or data beyond what is strictly necessary in order to achieve reasonable efficiency."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#python-magic-methods",
+    "href": "slides/06_tue_dictionaries.html#python-magic-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Python Magic Methods",
+    "text": "Python Magic Methods\nRemember: Any piece of data in Python is an object that belongs to a class.\nYou will often see references to methods with two underscore characters before and after the name; for example, __init__(), __str__(), __len()__.\n\nCalled dunder (short for double underscore) or magic methods.\nDo not make up your own method names with the double underscore notation.\nYou can definitely implement these methods for your own classes.\n\n\nYou will run into these methods in the Python documentation.\nYou can write other methods with dunder names, but you will just confuse everybody.\nBy using dataclasses, you get reasonable implementations of several of these methods for free; for example, __init__() and __str__()."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#example-magic-methods",
+    "href": "slides/06_tue_dictionaries.html#example-magic-methods",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Example Magic Methods",
+    "text": "Example Magic Methods\nMagic methods are used by Python to implement internal behaviours and operator overloading.\n\nWhen you call print(x), Python displays the result of x.__str__().\nWhen you call len(x), Python returns the result of x.__len__().\nWhen you write x + y, Python will call x.__add__(y).\nWhen you write x[i], Python will call x.__getitem__(i).\nWhen you write x[i] = y, Python will call x.__setitem__(i, y).\n…\n\n\nMost Python operators are just syntactic sugar for method calls; in other words, a way of writing method calls which is easier for humans to read."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#class-hierarchies",
+    "href": "slides/06_tue_dictionaries.html#class-hierarchies",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Class Hierarchies",
+    "text": "Class Hierarchies\nRemember: Any piece of data in Python is an object that belongs to a class.\nWhen we have a bunch of related classes, we often organize them in a hierarchy.\n\nClasses have a parent or superclass from which they inherit attributes and methods.\n\nIf a class definition does not list a superclass, then it inherits from Python’s object class.\n\nClasses can have children or subclasses which implement (or even change) their methods and attributes.\n\n\nDo you need to know how to build or even use class hierarchies for the exam? No.\nIt is useful to know this vocabulary when reading Python documentation / explanations, and also to understand interfaces."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#why-class-hierarchies",
+    "href": "slides/06_tue_dictionaries.html#why-class-hierarchies",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why Class Hierarchies?",
+    "text": "Why Class Hierarchies?\nConceptually, the idea is that you can work with an object as if it was an instance of the parent class rather than needing to know to which specific child class it belongs.\nIn particular, different children might:\n\nStore their data in different ways.\nStore different data.\nImplement the same method in different ways.\n\nBut the user only needs to know the common method’s signature (typically given in the parent class).\n\nFormal hierarchies are important in strongly typed languages, such as C++ or Java. In those languages the type of every object must be known in advance, so the ability to pretend to be a parent type is powerful.\nPython uses informal “duck typing” (if it walks like a duck and quacks like a duck, it is a duck), so you don’t need to formally be an object of a child class in order for this trick to work."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#class-hierarchy-example",
+    "href": "slides/06_tue_dictionaries.html#class-hierarchy-example",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Class Hierarchy Example",
+    "text": "Class Hierarchy Example\n\n\n\n\n\n\n\nAgain, we will not expect you to be able to write or even read class hierarchies like this. I am presenting it to explain some common vocabulary."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#interfaces",
+    "href": "slides/06_tue_dictionaries.html#interfaces",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Interfaces",
+    "text": "Interfaces\nA contract specifying which method(s) a child class should implement.\n\nAn interface is not a class.\nIt provides only the signature(s) of the required method(s), not implementation(s).\nYou cannot create an object instantiating an interface.\n\nYou can create classes which inherit from / implement an interface.\n\nMake sure that the class implements the required method(s).\nWhen you instantiate an object, it will implement the interface.\n\n\nOften we would like a group of different objects to implement the same methods, but we don’t want to have a full parent class.\nIn Python the distinction is mostly for human design purposes: We use “interfaces” for relatively light-weight contracts without common data representations, and “superclasses” for more complex data representations.\nPython also has an intermediate category, abstract base classes, which cannot be instantiated but which can contain attributes and method implementations.\nDo you need to know how to build interfaces for the exam? No\nIt is useful to know this vocabulary when reading Python documentation / explanations. In particular, I do want you to understand what I mean when I mention iterable or hashable objects."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#useful-interface-iterable",
+    "href": "slides/06_tue_dictionaries.html#useful-interface-iterable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Interface: iterable",
+    "text": "Useful Interface: iterable\n\nIntuition: If you can write a for loop over the elements of the object.\nContract: Object implements the __iter__(self) method.\nPractical effects:\n\nYou can write loops: for item in x: ...\nYou can write list comprehensions.\nYou can trivially convert to a list: list(x) or tuple(x).\n\n\n\nWe will not expect you to implement classes which have the iterable interface.\nI want you to be able to understand what I mean when I say “any iterable / hashable object”, rather than always having to say “list” / “immutable object” and feel uncomfortable about it."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#examples-of-iterable",
+    "href": "slides/06_tue_dictionaries.html#examples-of-iterable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Examples of iterable",
+    "text": "Examples of iterable\nExamples:\n\nlist, tuple, str. Elements will always come out in the same order in which they were created.\nset. Elements may come out in a different order.\ndict. The iteration is over the keys, and elements may come out in a different order.\nThe objects returned by range() and enumerate().\nFiles, pandas Series and DataFrames, and many more.\n\n\nWhen you write a loop over an iterable object, you can think of it as a list. But behind the scenes Python does not create a list but rather works with the data in its existing representation.\nIn particular, range(n) doesn’t need memory proportional to \\(n\\); instead, it just keeps track of the current element, how to get to the next element, and when to stop. If you type list(range(n)), then you will create a list and use memory proportional to \\(n\\)."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#useful-interface-hashable",
+    "href": "slides/06_tue_dictionaries.html#useful-interface-hashable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Interface: hashable",
+    "text": "Useful Interface: hashable\n\nIntuition: An object that is immutable.\nContract: Object implements the __hash__(self) and __eq__(self, other) methods.\nTechnical details: A magic number (the hash value) with a constant number of digits can be computed from the object such that:\n\nYou will always get the same number for this object.\nYou will (almost) always get a different number for any other object.\n\nPractical effects:\n\nThe object can be used as a key in a dictionary or added to a set.\nThe programmer need not worry about aliasing or function side-effects.\n\n\n\nThere are objects which are immutable but not hashable and vice versa, but the former are rare and the latter are rare and almost always a bad idea, so we’ll ignore the distinction.\nThe size (storage requirement) of a hash value is constant no matter how much data is in the corresponding object.\nThe way that dictionaries / sets can look things up so fast is because they use the hash value like an index.\nIt is okay if you very occasionally get the same number from two different objects. This is called a hash collision, and you can check for it with a subsequent call to __eq__(). More important is that objects whose data is similar should produce very different hash values. That means computing the hash value may be expensive for a large object (such as a long tuple).\nAs a side note: The hash value only needs to stay constant during a single run of the program. Python may produce different hash values on different runs.\nAliasing and side-effects are an issue because the data in an object can change without an explicit reference to the object. But immutable objects cannot change, so the problem disappears."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#examples-of-hashable",
+    "href": "slides/06_tue_dictionaries.html#examples-of-hashable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Examples of hashable",
+    "text": "Examples of hashable\n\nAll the simple atomic types: int, str, bool, float, NoneType.\nNamedTuples (but not dataclasses).\nMany basic mutable types have an immutable version.\n\nFor example: tuple, frozenset, (as of Python 3.15) frozendict.\n\nThe union of other immutable types.\n\nFor example, optional type: some_type | None.\n\n\n\nPython 3.15.0 was released 2026-10-09 (last Friday).\nThe reason that dict will rearrange the order of the keys: The order depends on the hash value."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#announcements",
+    "href": "slides/02_tue_efficiency.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nResults of course survey.\nUpdates to CPSC 203 course website.\n\nLogistics: TA office hours.\nSyllabus: Course policy on AI use.\nSchedule: Links to slides, videos, labs, POTWs, …\n\nMonitor (and post to) Piazza.\nPOTW is available on PrairieLearn.\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for the first examlet (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\n\n\n\nShow survey results.\nShow Syllabus GenAI update, and possibly logistics and schedule updates."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#todays-plan",
+    "href": "slides/02_tue_efficiency.html#todays-plan",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Today’s Plan…",
+    "text": "Today’s Plan…\n\nCorrectness isn’t everything…\nKnitting\nWork / effort / complexity\nSimplicity / elegance / abstraction\nColour (if we get to it)"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
+    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Go Shopping (version 1)",
+    "text": "Let’s Go Shopping (version 1)\n\n\ndefine shopping_trip1(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # List of food in the pantry so far.\n  pantry_list = []\n\n  for item_on_grocery_list in grocery_list:\n    # Take paper with single item to the store.\n    item_at_store = go_to_store(item_on_grocery_list)\n    # Get the item from the shelf.\n    item_in_cart = pick_at_store(item_at_store)\n    # Bring the item home.\n    item_at_home = return_from_store(item_in_cart)\n    # Put the item away.\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip1 grocery-list\n  (cond [(empty? grocery-list) '()],\n        [else\n          (cons (put-in-pantry\n                  (return-from-store\n                    (pick-at-store\n                      (go-to-store (first grocery-list)))))\n                (shopping-trip1 (rest grocery-list)))]))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nHow long to go_to_store?\nHow long to pick_at_store?\nHow long to return_from_store?\nHow long to put_in_pantry?"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
+    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Go Shopping (version 2)",
+    "text": "Let’s Go Shopping (version 2)\n\n\ndefine shopping_trip2(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # Take piece of paper with list to the store.\n  grocery_list_at_store = go_to_store(grocery_list)\n\n  # Get all items on the list into the cart.\n  cart_list = []\n  for item_at_store in grocery_list_at_store:\n    cart_list.append(pick_at_store(item_at_store))\n\n  # Bring the items home.\n  grocery_bags_at_home = return_from_store(cart_list)\n\n  # Put the items away.\n  pantry_list = []\n  for item_at_home in grocery_bags_at_home:\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip2 grocery-list\n  (let ([grocery-list-at-store (go-to-store grocery-list)])\n    (put-in-pantry\n      (return-from-store\n        (pick-at-store grocery-list-at-store)))))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nGo to the store just once.\nReturn from the store just once.\nAs \\(n\\) gets larger, total time will increasingly be determined by those parts of the procedure which depend on \\(n\\).\nFor large \\(n\\), we can essentially ignore the stuff which grows more slowly (or not at all) with \\(n\\)."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
+    "href": "slides/02_tue_efficiency.html#handcraft-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft",
+    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. And sometimes things are not entirely correct."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#knitting",
+    "href": "slides/02_tue_efficiency.html#knitting",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting",
+    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!\n\n\n\n\nKnitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
+    "href": "slides/02_tue_efficiency.html#knitting-examples",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Knitting: examples",
+    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nIf we are solving a problem / writing an algorithm for an input of arbitrary size, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\n\nWe need to specify what \\(n\\) represents (in this case the length of each side of the square).\nSometimes we need multiple parameters to describe the size of the problem (such as \\(n\\) and \\(m\\)).\nWe pay attention to only the degree of n (so if a scarf takes \\(3n^2 + 12n\\) time, we are only interested in the fact it is \\(n^2\\))\n\n\n\n\nIn this example we choose to label \\(n\\) as the side-length in stitches, but other choices are possible.\nWe don’t care so much about units, so we communicate using the largest order term\n\nA scarf which is always \\(3n \\times n\\) takes time \\(3n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how waiting time increases as the problem size increases.\nWe say that the variable term “dominates”.\n\n\nBut why did we introduce a “parameter”? What happened to the rows and stitches? What does this have to do with a computer processing data?\nWe are seeking to understand the effort / efficiency / complexity of solving the problem / running the algorithm in a simple / elegant manner, where we have abstracted away the clutter of the details of the problem."
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#section",
+    "href": "slides/02_tue_efficiency.html#section",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "",
+    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs\n\n\nIn this course we will be seeking simplicity and elegance not only in our algorithms, but also in how we analyze them. In particular, when looking at the complexity of an algorithm we will ignore the constants and dominated terms.\nOur software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect)\nIt would be nide to include this link, but I cannot figure out how to adjust the font size to make room. For further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Handcraft and Code",
+    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\nWalk through code. Yes, we are mutating variable cloth, and we generally discourage mutation. Are we mutating the string to which cloth refers?\nCount work to arrive at \\(n^2\\) conclusion.\n\nWhich line is executed most frequently?\nHow many times is outer for loop executed?\nHow many total times is line 5 (inner for loop) executed?"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nSuppose we can knit 1 (= 100) stitches per second….\nThe degree (in n) makes a very big difference!\n\n\n\ntime \\ n\n10\n100\n1000\n\n\n\n\nlog n\n~3 s\n~6½ s\n~10 s\n\n\nn\n10 s\n102 s ~ 1½ min\n103 s ~ 16½ min\n\n\nn log n\n3(10) s ~ ½ min\n6(102) s ~ 10 min\n104 s ~ 2½ hours\n\n\nn2\n100 s ~ 1½ min\n104 s ~ 2½ hours\n106 s ~ 11½ days\n\n\nn3\n1000 s ~ 16½ min\n106 s ~ 11½ days\n109 s ~ 31½ years\n\n\n2n\n1024 s ~ 17 min\n~1030 s\n~10301 s\n\n\n\nNotes: “log” is base 2, and the age of the universe: ~1018 s\n\nLog factors are great! Linear (power 1) is good. Powers 2+ (polynomial) is okay as long as \\(n\\) is reasonably small. If \\(n\\) is in the exponent, forget about it…"
+  },
+  {
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-3",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-3",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#announcements",
+    "href": "slides/03_tue_lists.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#marimo",
+    "href": "slides/03_tue_lists.html#marimo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Marimo",
+    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": " List Activity",
+    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
+    "href": "slides/03_tue_lists.html#lists-a-quick-review",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Lists: A Quick Review",
+    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#adding-to-lists",
+    "href": "slides/03_tue_lists.html#adding-to-lists",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Adding to Lists",
+    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-aliasing",
+    "href": "slides/03_tue_lists.html#list-aliasing",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Aliasing",
+    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#shallow-copy",
+    "href": "slides/03_tue_lists.html#shallow-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Shallow Copy",
+    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#deep-copy",
+    "href": "slides/03_tue_lists.html#deep-copy",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Deep Copy",
+    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#references",
+    "href": "slides/03_tue_lists.html#references",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "References",
+    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions",
+    "href": "slides/03_tue_lists.html#list-comprehensions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "List Comprehensions with Conditions",
+    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
+  },
+  {
     "objectID": "slides/05_thu_dictionaries.html#announcements",
     "href": "slides/05_thu_dictionaries.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -2801,7 +3102,7 @@
     "href": "slides/05_thu_dictionaries.html#billboard-hot-100-data-as-a-dictionary",
     "title": "Programming, problem solving, and algorithms",
     "section": "Billboard Hot 100 Data as a Dictionary",
-    "text": "Billboard Hot 100 Data as a Dictionary"
+    "text": "Billboard Hot 100 Data as a Dictionary\n\n\n\n\n\n\n\nDemostrate conversion to dataframe:\nimport pandas as pd\nsongs_df = pd.DataFrame(songs)\nsongs_df\n\nWhy Dictionaries (for Compound Data)?\nDictionaries are probably the most common Python representation for compound data because\n\nThey require no overhead to create (no class definition).\nHave very simple and compact syntax.\nAre extremely efficient for common operations on a single piece of compound data.\n\nIn particular, looking up a key takes the same amount of time regardless of the number of keys in the dictionary.\n\n\nAnd the less you have to think about your data structure, the better. Right?\n\nAs an example, consider what happens if you ask for an element which doesn’t exist.\n\nFor lists, the only possible error is to ask for an index beyond \\(n\\). Common, but usually easy to avoid / debug.\nFor namedtuples and dataclasses, it is possible to figure out before running the code that the field / attribute doesn’t exist. (Regular Python won’t notice until you run, but some editors or lint scanners will warn you.)\nFor dataframes and dictionaries, you cannot check until runtime. Work through the missing key cell.\n\nWe used namedtuples for compound data in CPSC 103 because\n\nWe wanted you to document your fields before you started using them.\nWe did not want to introduce class notation.\n\n\n\n\nDictionaries as Key-Value Lookup\n\n\n\nNot Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nTracking membership.\nCounting appearances / frequencies.\nRepresenting a map over a discrete domain.\nGrouping by category.\n\n\nRemember that we often use lists for arbitrary sized data, but we sometimes use them for compound data?\nWe sometimes use dictionaries for compound data. In these cases the keys are known at design time and the values are the data.\nBut we also use dictionaries for solving other problems. In these cases both the keys and the values are part of the data representation. We generally won’t know either at design time, so the ability to create them at run-time is a feature.\n\n\n\n\n🚪 Room 1: Membership and Intersection\n\n\n\nCommon Pattern: Tracking Membership\nFor example: Have we seen this item before?\n\n\n\n\n\n\ndefaultdict(bool) returns False for missing keys — no KeyError!\n\n\nApproach 1: Using Lists\nThe thief visited both Gallery A and Gallery B before the theft.\nYour mission: Find everyone who was in BOTH rooms.\nLet’s try using just lists:\n\nConstruct a list of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list A:\n\nFor every person in list B:\n\nIf they match, add them to the intersection list.\n\n\n\n\nWork through Intersection using Lists cell.\n\n\n\nThe Problem with Nested Loops\n\n\n\n\n\nWith 10 people in Gallery A and 12 in Gallery B: 10 × 12 = 120 comparisons\nWith 10,000 in each: 100,000,000 comparisons!\nWith \\(n\\) people in Gallery A and \\(m\\) in Gallery B?\n\n\n\nBut what if we used in keyword instead of the second loop?\nSame time for lists because checking membership for a list value requires time proportional to the length of the list.\n\n\n\nApproach 2: Using Dictionaries\nLet’s try using dictionaries (and lists):\n\nConstruct a dictionary of everybody who visited Gallery A.\nConstruct a list of everybody who visited Gallery B.\nFor every person in list B:\n\nIf they are in dictionary A, add them to the intersection list.\n\n\n\nDo we use the person’s name as the key or the value?\n\nLooking up a key (or equivalently, testing ‘in’) in a dictionary is constant time.\nLooking up a value in a dictionary requires the same time as looking up a value in a list.\n\nWork through Intersection using Dictionary cell.\n\n\n\nWhy Is This Faster?\n\nStep 1: Look at each Gallery A person once → 10 operations\nStep 2: Look at each Gallery B person once → 12 operations\nTotal: 10 + 12 = 22 operations (not 120!)\n\nDictionary lookup is instant — it doesn’t matter how many keys are stored!\n\n\nCommon Pattern: Set Intersection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse when: Finding common elements, detecting duplicates\n\nThere is some hidden code which created the two lists of numbers.\nWhat type would we have to use for the data values if we wanted to represent the IDs as shown in the figure? String.\n\n\n\nAlternative: Python Sets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThere is also a frozenset, which is a set which cannot be mutated after creation.\nSets are a more natural way of implementing the intersection pattern and many others. I encourage you to use them. But they are a relatively recent addition to the language so you will still see a lot of code which uses dictionaries when sets would make more sense. And our focus today is on key-value pairs / dictionaries, so we won’t discuss them further.\n\n\n\n\n🚪 Room 2: Appearances and Frequencies\n\n\n\nPattern: Counting Frequencies\nUse case: Count how many times each item appears.\n\n\n\n\n\n\n\nWhat would happen if we didn’t include the check in the if statement? KeyError.\n\n\n\nAvoid the Extra Check?\nCould use a defaultdict(int), which would assign value of 0 to any missing key.\nAlternatively, this pattern appears so often that there is an even more specialized version of a dictionary: Counter.\n\n\n\n\n\n\n\nIf you create a new Counter object and pass in something iterable (such as a list or string) whose values are immutable (such as any simple atomic data), then Counter will do its job automagically.\n\n\n\nRoom 2: The Cipher\nYou found a mysterious note left by the thief:\nWKLV LV WKH FRGH: GLDJRQDO\nIt appears to be a substitution cipher. The thief replaced each letter with another.\n\n\nFrequency Analysis\nIn English, some letters appear more often than others:\n\n\n\nLetter\nFrequency\n\n\n\n\nE\n12.7%\n\n\nT\n9.1%\n\n\nA\n8.2%\n\n\nO\n7.5%\n\n\nI\n7.0%\n\n\n\nIf we count the letters in the cipher, the most common one is probably E!\n\nWork through the\nIn fact, the mysterious note was a Caesar cipher — each letter shifted by the same amount. The shift was -3 and the message was “THIS IS THE CODE: DIAGONAL”. The most common letter turns out to be ‘I’…\nIt is not surprising that the frequency counting technique doesn’t work on short messages. And Caesar ciphers are terrible. On Thursday we will look at more interesting ciphers.\n\n\n\n\n\n🚪 Room 3: Finding Complements\n\n\n\nPattern: Finding Complements\nUse case: Find two numbers that add up to a target.\n\n\n\n\n\n\n\n\nThe Complement Pattern\n\n\n\n\n\n\nAs we scan, we remember what we’ve seen and check if the complement exists!\n\n\nRoom 3: The Vault\nThe vault has a two-dial combination lock.\nEach dial shows a number, and they must multiply to 435,599.\nThe thief left behind a piece of paper with two lists:\n\n125, 204, 214, 242, 328, 350, 381, 659, 754, 854, 859\n130, 132, 189, 195, 323, 532, 658, 661, 704, 792, 858\n\nFind the two numbers (one from each list) that open the vault!\n\nThere is no reason that “complement” has to be in terms of addition. As long as we have an inverse operator, we can use dictionaries to quickly find the answer.\nWork through ‘Finding Complements’ cells.\nWhen we open the vault, we find a note: “The alibi is the key”.\n\n\n\n\n🚪 Room 4: Grouping\n\n\n\nPattern: Grouping by Category\nUse case: Organize items into categories (like pandas’ groupby!).\n\n\n\n\n\n\n\nOur data in this case is a list of tuples. We want our categories to be the second elements and our values to be the first elements.\nWhy defaultdict(list)? Without it you get a KeyError.\ndefaultdict(list) automatically creates an empty list for missing keys!\nThe trickiest part of using defaultdict is deciding the type of the values and the corresponding initialization value. Often we are using the value as an accumulator, so we will initialize with a suitably “empty” accumulator: 0 for numbers, empty string for strings, empty list for lists, … Often the default value of the accumulator type is correct, but sometimes you may need to specify a different default value (for example, if you are computing a product then you want to start with 1 instead of 0).\n\n\n\nRoom 4: The Suspect Board\nWe have testimony from five suspects about where they were at 8pm:\n\n\n\n\n\n\nGroup suspects by their alibi to find who was together!\n\nWhat categories will we use for our groups? What values do we want to put inside those groups?\nWhat key-value pairs from the input will generate the keys in our group dictionary?\nWhat key-value pairs from the input will generate the values in our group dictionary? What form will these values take?\nWork through Room 4 cells.\n\n\n\nLet’s Practice!\n\nLaunch Class Activity: Dictionary Heist in PrairieLearn.\nOpen STUDENT_heist_nb.py. You’ll solve 4 puzzles with LARGE datasets.\n\nInspired by Advent of Code puzzles!\n\n\nSummary\nDictionaries give you fast lookup by key.\nThe patterns we learned:\n\nRecord — Store compound data\nMembership — Have I seen this before? (defaultdict(bool))\nCounting — How many of each? (Counter)\nComplement — Find the matching pair\nGrouping — Organize by category (defaultdict(list))"
   },
   {
     "objectID": "slides/05_thu_dictionaries.html#why-dictionaries-for-compound-data",
@@ -2942,174 +3243,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Summary",
     "text": "Summary\nDictionaries give you fast lookup by key.\nThe patterns we learned:\n\nRecord — Store compound data\nMembership — Have I seen this before? (defaultdict(bool))\nCounting — How many of each? (Counter)\nComplement — Find the matching pair\nGrouping — Organize by category (defaultdict(list))"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#announcements",
-    "href": "slides/03_tue_lists.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#marimo",
-    "href": "slides/03_tue_lists.html#marimo",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Marimo",
-    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " List Activity",
-    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
-    "href": "slides/03_tue_lists.html#lists-a-quick-review",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Lists: A Quick Review",
-    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#adding-to-lists",
-    "href": "slides/03_tue_lists.html#adding-to-lists",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding to Lists",
-    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-aliasing",
-    "href": "slides/03_tue_lists.html#list-aliasing",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Aliasing",
-    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#shallow-copy",
-    "href": "slides/03_tue_lists.html#shallow-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Shallow Copy",
-    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#deep-copy",
-    "href": "slides/03_tue_lists.html#deep-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Deep Copy",
-    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#references",
-    "href": "slides/03_tue_lists.html#references",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "References",
-    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions",
-    "href": "slides/03_tue_lists.html#list-comprehensions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions",
-    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions with Conditions",
-    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#announcements",
-    "href": "slides/02_tue_efficiency.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nResults of course survey.\nUpdates to CPSC 203 course website.\n\nLogistics: TA office hours.\nSyllabus: Course policy on AI use.\nSchedule: Links to slides, videos, labs, POTWs, …\n\nMonitor (and post to) Piazza.\nPOTW is available on PrairieLearn.\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for the first examlet (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\n\n\n\nShow survey results.\nShow Syllabus GenAI update, and possibly logistics and schedule updates."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#todays-plan",
-    "href": "slides/02_tue_efficiency.html#todays-plan",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Today’s Plan…",
-    "text": "Today’s Plan…\n\nCorrectness isn’t everything…\nKnitting\nWork / effort / complexity\nSimplicity / elegance / abstraction\nColour (if we get to it)"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
-    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Go Shopping (version 1)",
-    "text": "Let’s Go Shopping (version 1)\n\n\ndefine shopping_trip1(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # List of food in the pantry so far.\n  pantry_list = []\n\n  for item_on_grocery_list in grocery_list:\n    # Take paper with single item to the store.\n    item_at_store = go_to_store(item_on_grocery_list)\n    # Get the item from the shelf.\n    item_in_cart = pick_at_store(item_at_store)\n    # Bring the item home.\n    item_at_home = return_from_store(item_in_cart)\n    # Put the item away.\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip1 grocery-list\n  (cond [(empty? grocery-list) '()],\n        [else\n          (cons (put-in-pantry\n                  (return-from-store\n                    (pick-at-store\n                      (go-to-store (first grocery-list)))))\n                (shopping-trip1 (rest grocery-list)))]))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nHow long to go_to_store?\nHow long to pick_at_store?\nHow long to return_from_store?\nHow long to put_in_pantry?"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
-    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Go Shopping (version 2)",
-    "text": "Let’s Go Shopping (version 2)\n\n\ndefine shopping_trip2(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # Take piece of paper with list to the store.\n  grocery_list_at_store = go_to_store(grocery_list)\n\n  # Get all items on the list into the cart.\n  cart_list = []\n  for item_at_store in grocery_list_at_store:\n    cart_list.append(pick_at_store(item_at_store))\n\n  # Bring the items home.\n  grocery_bags_at_home = return_from_store(cart_list)\n\n  # Put the items away.\n  pantry_list = []\n  for item_at_home in grocery_bags_at_home:\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip2 grocery-list\n  (let ([grocery-list-at-store (go-to-store grocery-list)])\n    (put-in-pantry\n      (return-from-store\n        (pick-at-store grocery-list-at-store)))))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nGo to the store just once.\nReturn from the store just once.\nAs \\(n\\) gets larger, total time will increasingly be determined by those parts of the procedure which depend on \\(n\\).\nFor large \\(n\\), we can essentially ignore the stuff which grows more slowly (or not at all) with \\(n\\)."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
-    "href": "slides/02_tue_efficiency.html#handcraft-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft",
-    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. And sometimes things are not entirely correct."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#knitting",
-    "href": "slides/02_tue_efficiency.html#knitting",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting",
-    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!\n\n\n\n\nKnitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
-    "href": "slides/02_tue_efficiency.html#knitting-examples",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting: examples",
-    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nIf we are solving a problem / writing an algorithm for an input of arbitrary size, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\n\nWe need to specify what \\(n\\) represents (in this case the length of each side of the square).\nSometimes we need multiple parameters to describe the size of the problem (such as \\(n\\) and \\(m\\)).\nWe pay attention to only the degree of n (so if a scarf takes \\(3n^2 + 12n\\) time, we are only interested in the fact it is \\(n^2\\))\n\n\n\n\nIn this example we choose to label \\(n\\) as the side-length in stitches, but other choices are possible.\nWe don’t care so much about units, so we communicate using the largest order term\n\nA scarf which is always \\(3n \\times n\\) takes time \\(3n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how waiting time increases as the problem size increases.\nWe say that the variable term “dominates”.\n\n\nBut why did we introduce a “parameter”? What happened to the rows and stitches? What does this have to do with a computer processing data?\nWe are seeking to understand the effort / efficiency / complexity of solving the problem / running the algorithm in a simple / elegant manner, where we have abstracted away the clutter of the details of the problem."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#section",
-    "href": "slides/02_tue_efficiency.html#section",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs\n\n\nIn this course we will be seeking simplicity and elegance not only in our algorithms, but also in how we analyze them. In particular, when looking at the complexity of an algorithm we will ignore the constants and dominated terms.\nOur software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect)\nIt would be nide to include this link, but I cannot figure out how to adjust the font size to make room. For further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
-    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft and Code",
-    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\nWalk through code. Yes, we are mutating variable cloth, and we generally discourage mutation. Are we mutating the string to which cloth refers?\nCount work to arrive at \\(n^2\\) conclusion.\n\nWhich line is executed most frequently?\nHow many times is outer for loop executed?\nHow many total times is line 5 (inner for loop) executed?"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nSuppose we can knit 1 (= 100) stitches per second….\nThe degree (in n) makes a very big difference!\n\n\n\ntime \\ n\n10\n100\n1000\n\n\n\n\nlog n\n~3 s\n~6½ s\n~10 s\n\n\nn\n10 s\n102 s ~ 1½ min\n103 s ~ 16½ min\n\n\nn log n\n3(10) s ~ ½ min\n6(102) s ~ 10 min\n104 s ~ 2½ hours\n\n\nn2\n100 s ~ 1½ min\n104 s ~ 2½ hours\n106 s ~ 11½ days\n\n\nn3\n1000 s ~ 16½ min\n106 s ~ 11½ days\n109 s ~ 31½ years\n\n\n2n\n1024 s ~ 17 min\n~1030 s\n~10301 s\n\n\n\nNotes: “log” is base 2, and the age of the universe: ~1018 s\n\nLog factors are great! Linear (power 1) is good. Powers 2+ (polynomial) is okay as long as \\(n\\) is reasonably small. If \\(n\\) is in the exponent, forget about it…"
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-3",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-3",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
   },
   {
     "objectID": "slides/04_tue_bracelet.html#announcements",
