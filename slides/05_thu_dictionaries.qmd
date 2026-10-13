@@ -1,6 +1,12 @@
 ---
 date: 2026-10-08
+pyodide:
+  packages:
+    - pandas
 ---
+
+<!-- Not clear that the "Great Data Heist" wrapper is worth the overhead...
+-->
 
 ## Announcements
 
@@ -87,6 +93,13 @@ for song in songs:
     print(f"{song['rank']}. {song['title']} by {song['artist']}")
 ```
 
+::: notes
+Demostrate conversion to dataframe:
+```python
+import pandas as pd
+songs_df = pd.DataFrame(songs)
+songs_df
+```
 
 ## Why Dictionaries (for Compound Data)? {.medium}
 
