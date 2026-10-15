@@ -1,0 +1,265 @@
+---
+date: 2026-10-15
+---
+
+## Announcements
+
+- Examlet 2 runs through Sunday.
+- Lab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.
+- Project 1 due Monday, October 26 (~1½ weeks).
+
+## From Last Lecture's Slides
+
+- Key-value stores for translation / mapping.
+- Aside: Python magic methods.
+- Aside: Python class heirarchies and interfaces.
+
+# Let's Take Stock
+
+## What Have We Done?
+
+- Measuring complexity / efficiency.
+- Representing information with computer data.
+- Lists: Mutation, aliasing and comprehensions.
+- Dataclasses for compound data (and methods).
+- Pandas and dataframes for tabular data.
+- Dictionaries for key-value lookup.
+- Sprinkled throughout: Various bits of Python syntax and idiom.
+
+::: notes
+We considered complexity as the size of the problem / amount of data increased.  Focus on broad classes of complexity $\log n$, $n$, $n \log n$, $n^2$, $n^3$, $2^n$.
+
+Computers represent everything as a binary number.  But we can use numbers to represent anything else (at least approximately).  Example was colour.
+
+Dictionaries: Our previous data structures were chosen primarily for functionality (it was convenient that Pandas is fast, but mostly it is nice because it is easy to write filters and maps).  We could implement a correct key-value store using lists, but we don't.  The dictionary is our first data structure we use primarily because of its efficiency for a particular operation.
+:::
+
+## Where Are We Going?
+
+- Stacks & queues: Data structures of interest for their efficiency.
+  - Application: Computing Voronoi diagrams.
+- Graphs: Data structure of interest for representational power and (sometimes) efficiency.
+  - Applications: Markov chains for random processes, solving Sudoku, shortest path on maps.
+- Fundamentally complex problems: Traveling Salesperson.
+- More graphs: textual analysis, social networks, gerrymandering election boundaries.
+- All with sprinkling of yet more bits of Python syntax and idiom.
+
+::: notes
+In CPSC 103, you learned about data types such as bool, int, str, range, enumeration, optional, compound and arbitrary-sized.  To that CPSC 203 adds tables, dictionaries, stacks, queues and graphs.
+
+In CPSC 103, you had:
+
+- Simple rules mapping problem information into data type.
+- A single code template for each type of data.
+- Correct implementation as your singular focus.
+
+In CPSC 203, we are breaking all of these simplifying features.  You may choose different data types and code templates in order to achieve better efficiency when solving your problem.
+:::
+
+# Voronoi Diagrams
+
+## Voronoi diagrams
+
+:::::: columns
+:::: {.column width="33%"}
+::: small-font-size
+Given a (finite) set of "centres" $c_{1}, c_{2}, \ldots, c_{k}$, a Voronoi region, $R_{j}$ consists of the set of points nearer to centre $c_{j}$, than to any other centre.
+
+Together, the $R_{j}$ regions compose the [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) of a plane.
+
+:::
+::::
+
+::: {.column width="67%"}
+![](/images/tim-hortons-map.png){fig-alt="A map of Vaoncouver on the western part of the Burrard Peninsula with pins marking Tim Hortons locations."}
+:::
+::::::
+
+::: notes
+Every point in plane is in some region and no point is in 2 regions.
+:::
+
+## Applications {.medium}
+
+::: {.columns}
+
+::: {.column width="70%"}
+- Biology, Ecology, Forestry: Model and analyze plant competition.
+- Zoology: Model and analyze the territories of animals.
+- Robotics: Path planning in the presence of obstacles.
+- Astronomy: Identify clusters of stars and clusters of galaxies.
+- Cartography: Piece together satellite photographs into large "mosaic" maps.
+- Geography: Analyzing patterns of urban settlements.
+- Marketing: Model market of US metropolitan areas.
+- Metallurgy: Modelling "grain growth" in metal films.
+:::
+
+::: {.column width="30%"}
+![](/images/aerial-view-of-trees.png){fig-alt="Overhead view of tree canopy"}
+
+![](/images/voronoi-diagram-of-trees.jpg){fig-alt="Voronoi digram of tree canopy"}
+:::
+
+:::
+
+## More Applications {.medium}
+
+::: {.columns}
+
+::: {.column width="70%"}
+- Physiology: Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport ("Capillary domains").
+- Meteorology: Estimate regional rainfall averages, given data at  discrete rain gauges.
+- Anthropology and Archeology: Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.
+- Crystallography and Chemistry: Modelling alloy structures as sphere packings ("Domain of an atom").
+- Geology: Estimation of ore reserves in a deposit using info obtained from bore holes.
+:::
+
+::: {.column width="30%"}
+![](/images/Vmap.jpg){fig-alt="Drawing of cells crowded together"}
+:::
+
+:::
+
+## Motivational Aside: Pointillism
+
+<center>
+![](/images/SundayinthePark.jpg){fig-alt="The Seurat art piece depicting 1880's park goers."}
+
+[Un dimanche après-midi à l'Île de la Grande Jatte](https://en.wikipedia.org/wiki/A_Sunday_Afternoon_on_the_Island_of_La_Grande_Jatte)
+
+[Ferris Bueller's Day Off](https://en.wikipedia.org/wiki/Ferris_Bueller%27s_Day_Off): [A Visit to the Art Institute of Chicago](https://youtu.be/hd2D-83tSyU?si=LpdyGsL8jqS7TyjL)
+</center>
+
+::: notes
+A photo doesn't communicate the scale of the painting.  It took Seurat 18 months over two years to complete.
+:::
+
+## Algorithmic Art {.smaller}
+
+::::: columns
+::: {.column width=30%}
+![](/images/SundayPhoto.jpg){fig-alt="A modern photographic recreation of Seurat's painting."}
+:::
+
+::: {.column width=30%}
+
+1. Select a subset of points from the original image.
+1. Use those points, with their colors, as centers in a new image of the same size.
+1. Build the Voronoi diagram in the *new* image, using the center colors from the original image.
+:::
+
+::: {.column width=40%}
+![](/images/vorart.png){fig-alt="The Voronoi version of the photograph."}
+:::
+
+:::::
+
+::: notes
+We are going to focus on calculating Voronoi regions over discrete domains, specifically images.
+
+Choose some pixels as centers.  For every other pixel, figure out which center is closest.  For that operation, we need to compute distance between pixels (or some monotonically related measure).
+:::
+
+## Distance Between Pixels
+
+![](/images/Vpt1.jpg){fig-alt="A blue pixel and a yellow pixel in a 6 by 6 grid."}
+
+::: notes
+Draw in the right angle triangle.
+
+Give the pixels coordinates and write out the formula $\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$.
+
+Note that the location of the origin doesn't matter.
+:::
+
+## Nearest Center
+
+::: {.columns}
+
+::: {.column}
+![](/images/Vpt1.jpg){fig-alt="A blue pixel and a yellow pixel in a 6 by 6 grid."}
+:::
+
+::: {.column}
+![](/images/Vpt2.jpg){fig-alt="A red pixel and a yellow pixel in a 6 by 6 grid."}
+:::
+
+:::
+
+::: notes
+Note that we don't need the exact distance, just which center is closer to yellow.
+
+In particular, we don't need to compute the square root, which is computationally expensive (compared to other arithmetic operations) and results in floating point numbers (ugly).
+:::
+
+## Design an Algorithm
+
+![](/images/Valgorithmgrid.jpg){fig-alt="A large grid with 3 colored centers."}
+
+::: notes
+Consider a pixel which is not a center (not coloured).  What will we do?
+
+What will we do for the whole image?
+:::
+
+## Planning:
+
+::: {.columns}
+
+::: {.column}
+What data structures do we need?
+
+- Point:
+- Color:
+- Center:
+- Centers:
+- Image:
+:::
+
+::: {.column}
+How will the data flow through our algorithm?
+
+![](/images/small-centers.png){fig-alt="A small version of an image with 3 coloured centers."}
+:::
+
+:::
+
+::: notes
+1. Read image
+1. Choose centers (now finished with original image!!)
+1. Build new image -- for each point, for each center find distance.  Pick nearest center and use its colour.
+1. Write out new image.
+:::
+
+## Analysis
+
+::: {.columns}
+
+::: {.column}
+Let $c$ be number of centers\
+Let $n$ be the size of the image\
+($n =$ width $\times$ height).
+
+How much work is done? 
+
+1. Read image:
+1. Choose centers:
+1. Build new image:
+1. Write out new image:
+
+:::
+
+::: {.column}
+![](/images/small-centers.png){fig-alt="A small version of an image with 3 coloured centers."}
+:::
+
+:::
+
+::: notes
+1. $O(n)$.
+1. Hopefully $O(c)$.
+1. $O(nc)$.
+1. $O(n)$.
+
+Can we do better?
+:::
