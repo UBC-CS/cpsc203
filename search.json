@@ -2517,557 +2517,368 @@
     "text": "Demo\nPrairieLearn Activity"
   },
   {
-    "objectID": "slides/05_tue_plots.html#announcements",
-    "href": "slides/05_tue_plots.html#announcements",
+    "objectID": "slides/03_thu_dataclasses.html#announcements",
+    "href": "slides/03_thu_dataclasses.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nPractice examlet 2 is available.\n\nExamlet 2 next week (Thursday Oct 15 to Monday October 19).\nLab 4 and POTW 4 due Sunday October 11, 8pm.\nProject 1 due Monday October 26, 8pm."
+    "text": "Announcements\n\nPOTW 2 and 3…\nRegistration for examlet 1."
   },
   {
-    "objectID": "slides/05_tue_plots.html#the-question",
-    "href": "slides/05_tue_plots.html#the-question",
+    "objectID": "slides/03_thu_dataclasses.html#colour-and-code",
+    "href": "slides/03_thu_dataclasses.html#colour-and-code",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Question",
-    "text": "The Question\nGiven a year of charts,\n\nWhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data.\n\nWe are asking harder questions about our data:\n\nWorking with multiple weeks of data.\nVisualizing song trajectories.\n\nIn the process, we will practice the stuff we learned previously, and learn some new stuff."
+    "section": "Colour and Code",
+    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values."
   },
   {
-    "objectID": "slides/05_tue_plots.html#first-sketch-where-we-are-going",
-    "href": "slides/05_tue_plots.html#first-sketch-where-we-are-going",
+    "objectID": "slides/03_thu_dataclasses.html#colour-and-code-1",
+    "href": "slides/03_thu_dataclasses.html#colour-and-code-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "First: Sketch Where We Are Going",
-    "text": "First: Sketch Where We Are Going\nDraw a loose sketch of how you might visualize the paths through the Hot 100 chart for all songs which hit #1.\n\nWhat are some reasonable axes?\nImagine what the path of one song looks like.\nHow many paths are there for all songs?\n\n\n\nx-axis is time, y-axis is rank. But #1 should be at the top on the y-axis.\nOne line per song.\nWhat happens when a song does not have a rank?"
+    "section": "Colour and Code",
+    "text": "Colour and Code\nIf necessary, go back and review the slides on colour representation from previous lecture.\nOpen the List Activity on PrairieLearn and choose the Make the Poppies Grow question.\nExamples of programming idiom:\n\n“A commonly-used way to code a relatively small construct in a particular programming context.”\n“Using the idioms for a programming context helps a team work together since they lower the cognitive load of the resulting code.”\n\n\n\nReminding students of how to read code.\n\nIf you were starting from blank page, you would not take this approach.\n\nMay feel like I’m throwing you in the deep end, but that’s what happens when you read somebody else’s code…\n\n“Idiom” is used slightly differently in programming than in linguistics.\nThe normal Python idiom is to put all the libraries at the top of the file (rather than just before they are used).\n\nYou don’t need to do that in marimo because of the dependency check feature.\nCommon libraries often have idiomatic names (such as np for numpy).\n\nTuple notation. New atomic type np.uint8. Is this a compound or arbitrary-size data type? Depends on context: extracting red channel is compound, averaging is arbitrary size.\nThen a bunch of function definitions. How do we know what code is within a function?\nIn final cell: What does the with statement do? Equivalent to let in Dr. Racket. In practical terms, it ensures that the file is closed when the block ends.\n\nExamine the syntax of Image.open call. Google for PIL.Image. Google for np.array.\n\n\nIn fancify: Look at img.shape. Reminder about assigning multiple values (also allows function to return multiple values through a tuple).\n\nWe are treating image as an arbitrary-sized, so we are going to use looping. For looping, we need an accumulator.\nWe usually manipulate images in 2D – lists of lists – so we’ll have nested loops.\nRather than looping over the elements of the image, we’ll loop over the indexes of the elements and then extract the element of interest using indexing.\nReminder of range function.\nDo the loops traverse the image by rows or columns? Rows. Why is it (rows, columns)? We just need to pick one and stick with it. Note that doesn’t agree with (x,y) notation. Everybody gets it wrong regularly…\n\nIn boost_red_pixels why convert to int? Avoids overflow in addition.\nIn final image, why are yellows still present?"
   },
   {
-    "objectID": "slides/05_tue_plots.html#key-steps",
-    "href": "slides/05_tue_plots.html#key-steps",
+    "objectID": "slides/03_thu_dataclasses.html#your-turn-change-image-or-boost",
+    "href": "slides/03_thu_dataclasses.html#your-turn-change-image-or-boost",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Key Steps",
-    "text": "Key Steps\n\nAssemble the data we want to analyze.\nFind the list of Number 1 songs.\nFor each of those songs, make a list of their ranks over time.\nRearrange the data into a form suitable for plotting.\nGenerate the plot.\n\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen challenge1_nb.py."
+    "section": "Your turn: Change image or boost",
+    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different color (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?"
   },
   {
-    "objectID": "slides/05_tue_plots.html#step-3-filter-for-multiple-possible-values",
-    "href": "slides/05_tue_plots.html#step-3-filter-for-multiple-possible-values",
+    "objectID": "slides/03_thu_dataclasses.html#compound-data-types",
+    "href": "slides/03_thu_dataclasses.html#compound-data-types",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Step 3: Filter for Multiple Possible Values",
-    "text": "Step 3: Filter for Multiple Possible Values\nWe have a list of song titles that hit #1.\nNow we want all rows for those songs — their complete chart history."
+    "section": "Compound Data Types",
+    "text": "Compound Data Types\nSo far we have focused on\n\nSimple atomic types, such as built-ins int, str or library types np.uint8.\nArbitrary-sized types, such as list or tuple.\n\nBut we often want to store a fixed number of pieces of information which naturally belong together.\n\nRepresenting a UBC student might require a student number, a first name, a last name, a date of birth, etc.\nRepresenting a car might require a make, a model, a colour, a license plate, etc.\nA license plate might require a jurisdiction and a plate “number”.\n\nFor that, we use compound data types."
   },
   {
-    "objectID": "slides/05_tue_plots.html#useful-pandas-.isin",
-    "href": "slides/05_tue_plots.html#useful-pandas-.isin",
+    "objectID": "slides/03_thu_dataclasses.html#our-example-a-bead-bracelet",
+    "href": "slides/03_thu_dataclasses.html#our-example-a-bead-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Pandas: .isin()",
-    "text": "Useful Pandas: .isin()\n.isin(list) method returns True for rows where the value appears in the list.\n\n\n\n\n\n\n\n\nWe’ve already loaded some data behind the scenes…"
+    "section": "Our Example: A Bead Bracelet",
+    "text": "Our Example: A Bead Bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
   },
   {
-    "objectID": "slides/05_tue_plots.html#step-4-reshaping-for-plotting",
-    "href": "slides/05_tue_plots.html#step-4-reshaping-for-plotting",
+    "objectID": "slides/03_thu_dataclasses.html#previously-in-cpsc-103-or-cpsc-110",
+    "href": "slides/03_thu_dataclasses.html#previously-in-cpsc-103-or-cpsc-110",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Step 4: Reshaping for Plotting",
-    "text": "Step 4: Reshaping for Plotting\n\n\nOur data looks like this:\n\nOne row per song per week.\nMultiple rows for each week.\nMultiple rows for each song.\n\n\n\n\ndate\ntitle\nrank\n\n\n\n\n2025-01-04\nSong A\n1\n\n\n2025-01-04\nSong B\n15\n\n\n2025-01-11\nSong A\n3\n\n\n2025-01-11\nSong B\n1\n\n\n\n\nBut for plotting we want\n\nOne row per week (x-axis value).\nOne column per song (one line).\nRank is no longer a column.\n\n\n\n\ndate\nSong A\nSong B\n\n\n\n\n2025-01-04\n1\n15\n\n\n2025-01-11\n3\n1\n\n\n\n\n\nPivoting is a very common operation on tabular data.\n\nThe unique entries in one input column (or perhaps a combination of input columns) become the rows of the output.\nThe unique entries in another input column (or perhaps a combination of input columns) become the columns of the output.\nSome aggregation of the entries in yet another column (or perhaps a combination of input columns) for the matching rows become the entries of the output.\nThis case is a particularly simple pivot because each entry in the output table corresponds to a single row of the input table.\n\nThis part of the code is magic Pandas for me."
+    "section": "Previously in CPSC 103 or CPSC 110",
+    "text": "Previously in CPSC 103 or CPSC 110\nIn CPSC 103, we used NamedTuple to create a compound type:\nfrom typing import NamedTuple\nBead = NamedTuple('Bead', [('r', float), ('c', tuple[int, int, int])])\nB1 = Bead(5.0, (255, 0, 255))\n\ndef circumference(b: Bead) -&gt; float:\n    return 2 * math.pi * b.r\nIn CPSC 110, we used define-struct to create a compound type:\n(@htdd Bead)\n(define-struct bead (r, c))\n;; Bead is (make-bead Float Color)\n;; interp. A bead with radius r and RGB colour c\n(define B1 (make-bead 5.0 `(255, 0, 255)))\n\n(define (circumference b)\n  (* 2 pi (bead-r b)))\n\nIf you did not take CPSC 103 or 110, don’t worry about these examples.\n\nWe recommend that everybody use dataclasses going forward.\n\nThere is an alternative notation for NamedTuple using the class statement.\n\nSee design recipes at course webpage.\nIt will make more sense once we look at dataclasses.\nThere are some pros/cons to using NamedTuple instead of dataclass, but the alternative class-based notation for NamedTuple is definitely more idiomatic."
   },
   {
-    "objectID": "slides/05_tue_plots.html#useful-pandas",
-    "href": "slides/05_tue_plots.html#useful-pandas",
+    "objectID": "slides/03_thu_dataclasses.html#dataclasses-in-python",
+    "href": "slides/03_thu_dataclasses.html#dataclasses-in-python",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Pandas",
-    "text": "Useful Pandas\n\ngroupby() method organizes rows into groups. In this case, one group per (date, title) pair.\n\nResult is a Series with a multi-level index (date, title).\nEach group has exactly one row, so sum() method just extracts that row’s value.\n\nunstack() method takes the inner index level (title) and makes it into columns in a DataFrame.\n\nNow each column is a song, each row is a date!"
+    "section": "Dataclasses in Python",
+    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\nfrom dataclasses import dataclass\n\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]  # RGB\nThis creates a new type called Bead with two attributes.\n\nWhat type is colour: atomic, arbitrary sized, …? While it is a tuple, we are treating it (mostly) as compound rather than arbitrary sized because:\n\nIt always has three values.\nThe values each have a distinct meaning (red, green or blue).\nShould we have created a Colour data type?"
   },
   {
-    "objectID": "slides/05_tue_plots.html#try-it-yourself",
-    "href": "slides/05_tue_plots.html#try-it-yourself",
+    "objectID": "slides/03_thu_dataclasses.html#creating-bead-objects",
+    "href": "slides/03_thu_dataclasses.html#creating-bead-objects",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Try It Yourself",
-    "text": "Try It Yourself\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen STUDENT_viz_nb.py and work through “Part 1: Visualizing Chart Trajectories”.\n\nBasically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch."
+    "section": "Creating Bead Objects",
+    "text": "Creating Bead Objects\n\n\n\n\n\n\n\nWhy use @dataclass rather than just regular Python classes?\n\nDataclasses automatically generate a bunch of annoying but important methods, such as the constructor and a display routine (useful when you want to print).\nThey have some constraints, but nothing that will come up in CPSC 203.\nOur recommendation:\n\nIf you are creating your own class, use dataclass.\nIf you are using somebody else’s class, pretend it is a dataclass until you are forced not to."
   },
   {
-    "objectID": "slides/05_tue_plots.html#visualization-discussion",
-    "href": "slides/05_tue_plots.html#visualization-discussion",
+    "objectID": "slides/03_thu_dataclasses.html#vocabulary",
+    "href": "slides/03_thu_dataclasses.html#vocabulary",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Visualization Discussion",
-    "text": "Visualization Discussion\n\nWhat patterns do you see in the #1 songs?\nDo most songs debut at the top?\nHow quickly do they typically fall?\nAny songs with unusual trajectories?"
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nIn CPSC 103 / 110 we talked about a type vs an instance of that type.\n\nA type is a category of data, and explains how that data maps to information (the representation and interpretation). For example, an int is a type for storing integers.\nAn instance is a concrete example of a type. For example, the value 42 is an instance of the type int.\n\nIn Python (and many other languages) compound types use special terminology.\n\nThe type is called a class.\nAn instance of a class is called an object."
   },
   {
-    "objectID": "slides/05_tue_plots.html#the-question-1",
-    "href": "slides/05_tue_plots.html#the-question-1",
+    "objectID": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
+    "href": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "The Question",
-    "text": "The Question\nDoes a strong debut mean a song will stick around longer?\nOr do slow climbers have more staying power?\nLet’s investigate with a scatter plot!"
+    "section": " Your Turn: Beads",
+    "text": "Your Turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n \n\nAnswers: 10.0, 255, 8.0"
   },
   {
-    "objectID": "slides/05_tue_plots.html#key-steps-1",
-    "href": "slides/05_tue_plots.html#key-steps-1",
+    "objectID": "slides/03_thu_dataclasses.html#adding-behavior-methods",
+    "href": "slides/03_thu_dataclasses.html#adding-behavior-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Key Steps",
-    "text": "Key Steps\n\nAssemble the data we want to analyze.\nFind the debut position of each song.\nFind the total number of weeks each song stayed on the chart.\nRearrange the data into a form suitable for plotting.\nGenerate the plot.\n\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen challenge2_nb.py."
+    "section": "Adding Behavior: Methods",
+    "text": "Adding Behavior: Methods\nA dataclass can also have methods.\n\n\n\n\n\n\n\nWhat is this self parameter?\n\nThe first parameter of any method contains the object on which this method was called. Python idiom is to use the name self for this parameter.\nCalling a method with dot notation is also standard Python idiom, but you could also call it through the class: print(Bead.diameter(b)). Note that you need to explicitly include the bead object as the first parameter in this case."
   },
   {
-    "objectID": "slides/05_tue_plots.html#useful-pandas-1",
-    "href": "slides/05_tue_plots.html#useful-pandas-1",
+    "objectID": "slides/03_thu_dataclasses.html#adding-behavior-more-methods",
+    "href": "slides/03_thu_dataclasses.html#adding-behavior-more-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Pandas",
-    "text": "Useful Pandas\n\nrename() method allows you to rename columns.\ntoframe() method can convert a Series into a DataFrame.\npd.merge() function can combine the data in two tables.\n\n\n\nOften we don’t need to worry about Series vs DataFrame. Pandas is surprisingly forgiving."
+    "section": "Adding Behavior: More Methods",
+    "text": "Adding Behavior: More Methods\nAdd a draw method:"
   },
   {
-    "objectID": "slides/05_tue_plots.html#visualization-discussion-1",
-    "href": "slides/05_tue_plots.html#visualization-discussion-1",
+    "objectID": "slides/03_thu_dataclasses.html#demo",
+    "href": "slides/03_thu_dataclasses.html#demo",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Visualization Discussion",
-    "text": "Visualization Discussion\n\nIs there a correlation between debut position and staying power?\nAny outliers — songs that debuted low but stayed forever?\nOr songs that debuted at #1 but disappeared quickly?\n\nPractice for yourself:\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen STUDENT_viz_nb.py and work through “Part 2: Staying Power”.\n\nBasically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch."
+    "section": "Demo",
+    "text": "Demo\n\n\n\n\n\n\n\n\nDuring an exam, we would not expect you to remember how to write the stuff we’re doing with matplotlib in this code.\nYou should definitely remember how to create and use a dataclass."
   },
   {
-    "objectID": "slides/05_tue_plots.html#summary",
-    "href": "slides/05_tue_plots.html#summary",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nConcept\nCode\n\n\n\n\nFilter by condition\ndf[df['rank'] == 1]\n\n\nGet unique values\ndf['title'].unique()\n\n\nFilter by list\ndf[df['title'].isin(list)]\n\n\nReshape for plotting\n.groupby([...]).unstack()\n\n\nCombining tables\npd.merge()"
-  },
-  {
-    "objectID": "slides/05_tue_plots.html#resources",
-    "href": "slides/05_tue_plots.html#resources",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Resources",
-    "text": "Resources\nhttps://pymotw.com/2/datetime/\nhttps://www.dataschool.io/best-python-pandas-resources/\nhttps://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\nhttps://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#warning",
-    "href": "slides/01_thu_intro.html#warning",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Warning",
-    "text": "Warning\n\n\n\nThis course uses slides.\n\nIt is familiar and easy way to learn, but often leads to poor understanding and retention.\n\n\n\n\n\n\nLearning is a contact sport!\n\nYou will be surprised, confused, angry, and sad on the path to enlightenment"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#how-learning-works",
-    "href": "slides/01_thu_intro.html#how-learning-works",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How Learning Works",
-    "text": "How Learning Works"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#teaching-staff",
-    "href": "slides/01_thu_intro.html#teaching-staff",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\nInstructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: TBA\n\nTA: Jayden Lieu \n\nOffice Hours: TBA\n\nTA: Timothy Solnyshkin \n\nOffice Hours: TBA"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#you",
-    "href": "slides/01_thu_intro.html#you",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "You!",
-    "text": "You!\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question that you think will divide the class about in half\nExamples:\n\nCoke or Pepsi?\n\nSpaghetti or Sushi?\n\nMorning person or Night owl?"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#lets-play-a-game",
-    "href": "slides/01_thu_intro.html#lets-play-a-game",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Play a Game",
-    "text": "Let’s Play a Game\nRules:\n\nEveryone starts with their hand up\nEach turn, a student poses a valid yes/no question\n\nYES = Put your hand down\nNO = Keep it up\n\nYES people are now on vacation 🌴 (your hand stays down from now on — relax and enjoy!)\nA question is valid if more than four and less than half the remaining people say “yes”\n\nEnd of Game:\n\nWe stop when ten or fewer people remain in play\nEveryone else is happily on vacation 🌴\n\n\nHow to Count\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 down -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 down &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#debrief",
-    "href": "slides/01_thu_intro.html#debrief",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Debrief 💡",
-    "text": "Debrief 💡\nPunchline questions:\n\nWhat is the minimum number of questions?\nWhat is the maximum number of questions?\nWhy did we stop at 10 instead of 1?\nWhy did we do this game?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#where-to-start",
-    "href": "slides/01_thu_intro.html#where-to-start",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Where to start?",
-    "text": "Where to start?\nCourse Website: https://ubc-cs.github.io/cpsc203\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\nNot Canvas: https://canvas.ubc.ca/courses/193007"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#about-this-course",
-    "href": "slides/01_thu_intro.html#about-this-course",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "About This Course",
-    "text": "About This Course\nThis course will teach you a bunch of different things!\n\n(More) Python!\nNew data types and patterns: classes, dictionaries, tables, graphs\nData science: pandas, data frames, visualizations\nAlgorithms and complexity\nArt and creativity: lots of examples!\nTools and Techniques(?): Terminal, marimo, PrairieLearn, unit tests, Markdown, Git,"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#schedule-syllabus-and-logistics",
-    "href": "slides/01_thu_intro.html#schedule-syllabus-and-logistics",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Schedule, Syllabus and Logistics",
-    "text": "Schedule, Syllabus and Logistics\nhttps://ubc-cs.github.io/cpsc203\n\n\nShow 2025W2 schedule to see how the table will fill out.\nShow grading policy."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#course-components-lecture-and-take-home",
-    "href": "slides/01_thu_intro.html#course-components-lecture-and-take-home",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Course Components: Lecture and Take-Home",
-    "text": "Course Components: Lecture and Take-Home\nAll elements are accessed through PrairieLearn.\n\nLectures: Tuesdays and Thursdays, in-class activities based on problem solving and design.\nLabs: Mondays / Tuesdays / Thursdays, practice on lecture material.\n\nReleased on Sunday night, due the following Sunday night.\n\nProblems of the week (POTW): One per (week)day, ~ 50 / term.\n\nReleased in batches of five on Sunday night, due the following Sunday night.\n\nProjects: Three total, involve more substantial programming practice.\n\nReleased on Monday morning, due three weeks later."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#course-components-2-invigilated",
-    "href": "slides/01_thu_intro.html#course-components-2-invigilated",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Course Components 2: Invigilated",
-    "text": "Course Components 2: Invigilated\n\nExamlets: Five, roughly every two weeks.\n\nSchedule your own 50 minute block.\nAvailable Thursday through Monday.\n\nFinal Exam:\n\nSchedule your own 110(?) minute block.\nAvailable during a five day window TBA.\nPractice version released a week before.\n\nYou will physically go to an ORCA facility.\nScheduling is done through PrairieTest.\n\nOpens Tuesday at 10:00am, two weeks before the assessment.\n\nPractice versions released through PrairieLearn a week before."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#semester-overview",
-    "href": "slides/01_thu_intro.html#semester-overview",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Semester overview",
-    "text": "Semester overview\n\n\n\n\n\n\n\n\n\n\n\nHandcraft\nBillboard Hot 100\nThe Overstory and Pointillism\nArtificial Music Composition\nRoad Trip Planning\nSpiderman’s Social Network\n\n\n\n\nDesign\nObjects\nIteration\nWeb Scraping\nData Frames\nMatPlotLib\nVoronoi Diagrams\nEfficiency\nMarkov Chains\nRandom Numbers\nGraphs\nTraveling Salesperson\nIntractable Problems\nNatural Language\n\n\n\nThis course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#on-the-use-of-computers-in-class",
-    "href": "slides/01_thu_intro.html#on-the-use-of-computers-in-class",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "On the use of computers in class",
-    "text": "On the use of computers in class\nLaptop use is encouraged in CPSC 203 lectures and labs \nHowever, there is a restriction:\n\nYou may only use your laptop (or other screens, such as phones) for CPSC 203 material.\n\nUsing screens for other purposes has been shown to reduce your learning and lower your grades.\nUsing screens for other purposes has also been shown to reduce the grades of those around you.\n\nIf you have something urgent to do, just leave the classroom!"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#how-to-study",
-    "href": "slides/01_thu_intro.html#how-to-study",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "How to Study",
-    "text": "How to Study\n\nThis is learn by doing material!\n\nPassively watching videos / live coding and reading our solutions will not be enough.\nYou must solve the problems yourself and write out their solutions.\n\nThere are many opportunities for you to practice:\n\nIn lecture, labs, POTWs, practice examlets, projects, …"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#from-a-former-cpsc-110-student-applies-to-cpsc-203-too",
-    "href": "slides/01_thu_intro.html#from-a-former-cpsc-110-student-applies-to-cpsc-203-too",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "From a Former CPSC 110 Student (Applies to CPSC 203 too)",
-    "text": "From a Former CPSC 110 Student (Applies to CPSC 203 too)\n\nIt’s funny how repetition in actually doing the work leads to it all of a sudden making sense to me. I can’t explain it. I don’t have a sense of growing understanding. I have confusion, repetition, and suddenly a sense of understanding. It’s not coming through watching or reading, though. It comes from replicating what I’ve watched several times. This has happened repeatedly for me in this class. I start the week with a sense of accomplishment, well being, peace of mind, and confidence from the victory over last week’s homework. I am then submerged in doubt, confusion, and erm, terror. (Why not be melodramatic?) Suddenly there is a working epiphany and I have victory again."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#possible-sources-of-negative-emotions",
-    "href": "slides/01_thu_intro.html#possible-sources-of-negative-emotions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Possible sources of negative emotions",
-    "text": "Possible sources of negative emotions\n\nFeeling confused about a topic.\nFeeling of falling behind/not having enough time.\nSome external event.\nSomething else.\n\nWe can usually find a solution!\n\nTalk to us!"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#dont-be-afraid-to-try-and-fail",
-    "href": "slides/01_thu_intro.html#dont-be-afraid-to-try-and-fail",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Don’t Be Afraid to Try (and Fail)!",
-    "text": "Don’t Be Afraid to Try (and Fail)!"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#elegance-example",
-    "href": "slides/01_thu_intro.html#elegance-example",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Elegance Example?",
-    "text": "Elegance Example?\nScissors\n\n\n\n\n\n\n\n\n\nquestions we leave with… can something be elegant if it’s not functional?"
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#conclusions",
-    "href": "slides/01_thu_intro.html#conclusions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Conclusions",
-    "text": "Conclusions\nToday we have begun to introduce some of the themes and ideas that we’ll see all term long:\n\nCounting steps: What’s the best that can happen? What’s the worst?\nCourse schedule, syllabus and logistics.\nElegance."
-  },
-  {
-    "objectID": "slides/01_thu_intro.html#get-yourself-registered",
-    "href": "slides/01_thu_intro.html#get-yourself-registered",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Get Yourself Registered",
-    "text": "Get Yourself Registered\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\n\n\nTell the students to go to each of these sites and register."
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#announcements",
-    "href": "slides/06_tue_dictionaries.html#announcements",
+    "objectID": "slides/02_thu_representation.html#announcements",
+    "href": "slides/02_thu_representation.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nExamlet 2 runs today through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\n\nIf your scheduled lab was yesterday, you can still attend:\n\nT1F: Tue, 18:00 - 19:30.\nT1E: Thu, 9:30 - 11:00.\n\n\nProject 1 due Monday, October 26 (~two weeks).\n\n\nThere was a misconfiguration for examlet 2: Starts today, ends on Sunday. But you’ve had the material (dataclasses and lists) for more than a week, so no big deal."
+    "text": "Announcements\n\nPOTW1 and Lab1 are due Sunday at 8pm.\n\nPOTW2 and Lab2 will become available after that.\n\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for examlet 1 (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\nFirst practice examlet will become available on Monday.\n\nCovers same material as examlet 1."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#key-value-pairs",
-    "href": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "objectID": "slides/02_thu_representation.html#todays-plan",
+    "href": "slides/02_thu_representation.html#todays-plan",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Key-Value Pairs",
-    "text": "Key-Value Pairs\n\n\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen key_value_patterns.py.\n\n\n\n\n\n\nKey\nValue\n\n\n\n\nname\nIan Mitchell\n\n\ndepartment\nComputer Science\n\n\nprogram\nM.Sc.\n\n\nstart date\n1995-09-01\n\n\nterms\n7\n\n\ndomestic student\nyes\n\n\n⋮\n⋮"
+    "section": "Today’s Plan",
+    "text": "Today’s Plan\n\nData vs Information\n\nSymbols can have multiple meanings\n\nRepresentation in computers\n\nComputer hardware interprets electrical signals as binary digits (“bits”).\nWe can use bits to represent numbers, and numbers to represent virtually anything.\n\n\n\nSummary\nToday we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
-    "href": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "objectID": "slides/02_thu_representation.html#data-vs-information-1",
+    "href": "slides/02_thu_representation.html#data-vs-information-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Representing Key-Value Pairs",
-    "text": "Representing Key-Value Pairs\n\nHow could we represent this information? Don’t say “dictionary”.\n\nWhat type for the whole set of data?\nWhat type for each row of data?\nWhat type for the keys?\nWhat type for the values?\n\n\n\n\nArbitrary size / list.\nCompound with two elements: key and value.\nString.\nAnything. Can use typing.Any to formally recognize that type, although it is essentially the Python default.\n\nSee alternative representation as two lists of the same length. Not recommended, but this approach was often used in older languages where compound data was syntactically difficult."
+    "section": "Data vs Information",
+    "text": "Data vs Information\n\n\n\n\nYou care about information.\nPrograms can process data\n\n\nThe definition of “information” and “data” are a bit slippery, because what is information in one context might be data in another. For a particular problem, the data is what the program can process while the information is what the human cares about. Note that the representation / interpretation might be trivial: If the information is numbers, then the data is probably the same number (forboding…).\nAlso: Humans will still have to transform information into knowledge and/or action…"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
-    "href": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "objectID": "slides/02_thu_representation.html#multiple-interpretations",
+    "href": "slides/02_thu_representation.html#multiple-interpretations",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Efficiency of List Representations",
-    "text": "Efficiency of List Representations\nIf there are \\(n\\) key-value pairs in the store, how long does it take to:\n\nLook up the value associated with a key?\nDetermine whether a key is in the store?\nAdd a key-value pair?\n\n\nA Python dict can perform any of these operations in constant time for any \\(n\\).\n\n\n\n\\(O(n)\\).\n\\(O(n)\\) (even though you can write it without a loop using the in keyword).\n\\(O(1)\\).\nNote that using in on a dictionary is \\(O(1)\\).\n\nYou cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation. That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation. At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency."
+    "section": "Multiple Interpretations",
+    "text": "Multiple Interpretations\n\nWhat do the following English words mean?\n\nproduce\ncontest\nobject\nconsole\n\nWhat does this colour mean? \n\n\n\nWith interpretation (noun or verb), the word meaning becomes clear.\nRed can mean many things\n\nemotion: anger, joy, love, mourning (depends on your cultural background)\npolitics: communism, socialism (but: Republicans???)\nsafety: danger, stop\nfinance: loss or debt"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
-    "href": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "objectID": "slides/02_thu_representation.html#multiple-representations",
+    "href": "slides/02_thu_representation.html#multiple-representations",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Not Just a One-Trick Pony",
-    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nCompound data.\nTracking membership.\nCounting appearances / frequencies.\nFinding complements.\nGrouping by (discrete) category.\nRepresenting a map or translation over a discrete domain.\n\nSee slides / class activity from last lecture for the first five.\nToday: Translation / mapping.\n\nNote that there is nothing special about dictionaries and compound data:\n\nAny key-value lookup representation could be used for compound data.\nAny compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).\n\nOkay, all done discussing (bad) ways of implementing key-value lookup. Now let’s return to the ways we can use it.\nIf necessary, go back and complete any patterns that were not completed in the previous lecture."
+    "section": "Multiple Representations",
+    "text": "Multiple Representations\n\nHow can we represent this colour? \n\n\n\n\nWords\n\nred (english)\nrouge (french)\nckʷim (hən̓q̓əmin̓əm̓)\npula (tagalog)\n红色 (simplified Chinese)\n\n\n\n\nNumbers\n\n(255, 0, 0)\n#FF0000\n\n\n\n\n\nlight of a certain wavelength\nan object which reflects those wavelengths, such as a fabric swatch\nblood(?)\nhən̓q̓əmin̓əm̓ is the language of the Musqueam people."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
-    "href": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
+    "objectID": "slides/02_thu_representation.html#how-to-design-data-functions-programs",
+    "href": "slides/02_thu_representation.html#how-to-design-data-functions-programs",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Common Pattern: Translation/Mapping",
-    "text": "Common Pattern: Translation/Mapping\n\n\nUse case: Convert values from one representation to another.\n\n\nExample: Go through a string and replace any word which has an emoji equivalent.\n\n\nExample: Substitution cypher.\n\n\n\n\n\nword\nemoji\n\n\n\n\nsun\n☀️\n\n\nrain\n🌧️\n\n\ncloud\n☁️\n\n\nhappy\n😊\n\n\nsad\n😢\n\n\nlove\n❤️\n\n\ncat\n🐱\n\n\ndog\n🐶\n\n\ncoffee\n☕\n\n\n\n\n\n\nEmoji substitution:\n\nsplit() defaults to separating on any whitespace character (space, newline, tab).\njoin() uses the separator string (in this case a single space character) between each string in the list. You could use an empty string as separator if you just want to paste the words together.\nNote that “coffee” is not caught because it has the comma at the end.\n\nFor demo purposes, remove the comma manually.\nRemoving that comma is a little tricky, and putting it back is even trickier. We aren’t going in to the details; suffice to say that written text is annoying to parse in its full generality.\n\n\nDecryption:\n\nThat message isn’t appropriate for this term, since the reading break isn’t for several more weeks.\nHow would we encode a different message? Not easy to do with the existing dictionary, since we would want to look up values and return the matching key."
+    "section": "How to Design Data / Functions / Programs",
+    "text": "How to Design Data / Functions / Programs\n\nLet’s review HtDD / HtDF / HtDF recipes"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#lets-practice",
-    "href": "slides/06_tue_dictionaries.html#lets-practice",
+    "objectID": "slides/02_thu_representation.html#representation",
+    "href": "slides/02_thu_representation.html#representation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Practice!",
-    "text": "Let’s Practice!\nOpen today’s activity. You’ll solve 2 new puzzles.\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen STUDENT_dict_patterns_nb.py."
+    "section": "Representation",
+    "text": "Representation\nToday we’re exploring a fundamental question: How do we represent the world as data?\nNote that “representation” has (at least) two meanings:\n\nTechnical: How computers encode rich concepts (like colour) as numbers\nSocial: Who is represented in this discipline, and why it matters\n\n\nCourse content will focus on the former.\nAs a field, computer science continues to struggle with the latter. I encourage you all, both in the course and beyond, to stamp your own interpretations and ideas on the field even if the incumbents might not agree. While the demographics of computing have been historically narrow, the field also has an unmatched enthusiasm for innovation and “breaking things”."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#summary",
-    "href": "slides/06_tue_dictionaries.html#summary",
+    "objectID": "slides/02_thu_representation.html#computer-data",
+    "href": "slides/02_thu_representation.html#computer-data",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Summary",
-    "text": "Summary\nDictionaries give you fast lookup by key — whether you have 100 items or 100,000.\n\n\n\nPattern\nUse Case\nTechnique\n\n\n\n\nRecord\nStore named fields\n{\"name\": ..., \"age\": ...}\n\n\nMembership\nTrack what we’ve seen\nseen[x] = True\n\n\nCounting\nCount occurrences\nCounter(items)\n\n\nComplement\nFind pairs\nStore & check complements\n\n\nGrouping\nOrganize by category\ndefaultdict(list)\n\n\nTranslation\nConvert values\nDirect key → value mapping"
+    "section": "Computer Data",
+    "text": "Computer Data\n\n\nWhat does data look like to a computer?\n\nDetect voltage levels (actually the presence of electrical charges in tiny capacitors).\nAnalog vs digital: What’s the difference?\nBinary digits –&gt; “bits”\n\n\n\n\n\n\n\nPicture the capacitors as little cups containing water.\n\nDiscuss analog vs digital interpretation of the amount of water.\n\nPositive and negative charges interpreted as 1 and 0, which leads us to “binary”\n\nDiscuss why we decided to go with binary, as opposed to decimal or something else. (Actually, in some systems they use other powers of 2.)"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#oh-no",
-    "href": "slides/06_tue_dictionaries.html#oh-no",
+    "objectID": "slides/02_thu_representation.html#but-humans-use-decimal-numbers",
+    "href": "slides/02_thu_representation.html#but-humans-use-decimal-numbers",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Oh No!",
-    "text": "Oh No!\nIn CPSC 103 / 110: One code template for each data type.\nIn CPSC 203:\n\nCompound data could be stored as NamedTuples / DataClasses, lists / tuples, or dictionaries.\n\nSlightly different syntax, but same basic template.\n\nKey-value pairs can be stored as dictionaries.\n\nNotably different code template depending on the task.\nSometimes the problem information is not in the form of a key-value pair.\n\n\n\nShow HtDP page for compound data types.\nAlready in form of key-value pairs: Records, translation.\nNeed to create form of key-value pairs: Membership, counting, complement, grouping.\nWe could have solved all of these patterns with list (and maybe compound) data types, but the result would be much less efficient (\\(O(n^2)\\) instead of \\(O(n)\\)).\nGoing forward, we will see some additional data structures where we are adding complexity and/or data beyond what is strictly necessary in order to achieve reasonable efficiency."
+    "section": "But Humans use Decimal Numbers",
+    "text": "But Humans use Decimal Numbers\n\nMost common approach to representing numbers for humans is the Hindu-Arabic numeral system.\n\nIt is a positional system using 10 as the radix.\nOften called base-10 or decimal.\n\n\n\n\n\n3\n1\n5\n7\n\n\n103 = 1000\n102 = 100\n101 = 10\n100 = 1\n\n\n\n\nWrite out full english version of the decimal number."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#python-magic-methods",
-    "href": "slides/06_tue_dictionaries.html#python-magic-methods",
+    "objectID": "slides/02_thu_representation.html#converting-between-bases",
+    "href": "slides/02_thu_representation.html#converting-between-bases",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Python Magic Methods",
-    "text": "Python Magic Methods\nRemember: Any piece of data in Python is an object that belongs to a class.\nYou will often see references to methods with two underscore characters before and after the name; for example, __init__(), __str__(), __len()__.\n\nCalled dunder (short for double underscore) or magic methods.\nDo not make up your own method names with the double underscore notation.\nYou can definitely implement these methods for your own classes.\n\n\nYou will run into these methods in the Python documentation.\nYou can write other methods with dunder names, but you will just confuse everybody.\nBy using dataclasses, you get reasonable implementations of several of these methods for free; for example, __init__() and __str__()."
+    "section": "Converting between Bases",
+    "text": "Converting between Bases\n\nWe can use other bases.\n\nThe Babylonians used base-60.\nComputers use base-2 or binary.\n\n\n\n\n\n\n\n\n\n\n\n1\n1\n0\n1\n\n\n[2]3 = 8\n[2]2 = 4\n[2]1 = 2\n[2]0 = 1\n\n\n\n\nConvert the binary number to decimal."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#example-magic-methods",
-    "href": "slides/06_tue_dictionaries.html#example-magic-methods",
+    "objectID": "slides/02_thu_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
+    "href": "slides/02_thu_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Example Magic Methods",
-    "text": "Example Magic Methods\nMagic methods are used by Python to implement internal behaviours and operator overloading.\n\nWhen you call print(x), Python displays the result of x.__str__().\nWhen you call len(x), Python returns the result of x.__len__().\nWhen you write x + y, Python will call x.__add__(y).\nWhen you write x[i], Python will call x.__getitem__(i).\nWhen you write x[i] = y, Python will call x.__setitem__(i, y).\n…\n\n\nMost Python operators are just syntactic sugar for method calls; in other words, a way of writing method calls which is easier for humans to read."
+    "section": " Your turn: Thinking about bits",
+    "text": "Your turn: Thinking about bits\n\nWhat’s the largest number you can represent with 4 bits?\nHow many bits do you need to represent 120?\nIf I give you one more bit, what happens to how many numbers you can represent?\nHow high can you count on your fingers? and toes?\nAs the number \\(k\\) grows, how does the number of digits grow?\n\n\n \n\n\nLargest with 4 bits: 15 (1111).\nBits for 120: 7 bits (120 &lt; 128 = 2^7).\nOne more bit: DOUBLES the numbers you can represent!\nRemember 210 about 1000, 220 = 106.\nComplexity (number of digits) grows as \\(\\log k\\).\nWhat about non-positional number systems?\n\nTally or roman numerals grow as \\(k\\) (even for Roman numerals, since the largest single digit is “M” = one thousand)."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#class-hierarchies",
-    "href": "slides/06_tue_dictionaries.html#class-hierarchies",
+    "objectID": "slides/02_thu_representation.html#from-bits-to-everything",
+    "href": "slides/02_thu_representation.html#from-bits-to-everything",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Class Hierarchies",
-    "text": "Class Hierarchies\nRemember: Any piece of data in Python is an object that belongs to a class.\nWhen we have a bunch of related classes, we often organize them in a hierarchy.\n\nClasses have a parent or superclass from which they inherit attributes and methods.\n\nIf a class definition does not list a superclass, then it inherits from Python’s object class.\n\nClasses can have children or subclasses which implement (or even change) their methods and attributes.\n\n\nDo you need to know how to build or even use class hierarchies for the exam? No.\nIt is useful to know this vocabulary when reading Python documentation / explanations, and also to understand interfaces."
+    "section": "From bits to… everything?",
+    "text": "From bits to… everything?\nWe can represent integers, so we can assign integers to any other (discrete) data\n\nText: ASCII or Unicode (aka UTF-8, UTF-16, UTF-32)\nSound (amplitude samples)\nImages (pixel colours)\nVideo (sequences of images)\nHumans (UBC student numbers, social insurance numbers, national identification number, …)\n\nLet’s see how this works with colour.\n\nHow many different characters can we represent with UTF-32? Just 1,112,064 (even though 232 = 4 billion)."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#why-class-hierarchies",
-    "href": "slides/06_tue_dictionaries.html#why-class-hierarchies",
+    "objectID": "slides/02_thu_representation.html#colour-interpretation",
+    "href": "slides/02_thu_representation.html#colour-interpretation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Why Class Hierarchies?",
-    "text": "Why Class Hierarchies?\nConceptually, the idea is that you can work with an object as if it was an instance of the parent class rather than needing to know to which specific child class it belongs.\nIn particular, different children might:\n\nStore their data in different ways.\nStore different data.\nImplement the same method in different ways.\n\nBut the user only needs to know the common method’s signature (typically given in the parent class).\n\nFormal hierarchies are important in strongly typed languages, such as C++ or Java. In those languages the type of every object must be known in advance, so the ability to pretend to be a parent type is powerful.\nPython uses informal “duck typing” (if it walks like a duck and quacks like a duck, it is a duck), so you don’t need to formally be an object of a child class in order for this trick to work."
+    "section": "Colour Interpretation",
+    "text": "Colour Interpretation\n\n\n\nHow does light wavelength become colour? Biological interpretation\nWhat’s your favorite colour? Psychological interpretation\nDoes that colour influence your dress/decor/purchases? Cultural interpretation\n\nNormal computer images do none of these three things (although it does take advantage of how human biology detects light)."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#class-hierarchy-example",
-    "href": "slides/06_tue_dictionaries.html#class-hierarchy-example",
+    "objectID": "slides/02_thu_representation.html#human-colour-perception",
+    "href": "slides/02_thu_representation.html#human-colour-perception",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Class Hierarchy Example",
-    "text": "Class Hierarchy Example\n\n\n\n\n\n\n\nAgain, we will not expect you to be able to write or even read class hierarchies like this. I am presenting it to explain some common vocabulary."
+    "section": "Human Colour Perception",
+    "text": "Human Colour Perception\n\nHuman color vision has three channels\n\nOur brain experiences color based on the intensity of light detected by “red”, “green” and “blue” cone cells in our retinas\n\n\n\n\n\nIf we are shown a yellow wavelength\n\nL cones will respond strongly\nM cones will respond almost as strongly\nS cones will respond weakly\n\nTo fake a yellow wavelength (for a human)\n\nShow a lot of a red wavelength\nShow a little less of a green wavelength\nShow little or no blue wavelength"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#interfaces",
-    "href": "slides/06_tue_dictionaries.html#interfaces",
+    "objectID": "slides/02_thu_representation.html#colour-representation",
+    "href": "slides/02_thu_representation.html#colour-representation",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Interfaces",
-    "text": "Interfaces\nA contract specifying which method(s) a child class should implement.\n\nAn interface is not a class.\nIt provides only the signature(s) of the required method(s), not implementation(s).\nYou cannot create an object instantiating an interface.\n\nYou can create classes which inherit from / implement an interface.\n\nMake sure that the class implements the required method(s).\nWhen you instantiate an object, it will implement the interface.\n\n\nOften we would like a group of different objects to implement the same methods, but we don’t want to have a full parent class.\nIn Python the distinction is mostly for human design purposes: We use “interfaces” for relatively light-weight contracts without common data representations, and “superclasses” for more complex data representations.\nPython also has an intermediate category, abstract base classes, which cannot be instantiated but which can contain attributes and method implementations.\nDo you need to know how to build interfaces for the exam? No\nIt is useful to know this vocabulary when reading Python documentation / explanations. In particular, I do want you to understand what I mean when I mention iterable or hashable objects."
+    "section": "Colour Representation",
+    "text": "Colour Representation\n\nSo we only need to figure out how to manage blends of three colors!\nCan we use integers to represent colours?\n\nOne way: RGB or (red, green, blue), where each “component” is integer in the range 0 through 255.\nFor example: (255, 0, 127) ==     ?\nFun calculator for colour values: https://colorizer.org\n\nWhy 256 possible values?\n\n\n\nEarly computer colour might only use 5 bits / channel (so slightly less than 16 bits).\n\n8 bits / channel is convenient as (1) computers actually work with data on a byte (or even word = 32 or 64 bit) level and (2) it is sufficient that humans don’t notice the gradations."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#useful-interface-iterable",
-    "href": "slides/06_tue_dictionaries.html#useful-interface-iterable",
+    "objectID": "slides/02_thu_representation.html#aside-other-colour-representations",
+    "href": "slides/02_thu_representation.html#aside-other-colour-representations",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Interface: iterable",
-    "text": "Useful Interface: iterable\n\nIntuition: If you can write a for loop over the elements of the object.\nContract: Object implements the __iter__(self) method.\nPractical effects:\n\nYou can write loops: for item in x: ...\nYou can write list comprehensions.\nYou can trivially convert to a list: list(x) or tuple(x).\n\n\n\nWe will not expect you to implement classes which have the iterable interface.\nI want you to be able to understand what I mean when I say “any iterable / hashable object”, rather than always having to say “list” / “immutable object” and feel uncomfortable about it."
+    "section": "Aside: Other Colour Representations",
+    "text": "Aside: Other Colour Representations\n\nThere are alternative ways to represent colour.\n\nHSV (hue, saturation, value) is closer to how humans usually pick colours.\nCMY (cyan, magenta, yellow) for reflective colour.\nSometimes you want more than three channels:\n\n“Alpha” for controlling transparency.\nCMYK to allow for proper black.\nAdditional wavelengths for sensors operating outside human capability.\n\n\n\n\n\nHSV:\n\nHue (H): The color family, measured in degrees from 0° to 360° on a color wheel (0° is red, 120° is green, and 240° is blue).\nSaturation (S): The purity or intensity of the color, ranging from 0% (gray) to 100% (vivid, pure color).\nValue (V): The brightness or lightness of the color, ranging from 0% (absolute black) to 100% (full brightness).\n\nCMYK is used for printers.\n“Multi-spectral” images are used widely in geosensing and astronomy."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#examples-of-iterable",
-    "href": "slides/06_tue_dictionaries.html#examples-of-iterable",
+    "objectID": "slides/02_thu_representation.html#colour-representation-example",
+    "href": "slides/02_thu_representation.html#colour-representation-example",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Examples of iterable",
-    "text": "Examples of iterable\nExamples:\n\nlist, tuple, str. Elements will always come out in the same order in which they were created.\nset. Elements may come out in a different order.\ndict. The iteration is over the keys, and elements may come out in a different order.\nThe objects returned by range() and enumerate().\nFiles, pandas Series and DataFrames, and many more.\n\n\nWhen you write a loop over an iterable object, you can think of it as a list. But behind the scenes Python does not create a list but rather works with the data in its existing representation.\nIn particular, range(n) doesn’t need memory proportional to \\(n\\); instead, it just keeps track of the current element, how to get to the next element, and when to stop. If you type list(range(n)), then you will create a list and use memory proportional to \\(n\\)."
+    "section": "Colour Representation Example",
+    "text": "Colour Representation Example\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\nWhat colour is this?     \nEasier to read if we use hexadecimal (base-16) representation:\n\nA hex “digit” is one of 0123456789abcdef\nOne hex digit can represent the same as four binary digits\n\n\n\n0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1\n5    |    b    |    5    |    b    |    5    |   b\n\n\nNone of these colours: This is a shade of grey."
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#useful-interface-hashable",
-    "href": "slides/06_tue_dictionaries.html#useful-interface-hashable",
+    "objectID": "slides/02_thu_representation.html#practice",
+    "href": "slides/02_thu_representation.html#practice",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Interface: hashable",
-    "text": "Useful Interface: hashable\n\nIntuition: An object that is immutable.\nContract: Object implements the __hash__(self) and __eq__(self, other) methods.\nTechnical details: A magic number (the hash value) with a constant number of digits can be computed from the object such that:\n\nYou will always get the same number for this object.\nYou will (almost) always get a different number for any other object.\n\nPractical effects:\n\nThe object can be used as a key in a dictionary or added to a set.\nThe programmer need not worry about aliasing or function side-effects.\n\n\n\nThere are objects which are immutable but not hashable and vice versa, but the former are rare and the latter are rare and almost always a bad idea, so we’ll ignore the distinction.\nThe size (storage requirement) of a hash value is constant no matter how much data is in the corresponding object.\nThe way that dictionaries / sets can look things up so fast is because they use the hash value like an index.\nIt is okay if you very occasionally get the same number from two different objects. This is called a hash collision, and you can check for it with a subsequent call to __eq__(). More important is that objects whose data is similar should produce very different hash values. That means computing the hash value may be expensive for a large object (such as a long tuple).\nAs a side note: The hash value only needs to stay constant during a single run of the program. Python may produce different hash values on different runs.\nAliasing and side-effects are an issue because the data in an object can change without an explicit reference to the object. But immutable objects cannot change, so the problem disappears."
+    "section": "Practice",
+    "text": "Practice\nWhat colour is this 24-bit number?\n\n0110 0111 0100 1110 1010 0111\n\n\n\n\n\nFirst: convert to hex using digits 0123456789abcdef\n\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
   },
   {
-    "objectID": "slides/06_tue_dictionaries.html#examples-of-hashable",
-    "href": "slides/06_tue_dictionaries.html#examples-of-hashable",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Examples of hashable",
-    "text": "Examples of hashable\n\nAll the simple atomic types: int, str, bool, float, NoneType.\nNamedTuples (but not dataclasses).\nMany basic mutable types have an immutable version.\n\nFor example: tuple, frozenset, (as of Python 3.15) frozendict.\n\nThe union of other immutable types.\n\nFor example, optional type: some_type | None.\n\n\n\nPython 3.15.0 was released 2026-10-09 (last Friday).\nThe reason that dict will rearrange the order of the keys: The order depends on the hash value."
-  },
-  {
-    "objectID": "slides/02_tue_efficiency.html#announcements",
-    "href": "slides/02_tue_efficiency.html#announcements",
+    "objectID": "slides/04_tue_bracelet.html#announcements",
+    "href": "slides/04_tue_bracelet.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nResults of course survey.\nUpdates to CPSC 203 course website.\n\nLogistics: TA office hours.\nSyllabus: Course policy on AI use.\nSchedule: Links to slides, videos, labs, POTWs, …\n\nMonitor (and post to) Piazza.\nPOTW is available on PrairieLearn.\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for the first examlet (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\n\n\n\nShow survey results.\nShow Syllabus GenAI update, and possibly logistics and schedule updates."
+    "text": "Announcements\n\nTake examlet 1 in ORCA between Thursday Oct 1 and Monday Oct 5.\nBook your slot for examlet 2."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#todays-plan",
-    "href": "slides/02_tue_efficiency.html#todays-plan",
+    "objectID": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
+    "href": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Today’s Plan…",
-    "text": "Today’s Plan…\n\nCorrectness isn’t everything…\nKnitting\nWork / effort / complexity\nSimplicity / elegance / abstraction\nColour (if we get to it)"
+    "section": "Quick recap: Dataclasses",
+    "text": "Quick recap: Dataclasses\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\n\nAttributes: data stored in the object (radius, colour)\nMethods: functions that belong to the class (diameter)\n\n\nSo a dataclass is a compound data type.\n\nMore general than the compound data types from CPSC 103 / 110 because it allows not just attributes but also methods.\nReminder about the self parameter for all methods."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
-    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
+    "objectID": "slides/04_tue_bracelet.html#a-bead-bracelet",
+    "href": "slides/04_tue_bracelet.html#a-bead-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Go Shopping (version 1)",
-    "text": "Let’s Go Shopping (version 1)\n\n\ndefine shopping_trip1(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # List of food in the pantry so far.\n  pantry_list = []\n\n  for item_on_grocery_list in grocery_list:\n    # Take paper with single item to the store.\n    item_at_store = go_to_store(item_on_grocery_list)\n    # Get the item from the shelf.\n    item_in_cart = pick_at_store(item_at_store)\n    # Bring the item home.\n    item_at_home = return_from_store(item_in_cart)\n    # Put the item away.\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip1 grocery-list\n  (cond [(empty? grocery-list) '()],\n        [else\n          (cons (put-in-pantry\n                  (return-from-store\n                    (pick-at-store\n                      (go-to-store (first grocery-list)))))\n                (shopping-trip1 (rest grocery-list)))]))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nHow long to go_to_store?\nHow long to pick_at_store?\nHow long to return_from_store?\nHow long to put_in_pantry?"
+    "section": "A bead bracelet",
+    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color\nBracelet: radius, list of beads"
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
-    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
+    "objectID": "slides/04_tue_bracelet.html#creating-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#creating-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Go Shopping (version 2)",
-    "text": "Let’s Go Shopping (version 2)\n\n\ndefine shopping_trip2(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # Take piece of paper with list to the store.\n  grocery_list_at_store = go_to_store(grocery_list)\n\n  # Get all items on the list into the cart.\n  cart_list = []\n  for item_at_store in grocery_list_at_store:\n    cart_list.append(pick_at_store(item_at_store))\n\n  # Bring the items home.\n  grocery_bags_at_home = return_from_store(cart_list)\n\n  # Put the items away.\n  pantry_list = []\n  for item_at_home in grocery_bags_at_home:\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip2 grocery-list\n  (let ([grocery-list-at-store (go-to-store grocery-list)])\n    (put-in-pantry\n      (return-from-store\n        (pick-at-store grocery-list-at-store)))))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nGo to the store just once.\nReturn from the store just once.\nAs \\(n\\) gets larger, total time will increasingly be determined by those parts of the procedure which depend on \\(n\\).\nFor large \\(n\\), we can essentially ignore the stuff which grows more slowly (or not at all) with \\(n\\)."
+    "section": "Creating a Bracelet",
+    "text": "Creating a Bracelet\n\n\n\n\n\n\n\nAn example of composing data types: a Bracelet contains a list of bead. We use (de)composition to solve big problems a piece at a time.\nUse dot and index notation to access deep inside the bracelet:\nbr = Bracelet(20, [b1, b2, b3])\nprint(br.beads[1].colour[2])\nAside: The pyodide environment used in the slides maintains its state through multiple slides unless you click start over.\n\nIf you are used to Jupyter, then think of each slide as a cell.\n\nIn this case we already ran a cell which defined Bead, so we don’t need to do it again.\nNote that you may get unexpected errors if you skip cells or run them out of order."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
-    "href": "slides/02_tue_efficiency.html#handcraft-1",
+    "objectID": "slides/04_tue_bracelet.html#adding-a-method",
+    "href": "slides/04_tue_bracelet.html#adding-a-method",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft",
-    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. And sometimes things are not entirely correct."
+    "section": "Adding a Method",
+    "text": "Adding a Method\n\n\n\n\n\n\n\nWrite a test call from br before implementation. It will fail because circumference is not an attribute or method. Note that we are redefining the Bracelet class every time we re-run that class definition. But the br object will still be using the old version of the class unless we recreate it after the redefinition. br = Bracelet(20, [b1, b2, b3])\nTry the dummy call. Point out that Cinda’s stub uses the pass statement. If the stub is executed, what will be returned? Python doesn’t check whether your type annotation is satisfied; that type annotation is just for the programmer’s benefit. There are ways to check, but we won’t use them in CPSC 203.\nMethods should use the compound function template. Show that in HtDP, including the self.attribute notation. We will keep self.radius and then write the implementation."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#knitting",
-    "href": "slides/02_tue_efficiency.html#knitting",
+    "objectID": "slides/04_tue_bracelet.html#does-it-fit",
+    "href": "slides/04_tue_bracelet.html#does-it-fit",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting",
-    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!\n\n\n\n\nKnitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor."
+    "section": "Does it Fit?",
+    "text": "Does it Fit?\n\n\nWe choose to say that the beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference of the bracelet.\nWe will refer to any extra string as slack.\n\n\n\n\nIn reality, if we fill up the bracelet then the beads will slightly overlap because of the curvature of the bracelet string. We ignore it for simplicity."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
-    "href": "slides/02_tue_efficiency.html#knitting-examples",
+    "objectID": "slides/04_tue_bracelet.html#how-much-slack",
+    "href": "slides/04_tue_bracelet.html#how-much-slack",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Knitting: examples",
-    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”"
+    "section": "How Much Slack?",
+    "text": "How Much Slack?\n\n\n\n\n\n\n\nReplace pass with a return value of appropriate type.\nThen look at HtDP for the compound data type template. We will keep self.beads and self.circumference. But self.beads is itself a complex data type. In CPSC 103 / 110 we would have told you to write a helper, such as sum_of_bead_diameters In CPSC 203, we’ll just add the list arbitrary sized template into this function. Specialize the template but do not finish the implementation.\nPoint out the difference between self.circumference and self.circumference()."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "objectID": "slides/04_tue_bracelet.html#adding-beads-safely",
+    "href": "slides/04_tue_bracelet.html#adding-beads-safely",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the Task",
-    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
+    "section": "Adding beads safely",
+    "text": "Adding beads safely\nWe only want to add a bead if it fits!\n\n\n\n\n\n\n\nFix Cinda’s pass then write a dummy call.\nWhat template would we use? We need to combine the compound template for Bracelet with the compound template for Bead, since we need some information from both arguments."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "objectID": "slides/04_tue_bracelet.html#removing-beads",
+    "href": "slides/04_tue_bracelet.html#removing-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nIf we are solving a problem / writing an algorithm for an input of arbitrary size, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\n\nWe need to specify what \\(n\\) represents (in this case the length of each side of the square).\nSometimes we need multiple parameters to describe the size of the problem (such as \\(n\\) and \\(m\\)).\nWe pay attention to only the degree of n (so if a scarf takes \\(3n^2 + 12n\\) time, we are only interested in the fact it is \\(n^2\\))\n\n\n\n\nIn this example we choose to label \\(n\\) as the side-length in stitches, but other choices are possible.\nWe don’t care so much about units, so we communicate using the largest order term\n\nA scarf which is always \\(3n \\times n\\) takes time \\(3n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how waiting time increases as the problem size increases.\nWe say that the variable term “dominates”.\n\n\nBut why did we introduce a “parameter”? What happened to the rows and stitches? What does this have to do with a computer processing data?\nWe are seeking to understand the effort / efficiency / complexity of solving the problem / running the algorithm in a simple / elegant manner, where we have abstracted away the clutter of the details of the problem."
+    "section": "Removing beads",
+    "text": "Removing beads\nWhat if we want to swap out a bead?\n\n\n\n\n\n\n\nJump to next slide and then back here to implement. Just write a valid return value, not full implementation.\n\nWhen you mutate an object, you should probably not return that object. Consider string_bead and remove_bead above."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#section",
-    "href": "slides/02_tue_efficiency.html#section",
+    "objectID": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
+    "href": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
     "title": "Programming, problem solving, and algorithms",
-    "section": "",
-    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs\n\n\nIn this course we will be seeking simplicity and elegance not only in our algorithms, but also in how we analyze them. In particular, when looking at the complexity of an algorithm we will ignore the constants and dominated terms.\nOur software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect)\nIt would be nide to include this link, but I cannot figure out how to adjust the font size to make room. For further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
+    "section": "Useful Python: Removing Elements from a List",
+    "text": "Useful Python: Removing Elements from a List\nLists have a method called pop(index) that removes and returns the item at that index.\n\n\n\n\n\n\n\nLike append, pop mutates the list.\nUnlike append, pop returns something other than None.\n\n\nWait a minute! Lists have methods? In fact, every type that you have already seen in Python is actually class, and most have methods. In particular, you have used list and string methods extensively (such as str.upper()).\n\nSo if you have other aliases for this list, then they will see the removal.\nWhy does append return None rather than the updated list? To remind you that it is mutating the list."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
-    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "objectID": "slides/04_tue_bracelet.html#drawing-the-bracelet",
+    "href": "slides/04_tue_bracelet.html#drawing-the-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Handcraft and Code",
-    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\nWalk through code. Yes, we are mutating variable cloth, and we generally discourage mutation. Are we mutating the string to which cloth refers?\nCount work to arrive at \\(n^2\\) conclusion.\n\nWhich line is executed most frequently?\nHow many times is outer for loop executed?\nHow many total times is line 5 (inner for loop) executed?"
+    "section": "Drawing the bracelet",
+    "text": "Drawing the bracelet\n\n\nIn the activity workspace we provide some code to draw the bracelet.\n\nWe will not expect you to write such code, but we will expect you to run it if we provide it."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "objectID": "slides/04_tue_bracelet.html#the-full-picture",
+    "href": "slides/04_tue_bracelet.html#the-full-picture",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nSuppose we can knit 1 (= 100) stitches per second….\nThe degree (in n) makes a very big difference!\n\n\n\ntime \\ n\n10\n100\n1000\n\n\n\n\nlog n\n~3 s\n~6½ s\n~10 s\n\n\nn\n10 s\n102 s ~ 1½ min\n103 s ~ 16½ min\n\n\nn log n\n3(10) s ~ ½ min\n6(102) s ~ 10 min\n104 s ~ 2½ hours\n\n\nn2\n100 s ~ 1½ min\n104 s ~ 2½ hours\n106 s ~ 11½ days\n\n\nn3\n1000 s ~ 16½ min\n106 s ~ 11½ days\n109 s ~ 31½ years\n\n\n2n\n1024 s ~ 17 min\n~1030 s\n~10301 s\n\n\n\nNotes: “log” is base 2, and the age of the universe: ~1018 s\n\nLog factors are great! Linear (power 1) is good. Powers 2+ (polynomial) is okay as long as \\(n\\) is reasonably small. If \\(n\\) is in the exponent, forget about it…"
+    "section": "The full picture",
+    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ...\n\nSo we have defined two classes, each with some attributes and methods. Now it is your turn to implement some of the stub methods."
   },
   {
-    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-3",
-    "href": "slides/02_tue_efficiency.html#quantifying-the-task-3",
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Quantifying the task…",
-    "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
+    "section": " Your turn: Implement Bracelet",
+    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity (continued) on PrairieLearn!\nImplement these methods:\n\ncircumference() - return \\(2 \\pi r\\).\nslack() - circumference minus total bead diameters.\nstring_bead(bead) - add bead if it fits, return True/False.\nremove_bead(index) - remove and return the bead at index.\n\nIf you finish early, try Tasks 4 & 5 (brighten methods)!"
   },
   {
-    "objectID": "slides/03_tue_lists.html#announcements",
-    "href": "slides/03_tue_lists.html#announcements",
+    "objectID": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
+    "href": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
+    "section": "Extending functionality: Name bracelets",
+    "text": "Extending functionality: Name bracelets\n\n\nWhat if we want to make a friendship bracelet with someone’s name on it?\n\nLet’s create a bead that can hold a letter."
   },
   {
-    "objectID": "slides/03_tue_lists.html#marimo",
-    "href": "slides/03_tue_lists.html#marimo",
+    "objectID": "slides/04_tue_bracelet.html#adding-letters-to-beads",
+    "href": "slides/04_tue_bracelet.html#adding-letters-to-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Marimo",
-    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
+    "section": "Adding letters to beads",
+    "text": "Adding letters to beads\nLet’s add an optional letter attribute to our Bead class:\n\n\n\n\n\n\n\nWhy is the letter attribute “optional”?\n\nIt isn’t really: All (new) Bead objects will have a letter attribute, but if no value is assigned to that attribute then it will be given the default value (in this case the empty string).\nThe programmer still needs to correctly handle the default depending on context.\nOptional in the same way that function parameters with a default are optional."
   },
   {
-    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
-    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "objectID": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
+    "href": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
     "title": "Programming, problem solving, and algorithms",
-    "section": " List Activity",
-    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
+    "section": "Useful Python: the enumerate() Function",
+    "text": "Useful Python: the enumerate() Function\nSometimes you want both the index and the value of each element as you iterate through a list.\n\n\n\n\n\n\nenumerate() gives you tuples of (index, value) as you loop."
   },
   {
-    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
-    "href": "slides/03_tue_lists.html#lists-a-quick-review",
+    "objectID": "slides/04_tue_bracelet.html#naming-a-bracelet",
+    "href": "slides/04_tue_bracelet.html#naming-a-bracelet",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Lists: A Quick Review",
-    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
+    "section": "Naming a bracelet",
+    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:\n\n\n\n\n\n\nWhy reversed? So the name reads correctly around the circle!\n\nWhy not use word.reverse() instead of reversed(word)?\n\nIf word is a string, then there is no reverse method.\nIf word were a list, then there is a reverse method. But that would mutate the list in place and then return None. Definitely not what we want to do."
   },
   {
-    "objectID": "slides/03_tue_lists.html#adding-to-lists",
-    "href": "slides/03_tue_lists.html#adding-to-lists",
+    "objectID": "slides/04_tue_bracelet.html#using-name",
+    "href": "slides/04_tue_bracelet.html#using-name",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Adding to Lists",
-    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
+    "section": "Using name()",
+    "text": "Using name()"
   },
   {
-    "objectID": "slides/03_tue_lists.html#list-aliasing",
-    "href": "slides/03_tue_lists.html#list-aliasing",
+    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
+    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
     "title": "Programming, problem solving, and algorithms",
-    "section": "List Aliasing",
-    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
+    "section": " Your turn: Letter beads",
+    "text": "Your turn: Letter beads\nBack to PrairieLearn - try Task 6: Letter Beads!"
   },
   {
-    "objectID": "slides/03_tue_lists.html#shallow-copy",
-    "href": "slides/03_tue_lists.html#shallow-copy",
+    "objectID": "slides/04_tue_bracelet.html#design-strategies",
+    "href": "slides/04_tue_bracelet.html#design-strategies",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Shallow Copy",
-    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#deep-copy",
-    "href": "slides/03_tue_lists.html#deep-copy",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Deep Copy",
-    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#references",
-    "href": "slides/03_tue_lists.html#references",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "References",
-    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions",
-    "href": "slides/03_tue_lists.html#list-comprehensions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions",
-    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
-  },
-  {
-    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "List Comprehensions with Conditions",
-    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
+    "section": "Design Strategies",
+    "text": "Design Strategies\n\nIdentify the objects in your problem (nouns).\nList the data each object needs (attributes).\nList the operations each object supports (methods).\nDecide which object is responsible for what.\nImplement and test incrementally.\n\n\nWhen we say “object” in this list, we mean the normal definition of the word not the programming language definition.\n\nWould “thing” be less confusing?"
   },
   {
     "objectID": "slides/05_thu_dictionaries.html#announcements",
@@ -3245,368 +3056,655 @@
     "text": "Summary\nDictionaries give you fast lookup by key.\nThe patterns we learned:\n\nRecord — Store compound data\nMembership — Have I seen this before? (defaultdict(bool))\nCounting — How many of each? (Counter)\nComplement — Find the matching pair\nGrouping — Organize by category (defaultdict(list))"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#announcements",
-    "href": "slides/04_tue_bracelet.html#announcements",
+    "objectID": "slides/03_tue_lists.html#announcements",
+    "href": "slides/03_tue_lists.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nTake examlet 1 in ORCA between Thursday Oct 1 and Monday Oct 5.\nBook your slot for examlet 2."
+    "text": "Announcements\n\nLab 2 and POTW 2 now available.\nPractice examlet 1 now available.\nTreat “Problems of the Week” as “Problems of the Day”: Spend 15 minutes to do a little programming each day."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
-    "href": "slides/04_tue_bracelet.html#quick-recap-dataclasses",
+    "objectID": "slides/03_tue_lists.html#marimo",
+    "href": "slides/03_tue_lists.html#marimo",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Quick recap: Dataclasses",
-    "text": "Quick recap: Dataclasses\nA dataclass bundles related data together into a custom type.\n\n\n\n\n\n\n\nAttributes: data stored in the object (radius, colour)\nMethods: functions that belong to the class (diameter)\n\n\nSo a dataclass is a compound data type.\n\nMore general than the compound data types from CPSC 103 / 110 because it allows not just attributes but also methods.\nReminder about the self parameter for all methods."
+    "section": "Marimo",
+    "text": "Marimo\nWe will be using marimo for our more involved Python coding exercises.\n\nSimilar to Jupyter Lab from CPSC 103, but has some (beneficial) differences.\n\nOpen the List Activity on PrairieLearn and choose the List Mysteries question.\n\nDemonstrate opening the activity, the workspace, and the marimo_v_jupyter file.\nIdentify features which are the same as Jupyter (for students who haven’t used Jupyter) and features which are different (for students who have)."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#a-bead-bracelet",
-    "href": "slides/04_tue_bracelet.html#a-bead-bracelet",
+    "objectID": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
+    "href": "slides/03_tue_lists.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-list-activity",
     "title": "Programming, problem solving, and algorithms",
-    "section": "A bead bracelet",
-    "text": "A bead bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color\nBracelet: radius, list of beads"
+    "section": " List Activity",
+    "text": "List Activity\nLet’s explore some surprising list behaviors.\nInside the workspace there are other files, each containing a short sequence of exercises. Complete them, and then we’ll review together.\nBe curious. Feel free to experiment by changing things!\nWrite down surprising behaviors.\n\n \n\nWeek3_tue_lists activity - covers aliasing, append vs extend, list comprehension"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#creating-a-bracelet",
-    "href": "slides/04_tue_bracelet.html#creating-a-bracelet",
+    "objectID": "slides/03_tue_lists.html#lists-a-quick-review",
+    "href": "slides/03_tue_lists.html#lists-a-quick-review",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Creating a Bracelet",
-    "text": "Creating a Bracelet\n\n\n\n\n\n\n\nAn example of composing data types: a Bracelet contains a list of bead. We use (de)composition to solve big problems a piece at a time.\nUse dot and index notation to access deep inside the bracelet:\nbr = Bracelet(20, [b1, b2, b3])\nprint(br.beads[1].colour[2])\nAside: The pyodide environment used in the slides maintains its state through multiple slides unless you click start over.\n\nIf you are used to Jupyter, then think of each slide as a cell.\n\nIn this case we already ran a cell which defined Bead, so we don’t need to do it again.\nNote that you may get unexpected errors if you skip cells or run them out of order."
+    "section": "Lists: A Quick Review",
+    "text": "Lists: A Quick Review\nLists are ordered collections that can hold any type of data.\n\n\n\n\n\n\nWe can:\n\nAccess elements by index: provinces[0]\nSlice: numbers[1:3]\nGet length: len(provinces)"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#adding-a-method",
-    "href": "slides/04_tue_bracelet.html#adding-a-method",
+    "objectID": "slides/03_tue_lists.html#adding-to-lists",
+    "href": "slides/03_tue_lists.html#adding-to-lists",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Adding a Method",
-    "text": "Adding a Method\n\n\n\n\n\n\n\nWrite a test call from br before implementation. It will fail because circumference is not an attribute or method. Note that we are redefining the Bracelet class every time we re-run that class definition. But the br object will still be using the old version of the class unless we recreate it after the redefinition. br = Bracelet(20, [b1, b2, b3])\nTry the dummy call. Point out that Cinda’s stub uses the pass statement. If the stub is executed, what will be returned? Python doesn’t check whether your type annotation is satisfied; that type annotation is just for the programmer’s benefit. There are ways to check, but we won’t use them in CPSC 203.\nMethods should use the compound function template. Show that in HtDP, including the self.attribute notation. We will keep self.radius and then write the implementation."
+    "section": "Adding to Lists",
+    "text": "Adding to Lists\n\n\n\n\n\n\nWhat about provinces.append(['Ontario', 'Quebec'])?"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#does-it-fit",
-    "href": "slides/04_tue_bracelet.html#does-it-fit",
+    "objectID": "slides/03_tue_lists.html#list-aliasing",
+    "href": "slides/03_tue_lists.html#list-aliasing",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Does it Fit?",
-    "text": "Does it Fit?\n\n\nWe choose to say that the beads fit on the bracelet if the sum of their diameters is less than or equal to the circumference of the bracelet.\nWe will refer to any extra string as slack.\n\n\n\n\nIn reality, if we fill up the bracelet then the beads will slightly overlap because of the curvature of the bracelet string. We ignore it for simplicity."
+    "section": "List Aliasing",
+    "text": "List Aliasing\n\n\n\n\n\n\nAssignment doesn’t copy lists!\n\nIt creates another reference to the same list.\nLet’s look at that in Python Tutor"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#how-much-slack",
-    "href": "slides/04_tue_bracelet.html#how-much-slack",
+    "objectID": "slides/03_tue_lists.html#shallow-copy",
+    "href": "slides/03_tue_lists.html#shallow-copy",
     "title": "Programming, problem solving, and algorithms",
-    "section": "How Much Slack?",
-    "text": "How Much Slack?\n\n\n\n\n\n\n\nReplace pass with a return value of appropriate type.\nThen look at HtDP for the compound data type template. We will keep self.beads and self.circumference. But self.beads is itself a complex data type. In CPSC 103 / 110 we would have told you to write a helper, such as sum_of_bead_diameters In CPSC 203, we’ll just add the list arbitrary sized template into this function. Specialize the template but do not finish the implementation.\nPoint out the difference between self.circumference and self.circumference()."
+    "section": "Shallow Copy",
+    "text": "Shallow Copy\n\n\n\n\n\n\ncopy() only copies the outer list. The inner lists are still shared!"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#adding-beads-safely",
-    "href": "slides/04_tue_bracelet.html#adding-beads-safely",
+    "objectID": "slides/03_tue_lists.html#deep-copy",
+    "href": "slides/03_tue_lists.html#deep-copy",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Adding beads safely",
-    "text": "Adding beads safely\nWe only want to add a bead if it fits!\n\n\n\n\n\n\n\nFix Cinda’s pass then write a dummy call.\nWhat template would we use? We need to combine the compound template for Bracelet with the compound template for Bead, since we need some information from both arguments."
+    "section": "Deep Copy",
+    "text": "Deep Copy\n\n\n\n\n\n\nUse deepcopy() when you have nested structures (lists of lists, lists of objects)."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#removing-beads",
-    "href": "slides/04_tue_bracelet.html#removing-beads",
+    "objectID": "slides/03_tue_lists.html#references",
+    "href": "slides/03_tue_lists.html#references",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Removing beads",
-    "text": "Removing beads\nWhat if we want to swap out a bead?\n\n\n\n\n\n\n\nJump to next slide and then back here to implement. Just write a valid return value, not full implementation.\n\nWhen you mutate an object, you should probably not return that object. Consider string_bead and remove_bead above."
+    "section": "References",
+    "text": "References\nVariables are names that refer to objects in memory.\n\n\n\n\n\n\nThink of it like sticky notes on boxes - m1 and m2 are two sticky notes on the same box."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
-    "href": "slides/04_tue_bracelet.html#useful-python-removing-elements-from-a-list",
+    "objectID": "slides/03_tue_lists.html#list-comprehensions",
+    "href": "slides/03_tue_lists.html#list-comprehensions",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Python: Removing Elements from a List",
-    "text": "Useful Python: Removing Elements from a List\nLists have a method called pop(index) that removes and returns the item at that index.\n\n\n\n\n\n\n\nLike append, pop mutates the list.\nUnlike append, pop returns something other than None.\n\n\nWait a minute! Lists have methods? In fact, every type that you have already seen in Python is actually class, and most have methods. In particular, you have used list and string methods extensively (such as str.upper()).\n\nSo if you have other aliases for this list, then they will see the removal.\nWhy does append return None rather than the updated list? To remind you that it is mutating the list."
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA compact way to create lists:\n\n\n\n\n\n\nBoth produce: [0, 1, 4, 9, 16]"
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#drawing-the-bracelet",
-    "href": "slides/04_tue_bracelet.html#drawing-the-bracelet",
+    "objectID": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
+    "href": "slides/03_tue_lists.html#list-comprehensions-with-conditions",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Drawing the bracelet",
-    "text": "Drawing the bracelet\n\n\nIn the activity workspace we provide some code to draw the bracelet.\n\nWe will not expect you to write such code, but we will expect you to run it if we provide it."
+    "section": "List Comprehensions with Conditions",
+    "text": "List Comprehensions with Conditions\n\n\n\n\n\n\nNotice the difference: if at the end filters, if/else before for transforms."
   },
   {
-    "objectID": "slides/04_tue_bracelet.html#the-full-picture",
-    "href": "slides/04_tue_bracelet.html#the-full-picture",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "The full picture",
-    "text": "The full picture\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]\n\n    def diameter(self) -&gt; float: ...\n    def draw(self, ax, x: float, y: float) -&gt; None: ...\n\n@dataclass\nclass Bracelet:\n    radius: float\n    beads: list[Bead]\n\n    def circumference(self) -&gt; float: ...\n    def slack(self) -&gt; float: ...\n    def string_bead(self, bead: Bead) -&gt; bool: ...\n    def remove_bead(self, index: int) -&gt; Bead: ...\n    def draw(self) -&gt; None: ...\n\nSo we have defined two classes, each with some attributes and methods. Now it is your turn to implement some of the stub methods."
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
-    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-implement-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Implement Bracelet",
-    "text": "Your turn: Implement Bracelet\nTry the Bracelet Activity (continued) on PrairieLearn!\nImplement these methods:\n\ncircumference() - return \\(2 \\pi r\\).\nslack() - circumference minus total bead diameters.\nstring_bead(bead) - add bead if it fits, return True/False.\nremove_bead(index) - remove and return the bead at index.\n\nIf you finish early, try Tasks 4 & 5 (brighten methods)!"
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
-    "href": "slides/04_tue_bracelet.html#extending-functionality-name-bracelets",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Extending functionality: Name bracelets",
-    "text": "Extending functionality: Name bracelets\n\n\nWhat if we want to make a friendship bracelet with someone’s name on it?\n\nLet’s create a bead that can hold a letter."
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#adding-letters-to-beads",
-    "href": "slides/04_tue_bracelet.html#adding-letters-to-beads",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Adding letters to beads",
-    "text": "Adding letters to beads\nLet’s add an optional letter attribute to our Bead class:\n\n\n\n\n\n\n\nWhy is the letter attribute “optional”?\n\nIt isn’t really: All (new) Bead objects will have a letter attribute, but if no value is assigned to that attribute then it will be given the default value (in this case the empty string).\nThe programmer still needs to correctly handle the default depending on context.\nOptional in the same way that function parameters with a default are optional."
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
-    "href": "slides/04_tue_bracelet.html#useful-python-the-enumerate-function",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Useful Python: the enumerate() Function",
-    "text": "Useful Python: the enumerate() Function\nSometimes you want both the index and the value of each element as you iterate through a list.\n\n\n\n\n\n\nenumerate() gives you tuples of (index, value) as you loop."
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#naming-a-bracelet",
-    "href": "slides/04_tue_bracelet.html#naming-a-bracelet",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Naming a bracelet",
-    "text": "Naming a bracelet\nAdd a name() method to Bracelet that assigns letters to existing beads:\n\n\n\n\n\n\nWhy reversed? So the name reads correctly around the circle!\n\nWhy not use word.reverse() instead of reversed(word)?\n\nIf word is a string, then there is no reverse method.\nIf word were a list, then there is a reverse method. But that would mutate the list in place and then return None. Definitely not what we want to do."
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#using-name",
-    "href": "slides/04_tue_bracelet.html#using-name",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Using name()",
-    "text": "Using name()"
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
-    "href": "slides/04_tue_bracelet.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d7075746572203e7d7d-your-turn-letter-beads",
-    "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Letter beads",
-    "text": "Your turn: Letter beads\nBack to PrairieLearn - try Task 6: Letter Beads!"
-  },
-  {
-    "objectID": "slides/04_tue_bracelet.html#design-strategies",
-    "href": "slides/04_tue_bracelet.html#design-strategies",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design Strategies",
-    "text": "Design Strategies\n\nIdentify the objects in your problem (nouns).\nList the data each object needs (attributes).\nList the operations each object supports (methods).\nDecide which object is responsible for what.\nImplement and test incrementally.\n\n\nWhen we say “object” in this list, we mean the normal definition of the word not the programming language definition.\n\nWould “thing” be less confusing?"
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#announcements",
-    "href": "slides/02_thu_representation.html#announcements",
+    "objectID": "slides/02_tue_efficiency.html#announcements",
+    "href": "slides/02_tue_efficiency.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nPOTW1 and Lab1 are due Sunday at 8pm.\n\nPOTW2 and Lab2 will become available after that.\n\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for examlet 1 (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\nFirst practice examlet will become available on Monday.\n\nCovers same material as examlet 1."
+    "text": "Announcements\n\nResults of course survey.\nUpdates to CPSC 203 course website.\n\nLogistics: TA office hours.\nSyllabus: Course policy on AI use.\nSchedule: Links to slides, videos, labs, POTWs, …\n\nMonitor (and post to) Piazza.\nPOTW is available on PrairieLearn.\nEnroll in CPSC203 on PrairieTest.\n\nBook your slot for the first examlet (Thur Oct 1 - Mon Oct 5).\nStudents with accommodations: If you cannot see your accommodation when you try to book a slot, email me.\n\n\n\n\nShow survey results.\nShow Syllabus GenAI update, and possibly logistics and schedule updates."
   },
   {
-    "objectID": "slides/02_thu_representation.html#todays-plan",
-    "href": "slides/02_thu_representation.html#todays-plan",
+    "objectID": "slides/02_tue_efficiency.html#todays-plan",
+    "href": "slides/02_tue_efficiency.html#todays-plan",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Today’s Plan",
-    "text": "Today’s Plan\n\nData vs Information\n\nSymbols can have multiple meanings\n\nRepresentation in computers\n\nComputer hardware interprets electrical signals as binary digits (“bits”).\nWe can use bits to represent numbers, and numbers to represent virtually anything.\n\n\n\nSummary\nToday we explore the concept of representation in two important senses. First, we examine how computers represent rich, culturally complex concepts like colour using simple numbers. Second, we use colour representation as a metaphor for diversity and inclusion in computer science - just as removing a colour channel limits the colours we can create, limiting diversity of experience limits the ideas we can explore. We conclude by seeing this representation in action through image manipulation code."
+    "section": "Today’s Plan…",
+    "text": "Today’s Plan…\n\nCorrectness isn’t everything…\nKnitting\nWork / effort / complexity\nSimplicity / elegance / abstraction\nColour (if we get to it)"
   },
   {
-    "objectID": "slides/02_thu_representation.html#data-vs-information-1",
-    "href": "slides/02_thu_representation.html#data-vs-information-1",
+    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
+    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Data vs Information",
-    "text": "Data vs Information\n\n\n\n\nYou care about information.\nPrograms can process data\n\n\nThe definition of “information” and “data” are a bit slippery, because what is information in one context might be data in another. For a particular problem, the data is what the program can process while the information is what the human cares about. Note that the representation / interpretation might be trivial: If the information is numbers, then the data is probably the same number (forboding…).\nAlso: Humans will still have to transform information into knowledge and/or action…"
+    "section": "Let’s Go Shopping (version 1)",
+    "text": "Let’s Go Shopping (version 1)\n\n\ndefine shopping_trip1(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # List of food in the pantry so far.\n  pantry_list = []\n\n  for item_on_grocery_list in grocery_list:\n    # Take paper with single item to the store.\n    item_at_store = go_to_store(item_on_grocery_list)\n    # Get the item from the shelf.\n    item_in_cart = pick_at_store(item_at_store)\n    # Bring the item home.\n    item_at_home = return_from_store(item_in_cart)\n    # Put the item away.\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip1 grocery-list\n  (cond [(empty? grocery-list) '()],\n        [else\n          (cons (put-in-pantry\n                  (return-from-store\n                    (pick-at-store\n                      (go-to-store (first grocery-list)))))\n                (shopping-trip1 (rest grocery-list)))]))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nHow long to go_to_store?\nHow long to pick_at_store?\nHow long to return_from_store?\nHow long to put_in_pantry?"
   },
   {
-    "objectID": "slides/02_thu_representation.html#multiple-interpretations",
-    "href": "slides/02_thu_representation.html#multiple-interpretations",
+    "objectID": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
+    "href": "slides/02_tue_efficiency.html#lets-go-shopping-version-2",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Multiple Interpretations",
-    "text": "Multiple Interpretations\n\nWhat do the following English words mean?\n\nproduce\ncontest\nobject\nconsole\n\nWhat does this colour mean? \n\n\n\nWith interpretation (noun or verb), the word meaning becomes clear.\nRed can mean many things\n\nemotion: anger, joy, love, mourning (depends on your cultural background)\npolitics: communism, socialism (but: Republicans???)\nsafety: danger, stop\nfinance: loss or debt"
+    "section": "Let’s Go Shopping (version 2)",
+    "text": "Let’s Go Shopping (version 2)\n\n\ndefine shopping_trip2(grocery_list: List[food_item])\n                      -&gt; pantry_list: List[food_item]:\n\n  # Take piece of paper with list to the store.\n  grocery_list_at_store = go_to_store(grocery_list)\n\n  # Get all items on the list into the cart.\n  cart_list = []\n  for item_at_store in grocery_list_at_store:\n    cart_list.append(pick_at_store(item_at_store))\n\n  # Bring the items home.\n  grocery_bags_at_home = return_from_store(cart_list)\n\n  # Put the items away.\n  pantry_list = []\n  for item_at_home in grocery_bags_at_home:\n    pantry_list.append(put_in_pantry(item_at_home))\n\n  return pantry_list\n\n(define shopping-trip2 grocery-list\n  (let ([grocery-list-at-store (go-to-store grocery-list)])\n    (put-in-pantry\n      (return-from-store\n        (pick-at-store grocery-list-at-store)))))\n\nI am being sloppy here by assuming that the helper functions can accept (and will return) either a single item or a list of items\n\n\nIf we have \\(n\\) items in our list, how long does this procedure take?\n\n\nGo to the store just once.\nReturn from the store just once.\nAs \\(n\\) gets larger, total time will increasingly be determined by those parts of the procedure which depend on \\(n\\).\nFor large \\(n\\), we can essentially ignore the stuff which grows more slowly (or not at all) with \\(n\\)."
   },
   {
-    "objectID": "slides/02_thu_representation.html#multiple-representations",
-    "href": "slides/02_thu_representation.html#multiple-representations",
+    "objectID": "slides/02_tue_efficiency.html#handcraft-1",
+    "href": "slides/02_tue_efficiency.html#handcraft-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Multiple Representations",
-    "text": "Multiple Representations\n\nHow can we represent this colour? \n\n\n\n\nWords\n\nred (english)\nrouge (french)\nckʷim (hən̓q̓əmin̓əm̓)\npula (tagalog)\n红色 (simplified Chinese)\n\n\n\n\nNumbers\n\n(255, 0, 0)\n#FF0000\n\n\n\n\n\nlight of a certain wavelength\nan object which reflects those wavelengths, such as a fabric swatch\nblood(?)\nhən̓q̓əmin̓əm̓ is the language of the Musqueam people."
+    "section": "Handcraft",
+    "text": "Handcraft\n\n\n\n\n\n\n\n\n\n\n\n\nMetaphor for software development—ingenuity, function, simplicity, resource constraints. And sometimes things are not entirely correct."
   },
   {
-    "objectID": "slides/02_thu_representation.html#how-to-design-data-functions-programs",
-    "href": "slides/02_thu_representation.html#how-to-design-data-functions-programs",
+    "objectID": "slides/02_tue_efficiency.html#knitting",
+    "href": "slides/02_tue_efficiency.html#knitting",
     "title": "Programming, problem solving, and algorithms",
-    "section": "How to Design Data / Functions / Programs",
-    "text": "How to Design Data / Functions / Programs\n\nLet’s review HtDD / HtDF / HtDF recipes"
+    "section": "Knitting",
+    "text": "Knitting\n\n\nThe language used to communicate patterns uses exactly the same fundamental constructs as Python!!!\n\n\n\n\nKnitting patterns, in particular, are communicated using language very similar to Python, so our first experiences are going to exploit the metaphor."
   },
   {
-    "objectID": "slides/02_thu_representation.html#representation",
-    "href": "slides/02_thu_representation.html#representation",
+    "objectID": "slides/02_tue_efficiency.html#knitting-examples",
+    "href": "slides/02_tue_efficiency.html#knitting-examples",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Representation",
-    "text": "Representation\nToday we’re exploring a fundamental question: How do we represent the world as data?\nNote that “representation” has (at least) two meanings:\n\nTechnical: How computers encode rich concepts (like colour) as numbers\nSocial: Who is represented in this discipline, and why it matters\n\n\nCourse content will focus on the former.\nAs a field, computer science continues to struggle with the latter. I encourage you all, both in the course and beyond, to stamp your own interpretations and ideas on the field even if the incumbents might not agree. While the demographics of computing have been historically narrow, the field also has an unmatched enthusiasm for innovation and “breaking things”."
+    "section": "Knitting: examples",
+    "text": "Knitting: examples\n\n\n\n\n\n\n\n\n\n\n\n\nShow \\(40 \\times 40\\), but then transition into \\(n \\times n\\)—“one difference between a knitting project and our problems we solve”"
   },
   {
-    "objectID": "slides/02_thu_representation.html#computer-data",
-    "href": "slides/02_thu_representation.html#computer-data",
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Computer Data",
-    "text": "Computer Data\n\n\nWhat does data look like to a computer?\n\nDetect voltage levels (actually the presence of electrical charges in tiny capacitors).\nAnalog vs digital: What’s the difference?\nBinary digits –&gt; “bits”\n\n\n\n\n\n\n\nPicture the capacitors as little cups containing water.\n\nDiscuss analog vs digital interpretation of the amount of water.\n\nPositive and negative charges interpreted as 1 and 0, which leads us to “binary”\n\nDiscuss why we decided to go with binary, as opposed to decimal or something else. (Actually, in some systems they use other powers of 2.)"
+    "section": "Quantifying the Task",
+    "text": "Quantifying the Task\n\n\n\n\nIf we describe one dimension of a square rag by \\(n\\), how much work is done by the knitter? ____________\nIf we have enough yarn for 36,000,000 stitches, what is the largest rag we could make? ____________\nIf each stitch takes a second, what is the largest rag we could make in one evening? ____________\nIf it takes an evening to make a \\(40 \\times 40\\) rag, how long will it take to make an \\(80 \\times 80\\) rag? ____________\nIf it takes time \\(t\\) to make an \\(n\\) by \\(n\\) rag, how long will it take to make a \\(3n \\times 3n\\) rag? ____________\n\n\nGeneral idea: quantify the size of the problem (\\(n\\)) and consider the cost of our task as that size increases.\n\n \n\nDraw the parabola in 4. Point out that quadratic is slower than exponential growth."
   },
   {
-    "objectID": "slides/02_thu_representation.html#but-humans-use-decimal-numbers",
-    "href": "slides/02_thu_representation.html#but-humans-use-decimal-numbers",
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-1",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-1",
     "title": "Programming, problem solving, and algorithms",
-    "section": "But Humans use Decimal Numbers",
-    "text": "But Humans use Decimal Numbers\n\nMost common approach to representing numbers for humans is the Hindu-Arabic numeral system.\n\nIt is a positional system using 10 as the radix.\nOften called base-10 or decimal.\n\n\n\n\n\n3\n1\n5\n7\n\n\n103 = 1000\n102 = 100\n101 = 10\n100 = 1\n\n\n\n\nWrite out full english version of the decimal number."
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nIf we are solving a problem / writing an algorithm for an input of arbitrary size, we can parameterize the running time of the solution by the size of the input.\nWe usually denote this input size using the variable \\(n\\).\n\n\n\n\n\nWe need to specify what \\(n\\) represents (in this case the length of each side of the square).\nSometimes we need multiple parameters to describe the size of the problem (such as \\(n\\) and \\(m\\)).\nWe pay attention to only the degree of n (so if a scarf takes \\(3n^2 + 12n\\) time, we are only interested in the fact it is \\(n^2\\))\n\n\n\n\nIn this example we choose to label \\(n\\) as the side-length in stitches, but other choices are possible.\nWe don’t care so much about units, so we communicate using the largest order term\n\nA scarf which is always \\(3n \\times n\\) takes time \\(3n^2\\) to knit, we ignore the 3 when we’re talking about algorithms. It’s the squared part that really determines how waiting time increases as the problem size increases.\nWe say that the variable term “dominates”.\n\n\nBut why did we introduce a “parameter”? What happened to the rows and stitches? What does this have to do with a computer processing data?\nWe are seeking to understand the effort / efficiency / complexity of solving the problem / running the algorithm in a simple / elegant manner, where we have abstracted away the clutter of the details of the problem."
   },
   {
-    "objectID": "slides/02_thu_representation.html#converting-between-bases",
-    "href": "slides/02_thu_representation.html#converting-between-bases",
+    "objectID": "slides/02_tue_efficiency.html#section",
+    "href": "slides/02_tue_efficiency.html#section",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Converting between Bases",
-    "text": "Converting between Bases\n\nWe can use other bases.\n\nThe Babylonians used base-60.\nComputers use base-2 or binary.\n\n\n\n\n\n\n\n\n\n\n\n1\n1\n0\n1\n\n\n[2]3 = 8\n[2]2 = 4\n[2]1 = 2\n[2]0 = 1\n\n\n\n\nConvert the binary number to decimal."
+    "section": "",
+    "text": "Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions. […] It’s not just minimalism or the absence of clutter. It involves digging through the depth of complexity. To be truly simple, you have to go really deep. […] You have to understand the essence of a product in order to be able to get rid of the parts that are not essential.\n— Steve Jobs\n\n\nIn this course we will be seeking simplicity and elegance not only in our algorithms, but also in how we analyze them. In particular, when looking at the complexity of an algorithm we will ignore the constants and dominated terms.\nOur software should be considered to be a means of communicating with other humans who want to know how we have solved the problem. Humans are not good readers, but they think they are good programmers, so if they cannot understand our solution, then they will just rewrite it! (Complexity gives people a reason not to connect)\nIt would be nide to include this link, but I cannot figure out how to adjust the font size to make room. For further reading: https://www.smithsonianmag.com/arts-culture/how-steve-jobs-love-of-simplicity-fueled-a-design-revolution-23868877/"
   },
   {
-    "objectID": "slides/02_thu_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
-    "href": "slides/02_thu_representation.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-thinking-about-bits",
+    "objectID": "slides/02_tue_efficiency.html#handcraft-and-code",
+    "href": "slides/02_tue_efficiency.html#handcraft-and-code",
     "title": "Programming, problem solving, and algorithms",
-    "section": " Your turn: Thinking about bits",
-    "text": "Your turn: Thinking about bits\n\nWhat’s the largest number you can represent with 4 bits?\nHow many bits do you need to represent 120?\nIf I give you one more bit, what happens to how many numbers you can represent?\nHow high can you count on your fingers? and toes?\nAs the number \\(k\\) grows, how does the number of digits grow?\n\n\n \n\n\nLargest with 4 bits: 15 (1111).\nBits for 120: 7 bits (120 &lt; 128 = 2^7).\nOne more bit: DOUBLES the numbers you can represent!\nRemember 210 about 1000, 220 = 106.\nComplexity (number of digits) grows as \\(\\log k\\).\nWhat about non-positional number systems?\n\nTally or roman numerals grow as \\(k\\) (even for Roman numerals, since the largest single digit is “M” = one thousand)."
+    "section": "Handcraft and Code",
+    "text": "Handcraft and Code\nKnitting model:\n\n\n\nSide length is \\(n\\)\nOne stitch is a unit of work\n\n\n\n\\(n\\) rows, \\(n\\) stitches per row\nTotal work is \\(n^2\\)\n\n\n\n\n\n\n\n\n\nWalk through code. Yes, we are mutating variable cloth, and we generally discourage mutation. Are we mutating the string to which cloth refers?\nCount work to arrive at \\(n^2\\) conclusion.\n\nWhich line is executed most frequently?\nHow many times is outer for loop executed?\nHow many total times is line 5 (inner for loop) executed?"
   },
   {
-    "objectID": "slides/02_thu_representation.html#from-bits-to-everything",
-    "href": "slides/02_thu_representation.html#from-bits-to-everything",
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-2",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-2",
     "title": "Programming, problem solving, and algorithms",
-    "section": "From bits to… everything?",
-    "text": "From bits to… everything?\nWe can represent integers, so we can assign integers to any other (discrete) data\n\nText: ASCII or Unicode (aka UTF-8, UTF-16, UTF-32)\nSound (amplitude samples)\nImages (pixel colours)\nVideo (sequences of images)\nHumans (UBC student numbers, social insurance numbers, national identification number, …)\n\nLet’s see how this works with colour.\n\nHow many different characters can we represent with UTF-32? Just 1,112,064 (even though 232 = 4 billion)."
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nSuppose we can knit 1 (= 100) stitches per second….\nThe degree (in n) makes a very big difference!\n\n\n\ntime \\ n\n10\n100\n1000\n\n\n\n\nlog n\n~3 s\n~6½ s\n~10 s\n\n\nn\n10 s\n102 s ~ 1½ min\n103 s ~ 16½ min\n\n\nn log n\n3(10) s ~ ½ min\n6(102) s ~ 10 min\n104 s ~ 2½ hours\n\n\nn2\n100 s ~ 1½ min\n104 s ~ 2½ hours\n106 s ~ 11½ days\n\n\nn3\n1000 s ~ 16½ min\n106 s ~ 11½ days\n109 s ~ 31½ years\n\n\n2n\n1024 s ~ 17 min\n~1030 s\n~10301 s\n\n\n\nNotes: “log” is base 2, and the age of the universe: ~1018 s\n\nLog factors are great! Linear (power 1) is good. Powers 2+ (polynomial) is okay as long as \\(n\\) is reasonably small. If \\(n\\) is in the exponent, forget about it…"
   },
   {
-    "objectID": "slides/02_thu_representation.html#colour-interpretation",
-    "href": "slides/02_thu_representation.html#colour-interpretation",
+    "objectID": "slides/02_tue_efficiency.html#quantifying-the-task-3",
+    "href": "slides/02_tue_efficiency.html#quantifying-the-task-3",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour Interpretation",
-    "text": "Colour Interpretation\n\n\n\nHow does light wavelength become colour? Biological interpretation\nWhat’s your favorite colour? Psychological interpretation\nDoes that colour influence your dress/decor/purchases? Cultural interpretation\n\nNormal computer images do none of these three things (although it does take advantage of how human biology detects light)."
+    "section": "Quantifying the task…",
+    "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
   },
   {
-    "objectID": "slides/02_thu_representation.html#human-colour-perception",
-    "href": "slides/02_thu_representation.html#human-colour-perception",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Human Colour Perception",
-    "text": "Human Colour Perception\n\nHuman color vision has three channels\n\nOur brain experiences color based on the intensity of light detected by “red”, “green” and “blue” cone cells in our retinas\n\n\n\n\n\nIf we are shown a yellow wavelength\n\nL cones will respond strongly\nM cones will respond almost as strongly\nS cones will respond weakly\n\nTo fake a yellow wavelength (for a human)\n\nShow a lot of a red wavelength\nShow a little less of a green wavelength\nShow little or no blue wavelength"
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#colour-representation",
-    "href": "slides/02_thu_representation.html#colour-representation",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour Representation",
-    "text": "Colour Representation\n\nSo we only need to figure out how to manage blends of three colors!\nCan we use integers to represent colours?\n\nOne way: RGB or (red, green, blue), where each “component” is integer in the range 0 through 255.\nFor example: (255, 0, 127) ==     ?\nFun calculator for colour values: https://colorizer.org\n\nWhy 256 possible values?\n\n\n\nEarly computer colour might only use 5 bits / channel (so slightly less than 16 bits).\n\n8 bits / channel is convenient as (1) computers actually work with data on a byte (or even word = 32 or 64 bit) level and (2) it is sufficient that humans don’t notice the gradations."
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#aside-other-colour-representations",
-    "href": "slides/02_thu_representation.html#aside-other-colour-representations",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Aside: Other Colour Representations",
-    "text": "Aside: Other Colour Representations\n\nThere are alternative ways to represent colour.\n\nHSV (hue, saturation, value) is closer to how humans usually pick colours.\nCMY (cyan, magenta, yellow) for reflective colour.\nSometimes you want more than three channels:\n\n“Alpha” for controlling transparency.\nCMYK to allow for proper black.\nAdditional wavelengths for sensors operating outside human capability.\n\n\n\n\n\nHSV:\n\nHue (H): The color family, measured in degrees from 0° to 360° on a color wheel (0° is red, 120° is green, and 240° is blue).\nSaturation (S): The purity or intensity of the color, ranging from 0% (gray) to 100% (vivid, pure color).\nValue (V): The brightness or lightness of the color, ranging from 0% (absolute black) to 100% (full brightness).\n\nCMYK is used for printers.\n“Multi-spectral” images are used widely in geosensing and astronomy."
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#colour-representation-example",
-    "href": "slides/02_thu_representation.html#colour-representation-example",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Colour Representation Example",
-    "text": "Colour Representation Example\n\n0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 0 1 1\n\n\nWhat colour is this?     \nEasier to read if we use hexadecimal (base-16) representation:\n\nA hex “digit” is one of 0123456789abcdef\nOne hex digit can represent the same as four binary digits\n\n\n\n0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1 | 0 1 0 1 | 1 0 1 1\n5    |    b    |    5    |    b    |    5    |   b\n\n\nNone of these colours: This is a shade of grey."
-  },
-  {
-    "objectID": "slides/02_thu_representation.html#practice",
-    "href": "slides/02_thu_representation.html#practice",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Practice",
-    "text": "Practice\nWhat colour is this 24-bit number?\n\n0110 0111 0100 1110 1010 0111\n\n\n\n\n\nFirst: convert to hex using digits 0123456789abcdef\n\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
-  },
-  {
-    "objectID": "slides/03_thu_dataclasses.html#announcements",
-    "href": "slides/03_thu_dataclasses.html#announcements",
+    "objectID": "slides/06_tue_dictionaries.html#announcements",
+    "href": "slides/06_tue_dictionaries.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nPOTW 2 and 3…\nRegistration for examlet 1."
+    "text": "Announcements\n\nExamlet 2 runs today through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\n\nIf your scheduled lab was yesterday, you can still attend:\n\nT1F: Tue, 18:00 - 19:30.\nT1E: Thu, 9:30 - 11:00.\n\n\nProject 1 due Monday, October 26 (~two weeks).\n\n\nThere was a misconfiguration for examlet 2: Starts today, ends on Sunday. But you’ve had the material (dataclasses and lists) for more than a week, so no big deal."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#colour-and-code",
-    "href": "slides/03_thu_dataclasses.html#colour-and-code",
+    "objectID": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#key-value-pairs",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\nMake the poppies pop!\n\nPC: https://www.epicgardening.com/spring-wildflowers-from-seed/\nExamine each pixel. If its red color channel is high (over 200, say), then leave it as is. Otherwise, change the pixel to grey by setting all 3 color channels to the average of their original values."
+    "section": "Key-Value Pairs",
+    "text": "Key-Value Pairs\n\n\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen key_value_patterns.py.\n\n\n\n\n\n\nKey\nValue\n\n\n\n\nname\nIan Mitchell\n\n\ndepartment\nComputer Science\n\n\nprogram\nM.Sc.\n\n\nstart date\n1995-09-01\n\n\nterms\n7\n\n\ndomestic student\nyes\n\n\n⋮\n⋮"
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#colour-and-code-1",
-    "href": "slides/03_thu_dataclasses.html#colour-and-code-1",
+    "objectID": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Colour and Code",
-    "text": "Colour and Code\nIf necessary, go back and review the slides on colour representation from previous lecture.\nOpen the List Activity on PrairieLearn and choose the Make the Poppies Grow question.\nExamples of programming idiom:\n\n“A commonly-used way to code a relatively small construct in a particular programming context.”\n“Using the idioms for a programming context helps a team work together since they lower the cognitive load of the resulting code.”\n\n\n\nReminding students of how to read code.\n\nIf you were starting from blank page, you would not take this approach.\n\nMay feel like I’m throwing you in the deep end, but that’s what happens when you read somebody else’s code…\n\n“Idiom” is used slightly differently in programming than in linguistics.\nThe normal Python idiom is to put all the libraries at the top of the file (rather than just before they are used).\n\nYou don’t need to do that in marimo because of the dependency check feature.\nCommon libraries often have idiomatic names (such as np for numpy).\n\nTuple notation. New atomic type np.uint8. Is this a compound or arbitrary-size data type? Depends on context: extracting red channel is compound, averaging is arbitrary size.\nThen a bunch of function definitions. How do we know what code is within a function?\nIn final cell: What does the with statement do? Equivalent to let in Dr. Racket. In practical terms, it ensures that the file is closed when the block ends.\n\nExamine the syntax of Image.open call. Google for PIL.Image. Google for np.array.\n\n\nIn fancify: Look at img.shape. Reminder about assigning multiple values (also allows function to return multiple values through a tuple).\n\nWe are treating image as an arbitrary-sized, so we are going to use looping. For looping, we need an accumulator.\nWe usually manipulate images in 2D – lists of lists – so we’ll have nested loops.\nRather than looping over the elements of the image, we’ll loop over the indexes of the elements and then extract the element of interest using indexing.\nReminder of range function.\nDo the loops traverse the image by rows or columns? Rows. Why is it (rows, columns)? We just need to pick one and stick with it. Note that doesn’t agree with (x,y) notation. Everybody gets it wrong regularly…\n\nIn boost_red_pixels why convert to int? Avoids overflow in addition.\nIn final image, why are yellows still present?"
+    "section": "Representing Key-Value Pairs",
+    "text": "Representing Key-Value Pairs\n\nHow could we represent this information? Don’t say “dictionary”.\n\nWhat type for the whole set of data?\nWhat type for each row of data?\nWhat type for the keys?\nWhat type for the values?\n\n\n\n\nArbitrary size / list.\nCompound with two elements: key and value.\nString.\nAnything. Can use typing.Any to formally recognize that type, although it is essentially the Python default.\n\nSee alternative representation as two lists of the same length. Not recommended, but this approach was often used in older languages where compound data was syntactically difficult."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#your-turn-change-image-or-boost",
-    "href": "slides/03_thu_dataclasses.html#your-turn-change-image-or-boost",
+    "objectID": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "href": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Your turn: Change image or boost",
-    "text": "Your turn: Change image or boost\nExperiment with the code! Try one or more of these:\n\nFind a different image URL and boost a different color (green? blue?)\nChange the threshold value (try 150 instead of 200)\nInstead of greying, try inverting: red = 255 - red\nWhat happens if you boost pixels that are LOW in red instead of high?"
+    "section": "Efficiency of List Representations",
+    "text": "Efficiency of List Representations\nIf there are \\(n\\) key-value pairs in the store, how long does it take to:\n\nLook up the value associated with a key?\nDetermine whether a key is in the store?\nAdd a key-value pair?\n\n\nA Python dict can perform any of these operations in constant time for any \\(n\\).\n\n\n\n\\(O(n)\\).\n\\(O(n)\\) (even though you can write it without a loop using the in keyword).\n\\(O(1)\\).\nNote that using in on a dictionary is \\(O(1)\\).\n\nYou cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation. That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation. At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#compound-data-types",
-    "href": "slides/03_thu_dataclasses.html#compound-data-types",
+    "objectID": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "href": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Compound Data Types",
-    "text": "Compound Data Types\nSo far we have focused on\n\nSimple atomic types, such as built-ins int, str or library types np.uint8.\nArbitrary-sized types, such as list or tuple.\n\nBut we often want to store a fixed number of pieces of information which naturally belong together.\n\nRepresenting a UBC student might require a student number, a first name, a last name, a date of birth, etc.\nRepresenting a car might require a make, a model, a colour, a license plate, etc.\nA license plate might require a jurisdiction and a plate “number”.\n\nFor that, we use compound data types."
+    "section": "Not Just a One-Trick Pony",
+    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nCompound data.\nTracking membership.\nCounting appearances / frequencies.\nFinding complements.\nGrouping by (discrete) category.\nRepresenting a map or translation over a discrete domain.\n\nSee slides / class activity from last lecture for the first five.\nToday: Translation / mapping.\n\nNote that there is nothing special about dictionaries and compound data:\n\nAny key-value lookup representation could be used for compound data.\nAny compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).\n\nOkay, all done discussing (bad) ways of implementing key-value lookup. Now let’s return to the ways we can use it.\nIf necessary, go back and complete any patterns that were not completed in the previous lecture."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#our-example-a-bead-bracelet",
-    "href": "slides/03_thu_dataclasses.html#our-example-a-bead-bracelet",
+    "objectID": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
+    "href": "slides/06_tue_dictionaries.html#common-pattern-translationmapping",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Our Example: A Bead Bracelet",
-    "text": "Our Example: A Bead Bracelet\n\nWhat data describes a bead?\nWhat data describes a bracelet?\n\nBead: radius, color Bracelet: radius, list of beads"
+    "section": "Common Pattern: Translation/Mapping",
+    "text": "Common Pattern: Translation/Mapping\n\n\nUse case: Convert values from one representation to another.\n\n\nExample: Go through a string and replace any word which has an emoji equivalent.\n\n\nExample: Substitution cypher.\n\n\n\n\n\nword\nemoji\n\n\n\n\nsun\n☀️\n\n\nrain\n🌧️\n\n\ncloud\n☁️\n\n\nhappy\n😊\n\n\nsad\n😢\n\n\nlove\n❤️\n\n\ncat\n🐱\n\n\ndog\n🐶\n\n\ncoffee\n☕\n\n\n\n\n\n\nEmoji substitution:\n\nsplit() defaults to separating on any whitespace character (space, newline, tab).\njoin() uses the separator string (in this case a single space character) between each string in the list. You could use an empty string as separator if you just want to paste the words together.\nNote that “coffee” is not caught because it has the comma at the end.\n\nFor demo purposes, remove the comma manually.\nRemoving that comma is a little tricky, and putting it back is even trickier. We aren’t going in to the details; suffice to say that written text is annoying to parse in its full generality.\n\n\nDecryption:\n\nThat message isn’t appropriate for this term, since the reading break isn’t for several more weeks.\nHow would we encode a different message? Not easy to do with the existing dictionary, since we would want to look up values and return the matching key."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#previously-in-cpsc-103-or-cpsc-110",
-    "href": "slides/03_thu_dataclasses.html#previously-in-cpsc-103-or-cpsc-110",
+    "objectID": "slides/06_tue_dictionaries.html#lets-practice",
+    "href": "slides/06_tue_dictionaries.html#lets-practice",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Previously in CPSC 103 or CPSC 110",
-    "text": "Previously in CPSC 103 or CPSC 110\nIn CPSC 103, we used NamedTuple to create a compound type:\nfrom typing import NamedTuple\nBead = NamedTuple('Bead', [('r', float), ('c', tuple[int, int, int])])\nB1 = Bead(5.0, (255, 0, 255))\n\ndef circumference(b: Bead) -&gt; float:\n    return 2 * math.pi * b.r\nIn CPSC 110, we used define-struct to create a compound type:\n(@htdd Bead)\n(define-struct bead (r, c))\n;; Bead is (make-bead Float Color)\n;; interp. A bead with radius r and RGB colour c\n(define B1 (make-bead 5.0 `(255, 0, 255)))\n\n(define (circumference b)\n  (* 2 pi (bead-r b)))\n\nIf you did not take CPSC 103 or 110, don’t worry about these examples.\n\nWe recommend that everybody use dataclasses going forward.\n\nThere is an alternative notation for NamedTuple using the class statement.\n\nSee design recipes at course webpage.\nIt will make more sense once we look at dataclasses.\nThere are some pros/cons to using NamedTuple instead of dataclass, but the alternative class-based notation for NamedTuple is definitely more idiomatic."
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\nOpen today’s activity. You’ll solve 2 new puzzles.\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen STUDENT_dict_patterns_nb.py."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#dataclasses-in-python",
-    "href": "slides/03_thu_dataclasses.html#dataclasses-in-python",
+    "objectID": "slides/06_tue_dictionaries.html#summary",
+    "href": "slides/06_tue_dictionaries.html#summary",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Dataclasses in Python",
-    "text": "Dataclasses in Python\nA dataclass bundles related data together into a custom type.\nfrom dataclasses import dataclass\n\n@dataclass\nclass Bead:\n    radius: float\n    colour: tuple[int, int, int]  # RGB\nThis creates a new type called Bead with two attributes.\n\nWhat type is colour: atomic, arbitrary sized, …? While it is a tuple, we are treating it (mostly) as compound rather than arbitrary sized because:\n\nIt always has three values.\nThe values each have a distinct meaning (red, green or blue).\nShould we have created a Colour data type?"
+    "section": "Summary",
+    "text": "Summary\nDictionaries give you fast lookup by key — whether you have 100 items or 100,000.\n\n\n\nPattern\nUse Case\nTechnique\n\n\n\n\nRecord\nStore named fields\n{\"name\": ..., \"age\": ...}\n\n\nMembership\nTrack what we’ve seen\nseen[x] = True\n\n\nCounting\nCount occurrences\nCounter(items)\n\n\nComplement\nFind pairs\nStore & check complements\n\n\nGrouping\nOrganize by category\ndefaultdict(list)\n\n\nTranslation\nConvert values\nDirect key → value mapping"
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#creating-bead-objects",
-    "href": "slides/03_thu_dataclasses.html#creating-bead-objects",
+    "objectID": "slides/06_tue_dictionaries.html#oh-no",
+    "href": "slides/06_tue_dictionaries.html#oh-no",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Creating Bead Objects",
-    "text": "Creating Bead Objects\n\n\n\n\n\n\n\nWhy use @dataclass rather than just regular Python classes?\n\nDataclasses automatically generate a bunch of annoying but important methods, such as the constructor and a display routine (useful when you want to print).\nThey have some constraints, but nothing that will come up in CPSC 203.\nOur recommendation:\n\nIf you are creating your own class, use dataclass.\nIf you are using somebody else’s class, pretend it is a dataclass until you are forced not to."
+    "section": "Oh No!",
+    "text": "Oh No!\nIn CPSC 103 / 110: One code template for each data type.\nIn CPSC 203:\n\nCompound data could be stored as NamedTuples / DataClasses, lists / tuples, or dictionaries.\n\nSlightly different syntax, but same basic template.\n\nKey-value pairs can be stored as dictionaries.\n\nNotably different code template depending on the task.\nSometimes the problem information is not in the form of a key-value pair.\n\n\n\nShow HtDP page for compound data types.\nAlready in form of key-value pairs: Records, translation.\nNeed to create form of key-value pairs: Membership, counting, complement, grouping.\nWe could have solved all of these patterns with list (and maybe compound) data types, but the result would be much less efficient (\\(O(n^2)\\) instead of \\(O(n)\\)).\nGoing forward, we will see some additional data structures where we are adding complexity and/or data beyond what is strictly necessary in order to achieve reasonable efficiency."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#vocabulary",
-    "href": "slides/03_thu_dataclasses.html#vocabulary",
+    "objectID": "slides/06_tue_dictionaries.html#python-magic-methods",
+    "href": "slides/06_tue_dictionaries.html#python-magic-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Vocabulary",
-    "text": "Vocabulary\n\nIn CPSC 103 / 110 we talked about a type vs an instance of that type.\n\nA type is a category of data, and explains how that data maps to information (the representation and interpretation). For example, an int is a type for storing integers.\nAn instance is a concrete example of a type. For example, the value 42 is an instance of the type int.\n\nIn Python (and many other languages) compound types use special terminology.\n\nThe type is called a class.\nAn instance of a class is called an object."
+    "section": "Python Magic Methods",
+    "text": "Python Magic Methods\nRemember: Any piece of data in Python is an object that belongs to a class.\nYou will often see references to methods with two underscore characters before and after the name; for example, __init__(), __str__(), __len()__.\n\nCalled dunder (short for double underscore) or magic methods.\nDo not make up your own method names with the double underscore notation.\nYou can definitely implement these methods for your own classes.\n\n\nYou will run into these methods in the Python documentation.\nYou can write other methods with dunder names, but you will just confuse everybody.\nBy using dataclasses, you get reasonable implementations of several of these methods for free; for example, __init__() and __str__()."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
-    "href": "slides/03_thu_dataclasses.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206661362d736f6c696420636f6d6d656e7473203e7d7d-your-turn-beads",
+    "objectID": "slides/06_tue_dictionaries.html#example-magic-methods",
+    "href": "slides/06_tue_dictionaries.html#example-magic-methods",
     "title": "Programming, problem solving, and algorithms",
-    "section": " Your Turn: Beads",
-    "text": "Your Turn: Beads\nWhat would these print?\n\n\n\n\n\n\n\n \n\nAnswers: 10.0, 255, 8.0"
+    "section": "Example Magic Methods",
+    "text": "Example Magic Methods\nMagic methods are used by Python to implement internal behaviours and operator overloading.\n\nWhen you call print(x), Python displays the result of x.__str__().\nWhen you call len(x), Python returns the result of x.__len__().\nWhen you write x + y, Python will call x.__add__(y).\nWhen you write x[i], Python will call x.__getitem__(i).\nWhen you write x[i] = y, Python will call x.__setitem__(i, y).\n…\n\n\nMost Python operators are just syntactic sugar for method calls; in other words, a way of writing method calls which is easier for humans to read."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#adding-behavior-methods",
-    "href": "slides/03_thu_dataclasses.html#adding-behavior-methods",
+    "objectID": "slides/06_tue_dictionaries.html#class-hierarchies",
+    "href": "slides/06_tue_dictionaries.html#class-hierarchies",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Adding Behavior: Methods",
-    "text": "Adding Behavior: Methods\nA dataclass can also have methods.\n\n\n\n\n\n\n\nWhat is this self parameter?\n\nThe first parameter of any method contains the object on which this method was called. Python idiom is to use the name self for this parameter.\nCalling a method with dot notation is also standard Python idiom, but you could also call it through the class: print(Bead.diameter(b)). Note that you need to explicitly include the bead object as the first parameter in this case."
+    "section": "Class Hierarchies",
+    "text": "Class Hierarchies\nRemember: Any piece of data in Python is an object that belongs to a class.\nWhen we have a bunch of related classes, we often organize them in a hierarchy.\n\nClasses have a parent or superclass from which they inherit attributes and methods.\n\nIf a class definition does not list a superclass, then it inherits from Python’s object class.\n\nClasses can have children or subclasses which implement (or even change) their methods and attributes.\n\n\nDo you need to know how to build or even use class hierarchies for the exam? No.\nIt is useful to know this vocabulary when reading Python documentation / explanations, and also to understand interfaces."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#adding-behavior-more-methods",
-    "href": "slides/03_thu_dataclasses.html#adding-behavior-more-methods",
+    "objectID": "slides/06_tue_dictionaries.html#why-class-hierarchies",
+    "href": "slides/06_tue_dictionaries.html#why-class-hierarchies",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Adding Behavior: More Methods",
-    "text": "Adding Behavior: More Methods\nAdd a draw method:"
+    "section": "Why Class Hierarchies?",
+    "text": "Why Class Hierarchies?\nConceptually, the idea is that you can work with an object as if it was an instance of the parent class rather than needing to know to which specific child class it belongs.\nIn particular, different children might:\n\nStore their data in different ways.\nStore different data.\nImplement the same method in different ways.\n\nBut the user only needs to know the common method’s signature (typically given in the parent class).\n\nFormal hierarchies are important in strongly typed languages, such as C++ or Java. In those languages the type of every object must be known in advance, so the ability to pretend to be a parent type is powerful.\nPython uses informal “duck typing” (if it walks like a duck and quacks like a duck, it is a duck), so you don’t need to formally be an object of a child class in order for this trick to work."
   },
   {
-    "objectID": "slides/03_thu_dataclasses.html#demo",
-    "href": "slides/03_thu_dataclasses.html#demo",
+    "objectID": "slides/06_tue_dictionaries.html#class-hierarchy-example",
+    "href": "slides/06_tue_dictionaries.html#class-hierarchy-example",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Demo",
-    "text": "Demo\n\n\n\n\n\n\n\n\nDuring an exam, we would not expect you to remember how to write the stuff we’re doing with matplotlib in this code.\nYou should definitely remember how to create and use a dataclass."
+    "section": "Class Hierarchy Example",
+    "text": "Class Hierarchy Example\n\n\n\n\n\n\n\nAgain, we will not expect you to be able to write or even read class hierarchies like this. I am presenting it to explain some common vocabulary."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#interfaces",
+    "href": "slides/06_tue_dictionaries.html#interfaces",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Interfaces",
+    "text": "Interfaces\nA contract specifying which method(s) a child class should implement.\n\nAn interface is not a class.\nIt provides only the signature(s) of the required method(s), not implementation(s).\nYou cannot create an object instantiating an interface.\n\nYou can create classes which inherit from / implement an interface.\n\nMake sure that the class implements the required method(s).\nWhen you instantiate an object, it will implement the interface.\n\n\nOften we would like a group of different objects to implement the same methods, but we don’t want to have a full parent class.\nIn Python the distinction is mostly for human design purposes: We use “interfaces” for relatively light-weight contracts without common data representations, and “superclasses” for more complex data representations.\nPython also has an intermediate category, abstract base classes, which cannot be instantiated but which can contain attributes and method implementations.\nDo you need to know how to build interfaces for the exam? No\nIt is useful to know this vocabulary when reading Python documentation / explanations. In particular, I do want you to understand what I mean when I mention iterable or hashable objects."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#useful-interface-iterable",
+    "href": "slides/06_tue_dictionaries.html#useful-interface-iterable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Interface: iterable",
+    "text": "Useful Interface: iterable\n\nIntuition: If you can write a for loop over the elements of the object.\nContract: Object implements the __iter__(self) method.\nPractical effects:\n\nYou can write loops: for item in x: ...\nYou can write list comprehensions.\nYou can trivially convert to a list: list(x) or tuple(x).\n\n\n\nWe will not expect you to implement classes which have the iterable interface.\nI want you to be able to understand what I mean when I say “any iterable / hashable object”, rather than always having to say “list” / “immutable object” and feel uncomfortable about it."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#examples-of-iterable",
+    "href": "slides/06_tue_dictionaries.html#examples-of-iterable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Examples of iterable",
+    "text": "Examples of iterable\nExamples:\n\nlist, tuple, str. Elements will always come out in the same order in which they were created.\nset. Elements may come out in a different order.\ndict. The iteration is over the keys, and elements may come out in a different order.\nThe objects returned by range() and enumerate().\nFiles, pandas Series and DataFrames, and many more.\n\n\nWhen you write a loop over an iterable object, you can think of it as a list. But behind the scenes Python does not create a list but rather works with the data in its existing representation.\nIn particular, range(n) doesn’t need memory proportional to \\(n\\); instead, it just keeps track of the current element, how to get to the next element, and when to stop. If you type list(range(n)), then you will create a list and use memory proportional to \\(n\\)."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#useful-interface-hashable",
+    "href": "slides/06_tue_dictionaries.html#useful-interface-hashable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Interface: hashable",
+    "text": "Useful Interface: hashable\n\nIntuition: An object that is immutable.\nContract: Object implements the __hash__(self) and __eq__(self, other) methods.\nTechnical details: A magic number (the hash value) with a constant number of digits can be computed from the object such that:\n\nYou will always get the same number for this object.\nYou will (almost) always get a different number for any other object.\n\nPractical effects:\n\nThe object can be used as a key in a dictionary or added to a set.\nThe programmer need not worry about aliasing or function side-effects.\n\n\n\nThere are objects which are immutable but not hashable and vice versa, but the former are rare and the latter are rare and almost always a bad idea, so we’ll ignore the distinction.\nThe size (storage requirement) of a hash value is constant no matter how much data is in the corresponding object.\nThe way that dictionaries / sets can look things up so fast is because they use the hash value like an index.\nIt is okay if you very occasionally get the same number from two different objects. This is called a hash collision, and you can check for it with a subsequent call to __eq__(). More important is that objects whose data is similar should produce very different hash values. That means computing the hash value may be expensive for a large object (such as a long tuple).\nAs a side note: The hash value only needs to stay constant during a single run of the program. Python may produce different hash values on different runs.\nAliasing and side-effects are an issue because the data in an object can change without an explicit reference to the object. But immutable objects cannot change, so the problem disappears."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#examples-of-hashable",
+    "href": "slides/06_tue_dictionaries.html#examples-of-hashable",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Examples of hashable",
+    "text": "Examples of hashable\n\nAll the simple atomic types: int, str, bool, float, NoneType.\nNamedTuples (but not dataclasses).\nMany basic mutable types have an immutable version.\n\nFor example: tuple, frozenset, (as of Python 3.15) frozendict.\n\nThe union of other immutable types.\n\nFor example, optional type: some_type | None.\n\n\n\nPython 3.15.0 was released 2026-10-09 (last Friday).\nThe reason that dict will rearrange the order of the keys: The order depends on the hash value."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#warning",
+    "href": "slides/01_thu_intro.html#warning",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Warning",
+    "text": "Warning\n\n\n\nThis course uses slides.\n\nIt is familiar and easy way to learn, but often leads to poor understanding and retention.\n\n\n\n\n\n\nLearning is a contact sport!\n\nYou will be surprised, confused, angry, and sad on the path to enlightenment"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#how-learning-works",
+    "href": "slides/01_thu_intro.html#how-learning-works",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "How Learning Works",
+    "text": "How Learning Works"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#teaching-staff",
+    "href": "slides/01_thu_intro.html#teaching-staff",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\nInstructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: TBA\n\nTA: Jayden Lieu \n\nOffice Hours: TBA\n\nTA: Timothy Solnyshkin \n\nOffice Hours: TBA"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#you",
+    "href": "slides/01_thu_intro.html#you",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "You!",
+    "text": "You!\n\nTurn to your neighbor and introduce yourself 👋\n\nTogether, come up with one binary question that you think will divide the class about in half\nExamples:\n\nCoke or Pepsi?\n\nSpaghetti or Sushi?\n\nMorning person or Night owl?"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#lets-play-a-game",
+    "href": "slides/01_thu_intro.html#lets-play-a-game",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Play a Game",
+    "text": "Let’s Play a Game\nRules:\n\nEveryone starts with their hand up\nEach turn, a student poses a valid yes/no question\n\nYES = Put your hand down\nNO = Keep it up\n\nYES people are now on vacation 🌴 (your hand stays down from now on — relax and enjoy!)\nA question is valid if more than four and less than half the remaining people say “yes”\n\nEnd of Game:\n\nWe stop when ten or fewer people remain in play\nEveryone else is happily on vacation 🌴\n\n\nHow to Count\nStart w 150 (say) pose question 1, 5 &lt;= k1 &lt;= 150/2 down -&gt; 150-k1 remain. pose 2, 5 &lt;= k2 down &lt;= (150-k1)/2 -&gt; 150-k1-k2 remain. pose question 3, 5 &lt;= k3 &lt;= (150-k1-k2)/2 -&gt; 150-k1-k2-k3 remain. etc."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#debrief",
+    "href": "slides/01_thu_intro.html#debrief",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Debrief 💡",
+    "text": "Debrief 💡\nPunchline questions:\n\nWhat is the minimum number of questions?\nWhat is the maximum number of questions?\nWhy did we stop at 10 instead of 1?\nWhy did we do this game?\n\n\n\nBest case: keep halving ⇒ about log₂(150/10) ≈ 4 rounds\n\nWorst case: only 5 eliminated each round ⇒ ~28 rounds\n\nStopping at 10 = “small enough to brute force”\n→ common strategy in algorithms"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#where-to-start",
+    "href": "slides/01_thu_intro.html#where-to-start",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Where to start?",
+    "text": "Where to start?\nCourse Website: https://ubc-cs.github.io/cpsc203\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\nNot Canvas: https://canvas.ubc.ca/courses/193007"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#about-this-course",
+    "href": "slides/01_thu_intro.html#about-this-course",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "About This Course",
+    "text": "About This Course\nThis course will teach you a bunch of different things!\n\n(More) Python!\nNew data types and patterns: classes, dictionaries, tables, graphs\nData science: pandas, data frames, visualizations\nAlgorithms and complexity\nArt and creativity: lots of examples!\nTools and Techniques(?): Terminal, marimo, PrairieLearn, unit tests, Markdown, Git,"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#schedule-syllabus-and-logistics",
+    "href": "slides/01_thu_intro.html#schedule-syllabus-and-logistics",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Schedule, Syllabus and Logistics",
+    "text": "Schedule, Syllabus and Logistics\nhttps://ubc-cs.github.io/cpsc203\n\n\nShow 2025W2 schedule to see how the table will fill out.\nShow grading policy."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#course-components-lecture-and-take-home",
+    "href": "slides/01_thu_intro.html#course-components-lecture-and-take-home",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Course Components: Lecture and Take-Home",
+    "text": "Course Components: Lecture and Take-Home\nAll elements are accessed through PrairieLearn.\n\nLectures: Tuesdays and Thursdays, in-class activities based on problem solving and design.\nLabs: Mondays / Tuesdays / Thursdays, practice on lecture material.\n\nReleased on Sunday night, due the following Sunday night.\n\nProblems of the week (POTW): One per (week)day, ~ 50 / term.\n\nReleased in batches of five on Sunday night, due the following Sunday night.\n\nProjects: Three total, involve more substantial programming practice.\n\nReleased on Monday morning, due three weeks later."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#course-components-2-invigilated",
+    "href": "slides/01_thu_intro.html#course-components-2-invigilated",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Course Components 2: Invigilated",
+    "text": "Course Components 2: Invigilated\n\nExamlets: Five, roughly every two weeks.\n\nSchedule your own 50 minute block.\nAvailable Thursday through Monday.\n\nFinal Exam:\n\nSchedule your own 110(?) minute block.\nAvailable during a five day window TBA.\nPractice version released a week before.\n\nYou will physically go to an ORCA facility.\nScheduling is done through PrairieTest.\n\nOpens Tuesday at 10:00am, two weeks before the assessment.\n\nPractice versions released through PrairieLearn a week before."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#semester-overview",
+    "href": "slides/01_thu_intro.html#semester-overview",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Semester overview",
+    "text": "Semester overview\n\n\n\n\n\n\n\n\n\n\n\nHandcraft\nBillboard Hot 100\nThe Overstory and Pointillism\nArtificial Music Composition\nRoad Trip Planning\nSpiderman’s Social Network\n\n\n\n\nDesign\nObjects\nIteration\nWeb Scraping\nData Frames\nMatPlotLib\nVoronoi Diagrams\nEfficiency\nMarkov Chains\nRandom Numbers\nGraphs\nTraveling Salesperson\nIntractable Problems\nNatural Language\n\n\n\nThis course consists of a sequence of six explorations, assembled to provide a tour through data structure applications and algorithmic design. Built around topics from arts, sciences, and technology, the explorations are thought provoking and engaging. You will emerge from the course with increased proficiency in Python programming, and with a broad spectrum of tools for algorithmic problem solving."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#on-the-use-of-computers-in-class",
+    "href": "slides/01_thu_intro.html#on-the-use-of-computers-in-class",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "On the use of computers in class",
+    "text": "On the use of computers in class\nLaptop use is encouraged in CPSC 203 lectures and labs \nHowever, there is a restriction:\n\nYou may only use your laptop (or other screens, such as phones) for CPSC 203 material.\n\nUsing screens for other purposes has been shown to reduce your learning and lower your grades.\nUsing screens for other purposes has also been shown to reduce the grades of those around you.\n\nIf you have something urgent to do, just leave the classroom!"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#how-to-study",
+    "href": "slides/01_thu_intro.html#how-to-study",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "How to Study",
+    "text": "How to Study\n\nThis is learn by doing material!\n\nPassively watching videos / live coding and reading our solutions will not be enough.\nYou must solve the problems yourself and write out their solutions.\n\nThere are many opportunities for you to practice:\n\nIn lecture, labs, POTWs, practice examlets, projects, …"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#from-a-former-cpsc-110-student-applies-to-cpsc-203-too",
+    "href": "slides/01_thu_intro.html#from-a-former-cpsc-110-student-applies-to-cpsc-203-too",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "From a Former CPSC 110 Student (Applies to CPSC 203 too)",
+    "text": "From a Former CPSC 110 Student (Applies to CPSC 203 too)\n\nIt’s funny how repetition in actually doing the work leads to it all of a sudden making sense to me. I can’t explain it. I don’t have a sense of growing understanding. I have confusion, repetition, and suddenly a sense of understanding. It’s not coming through watching or reading, though. It comes from replicating what I’ve watched several times. This has happened repeatedly for me in this class. I start the week with a sense of accomplishment, well being, peace of mind, and confidence from the victory over last week’s homework. I am then submerged in doubt, confusion, and erm, terror. (Why not be melodramatic?) Suddenly there is a working epiphany and I have victory again."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#possible-sources-of-negative-emotions",
+    "href": "slides/01_thu_intro.html#possible-sources-of-negative-emotions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Possible sources of negative emotions",
+    "text": "Possible sources of negative emotions\n\nFeeling confused about a topic.\nFeeling of falling behind/not having enough time.\nSome external event.\nSomething else.\n\nWe can usually find a solution!\n\nTalk to us!"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#dont-be-afraid-to-try-and-fail",
+    "href": "slides/01_thu_intro.html#dont-be-afraid-to-try-and-fail",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Don’t Be Afraid to Try (and Fail)!",
+    "text": "Don’t Be Afraid to Try (and Fail)!"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#elegance-example",
+    "href": "slides/01_thu_intro.html#elegance-example",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Elegance Example?",
+    "text": "Elegance Example?\nScissors\n\n\n\n\n\n\n\n\n\nquestions we leave with… can something be elegant if it’s not functional?"
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#conclusions",
+    "href": "slides/01_thu_intro.html#conclusions",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Conclusions",
+    "text": "Conclusions\nToday we have begun to introduce some of the themes and ideas that we’ll see all term long:\n\nCounting steps: What’s the best that can happen? What’s the worst?\nCourse schedule, syllabus and logistics.\nElegance."
+  },
+  {
+    "objectID": "slides/01_thu_intro.html#get-yourself-registered",
+    "href": "slides/01_thu_intro.html#get-yourself-registered",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Get Yourself Registered",
+    "text": "Get Yourself Registered\nPrairieLearn: https://us.prairielearn.com/pl/course_instance/228149\nPiazza: https://piazza.com/ubc.ca/winterterm12026/cpsc203\n\n\nTell the students to go to each of these sites and register."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#announcements",
+    "href": "slides/05_tue_plots.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nPractice examlet 2 is available.\n\nExamlet 2 next week (Thursday Oct 15 to Monday October 19).\nLab 4 and POTW 4 due Sunday October 11, 8pm.\nProject 1 due Monday October 26, 8pm."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#the-question",
+    "href": "slides/05_tue_plots.html#the-question",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Question",
+    "text": "The Question\nGiven a year of charts,\n\nWhat do the paths of the number ones look like?\nDo most songs debut at the top? How fast do they fall?\n\nWe can quantify these things, and analyze them, but a picture will help us see if there’s anything interesting in the data.\n\nWe are asking harder questions about our data:\n\nWorking with multiple weeks of data.\nVisualizing song trajectories.\n\nIn the process, we will practice the stuff we learned previously, and learn some new stuff."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#first-sketch-where-we-are-going",
+    "href": "slides/05_tue_plots.html#first-sketch-where-we-are-going",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "First: Sketch Where We Are Going",
+    "text": "First: Sketch Where We Are Going\nDraw a loose sketch of how you might visualize the paths through the Hot 100 chart for all songs which hit #1.\n\nWhat are some reasonable axes?\nImagine what the path of one song looks like.\nHow many paths are there for all songs?\n\n\n\nx-axis is time, y-axis is rank. But #1 should be at the top on the y-axis.\nOne line per song.\nWhat happens when a song does not have a rank?"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#key-steps",
+    "href": "slides/05_tue_plots.html#key-steps",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Key Steps",
+    "text": "Key Steps\n\nAssemble the data we want to analyze.\nFind the list of Number 1 songs.\nFor each of those songs, make a list of their ranks over time.\nRearrange the data into a form suitable for plotting.\nGenerate the plot.\n\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen challenge1_nb.py."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#step-3-filter-for-multiple-possible-values",
+    "href": "slides/05_tue_plots.html#step-3-filter-for-multiple-possible-values",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 3: Filter for Multiple Possible Values",
+    "text": "Step 3: Filter for Multiple Possible Values\nWe have a list of song titles that hit #1.\nNow we want all rows for those songs — their complete chart history."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#useful-pandas-.isin",
+    "href": "slides/05_tue_plots.html#useful-pandas-.isin",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Pandas: .isin()",
+    "text": "Useful Pandas: .isin()\n.isin(list) method returns True for rows where the value appears in the list.\n\n\n\n\n\n\n\n\nWe’ve already loaded some data behind the scenes…"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#step-4-reshaping-for-plotting",
+    "href": "slides/05_tue_plots.html#step-4-reshaping-for-plotting",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Step 4: Reshaping for Plotting",
+    "text": "Step 4: Reshaping for Plotting\n\n\nOur data looks like this:\n\nOne row per song per week.\nMultiple rows for each week.\nMultiple rows for each song.\n\n\n\n\ndate\ntitle\nrank\n\n\n\n\n2025-01-04\nSong A\n1\n\n\n2025-01-04\nSong B\n15\n\n\n2025-01-11\nSong A\n3\n\n\n2025-01-11\nSong B\n1\n\n\n\n\nBut for plotting we want\n\nOne row per week (x-axis value).\nOne column per song (one line).\nRank is no longer a column.\n\n\n\n\ndate\nSong A\nSong B\n\n\n\n\n2025-01-04\n1\n15\n\n\n2025-01-11\n3\n1\n\n\n\n\n\nPivoting is a very common operation on tabular data.\n\nThe unique entries in one input column (or perhaps a combination of input columns) become the rows of the output.\nThe unique entries in another input column (or perhaps a combination of input columns) become the columns of the output.\nSome aggregation of the entries in yet another column (or perhaps a combination of input columns) for the matching rows become the entries of the output.\nThis case is a particularly simple pivot because each entry in the output table corresponds to a single row of the input table.\n\nThis part of the code is magic Pandas for me."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#useful-pandas",
+    "href": "slides/05_tue_plots.html#useful-pandas",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Pandas",
+    "text": "Useful Pandas\n\ngroupby() method organizes rows into groups. In this case, one group per (date, title) pair.\n\nResult is a Series with a multi-level index (date, title).\nEach group has exactly one row, so sum() method just extracts that row’s value.\n\nunstack() method takes the inner index level (title) and makes it into columns in a DataFrame.\n\nNow each column is a song, each row is a date!"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#try-it-yourself",
+    "href": "slides/05_tue_plots.html#try-it-yourself",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Try It Yourself",
+    "text": "Try It Yourself\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen STUDENT_viz_nb.py and work through “Part 1: Visualizing Chart Trajectories”.\n\nBasically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#visualization-discussion",
+    "href": "slides/05_tue_plots.html#visualization-discussion",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Visualization Discussion",
+    "text": "Visualization Discussion\n\nWhat patterns do you see in the #1 songs?\nDo most songs debut at the top?\nHow quickly do they typically fall?\nAny songs with unusual trajectories?"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#the-question-1",
+    "href": "slides/05_tue_plots.html#the-question-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Question",
+    "text": "The Question\nDoes a strong debut mean a song will stick around longer?\nOr do slow climbers have more staying power?\nLet’s investigate with a scatter plot!"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#key-steps-1",
+    "href": "slides/05_tue_plots.html#key-steps-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Key Steps",
+    "text": "Key Steps\n\nAssemble the data we want to analyze.\nFind the debut position of each song.\nFind the total number of weeks each song stayed on the chart.\nRearrange the data into a form suitable for plotting.\nGenerate the plot.\n\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen challenge2_nb.py."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#useful-pandas-1",
+    "href": "slides/05_tue_plots.html#useful-pandas-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Useful Pandas",
+    "text": "Useful Pandas\n\nrename() method allows you to rename columns.\ntoframe() method can convert a Series into a DataFrame.\npd.merge() function can combine the data in two tables.\n\n\n\nOften we don’t need to worry about Series vs DataFrame. Pandas is surprisingly forgiving."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#visualization-discussion-1",
+    "href": "slides/05_tue_plots.html#visualization-discussion-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Visualization Discussion",
+    "text": "Visualization Discussion\n\nIs there a correlation between debut position and staying power?\nAny outliers — songs that debuted low but stayed forever?\nOr songs that debuted at #1 but disappeared quickly?\n\nPractice for yourself:\n\nLaunch Class Activity: Billboard (Visualization) in PrairieLearn.\nOpen STUDENT_viz_nb.py and work through “Part 2: Staying Power”.\n\nBasically the same steps as above, but gives a better idea of what kind of code we would expect you to be able to read vs write from scratch."
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#summary",
+    "href": "slides/05_tue_plots.html#summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nConcept\nCode\n\n\n\n\nFilter by condition\ndf[df['rank'] == 1]\n\n\nGet unique values\ndf['title'].unique()\n\n\nFilter by list\ndf[df['title'].isin(list)]\n\n\nReshape for plotting\n.groupby([...]).unstack()\n\n\nCombining tables\npd.merge()"
+  },
+  {
+    "objectID": "slides/05_tue_plots.html#resources",
+    "href": "slides/05_tue_plots.html#resources",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Resources",
+    "text": "Resources\nhttps://pymotw.com/2/datetime/\nhttps://www.dataschool.io/best-python-pandas-resources/\nhttps://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\nhttps://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot"
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#announcements",
+    "href": "slides/06_thu_voronoi.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nExamlet 2 runs through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\nProject 1 due Monday, October 26 (~1½ weeks)."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#from-last-lectures-slides",
+    "href": "slides/06_thu_voronoi.html#from-last-lectures-slides",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "From Last Lecture’s Slides",
+    "text": "From Last Lecture’s Slides\n\nKey-value stores for translation / mapping.\nAside: Python magic methods.\nAside: Python class heirarchies and interfaces."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#what-have-we-done",
+    "href": "slides/06_thu_voronoi.html#what-have-we-done",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What Have We Done?",
+    "text": "What Have We Done?\n\nMeasuring complexity / efficiency.\nRepresenting information with computer data.\nLists: Mutation, aliasing and comprehensions.\nDataclasses for compound data (and methods).\nPandas and dataframes for tabular data.\nDictionaries for key-value lookup.\nSprinkled throughout: Various bits of Python syntax and idiom.\n\n\nWe considered complexity as the size of the problem / amount of data increased. Focus on broad classes of complexity \\(\\log n\\), \\(n\\), \\(n \\log n\\), \\(n^2\\), \\(n^3\\), \\(2^n\\).\nComputers represent everything as a binary number. But we can use numbers to represent anything else (at least approximately). Example was colour.\nDictionaries: Our previous data structures were chosen primarily for functionality (it was convenient that Pandas is fast, but mostly it is nice because it is easy to write filters and maps). We could implement a correct key-value store using lists, but we don’t. The dictionary is our first data structure we use primarily because of its efficiency for a particular operation."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#where-are-we-going",
+    "href": "slides/06_thu_voronoi.html#where-are-we-going",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Where Are We Going?",
+    "text": "Where Are We Going?\n\nStacks & queues: Data structures of interest for their efficiency.\n\nApplication: Computing Voronoi diagrams.\n\nGraphs: Data structure of interest for representational power and (sometimes) efficiency.\n\nApplications: Markov chains for random processes, solving Sudoku, shortest path on maps.\n\nFundamentally complex problems: Traveling Salesperson.\nMore graphs: textual analysis, social networks, gerrymandering election boundaries.\nAll with sprinkling of yet more bits of Python syntax and idiom.\n\n\nIn CPSC 103, you learned about data types such as bool, int, str, range, enumeration, optional, compound and arbitrary-sized. To that CPSC 203 adds tables, dictionaries, stacks, queues and graphs.\nIn CPSC 103, you had:\n\nSimple rules mapping problem information into data type.\nA single code template for each type of data.\nCorrect implementation as your singular focus.\n\nIn CPSC 203, we are breaking all of these simplifying features. You may choose different data types and code templates in order to achieve better efficiency when solving your problem."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#voronoi-diagrams-1",
+    "href": "slides/06_thu_voronoi.html#voronoi-diagrams-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Voronoi diagrams",
+    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#applications",
+    "href": "slides/06_thu_voronoi.html#applications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Applications",
+    "text": "Applications\n\n\n\nBiology, Ecology, Forestry: Model and analyze plant competition.\nZoology: Model and analyze the territories of animals.\nRobotics: Path planning in the presence of obstacles.\nAstronomy: Identify clusters of stars and clusters of galaxies.\nCartography: Piece together satellite photographs into large “mosaic” maps.\nGeography: Analyzing patterns of urban settlements.\nMarketing: Model market of US metropolitan areas.\nMetallurgy: Modelling “grain growth” in metal films."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#more-applications",
+    "href": "slides/06_thu_voronoi.html#more-applications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "More Applications",
+    "text": "More Applications\n\n\n\nPhysiology: Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport (“Capillary domains”).\nMeteorology: Estimate regional rainfall averages, given data at discrete rain gauges.\nAnthropology and Archeology: Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.\nCrystallography and Chemistry: Modelling alloy structures as sphere packings (“Domain of an atom”).\nGeology: Estimation of ore reserves in a deposit using info obtained from bore holes."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#motivational-aside-pointillism",
+    "href": "slides/06_thu_voronoi.html#motivational-aside-pointillism",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Motivational Aside: Pointillism",
+    "text": "Motivational Aside: Pointillism\n\n\nUn dimanche après-midi à l’Île de la Grande Jatte\nFerris Bueller’s Day Off: A Visit to the Art Institute of Chicago\n\n\nA photo doesn’t communicate the scale of the painting. It took Seurat 18 months over two years to complete."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#algorithmic-art",
+    "href": "slides/06_thu_voronoi.html#algorithmic-art",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Algorithmic Art",
+    "text": "Algorithmic Art\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the Voronoi diagram in the new image, using the center colors from the original image.\n\n\n\n\n\nWe are going to focus on calculating Voronoi regions over discrete domains, specifically images.\nChoose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure)."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#distance-between-pixels",
+    "href": "slides/06_thu_voronoi.html#distance-between-pixels",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Distance Between Pixels",
+    "text": "Distance Between Pixels\n\n\nDraw in the right angle triangle.\nGive the pixels coordinates and write out the formula \\(\\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\\).\nNote that the location of the origin doesn’t matter."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#nearest-center",
+    "href": "slides/06_thu_voronoi.html#nearest-center",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Nearest Center",
+    "text": "Nearest Center\n\n\n\n\n\n\n\nNote that we don’t need the exact distance, just which center is closer to yellow.\nIn particular, we don’t need to compute the square root, which is computationally expensive (compared to other arithmetic operations) and results in floating point numbers (ugly)."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#design-an-algorithm",
+    "href": "slides/06_thu_voronoi.html#design-an-algorithm",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Design an Algorithm",
+    "text": "Design an Algorithm\n\n\nConsider a pixel which is not a center (not coloured). What will we do?\nWhat will we do for the whole image?"
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#planning",
+    "href": "slides/06_thu_voronoi.html#planning",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning:",
+    "text": "Planning:\n\n\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\nHow will the data flow through our algorithm?\n\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
+  },
+  {
+    "objectID": "slides/06_thu_voronoi.html#analysis",
+    "href": "slides/06_thu_voronoi.html#analysis",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Analysis",
+    "text": "Analysis\n\n\nLet \\(c\\) be number of centers\nLet \\(n\\) be the size of the image\n(\\(n =\\) width \\(\\times\\) height).\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n\n\n\n\\(O(n)\\).\nHopefully \\(O(c)\\).\n\\(O(nc)\\).\n\\(O(n)\\).\n\nCan we do better?"
   },
   {
     "objectID": "slides/2025W2/01_thu_efficiency.html#announcements",
