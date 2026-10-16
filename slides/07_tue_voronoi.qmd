@@ -1,18 +1,13 @@
 ---
-date: 2026-10-15
+date: 2026-10-20
 ---
 
 ## Announcements
 
-- Examlet 2 runs through Sunday.
-- Lab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.
-- Project 1 due Monday, October 26 (~1½ weeks).
-
-## From Last Lecture's Slides
-
-- Key-value stores for translation / mapping.
-- Aside: Python magic methods.
-- Aside: Python class heirarchies and interfaces.
+- Practice examlet 3 available.
+- Book your slot for examlet 3.
+- Lab 6 (stacks) and POTW 6 (summations and stacks) due Sunday.
+- Project 1 due Monday, October 26 (next week).
 
 # Let's Take Stock
 
