@@ -320,17 +320,22 @@
 <section id="algorithmic-art" class="slide level2 smaller">
 <h2>Algorithmic Art</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../images/SundayPhoto.jpg" alt="A modern photographic recreation of Seurat's painting."></p>
-</div><div class="column" style="width:30%;">
+<div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="../images/parkPhoto.jpg" alt="A modern photographic recreation of Seurat's painting."></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="../images/parkVoronoi.jpg" alt="The Voronoi version of the photograph."></p>
+</div><div class="column" style="width:5%;">
+
+</div></div>
 <ol type="1">
 <li>Select a subset of points from the original image.</li>
 <li>Use those points, with their colors, as centers in a new image of the same size.</li>
 <li>Build the Voronoi diagram in the <em>new</em> image, using the center colors from the original image.</li>
 </ol>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../images/vorart.png" alt="The Voronoi version of the photograph."></p>
-</div></div>
 <aside class="notes">
 <p>We are going to focus on calculating Voronoi regions over discrete domains, specifically images.</p>
 <p>Choose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure).</p>
@@ -441,6 +446,14 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="lets-practice" class="slide level2 activity">
+<h2>Let’s Practice!</h2>
+<p>Open today’s activity. We’ll start with the loop-only version of the algorithm.</p>
+<ul>
+<li>Launch <a href="hhttps://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/">Class Activity: Voronoi Art</a> in PrairieLearn.</li>
+<li>Open <code>voronoi_loop_nb.py</code>.</li>
+</ul>
+</section>
 <section id="analysis" class="slide level2">
 <h2>Analysis</h2>
 <div class="columns">
@@ -465,7 +478,7 @@ Let <span class="math inline">\(n\)</span> be the size of the image<br>
 <li><span class="math inline">\(O(nc)\)</span>.</li>
 <li><span class="math inline">\(O(n)\)</span>.</li>
 </ol>
-<p>Can we do better?</p>
+<p>Can we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid <span class="math inline">\(O(n)\)</span>. But what about the dependence on <span class="math inline">\(c\)</span>? Can we avoid doing something for each pixel-center combination?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

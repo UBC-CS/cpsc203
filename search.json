@@ -3277,7 +3277,7 @@
     "href": "slides/07_tue_voronoi.html#algorithmic-art",
     "title": "Programming, problem solving, and algorithms",
     "section": "Algorithmic Art",
-    "text": "Algorithmic Art\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the Voronoi diagram in the new image, using the center colors from the original image.\n\n\n\n\n\nWe are going to focus on calculating Voronoi regions over discrete domains, specifically images.\nChoose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure)."
+    "text": "Algorithmic Art\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the Voronoi diagram in the new image, using the center colors from the original image.\n\n\nWe are going to focus on calculating Voronoi regions over discrete domains, specifically images.\nChoose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure)."
   },
   {
     "objectID": "slides/07_tue_voronoi.html#distance-between-pixels",
@@ -3308,11 +3308,18 @@
     "text": "Planning:\n\n\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\nHow will the data flow through our algorithm?\n\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
   },
   {
+    "objectID": "slides/07_tue_voronoi.html#lets-practice",
+    "href": "slides/07_tue_voronoi.html#lets-practice",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\nOpen today’s activity. We’ll start with the loop-only version of the algorithm.\n\nLaunch Class Activity: Voronoi Art in PrairieLearn.\nOpen voronoi_loop_nb.py."
+  },
+  {
     "objectID": "slides/07_tue_voronoi.html#analysis",
     "href": "slides/07_tue_voronoi.html#analysis",
     "title": "Programming, problem solving, and algorithms",
     "section": "Analysis",
-    "text": "Analysis\n\n\nLet \\(c\\) be number of centers\nLet \\(n\\) be the size of the image\n(\\(n =\\) width \\(\\times\\) height).\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n\n\n\n\\(O(n)\\).\nHopefully \\(O(c)\\).\n\\(O(nc)\\).\n\\(O(n)\\).\n\nCan we do better?"
+    "text": "Analysis\n\n\nLet \\(c\\) be number of centers\nLet \\(n\\) be the size of the image\n(\\(n =\\) width \\(\\times\\) height).\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n\n\n\n\\(O(n)\\).\nHopefully \\(O(c)\\).\n\\(O(nc)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on \\(c\\)? Can we avoid doing something for each pixel-center combination?"
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#announcements",
