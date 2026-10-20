@@ -132,22 +132,30 @@ A photo doesn't communicate the scale of the painting.  It took Seurat 18 months
 ## Algorithmic Art {.smaller}
 
 ::::: columns
-::: {.column width=30%}
-![](/images/SundayPhoto.jpg){fig-alt="A modern photographic recreation of Seurat's painting."}
+
+::: {.column width="5%"}
 :::
 
-::: {.column width=30%}
+::: {.column width="40%"}
+![](/images/parkPhoto.jpg){fig-alt="A modern photographic recreation of Seurat's painting."}
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](/images/parkVoronoi.jpg){fig-alt="The Voronoi version of the photograph."}
+:::
+
+::: {.column width="5%"}
+:::
+
+:::::
 
 1. Select a subset of points from the original image.
 1. Use those points, with their colors, as centers in a new image of the same size.
 1. Build the Voronoi diagram in the *new* image, using the center colors from the original image.
-:::
 
-::: {.column width=40%}
-![](/images/vorart.png){fig-alt="The Voronoi version of the photograph."}
-:::
-
-:::::
 
 ::: notes
 We are going to focus on calculating Voronoi regions over discrete domains, specifically images.
@@ -226,6 +234,14 @@ How will the data flow through our algorithm?
 1. Write out new image.
 :::
 
+## Let's Practice! {.activity}
+
+Open today's activity.  We'll start with the loop-only version of the algorithm.
+
+- Launch [Class Activity: Voronoi Art](hhttps://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/) in PrairieLearn.
+- Open `voronoi_loop_nb.py`.
+
+
 ## Analysis
 
 ::: {.columns}
@@ -256,5 +272,5 @@ How much work is done?
 1. $O(nc)$.
 1. $O(n)$.
 
-Can we do better?
+Can we do better?  Do we need to "visit" (do something for) every pixel?  Yes: At a minimum we need to write out a colour for that pixel.  So, we probably can't avoid $O(n)$.  But what about the dependence on $c$?  Can we avoid doing something for each pixel-center combination?
 :::
