@@ -396,7 +396,7 @@
 <section id="design-an-algorithm" class="slide level2">
 <h2>Design an Algorithm</h2>
 
-<img data-src="../images/Valgorithmgrid.jpg" alt="A large grid with 3 colored centers." class="r-stretch"><aside class="notes">
+<img data-src="../images/Valgorithmgrid.jpg" class="quarto-figure quarto-figure-center r-stretch" alt="A large grid with 3 colored centers."><aside class="notes">
 <p>Consider a pixel which is not a center (not coloured). What will we do?</p>
 <p>What will we do for the whole image?</p>
 <style type="text/css">
@@ -411,10 +411,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="planning" class="slide level2">
-<h2>Planning:</h2>
-<div class="columns">
-<div class="column">
+<section id="planning-the-data" class="slide level2">
+<h2>Planning the Data:</h2>
 <p>What data structures do we need?</p>
 <ul>
 <li>Point:</li>
@@ -423,10 +421,38 @@
 <li>Centers:</li>
 <li>Image:</li>
 </ul>
-</div><div class="column">
-<p>How will the data flow through our algorithm?</p>
-<p><img data-src="../images/small-centers.png" alt="A small version of an image with 3 coloured centers."></p>
-</div></div>
+<aside class="notes">
+<ul>
+<li><code>tuple[int, int]</code></li>
+<li><code>tuple[int, int, int]</code></li>
+<li><code>Point</code> and <code>Colour</code></li>
+<li><code>list[Center]</code></li>
+<li>PIL’s <code>Image</code> and <code>PixelAccess</code></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="planning-the-algorithm" class="slide level2">
+<h2>Planning the Algorithm:</h2>
+<p>How will data flow through our algorithm?</p>
+<ul>
+<li>Read input image.</li>
+<li>…</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li>Write output image.</li>
+</ul>
 <aside class="notes">
 <ol type="1">
 <li>Read image</li>
@@ -450,17 +476,27 @@
 <h2>Let’s Practice!</h2>
 <p>Open today’s activity. We’ll start with the loop-only version of the algorithm.</p>
 <ul>
-<li>Launch <a href="hhttps://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/">Class Activity: Voronoi Art</a> in PrairieLearn.</li>
+<li>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/">Class Activity: Voronoi Art</a> in PrairieLearn.</li>
 <li>Open <code>voronoi_loop_nb.py</code>.</li>
 </ul>
+<aside class="notes">
+<p>Remember to demo doubling the density –&gt; double the runtime.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="analysis" class="slide level2">
 <h2>Analysis</h2>
 <div class="columns">
-<div class="column">
-<p>Let <span class="math inline">\(c\)</span> be number of centers<br>
-Let <span class="math inline">\(n\)</span> be the size of the image<br>
-(<span class="math inline">\(n =\)</span> width <span class="math inline">\(\times\)</span> height).</p>
+<div class="column" style="width:60%;">
 <p>How much work is done?</p>
 <ol type="1">
 <li>Read image:</li>
@@ -468,17 +504,23 @@ Let <span class="math inline">\(n\)</span> be the size of the image<br>
 <li>Build new image:</li>
 <li>Write out new image:</li>
 </ol>
-</div><div class="column">
-<p><img data-src="../images/small-centers.png" alt="A small version of an image with 3 coloured centers."></p>
+</div><div class="column" style="width:40%;">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 800 520" width="100%">
+<rect x="8" y="8" width="784" height="504" fill="#ffffff" stroke="#000000" stroke-width="8"></rect> <circle cx="180" cy="170" r="12" fill="#e74c3c" stroke="#000000" stroke-width="4"></circle> <circle cx="260" cy="330" r="12" fill="#2952ff" stroke="#000000" stroke-width="4"></circle> <circle cx="540" cy="210" r="12" fill="#8ee36f" stroke="#000000" stroke-width="4"></circle>
+</svg>
+<p>Size of the image: <span class="math inline">\(n\)</span><br>
+(<span class="math inline">\(n =\)</span> width <span class="math inline">\(\times\)</span> height)</p>
+<p>Density of centers: <span class="math inline">\(d\)</span></p>
+<p>Number of centers: <span class="math inline">\(dn\)</span></p>
 </div></div>
 <aside class="notes">
 <ol type="1">
 <li><span class="math inline">\(O(n)\)</span>.</li>
-<li>Hopefully <span class="math inline">\(O(c)\)</span>.</li>
-<li><span class="math inline">\(O(nc)\)</span>.</li>
+<li>Hopefully <span class="math inline">\(O(dn)\)</span>.</li>
+<li><span class="math inline">\(O(dn^2)\)</span>.</li>
 <li><span class="math inline">\(O(n)\)</span>.</li>
 </ol>
-<p>Can we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid <span class="math inline">\(O(n)\)</span>. But what about the dependence on <span class="math inline">\(c\)</span>? Can we avoid doing something for each pixel-center combination?</p>
+<p>Can we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid <span class="math inline">\(O(n)\)</span>. But what about the dependence on number of centers? Can we avoid doing something for each pixel-center combination?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

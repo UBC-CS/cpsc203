@@ -3147,6 +3147,76 @@
     "text": "Quantifying the task…\nBut computers are much faster. Suppose we can “knit” 1012 stitches / s\n\n\n\n\n\n\n\n\n\n\n\ntime \\ n\n10\n100\n1000\n106\n1012\n\n\n\n\nlog n\n~3(10-12) s\n~6½(10-12) s\n~10(10-12) s\n~20(10-12) s\n~40(10-12) s\n\n\nn\n10-11 s\n10-10 s\n10-9 s\n10-6 s\n1 s\n\n\nn log n\n3(10-11) s\n6(10-10) s\n10-8 s\n~20(10-6) s\n~40 s\n\n\nn2\n10-10 s\n10-8 s\n10-6 s\n1 s\n1012 s\n\n\nn3\n10-9 s\n10-6 s\n10-3 s\n106 s\n1024 s\n\n\n2n\n~10-9 s\n~1018 s\n~10289 s\n\n\n\n\n\nNotes: proteins fold in ~10-6 s and the age of the universe: ~1018 s\nSo the amount of computation we do inside our algorithm actually matters as our data increases.\n\nA fast laptop might achieve 1012 flops. Fastest supercomputer is 2198 x 1015 flops.\nIf our cloth/data size is 1000, and we need to compute \\(n^3\\) steps/stitches (like knitting a cube!!), then the total time is 10003/1012 == 10-3 or one thousandth of a second. NBD\nBUT let’s look at bigger data. 1012 (~128gb … pretty big) 1012 mm == 106 km (for reference, 384,400 km to the moon or 149(106) km to the sun. Knitting something that big would take 1012 seconds or ~32000 years. The sun will long since have burnt out by 1018\nPunchline – we don’t want to do \\(2^n\\) amount of computation, and we need creative approaches for big data.\nRecap – we’ve seen a problem whose size we characterize by \\(n^2\\), we’ll see problems whose time we characterize by \\(n\\), for sure, and later in the term, we’ll see a problem which is very simply stated, whose size we characterize by \\(2^n\\). ☹"
   },
   {
+    "objectID": "slides/07_thu_voronoi.html#announcements",
+    "href": "slides/07_thu_voronoi.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nPractice examlet 3 available.\nBook your slot for examlet 3.\nLab 6 (stacks) and POTW 6 (summations and stacks) due Sunday.\nProject 1 due Monday (~96 hours!)."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#algorithmic-art-reminder",
+    "href": "slides/07_thu_voronoi.html#algorithmic-art-reminder",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Algorithmic Art Reminder",
+    "text": "Algorithmic Art Reminder\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image as centers\nBuild the Voronoi diagram for those centers.\nTo visualize the Voronoi regions, fill each region in a new image with the same colour as the center of that region.\n\n\nFor visualization purposes, centers are shown in red. Generating those red squares was the effect of the dead code in the previous lecture’s class activity."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#analysis-loop-based-version",
+    "href": "slides/07_thu_voronoi.html#analysis-loop-based-version",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Analysis (Loop-based Version)",
+    "text": "Analysis (Loop-based Version)\n\n\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\n\n\n\n\n\nWrite out new image:\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\n\n\\(O(n)\\).\nHopefully \\(O(dn)\\).\n\\(O(dn^2)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on number of centers? Can we avoid doing something for each pixel-center combination?"
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#can-we-do-better",
+    "href": "slides/07_thu_voronoi.html#can-we-do-better",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Can we do better?",
+    "text": "Can we do better?\n\n\n\nStarting at each center, fill in the immediate neighbours.\nThen fill in the neighbours of the neighbours.\nRepeat until all pixels are filled.\nEach pixel is visited just once.\nBut how do we know which pixel to fill next?\n\nWe want to fill all the 1-neighbours, then all the 2-neighbours, etc.\nWe know that the 1-neighbours are the neighbours of the centers.\nWe know that the 2-neighbours are the neighbours of the 1-neighbours.\nCan we arrange to see the centers first, then their neighbours, then their neighbours, …?"
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#data-structure-queue",
+    "href": "slides/07_thu_voronoi.html#data-structure-queue",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Data Structure: Queue",
+    "text": "Data Structure: Queue\nTo implement the fill we use a datastructure called a queue.\n\n\n\n\n\n\n\n\nOperations on a queue:\n\nenqueue(d): places data d at the “end” / “bottom” of the queue.\ndequeue(): removes and returns the element at the “start” / “top” of the queue.\n\n\n\nHow does the queue differ from the stack you were exploring in the lab?\nA queue is a generic name for a data structure with this behaviour, and enqueue and dequeue are generic names for the operations that you perform on this data structure.\nYou will actually implement a queue in Python using the deque data structure from the collections module, and the methods for enqueue and dequeue will have different names."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#example-of-using-a-queue-flood-fill-task",
+    "href": "slides/07_thu_voronoi.html#example-of-using-a-queue-flood-fill-task",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Example of Using a Queue: Flood Fill Task",
+    "text": "Example of Using a Queue: Flood Fill Task\n\n\n\n\n\nenqueue a starting point\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 at the right end of the queue.\nWhat makes a “neighbour”?\nWhat makes a “valid” neighbour?\nWhat does it mean to “process” a pixel?"
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#queue-for-voronoi-art",
+    "href": "slides/07_thu_voronoi.html#queue-for-voronoi-art",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Queue for Voronoi Art",
+    "text": "Queue for Voronoi Art\n\n\n\n\n\nenqueue the centers\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 and 21 at the right end of the queue.\nWhat makes a “neighbour”?\nWhat makes a “valid” neighbour?\nWhat does it mean to “process” a pixel?"
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#designing-a-solution",
+    "href": "slides/07_thu_voronoi.html#designing-a-solution",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Designing a Solution",
+    "text": "Designing a Solution\nWe’ll use a Python deque as our queue.\n\nWhat should we put on the queue?\nWhat deque methods will we use?\nHow can we check if a deque is empty?\nWhat are the “neighbors” of pixel (x,y)?\nWhat would be an invalid neighbor?\n\n\n\nCenters to start, then neighbour pixels. What do we need to know about the thing put on the queue? Its location, maybe colour.\nappend and popleft. Alternatively, could use appendleft and pop. Pick a direction and stick with it!\nCould check len(queue) == 0. Or could use while queue: loop (remember that Python always has a boolean interpretation of any piece of data).\n(x-1,y), (x,y-1), (x+1,y), (x,y+1).\nPixel outside an image or pixel that has already been processed."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#demo",
+    "href": "slides/07_thu_voronoi.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nOpen today’s activity. We’ll implement the queue-based version of the algorithm.\n\nLaunch Class Activity: Voronoi Art Fast in PrairieLearn.\nOpen voronoi_deque_nb.py."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#analysis-queue-based-version",
+    "href": "slides/07_thu_voronoi.html#analysis-queue-based-version",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Analysis (Queue-based Version)",
+    "text": "Analysis (Queue-based Version)\n\n\nHow much work is done?\n\nRead image: \\(O(n)\\)\nChoose centers: \\(O(dn)\\)\nBuild new image:\n\n\n\n\n\nWrite out new image: \\(O(n)\\)\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\nShow \\(O(n)\\):"
+  },
+  {
     "objectID": "slides/03_tue_lists.html#announcements",
     "href": "slides/03_tue_lists.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -3301,25 +3371,32 @@
     "text": "Design an Algorithm\n\n\nConsider a pixel which is not a center (not coloured). What will we do?\nWhat will we do for the whole image?"
   },
   {
-    "objectID": "slides/07_tue_voronoi.html#planning",
-    "href": "slides/07_tue_voronoi.html#planning",
+    "objectID": "slides/07_tue_voronoi.html#planning-the-data",
+    "href": "slides/07_tue_voronoi.html#planning-the-data",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Planning:",
-    "text": "Planning:\n\n\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\nHow will the data flow through our algorithm?\n\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
+    "section": "Planning the Data:",
+    "text": "Planning the Data:\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\n\ntuple[int, int]\ntuple[int, int, int]\nPoint and Colour\nlist[Center]\nPIL’s Image and PixelAccess"
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#planning-the-algorithm",
+    "href": "slides/07_tue_voronoi.html#planning-the-algorithm",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning the Algorithm:",
+    "text": "Planning the Algorithm:\nHow will data flow through our algorithm?\n\nRead input image.\n…\n\n\n\n\nWrite output image.\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
   },
   {
     "objectID": "slides/07_tue_voronoi.html#lets-practice",
     "href": "slides/07_tue_voronoi.html#lets-practice",
     "title": "Programming, problem solving, and algorithms",
     "section": "Let’s Practice!",
-    "text": "Let’s Practice!\nOpen today’s activity. We’ll start with the loop-only version of the algorithm.\n\nLaunch Class Activity: Voronoi Art in PrairieLearn.\nOpen voronoi_loop_nb.py."
+    "text": "Let’s Practice!\nOpen today’s activity. We’ll start with the loop-only version of the algorithm.\n\nLaunch Class Activity: Voronoi Art in PrairieLearn.\nOpen voronoi_loop_nb.py.\n\n\nRemember to demo doubling the density –&gt; double the runtime."
   },
   {
     "objectID": "slides/07_tue_voronoi.html#analysis",
     "href": "slides/07_tue_voronoi.html#analysis",
     "title": "Programming, problem solving, and algorithms",
     "section": "Analysis",
-    "text": "Analysis\n\n\nLet \\(c\\) be number of centers\nLet \\(n\\) be the size of the image\n(\\(n =\\) width \\(\\times\\) height).\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n\n\n\n\\(O(n)\\).\nHopefully \\(O(c)\\).\n\\(O(nc)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on \\(c\\)? Can we avoid doing something for each pixel-center combination?"
+    "text": "Analysis\n\n\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\n\n\\(O(n)\\).\nHopefully \\(O(dn)\\).\n\\(O(dn^2)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on number of centers? Can we avoid doing something for each pixel-center combination?"
   },
   {
     "objectID": "slides/06_tue_dictionaries.html#announcements",
