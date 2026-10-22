@@ -233,9 +233,7 @@ You will actually implement a queue in Python using the `deque` data structure f
 
 ::: notes
 - Put 63 and 21 at the right end of the queue.
-- What makes a "neighbour"?
-- What makes a "valid" neighbour?
-- What does it mean to "process" a pixel?
+- Stop to discuss pseudocode vs code.  Note that AI chatbots understand pseudocode. 
 :::
 
 
@@ -420,5 +418,18 @@ Number of centers: $dn$
 :::
 
 ::: notes
-Show $O(n)$: 
+Show $O(n)$: Consider a single pixel
+
+- When it is noticed as a neighbour (by a constant number of possible neighbours):
+  - Determine if it is valid: constant.
+  - Assign a center: constant.
+  - Assign a colour: constant.
+  - Enqueue: constant.
+- Wait on queue: Unknown, but accounted by pixels ahead of it in the queue.
+- When it is dequeued:
+  - dequeue: constant.
+  - determine neighbours: constant.
+- Pixel is never worked on again.
+
+Each pixel has a constant amount of work associated with it, so $O(n)$.
 :::
