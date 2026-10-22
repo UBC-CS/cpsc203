@@ -11,7 +11,7 @@ date: 2026-10-22
 
 # Voronoi Diagrams (continued)
 
-## Algorithmic Art Reminder {.smaller}
+## Algorithmic Art Reminder {.medium}
 
 ::::: columns
 
@@ -41,6 +41,21 @@ date: 2026-10-22
 ::: notes
 For visualization purposes, centers are shown in red.  Generating those red squares was the effect of the dead code in the previous lecture's class activity.
 :::
+
+
+## Aside: Some Technical Bits in the Loop-Based Solution
+
+Look back in last lecture's [Class Activity: Voronoi Art](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/) at `voronoi_loop_answer_nb.py`.
+
+- What does the code protected by `extra_code` do?
+
+- Pillow library's [`Image.load()` method](https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.load) and the [`PixelAccess` class](https://pillow.readthedocs.io/en/stable/reference/PixelAccess.html#PixelAccess)
+
+::: notes
+- That code produces little red squares in the image on top of the chosen centers.
+- With a `PixelAccess` object you can index into the image data like a 2D array.  The actual way in which the data is stored is hidden inside the dunder methods, so you don't care what it might be.
+:::
+
 
 ## Analysis (Loop-based Version)
 
@@ -125,7 +140,7 @@ Operations on a queue:
 :::
 
 ::: notes
-How does the queue differ from the stack you were exploring in the lab?
+How does the queue differ from the stack you were exploring in the lab?  These two structures are also sometimes called FIFO (queue) or LIFO (stack).
 
 A queue is a generic name for a data structure with this behaviour, and `enqueue` and `dequeue` are generic names for the operations that you perform on this data structure.
 
@@ -133,7 +148,7 @@ You will actually implement a queue in Python using the `deque` data structure f
 :::
 
 
-## Example of Using a Queue: Flood Fill Task
+## Pattern: Flood Fill
 
 ::::: columns
 ::: {.column}
@@ -226,7 +241,7 @@ You will actually implement a queue in Python using the `deque` data structure f
 
 ## Designing a Solution
 
-We’ll use a [Python `deque`](https://docs.python.org/3/library/collections.html#collections.deque) as our queue. 
+We’ll use [`collections.deque`](https://docs.python.org/3/library/collections.html#collections.deque) as our queue. 
 
 1. What should we put on the queue?
 1. What `deque` methods will we use?
@@ -234,12 +249,18 @@ We’ll use a [Python `deque`](https://docs.python.org/3/library/collections.htm
 1. What are the  "neighbors" of pixel `(x,y)`?
 1. What would be an _invalid_ neighbor?
 
+Aside: Queues are also available from Python's [`queue` library](https://docs.python.org/3/library/queue.html).
+
 ::: notes
 1. Centers to start, then neighbour pixels.  What do we need to know about the thing put on the queue?  Its location, maybe colour.
 1. `append` and `popleft`.  Alternatively, could use `appendleft` and `pop`.  Pick a direction and stick with it!
 1. Could check `len(queue) == 0`.  Or could use `while queue:` loop (remember that Python always has a boolean interpretation of any piece of data).
 1. `(x-1,y)`, `(x,y-1)`, `(x+1,y)`, `(x,y+1)`.
 1. Pixel outside an image or pixel that has already been processed.
+
+Queue library features:
+- Safe for parallel algorithms and in some cases more powerful (such as [`queue.PriorityQueue`](https://docs.python.org/3/library/queue.html#queue.PriorityQueue)).
+- Slower and take up more memory. 
 :::
   
 ## Demo {.activity}
@@ -248,6 +269,119 @@ Open today's activity.  We'll implement the queue-based version of the algorithm
 
 - Launch [Class Activity: Voronoi Art Fast](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722855/) in PrairieLearn.
 - Open `voronoi_deque_nb.py`.
+
+## Aside: Measuring Distance and the Choice of Neighbours
+
+How far away are the diagonal pixels?
+
+::: {.columns}
+
+::: {.column width=33%}
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
+  <!-- Grid of boxes -->
+  <rect x="5"   y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <!-- Dots in the eight outer boxes -->
+  <circle cx="35"  cy="35"  r="3" fill="#222"/>
+  <circle cx="95"  cy="35"  r="3" fill="#222"/>
+  <circle cx="155" cy="35"  r="3" fill="#222"/>
+  <circle cx="35"  cy="95"  r="3" fill="#222"/>
+  <circle cx="155" cy="95"  r="3" fill="#222"/>
+  <circle cx="35"  cy="155" r="3" fill="#222"/>
+  <circle cx="95"  cy="155" r="3" fill="#222"/>
+  <circle cx="155" cy="155" r="3" fill="#222"/>
+  <!-- Cross in the middle box -->
+  <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="95" y1="87" x2="95"  y2="103" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+regular distance
+
+</center>
+:::
+
+::: {.column width=33%}
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
+  <!-- Grid of boxes -->
+  <rect x="5"   y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <!-- Dots in the eight outer boxes -->
+  <circle cx="35"  cy="35"  r="3" fill="#222"/>
+  <circle cx="95"  cy="35"  r="3" fill="#222"/>
+  <circle cx="155" cy="35"  r="3" fill="#222"/>
+  <circle cx="35"  cy="95"  r="3" fill="#222"/>
+  <circle cx="155" cy="95"  r="3" fill="#222"/>
+  <circle cx="35"  cy="155" r="3" fill="#222"/>
+  <circle cx="95"  cy="155" r="3" fill="#222"/>
+  <circle cx="155" cy="155" r="3" fill="#222"/>
+  <!-- Cross in the middle box -->
+  <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="95" y1="87" x2="95"  y2="103" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+four neighbours
+
+</center>
+:::
+
+::: {.column width=33%}
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
+  <!-- Grid of boxes -->
+  <rect x="5"   y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <!-- Dots in the eight outer boxes -->
+  <circle cx="35"  cy="35"  r="3" fill="#222"/>
+  <circle cx="95"  cy="35"  r="3" fill="#222"/>
+  <circle cx="155" cy="35"  r="3" fill="#222"/>
+  <circle cx="35"  cy="95"  r="3" fill="#222"/>
+  <circle cx="155" cy="95"  r="3" fill="#222"/>
+  <circle cx="35"  cy="155" r="3" fill="#222"/>
+  <circle cx="95"  cy="155" r="3" fill="#222"/>
+  <circle cx="155" cy="155" r="3" fill="#222"/>
+  <!-- Cross in the middle box -->
+  <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="95" y1="87" x2="95"  y2="103" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+eight neighbours
+
+</center>
+:::
+
+:::
+
+::: notes
+Why didn't we need to use our distance computation method in the queue-based version?
+
+Easy to swap four and eight neighbours in our queue-based code.  Regular distance can be implemented with a priority queue (and you will need to actually compute the regular distance).
+
+If time, write 2-norm, 1-norm and ∞-norm distances.
+:::
+
 
 ## Analysis (Queue-based Version)
 
