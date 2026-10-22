@@ -3200,7 +3200,7 @@
     "href": "slides/07_thu_voronoi.html#queue-for-voronoi-art",
     "title": "Programming, problem solving, and algorithms",
     "section": "Queue for Voronoi Art",
-    "text": "Queue for Voronoi Art\n\n\n\n\n\nenqueue the centers\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 and 21 at the right end of the queue.\nWhat makes a “neighbour”?\nWhat makes a “valid” neighbour?\nWhat does it mean to “process” a pixel?"
+    "text": "Queue for Voronoi Art\n\n\n\n\n\nenqueue the centers\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 and 21 at the right end of the queue.\nStop to discuss pseudocode vs code. Note that AI chatbots understand pseudocode."
   },
   {
     "objectID": "slides/07_thu_voronoi.html#designing-a-solution",
@@ -3228,7 +3228,7 @@
     "href": "slides/07_thu_voronoi.html#analysis-queue-based-version",
     "title": "Programming, problem solving, and algorithms",
     "section": "Analysis (Queue-based Version)",
-    "text": "Analysis (Queue-based Version)\n\n\nHow much work is done?\n\nRead image: \\(O(n)\\)\nChoose centers: \\(O(dn)\\)\nBuild new image:\n\n\n\n\n\nWrite out new image: \\(O(n)\\)\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\nShow \\(O(n)\\):"
+    "text": "Analysis (Queue-based Version)\n\n\nHow much work is done?\n\nRead image: \\(O(n)\\)\nChoose centers: \\(O(dn)\\)\nBuild new image:\n\n\n\n\n\nWrite out new image: \\(O(n)\\)\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\nShow \\(O(n)\\): Consider a single pixel\n\nWhen it is noticed as a neighbour (by a constant number of possible neighbours):\n\nDetermine if it is valid: constant.\nAssign a center: constant.\nAssign a colour: constant.\nEnqueue: constant.\n\nWait on queue: Unknown, but accounted by pixels ahead of it in the queue.\nWhen it is dequeued:\n\ndequeue: constant.\ndetermine neighbours: constant.\n\nPixel is never worked on again.\n\nEach pixel has a constant amount of work associated with it, so \\(O(n)\\)."
   },
   {
     "objectID": "slides/03_tue_lists.html#announcements",

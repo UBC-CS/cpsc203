@@ -399,9 +399,7 @@
 <aside class="notes">
 <ul>
 <li>Put 63 and 21 at the right end of the queue.</li>
-<li>What makes a “neighbour”?</li>
-<li>What makes a “valid” neighbour?</li>
-<li>What does it mean to “process” a pixel?</li>
+<li>Stop to discuss pseudocode vs code. Note that AI chatbots understand pseudocode.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -526,7 +524,24 @@
 <p>Number of centers: <span class="math inline">\(dn\)</span></p>
 </div></div>
 <aside class="notes">
-<p>Show <span class="math inline">\(O(n)\)</span>:</p>
+<p>Show <span class="math inline">\(O(n)\)</span>: Consider a single pixel</p>
+<ul>
+<li>When it is noticed as a neighbour (by a constant number of possible neighbours):
+<ul>
+<li>Determine if it is valid: constant.</li>
+<li>Assign a center: constant.</li>
+<li>Assign a colour: constant.</li>
+<li>Enqueue: constant.</li>
+</ul></li>
+<li>Wait on queue: Unknown, but accounted by pixels ahead of it in the queue.</li>
+<li>When it is dequeued:
+<ul>
+<li>dequeue: constant.</li>
+<li>determine neighbours: constant.</li>
+</ul></li>
+<li>Pixel is never worked on again.</li>
+</ul>
+<p>Each pixel has a constant amount of work associated with it, so <span class="math inline">\(O(n)\)</span>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
