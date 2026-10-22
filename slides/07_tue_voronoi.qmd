@@ -197,7 +197,7 @@ In particular, we don't need to compute the square root, which is computationall
 
 ## Design an Algorithm
 
-![](/images/Valgorithmgrid.jpg){fig-alt="A large grid with 3 colored centers."}
+![](/images/Valgorithmgrid.jpg){fig-align="center" fig-alt="A large grid with 3 colored centers."}
 
 ::: notes
 Consider a pixel which is not a center (not coloured).  What will we do?
@@ -205,11 +205,8 @@ Consider a pixel which is not a center (not coloured).  What will we do?
 What will we do for the whole image?
 :::
 
-## Planning:
+## Planning the Data:
 
-::: {.columns}
-
-::: {.column}
 What data structures do we need?
 
 - Point:
@@ -217,15 +214,26 @@ What data structures do we need?
 - Center:
 - Centers:
 - Image:
+
+::: notes
+- `tuple[int, int]`
+- `tuple[int, int, int]`
+- `Point` and `Colour`
+- `list[Center]`
+- PIL's `Image` and `PixelAccess`
 :::
 
-::: {.column}
-How will the data flow through our algorithm?
+## Planning the Algorithm:
 
-![](/images/small-centers.png){fig-alt="A small version of an image with 3 coloured centers."}
-:::
+How will data flow through our algorithm?
 
-:::
+- Read input image.
+- ...
+
+\
+
+- Write output image.
+
 
 ::: notes
 1. Read image
@@ -238,39 +246,50 @@ How will the data flow through our algorithm?
 
 Open today's activity.  We'll start with the loop-only version of the algorithm.
 
-- Launch [Class Activity: Voronoi Art](hhttps://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/) in PrairieLearn.
+- Launch [Class Activity: Voronoi Art](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/) in PrairieLearn.
 - Open `voronoi_loop_nb.py`.
+
+::: notes
+Remember to demo doubling the density --> double the runtime.
+:::
 
 
 ## Analysis
 
 ::: {.columns}
 
-::: {.column}
-Let $c$ be number of centers\
-Let $n$ be the size of the image\
-($n =$ width $\times$ height).
-
+::: {.column width=60%}
 How much work is done? 
 
 1. Read image:
 1. Choose centers:
 1. Build new image:
 1. Write out new image:
-
 :::
 
-::: {.column}
-![](/images/small-centers.png){fig-alt="A small version of an image with 3 coloured centers."}
+::: {.column width=40%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" >
+  <rect x="8" y="8" width="784" height="504" fill="#ffffff" stroke="#000000" stroke-width="8"/>
+  <circle cx="180" cy="170" r="12" fill="#e74c3c" stroke="#000000" stroke-width="4"/>
+  <circle cx="260" cy="330" r="12" fill="#2952ff" stroke="#000000" stroke-width="4"/>
+  <circle cx="540" cy="210" r="12" fill="#8ee36f" stroke="#000000" stroke-width="4"/>
+</svg>
+
+Size of the image: $n$\
+($n =$ width $\times$ height)
+
+Density of centers: $d$
+
+Number of centers: $dn$
 :::
 
 :::
 
 ::: notes
 1. $O(n)$.
-1. Hopefully $O(c)$.
-1. $O(nc)$.
+1. Hopefully $O(dn)$.
+1. $O(dn^2)$.
 1. $O(n)$.
 
-Can we do better?  Do we need to "visit" (do something for) every pixel?  Yes: At a minimum we need to write out a colour for that pixel.  So, we probably can't avoid $O(n)$.  But what about the dependence on $c$?  Can we avoid doing something for each pixel-center combination?
+Can we do better?  Do we need to "visit" (do something for) every pixel?  Yes: At a minimum we need to write out a colour for that pixel.  So, we probably can't avoid $O(n)$.  But what about the dependence on number of centers?  Can we avoid doing something for each pixel-center combination?
 :::

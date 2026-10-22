@@ -1,0 +1,290 @@
+---
+date: 2026-10-22
+---
+
+## Announcements
+
+- Practice examlet 3 available.
+- Book your slot for examlet 3.
+- Lab 6 (stacks) and POTW 6 (summations and stacks) due Sunday.
+- Project 1 due Monday (~96 hours!).
+
+# Voronoi Diagrams (continued)
+
+## Algorithmic Art Reminder {.smaller}
+
+::::: columns
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+![](/images/parkPhoto.jpg){fig-alt="A modern photographic recreation of Seurat's painting."}
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](/images/parkVoronoiCenters.jpg){fig-alt="The Voronoi version of the photograph."}
+:::
+
+::: {.column width="5%"}
+:::
+
+:::::
+
+1. Select a subset of points from the original image as centers
+1. Build the Voronoi diagram for those centers.
+1. To visualize the Voronoi regions, fill each region in a **new** image with the same colour as the center of that region.
+
+::: notes
+For visualization purposes, centers are shown in red.  Generating those red squares was the effect of the dead code in the previous lecture's class activity.
+:::
+
+## Analysis (Loop-based Version)
+
+::: {.columns}
+
+::: {.column width=60%}
+How much work is done? 
+
+1. Read image:
+1. Choose centers:
+1. Build new image:
+\
+\
+\
+\
+\
+1. Write out new image:
+:::
+
+::: {.column width=40%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" >
+  <rect x="8" y="8" width="784" height="504" fill="#ffffff" stroke="#000000" stroke-width="8"/>
+  <circle cx="180" cy="170" r="12" fill="#e74c3c" stroke="#000000" stroke-width="4"/>
+  <circle cx="260" cy="330" r="12" fill="#2952ff" stroke="#000000" stroke-width="4"/>
+  <circle cx="540" cy="210" r="12" fill="#8ee36f" stroke="#000000" stroke-width="4"/>
+</svg>
+
+Size of the image: $n$\
+($n =$ width $\times$ height)
+
+Density of centers: $d$
+
+Number of centers: $dn$
+:::
+
+:::
+
+::: notes
+1. $O(n)$.
+1. Hopefully $O(dn)$.
+1. $O(dn^2)$.
+1. $O(n)$.
+
+Can we do better?  Do we need to "visit" (do something for) every pixel?  Yes: At a minimum we need to write out a colour for that pixel.  So, we probably can't avoid $O(n)$.  But what about the dependence on number of centers?  Can we avoid doing something for each pixel-center combination?
+:::
+
+
+## Can we do better?
+
+![](/images/Valgorithmgrid.jpg){fig-align="center" fig-alt="A large grid with 3 colored centers."}
+
+::: notes
+- Starting at each center, fill in the immediate neighbours.
+- Then fill in the neighbours of the neighbours.
+- Repeat until all pixels are filled.
+- Each pixel is visited just once.
+- But how do we know which pixel to fill next?  
+  - We want to fill all the 1-neighbours, then all the 2-neighbours, etc.
+  - We know that the 1-neighbours are the neighbours of the centers.
+  - We know that the 2-neighbours are the neighbours of the 1-neighbours.
+  - Can we arrange to see the centers first, then their neighbours, then their neighbours, ...?
+:::
+
+
+## Data Structure: Queue
+
+To implement the fill we use a datastructure called a *queue*.
+
+::: {.columns}
+
+::: {.column}
+![](/images/penguins.jpg){fig-align="center" fig-alt="Penguins in a line jumping off an ice flow into the water."}
+:::
+
+::: {.column}
+Operations on a queue:
+
+- `enqueue(d)`: places data `d` at the "end" / "bottom" of the queue.
+- `dequeue()`: removes and returns the element at the "start" / "top" of the queue.
+:::
+
+:::
+
+::: notes
+How does the queue differ from the stack you were exploring in the lab?
+
+A queue is a generic name for a data structure with this behaviour, and `enqueue` and `dequeue` are generic names for the operations that you perform on this data structure.
+
+You will actually implement a queue in Python using the `deque` data structure from the `collections` module, and the methods for `enqueue` and `dequeue` will have different names.
+:::
+
+
+## Example of Using a Queue: Flood Fill Task
+
+::::: columns
+::: {.column}
+![](/images/FF1.png){fig-alt="Grid with each pixel numbered, pixel 63 highlighted blue, subset of pixels surrounded by a yellow curve."}
+:::
+
+::: {.column}
+- enqueue a starting point
+- while the queue is not empty:
+   - v = dequeue
+   - for each valid neighbor w of v:
+      - process w
+      - enqueue w
+:::
+::::::
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="70" viewBox="0 0 1090 70">
+  <rect x="5"    y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"   y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="185"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="245"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="305"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="365"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="425"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="485"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="545"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="605"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="665"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="725"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="785"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="845"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="905"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="965"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="1025" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+::: notes
+- Put 63 at the right end of the queue.
+- What makes a "neighbour"?
+- What makes a "valid" neighbour?
+- What does it mean to "process" a pixel?
+:::
+
+## Queue for Voronoi Art
+
+::::: columns
+::: {.column}
+![](/images/FF2.png){fig-alt="Grid with each pixel numbered, pixel 63 highlighted blue, pixel 21 highlighted yellow."}
+:::
+
+::: {.column}
+- enqueue the centers
+- while the queue is not empty:
+   - v = dequeue
+   - for each valid neighbor w of v:
+      - process w
+      - enqueue w
+:::
+::::::
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="70" viewBox="0 0 1090 70">
+  <rect x="5"    y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"   y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="185"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="245"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="305"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="365"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="425"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="485"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="545"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="605"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="665"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="725"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="785"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="845"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="905"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="965"  y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="1025" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+::: notes
+- Put 63 and 21 at the right end of the queue.
+- What makes a "neighbour"?
+- What makes a "valid" neighbour?
+- What does it mean to "process" a pixel?
+:::
+
+
+## Designing a Solution
+
+We’ll use a [Python `deque`](https://docs.python.org/3/library/collections.html#collections.deque) as our queue. 
+
+1. What should we put on the queue?
+1. What `deque` methods will we use?
+1. How can we check if a `deque` is empty?
+1. What are the  "neighbors" of pixel `(x,y)`?
+1. What would be an _invalid_ neighbor?
+
+::: notes
+1. Centers to start, then neighbour pixels.  What do we need to know about the thing put on the queue?  Its location, maybe colour.
+1. `append` and `popleft`.  Alternatively, could use `appendleft` and `pop`.  Pick a direction and stick with it!
+1. Could check `len(queue) == 0`.  Or could use `while queue:` loop (remember that Python always has a boolean interpretation of any piece of data).
+1. `(x-1,y)`, `(x,y-1)`, `(x+1,y)`, `(x,y+1)`.
+1. Pixel outside an image or pixel that has already been processed.
+:::
+  
+## Demo {.activity}
+
+Open today's activity.  We'll implement the queue-based version of the algorithm.
+
+- Launch [Class Activity: Voronoi Art Fast](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722855/) in PrairieLearn.
+- Open `voronoi_deque_nb.py`.
+
+## Analysis (Queue-based Version)
+
+::: {.columns}
+
+::: {.column width=60%}
+How much work is done? 
+
+1. Read image: $O(n)$
+1. Choose centers: $O(dn)$
+1. Build new image:
+\
+\
+\
+\
+\
+1. Write out new image: $O(n)$
+:::
+
+::: {.column width=40%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" >
+  <rect x="8" y="8" width="784" height="504" fill="#ffffff" stroke="#000000" stroke-width="8"/>
+  <circle cx="180" cy="170" r="12" fill="#e74c3c" stroke="#000000" stroke-width="4"/>
+  <circle cx="260" cy="330" r="12" fill="#2952ff" stroke="#000000" stroke-width="4"/>
+  <circle cx="540" cy="210" r="12" fill="#8ee36f" stroke="#000000" stroke-width="4"/>
+</svg>
+
+Size of the image: $n$\
+($n =$ width $\times$ height)
+
+Density of centers: $d$
+
+Number of centers: $dn$
+:::
+
+:::
+
+::: notes
+Show $O(n)$: 
+:::
