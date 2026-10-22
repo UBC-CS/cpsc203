@@ -169,7 +169,7 @@
 <h1>Voronoi Diagrams (continued)</h1>
 
 </section>
-<section id="algorithmic-art-reminder" class="slide level2 smaller">
+<section id="algorithmic-art-reminder" class="slide level2 medium">
 <h2>Algorithmic Art Reminder</h2>
 <div class="columns">
 <div class="column" style="width:5%;">
@@ -190,6 +190,30 @@
 </ol>
 <aside class="notes">
 <p>For visualization purposes, centers are shown in red. Generating those red squares was the effect of the dead code in the previous lecture’s class activity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aside-some-technical-bits-in-the-loop-based-solution" class="slide level2">
+<h2>Aside: Some Technical Bits in the Loop-Based Solution</h2>
+<p>Look back in last lecture’s <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722853/">Class Activity: Voronoi Art</a> at <code>voronoi_loop_answer_nb.py</code>.</p>
+<ul>
+<li><p>What does the code protected by <code>extra_code</code> do?</p></li>
+<li><p>Pillow library’s <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.load"><code>Image.load()</code> method</a> and the <a href="https://pillow.readthedocs.io/en/stable/reference/PixelAccess.html#PixelAccess"><code>PixelAccess</code> class</a></p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>That code produces little red squares in the image on top of the chosen centers.</li>
+<li>With a <code>PixelAccess</code> object you can index into the image data like a 2D array. The actual way in which the data is stored is hidden inside the dunder methods, so you don’t care what it might be.</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -294,7 +318,7 @@
 </ul>
 </div></div>
 <aside class="notes">
-<p>How does the queue differ from the stack you were exploring in the lab?</p>
+<p>How does the queue differ from the stack you were exploring in the lab? These two structures are also sometimes called FIFO (queue) or LIFO (stack).</p>
 <p>A queue is a generic name for a data structure with this behaviour, and <code>enqueue</code> and <code>dequeue</code> are generic names for the operations that you perform on this data structure.</p>
 <p>You will actually implement a queue in Python using the <code>deque</code> data structure from the <code>collections</code> module, and the methods for <code>enqueue</code> and <code>dequeue</code> will have different names.</p>
 <style type="text/css">
@@ -309,8 +333,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="example-of-using-a-queue-flood-fill-task" class="slide level2">
-<h2>Example of Using a Queue: Flood Fill Task</h2>
+<section id="pattern-flood-fill" class="slide level2">
+<h2>Pattern: Flood Fill</h2>
 <div class="columns">
 <div class="column">
 <p><img data-src="../images/FF1.png" alt="Grid with each pixel numbered, pixel 63 highlighted blue, subset of pixels surrounded by a yellow curve."></p>
@@ -393,7 +417,7 @@
 </section>
 <section id="designing-a-solution" class="slide level2">
 <h2>Designing a Solution</h2>
-<p>We’ll use a <a href="https://docs.python.org/3/library/collections.html#collections.deque">Python <code>deque</code></a> as our queue.</p>
+<p>We’ll use <a href="https://docs.python.org/3/library/collections.html#collections.deque"><code>collections.deque</code></a> as our queue.</p>
 <ol type="1">
 <li>What should we put on the queue?</li>
 <li>What <code>deque</code> methods will we use?</li>
@@ -401,6 +425,7 @@
 <li>What are the “neighbors” of pixel <code>(x,y)</code>?</li>
 <li>What would be an <em>invalid</em> neighbor?</li>
 </ol>
+<p>Aside: Queues are also available from Python’s <a href="https://docs.python.org/3/library/queue.html"><code>queue</code> library</a>.</p>
 <aside class="notes">
 <ol type="1">
 <li>Centers to start, then neighbour pixels. What do we need to know about the thing put on the queue? Its location, maybe colour.</li>
@@ -409,6 +434,7 @@
 <li><code>(x-1,y)</code>, <code>(x,y-1)</code>, <code>(x+1,y)</code>, <code>(x,y+1)</code>.</li>
 <li>Pixel outside an image or pixel that has already been processed.</li>
 </ol>
+<p>Queue library features: - Safe for parallel algorithms and in some cases more powerful (such as <a href="https://docs.python.org/3/library/queue.html#queue.PriorityQueue"><code>queue.PriorityQueue</code></a>). - Slower and take up more memory.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -428,6 +454,51 @@
 <li>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722855/">Class Activity: Voronoi Art Fast</a> in PrairieLearn.</li>
 <li>Open <code>voronoi_deque_nb.py</code>.</li>
 </ul>
+</section>
+<section id="aside-measuring-distance-and-the-choice-of-neighbours" class="slide level2">
+<h2>Aside: Measuring Distance and the Choice of Neighbours</h2>
+<p>How far away are the diagonal pixels?</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewbox="0 0 190 190">
+<!-- Grid of boxes -->
+<rect x="5" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <!-- Dots in the eight outer boxes --> <circle cx="35" cy="35" r="3" fill="#222"></circle> <circle cx="95" cy="35" r="3" fill="#222"></circle> <circle cx="155" cy="35" r="3" fill="#222"></circle> <circle cx="35" cy="95" r="3" fill="#222"></circle> <circle cx="155" cy="95" r="3" fill="#222"></circle> <circle cx="35" cy="155" r="3" fill="#222"></circle> <circle cx="95" cy="155" r="3" fill="#222"></circle> <circle cx="155" cy="155" r="3" fill="#222"></circle> <!-- Cross in the middle box --> <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"></line> <line x1="95" y1="87" x2="95" y2="103" stroke="#222" stroke-width="1.5"></line>
+</svg>
+<p>regular distance</p>
+</center>
+</div><div class="column" style="width:33%;">
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewbox="0 0 190 190">
+<!-- Grid of boxes -->
+<rect x="5" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <!-- Dots in the eight outer boxes --> <circle cx="35" cy="35" r="3" fill="#222"></circle> <circle cx="95" cy="35" r="3" fill="#222"></circle> <circle cx="155" cy="35" r="3" fill="#222"></circle> <circle cx="35" cy="95" r="3" fill="#222"></circle> <circle cx="155" cy="95" r="3" fill="#222"></circle> <circle cx="35" cy="155" r="3" fill="#222"></circle> <circle cx="95" cy="155" r="3" fill="#222"></circle> <circle cx="155" cy="155" r="3" fill="#222"></circle> <!-- Cross in the middle box --> <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"></line> <line x1="95" y1="87" x2="95" y2="103" stroke="#222" stroke-width="1.5"></line>
+</svg>
+<p>four neighbours</p>
+</center>
+</div><div class="column" style="width:33%;">
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewbox="0 0 190 190">
+<!-- Grid of boxes -->
+<rect x="5" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <!-- Dots in the eight outer boxes --> <circle cx="35" cy="35" r="3" fill="#222"></circle> <circle cx="95" cy="35" r="3" fill="#222"></circle> <circle cx="155" cy="35" r="3" fill="#222"></circle> <circle cx="35" cy="95" r="3" fill="#222"></circle> <circle cx="155" cy="95" r="3" fill="#222"></circle> <circle cx="35" cy="155" r="3" fill="#222"></circle> <circle cx="95" cy="155" r="3" fill="#222"></circle> <circle cx="155" cy="155" r="3" fill="#222"></circle> <!-- Cross in the middle box --> <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"></line> <line x1="95" y1="87" x2="95" y2="103" stroke="#222" stroke-width="1.5"></line>
+</svg>
+<p>eight neighbours</p>
+</center>
+</div></div>
+<aside class="notes">
+<p>Why didn’t we need to use our distance computation method in the queue-based version?</p>
+<p>Easy to swap four and eight neighbours in our queue-based code. Regular distance can be implemented with a priority queue (and you will need to actually compute the regular distance).</p>
+<p>If time, write 2-norm, 1-norm and ∞-norm distances.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="analysis-queue-based-version" class="slide level2">
 <h2>Analysis (Queue-based Version)</h2>

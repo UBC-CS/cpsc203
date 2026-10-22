@@ -3161,6 +3161,13 @@
     "text": "Algorithmic Art Reminder\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image as centers\nBuild the Voronoi diagram for those centers.\nTo visualize the Voronoi regions, fill each region in a new image with the same colour as the center of that region.\n\n\nFor visualization purposes, centers are shown in red. Generating those red squares was the effect of the dead code in the previous lecture’s class activity."
   },
   {
+    "objectID": "slides/07_thu_voronoi.html#aside-some-technical-bits-in-the-loop-based-solution",
+    "href": "slides/07_thu_voronoi.html#aside-some-technical-bits-in-the-loop-based-solution",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Aside: Some Technical Bits in the Loop-Based Solution",
+    "text": "Aside: Some Technical Bits in the Loop-Based Solution\nLook back in last lecture’s Class Activity: Voronoi Art at voronoi_loop_answer_nb.py.\n\nWhat does the code protected by extra_code do?\nPillow library’s Image.load() method and the PixelAccess class\n\n\n\nThat code produces little red squares in the image on top of the chosen centers.\nWith a PixelAccess object you can index into the image data like a 2D array. The actual way in which the data is stored is hidden inside the dunder methods, so you don’t care what it might be."
+  },
+  {
     "objectID": "slides/07_thu_voronoi.html#analysis-loop-based-version",
     "href": "slides/07_thu_voronoi.html#analysis-loop-based-version",
     "title": "Programming, problem solving, and algorithms",
@@ -3179,14 +3186,14 @@
     "href": "slides/07_thu_voronoi.html#data-structure-queue",
     "title": "Programming, problem solving, and algorithms",
     "section": "Data Structure: Queue",
-    "text": "Data Structure: Queue\nTo implement the fill we use a datastructure called a queue.\n\n\n\n\n\n\n\n\nOperations on a queue:\n\nenqueue(d): places data d at the “end” / “bottom” of the queue.\ndequeue(): removes and returns the element at the “start” / “top” of the queue.\n\n\n\nHow does the queue differ from the stack you were exploring in the lab?\nA queue is a generic name for a data structure with this behaviour, and enqueue and dequeue are generic names for the operations that you perform on this data structure.\nYou will actually implement a queue in Python using the deque data structure from the collections module, and the methods for enqueue and dequeue will have different names."
+    "text": "Data Structure: Queue\nTo implement the fill we use a datastructure called a queue.\n\n\n\n\n\n\n\n\nOperations on a queue:\n\nenqueue(d): places data d at the “end” / “bottom” of the queue.\ndequeue(): removes and returns the element at the “start” / “top” of the queue.\n\n\n\nHow does the queue differ from the stack you were exploring in the lab? These two structures are also sometimes called FIFO (queue) or LIFO (stack).\nA queue is a generic name for a data structure with this behaviour, and enqueue and dequeue are generic names for the operations that you perform on this data structure.\nYou will actually implement a queue in Python using the deque data structure from the collections module, and the methods for enqueue and dequeue will have different names."
   },
   {
-    "objectID": "slides/07_thu_voronoi.html#example-of-using-a-queue-flood-fill-task",
-    "href": "slides/07_thu_voronoi.html#example-of-using-a-queue-flood-fill-task",
+    "objectID": "slides/07_thu_voronoi.html#pattern-flood-fill",
+    "href": "slides/07_thu_voronoi.html#pattern-flood-fill",
     "title": "Programming, problem solving, and algorithms",
-    "section": "Example of Using a Queue: Flood Fill Task",
-    "text": "Example of Using a Queue: Flood Fill Task\n\n\n\n\n\nenqueue a starting point\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 at the right end of the queue.\nWhat makes a “neighbour”?\nWhat makes a “valid” neighbour?\nWhat does it mean to “process” a pixel?"
+    "section": "Pattern: Flood Fill",
+    "text": "Pattern: Flood Fill\n\n\n\n\n\nenqueue a starting point\nwhile the queue is not empty:\n\nv = dequeue\nfor each valid neighbor w of v:\n\nprocess w\nenqueue w\n\n\n\n\n\n                 \n\n\n\nPut 63 at the right end of the queue.\nWhat makes a “neighbour”?\nWhat makes a “valid” neighbour?\nWhat does it mean to “process” a pixel?"
   },
   {
     "objectID": "slides/07_thu_voronoi.html#queue-for-voronoi-art",
@@ -3200,7 +3207,7 @@
     "href": "slides/07_thu_voronoi.html#designing-a-solution",
     "title": "Programming, problem solving, and algorithms",
     "section": "Designing a Solution",
-    "text": "Designing a Solution\nWe’ll use a Python deque as our queue.\n\nWhat should we put on the queue?\nWhat deque methods will we use?\nHow can we check if a deque is empty?\nWhat are the “neighbors” of pixel (x,y)?\nWhat would be an invalid neighbor?\n\n\n\nCenters to start, then neighbour pixels. What do we need to know about the thing put on the queue? Its location, maybe colour.\nappend and popleft. Alternatively, could use appendleft and pop. Pick a direction and stick with it!\nCould check len(queue) == 0. Or could use while queue: loop (remember that Python always has a boolean interpretation of any piece of data).\n(x-1,y), (x,y-1), (x+1,y), (x,y+1).\nPixel outside an image or pixel that has already been processed."
+    "text": "Designing a Solution\nWe’ll use collections.deque as our queue.\n\nWhat should we put on the queue?\nWhat deque methods will we use?\nHow can we check if a deque is empty?\nWhat are the “neighbors” of pixel (x,y)?\nWhat would be an invalid neighbor?\n\nAside: Queues are also available from Python’s queue library.\n\n\nCenters to start, then neighbour pixels. What do we need to know about the thing put on the queue? Its location, maybe colour.\nappend and popleft. Alternatively, could use appendleft and pop. Pick a direction and stick with it!\nCould check len(queue) == 0. Or could use while queue: loop (remember that Python always has a boolean interpretation of any piece of data).\n(x-1,y), (x,y-1), (x+1,y), (x,y+1).\nPixel outside an image or pixel that has already been processed.\n\nQueue library features: - Safe for parallel algorithms and in some cases more powerful (such as queue.PriorityQueue). - Slower and take up more memory."
   },
   {
     "objectID": "slides/07_thu_voronoi.html#demo",
@@ -3208,6 +3215,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo",
     "text": "Demo\nOpen today’s activity. We’ll implement the queue-based version of the algorithm.\n\nLaunch Class Activity: Voronoi Art Fast in PrairieLearn.\nOpen voronoi_deque_nb.py."
+  },
+  {
+    "objectID": "slides/07_thu_voronoi.html#aside-measuring-distance-and-the-choice-of-neighbours",
+    "href": "slides/07_thu_voronoi.html#aside-measuring-distance-and-the-choice-of-neighbours",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Aside: Measuring Distance and the Choice of Neighbours",
+    "text": "Aside: Measuring Distance and the Choice of Neighbours\nHow far away are the diagonal pixels?\n\n\n\n\n\n                    \n\nregular distance\n\n\n\n\n\n                    \n\nfour neighbours\n\n\n\n\n\n                    \n\neight neighbours\n\n\n\nWhy didn’t we need to use our distance computation method in the queue-based version?\nEasy to swap four and eight neighbours in our queue-based code. Regular distance can be implemented with a priority queue (and you will need to actually compute the regular distance).\nIf time, write 2-norm, 1-norm and ∞-norm distances."
   },
   {
     "objectID": "slides/07_thu_voronoi.html#analysis-queue-based-version",
