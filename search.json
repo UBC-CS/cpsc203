@@ -3091,14 +3091,14 @@
     "href": "slides/08_thu_graphs.html#graphs-a-model-for-representing-relationships-between-entities",
     "title": "Programming, problem solving, and algorithms",
     "section": "Graphs: A Model for Representing Relationships between Entities",
-    "text": "Graphs: A Model for Representing Relationships between Entities\n\nNodes or vertices represent entities.\nEdges denote a relationship.\nNodes are neighbours if they share an edge.\n\n\n\n\n\n\nHow many nodes does this graph have?\nHow many edges does this graph have?\nWhat are the neighbours of B?\nTypically, nodes are labelled and edges are identified by the nodes that they connect.\n\nSometimes edges are labelled; for example, with weights\n\nThere are many variations; for example:\n\nEdges can be directional.\nNodes may be disconnected.\nThere may be multiple edges between two nodes."
+    "text": "Graphs: A Model for Representing Relationships between Entities\n\nNodes or vertices represent entities.\nEdges denote a relationship.\nNodes are neighbours if they share an edge.\n\n\n\n\n\n\nHow many nodes does this graph have?\nHow many edges does this graph have?\nWhat are the neighbours of B?\nThere are many variations; for example:\n\nEdges can be directional.\nNodes may be disconnected.\nThere may be multiple edges between two nodes."
   },
   {
     "objectID": "slides/08_thu_graphs.html#graphs-representation-for-humans",
     "href": "slides/08_thu_graphs.html#graphs-representation-for-humans",
     "title": "Programming, problem solving, and algorithms",
     "section": "Graphs: Representation for Humans",
-    "text": "Graphs: Representation for Humans\nA graph is a pair of lists \\(G = (V,E)\\).\n\nThe nodes / vertices \\(V = \\{ v_i \\}\\).\nThe edges are pairs of nodes \\(E = \\{ (v_i, v_j) \\}\\).\n\n\n\n\n\nYes, in CS we almost always use the letter \\(V\\) even though we often call them nodes rather than vertices.\nWork through the representation:\n\n\\(V = \\{ E, C, A, D, B, F \\}\\).\n\\(E = \\{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \\}\\)\n\nDoes the order of the nodes / edge-pairs matter? No.\nDoes the order of nodes within an edge pair matter? Not if edges are bi-directional / the graph is undirected."
+    "text": "Graphs: Representation for Humans\nA graph is a pair of lists \\(G = (V,E)\\).\n\nThe nodes / vertices \\(V = \\{ v_i \\}\\).\nThe edges are pairs of nodes \\(E = \\{ (v_i, v_j) \\}\\).\n\n\n\n\n\nYes, in CS we almost always use the letter \\(V\\) even though we often call them nodes rather than vertices.\nWork through the representation:\n\n\\(V = \\{ E, C, A, D, B, F \\}\\)\n\\(E = \\{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \\}\\)\n\nDoes the order of the nodes / edge-pairs matter? No.\nDoes the order of nodes within an edge pair matter? Not if edges are bi-directional / the graph is undirected."
   },
   {
     "objectID": "slides/08_thu_graphs.html#surprise-we-have-already-been-using-a-graph",
@@ -3119,7 +3119,7 @@
     "href": "slides/08_thu_graphs.html#a-conflict-graph",
     "title": "Programming, problem solving, and algorithms",
     "section": "A Conflict Graph",
-    "text": "A Conflict Graph\nThe nodes of this graph are labelled by their shape and colour.\n\n\n\n\n\n\\(V\\): Courses at the university.\n\\(E\\): Connect courses with a common student enrolled in both.\n\nWhat is special about this labelling?\n\n\nHint: Don’t look at the three red boxes in the upper right. They look connected but they are actually overlapping edges.\nBecause no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).\nVertex labeling problem: Unfortunately, there is no efficient algorithm known for creating an optimal labelling. We could try to loop through all possible labellings, but that would be infeasibly slow."
+    "text": "A Conflict Graph\nThe nodes of this graph are labelled by their shape and colour.\n\n\n\n\n\n\\(V\\): Courses at the university.\n\\(E\\): Connect courses with a common student enrolled in both.\n\nLabels can be attached to nodes or edges to capture features of the underlying problem.\n\nWhat is special about this labelling?\n\n\n\nAll graphs give at least a unique label / name to each node so that we can tell the nodes apart; for example, the indexes of the pixels in our Voronoi art. Additional labels (not necessarily unique) can help to solve the underlying problem; for example, the colour of the pixels.\nHint: Don’t look at the three red boxes in the upper right. They look connected but they are actually overlapping edges.\nBecause no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).\nVertex labeling problem: In this case the labels are chosen by the algorithm. Unfortunately, there is no efficient algorithm known for creating an optimal labelling. We could try to loop through all possible labellings, but that would be infeasibly slow."
   },
   {
     "objectID": "slides/08_thu_graphs.html#a-weighted-graph",
@@ -3154,14 +3154,14 @@
     "href": "slides/08_thu_graphs.html#the-stanford-bunny",
     "title": "Programming, problem solving, and algorithms",
     "section": "The Stanford Bunny",
-    "text": "The Stanford Bunny\n\n\n\n\n\n\\(V\\): Points on the surface of the bunny.\n\\(E\\): Connect vertices into triangles.\n\nIn a planar graph, the vertices can be placed on the plane and the graph drawn without any crossing edges.\n\n\nAn early example of a 3D object represented in a computer. Used extensively in academic graphics research.\n\nMore points were kept in regions with high curvature.\nEdges are chosen to try to minimize the distance between the triangles and the actual surface.\nIt is then easy to colour / shade / add hair to little triangles.\nThe whole bunny is not a planar graph, but local patches of it are because it is a triangularization.\nNote that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space."
+    "text": "The Stanford Bunny\n\n\n\n\n\n\\(V\\): Points on the surface of the bunny.\n\\(E\\): Connect vertices into triangles.\n\nIn a planar graph, the vertices can be placed on the plane and the graph drawn without any crossing edges.\n\n\nAn early example of a 3D object represented in a computer. Used extensively in academic graphics research.\n\nMore points were kept in regions with high curvature.\nEdges are chosen to try to minimize the distance between the triangles and the actual surface.\nIt is then easy to colour / shade / add hair to little triangles.\nThe whole bunny is not a planar graph, but local patches of it are because it is a triangularization.\nNote that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space (a form of label)."
   },
   {
     "objectID": "slides/08_thu_graphs.html#graph-explorations",
     "href": "slides/08_thu_graphs.html#graph-explorations",
     "title": "Programming, problem solving, and algorithms",
     "section": "Graph Explorations",
-    "text": "Graph Explorations\nA graph \\(G\\) is defined by a set of vertices \\(V\\) and a set of edges \\(E\\).\n\nWe will often denote the size of these sets by \\(|V|\\) and \\(|E|\\).\n\nAlgorithm complexity is often described in terms of the number of vertices.\n\nActual execution time usually depends on the number of edges.\nSo how are \\(|V|\\) and \\(|E|\\) related?\n\n\nWhy describe complexity by \\(|V|\\) when it actually depends on \\(|E|\\)? For real problems, we often have an estimate or intuition about \\(|V|\\) but not \\(|E|\\)."
+    "text": "Graph Explorations\nA graph \\(G\\) is defined by a set of vertices \\(V\\) and a set of edges \\(E\\).\n\nWe will often denote the size of these sets by \\(|V|\\) and \\(|E|\\).\n\nAlgorithm complexity is often described in terms of the number of vertices.\n\nActual execution time usually depends on the number of edges.\nSo how are \\(|V|\\) and \\(|E|\\) related?\n\n\nWhy describe complexity by \\(|V|\\) when it actually depends on \\(|E|\\)?\n\nFor real problems, we often have an estimate or intuition about \\(|V|\\) but not \\(|E|\\).\nFor many problems, we generate \\(E\\) (or even \\(V\\)) on the fly."
   },
   {
     "objectID": "slides/08_thu_graphs.html#demo",

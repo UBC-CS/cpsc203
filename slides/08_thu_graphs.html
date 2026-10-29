@@ -195,10 +195,6 @@
 <li>How many nodes does this graph have?</li>
 <li>How many edges does this graph have?</li>
 <li>What are the neighbours of B?</li>
-<li>Typically, nodes are labelled and edges are identified by the nodes that they connect.
-<ul>
-<li>Sometimes edges are labelled; for example, with <em>weights</em></li>
-</ul></li>
 <li>There are many variations; for example:
 <ul>
 <li>Edges can be directional.</li>
@@ -232,7 +228,7 @@
 <p>Yes, in CS we almost always use the letter <span class="math inline">\(V\)</span> even though we often call them nodes rather than vertices.</p>
 <p>Work through the representation:</p>
 <ul>
-<li><span class="math inline">\(V = \{ E, C, A, D, B, F \}\)</span>.</li>
+<li><span class="math inline">\(V = \{ E, C, A, D, B, F \}\)</span></li>
 <li><span class="math inline">\(E = \{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \}\)</span></li>
 </ul>
 <p>Does the order of the nodes / edge-pairs matter? No.</p>
@@ -327,12 +323,16 @@
 <li><span class="math inline">\(V\)</span>: Courses at the university.</li>
 <li><span class="math inline">\(E\)</span>: Connect courses with a common student enrolled in both.</li>
 </ul>
-<p>What is special about this labelling?</p>
+<p><em>Labels</em> can be attached to nodes or edges to capture features of the underlying problem.</p>
+<ul>
+<li>What is special about this labelling?</li>
+</ul>
 </div></div>
 <aside class="notes">
+<p>All graphs give at least a unique label / name to each node so that we can tell the nodes apart; for example, the indexes of the pixels in our Voronoi art. Additional labels (not necessarily unique) can help to solve the underlying problem; for example, the colour of the pixels.</p>
 <p>Hint: Don’t look at the three red boxes in the upper right. They look connected but they are actually overlapping edges.</p>
 <p>Because no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).</p>
-<p><em>Vertex labeling problem</em>: Unfortunately, there is no efficient algorithm known for creating an optimal labelling. We could try to loop through all possible labellings, but that would be infeasibly slow.</p>
+<p><em>Vertex labeling problem</em>: In this case the labels are chosen by the algorithm. Unfortunately, there is no efficient algorithm known for creating an optimal labelling. We could try to loop through all possible labellings, but that would be infeasibly slow.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -493,7 +493,7 @@
 <li>Edges are chosen to try to minimize the distance between the triangles and the actual surface.</li>
 <li>It is then easy to colour / shade / add hair to little triangles.</li>
 <li>The whole bunny is not a planar graph, but local patches of it are because it is a triangularization.</li>
-<li>Note that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space.</li>
+<li>Note that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space (a form of label).</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -524,7 +524,11 @@
 <li>So how are <span class="math inline">\(|V|\)</span> and <span class="math inline">\(|E|\)</span> related?</li>
 </ul>
 <aside class="notes">
-<p>Why describe complexity by <span class="math inline">\(|V|\)</span> when it actually depends on <span class="math inline">\(|E|\)</span>? For real problems, we often have an estimate or intuition about <span class="math inline">\(|V|\)</span> but not <span class="math inline">\(|E|\)</span>.</p>
+<p>Why describe complexity by <span class="math inline">\(|V|\)</span> when it actually depends on <span class="math inline">\(|E|\)</span>?</p>
+<ul>
+<li>For real problems, we often have an estimate or intuition about <span class="math inline">\(|V|\)</span> but not <span class="math inline">\(|E|\)</span>.</li>
+<li>For many problems, we generate <span class="math inline">\(E\)</span> (or even <span class="math inline">\(V\)</span>) on the fly.</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
