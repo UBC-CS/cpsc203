@@ -1,0 +1,518 @@
+---
+date: 2026-10-29
+---
+
+## Announcements
+
+- Examlet 3 today through Monday.
+- Lab 7 (in-place list manipulation) and POTW 7 (numpy arrays) due Sunday.
+- Project 2 (Game of Life) released, due Monday November 16.
+  - One week grace period for projects at 50% credit.
+- Final exam:
+  - Booking opens Tuesday December 1.
+  - Slots available Tuesday December 15 through Saturday December 19 (inclusive).
+
+- Feeling overwhelmed?  You are not alone!
+  - Visit [student health services'](https://students.ubc.ca/health/) [mental health resources](https://students.ubc.ca/health/mental-health-care-ubc/).
+
+# Graphs
+
+## Graphs: A Model for Representing Relationships between Entities
+
+- *Nodes* or *vertices* represent entities.
+- *Edges* denote a relationship.
+- Nodes are *neighbours* if they share an edge.
+
+<center>
+![](/images/graph.svg)
+</center>
+
+::: notes
+- How many nodes does this graph have?
+- How many edges does this graph have?
+- What are the neighbours of B?
+- Typically, nodes are labelled and edges are identified by the nodes that they connect.
+  - Sometimes edges are labelled; for example, with *weights*
+- There are many variations; for example:
+  - Edges can be directional.
+  - Nodes may be disconnected.
+  - There may be multiple edges between two nodes.
+:::
+
+## Graphs: Representation for Humans
+
+A graph is a pair of lists $G = (V,E)$.
+
+- The nodes / vertices $V = \{ v_i \}$.
+- The edges are pairs of nodes $E = \{ (v_i, v_j) \}$.
+
+<center>
+![](/images/graph.svg)
+</center>
+
+::: notes
+Yes, in CS we almost always use the letter $V$ even though we often call them nodes rather than vertices.
+
+Work through the representation:
+
+- $V = \{ E, C, A, D, B, F \}$.
+- $E = \{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \}$
+
+Does the order of the nodes / edge-pairs matter? No.
+
+Does the order of nodes within an edge pair matter? Not if edges are *bi-directional* / the graph is *undirected*.
+:::
+
+
+## Surprise: We Have Already Been Using a Graph
+
+Consider the neighbourhood of a pixel in our Voronoi algorithm.
+
+- Each pixel is a node in a graph.
+- Edges of central pixel (denoted by "+") shown in red.
+- Edges of all other pixels shown in black.
+
+::: {.columns}
+
+::: {.column width=33%}
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
+  <!-- Grid of boxes -->
+  <rect x="5"   y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="5"   width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="65"  width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="5"   y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="65"  y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="125" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+  <!-- Dots in the eight outer boxes -->
+  <circle cx="35"  cy="35"  r="3" fill="#222"/>
+  <circle cx="95"  cy="35"  r="3" fill="#222"/>
+  <circle cx="155" cy="35"  r="3" fill="#222"/>
+  <circle cx="35"  cy="95"  r="3" fill="#222"/>
+  <circle cx="155" cy="95"  r="3" fill="#222"/>
+  <circle cx="35"  cy="155" r="3" fill="#222"/>
+  <circle cx="95"  cy="155" r="3" fill="#222"/>
+  <circle cx="155" cy="155" r="3" fill="#222"/>
+  <!-- Cross in the middle box -->
+  <line x1="87" y1="95" x2="103" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="95" y1="87" x2="95"  y2="103" stroke="#222" stroke-width="1.5"/>
+</svg>
+
+Our original visualization
+
+</center>
+:::
+
+::: {.column width=33%}
+<center>
+<svg width="190" height="190" viewBox="0 0 190 190" xmlns="http://www.w3.org/2000/svg">
+  <!-- Connecting edges from the middle box to its four neighbors -->
+  <g stroke="black" stroke-width="2">
+    <!-- Horizontal edges (3 rows x 2 gaps) -->
+    <line x1="45"  y1="30"  x2="80"  y2="30"/>
+    <line x1="110" y1="30"  x2="145" y2="30"/>
+    <line x1="45"  y1="95"  x2="80"  y2="95"/>
+    <line x1="110" y1="95"  x2="145" y2="95"/>
+    <line x1="45"  y1="160" x2="80"  y2="160"/>
+    <line x1="110" y1="160" x2="145" y2="160"/>
+    <!-- Vertical edges (3 columns x 2 gaps) -->
+    <line x1="30"  y1="45"  x2="30"  y2="80"/>
+    <line x1="30"  y1="110" x2="30"  y2="145"/>
+    <line x1="95"  y1="45"  x2="95"  y2="80"/>
+    <line x1="95"  y1="110" x2="95"  y2="145"/>
+    <line x1="160" y1="45"  x2="160" y2="80"/>
+    <line x1="160" y1="110" x2="160" y2="145"/>
+    <!-- Outgoing edges to implied neighbours beyond the grid -->
+    <!-- Left -->
+    <line x1="0"   y1="30"  x2="15"  y2="30"/>
+    <line x1="0"   y1="95"  x2="15"  y2="95"/>
+    <line x1="0"   y1="160" x2="15"  y2="160"/>
+    <!-- Right -->
+    <line x1="175" y1="30"  x2="190" y2="30"/>
+    <line x1="175" y1="95"  x2="190" y2="95"/>
+    <line x1="175" y1="160" x2="190" y2="160"/>
+    <!-- Top -->
+    <line x1="30"  y1="0"   x2="30"  y2="15"/>
+    <line x1="95"  y1="0"   x2="95"  y2="15"/>
+    <line x1="160" y1="0"   x2="160" y2="15"/>
+    <!-- Bottom -->
+    <line x1="30"  y1="175" x2="30"  y2="190"/>
+    <line x1="95"  y1="175" x2="95"  y2="190"/>
+    <line x1="160" y1="175" x2="160" y2="190"/>
+  </g>
+  <!-- Edges from the central box (red) -->
+  <g stroke="red" stroke-width="3">
+    <!-- Orthogonal -->
+    <line x1="95"  y1="45"  x2="95"  y2="80"/>    <!-- up -->
+    <line x1="95"  y1="110" x2="95"  y2="145"/>   <!-- down -->
+    <line x1="45"  y1="95"  x2="80"  y2="95"/>    <!-- left -->
+    <line x1="110" y1="95"  x2="145" y2="95"/>    <!-- right -->
+  </g>
+  <!-- 3x3 grid of 30x30 boxes -->
+  <g fill="none" stroke="green" stroke-width="2">
+    <rect x="15"  y="15"  width="30" height="30"/>
+    <rect x="80"  y="15"  width="30" height="30"/>
+    <rect x="145" y="15"  width="30" height="30"/>
+    <rect x="15"  y="80"  width="30" height="30"/>
+    <rect x="80"  y="80"  width="30" height="30"/>
+    <rect x="145" y="80"  width="30" height="30"/>
+    <rect x="15"  y="145" width="30" height="30"/>
+    <rect x="80"  y="145" width="30" height="30"/>
+    <rect x="145" y="145" width="30" height="30"/>
+  </g>
+  <!-- Black dots in every box except the middle one -->
+  <g fill="black">
+    <circle cx="30"  cy="30"  r="3"/>
+    <circle cx="95"  cy="30"  r="3"/>
+    <circle cx="160" cy="30"  r="3"/>
+    <circle cx="30"  cy="95"  r="3"/>
+    <circle cx="160" cy="95"  r="3"/>
+    <circle cx="30"  cy="160" r="3"/>
+    <circle cx="95"  cy="160" r="3"/>
+    <circle cx="160" cy="160" r="3"/>
+  </g>
+  <!-- Small cross in the middle box -->
+  <g stroke="black" stroke-width="2">
+    <line x1="89" y1="95" x2="101" y2="95"/>
+    <line x1="95" y1="89" x2="95" y2="101"/>
+  </g>
+</svg>
+
+4 neighbours
+
+</center>
+:::
+
+::: {.column width=33%}
+<center>
+<svg width="190" height="190" viewBox="0 0 190 190" xmlns="http://www.w3.org/2000/svg">
+  <!-- Connecting edges from the middle box to its four neighbors -->
+  <g stroke="black" stroke-width="2">
+    <!-- Horizontal edges (3 rows x 2 gaps) -->
+    <line x1="45"  y1="30"  x2="80"  y2="30"/>
+    <line x1="110" y1="30"  x2="145" y2="30"/>
+    <line x1="45"  y1="95"  x2="80"  y2="95"/>
+    <line x1="110" y1="95"  x2="145" y2="95"/>
+    <line x1="45"  y1="160" x2="80"  y2="160"/>
+    <line x1="110" y1="160" x2="145" y2="160"/>
+    <!-- Vertical edges (3 columns x 2 gaps) -->
+    <line x1="30"  y1="45"  x2="30"  y2="80"/>
+    <line x1="30"  y1="110" x2="30"  y2="145"/>
+    <line x1="95"  y1="45"  x2="95"  y2="80"/>
+    <line x1="95"  y1="110" x2="95"  y2="145"/>
+    <line x1="160" y1="45"  x2="160" y2="80"/>
+    <line x1="160" y1="110" x2="160" y2="145"/>
+    <!-- Outgoing edges to implied neighbours beyond the grid -->
+    <!-- Left -->
+    <line x1="0"   y1="30"  x2="15"  y2="30"/>
+    <line x1="0"   y1="95"  x2="15"  y2="95"/>
+    <line x1="0"   y1="160" x2="15"  y2="160"/>
+    <!-- Right -->
+    <line x1="175" y1="30"  x2="190" y2="30"/>
+    <line x1="175" y1="95"  x2="190" y2="95"/>
+    <line x1="175" y1="160" x2="190" y2="160"/>
+    <!-- Top -->
+    <line x1="30"  y1="0"   x2="30"  y2="15"/>
+    <line x1="95"  y1="0"   x2="95"  y2="15"/>
+    <line x1="160" y1="0"   x2="160" y2="15"/>
+    <!-- Bottom -->
+    <line x1="30"  y1="175" x2="30"  y2="190"/>
+    <line x1="95"  y1="175" x2="95"  y2="190"/>
+    <line x1="160" y1="175" x2="160" y2="190"/>
+  </g>
+  <!-- Diagonal edges (corner to corner) -->
+  <g stroke="black" stroke-width="2">
+    <!-- Between boxes: an X in each of the 4 gap squares -->
+    <line x1="45"  y1="45"  x2="80"  y2="80"/>
+    <line x1="45"  y1="80"  x2="80"  y2="45"/>
+    <line x1="110" y1="45"  x2="145" y2="80"/>
+    <line x1="110" y1="80"  x2="145" y2="45"/>
+    <line x1="45"  y1="110" x2="80"  y2="145"/>
+    <line x1="45"  y1="145" x2="80"  y2="110"/>
+    <line x1="110" y1="110" x2="145" y2="145"/>
+    <line x1="110" y1="145" x2="145" y2="110"/>
+    <!-- Implied diagonals beyond the grid: top -->
+    <line x1="15"  y1="15"  x2="0"   y2="0"/>
+    <line x1="45"  y1="15"  x2="60"  y2="0"/>
+    <line x1="80"  y1="15"  x2="65"  y2="0"/>
+    <line x1="110" y1="15"  x2="125" y2="0"/>
+    <line x1="145" y1="15"  x2="130" y2="0"/>
+    <line x1="175" y1="15"  x2="190" y2="0"/>
+    <!-- Implied diagonals beyond the grid: bottom -->
+    <line x1="15"  y1="175" x2="0"   y2="190"/>
+    <line x1="45"  y1="175" x2="60"  y2="190"/>
+    <line x1="80"  y1="175" x2="65"  y2="190"/>
+    <line x1="110" y1="175" x2="125" y2="190"/>
+    <line x1="145" y1="175" x2="130" y2="190"/>
+    <line x1="175" y1="175" x2="190" y2="190"/>
+    <!-- Implied diagonals beyond the grid: left -->
+    <line x1="15"  y1="45"  x2="0"   y2="60"/>
+    <line x1="15"  y1="80"  x2="0"   y2="65"/>
+    <line x1="15"  y1="110" x2="0"   y2="125"/>
+    <line x1="15"  y1="145" x2="0"   y2="130"/>
+    <!-- Implied diagonals beyond the grid: right -->
+    <line x1="175" y1="45"  x2="190" y2="60"/>
+    <line x1="175" y1="80"  x2="190" y2="65"/>
+    <line x1="175" y1="110" x2="190" y2="125"/>
+    <line x1="175" y1="145" x2="190" y2="130"/>
+  </g>
+  <!-- Edges from the central box (red) -->
+  <g stroke="red" stroke-width="3">
+    <!-- Orthogonal -->
+    <line x1="95"  y1="45"  x2="95"  y2="80"/>    <!-- up -->
+    <line x1="95"  y1="110" x2="95"  y2="145"/>   <!-- down -->
+    <line x1="45"  y1="95"  x2="80"  y2="95"/>    <!-- left -->
+    <line x1="110" y1="95"  x2="145" y2="95"/>    <!-- right -->
+    <!-- Diagonal -->
+    <line x1="45"  y1="45"  x2="80"  y2="80"/>    <!-- top-left -->
+    <line x1="110" y1="80"  x2="145" y2="45"/>    <!-- top-right -->
+    <line x1="45"  y1="145" x2="80"  y2="110"/>   <!-- bottom-left -->
+    <line x1="110" y1="110" x2="145" y2="145"/>   <!-- bottom-right -->
+  </g>
+  <!-- 3x3 grid of 30x30 boxes -->
+  <g fill="none" stroke="green" stroke-width="2">
+    <rect x="15"  y="15"  width="30" height="30"/>
+    <rect x="80"  y="15"  width="30" height="30"/>
+    <rect x="145" y="15"  width="30" height="30"/>
+    <rect x="15"  y="80"  width="30" height="30"/>
+    <rect x="80"  y="80"  width="30" height="30"/>
+    <rect x="145" y="80"  width="30" height="30"/>
+    <rect x="15"  y="145" width="30" height="30"/>
+    <rect x="80"  y="145" width="30" height="30"/>
+    <rect x="145" y="145" width="30" height="30"/>
+  </g>
+  <!-- Black dots in every box except the middle one -->
+  <g fill="black">
+    <circle cx="30"  cy="30"  r="3"/>
+    <circle cx="95"  cy="30"  r="3"/>
+    <circle cx="160" cy="30"  r="3"/>
+    <circle cx="30"  cy="95"  r="3"/>
+    <circle cx="160" cy="95"  r="3"/>
+    <circle cx="30"  cy="160" r="3"/>
+    <circle cx="95"  cy="160" r="3"/>
+    <circle cx="160" cy="160" r="3"/>
+  </g>
+  <!-- Small cross in the middle box -->
+  <g stroke="black" stroke-width="2">
+    <line x1="89" y1="95" x2="101" y2="95"/>
+    <line x1="95" y1="89" x2="95" y2="101"/>
+  </g>
+</svg>
+
+8 neighbours
+
+</center>
+:::
+
+:::
+
+
+# Example Graphs
+
+## The Internet, circa 2003 {.medium}
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr1.png){height="500px"}
+:::
+::: {.column width="60%"}
+In this case:
+
+- $V$: The routers which communicate between local networks.
+- $E$: Identify which routers are connected together.
+
+The *degree* of a vertex is the number of edges to which it connects.
+:::
+::::: 
+
+::: notes
+*Degree* is the number of neighbours / adjacent vertices (in an undirected graph).
+:::
+
+## A Conflict Graph {.medium}
+
+The nodes of this graph are labelled by their shape and colour.
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr2.png){height="500px"}
+:::
+
+::: {.column width="60%"}
+* $V$: Courses at the university.
+* $E$: Connect courses with a common student enrolled in both.
+
+What is special about this labelling?
+:::
+::::: 
+
+::: notes
+Hint: Don't look at the three red boxes in the upper right.  They look connected but they are actually overlapping edges.
+
+Because no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).
+
+*Vertex labeling problem*: Unfortunately, there is no efficient algorithm known for creating an optimal labelling.  We could try to loop through all possible labellings, but that would be infeasibly slow.
+:::
+
+## A Weighted Graph {.medium}
+
+::::: columns
+::: {.column width="40%"}
+![](/images/gr3.png){height="500px"}
+:::
+::: {.column width="60%"}
+- $V$: Major characters in [The Office](https://en.wikipedia.org/wiki/The_Office_(American_TV_series)).
+- $E$: Conversations.  Weight denotes the number of conversations.
+
+A graph is *complete* if it contains all possible edges.
+
+- Is this graph complete?
+
+How many edges in a complete graph of $n$ vertices?
+:::
+::::: 
+
+::: notes
+It is not complete: Look at Jan and Holly.
+
+Every node connects to every other node: $n(n-1)$.  But that double counts each edge, so divide by 2.
+- Looks like $O(n^2)$.
+:::
+
+## [Rush Hour Game](https://puzzle.now/rushhour/) {.medium}
+
+::::: columns
+::: {.column}
+![](/images/gr5.png)
+:::
+::: {.column}
+<img src="/images/gr5rh.png" alt="Desmos screenshot" width="30%">
+
+- $V$: State of the board / position of all cars / configuration.
+- $E$: Connect two configurations if there is a legal move between them.
+
+A *path* is a sequence of vertices with an edge between every adjacent pair of vertices.
+:::
+::::: 
+
+::: notes
+- Try to get the red car out through the exit.  Vehicles can only move up/down or left/right.
+- Green blobs are a path to a solution.
+:::
+
+
+## Social Network (Cinda's Facebook in 2012) {.medium}
+
+::::: columns
+::: {.column width=50%}
+![](/images/gr4.png){height="500px"}
+:::
+::: {.column width=50%}
+- $V$: Cinda's friends.
+- $E$: Connect friends who are friends of each other.
+
+A graph is *connected* if there is a path between any pair of vertices.
+
+A *connected component* is a subgraph which is connected.
+:::
+::::: 
+
+::: notes
+- Clusters are hometown, extended family, workplace, ...
+- All friends are actually connected through Cinda, but in this graph Cinda's edges do not appear.  There are a few disconnected nodes.
+- When we refer to a connected component, we typically make them as big as possible.
+- Draw an example graph with disconnected components.
+:::
+
+
+## State Machine: Is a Number Divisible by Seven? {.medium}
+
+::::: columns
+::: {.column width=30%}
+![](/images/gr6.png)
+:::
+::: {.column width=70%}
+- Start at the circle node at the top.
+- Read the number from left to right.
+- For each digit $d$ in the given number, follow $d$ blue / solid edges in succession.
+- As you move from one digit to the next, follow 1 red / dashed edge.
+- If you end up back at the circle node, your number is divisible by 7.
+
+Consider the number 3703.
+
+In a *directed* graph, edges connect nodes only in one direction.
+:::
+::::: 
+
+::: notes
+- How do you check for divisible by 2 / 5?  Check last digit.
+- Divisible by 3?  Sum the digits and check if that is divisible by 3.  Use recursion.
+- Divisible by 4?  Check if last two digits are divisible by 4.
+- Divisible by 6?  Divisible by 3 and 2.
+
+Note that even though all nodes are connected to two blue and two red edges, one is incoming and one is outgoing.
+:::
+
+## The Stanford Bunny {.medium}
+
+::::: columns
+::: {.column width=65%}
+![](/images/gr7.png)
+:::
+::: {.column width=35%}
+* $V$: Points on the surface of the bunny.
+* $E$: Connect vertices into triangles.
+
+In a *planar graph*, the vertices can be placed on the plane and the graph drawn without any crossing edges.
+:::
+::::: 
+
+::: notes
+An early example of a 3D object represented in a computer.  Used extensively in academic graphics research.
+
+- More points were kept in regions with high curvature.
+- Edges are chosen to try to minimize the distance between the triangles and the actual surface.
+- It is then easy to colour / shade / add hair to little triangles.
+- The whole bunny is not a planar graph, but local patches of it are because it is a triangularization.
+- Note that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space.
+:::
+
+# Complexity of Graph Algorithms
+
+## Graph Explorations
+
+A graph $G$ is defined by a set of vertices $V$ and a set of edges $E$.
+
+- We will often denote the size of these sets by $|V|$ and $|E|$.
+
+Algorithm complexity is often *described* in terms of the number of vertices.
+
+- Actual execution time usually depends on the number of edges.
+- So how are $|V|$ and $|E|$ related?
+
+::: notes
+Why describe complexity by $|V|$ when it actually depends on $|E|$?  For real problems, we often have an estimate or intuition about $|V|$ but not $|E|$.
+:::
+
+## Demo {.activity}
+
+Open today's activity.  You'll work through some graph size calculations.
+
+- Launch [Class Activity: Graph Explorations](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722854/) in PrairieLearn.
+
+::: notes
+If possible, work through at least the "How many edges?" question.
+:::
+
+<!-- I removed a number of slides from Cinda's deck.  
+     Some are covered in the class activity, some are not.
+     None were covered in her recorded lecture, so I'm not sure how to present them.
+
+- How many edges.
+- Handshaking.
+- Degree games and [Havel-Hakimi](https://jacquerie.github.io/hh/).
+- Graph tracing pencil games.
+-->
