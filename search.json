@@ -3080,6 +3080,516 @@
     "text": "Resources\nhttps://pymotw.com/2/datetime/\nhttps://www.dataschool.io/best-python-pandas-resources/\nhttps://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\nhttps://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot"
   },
   {
+    "objectID": "slides/08_thu_graphs.html#announcements",
+    "href": "slides/08_thu_graphs.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nExamlet 3 today through Monday.\nLab 7 (in-place list manipulation) and POTW 7 (numpy arrays) due Sunday.\nProject 2 (Game of Life) released, due Monday November 16.\n\nOne week grace period for projects at 50% credit.\n\nFinal exam:\n\nBooking opens Tuesday December 1.\nSlots available Tuesday December 15 through Saturday December 19 (inclusive).\n\nFeeling overwhelmed? You are not alone!\n\nVisit student health services’ mental health resources."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#graphs-a-model-for-representing-relationships-between-entities",
+    "href": "slides/08_thu_graphs.html#graphs-a-model-for-representing-relationships-between-entities",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Graphs: A Model for Representing Relationships between Entities",
+    "text": "Graphs: A Model for Representing Relationships between Entities\n\nNodes or vertices represent entities.\nEdges denote a relationship.\nNodes are neighbours if they share an edge.\n\n\n\n\n\n\nHow many nodes does this graph have?\nHow many edges does this graph have?\nWhat are the neighbours of B?\nTypically, nodes are labelled and edges are identified by the nodes that they connect.\n\nSometimes edges are labelled; for example, with weights\n\nThere are many variations; for example:\n\nEdges can be directional.\nNodes may be disconnected.\nThere may be multiple edges between two nodes."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#graphs-representation-for-humans",
+    "href": "slides/08_thu_graphs.html#graphs-representation-for-humans",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Graphs: Representation for Humans",
+    "text": "Graphs: Representation for Humans\nA graph is a pair of lists \\(G = (V,E)\\).\n\nThe nodes / vertices \\(V = \\{ v_i \\}\\).\nThe edges are pairs of nodes \\(E = \\{ (v_i, v_j) \\}\\).\n\n\n\n\n\nYes, in CS we almost always use the letter \\(V\\) even though we often call them nodes rather than vertices.\nWork through the representation:\n\n\\(V = \\{ E, C, A, D, B, F \\}\\).\n\\(E = \\{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \\}\\)\n\nDoes the order of the nodes / edge-pairs matter? No.\nDoes the order of nodes within an edge pair matter? Not if edges are bi-directional / the graph is undirected."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#surprise-we-have-already-been-using-a-graph",
+    "href": "slides/08_thu_graphs.html#surprise-we-have-already-been-using-a-graph",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Surprise: We Have Already Been Using a Graph",
+    "text": "Surprise: We Have Already Been Using a Graph\nConsider the neighbourhood of a pixel in our Voronoi algorithm.\n\nEach pixel is a node in a graph.\nEdges of central pixel (denoted by “+”) shown in red.\nEdges of all other pixels shown in black.\n\n\n\n\n\n\n                    \n\nOur original visualization\n\n\n\n\n\n                                                                        \n\n4 neighbours\n\n\n\n\n\n                                                                                                                     \n\n8 neighbours"
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#the-internet-circa-2003",
+    "href": "slides/08_thu_graphs.html#the-internet-circa-2003",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Internet, circa 2003",
+    "text": "The Internet, circa 2003\n\n\n\n\nIn this case:\n\n\\(V\\): The routers which communicate between local networks.\n\\(E\\): Identify which routers are connected together.\n\nThe degree of a vertex is the number of edges to which it connects.\n\n\nDegree is the number of neighbours / adjacent vertices (in an undirected graph)."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#a-conflict-graph",
+    "href": "slides/08_thu_graphs.html#a-conflict-graph",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Conflict Graph",
+    "text": "A Conflict Graph\nThe nodes of this graph are labelled by their shape and colour.\n\n\n\n\n\n\\(V\\): Courses at the university.\n\\(E\\): Connect courses with a common student enrolled in both.\n\nWhat is special about this labelling?\n\n\nHint: Don’t look at the three red boxes in the upper right. They look connected but they are actually overlapping edges.\nBecause no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).\nVertex labeling problem: Unfortunately, there is no efficient algorithm known for creating an optimal labelling. We could try to loop through all possible labellings, but that would be infeasibly slow."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#a-weighted-graph",
+    "href": "slides/08_thu_graphs.html#a-weighted-graph",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "A Weighted Graph",
+    "text": "A Weighted Graph\n\n\n\n\n\n\\(V\\): Major characters in The Office.\n\\(E\\): Conversations. Weight denotes the number of conversations.\n\nA graph is complete if it contains all possible edges.\n\nIs this graph complete?\n\nHow many edges in a complete graph of \\(n\\) vertices?\n\n\nIt is not complete: Look at Jan and Holly.\nEvery node connects to every other node: \\(n(n-1)\\). But that double counts each edge, so divide by 2. - Looks like \\(O(n^2)\\)."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#rush-hour-game",
+    "href": "slides/08_thu_graphs.html#rush-hour-game",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Rush Hour Game",
+    "text": "Rush Hour Game\n\n\n\n\n\n\n\\(V\\): State of the board / position of all cars / configuration.\n\\(E\\): Connect two configurations if there is a legal move between them.\n\nA path is a sequence of vertices with an edge between every adjacent pair of vertices.\n\n\n\nTry to get the red car out through the exit. Vehicles can only move up/down or left/right.\nGreen blobs are a path to a solution."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#social-network-cindas-facebook-in-2012",
+    "href": "slides/08_thu_graphs.html#social-network-cindas-facebook-in-2012",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Social Network (Cinda’s Facebook in 2012)",
+    "text": "Social Network (Cinda’s Facebook in 2012)\n\n\n\n\n\n\\(V\\): Cinda’s friends.\n\\(E\\): Connect friends who are friends of each other.\n\nA graph is connected if there is a path between any pair of vertices.\nA connected component is a subgraph which is connected.\n\n\n\nClusters are hometown, extended family, workplace, …\nAll friends are actually connected through Cinda, but in this graph Cinda’s edges do not appear. There are a few disconnected nodes.\nWhen we refer to a connected component, we typically make them as big as possible.\nDraw an example graph with disconnected components."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#state-machine-is-a-number-divisible-by-seven",
+    "href": "slides/08_thu_graphs.html#state-machine-is-a-number-divisible-by-seven",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "State Machine: Is a Number Divisible by Seven?",
+    "text": "State Machine: Is a Number Divisible by Seven?\n\n\n\n\n\nStart at the circle node at the top.\nRead the number from left to right.\nFor each digit \\(d\\) in the given number, follow \\(d\\) blue / solid edges in succession.\nAs you move from one digit to the next, follow 1 red / dashed edge.\nIf you end up back at the circle node, your number is divisible by 7.\n\nConsider the number 3703.\nIn a directed graph, edges connect nodes only in one direction.\n\n\n\nHow do you check for divisible by 2 / 5? Check last digit.\nDivisible by 3? Sum the digits and check if that is divisible by 3. Use recursion.\nDivisible by 4? Check if last two digits are divisible by 4.\nDivisible by 6? Divisible by 3 and 2.\n\nNote that even though all nodes are connected to two blue and two red edges, one is incoming and one is outgoing."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#the-stanford-bunny",
+    "href": "slides/08_thu_graphs.html#the-stanford-bunny",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "The Stanford Bunny",
+    "text": "The Stanford Bunny\n\n\n\n\n\n\\(V\\): Points on the surface of the bunny.\n\\(E\\): Connect vertices into triangles.\n\nIn a planar graph, the vertices can be placed on the plane and the graph drawn without any crossing edges.\n\n\nAn early example of a 3D object represented in a computer. Used extensively in academic graphics research.\n\nMore points were kept in regions with high curvature.\nEdges are chosen to try to minimize the distance between the triangles and the actual surface.\nIt is then easy to colour / shade / add hair to little triangles.\nThe whole bunny is not a planar graph, but local patches of it are because it is a triangularization.\nNote that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#graph-explorations",
+    "href": "slides/08_thu_graphs.html#graph-explorations",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Graph Explorations",
+    "text": "Graph Explorations\nA graph \\(G\\) is defined by a set of vertices \\(V\\) and a set of edges \\(E\\).\n\nWe will often denote the size of these sets by \\(|V|\\) and \\(|E|\\).\n\nAlgorithm complexity is often described in terms of the number of vertices.\n\nActual execution time usually depends on the number of edges.\nSo how are \\(|V|\\) and \\(|E|\\) related?\n\n\nWhy describe complexity by \\(|V|\\) when it actually depends on \\(|E|\\)? For real problems, we often have an estimate or intuition about \\(|V|\\) but not \\(|E|\\)."
+  },
+  {
+    "objectID": "slides/08_thu_graphs.html#demo",
+    "href": "slides/08_thu_graphs.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nOpen today’s activity. You’ll work through some graph size calculations.\n\nLaunch Class Activity: Graph Explorations in PrairieLearn.\n\n\nIf possible, work through at least the “How many edges?” question."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#announcements",
+    "href": "slides/06_tue_dictionaries.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nExamlet 2 runs today through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\n\nIf your scheduled lab was yesterday, you can still attend:\n\nT1F: Tue, 18:00 - 19:30.\nT1E: Thu, 9:30 - 11:00.\n\n\nProject 1 due Monday, October 26 (~two weeks).\n\n\nThere was a misconfiguration for examlet 2: Starts today, ends on Sunday. But you’ve had the material (dataclasses and lists) for more than a week, so no big deal."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#key-value-pairs",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Key-Value Pairs",
+    "text": "Key-Value Pairs\n\n\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen key_value_patterns.py.\n\n\n\n\n\n\nKey\nValue\n\n\n\n\nname\nIan Mitchell\n\n\ndepartment\nComputer Science\n\n\nprogram\nM.Sc.\n\n\nstart date\n1995-09-01\n\n\nterms\n7\n\n\ndomestic student\nyes\n\n\n⋮\n⋮"
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "href": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Representing Key-Value Pairs",
+    "text": "Representing Key-Value Pairs\n\nHow could we represent this information? Don’t say “dictionary”.\n\nWhat type for the whole set of data?\nWhat type for each row of data?\nWhat type for the keys?\nWhat type for the values?\n\n\n\n\nArbitrary size / list.\nCompound with two elements: key and value.\nString.\nAnything. Can use typing.Any to formally recognize that type, although it is essentially the Python default.\n\nSee alternative representation as two lists of the same length. Not recommended, but this approach was often used in older languages where compound data was syntactically difficult."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "href": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Efficiency of List Representations",
+    "text": "Efficiency of List Representations\nIf there are \\(n\\) key-value pairs in the store, how long does it take to:\n\nLook up the value associated with a key?\nDetermine whether a key is in the store?\nAdd a key-value pair?\n\n\nA Python dict can perform any of these operations in constant time for any \\(n\\).\n\n\n\n\\(O(n)\\).\n\\(O(n)\\) (even though you can write it without a loop using the in keyword).\n\\(O(1)\\).\nNote that using in on a dictionary is \\(O(1)\\).\n\nYou cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation. That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation. At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency."
+  },
+  {
+    "objectID": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "href": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Not Just a One-Trick Pony",
+    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nCompound data.\nTracking membership.\nCounting appearances / frequencies.\nFinding complements.\nGrouping by (discrete) category.\nRepresenting a map or translation over a discrete domain.\n\nToday: Finish slides / class activity from last lecture for the first five.\nThursday: Translation / mapping.\n\nNote that there is nothing special about dictionaries and compound data:\n\nAny key-value lookup representation could be used for compound data.\nAny compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).\n\nOkay, all done discussing (bad) ways of implementing key-value lookup. Now let’s return to the ways we can use it.\nIf necessary, go back and complete any patterns that were not completed in the previous lecture."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#introduction",
+    "href": "syllabus.html#introduction",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-requirements",
+    "href": "syllabus.html#course-requirements",
+    "title": "Syllabus",
+    "section": "Course Requirements",
+    "text": "Course Requirements\nThe best way to learn is by doing. Lectures and labs are designed around active learning principles, so you should:\n\nAttend every lecture if you are not sick.\n\nIf you are sick, watch the recording and do the in-class activities before the next lecture.\n\nAttend your lab sections if you are not sick.\n\nIf you are sick, you are still responsible for doing the lab activities and submitting your lab assessments through PrairieLearn by the due date.\n\nMonitor Piazza for course announcements.\n\nAll assessments for the course are managed through PrairieLearn. The assessments are:\n\nProblems of the Week (POTW): You will complete approximately 50 small programming exercises, 5 per week, through PrairieLearn. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nLabs: PrairieLearn assessments for the labs can be completed anytime before the due date, although we encourage students to complete as much as possible during their scheduled lab session.\nProjects: Most of the coding in the course will occur within three significant coding projects.\nExamlets: Five self-scheduled 50 minute assessments to be completed on PrairieLearn in ORCA. You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nFinal Exam: Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-and-exam-policies",
+    "href": "syllabus.html#grading-and-exam-policies",
+    "title": "Syllabus",
+    "section": "Grading and Exam Policies",
+    "text": "Grading and Exam Policies\nYour final grade in the course is generated from the following assessments:\n\n\n\n\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week (POTWs)\n10% (10 x 1%)\nSundays at 8:00 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 8:00 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree weeks long, Mondays at 8:00 PM\n\n\nExamlets\n50% (5 x 10%)\nRoughly biweekly, self-scheduled Thursday through Monday\n\n\nFinal Exam\n26%\nSelf-scheduled during five day window TBA\n\n\n\nStudents must satisfy all of the following conditions to pass the course:\n\nAchieve a grade of at least 50% on the lab component.\nAchieve a grade of at least 50% on the examlet and final exam components together.\nAchieve a grade of at least 40% on the final exam.\n\nIf a student does not satisfy all conditions, they will be assigned the lower of 45% or their earned final grade as their course grade.\nStudents who have not submitted at least half of the lab, POTWs and examlet assessments prior to the final exam may be refused permission to write the final exam.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Syllabus",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic endeavours are founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, academic integrity means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. It also means you should not copy, cheat, or mislead others about what is your work; nor should you help others to do the same. For example, it is prohibited to: share your past assignments and answers with other students; complete an assignment as a group when an instructor has not expressly given permission; or spread information through word of mouth, social media, websites, or other channels that subverts the fair evaluation of a class exercise, or assessment. A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the UBC Academic Calendar.\n\nWhat is considered academic misconduct in this course?\nThe line between what constitutes acceptable versus unacceptable behaviour can be blurry, but here is a list of things which are definitely considered academic misconduct in CPSC 203:\n\nDoing individual assessments collaboratively, sharing your work on these assessments with others, or asking others to see their work.\nCommunicating test questions and/or answers to others. We all benefit from the scheduling flexibility that PrairieLearn provides, but that means even if you have completed a test you cannot talk about it because other students may not have taken it yet.\nSharing any course material onto Chegg, Course Hero, Slader, or other similar sites.\nSearching for solutions to course material on Chegg, Course Hero, Slader, or other similar sites.\nBlindly googling the question in hopes of finding someone who had a similar question and then copying their answer. However, googling to find resources to understand specific concepts or general ideas is highly encouraged!\nHaving a tutor / friend / nemesis complete and submit your work for you.\nCopying and pasting code, equations, text explanations, prose, etc… without attribution.\nManipulating the learning platforms we use to reverse engineer the randomization algorithms, hacking the timer functionality, or other similar technical malfeasance.\n\n\n\nWhat Happens in Cases of Academic Misconduct?\nViolations of academic integrity – in other words, academic misconduct – include any conduct by which a student gains or attempts to gain an unfair academic advantage or benefit thereby compromising the integrity of the academic process, or helping or attempting to help another person commit an act of academic misconduct or gain, or attempt to gain, an unfair academic advantage. Academic misconduct leads to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred for consideration for academic discipline. Careful records are kept to monitor and prevent recurrences. Any instance of cheating or taking credit for someone else’s work, whether intentionally or unintentionally, can and often will result in at minimum a grade of zero for the assignment, and these cases will be reported to the Associate Head of Undergraduates in the Department of Computer Science and Associate Dean of Students in the Faculty of Science.\n\n\nWhat Support is Available?\nFeel free to ask the instructor about academic integrity. Part of the job of an instructor is to guide your growth as a scholar. It is much better to ask for clarification than unintentionally engage in academic misconduct, which can have serious consequences. If you are unsure about what constitutes academic misconduct, please reach out.\nSometimes students who are experiencing a lot of stress feel the only way to deal with a situation is to cheat. Please do not fall in to this trap. Reach out to the instructor, and we will work out a better solution.\nTo help you learn your responsibilities as a scholar, please read and understand UBC’s expectations for academic honesty in the UBC Calendar: Academic Honesty, Academic Misconduct, and Disciplinary Measures. Read and reflect on the Student Declaration and Responsibility.\nAdditional resources for learning with integrity can be found on the UBC Academic Integrity Website.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#use-of-artificial-intelligence-tools",
+    "href": "syllabus.html#use-of-artificial-intelligence-tools",
+    "title": "Syllabus",
+    "section": "Use of Artificial Intelligence Tools",
+    "text": "Use of Artificial Intelligence Tools\nThe term “Generative Artificial Intelligence” (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.\nThe use of GenAI in CPSC 203 is permitted in some contexts and forbidden in others:\n\nGenAI is forbidden during the invigilated graded assessments (the examlets and the final exam); in other words, the assessments that take place in ORCA.\nGenAI is permitted when working through the ungraded activities during lecture or when studying independently. We strongly discourage you from asking GenAI to produce answers, as that will not help with your learning. However, using GenAI for translations, to check an answer, explain why an answer is incorrect, or produce new versions of a question on which you can practice may be effective learning strategies (although beware that GenAI often hallucinates).\nGenAI is permitted with attribution when working on the other graded assessments (POTWs, labs and projects). If you use GenAI in the process of producing your submission materials, then you must specify in your submission what tool you used and what prompts you gave it. (If there is no specific place to enter your attribution in the PrairieLearn assessment, then put it in a code comment at the top of your file.) As with your ungraded activities, if you use GenAI then we encourage you to use it in ways that strengthen your learning rather than replace it.\n\nIf you do use GenAI, keep in mind that you may not upload material to the AI that belongs to others (such as course material or the work of other students) without explicit permission. If you are studying or working in a group, you should discuss and agree on whether, how, and by whom GenAI tools will be used (to be documented in a shared file or email). All group members are expected to then communicate honestly with their group about their own use of GenAI.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#recording-course-activities",
+    "href": "syllabus.html#recording-course-activities",
+    "title": "Syllabus",
+    "section": "Recording Course Activities",
+    "text": "Recording Course Activities\nCourse lectures are recorded. These recordings capture the slides or other content projected to the screen, the instructor’s microphone, and a video stream showing the instructor’s podium. Students who do not wish to have their images captured should not sit close to or approach the podium during lecture. These recordings are made available only to students currently enrolled in the course (and possibly future course instructors).\nLecture audio recordings may also be made using Genio Notes by students with note-taking accommodations for disability purposes. These recordings utilize the device’s microphone and/or content displayed on the screen and are exclusively for the student’s personal use to support their disability-related accommodation. This service is provided by UBC’s Centre for Accessibility and has met all UBC privacy requirements. All users have signed agreements related to the appropriate use of these recordings.\nIt is not permitted to make other recordings of course activities (lectures, labs, etc). It is not permitted to make copies or transcripts of existing recordings by any means, or to share those recordings or transcripts with anybody else (whether human or AI).",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#land-acknowledgement",
+    "href": "syllabus.html#land-acknowledgement",
+    "title": "Syllabus",
+    "section": "Land Acknowledgement",
+    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#other-stuff-that-i-am-required-to-include",
+    "href": "syllabus.html#other-stuff-that-i-am-required-to-include",
+    "title": "Syllabus",
+    "section": "Other Stuff that I Am Required to Include",
+    "text": "Other Stuff that I Am Required to Include\nBased on Guidance for Science course syllabi (may require permission) and based at least partly on UBC Senate policy V-130 (as of 2026-08-21).\n\nCourse Calendar Information\nCPSC_V 203 (3) Programming, Problem Solving, and Algorithms\nAnalysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search.\nNot for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221.\nPrerequisite: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337.\n\n\nInstructor\nIan Mitchell. Contact information available in logistics.\n\n\nUniversity Values and Policies\nResources to support student success: UBC provides resources to support student learning and to maintain healthy lifestyles, but recognizes that sometimes crises arise and so there are additional resources to access, including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated, nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty, and students are expected to acknowledge the ideas generated by others, and to uphold the highest academic standards in all of their actions.\nDetails of the policies and how to access support are available on the UBC Senate website.\n\n\nLearning Analytics\nLearning analytics includes the collection and analysis of data about learners to improve teaching and learning. This course may be using Canvas, Microsoft Teams, Piazza, PrairieLearn or Zoom, which capture data about your activity and provide information that can be used to improve the quality of teaching and learning. In this course, your instructor and TA(s) may use analytics data to view overall class progress, and track individual students’ progress in order to assess participation in the course.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html",
+    "href": "htdp-cpsc-203.html",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "",
+    "text": "This reference document is adapted from an old version of the CPSC 103 reference. It has been updated to use some modern notation, and to add some data types that we will encounter in CPSC 203.\nFor CPSC 203, these recipes and templates are meant as guidance only. You are not required to follow them in your code.\nThat said, the templates and particularly the recipes are an excellent way to structure your design and implementation of programs.\nYou can also use them to try to understand existing programs. When you encounter a program that you need to modify, your first step is definitely not to start editing the code. Instead:",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#how-to-design-functions-recipe",
+    "href": "htdp-cpsc-203.html#how-to-design-functions-recipe",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "How to Design Functions Recipe",
+    "text": "How to Design Functions Recipe\n\nWrite the stub, including the signature, purpose, and typecheck annotation.\nWrite examples.\nWrite or copy the template.\nCode the function body.\nTest and debug until correct.",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#how-to-design-data-recipe",
+    "href": "htdp-cpsc-203.html#how-to-design-data-recipe",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "How to Design Data Recipe",
+    "text": "How to Design Data Recipe\nIdentify the inherent structure of the information.\n\nWrite a data type definition with type comments where Python’s types are not specific enough.\nWrite an interpretation comment that describes the correspondence between information and data.\nWrite one or more examples of the data.\nWrite a template for a one-argument function operating on data of this type.",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#data-definition-selection-guide",
+    "href": "htdp-cpsc-203.html#data-definition-selection-guide",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "Data Definition Selection Guide",
+    "text": "Data Definition Selection Guide\n\n\n\n\n\n\n\nWhen the form of the information to be represented…\nUse this data definition…\n\n\n\n\ncannot be separated into meaningful pieces (is “atomic”)\nSimple Atomic Data\n\n\nis numbers within a certain range\nInterval\n\n\nconsists of a fixed number of distinct items\nEnumeration\n\n\nis information in one of the other forms except for one special case\nOptional\n\n\nconsists of two or more types of information that naturally belong together\nCompound\n\n\nis of arbitrary (unknown) size\nArbitrary-Sized",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#basic-data-types",
+    "href": "htdp-cpsc-203.html#basic-data-types",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "Basic Data Types",
+    "text": "Basic Data Types\n\nSimple Atomic Data\n\nSimple atomic types are immutable.\nThis data type includes Python’s built-in types int, bool, str, float, complex.\n\nThe number of bits required to store values of these types will in general depend on the hardware on which the program is running.\nFor some types, such as str and int, the number of bits depends on the value being stored.\n\nYou would also use this pattern for more specialized (part of a Python library) but still simple data types (they represent a single piece of information). For example, the Numpy library for numerical computing (typically imported with the statement import numpy as np) includes data types which store a specific number of bits:\n\nIntegers np.int8, np.int16, np.int32 and np.int64. These data types are stored with 8, 16, 32 and 64 bits respectively. An int with \\(k\\) bits can store any integer in the range \\([ -2^{k-1}, +2^{k-1}-1 ]\\).\nUnsigned integers np.uint8, np.uint16, np.uint32 and np.uint64. A uint with \\(k\\) bits can store any integer in the range \\([ 0, +2^k-1 ]\\).\nFloating point np.float16, np.float32 and np.float64. For more information on how floating point numbers are stored (and hence the range of values that they can represent), see Floating Point arithmetic.\nComplex floating point numbers np.complex64 and np.complex128.\nBoolean np.bool_, which is stored in 8 bits.\n\nWhen you are working with a single piece of atomic data, you should not worry about the amount of storage that is used. It is only when you are working with large (arbitrary-sized) collections of data (for example, very large lists of integers) that you might want to use a data type that uses a fixed and restricted number of bits.\n\n\nDefinition\nXXX = type\n\n\nTemplate\nreturn ...(x)\n\n\n\nInterval\n\nThis data type is intended to be used for numerical atomic data which lies within a pre-specified range of values.\nThere are ways of enforcing the range, but like the type notation system in Python we generally just document the range in the code but do not explicitly enforce it.\n\n\nDefinition\nXXX = int  # in range ...\n\n\nTemplate\nreturn ...(x)\n\n\n\nEnumeration\n\nDefinition\nfrom enum import Enum\n\nXXX = Enum('XXX', ['A', 'B'])\n\n\nTemplate\nif x == XXX.A:\n    return ...\nelif x == XXX.B:\n    return ...\n\n\n\nOptional\n\nDefinition\n\nnew approach using modern union notation:\n\nXXX = type | None\n\nold approach from typing module:\n\nfrom typing import Optional\nXXX = Optional[type]\n\n\nTemplate\nif x is None:\n    return ...\nelse:\n    return ...(x)",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#compound-data-types",
+    "href": "htdp-cpsc-203.html#compound-data-types",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "Compound Data Types",
+    "text": "Compound Data Types\n\nUsed when you have several data values which should be managed together.\n\n\nNamedTuple\n\nNamedTuples are immutable (they are a fancy version of a tuple).\n\n\nDefinition\n\nApproach using class syntax (also allows default field values):\n\nfrom typing import NamedTuple\nclass XXX(NamedTuple):\n    a: type\n    b: type\n\nApproach using NamedTuple function:\n\nfrom typing import NamedTuple\n\nXXX = NamedTuple('XXX', [('a', type), ('b', type)])\n\n\nTemplate\nreturn ...(x.a, x.b)\n\n\n\nDataClass\n\nDataclasses are mutable. If you want an immutable dataclass, use @dataclass(frozen = true) in the decorator before the class statement\nDataclasses can contain both data (“attributes” or “member data”) and functions (“methods” or “member functions”).\n\n\nDefinition\nfrom dataclasses import dataclass\n\n@dataclass\nclass XXX:\n    a: type\n    b: type\n\n    def f(self, ...) -&gt; ...:\n        return ...(self.a, self.b, ...)\n\n\nTemplate\nreturn ...(x.a, x.b, x.f(...))\n\n\n\nList and Dictionary\n\nSometimes you wish to extract individual elements of a list or dict using hardcoded indexes rather than treating those data structures as arbitrarily sized.\nThe definition of the data type is the same as for the arbitrary-sized case (see below) but the template is different (in other words, we use the data in a different manner).\n\n\nList Template\nreturn ...(x[0], x[1], x[2], ...)\n\n\nDictionary Template\nreturn ...(x['a'], x['b'], x['c'], ...)",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "htdp-cpsc-203.html#arbitrary-sized-data-types",
+    "href": "htdp-cpsc-203.html#arbitrary-sized-data-types",
+    "title": "CPSC 203 HtDP Reference",
+    "section": "Arbitrary-Sized Data Types",
+    "text": "Arbitrary-Sized Data Types\n\nUsed when you have an amount of data which is not known in advance.\n\n\nList\n\nLists are mutable.\nLists may contain elements of any type, but we encourage you to use lists containing a single type.\nThe elements of a list maintain their order.\nLists may contain multiple copies of a single item.\nElements of a list named x are indexed with the integer interval [0, len(x)].\n\n\nDefinition\n\nNote: this data type name starts with a lower case l, and no need to import from typing module.\n\nXXX = list[type]\n\n\nTemplate\n# description of the accumulator\nacc = ...  # type: ...\nfor x in lox:\n    acc = ...(x, acc)\nreturn ...(acc)\n\n\n\nTuple\n\nThe tuple data type is basically an immutable list.\n\n\nDefinition\nXXX = tuple[type]\n\n\nTemplate\n# description of the accumulator\nacc = ...  # type: ...\nfor x in lox:\n    acc = ...(x, acc)\nreturn ...(acc)\n\n\n\nDictionary\nTBA\n\n\nSet\nTBA",
+    "crumbs": [
+      "Design Recipes and Data Types"
+    ]
+  },
+  {
+    "objectID": "logistics.html",
+    "href": "logistics.html",
+    "title": "Logistics",
+    "section": "",
+    "text": "Instructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: Fridays, noon - 1pm in ICCS x151.\n\nTA: Jayden Lieu \n\nOffice Hours: Wednesdays, 2pm - 3pm in ICCS x339\n\nTA: Timothy Solnyshkin \n\nOffice Hours: Thursdays, 1pm - 2pm in ICCS x341",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#teaching-team",
+    "href": "logistics.html#teaching-team",
+    "title": "Logistics",
+    "section": "",
+    "text": "Instructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: Fridays, noon - 1pm in ICCS x151.\n\nTA: Jayden Lieu \n\nOffice Hours: Wednesdays, 2pm - 3pm in ICCS x339\n\nTA: Timothy Solnyshkin \n\nOffice Hours: Thursdays, 1pm - 2pm in ICCS x341",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#communication",
+    "href": "logistics.html#communication",
+    "title": "Logistics",
+    "section": "Communication",
+    "text": "Communication\n\nOutside of lectures, most course communication will occur through Piazza.\n\nClass announcements (such as deadline updates or cancelled activities) will be posted here.\nIf you have a question that does not involve personal or confidential matters, ask it here.\nBecause Piazza is monitored by the whole teaching team as well as your fellow students, you are more likely to get a quick answer to your question through Piazza than through email.\n\nEmail the instructor for personal or confidential matters.\n\nNote that email may not be monitored in the evenings, overnight or on weekends.\nYou should not need to email the TAs directly. Use Piazza.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#in-real-life",
+    "href": "logistics.html#in-real-life",
+    "title": "Logistics",
+    "section": "In Real Life",
+    "text": "In Real Life\n\nCourse lectures: Tuesday / Thursday 15:30 - 17:00 in ESB 1012.\n\nLectures should be recorded and links will be posted to the course website when they become available. Unfortunately, we make no guarantees about the quality of the recording.\n\nLabs: All students should be registered in a lab section.\n\nStudents attending labs will work in groups to complete PrairieLearn assessments.\nThe material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can do the things we talk about in lecture.\nThere are roughly 10 assessed labs during the term, and they begin in week 2. See the course website for the schedule.\nSome weeks do not have a scheduled lab assessment. Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#online",
+    "href": "logistics.html#online",
+    "title": "Logistics",
+    "section": "Online",
+    "text": "Online\n\nCourse website: Course schedule. Here you can find\n\nLecture slides and summaries.\nLecture video recordings. Typically available within 12 hours of the end of lecture.\nDirect links to PrairieLearn for lecture activities, labs, POTWs, projects and practice examlets.\n\nPiazza: Discussion forums. Use this if you want to communicate with your fellow students or the teaching team. Course announcements will also be sent through Piazza.\nPrairieLearn: Lecture activities and all course assessments are performed here. You can find your assessment scores, as well as review most past assessments.\nPrairieTest: Use this system to self-schedule the five examlets and the final exam assessments. The assessments themselves are performed in ORCA (Open Resource Centre for Assessments). See the ORCA website for more information.\nCanvas: Although there is a Canvas course page, we will not be using it. Do not send messages through Canvas to the teaching team; such messages will not be answered. Use Piazza instead.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#accessibility",
+    "href": "logistics.html#accessibility",
+    "title": "Logistics",
+    "section": "Accessibility",
+    "text": "Accessibility\nIf you have a disability or ongoing medical condition that may require accommodations, please contact the UBC Centre for Accessibility to determine your eligibility and receive an accommodation letter.\nMost exam related accommodations can be managed at ORCA. Students with such accommodations should self-schedule assessments through PrairieTest; do not book assessments with the CfA. If you have an exam accommodation which cannot be handled through ORCA please contact the instructor directly at least a week in advance of any assessment.\nIf you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to contact the instructor directly.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#illness",
+    "href": "logistics.html#illness",
+    "title": "Logistics",
+    "section": "Illness",
+    "text": "Illness\nDo not attend lectures, labs or ORCA if you have an illness that could be transmitted to your classmates, such as a respiratory infection (for example, a cold). The course is structured so that you can prioritize your health and still succeed.\n\nLectures are recorded.\nLab assessments, POTWs and projects are submitted online through PrairieLearn.\nSee the ORCA procedure for missed exams if you miss your scheduled examlet or final exam session.\n\nIf you miss more than a week of class, please contact the instructor as soon as possible to discuss options. In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to UBC’s policy on Academic Concession for details.\nYou can also review UBC’s framework for preventing communicable disease.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#wellness",
+    "href": "logistics.html#wellness",
+    "title": "Logistics",
+    "section": "Wellness",
+    "text": "Wellness\nBeing a student can be exciting and stimulating, but it can also be stressful and exhausting. Try to lead a balanced lifestyle, with time spent not just on studying but also exercising, socializing and eating well. There are many supports to help you stay healthy and maintain your wellbeing; for example, see the resources linked from UBC’s student services and the Faculty of Science’s mental health and wellbeing webpages.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "logistics.html#course-disruptions",
+    "href": "logistics.html#course-disruptions",
+    "title": "Logistics",
+    "section": "Course Disruptions",
+    "text": "Course Disruptions\nIn-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on UBC’s campus notifications. Please check there often during times when an extreme weather event could disrupt our course activities.\nIn the event of a disruption to in-person activities, please monitor Piazza for further instructions. Unless otherwise announced, PrairieLearn due dates remain unchanged. Remember to submit your assessments on time.",
+    "crumbs": [
+      "Course information",
+      "Logistics"
+    ]
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#announcements",
+    "href": "slides/07_tue_voronoi.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nPractice examlet 3 available.\nBook your slot for examlet 3.\nLab 6 (stacks) and POTW 6 (summations and stacks) due Sunday.\nProject 1 due Monday, October 26 (next week)."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#what-have-we-done",
+    "href": "slides/07_tue_voronoi.html#what-have-we-done",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "What Have We Done?",
+    "text": "What Have We Done?\n\nMeasuring complexity / efficiency.\nRepresenting information with computer data.\nLists: Mutation, aliasing and comprehensions.\nDataclasses for compound data (and methods).\nPandas and dataframes for tabular data.\nDictionaries for key-value lookup.\nSprinkled throughout: Various bits of Python syntax and idiom.\n\n\nWe considered complexity as the size of the problem / amount of data increased. Focus on broad classes of complexity \\(\\log n\\), \\(n\\), \\(n \\log n\\), \\(n^2\\), \\(n^3\\), \\(2^n\\).\nComputers represent everything as a binary number. But we can use numbers to represent anything else (at least approximately). Example was colour.\nDictionaries: Our previous data structures were chosen primarily for functionality (it was convenient that Pandas is fast, but mostly it is nice because it is easy to write filters and maps). We could implement a correct key-value store using lists, but we don’t. The dictionary is our first data structure we use primarily because of its efficiency for a particular operation."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#where-are-we-going",
+    "href": "slides/07_tue_voronoi.html#where-are-we-going",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Where Are We Going?",
+    "text": "Where Are We Going?\n\nStacks & queues: Data structures of interest for their efficiency.\n\nApplication: Computing Voronoi diagrams.\n\nGraphs: Data structure of interest for representational power and (sometimes) efficiency.\n\nApplications: Markov chains for random processes, solving Sudoku, shortest path on maps.\n\nFundamentally complex problems: Traveling Salesperson.\nMore graphs: textual analysis, social networks, gerrymandering election boundaries.\nAll with sprinkling of yet more bits of Python syntax and idiom.\n\n\nIn CPSC 103, you learned about data types such as bool, int, str, range, enumeration, optional, compound and arbitrary-sized. To that CPSC 203 adds tables, dictionaries, stacks, queues and graphs.\nIn CPSC 103, you had:\n\nSimple rules mapping problem information into data type.\nA single code template for each type of data.\nCorrect implementation as your singular focus.\n\nIn CPSC 203, we are breaking all of these simplifying features. You may choose different data types and code templates in order to achieve better efficiency when solving your problem."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#voronoi-diagrams-1",
+    "href": "slides/07_tue_voronoi.html#voronoi-diagrams-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Voronoi diagrams",
+    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#applications",
+    "href": "slides/07_tue_voronoi.html#applications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Applications",
+    "text": "Applications\n\n\n\nBiology, Ecology, Forestry: Model and analyze plant competition.\nZoology: Model and analyze the territories of animals.\nRobotics: Path planning in the presence of obstacles.\nAstronomy: Identify clusters of stars and clusters of galaxies.\nCartography: Piece together satellite photographs into large “mosaic” maps.\nGeography: Analyzing patterns of urban settlements.\nMarketing: Model market of US metropolitan areas.\nMetallurgy: Modelling “grain growth” in metal films."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#more-applications",
+    "href": "slides/07_tue_voronoi.html#more-applications",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "More Applications",
+    "text": "More Applications\n\n\n\nPhysiology: Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport (“Capillary domains”).\nMeteorology: Estimate regional rainfall averages, given data at discrete rain gauges.\nAnthropology and Archeology: Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.\nCrystallography and Chemistry: Modelling alloy structures as sphere packings (“Domain of an atom”).\nGeology: Estimation of ore reserves in a deposit using info obtained from bore holes."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#motivational-aside-pointillism",
+    "href": "slides/07_tue_voronoi.html#motivational-aside-pointillism",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Motivational Aside: Pointillism",
+    "text": "Motivational Aside: Pointillism\n\n\nUn dimanche après-midi à l’Île de la Grande Jatte\nFerris Bueller’s Day Off: A Visit to the Art Institute of Chicago\n\n\nA photo doesn’t communicate the scale of the painting. It took Seurat 18 months over two years to complete."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#algorithmic-art",
+    "href": "slides/07_tue_voronoi.html#algorithmic-art",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Algorithmic Art",
+    "text": "Algorithmic Art\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the Voronoi diagram in the new image, using the center colors from the original image.\n\n\nWe are going to focus on calculating Voronoi regions over discrete domains, specifically images.\nChoose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure)."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#distance-between-pixels",
+    "href": "slides/07_tue_voronoi.html#distance-between-pixels",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Distance Between Pixels",
+    "text": "Distance Between Pixels\n\n\nDraw in the right angle triangle.\nGive the pixels coordinates and write out the formula \\(\\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\\).\nNote that the location of the origin doesn’t matter."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#nearest-center",
+    "href": "slides/07_tue_voronoi.html#nearest-center",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Nearest Center",
+    "text": "Nearest Center\n\n\n\n\n\n\n\nNote that we don’t need the exact distance, just which center is closer to yellow.\nIn particular, we don’t need to compute the square root, which is computationally expensive (compared to other arithmetic operations) and results in floating point numbers (ugly)."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#design-an-algorithm",
+    "href": "slides/07_tue_voronoi.html#design-an-algorithm",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Design an Algorithm",
+    "text": "Design an Algorithm\n\n\nConsider a pixel which is not a center (not coloured). What will we do?\nWhat will we do for the whole image?"
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#planning-the-data",
+    "href": "slides/07_tue_voronoi.html#planning-the-data",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning the Data:",
+    "text": "Planning the Data:\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\n\ntuple[int, int]\ntuple[int, int, int]\nPoint and Colour\nlist[Center]\nPIL’s Image and PixelAccess"
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#planning-the-algorithm",
+    "href": "slides/07_tue_voronoi.html#planning-the-algorithm",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Planning the Algorithm:",
+    "text": "Planning the Algorithm:\nHow will data flow through our algorithm?\n\nRead input image.\n…\n\n\n\n\nWrite output image.\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#lets-practice",
+    "href": "slides/07_tue_voronoi.html#lets-practice",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\nOpen today’s activity. We’ll start with the loop-only version of the algorithm.\n\nLaunch Class Activity: Voronoi Art in PrairieLearn.\nOpen voronoi_loop_nb.py.\n\n\nRemember to demo doubling the density –&gt; double the runtime."
+  },
+  {
+    "objectID": "slides/07_tue_voronoi.html#analysis",
+    "href": "slides/07_tue_voronoi.html#analysis",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Analysis",
+    "text": "Analysis\n\n\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\n\n\\(O(n)\\).\nHopefully \\(O(dn)\\).\n\\(O(dn^2)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on number of centers? Can we avoid doing something for each pixel-center combination?"
+  },
+  {
     "objectID": "slides/02_thu_representation.html#announcements",
     "href": "slides/02_thu_representation.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -3204,425 +3714,6 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Practice",
     "text": "Practice\nWhat colour is this 24-bit number?\n\n0110 0111 0100 1110 1010 0111\n\n\n\n\n\nFirst: convert to hex using digits 0123456789abcdef\n\n\nWalk through conversion on board: - First 8 bits (0110 0111) = Red channel - Next 8 bits (0100 1110) = Green channel - Last 8 bits (1010 0111) = Blue channel - Convert each 4-bit group to hex digit - Result: #674ea7"
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#announcements",
-    "href": "slides/07_tue_voronoi.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nPractice examlet 3 available.\nBook your slot for examlet 3.\nLab 6 (stacks) and POTW 6 (summations and stacks) due Sunday.\nProject 1 due Monday, October 26 (next week)."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#what-have-we-done",
-    "href": "slides/07_tue_voronoi.html#what-have-we-done",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "What Have We Done?",
-    "text": "What Have We Done?\n\nMeasuring complexity / efficiency.\nRepresenting information with computer data.\nLists: Mutation, aliasing and comprehensions.\nDataclasses for compound data (and methods).\nPandas and dataframes for tabular data.\nDictionaries for key-value lookup.\nSprinkled throughout: Various bits of Python syntax and idiom.\n\n\nWe considered complexity as the size of the problem / amount of data increased. Focus on broad classes of complexity \\(\\log n\\), \\(n\\), \\(n \\log n\\), \\(n^2\\), \\(n^3\\), \\(2^n\\).\nComputers represent everything as a binary number. But we can use numbers to represent anything else (at least approximately). Example was colour.\nDictionaries: Our previous data structures were chosen primarily for functionality (it was convenient that Pandas is fast, but mostly it is nice because it is easy to write filters and maps). We could implement a correct key-value store using lists, but we don’t. The dictionary is our first data structure we use primarily because of its efficiency for a particular operation."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#where-are-we-going",
-    "href": "slides/07_tue_voronoi.html#where-are-we-going",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Where Are We Going?",
-    "text": "Where Are We Going?\n\nStacks & queues: Data structures of interest for their efficiency.\n\nApplication: Computing Voronoi diagrams.\n\nGraphs: Data structure of interest for representational power and (sometimes) efficiency.\n\nApplications: Markov chains for random processes, solving Sudoku, shortest path on maps.\n\nFundamentally complex problems: Traveling Salesperson.\nMore graphs: textual analysis, social networks, gerrymandering election boundaries.\nAll with sprinkling of yet more bits of Python syntax and idiom.\n\n\nIn CPSC 103, you learned about data types such as bool, int, str, range, enumeration, optional, compound and arbitrary-sized. To that CPSC 203 adds tables, dictionaries, stacks, queues and graphs.\nIn CPSC 103, you had:\n\nSimple rules mapping problem information into data type.\nA single code template for each type of data.\nCorrect implementation as your singular focus.\n\nIn CPSC 203, we are breaking all of these simplifying features. You may choose different data types and code templates in order to achieve better efficiency when solving your problem."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#voronoi-diagrams-1",
-    "href": "slides/07_tue_voronoi.html#voronoi-diagrams-1",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Voronoi diagrams",
-    "text": "Voronoi diagrams\n\n\n\nGiven a (finite) set of “centres” \\(c_{1}, c_{2}, \\ldots, c_{k}\\), a Voronoi region, \\(R_{j}\\) consists of the set of points nearer to centre \\(c_{j}\\), than to any other centre.\nTogether, the \\(R_{j}\\) regions compose the Voronoi diagram of a plane.\n\n\n\n\n\nEvery point in plane is in some region and no point is in 2 regions."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#applications",
-    "href": "slides/07_tue_voronoi.html#applications",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Applications",
-    "text": "Applications\n\n\n\nBiology, Ecology, Forestry: Model and analyze plant competition.\nZoology: Model and analyze the territories of animals.\nRobotics: Path planning in the presence of obstacles.\nAstronomy: Identify clusters of stars and clusters of galaxies.\nCartography: Piece together satellite photographs into large “mosaic” maps.\nGeography: Analyzing patterns of urban settlements.\nMarketing: Model market of US metropolitan areas.\nMetallurgy: Modelling “grain growth” in metal films."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#more-applications",
-    "href": "slides/07_tue_voronoi.html#more-applications",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "More Applications",
-    "text": "More Applications\n\n\n\nPhysiology: Analysis of capillary distribution in cross-sections of muscle tissue to compute oxygen transport (“Capillary domains”).\nMeteorology: Estimate regional rainfall averages, given data at discrete rain gauges.\nAnthropology and Archeology: Identify regions under the influence of different neolithic clans, chiefdoms, ceremonial centers, or hill forts.\nCrystallography and Chemistry: Modelling alloy structures as sphere packings (“Domain of an atom”).\nGeology: Estimation of ore reserves in a deposit using info obtained from bore holes."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#motivational-aside-pointillism",
-    "href": "slides/07_tue_voronoi.html#motivational-aside-pointillism",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Motivational Aside: Pointillism",
-    "text": "Motivational Aside: Pointillism\n\n\nUn dimanche après-midi à l’Île de la Grande Jatte\nFerris Bueller’s Day Off: A Visit to the Art Institute of Chicago\n\n\nA photo doesn’t communicate the scale of the painting. It took Seurat 18 months over two years to complete."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#algorithmic-art",
-    "href": "slides/07_tue_voronoi.html#algorithmic-art",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Algorithmic Art",
-    "text": "Algorithmic Art\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect a subset of points from the original image.\nUse those points, with their colors, as centers in a new image of the same size.\nBuild the Voronoi diagram in the new image, using the center colors from the original image.\n\n\nWe are going to focus on calculating Voronoi regions over discrete domains, specifically images.\nChoose some pixels as centers. For every other pixel, figure out which center is closest. For that operation, we need to compute distance between pixels (or some monotonically related measure)."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#distance-between-pixels",
-    "href": "slides/07_tue_voronoi.html#distance-between-pixels",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Distance Between Pixels",
-    "text": "Distance Between Pixels\n\n\nDraw in the right angle triangle.\nGive the pixels coordinates and write out the formula \\(\\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\\).\nNote that the location of the origin doesn’t matter."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#nearest-center",
-    "href": "slides/07_tue_voronoi.html#nearest-center",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Nearest Center",
-    "text": "Nearest Center\n\n\n\n\n\n\n\nNote that we don’t need the exact distance, just which center is closer to yellow.\nIn particular, we don’t need to compute the square root, which is computationally expensive (compared to other arithmetic operations) and results in floating point numbers (ugly)."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#design-an-algorithm",
-    "href": "slides/07_tue_voronoi.html#design-an-algorithm",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Design an Algorithm",
-    "text": "Design an Algorithm\n\n\nConsider a pixel which is not a center (not coloured). What will we do?\nWhat will we do for the whole image?"
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#planning-the-data",
-    "href": "slides/07_tue_voronoi.html#planning-the-data",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Planning the Data:",
-    "text": "Planning the Data:\nWhat data structures do we need?\n\nPoint:\nColor:\nCenter:\nCenters:\nImage:\n\n\n\ntuple[int, int]\ntuple[int, int, int]\nPoint and Colour\nlist[Center]\nPIL’s Image and PixelAccess"
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#planning-the-algorithm",
-    "href": "slides/07_tue_voronoi.html#planning-the-algorithm",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Planning the Algorithm:",
-    "text": "Planning the Algorithm:\nHow will data flow through our algorithm?\n\nRead input image.\n…\n\n\n\n\nWrite output image.\n\n\n\nRead image\nChoose centers (now finished with original image!!)\nBuild new image – for each point, for each center find distance. Pick nearest center and use its colour.\nWrite out new image."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#lets-practice",
-    "href": "slides/07_tue_voronoi.html#lets-practice",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Let’s Practice!",
-    "text": "Let’s Practice!\nOpen today’s activity. We’ll start with the loop-only version of the algorithm.\n\nLaunch Class Activity: Voronoi Art in PrairieLearn.\nOpen voronoi_loop_nb.py.\n\n\nRemember to demo doubling the density –&gt; double the runtime."
-  },
-  {
-    "objectID": "slides/07_tue_voronoi.html#analysis",
-    "href": "slides/07_tue_voronoi.html#analysis",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Analysis",
-    "text": "Analysis\n\n\nHow much work is done?\n\nRead image:\nChoose centers:\nBuild new image:\nWrite out new image:\n\n\n\n   \n\nSize of the image: \\(n\\)\n(\\(n =\\) width \\(\\times\\) height)\nDensity of centers: \\(d\\)\nNumber of centers: \\(dn\\)\n\n\n\n\\(O(n)\\).\nHopefully \\(O(dn)\\).\n\\(O(dn^2)\\).\n\\(O(n)\\).\n\nCan we do better? Do we need to “visit” (do something for) every pixel? Yes: At a minimum we need to write out a colour for that pixel. So, we probably can’t avoid \\(O(n)\\). But what about the dependence on number of centers? Can we avoid doing something for each pixel-center combination?"
-  },
-  {
-    "objectID": "logistics.html",
-    "href": "logistics.html",
-    "title": "Logistics",
-    "section": "",
-    "text": "Instructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: Fridays, noon - 1pm in ICCS x151.\n\nTA: Jayden Lieu \n\nOffice Hours: Wednesdays, 2pm - 3pm in ICCS x339\n\nTA: Timothy Solnyshkin \n\nOffice Hours: Thursdays, 1pm - 2pm in ICCS x341",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#teaching-team",
-    "href": "logistics.html#teaching-team",
-    "title": "Logistics",
-    "section": "",
-    "text": "Instructor: Ian Mitchell (he / him)\n\nEmail: ian.mitchell@ubc.ca.\nOffice: ICCS 223 or \nOffice hours: TBA\n\nTA: Markus Chu \n\nOffice Hours: Fridays, noon - 1pm in ICCS x151.\n\nTA: Jayden Lieu \n\nOffice Hours: Wednesdays, 2pm - 3pm in ICCS x339\n\nTA: Timothy Solnyshkin \n\nOffice Hours: Thursdays, 1pm - 2pm in ICCS x341",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#communication",
-    "href": "logistics.html#communication",
-    "title": "Logistics",
-    "section": "Communication",
-    "text": "Communication\n\nOutside of lectures, most course communication will occur through Piazza.\n\nClass announcements (such as deadline updates or cancelled activities) will be posted here.\nIf you have a question that does not involve personal or confidential matters, ask it here.\nBecause Piazza is monitored by the whole teaching team as well as your fellow students, you are more likely to get a quick answer to your question through Piazza than through email.\n\nEmail the instructor for personal or confidential matters.\n\nNote that email may not be monitored in the evenings, overnight or on weekends.\nYou should not need to email the TAs directly. Use Piazza.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#in-real-life",
-    "href": "logistics.html#in-real-life",
-    "title": "Logistics",
-    "section": "In Real Life",
-    "text": "In Real Life\n\nCourse lectures: Tuesday / Thursday 15:30 - 17:00 in ESB 1012.\n\nLectures should be recorded and links will be posted to the course website when they become available. Unfortunately, we make no guarantees about the quality of the recording.\n\nLabs: All students should be registered in a lab section.\n\nStudents attending labs will work in groups to complete PrairieLearn assessments.\nThe material presented in the weekly lab is more detailed and more applied than the classroom narrative. It is an opportunity for you to make sure you can do the things we talk about in lecture.\nThere are roughly 10 assessed labs during the term, and they begin in week 2. See the course website for the schedule.\nSome weeks do not have a scheduled lab assessment. Labs will still be staffed (except on holidays or during midterm break) and students are welcome to use them as office hours to meet with TAs during these weeks.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#online",
-    "href": "logistics.html#online",
-    "title": "Logistics",
-    "section": "Online",
-    "text": "Online\n\nCourse website: Course schedule. Here you can find\n\nLecture slides and summaries.\nLecture video recordings. Typically available within 12 hours of the end of lecture.\nDirect links to PrairieLearn for lecture activities, labs, POTWs, projects and practice examlets.\n\nPiazza: Discussion forums. Use this if you want to communicate with your fellow students or the teaching team. Course announcements will also be sent through Piazza.\nPrairieLearn: Lecture activities and all course assessments are performed here. You can find your assessment scores, as well as review most past assessments.\nPrairieTest: Use this system to self-schedule the five examlets and the final exam assessments. The assessments themselves are performed in ORCA (Open Resource Centre for Assessments). See the ORCA website for more information.\nCanvas: Although there is a Canvas course page, we will not be using it. Do not send messages through Canvas to the teaching team; such messages will not be answered. Use Piazza instead.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#accessibility",
-    "href": "logistics.html#accessibility",
-    "title": "Logistics",
-    "section": "Accessibility",
-    "text": "Accessibility\nIf you have a disability or ongoing medical condition that may require accommodations, please contact the UBC Centre for Accessibility to determine your eligibility and receive an accommodation letter.\nMost exam related accommodations can be managed at ORCA. Students with such accommodations should self-schedule assessments through PrairieTest; do not book assessments with the CfA. If you have an exam accommodation which cannot be handled through ORCA please contact the instructor directly at least a week in advance of any assessment.\nIf you have a specific concern about accessing course materials or if you would like to suggest improvements to the accessibility of this course, please do not hesitate to contact the instructor directly.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#illness",
-    "href": "logistics.html#illness",
-    "title": "Logistics",
-    "section": "Illness",
-    "text": "Illness\nDo not attend lectures, labs or ORCA if you have an illness that could be transmitted to your classmates, such as a respiratory infection (for example, a cold). The course is structured so that you can prioritize your health and still succeed.\n\nLectures are recorded.\nLab assessments, POTWs and projects are submitted online through PrairieLearn.\nSee the ORCA procedure for missed exams if you miss your scheduled examlet or final exam session.\n\nIf you miss more than a week of class, please contact the instructor as soon as possible to discuss options. In some cases you may need to request an official academic concession for medical reasons, on compassionate grounds, or in certain cases of conflicting responsibilities. Please refer to UBC’s policy on Academic Concession for details.\nYou can also review UBC’s framework for preventing communicable disease.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#wellness",
-    "href": "logistics.html#wellness",
-    "title": "Logistics",
-    "section": "Wellness",
-    "text": "Wellness\nBeing a student can be exciting and stimulating, but it can also be stressful and exhausting. Try to lead a balanced lifestyle, with time spent not just on studying but also exercising, socializing and eating well. There are many supports to help you stay healthy and maintain your wellbeing; for example, see the resources linked from UBC’s student services and the Faculty of Science’s mental health and wellbeing webpages.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "logistics.html#course-disruptions",
-    "href": "logistics.html#course-disruptions",
-    "title": "Logistics",
-    "section": "Course Disruptions",
-    "text": "Course Disruptions\nIn-person on-campus activities may need to be cancelled due to issues such as weather conditions. The most up-to-date information about university-wide disruptions will be posted on UBC’s campus notifications. Please check there often during times when an extreme weather event could disrupt our course activities.\nIn the event of a disruption to in-person activities, please monitor Piazza for further instructions. Unless otherwise announced, PrairieLearn due dates remain unchanged. Remember to submit your assessments on time.",
-    "crumbs": [
-      "Course information",
-      "Logistics"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html",
-    "href": "htdp-cpsc-203.html",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "",
-    "text": "This reference document is adapted from an old version of the CPSC 103 reference. It has been updated to use some modern notation, and to add some data types that we will encounter in CPSC 203.\nFor CPSC 203, these recipes and templates are meant as guidance only. You are not required to follow them in your code.\nThat said, the templates and particularly the recipes are an excellent way to structure your design and implementation of programs.\nYou can also use them to try to understand existing programs. When you encounter a program that you need to modify, your first step is definitely not to start editing the code. Instead:",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#how-to-design-functions-recipe",
-    "href": "htdp-cpsc-203.html#how-to-design-functions-recipe",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "How to Design Functions Recipe",
-    "text": "How to Design Functions Recipe\n\nWrite the stub, including the signature, purpose, and typecheck annotation.\nWrite examples.\nWrite or copy the template.\nCode the function body.\nTest and debug until correct.",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#how-to-design-data-recipe",
-    "href": "htdp-cpsc-203.html#how-to-design-data-recipe",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "How to Design Data Recipe",
-    "text": "How to Design Data Recipe\nIdentify the inherent structure of the information.\n\nWrite a data type definition with type comments where Python’s types are not specific enough.\nWrite an interpretation comment that describes the correspondence between information and data.\nWrite one or more examples of the data.\nWrite a template for a one-argument function operating on data of this type.",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#data-definition-selection-guide",
-    "href": "htdp-cpsc-203.html#data-definition-selection-guide",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "Data Definition Selection Guide",
-    "text": "Data Definition Selection Guide\n\n\n\n\n\n\n\nWhen the form of the information to be represented…\nUse this data definition…\n\n\n\n\ncannot be separated into meaningful pieces (is “atomic”)\nSimple Atomic Data\n\n\nis numbers within a certain range\nInterval\n\n\nconsists of a fixed number of distinct items\nEnumeration\n\n\nis information in one of the other forms except for one special case\nOptional\n\n\nconsists of two or more types of information that naturally belong together\nCompound\n\n\nis of arbitrary (unknown) size\nArbitrary-Sized",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#basic-data-types",
-    "href": "htdp-cpsc-203.html#basic-data-types",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "Basic Data Types",
-    "text": "Basic Data Types\n\nSimple Atomic Data\n\nSimple atomic types are immutable.\nThis data type includes Python’s built-in types int, bool, str, float, complex.\n\nThe number of bits required to store values of these types will in general depend on the hardware on which the program is running.\nFor some types, such as str and int, the number of bits depends on the value being stored.\n\nYou would also use this pattern for more specialized (part of a Python library) but still simple data types (they represent a single piece of information). For example, the Numpy library for numerical computing (typically imported with the statement import numpy as np) includes data types which store a specific number of bits:\n\nIntegers np.int8, np.int16, np.int32 and np.int64. These data types are stored with 8, 16, 32 and 64 bits respectively. An int with \\(k\\) bits can store any integer in the range \\([ -2^{k-1}, +2^{k-1}-1 ]\\).\nUnsigned integers np.uint8, np.uint16, np.uint32 and np.uint64. A uint with \\(k\\) bits can store any integer in the range \\([ 0, +2^k-1 ]\\).\nFloating point np.float16, np.float32 and np.float64. For more information on how floating point numbers are stored (and hence the range of values that they can represent), see Floating Point arithmetic.\nComplex floating point numbers np.complex64 and np.complex128.\nBoolean np.bool_, which is stored in 8 bits.\n\nWhen you are working with a single piece of atomic data, you should not worry about the amount of storage that is used. It is only when you are working with large (arbitrary-sized) collections of data (for example, very large lists of integers) that you might want to use a data type that uses a fixed and restricted number of bits.\n\n\nDefinition\nXXX = type\n\n\nTemplate\nreturn ...(x)\n\n\n\nInterval\n\nThis data type is intended to be used for numerical atomic data which lies within a pre-specified range of values.\nThere are ways of enforcing the range, but like the type notation system in Python we generally just document the range in the code but do not explicitly enforce it.\n\n\nDefinition\nXXX = int  # in range ...\n\n\nTemplate\nreturn ...(x)\n\n\n\nEnumeration\n\nDefinition\nfrom enum import Enum\n\nXXX = Enum('XXX', ['A', 'B'])\n\n\nTemplate\nif x == XXX.A:\n    return ...\nelif x == XXX.B:\n    return ...\n\n\n\nOptional\n\nDefinition\n\nnew approach using modern union notation:\n\nXXX = type | None\n\nold approach from typing module:\n\nfrom typing import Optional\nXXX = Optional[type]\n\n\nTemplate\nif x is None:\n    return ...\nelse:\n    return ...(x)",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#compound-data-types",
-    "href": "htdp-cpsc-203.html#compound-data-types",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "Compound Data Types",
-    "text": "Compound Data Types\n\nUsed when you have several data values which should be managed together.\n\n\nNamedTuple\n\nNamedTuples are immutable (they are a fancy version of a tuple).\n\n\nDefinition\n\nApproach using class syntax (also allows default field values):\n\nfrom typing import NamedTuple\nclass XXX(NamedTuple):\n    a: type\n    b: type\n\nApproach using NamedTuple function:\n\nfrom typing import NamedTuple\n\nXXX = NamedTuple('XXX', [('a', type), ('b', type)])\n\n\nTemplate\nreturn ...(x.a, x.b)\n\n\n\nDataClass\n\nDataclasses are mutable. If you want an immutable dataclass, use @dataclass(frozen = true) in the decorator before the class statement\nDataclasses can contain both data (“attributes” or “member data”) and functions (“methods” or “member functions”).\n\n\nDefinition\nfrom dataclasses import dataclass\n\n@dataclass\nclass XXX:\n    a: type\n    b: type\n\n    def f(self, ...) -&gt; ...:\n        return ...(self.a, self.b, ...)\n\n\nTemplate\nreturn ...(x.a, x.b, x.f(...))\n\n\n\nList and Dictionary\n\nSometimes you wish to extract individual elements of a list or dict using hardcoded indexes rather than treating those data structures as arbitrarily sized.\nThe definition of the data type is the same as for the arbitrary-sized case (see below) but the template is different (in other words, we use the data in a different manner).\n\n\nList Template\nreturn ...(x[0], x[1], x[2], ...)\n\n\nDictionary Template\nreturn ...(x['a'], x['b'], x['c'], ...)",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "htdp-cpsc-203.html#arbitrary-sized-data-types",
-    "href": "htdp-cpsc-203.html#arbitrary-sized-data-types",
-    "title": "CPSC 203 HtDP Reference",
-    "section": "Arbitrary-Sized Data Types",
-    "text": "Arbitrary-Sized Data Types\n\nUsed when you have an amount of data which is not known in advance.\n\n\nList\n\nLists are mutable.\nLists may contain elements of any type, but we encourage you to use lists containing a single type.\nThe elements of a list maintain their order.\nLists may contain multiple copies of a single item.\nElements of a list named x are indexed with the integer interval [0, len(x)].\n\n\nDefinition\n\nNote: this data type name starts with a lower case l, and no need to import from typing module.\n\nXXX = list[type]\n\n\nTemplate\n# description of the accumulator\nacc = ...  # type: ...\nfor x in lox:\n    acc = ...(x, acc)\nreturn ...(acc)\n\n\n\nTuple\n\nThe tuple data type is basically an immutable list.\n\n\nDefinition\nXXX = tuple[type]\n\n\nTemplate\n# description of the accumulator\nacc = ...  # type: ...\nfor x in lox:\n    acc = ...(x, acc)\nreturn ...(acc)\n\n\n\nDictionary\nTBA\n\n\nSet\nTBA",
-    "crumbs": [
-      "Design Recipes and Data Types"
-    ]
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#introduction",
-    "href": "syllabus.html#introduction",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-requirements",
-    "href": "syllabus.html#course-requirements",
-    "title": "Syllabus",
-    "section": "Course Requirements",
-    "text": "Course Requirements\nThe best way to learn is by doing. Lectures and labs are designed around active learning principles, so you should:\n\nAttend every lecture if you are not sick.\n\nIf you are sick, watch the recording and do the in-class activities before the next lecture.\n\nAttend your lab sections if you are not sick.\n\nIf you are sick, you are still responsible for doing the lab activities and submitting your lab assessments through PrairieLearn by the due date.\n\nMonitor Piazza for course announcements.\n\nAll assessments for the course are managed through PrairieLearn. The assessments are:\n\nProblems of the Week (POTW): You will complete approximately 50 small programming exercises, 5 per week, through PrairieLearn. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nLabs: PrairieLearn assessments for the labs can be completed anytime before the due date, although we encourage students to complete as much as possible during their scheduled lab session.\nProjects: Most of the coding in the course will occur within three significant coding projects.\nExamlets: Five self-scheduled 50 minute assessments to be completed on PrairieLearn in ORCA. You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nFinal Exam: Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#grading-and-exam-policies",
-    "href": "syllabus.html#grading-and-exam-policies",
-    "title": "Syllabus",
-    "section": "Grading and Exam Policies",
-    "text": "Grading and Exam Policies\nYour final grade in the course is generated from the following assessments:\n\n\n\n\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week (POTWs)\n10% (10 x 1%)\nSundays at 8:00 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 8:00 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree weeks long, Mondays at 8:00 PM\n\n\nExamlets\n50% (5 x 10%)\nRoughly biweekly, self-scheduled Thursday through Monday\n\n\nFinal Exam\n26%\nSelf-scheduled during five day window TBA\n\n\n\nStudents must satisfy all of the following conditions to pass the course:\n\nAchieve a grade of at least 50% on the lab component.\nAchieve a grade of at least 50% on the examlet and final exam components together.\nAchieve a grade of at least 40% on the final exam.\n\nIf a student does not satisfy all conditions, they will be assigned the lower of 45% or their earned final grade as their course grade.\nStudents who have not submitted at least half of the lab, POTWs and examlet assessments prior to the final exam may be refused permission to write the final exam.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#academic-integrity",
-    "href": "syllabus.html#academic-integrity",
-    "title": "Syllabus",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAcademic endeavours are founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, academic integrity means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. It also means you should not copy, cheat, or mislead others about what is your work; nor should you help others to do the same. For example, it is prohibited to: share your past assignments and answers with other students; complete an assignment as a group when an instructor has not expressly given permission; or spread information through word of mouth, social media, websites, or other channels that subverts the fair evaluation of a class exercise, or assessment. A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the UBC Academic Calendar.\n\nWhat is considered academic misconduct in this course?\nThe line between what constitutes acceptable versus unacceptable behaviour can be blurry, but here is a list of things which are definitely considered academic misconduct in CPSC 203:\n\nDoing individual assessments collaboratively, sharing your work on these assessments with others, or asking others to see their work.\nCommunicating test questions and/or answers to others. We all benefit from the scheduling flexibility that PrairieLearn provides, but that means even if you have completed a test you cannot talk about it because other students may not have taken it yet.\nSharing any course material onto Chegg, Course Hero, Slader, or other similar sites.\nSearching for solutions to course material on Chegg, Course Hero, Slader, or other similar sites.\nBlindly googling the question in hopes of finding someone who had a similar question and then copying their answer. However, googling to find resources to understand specific concepts or general ideas is highly encouraged!\nHaving a tutor / friend / nemesis complete and submit your work for you.\nCopying and pasting code, equations, text explanations, prose, etc… without attribution.\nManipulating the learning platforms we use to reverse engineer the randomization algorithms, hacking the timer functionality, or other similar technical malfeasance.\n\n\n\nWhat Happens in Cases of Academic Misconduct?\nViolations of academic integrity – in other words, academic misconduct – include any conduct by which a student gains or attempts to gain an unfair academic advantage or benefit thereby compromising the integrity of the academic process, or helping or attempting to help another person commit an act of academic misconduct or gain, or attempt to gain, an unfair academic advantage. Academic misconduct leads to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred for consideration for academic discipline. Careful records are kept to monitor and prevent recurrences. Any instance of cheating or taking credit for someone else’s work, whether intentionally or unintentionally, can and often will result in at minimum a grade of zero for the assignment, and these cases will be reported to the Associate Head of Undergraduates in the Department of Computer Science and Associate Dean of Students in the Faculty of Science.\n\n\nWhat Support is Available?\nFeel free to ask the instructor about academic integrity. Part of the job of an instructor is to guide your growth as a scholar. It is much better to ask for clarification than unintentionally engage in academic misconduct, which can have serious consequences. If you are unsure about what constitutes academic misconduct, please reach out.\nSometimes students who are experiencing a lot of stress feel the only way to deal with a situation is to cheat. Please do not fall in to this trap. Reach out to the instructor, and we will work out a better solution.\nTo help you learn your responsibilities as a scholar, please read and understand UBC’s expectations for academic honesty in the UBC Calendar: Academic Honesty, Academic Misconduct, and Disciplinary Measures. Read and reflect on the Student Declaration and Responsibility.\nAdditional resources for learning with integrity can be found on the UBC Academic Integrity Website.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#use-of-artificial-intelligence-tools",
-    "href": "syllabus.html#use-of-artificial-intelligence-tools",
-    "title": "Syllabus",
-    "section": "Use of Artificial Intelligence Tools",
-    "text": "Use of Artificial Intelligence Tools\nThe term “Generative Artificial Intelligence” (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.\nThe use of GenAI in CPSC 203 is permitted in some contexts and forbidden in others:\n\nGenAI is forbidden during the invigilated graded assessments (the examlets and the final exam); in other words, the assessments that take place in ORCA.\nGenAI is permitted when working through the ungraded activities during lecture or when studying independently. We strongly discourage you from asking GenAI to produce answers, as that will not help with your learning. However, using GenAI for translations, to check an answer, explain why an answer is incorrect, or produce new versions of a question on which you can practice may be effective learning strategies (although beware that GenAI often hallucinates).\nGenAI is permitted with attribution when working on the other graded assessments (POTWs, labs and projects). If you use GenAI in the process of producing your submission materials, then you must specify in your submission what tool you used and what prompts you gave it. (If there is no specific place to enter your attribution in the PrairieLearn assessment, then put it in a code comment at the top of your file.) As with your ungraded activities, if you use GenAI then we encourage you to use it in ways that strengthen your learning rather than replace it.\n\nIf you do use GenAI, keep in mind that you may not upload material to the AI that belongs to others (such as course material or the work of other students) without explicit permission. If you are studying or working in a group, you should discuss and agree on whether, how, and by whom GenAI tools will be used (to be documented in a shared file or email). All group members are expected to then communicate honestly with their group about their own use of GenAI.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#recording-course-activities",
-    "href": "syllabus.html#recording-course-activities",
-    "title": "Syllabus",
-    "section": "Recording Course Activities",
-    "text": "Recording Course Activities\nCourse lectures are recorded. These recordings capture the slides or other content projected to the screen, the instructor’s microphone, and a video stream showing the instructor’s podium. Students who do not wish to have their images captured should not sit close to or approach the podium during lecture. These recordings are made available only to students currently enrolled in the course (and possibly future course instructors).\nLecture audio recordings may also be made using Genio Notes by students with note-taking accommodations for disability purposes. These recordings utilize the device’s microphone and/or content displayed on the screen and are exclusively for the student’s personal use to support their disability-related accommodation. This service is provided by UBC’s Centre for Accessibility and has met all UBC privacy requirements. All users have signed agreements related to the appropriate use of these recordings.\nIt is not permitted to make other recordings of course activities (lectures, labs, etc). It is not permitted to make copies or transcripts of existing recordings by any means, or to share those recordings or transcripts with anybody else (whether human or AI).",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#land-acknowledgement",
-    "href": "syllabus.html#land-acknowledgement",
-    "title": "Syllabus",
-    "section": "Land Acknowledgement",
-    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#other-stuff-that-i-am-required-to-include",
-    "href": "syllabus.html#other-stuff-that-i-am-required-to-include",
-    "title": "Syllabus",
-    "section": "Other Stuff that I Am Required to Include",
-    "text": "Other Stuff that I Am Required to Include\nBased on Guidance for Science course syllabi (may require permission) and based at least partly on UBC Senate policy V-130 (as of 2026-08-21).\n\nCourse Calendar Information\nCPSC_V 203 (3) Programming, Problem Solving, and Algorithms\nAnalysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search.\nNot for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221.\nPrerequisite: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337.\n\n\nInstructor\nIan Mitchell. Contact information available in logistics.\n\n\nUniversity Values and Policies\nResources to support student success: UBC provides resources to support student learning and to maintain healthy lifestyles, but recognizes that sometimes crises arise and so there are additional resources to access, including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated, nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty, and students are expected to acknowledge the ideas generated by others, and to uphold the highest academic standards in all of their actions.\nDetails of the policies and how to access support are available on the UBC Senate website.\n\n\nLearning Analytics\nLearning analytics includes the collection and analysis of data about learners to improve teaching and learning. This course may be using Canvas, Microsoft Teams, Piazza, PrairieLearn or Zoom, which capture data about your activity and provide information that can be used to improve the quality of teaching and learning. In this course, your instructor and TA(s) may use analytics data to view overall class progress, and track individual students’ progress in order to assess participation in the course.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#announcements",
-    "href": "slides/06_tue_dictionaries.html#announcements",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Announcements",
-    "text": "Announcements\n\nExamlet 2 runs today through Sunday.\nLab 5 (matplotlib and pandas) and POTW 5 (pandas and matplotlib) due Sunday.\n\nIf your scheduled lab was yesterday, you can still attend:\n\nT1F: Tue, 18:00 - 19:30.\nT1E: Thu, 9:30 - 11:00.\n\n\nProject 1 due Monday, October 26 (~two weeks).\n\n\nThere was a misconfiguration for examlet 2: Starts today, ends on Sunday. But you’ve had the material (dataclasses and lists) for more than a week, so no big deal."
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#key-value-pairs",
-    "href": "slides/06_tue_dictionaries.html#key-value-pairs",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Key-Value Pairs",
-    "text": "Key-Value Pairs\n\n\n\nGiven the key, we would like to quickly retrieve the corresponding value.\n\n\n\n\nLaunch Class Activity: Grouping & Encoding in PrairieLearn.\nOpen key_value_patterns.py.\n\n\n\n\n\n\nKey\nValue\n\n\n\n\nname\nIan Mitchell\n\n\ndepartment\nComputer Science\n\n\nprogram\nM.Sc.\n\n\nstart date\n1995-09-01\n\n\nterms\n7\n\n\ndomestic student\nyes\n\n\n⋮\n⋮"
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
-    "href": "slides/06_tue_dictionaries.html#representing-key-value-pairs",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Representing Key-Value Pairs",
-    "text": "Representing Key-Value Pairs\n\nHow could we represent this information? Don’t say “dictionary”.\n\nWhat type for the whole set of data?\nWhat type for each row of data?\nWhat type for the keys?\nWhat type for the values?\n\n\n\n\nArbitrary size / list.\nCompound with two elements: key and value.\nString.\nAnything. Can use typing.Any to formally recognize that type, although it is essentially the Python default.\n\nSee alternative representation as two lists of the same length. Not recommended, but this approach was often used in older languages where compound data was syntactically difficult."
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
-    "href": "slides/06_tue_dictionaries.html#efficiency-of-list-representations",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Efficiency of List Representations",
-    "text": "Efficiency of List Representations\nIf there are \\(n\\) key-value pairs in the store, how long does it take to:\n\nLook up the value associated with a key?\nDetermine whether a key is in the store?\nAdd a key-value pair?\n\n\nA Python dict can perform any of these operations in constant time for any \\(n\\).\n\n\n\n\\(O(n)\\).\n\\(O(n)\\) (even though you can write it without a loop using the in keyword).\n\\(O(1)\\).\nNote that using in on a dictionary is \\(O(1)\\).\n\nYou cannot tell how long an operation will take based solely on the operation; it will depend on the underlying representation and implementation. That is a feature not a bug: Generally speaking, we want to be able to first trust that the result of the operation is correct and not care about the representation / implementation. At some later date, we then want to be able to swap in a different representation / implementation if we need more efficiency."
-  },
-  {
-    "objectID": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
-    "href": "slides/06_tue_dictionaries.html#not-just-a-one-trick-pony",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Not Just a One-Trick Pony",
-    "text": "Not Just a One-Trick Pony\nDictionaries / key-value lookup is useful for solving other common problems.\n\nCompound data.\nTracking membership.\nCounting appearances / frequencies.\nFinding complements.\nGrouping by (discrete) category.\nRepresenting a map or translation over a discrete domain.\n\nToday: Finish slides / class activity from last lecture for the first five.\nThursday: Translation / mapping.\n\nNote that there is nothing special about dictionaries and compound data:\n\nAny key-value lookup representation could be used for compound data.\nAny compound data representation could be used for key-value lookup (although some might require you to specify all keys before running, or be inefficient).\n\nOkay, all done discussing (bad) ways of implementing key-value lookup. Now let’s return to the ways we can use it.\nIf necessary, go back and complete any patterns that were not completed in the previous lecture."
   },
   {
     "objectID": "slides/06_thu_dictionaries.html#announcements",
