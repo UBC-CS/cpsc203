@@ -31,8 +31,6 @@ date: 2026-10-29
 - How many nodes does this graph have?
 - How many edges does this graph have?
 - What are the neighbours of B?
-- Typically, nodes are labelled and edges are identified by the nodes that they connect.
-  - Sometimes edges are labelled; for example, with *weights*
 - There are many variations; for example:
   - Edges can be directional.
   - Nodes may be disconnected.
@@ -55,7 +53,7 @@ Yes, in CS we almost always use the letter $V$ even though we often call them no
 
 Work through the representation:
 
-- $V = \{ E, C, A, D, B, F \}$.
+- $V = \{ E, C, A, D, B, F \}$
 - $E = \{ (E,C), (C,A), (C,D), (A,B), (D,B), (B,F) \}$
 
 Does the order of the nodes / edge-pairs matter? No.
@@ -342,19 +340,23 @@ The nodes of this graph are labelled by their shape and colour.
 :::
 
 ::: {.column width="60%"}
-* $V$: Courses at the university.
-* $E$: Connect courses with a common student enrolled in both.
+- $V$: Courses at the university.
+- $E$: Connect courses with a common student enrolled in both.
 
-What is special about this labelling?
+*Labels* can be attached to nodes or edges to capture features of the underlying problem.
+
+- What is special about this labelling?
 :::
 ::::: 
 
 ::: notes
+All graphs give at least a unique label / name to each node so that we can tell the nodes apart; for example, the indexes of the pixels in our Voronoi art.  Additional labels (not necessarily unique) can help to solve the underlying problem; for example, the colour of the pixels.
+
 Hint: Don't look at the three red boxes in the upper right.  They look connected but they are actually overlapping edges.
 
 Because no two courses with the same label are connected by an edge, this graph represents a feasible exam scheduling (each label is a different exam time).
 
-*Vertex labeling problem*: Unfortunately, there is no efficient algorithm known for creating an optimal labelling.  We could try to loop through all possible labellings, but that would be infeasibly slow.
+*Vertex labeling problem*: In this case the labels are chosen by the algorithm.  Unfortunately, there is no efficient algorithm known for creating an optimal labelling.  We could try to loop through all possible labellings, but that would be infeasibly slow.
 :::
 
 ## A Weighted Graph {.medium}
@@ -477,7 +479,7 @@ An early example of a 3D object represented in a computer.  Used extensively in 
 - Edges are chosen to try to minimize the distance between the triangles and the actual surface.
 - It is then easy to colour / shade / add hair to little triangles.
 - The whole bunny is not a planar graph, but local patches of it are because it is a triangularization.
-- Note that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space.
+- Note that (unlike our previous examples but like our Voronoi images) the vertices have positions in 3D space (a form of label).
 :::
 
 # Complexity of Graph Algorithms
@@ -494,7 +496,10 @@ Algorithm complexity is often *described* in terms of the number of vertices.
 - So how are $|V|$ and $|E|$ related?
 
 ::: notes
-Why describe complexity by $|V|$ when it actually depends on $|E|$?  For real problems, we often have an estimate or intuition about $|V|$ but not $|E|$.
+Why describe complexity by $|V|$ when it actually depends on $|E|$?
+
+- For real problems, we often have an estimate or intuition about $|V|$ but not $|E|$.
+- For many problems, we generate $E$ (or even $V$) on the fly.
 :::
 
 ## Demo {.activity}
