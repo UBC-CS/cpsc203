@@ -500,8 +500,46 @@ print(postup(23))
 :::
 :::::
 
+::: notes
+`x = p % size` and `y = p // size`.
+:::
+
 ## Demo {.activity}
 
 Today's activity is already coded for you, but let's look through the code.
 
 Launch [Class Activity: Sudoku](https://us.prairielearn.com/pl/course_instance/228149/assessment/2722856/) in PrairieLearn.
+
+## Sudoku Closing Thoughts
+
+::: {.columns}
+::: {.column}
+How fast does the state space grow as board size grows?
+
+| size | cells | state space |
+|:----:|:-----:|-------------|
+| 2 | 4 x 4 |  |
+| 3 | 9 x 9 |  |
+| 4 | 16 x 16 |  |
+| 5 | 25 x 25 |  |
+| $r$ | $r^2$ x $r^2$ |  |
+
+[Mathematics of Sudoku](https://en.wikipedia.org/wiki/Mathematics_of_sudoku)
+:::
+
+::: {.column}
+Could we be smarter about what values to consider?
+
+<center>
+![](/images/sudoku-smarter.png)
+</center>
+:::
+:::
+
+::: notes
+- There are $r^4$ cells, each of which can have a value from 1 to $r^2$.  So it grows as $(r^2)^{(r^4)}$!
+- For classic (size 3) sudoku, there are roughly $6.671×10^{21}$ states.
+  - There are ways to reduce that by validity preserving transformations to just(!) 5,472,730,538.
+  - Symmetry is an example of a validity preserving transformation, but it is not very useful in sudoku.
+- That is exponential growth (the worst we considered).  In fact, Sudoku is known to be NP-complete.
+:::
