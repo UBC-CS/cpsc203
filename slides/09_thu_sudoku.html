@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <meta name="dcterms.date" content="2026-11-05">
+  <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f96cc63a67f585f0571b376698274c47.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<meta property="og:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
+<meta property="og:description" content="CPSC 203, 2026 W1">
+<meta property="og:site_name" content="CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:title" content="Programming, problem solving, and algorithms – CPSC 203: Programming, problem solving, and algorithms">
+<meta name="twitter:description" content="CPSC 203, 2026 W1">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Programming, problem solving, and algorithms</h1>
+  <p class="subtitle">CPSC 203, 2026 W1</p>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">November 5, 2026</p>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li>Practice Examlet 4 is available.</li>
+<li>Lab 8 (memoization) and POTW 8 (mostly Sudoku validity) due Sunday.</li>
+<li>Project 2 (Game of Life) released, due Monday November 16.
+<ul>
+<li>Time to get started!</li>
+</ul></li>
+<li><strong>Next week:</strong> No labs, no POTWs, no examlet.
+<ul>
+<li>Normal lecture on Thursday November 12.</li>
+</ul></li>
+<li>Feeling overwhelmed? You are not alone!
+<ul>
+<li>Visit <a href="https://students.ubc.ca/health/">student health services’</a> <a href="https://students.ubc.ca/health/mental-health-care-ubc/">mental health resources</a>.</li>
+</ul></li>
+</ul>
+</section>
+<section>
+<section id="state-space-graphs" class="title-slide slide level1 center">
+<h1>State Space Graphs</h1>
+
+</section>
+<section id="reminder-rush-hour-game" class="slide level2 medium">
+<h2>Reminder: <a href="https://puzzle.now/rushhour/">Rush Hour Game</a></h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/gr5.png" alt="Rush hour game state graph"></p>
+</div><div class="column">
+<center>
+<img src="../images/gr5rh.png" alt="Rush hour game board photo" width="30%">
+</center>
+<ul>
+<li><span class="math inline">\(V\)</span>: State of the board / position of all cars / configuration.</li>
+<li><span class="math inline">\(E\)</span>: Connect two configurations if there is a legal move between them.</li>
+<li>Path is a sequence of legal moves, hopefully leading to a winning configuration.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<ul>
+<li>We looked at this game last week as an example of a graph.</li>
+<li>This lecture we will explore how to build a game solver using graphs.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="game-graphs-tic-tac-toe" class="slide level2">
+<h2>Game Graphs: <a href="https://en.wikipedia.org/wiki/Tic-tac-toe">Tic-Tac-Toe</a></h2>
+<p>Two players take turns marking a cell in a 3 x 3 grid.</p>
+<ul>
+<li>Traditionally, the marks are <code>X</code> and <code>O</code>, and <code>X</code> goes first.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>How might we represent a state?</p>
+<ul>
+<li>How many possible states are there?</li>
+<li>What about symmetry?</li>
+<li>Given a state, what moves are available?</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<center>
+<img data-src="../images/tic-tac-toe.jpg" alt="tic-tac-toe game in a playground"><br>
+<span style="font-size: 20px;">photo by Przemysław Czopor</span>
+</center>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Also called “knots and crosses” (English) or “exs and ohs” (Canada).</li>
+<li>Representation could be 3x3 array, list of 9 elements
+<ul>
+<li>Consider list of alternating moves labeled by an integer.</li>
+</ul></li>
+<li>Using simple boards, draw a sequence of moves with (directed) edges between them.
+<ul>
+<li>3 possible values for each of 9 squares: <span class="math inline">\(3^9 = 19,683\)</span></li>
+<li>But: There always has to be same number of X and O, or one more X.</li>
+<li>Also: Rotational and mirror symmetries.</li>
+</ul></li>
+<li>Only 765 valid states after alternating play and symmetry.
+<ul>
+<li>626 are mid game.</li>
+<li>Remainder are terminal: 91 games X has won, 44 games O has won and 3 games are a draw.</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tictactoe-state-space-graph" class="slide level2">
+<h2>TicTacToe State Space Graph</h2>
+<center>
+<p><img src="../images/su2tictactoe.png" width="50%"></p>
+<a href="https://xkcd.com/832/">XKCD’s map of optimal moves</a>
+</center>
+<aside class="notes">
+<ul>
+<li>Shows the entire state graph of the game (ignoring symmetries).
+<ul>
+<li>But the number of terminal states doesn’t line up with other sources…</li>
+</ul></li>
+<li>Early 1950s: One of the earliest video games (computer could play a perfect game).</li>
+<li>Late 1970s: MIT students built the tinker-toy mechanical computer.</li>
+<li>Let’s look at a more difficult game.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="sudoku" class="title-slide slide level1 center">
+<h1>Sudoku</h1>
+
+</section>
+<section id="sudoku-1" class="slide level2">
+<h2><a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a></h2>
+<ul>
+<li>Fill in the grid with the numbers 1 to 9.
+<ul>
+<li>No number may appear twice in a row, column, or 3x3 subgrid.</li>
+</ul></li>
+</ul>
+<div style="font-size: 28px;">
+<div class="columns">
+<div class="column">
+<center>
+<p><img data-src="../images/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg" style="width:50.0%"></p>
+<p>example starting board</p>
+<div style="font-size: 16px;">
+<p>[By Tim Stellmach - <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=57831926">Link</a>]</p>
+</div>
+</center>
+</div><div class="column">
+<center>
+<p><img data-src="../images/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg" style="width:50.0%"></p>
+<p>solution to example</p>
+<div style="font-size: 16px;">
+<p>[By <a href="https://en.wikipedia.org/wiki/User:Cburnett" class="extiw" title="en:User:Cburnett">en:User:Cburnett</a> - <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=57831971">Link</a>]</p>
+</div>
+</center>
+</div></div>
+</div>
+</section>
+<section id="representing-sudoku" class="slide level2">
+<h2>Representing Sudoku</h2>
+<p>For an evolving system (typically <em>Markovian</em>):</p>
+<ul>
+<li>A <em>state</em> is the current status or configuration of the system.</li>
+<li>The <em>state space</em> is the set of all possible states.</li>
+</ul>
+<p>How might you represent this Sudoku state?</p>
+<center>
+<img data-src="../images/su1smallgrid.png">
+</center>
+<aside class="notes">
+<ul>
+<li>Remember: A system is <em>Markovian</em> if we need only its current state (nothing else about its history) to predict its future.
+<ul>
+<li>Is tic-tac-toe Markovian? Is sudoku?</li>
+</ul></li>
+<li>Could use
+<ul>
+<li>2D array.</li>
+<li>List of lists.</li>
+<li>List of locations and values (very efficient if most locations are empty, much less so as the board fills up).</li>
+</ul></li>
+<li>Each entry could be integer, unsigned, interval, enumeration, string.
+<ul>
+<li>How do we represent an unfilled cell?</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="state-space-graphs-1" class="slide level2">
+<h2>State Space Graphs</h2>
+<ul>
+<li>A vertex is a (valid) state.</li>
+<li>Edges connect states if there is a valid move between them.</li>
+</ul>
+<p>How many neighbors does this vertex have?</p>
+<center>
+<img data-src="../images/su1smallgrid.png"> <img data-src="../images/su1smallgrid.png"> <img data-src="../images/su1smallgrid.png"> <img data-src="../images/su1smallgrid.png"> <img data-src="../images/su1smallgrid.png">
+</center>
+<aside class="notes">
+<ul>
+<li>Does sudoku have any <em>invalid</em> moves?
+<ul>
+<li>An invalid move results in an invalid state.</li>
+</ul></li>
+<li>In each board, enumerate the possible values in a different empty cell.
+<ul>
+<li>Do not enumerate in the (1,2) cell (we do that in the next slide).</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exploring-the-sudoku-graph" class="slide level2 medium">
+<h2>Exploring the Sudoku Graph</h2>
+<ul>
+<li>Given a vertex, we need to choose a neighbour vertex to consider.
+<ul>
+<li>Choose an empty cell, build set of possible consistent values, choose one.</li>
+<li>Choose an empty cell, choose a value, see if next state is valid.</li>
+</ul></li>
+</ul>
+<center>
+<img data-src="../images/su3many.png" style="width:75.0%">
+</center>
+<aside class="notes">
+<ul>
+<li>“Choose” could mean a deterministic or random choice.</li>
+<li>We win if the valid state is full.</li>
+<li>We have to retreat if there are no valid neighbours.</li>
+<li>We will use the latter approach because it is easier to code: No need to reason about constraints, just pick a value and see if it is valid.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="graph-search" class="title-slide slide level1 center">
+<h1>Graph Search</h1>
+
+</section>
+<section id="reminder-flood-fill-pattern" class="slide level2">
+<h2>Reminder: Flood Fill Pattern</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../images/FF1.png" alt="Grid with each pixel numbered, pixel 63 highlighted blue, subset of pixels surrounded by a yellow curve."></p>
+</div><div class="column">
+<ul>
+<li>enqueue a starting point</li>
+<li>while the queue is not empty:
+<ul>
+<li>v = dequeue</li>
+<li>for each valid neighbor w of v:
+<ul>
+<li>process w</li>
+<li>enqueue w</li>
+</ul></li>
+</ul></li>
+</ul>
+</div></div>
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="70" viewbox="0 0 1090 70">
+<rect x="5" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="65" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="125" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="185" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="245" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="305" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="365" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="425" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="485" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="545" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="605" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="665" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="725" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="785" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="845" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="905" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="965" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="1025" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect>
+</svg>
+<aside class="notes">
+<ul>
+<li>Using a FIFO queue, we visited the pixels (nodes) in order of their distance (number of edges) from the initial pixel (node).</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="breadth-first-search-bfs" class="slide level2">
+<h2><a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth First Search</a> (BFS)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Explores a graph starting from a <em>root</em> node.</li>
+<li>Explores all nodes at a specified <em>depth</em> (distance from the root) before exploring any at the next depth.</li>
+</ul>
+<p>Other animations of BFS</p>
+<ul>
+<li><a href="https://see-algorithms.com/graph/BFS">see-algorithms.com</a></li>
+<li><a href="https://algomaster.io/animations/dsa-concepts/graph-bfs">algomaster.io</a></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<center>
+<p><img data-src="../images/Animated_BFS.gif" style="width:80.0%"></p>
+<div style="font-size: 16px;">
+<p>[By <a href="https://commons.wikimedia.org/wiki/File:Animated_BFS.gif">Blake Matheny</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>]</p>
+</div>
+</center>
+</div></div>
+<aside class="notes">
+<ul>
+<li>BFS worked great for flood fill / Voronoi regions.</li>
+<li>In Sudoku, it would fill in all possible values for a given empty cell before considering any other empty boxes.</li>
+<li>Why is it a bad idea for solving sudoku (or other games / mazes)?
+<ul>
+<li>You want to get to a terminal state.</li>
+<li>Terminal state is a (relatively) long distance from the root.</li>
+<li>There are a <strong>lot</strong> of intermediate states that BFS would have to consider before it could get to a terminal state.</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="depth-first-search-dfs" class="slide level2">
+<h2><a href="https://en.wikipedia.org/wiki/Depth-first_search">Depth First Search</a> (DFS)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Explores a graph starting from a <em>root</em> node.</li>
+<li>Fully explores each subgraph before moving on to the next node at the current depth.</li>
+</ul>
+<p>Other animations of DFS</p>
+<ul>
+<li><a href="https://see-algorithms.com/graph/DFS">see-algorithms.com</a></li>
+<li><a href="https://algomaster.io/animations/dsa-concepts/graph-dfs">algomaster.io</a></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<center>
+<p><img data-src="../images/Depth-First-Search.gif" style="width:80.0%"></p>
+<div style="font-size: 16px;">
+<p>[By <a href="https://commons.wikimedia.org/wiki/File:Depth-First-Search.gif">Mre</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>]</p>
+</div>
+</center>
+</div></div>
+<aside class="notes">
+<ul>
+<li>For Sudoku, DFS keeps filling in new empty boxes until it hits an invalid state.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementing-dfs" class="slide level2">
+<h2>Implementing DFS</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Can be implemented via recursion.</li>
+<li>We will use a stack / LIFO queue.</li>
+</ul>
+<center>
+<img src="../images/su6pez.png" width="30%">
+</center>
+</div><div class="column" style="width:50%;">
+<p>Pseudo-code stack functions:</p>
+<ul>
+<li>Insert: push(item)</li>
+<li>Remove: pop() <span class="math inline">\(\rightarrow\)</span> item</li>
+</ul>
+<p>Python <code>deque</code> (or <code>list</code>) functions:</p>
+<ul>
+<li>Insert: <code>append(item)</code></li>
+<li>Remove: <code>pop()</code> <span class="math inline">\(\rightarrow\)</span> <code>item</code></li>
+</ul>
+</div></div>
+</section>
+<section id="depth-first-search-practice" class="slide level2">
+<h2>Depth First Search Practice</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><code>push(start_vertex)</code></li>
+<li>while the <code>stack</code> is not empty:
+<ul>
+<li>v = <code>pop()</code></li>
+<li>if <code>v</code> is not processed:
+<ul>
+<li>process <code>v</code></li>
+<li>for each valid neighbor <code>w</code> of <code>v</code>:
+<ul>
+<li><code>push(w)</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 220 400" width="330" height="600" role="img" aria-label="Graph with vertices A,B,C,D,E">
+<style>
+    .node { fill:#d9f3f7; stroke:#000; stroke-width:4; }
+    .edge { stroke:#000; stroke-width:4; fill:none; }
+    .label { font: 18px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial;
+             text-anchor:middle; dominant-baseline:middle; }
+  </style>
+<line x1="110" y1="80" x2="170" y2="200" class="edge"></line> <line x1="110" y1="80" x2="50" y2="200" class="edge"></line> <line x1="170" y1="200" x2="50" y2="200" class="edge"></line> <line x1="170" y1="200" x2="110" y2="260" class="edge"></line> <line x1="50" y1="200" x2="110" y2="260" class="edge"></line> <line x1="170" y1="200" x2="110" y2="340" class="edge"></line> <line x1="110" y1="260" x2="110" y2="340" class="edge"></line> <line x1="50" y1="200" x2="110" y2="340" class="edge"></line> <circle cx="170" cy="200" r="22" class="node"></circle> <circle cx="110" cy="80" r="22" class="node"></circle> <circle cx="50" cy="200" r="22" class="node"></circle> <circle cx="110" cy="260" r="22" class="node"></circle> <circle cx="110" cy="340" r="22" class="node"></circle> <text x="170" y="200" class="label">A</text> <text x="110" y="80" class="label">B</text> <text x="50" y="200" class="label">C</text> <text x="110" y="260" class="label">D</text> <text x="110" y="340" class="label">E</text>
+</svg>
+</div><div class="column" style="width:10%;">
+<p><br>
+</p>
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="430" viewbox="0 0 70 430">
+<rect x="5" y="5" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="65" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="125" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="185" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="245" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="305" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect> <rect x="5" y="365" width="60" height="60" fill="none" stroke="#222" stroke-width="1.5"></rect>
+</svg>
+</center>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Remember to start writing nodes from the bottom of the stack.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="back-to-sudoku" class="title-slide slide level1 center">
+<h1>Back to Sudoku</h1>
+
+</section>
+<section id="sudoku-solver-algorithm" class="slide level2 medium">
+<h2>Sudoku Solver Algorithm</h2>
+<ul>
+<li>Search (DFS) through the states until you can’t go any farther.
+<ul>
+<li>If the board is complete, you win!</li>
+<li>If the board is invalid, back up and try a new state in the most recent cell possible.</li>
+</ul></li>
+</ul>
+<center>
+<img data-src="../images/su3many.png" style="width:75.0%">
+</center>
+</section>
+<section id="state-validity" class="slide level2 medium">
+<h2>State Validity</h2>
+<p>Need to be able to check whether a state is <em>valid</em>.</p>
+<div class="columns">
+<div class="column">
+<p>Suppose we have a variable <code>grid</code>, representing the board, and we want to place a value called <code>num</code>, in position (x,y).</p>
+<p>Need to check uniqueness in:</p>
+<ul>
+<li>row</li>
+<li>column</li>
+<li>block</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../images/su7numcheck.png"></p>
+<ul>
+<li>Which conditional checks a row?</li>
+<li>Which conditional checks a column?</li>
+<li>How shall we check a block?</li>
+</ul>
+</div></div>
+</section>
+<section id="block-validity" class="slide level2 medium">
+<h2>Block Validity</h2>
+<p><strong>Python tidbit</strong>: to query a region in a 2d matrix, define the bounds on the region and use <code>in</code>.</p>
+<p>In the small example below, <code>2 in grid[0:2,0:2]</code> returns <code>True</code>.</p>
+<center>
+<img src="../images/su1smallgrid.png" height="100%">
+</center>
+</section>
+<section id="defining-blocks" class="slide level2 medium">
+<h2>Defining Blocks</h2>
+<p>Given location <span class="math inline">\((x,y)\)</span>, determine the block in which it lives.</p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>a region <code>s:t</code> contains <span class="math inline">\(x\)</span> if <span class="math inline">\(s\leq x&lt; t\)</span>.</li>
+<li>Look for a pattern in the tables below for a <span class="math inline">\(4 \times 4\)</span> grid.</li>
+<li>Can we generalize to an <span class="math inline">\(r^2 \times r^2\)</span> grid?
+<ul>
+<li>Hint: <code>x//r</code> is the integer part of <code>x/r</code>.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<center>
+<img data-src="../images/su1smallgrid.png">
+</center>
+</div></div>
+<center>
+<img data-src="../images/su8regions.png">
+</center>
+<aside class="notes">
+<ul>
+<li>Generalization is <code>[(x // r) * r : (x // r + 1) * r]</code></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="which-cell-next" class="slide level2">
+<h2>Which Cell Next?</h2>
+<p>We could choose next cell:</p>
+<ul>
+<li>Randomly. We would then either:
+<ul>
+<li>Have to keep explicit track of which cells were still empty.</li>
+<li>Repeatedly choose full cells and have to choose again.</li>
+</ul></li>
+<li>Deterministically. We could either:
+<ul>
+<li>Build a double loop over 2D position <span class="math inline">\((x,y)\)</span>.</li>
+<li>Build a single loop over 1D position and convert that to an <span class="math inline">\((x,y)\)</span>.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>We will do the latter, mostly as an example of how to turn a multidimensional index into a one dimensional index (linearizing) and vice-versa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="linearizing-the-cell-index" class="slide level2">
+<h2>Linearizing the Cell Index</h2>
+<p>Write a function <code>postup</code> that takes an integer position <code>p</code> as input, and returns an <code>(x,y)</code> position. The grid is <code>size</code> <span class="math inline">\(\times\)</span> <code>size</code>.</p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img data-src="../images/su1smallgrid.png"></p>
+</div><div class="column" style="width:75%;">
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3RhdGVzID0gMTBcbmRlZiBwb3N0dXAocDogaW50KSAtPiB0dXBsZVtpbnQsIGludF06XG4gICAgcmV0dXJuICgwLDApXG5cbnByaW50KHBvc3R1cCgyMykpIn0=
+</script>
+</div>
+</div></div>
+</section>
+<section id="demo" class="slide level2 activity">
+<h2>Demo</h2>
+<p>Today’s activity is already coded for you, but let’s look through the code.</p>
+<p>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722856/">Class Activity: Sudoku</a> in PrairieLearn.</p>
+
+
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\">\u003ckbd>b\u003c/kbd> Toggle Chalkboard\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"6\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\">\u003ckbd>c\u003c/kbd> Toggle Notes Canvas\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"7\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\">\u003ckbd>d\u003c/kbd> Download Drawings\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"8\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'chalkboard': {"buttons":true},
+'drop': {"button":true,"shortcut":"`","engine":"pyodide","webr":{"packages":[]},"pyodide":{"packages":[]}},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: false,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealDrop, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W119
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../slides";
+    window._ojs.paths.runtimeToRoot = "../..";
+    window._ojs.paths.docToRoot = "..";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/ubc-cs\.github\.io\/cpsc203");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
