@@ -759,11 +759,94 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3RhdGVzID0gMTBcbmRlZiBw
 </script>
 </div>
 </div></div>
+<aside class="notes">
+<p><code>x = p % size</code> and <code>y = p // size</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="demo" class="slide level2 activity">
 <h2>Demo</h2>
 <p>Today’s activity is already coded for you, but let’s look through the code.</p>
 <p>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2722856/">Class Activity: Sudoku</a> in PrairieLearn.</p>
+</section>
+<section id="sudoku-closing-thoughts" class="slide level2">
+<h2>Sudoku Closing Thoughts</h2>
+<div class="columns">
+<div class="column">
+<p>How fast does the state space grow as board size grows?</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">size</th>
+<th style="text-align: center;">cells</th>
+<th>state space</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4 x 4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">9 x 9</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">16 x 16</td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">25 x 25</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r^2\)</span> x <span class="math inline">\(r^2\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://en.wikipedia.org/wiki/Mathematics_of_sudoku">Mathematics of Sudoku</a></p>
+</div><div class="column">
+<p>Could we be smarter about what values to consider?</p>
+<center>
+<img data-src="../images/sudoku-smarter.png">
+</center>
+</div></div>
+<aside class="notes">
+<ul>
+<li>There are <span class="math inline">\(r^4\)</span> cells, each of which can have a value from 1 to <span class="math inline">\(r^2\)</span>. So it grows as <span class="math inline">\((r^2)^{(r^4)}\)</span>!</li>
+<li>For classic (size 3) sudoku, there are roughly <span class="math inline">\(6.671×10^{21}\)</span> states.
+<ul>
+<li>There are ways to reduce that by validity preserving transformations to just(!) 5,472,730,538.</li>
+<li>Symmetry is an example of a validity preserving transformation, but it is not very useful in sudoku.</li>
+</ul></li>
+<li>That is exponential growth (the worst we considered). In fact, Sudoku is known to be NP-complete.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 <script type="pyodide-data">

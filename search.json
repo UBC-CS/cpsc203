@@ -3923,7 +3923,7 @@
     "href": "slides/09_thu_sudoku.html#linearizing-the-cell-index",
     "title": "Programming, problem solving, and algorithms",
     "section": "Linearizing the Cell Index",
-    "text": "Linearizing the Cell Index\nWrite a function postup that takes an integer position p as input, and returns an (x,y) position. The grid is size \\(\\times\\) size."
+    "text": "Linearizing the Cell Index\nWrite a function postup that takes an integer position p as input, and returns an (x,y) position. The grid is size \\(\\times\\) size.\n\n\n\n\n\n\n\n\n\n\n\n\nx = p % size and y = p // size."
   },
   {
     "objectID": "slides/09_thu_sudoku.html#demo",
@@ -3931,6 +3931,13 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Demo",
     "text": "Demo\nToday’s activity is already coded for you, but let’s look through the code.\nLaunch Class Activity: Sudoku in PrairieLearn."
+  },
+  {
+    "objectID": "slides/09_thu_sudoku.html#sudoku-closing-thoughts",
+    "href": "slides/09_thu_sudoku.html#sudoku-closing-thoughts",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Sudoku Closing Thoughts",
+    "text": "Sudoku Closing Thoughts\n\n\nHow fast does the state space grow as board size grows?\n\n\n\nsize\ncells\nstate space\n\n\n\n\n2\n4 x 4\n\n\n\n3\n9 x 9\n\n\n\n4\n16 x 16\n\n\n\n5\n25 x 25\n\n\n\n\\(r\\)\n\\(r^2\\) x \\(r^2\\)\n\n\n\n\nMathematics of Sudoku\n\nCould we be smarter about what values to consider?\n\n\n\n\n\n\nThere are \\(r^4\\) cells, each of which can have a value from 1 to \\(r^2\\). So it grows as \\((r^2)^{(r^4)}\\)!\nFor classic (size 3) sudoku, there are roughly \\(6.671×10^{21}\\) states.\n\nThere are ways to reduce that by validity preserving transformations to just(!) 5,472,730,538.\nSymmetry is an example of a validity preserving transformation, but it is not very useful in sudoku.\n\nThat is exponential growth (the worst we considered). In fact, Sudoku is known to be NP-complete."
   },
   {
     "objectID": "slides/06_thu_dictionaries.html#announcements",
