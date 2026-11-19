@@ -3372,136 +3372,6 @@
     "text": "Resources\n\nREALLY great example: https://www.youtube.com/watch?v=wsSEKm-rU6U\nOSMNX reference: https://github.com/gboeing/osmnx-examples\nTutorial: https://gist.github.com/psychemedia/b49c49da365666ba9199d2e27d002d07\nTags: https://wiki.openstreetmap.org/wiki/Map_features"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#contributors",
-    "href": "about.html#contributors",
-    "title": "About",
-    "section": "",
-    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#introduction",
-    "href": "syllabus.html#introduction",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-requirements",
-    "href": "syllabus.html#course-requirements",
-    "title": "Syllabus",
-    "section": "Course Requirements",
-    "text": "Course Requirements\nThe best way to learn is by doing. Lectures and labs are designed around active learning principles, so you should:\n\nAttend every lecture if you are not sick.\n\nIf you are sick, watch the recording and do the in-class activities before the next lecture.\n\nAttend your lab sections if you are not sick.\n\nIf you are sick, you are still responsible for doing the lab activities and submitting your lab assessments through PrairieLearn by the due date.\n\nMonitor Piazza for course announcements.\n\nAll assessments for the course are managed through PrairieLearn. The assessments are:\n\nProblems of the Week (POTW): You will complete approximately 50 small programming exercises, 5 per week, through PrairieLearn. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nLabs: PrairieLearn assessments for the labs can be completed anytime before the due date, although we encourage students to complete as much as possible during their scheduled lab session.\nProjects: Most of the coding in the course will occur within three significant coding projects.\nExamlets: Five self-scheduled 50 minute assessments to be completed on PrairieLearn in ORCA. You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nFinal Exam: Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#grading-and-exam-policies",
-    "href": "syllabus.html#grading-and-exam-policies",
-    "title": "Syllabus",
-    "section": "Grading and Exam Policies",
-    "text": "Grading and Exam Policies\nYour final grade in the course is generated from the following assessments:\n\n\n\n\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week (POTWs)\n10% (10 x 1%)\nSundays at 8:00 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 8:00 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree weeks long, Mondays at 8:00 PM\n\n\nExamlets\n50% (5 x 10%)\nRoughly biweekly, self-scheduled Thursday through Monday\n\n\nFinal Exam\n26%\nSelf-scheduled during five day window TBA\n\n\n\nStudents must satisfy all of the following conditions to pass the course:\n\nAchieve a grade of at least 50% on the lab component.\nAchieve a grade of at least 50% on the examlet and final exam components together.\nAchieve a grade of at least 40% on the final exam.\n\nIf a student does not satisfy all conditions, they will be assigned the lower of 45% or their earned final grade as their course grade.\nStudents who have not submitted at least half of the lab, POTWs and examlet assessments prior to the final exam may be refused permission to write the final exam.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#academic-integrity",
-    "href": "syllabus.html#academic-integrity",
-    "title": "Syllabus",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAcademic endeavours are founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, academic integrity means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. It also means you should not copy, cheat, or mislead others about what is your work; nor should you help others to do the same. For example, it is prohibited to: share your past assignments and answers with other students; complete an assignment as a group when an instructor has not expressly given permission; or spread information through word of mouth, social media, websites, or other channels that subverts the fair evaluation of a class exercise, or assessment. A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the UBC Academic Calendar.\n\nWhat is considered academic misconduct in this course?\nThe line between what constitutes acceptable versus unacceptable behaviour can be blurry, but here is a list of things which are definitely considered academic misconduct in CPSC 203:\n\nDoing individual assessments collaboratively, sharing your work on these assessments with others, or asking others to see their work.\nCommunicating test questions and/or answers to others. We all benefit from the scheduling flexibility that PrairieLearn provides, but that means even if you have completed a test you cannot talk about it because other students may not have taken it yet.\nSharing any course material onto Chegg, Course Hero, Slader, or other similar sites.\nSearching for solutions to course material on Chegg, Course Hero, Slader, or other similar sites.\nBlindly googling the question in hopes of finding someone who had a similar question and then copying their answer. However, googling to find resources to understand specific concepts or general ideas is highly encouraged!\nHaving a tutor / friend / nemesis complete and submit your work for you.\nCopying and pasting code, equations, text explanations, prose, etc… without attribution.\nManipulating the learning platforms we use to reverse engineer the randomization algorithms, hacking the timer functionality, or other similar technical malfeasance.\n\n\n\nWhat Happens in Cases of Academic Misconduct?\nViolations of academic integrity – in other words, academic misconduct – include any conduct by which a student gains or attempts to gain an unfair academic advantage or benefit thereby compromising the integrity of the academic process, or helping or attempting to help another person commit an act of academic misconduct or gain, or attempt to gain, an unfair academic advantage. Academic misconduct leads to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred for consideration for academic discipline. Careful records are kept to monitor and prevent recurrences. Any instance of cheating or taking credit for someone else’s work, whether intentionally or unintentionally, can and often will result in at minimum a grade of zero for the assignment, and these cases will be reported to the Associate Head of Undergraduates in the Department of Computer Science and Associate Dean of Students in the Faculty of Science.\n\n\nWhat Support is Available?\nFeel free to ask the instructor about academic integrity. Part of the job of an instructor is to guide your growth as a scholar. It is much better to ask for clarification than unintentionally engage in academic misconduct, which can have serious consequences. If you are unsure about what constitutes academic misconduct, please reach out.\nSometimes students who are experiencing a lot of stress feel the only way to deal with a situation is to cheat. Please do not fall in to this trap. Reach out to the instructor, and we will work out a better solution.\nTo help you learn your responsibilities as a scholar, please read and understand UBC’s expectations for academic honesty in the UBC Calendar: Academic Honesty, Academic Misconduct, and Disciplinary Measures. Read and reflect on the Student Declaration and Responsibility.\nAdditional resources for learning with integrity can be found on the UBC Academic Integrity Website.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#use-of-artificial-intelligence-tools",
-    "href": "syllabus.html#use-of-artificial-intelligence-tools",
-    "title": "Syllabus",
-    "section": "Use of Artificial Intelligence Tools",
-    "text": "Use of Artificial Intelligence Tools\nThe term “Generative Artificial Intelligence” (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.\nThe use of GenAI in CPSC 203 is permitted in some contexts and forbidden in others:\n\nGenAI is forbidden during the invigilated graded assessments (the examlets and the final exam); in other words, the assessments that take place in ORCA.\nGenAI is permitted when working through the ungraded activities during lecture or when studying independently. We strongly discourage you from asking GenAI to produce answers, as that will not help with your learning. However, using GenAI for translations, to check an answer, explain why an answer is incorrect, or produce new versions of a question on which you can practice may be effective learning strategies (although beware that GenAI often hallucinates).\nGenAI is permitted with attribution when working on the other graded assessments (POTWs, labs and projects). If you use GenAI in the process of producing your submission materials, then you must specify in your submission what tool you used and what prompts you gave it. (If there is no specific place to enter your attribution in the PrairieLearn assessment, then put it in a code comment at the top of your file.) As with your ungraded activities, if you use GenAI then we encourage you to use it in ways that strengthen your learning rather than replace it.\n\nIf you do use GenAI, keep in mind that you may not upload material to the AI that belongs to others (such as course material or the work of other students) without explicit permission. If you are studying or working in a group, you should discuss and agree on whether, how, and by whom GenAI tools will be used (to be documented in a shared file or email). All group members are expected to then communicate honestly with their group about their own use of GenAI.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#recording-course-activities",
-    "href": "syllabus.html#recording-course-activities",
-    "title": "Syllabus",
-    "section": "Recording Course Activities",
-    "text": "Recording Course Activities\nCourse lectures are recorded. These recordings capture the slides or other content projected to the screen, the instructor’s microphone, and a video stream showing the instructor’s podium. Students who do not wish to have their images captured should not sit close to or approach the podium during lecture. These recordings are made available only to students currently enrolled in the course (and possibly future course instructors).\nLecture audio recordings may also be made using Genio Notes by students with note-taking accommodations for disability purposes. These recordings utilize the device’s microphone and/or content displayed on the screen and are exclusively for the student’s personal use to support their disability-related accommodation. This service is provided by UBC’s Centre for Accessibility and has met all UBC privacy requirements. All users have signed agreements related to the appropriate use of these recordings.\nIt is not permitted to make other recordings of course activities (lectures, labs, etc). It is not permitted to make copies or transcripts of existing recordings by any means, or to share those recordings or transcripts with anybody else (whether human or AI).",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#land-acknowledgement",
-    "href": "syllabus.html#land-acknowledgement",
-    "title": "Syllabus",
-    "section": "Land Acknowledgement",
-    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#other-stuff-that-i-am-required-to-include",
-    "href": "syllabus.html#other-stuff-that-i-am-required-to-include",
-    "title": "Syllabus",
-    "section": "Other Stuff that I Am Required to Include",
-    "text": "Other Stuff that I Am Required to Include\nBased on Guidance for Science course syllabi (may require permission) and based at least partly on UBC Senate policy V-130 (as of 2026-08-21).\n\nCourse Calendar Information\nCPSC_V 203 (3) Programming, Problem Solving, and Algorithms\nAnalysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search.\nNot for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221.\nPrerequisite: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337.\n\n\nInstructor\nIan Mitchell. Contact information available in logistics.\n\n\nUniversity Values and Policies\nResources to support student success: UBC provides resources to support student learning and to maintain healthy lifestyles, but recognizes that sometimes crises arise and so there are additional resources to access, including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated, nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty, and students are expected to acknowledge the ideas generated by others, and to uphold the highest academic standards in all of their actions.\nDetails of the policies and how to access support are available on the UBC Senate website.\n\n\nLearning Analytics\nLearning analytics includes the collection and analysis of data about learners to improve teaching and learning. This course may be using Canvas, Microsoft Teams, Piazza, PrairieLearn or Zoom, which capture data about your activity and provide information that can be used to improve the quality of teaching and learning. In this course, your instructor and TA(s) may use analytics data to view overall class progress, and track individual students’ progress in order to assess participation in the course.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
     "objectID": "slides/05_thu_dictionaries.html#announcements",
     "href": "slides/05_thu_dictionaries.html#announcements",
     "title": "Programming, problem solving, and algorithms",
@@ -3675,6 +3545,185 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Summary",
     "text": "Summary\nDictionaries give you fast lookup by key.\nThe patterns we learned:\n\nRecord — Store compound data\nMembership — Have I seen this before? (defaultdict(bool))\nCounting — How many of each? (Counter)\nComplement — Find the matching pair\nGrouping — Organize by category (defaultdict(list))"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#introduction",
+    "href": "syllabus.html#introduction",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to CPSC203, where we treat programming as both a puzzle and a playground. In this course, you’ll learn how to use Python to wrangle numbers, words, images, and even music into surprising results. We’ll build simulations, play with graphs and trees, and peek into how computers tackle problems that seem impossibly big. Along the way, you’ll pick up habits of real programmers, such as testing your code, keeping track of versions, and breaking big problems into smaller ones. Most importantly, you’ll discover how computational thinking can help you ask and answer questions in your own field of study.\nThis course is a natural follow-on to an introductory programming course – it provides an answer to “now that I’ve learned how to code, what can I do with it?”\nYou will learn about computational efficiency and algorithmic design, applying both to problems that arise from arts and sciences. The data supporting the problems comes from a variety of sources, including websites, music, novels, and images.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this course, students will be able to:\n\nImplement algorithms in Python fluently, using appropriate libraries (e.g., Pandas, Matplotlib, NLTK, PILLOW) for data analysis, visualization, and simulation.\nUse core data structures (lists, dictionaries, trees, graphs) to represent and manipulate complex data, and explain the tradeoffs in their use.\nLeverage APIs and diverse data sources (CSV files, images, text, music) to retrieve, process, and transform data into meaningful output.\nApply problem decomposition and abstraction to design solutions for multi-stage, data-driven problems.\nDesign and implement simulations based on classic algorithms (e.g., Voronoi diagrams, Markov chains, graph traversal), and connect them to real-world applications.\nEvaluate algorithmic efficiency, including describing problems in terms of computational feasibility and applying approximation strategies where exact solutions are infeasible.\nApply principles of software engineering (testing with unittest, version control with Git, modular design, type hints) to produce reliable and maintainable code.\nReflect on the role of computation across disciplines, recognizing how programming can be used to formulate and answer questions in students’ own study domains.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-requirements",
+    "href": "syllabus.html#course-requirements",
+    "title": "Syllabus",
+    "section": "Course Requirements",
+    "text": "Course Requirements\nThe best way to learn is by doing. Lectures and labs are designed around active learning principles, so you should:\n\nAttend every lecture if you are not sick.\n\nIf you are sick, watch the recording and do the in-class activities before the next lecture.\n\nAttend your lab sections if you are not sick.\n\nIf you are sick, you are still responsible for doing the lab activities and submitting your lab assessments through PrairieLearn by the due date.\n\nMonitor Piazza for course announcements.\n\nAll assessments for the course are managed through PrairieLearn. The assessments are:\n\nProblems of the Week (POTW): You will complete approximately 50 small programming exercises, 5 per week, through PrairieLearn. These are intended to be a simple coding refresher, and they should take you approximately 15 minutes per day.\nLabs: PrairieLearn assessments for the labs can be completed anytime before the due date, although we encourage students to complete as much as possible during their scheduled lab session.\nProjects: Most of the coding in the course will occur within three significant coding projects.\nExamlets: Five self-scheduled 50 minute assessments to be completed on PrairieLearn in ORCA. You will be given ample practice materials to use in preparation for the examlets. Examlet questions will be a mix of coding and conceptual questions.\nFinal Exam: Like the examlets, the final exam will be self-scheduled within the CBTF. The exam window – approximately 5 days – will be posted later in the term.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grading-and-exam-policies",
+    "href": "syllabus.html#grading-and-exam-policies",
+    "title": "Syllabus",
+    "section": "Grading and Exam Policies",
+    "text": "Grading and Exam Policies\nYour final grade in the course is generated from the following assessments:\n\n\n\n\n\n\n\n\nItem\nWeight\nDue date(s)\n\n\n\n\nProblems of the Week (POTWs)\n10% (10 x 1%)\nSundays at 8:00 PM\n\n\nLabs\n5% (10 x 0.5%)\nSundays at 8:00 PM\n\n\nProgramming Projects\n9% (3 x 3%)\nThree weeks long, Mondays at 8:00 PM\n\n\nExamlets\n50% (5 x 10%)\nRoughly biweekly, self-scheduled Thursday through Monday\n\n\nFinal Exam\n26%\nSelf-scheduled during five day window TBA\n\n\n\nStudents must satisfy all of the following conditions to pass the course:\n\nAchieve a grade of at least 50% on the lab component.\nAchieve a grade of at least 50% on the examlet and final exam components together.\nAchieve a grade of at least 40% on the final exam.\n\nIf a student does not satisfy all conditions, they will be assigned the lower of 45% or their earned final grade as their course grade.\nStudents who have not submitted at least half of the lab, POTWs and examlet assessments prior to the final exam may be refused permission to write the final exam.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Syllabus",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic endeavours are founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, academic integrity means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. It also means you should not copy, cheat, or mislead others about what is your work; nor should you help others to do the same. For example, it is prohibited to: share your past assignments and answers with other students; complete an assignment as a group when an instructor has not expressly given permission; or spread information through word of mouth, social media, websites, or other channels that subverts the fair evaluation of a class exercise, or assessment. A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the UBC Academic Calendar.\n\nWhat is considered academic misconduct in this course?\nThe line between what constitutes acceptable versus unacceptable behaviour can be blurry, but here is a list of things which are definitely considered academic misconduct in CPSC 203:\n\nDoing individual assessments collaboratively, sharing your work on these assessments with others, or asking others to see their work.\nCommunicating test questions and/or answers to others. We all benefit from the scheduling flexibility that PrairieLearn provides, but that means even if you have completed a test you cannot talk about it because other students may not have taken it yet.\nSharing any course material onto Chegg, Course Hero, Slader, or other similar sites.\nSearching for solutions to course material on Chegg, Course Hero, Slader, or other similar sites.\nBlindly googling the question in hopes of finding someone who had a similar question and then copying their answer. However, googling to find resources to understand specific concepts or general ideas is highly encouraged!\nHaving a tutor / friend / nemesis complete and submit your work for you.\nCopying and pasting code, equations, text explanations, prose, etc… without attribution.\nManipulating the learning platforms we use to reverse engineer the randomization algorithms, hacking the timer functionality, or other similar technical malfeasance.\n\n\n\nWhat Happens in Cases of Academic Misconduct?\nViolations of academic integrity – in other words, academic misconduct – include any conduct by which a student gains or attempts to gain an unfair academic advantage or benefit thereby compromising the integrity of the academic process, or helping or attempting to help another person commit an act of academic misconduct or gain, or attempt to gain, an unfair academic advantage. Academic misconduct leads to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred for consideration for academic discipline. Careful records are kept to monitor and prevent recurrences. Any instance of cheating or taking credit for someone else’s work, whether intentionally or unintentionally, can and often will result in at minimum a grade of zero for the assignment, and these cases will be reported to the Associate Head of Undergraduates in the Department of Computer Science and Associate Dean of Students in the Faculty of Science.\n\n\nWhat Support is Available?\nFeel free to ask the instructor about academic integrity. Part of the job of an instructor is to guide your growth as a scholar. It is much better to ask for clarification than unintentionally engage in academic misconduct, which can have serious consequences. If you are unsure about what constitutes academic misconduct, please reach out.\nSometimes students who are experiencing a lot of stress feel the only way to deal with a situation is to cheat. Please do not fall in to this trap. Reach out to the instructor, and we will work out a better solution.\nTo help you learn your responsibilities as a scholar, please read and understand UBC’s expectations for academic honesty in the UBC Calendar: Academic Honesty, Academic Misconduct, and Disciplinary Measures. Read and reflect on the Student Declaration and Responsibility.\nAdditional resources for learning with integrity can be found on the UBC Academic Integrity Website.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#use-of-artificial-intelligence-tools",
+    "href": "syllabus.html#use-of-artificial-intelligence-tools",
+    "title": "Syllabus",
+    "section": "Use of Artificial Intelligence Tools",
+    "text": "Use of Artificial Intelligence Tools\nThe term “Generative Artificial Intelligence” (GenAI) refers to the following tools as well as any other similar models that create content using sophisticated machine learning algorithms: ChatGPT, Claude, Copilot, Gemini, Llama, DeepSeek, and many translation tools. GenAI also includes such tools that may be integrated into other services like Notion, Canva, and Grammarly, or locally hosted / offline versions such as Ollama, LM Studio, LocalAI, or Core AI.\nThe use of GenAI in CPSC 203 is permitted in some contexts and forbidden in others:\n\nGenAI is forbidden during the invigilated graded assessments (the examlets and the final exam); in other words, the assessments that take place in ORCA.\nGenAI is permitted when working through the ungraded activities during lecture or when studying independently. We strongly discourage you from asking GenAI to produce answers, as that will not help with your learning. However, using GenAI for translations, to check an answer, explain why an answer is incorrect, or produce new versions of a question on which you can practice may be effective learning strategies (although beware that GenAI often hallucinates).\nGenAI is permitted with attribution when working on the other graded assessments (POTWs, labs and projects). If you use GenAI in the process of producing your submission materials, then you must specify in your submission what tool you used and what prompts you gave it. (If there is no specific place to enter your attribution in the PrairieLearn assessment, then put it in a code comment at the top of your file.) As with your ungraded activities, if you use GenAI then we encourage you to use it in ways that strengthen your learning rather than replace it.\n\nIf you do use GenAI, keep in mind that you may not upload material to the AI that belongs to others (such as course material or the work of other students) without explicit permission. If you are studying or working in a group, you should discuss and agree on whether, how, and by whom GenAI tools will be used (to be documented in a shared file or email). All group members are expected to then communicate honestly with their group about their own use of GenAI.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#recording-course-activities",
+    "href": "syllabus.html#recording-course-activities",
+    "title": "Syllabus",
+    "section": "Recording Course Activities",
+    "text": "Recording Course Activities\nCourse lectures are recorded. These recordings capture the slides or other content projected to the screen, the instructor’s microphone, and a video stream showing the instructor’s podium. Students who do not wish to have their images captured should not sit close to or approach the podium during lecture. These recordings are made available only to students currently enrolled in the course (and possibly future course instructors).\nLecture audio recordings may also be made using Genio Notes by students with note-taking accommodations for disability purposes. These recordings utilize the device’s microphone and/or content displayed on the screen and are exclusively for the student’s personal use to support their disability-related accommodation. This service is provided by UBC’s Centre for Accessibility and has met all UBC privacy requirements. All users have signed agreements related to the appropriate use of these recordings.\nIt is not permitted to make other recordings of course activities (lectures, labs, etc). It is not permitted to make copies or transcripts of existing recordings by any means, or to share those recordings or transcripts with anybody else (whether human or AI).",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#land-acknowledgement",
+    "href": "syllabus.html#land-acknowledgement",
+    "title": "Syllabus",
+    "section": "Land Acknowledgement",
+    "text": "Land Acknowledgement\nUBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#other-stuff-that-i-am-required-to-include",
+    "href": "syllabus.html#other-stuff-that-i-am-required-to-include",
+    "title": "Syllabus",
+    "section": "Other Stuff that I Am Required to Include",
+    "text": "Other Stuff that I Am Required to Include\nBased on Guidance for Science course syllabi (may require permission) and based at least partly on UBC Senate policy V-130 (as of 2026-08-21).\n\nCourse Calendar Information\nCPSC_V 203 (3) Programming, Problem Solving, and Algorithms\nAnalysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search.\nNot for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221.\nPrerequisite: One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337.\n\n\nInstructor\nIan Mitchell. Contact information available in logistics.\n\n\nUniversity Values and Policies\nResources to support student success: UBC provides resources to support student learning and to maintain healthy lifestyles, but recognizes that sometimes crises arise and so there are additional resources to access, including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated, nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty, and students are expected to acknowledge the ideas generated by others, and to uphold the highest academic standards in all of their actions.\nDetails of the policies and how to access support are available on the UBC Senate website.\n\n\nLearning Analytics\nLearning analytics includes the collection and analysis of data about learners to improve teaching and learning. This course may be using Canvas, Microsoft Teams, Piazza, PrairieLearn or Zoom, which capture data about your activity and provide information that can be used to improve the quality of teaching and learning. In this course, your instructor and TA(s) may use analytics data to view overall class progress, and track individual students’ progress in order to assess participation in the course.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#contributors",
+    "href": "about.html#contributors",
+    "title": "About",
+    "section": "",
+    "text": "CPSC 203 was created by Dr. Cinda Heeren, then adapted by Dr. Firas Moosvi, and further refined by Dr. Ian Mitchell. The website and slides were converted to Quarto by Dr. Stephan Koenig.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#announcements",
+    "href": "slides/11_thu_tsp.html#announcements",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject 3 (Campus Walks) due Monday December 7.\n\nTake a breather. Get started on this project next week.\n\nThis week: Lab 9 (dynamic programming) and POTW 9 (potpourri) due Sunday Nov 22.\nExamlet 4 window is Thursday Nov 19 to Monday Nov 23.\nFeeling overwhelmed? You are not alone!\n\nVisit student health services’ mental health resources."
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#single-source-shortest-path",
+    "href": "slides/11_thu_tsp.html#single-source-shortest-path",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Single Source Shortest Path",
+    "text": "Single Source Shortest Path\nFinish slides and code implementing Dijkstra’s algorithm for SSSP problem from last class."
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#maps-running-errands",
+    "href": "slides/11_thu_tsp.html#maps-running-errands",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Maps: Running Errands",
+    "text": "Maps: Running Errands\n\nYou’ve got six errands to run. What order do you do them in?\nDetermine the least cost route through a set of given locations.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLabel the nodes.\nA path will be a sequence of nodes. Start node may or may not be repeated but a closed loop is assumed.\nObserve that direction through the path and where we start doesn’t matter.\nPath length is sum of distances between each consecutive pair in the path (plus back to start if omitted)."
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#travelling-salesperson-problem-tsp-1",
+    "href": "slides/11_thu_tsp.html#travelling-salesperson-problem-tsp-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Travelling Salesperson Problem (TSP)",
+    "text": "Travelling Salesperson Problem (TSP)\n“Given a list of cities, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?”\n\nClassic problem on graphs.\nNo efficient (eg: polynomial time) algorithmic solution is known.\n\nNo efficient way to tell if an answer is the best possible one!\n\nEfficient sub-optimal versions exist; for example,\n\nRestricted classes of graphs.\nAlmost optimal solutions.\nProbabilistically optimal solutions.\n\n\n\n\nHistorically called “travelling salesman” for reasons of historical gender roles, but we’ll try to be gender-neutral.\n\nThis formal version first studied in 1930s, but people have been solving this problem since before there were people.\n\nHow do we know distances between locations?\n\nUse SSSP once for each location on the road map. Expensive, but still polynomial time.\n\nOptimal algorithm infeasible for even modest number of cities.\n\nEven quantum computer doesn’t appear to offer polynomial time solution!\n\nFalls in to class “NP-hard”, meaning it is at least as hard as an NP-complete problem, but might be harder.\n\nDetermining whether a tour exists which satisfies a given length bound is NP-complete (easy to check given a proposed solution)."
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#why-is-the-problem-so-hard",
+    "href": "slides/11_thu_tsp.html#why-is-the-problem-so-hard",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why is the problem so hard?",
+    "text": "Why is the problem so hard?\n\nHow many different candidate solutions are there for six locations?\nGeneralize to k locations?\n\n\n\n\n\n\n\n\n\n\nPossible solutions\n\n\n\n\n6 possible starting nodes, 5 next nodes, 4 next nodes, …\nResult is \\(k!\\), which grows faster than any fixed exponential in \\(k\\) (exponentially fast).\n\nStirling’s formula: \\(n! \\sim \\sqrt{2\\pi n}(n/e)^n\\)"
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#solving-tsp-in-practice-a-blog-adventure",
+    "href": "slides/11_thu_tsp.html#solving-tsp-in-practice-a-blog-adventure",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "“Solving” TSP in Practice: A Blog Adventure",
+    "text": "“Solving” TSP in Practice: A Blog Adventure\nhttps://medium.com/data-science/around-the-world-in-90-414-kilometers-ce84c03b8552\n\n\n\nNot known whether this is the optimal path, but it is feasible and better than many alternatives…"
+  },
+  {
+    "objectID": "slides/11_thu_tsp.html#why-this-matters",
+    "href": "slides/11_thu_tsp.html#why-this-matters",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nThere are lots of applications:\n\n📦 UPS/FedEx/Amazon Delivery: Millions saved by reducing even 1km per driver per day.\n🍔 UberEats/DoorDash/Skip: Multi-stop pickup/delivery with time windows.\n🚌 School Bus Routing: Minimize buses, fuel, and time while meeting constraints.\n❄️ Snowplow & Garbage Truck Routing: Efficiently cover every street in a city.\n✈️ Airline Crew Scheduling: Complex daily routing: crews must return to base, meet rest rules.\n🌍 City Infrastructure Planning: Utility inspections, meter reading, streetlight repair routes.\n🚑 Ambulance & Emergency Routing: Minimize response times; life-critical optimization.\n🏭 Factory Robots & CNC Machines: Optimizing tool paths reduces waste, heat, and wear.\n🧪 Medical Lab Sample Pipelines: Robotic arms schedule efficient multi-station workflows.\n🧬 DNA Sequencing & Genome Assembly: Ordering fragments relies on TSP-like reconstruction."
   },
   {
     "objectID": "slides/07_tue_voronoi.html#announcements",
