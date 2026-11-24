@@ -37,6 +37,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f96cc63a67f585f0571b376698274c47.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -158,21 +224,20 @@
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li><p>Project 3 (Campus Walks) due <strong>Monday December 7.</strong></p>
+<li>Project 3 (Campus Walks) due <strong>Monday December 7.</strong>
 <ul>
-<li>Take a breather. Get started on this project next week.</li>
+<li>You can get started after this lecture.</li>
 </ul></li>
-<li><p>This week: Lab 9 (dynamic programming) and POTW 9 (potpourri) due Sunday Nov 22.</p></li>
-<li><p>Examlet 4 window is Thursday Nov 19 to Monday Nov 23.</p></li>
-<li><p>Feeling overwhelmed? You are not alone!</p>
+<li>This week: Lab 10 (algorithm complexity) and POTW 10 (permutations) due Sunday Nov 29.</li>
+<li>Practice Examlet 5 is available.
+<ul>
+<li>Examlet 5 window is Thursday December 3 to Monday December 7 (after last lecture).</li>
+</ul></li>
+<li>Feeling overwhelmed? You are not alone!
 <ul>
 <li>Visit <a href="https://students.ubc.ca/health/">student health services’</a> <a href="https://students.ubc.ca/health/mental-health-care-ubc/">mental health resources</a>.</li>
 </ul></li>
 </ul>
-</section>
-<section id="single-source-shortest-path" class="slide level2">
-<h2>Single Source Shortest Path</h2>
-<p>Finish slides and code implementing Dijkstra’s algorithm for SSSP problem from last class.</p>
 </section>
 <section>
 <section id="travelling-salesperson-problem-tsp" class="title-slide slide level1 center">
@@ -201,7 +266,6 @@
 </div></div>
 <aside class="notes">
 <ul>
-<li>Label the nodes.</li>
 <li>A path will be a sequence of nodes. Start node may or may not be repeated but a closed loop is assumed.</li>
 <li>Observe that direction through the path and where we start doesn’t matter.</li>
 <li>Path length is sum of distances between each consecutive pair in the path (plus back to start if omitted).</li>
@@ -338,6 +402,296 @@
 <li>🧪 Medical Lab Sample Pipelines: Robotic arms schedule efficient multi-station workflows.</li>
 <li>🧬 DNA Sequencing &amp; Genome Assembly: Ordering fragments relies on TSP-like reconstruction.</li>
 </ul>
+</section>
+<section id="plan-for-code" class="slide level2">
+<h2>Plan for Code</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Steps to assemble our solution:</p>
+<ol type="1">
+<li>assemble the graph and errands</li>
+<li>create pairwise distances</li>
+<li>create all possible permutations of paths</li>
+<li>find minimum route and assemble turn-by-turn for that route</li>
+<li>visualize on map</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/maps9home.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Could you code up the middle three steps yourself?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="identifying-the-errands" class="slide level2">
+<h2>Identifying the Errands</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Consider some Vancouver landmarks:</p>
+<ul>
+<li>PNE</li>
+<li>Queen E Park</li>
+<li>Timmy’s</li>
+<li>ESB at UBC</li>
+</ul>
+<p><a href="https://www.openstreetmap.org/" class="uri">https://www.openstreetmap.org/</a></p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/maps9van.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Try “Pacific National Exhibition”</li>
+<li>Try “Tim Horton”, then “Tim Horton’s”.</li>
+<li>Unlike Google / Apple maps, OSM doesn’t have a particularly good UI / AI (<a href="https://nominatim.org/">Nominatim</a>) trying to interpret your search string.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-pairwise-distances" class="slide level2" data-background-image="../images/maps9chart.png" data-background-opacity="0.6">
+<h2>Create pairwise distances</h2>
+<p>How do we find it? SSSP!</p>
+<ul>
+<li>example:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>path[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>] <span class="op">=</span> nx.shortest_path(G, <span class="st">'Vancouver'</span>, <span class="st">'Bellingham'</span>, weight<span class="op">=</span><span class="st">'length'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>How should we store it? Many possible options…</p>
+<ul>
+<li>example:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>dist[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>] <span class="op">-&gt;</span> <span class="bu">int</span></span>
+<span id="cb2-2"><a aria-label="2"></a>path[<span class="st">'Vancouver'</span>][<span class="st">'Bellingham'</span>] <span class="op">-&gt;</span> <span class="bu">list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<ul>
+<li>Look at the distance table in the top right. How many entries? Basically <span class="math inline">\(n^2 / 2\)</span>.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-all-possible-orders" class="slide level2">
+<h2>Create all possible orders</h2>
+<p>For a collection of items, find all possible ordering <em>permutations</em>.</p>
+<ul>
+<li>For locations A, B, C and D we could have:</li>
+</ul>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td>ABCD</td>
+<td>ABDC</td>
+<td>ACBD</td>
+<td>ACDB</td>
+<td>ADBC</td>
+<td>ADCB</td>
+</tr>
+<tr class="even">
+<td>BACD</td>
+<td>BADC</td>
+<td>BCAD</td>
+<td>BCDA</td>
+<td>BDAC</td>
+<td>BDCA</td>
+</tr>
+<tr class="odd">
+<td>CABD</td>
+<td>CADB</td>
+<td>CBAD</td>
+<td>CBDA</td>
+<td>CDAB</td>
+<td>CDBA</td>
+</tr>
+<tr class="even">
+<td>DABC</td>
+<td>DACB</td>
+<td>DBAC</td>
+<td>DBCA</td>
+<td>DCAB</td>
+<td>DCBA</td>
+</tr>
+</tbody>
+</table>
+<p>Fortunately, Python has a function for that:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>tours <span class="op">=</span> <span class="bu">list</span>(itertools.permutations(<span class="bu">list</span>(dferrands[<span class="st">'node'</span>])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<ul>
+<li>Remember: number of permutations is <span class="math inline">\(n!\)</span>.
+<ul>
+<li>For <span class="math inline">\(n = 4\)</span> that is 24 permutations. For <span class="math inline">\(n = 5\)</span> that is 120…</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tour-distance" class="slide level2">
+<h2>Tour Distance</h2>
+<div class="columns">
+<div class="column">
+<p>Consider the example tour <code>[A,D,B,E,F,C]</code></p>
+<p>What pairs of locations will we consider for a given order?</p>
+<p>How do we find the total distance if we do the errands in the suggested order?</p>
+</div><div class="column">
+<p><br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/maps9home.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>We will consider pairs at indexes <code>k-1</code> and <code>k</code>, but how do we get the return to the beginning?
+<ul>
+<li>Use index <code>k % length</code>.</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aside-adding-a-new-column-to-the-gdf" class="slide level2 medium">
+<h2>Aside: Adding a New Column to the <code>gdf</code></h2>
+<p><strong>Goal:</strong> Create a new column <code>latlong</code> containing coordinates for each errand in the dataframe.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>dferrands[<span class="st">'latlong'</span>] <span class="op">=</span> dferrands.<span class="bu">apply</span>(<span class="kw">lambda</span> row: ox.geocode(row[<span class="st">'errand'</span>]), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p><code>df.apply(..., axis=1)</code>: Run a function once for each row to create a new series.</p></li>
+<li><p><code>lambda row: ox.geocode(row['errand'])</code>: An anonymous function.</p>
+<ul>
+<li>Given a row: Look up the place name in <code>row['errand']</code>, geocode it, and return the (lat, lon).</li>
+</ul></li>
+<li><p><code>dferrands['latlong'] = ...</code>: Assign the returned series as a new column named <code>latlong</code>.</p></li>
+</ul>
+<p><strong>Why <code>lambda?</code></strong> We only need this function once, so we write it <em>inline</em>.</p>
+<aside class="notes">
+<ul>
+<li>When should you use <code>lambda</code>?
+<ul>
+<li>Never if you do not feel comfortable with it (you can always use a regular function that you define using <code>def</code>).</li>
+<li>When the function is short and its behaviour is obvious (there is no place for comments, docstring or testing).</li>
+<li>When you are not going to use the function again (to avoid extra and/or inconsistent code).</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="demo" class="slide level2 activity">
+<h2>Demo</h2>
+<p>Launch <a href="https://us.prairielearn.com/pl/course_instance/228149/assessment/2750355/">Class Activity: Traveling Salesperson</a> in PrairieLearn.</p>
+<p>You will complete four functions:</p>
+<ul>
+<li><code>compute_pairwise(G, nodes)</code>: build a table of driving distances between every pair of errand locations.</li>
+<li><code>tourlength(tour, dfdist)</code>: compute the total round-trip distance for a given visit order.</li>
+<li><code>find_best_tour(tours, dfdist)</code>: search all permutations and return the shortest tour.</li>
+<li><code>assemble_route(tour, dfdict)</code>: stitch together the full turn-by-turn road sequence using pre-computed paths.</li>
+</ul>
+</section>
+<section id="tsp-vs-sssp-summary" class="slide level2">
+<h2>TSP vs SSSP Summary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 49%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>SSSP (Single-Source Shortest Paths)</th>
+<th>TSP (Travelling Salesperson)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goal</td>
+<td>Shortest route from one source vertex to <strong>every other</strong> vertex</td>
+<td>One <strong>cheapest tour</strong> visiting all vertices and returning</td>
+</tr>
+<tr class="even">
+<td>Shape</td>
+<td><strong>Tree</strong> of paths from the source</td>
+<td><strong>Cycle</strong> through all vertices</td>
+</tr>
+<tr class="odd">
+<td>Must visit all?</td>
+<td>No – each path can <strong>skip</strong> most vertices</td>
+<td>Yes – must <strong>visit every</strong> vertex exactly once</td>
+</tr>
+<tr class="even">
+<td>Overlap</td>
+<td>Paths often <strong>share edges</strong></td>
+<td>Tour is <strong>one path</strong> (which might backtrack)</td>
+</tr>
+<tr class="odd">
+<td>Difficulty</td>
+<td>Fast exact algorithms exist (such as Dijkstra)</td>
+<td>NP-hard; exact solution is hard for large graphs</td>
+</tr>
+</tbody>
+</table>
 
 
 <script type="ojs-module-contents">

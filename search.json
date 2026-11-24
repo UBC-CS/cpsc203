@@ -3184,21 +3184,14 @@
     "href": "slides/12_tue_tsp.html#announcements",
     "title": "Programming, problem solving, and algorithms",
     "section": "Announcements",
-    "text": "Announcements\n\nProject 3 (Campus Walks) due Monday December 7.\n\nTake a breather. Get started on this project next week.\n\nThis week: Lab 9 (dynamic programming) and POTW 9 (potpourri) due Sunday Nov 22.\nExamlet 4 window is Thursday Nov 19 to Monday Nov 23.\nFeeling overwhelmed? You are not alone!\n\nVisit student health services’ mental health resources."
-  },
-  {
-    "objectID": "slides/12_tue_tsp.html#single-source-shortest-path",
-    "href": "slides/12_tue_tsp.html#single-source-shortest-path",
-    "title": "Programming, problem solving, and algorithms",
-    "section": "Single Source Shortest Path",
-    "text": "Single Source Shortest Path\nFinish slides and code implementing Dijkstra’s algorithm for SSSP problem from last class."
+    "text": "Announcements\n\nProject 3 (Campus Walks) due Monday December 7.\n\nYou can get started after this lecture.\n\nThis week: Lab 10 (algorithm complexity) and POTW 10 (permutations) due Sunday Nov 29.\nPractice Examlet 5 is available.\n\nExamlet 5 window is Thursday December 3 to Monday December 7 (after last lecture).\n\nFeeling overwhelmed? You are not alone!\n\nVisit student health services’ mental health resources."
   },
   {
     "objectID": "slides/12_tue_tsp.html#maps-running-errands",
     "href": "slides/12_tue_tsp.html#maps-running-errands",
     "title": "Programming, problem solving, and algorithms",
     "section": "Maps: Running Errands",
-    "text": "Maps: Running Errands\n\nYou’ve got six errands to run. What order do you do them in?\nDetermine the least cost route through a set of given locations.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLabel the nodes.\nA path will be a sequence of nodes. Start node may or may not be repeated but a closed loop is assumed.\nObserve that direction through the path and where we start doesn’t matter.\nPath length is sum of distances between each consecutive pair in the path (plus back to start if omitted)."
+    "text": "Maps: Running Errands\n\nYou’ve got six errands to run. What order do you do them in?\nDetermine the least cost route through a set of given locations.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA path will be a sequence of nodes. Start node may or may not be repeated but a closed loop is assumed.\nObserve that direction through the path and where we start doesn’t matter.\nPath length is sum of distances between each consecutive pair in the path (plus back to start if omitted)."
   },
   {
     "objectID": "slides/12_tue_tsp.html#travelling-salesperson-problem-tsp-1",
@@ -3227,6 +3220,62 @@
     "title": "Programming, problem solving, and algorithms",
     "section": "Why This Matters",
     "text": "Why This Matters\nThere are lots of applications:\n\n📦 UPS/FedEx/Amazon Delivery: Millions saved by reducing even 1km per driver per day.\n🍔 UberEats/DoorDash/Skip: Multi-stop pickup/delivery with time windows.\n🚌 School Bus Routing: Minimize buses, fuel, and time while meeting constraints.\n❄️ Snowplow & Garbage Truck Routing: Efficiently cover every street in a city.\n✈️ Airline Crew Scheduling: Complex daily routing: crews must return to base, meet rest rules.\n🌍 City Infrastructure Planning: Utility inspections, meter reading, streetlight repair routes.\n🚑 Ambulance & Emergency Routing: Minimize response times; life-critical optimization.\n🏭 Factory Robots & CNC Machines: Optimizing tool paths reduces waste, heat, and wear.\n🧪 Medical Lab Sample Pipelines: Robotic arms schedule efficient multi-station workflows.\n🧬 DNA Sequencing & Genome Assembly: Ordering fragments relies on TSP-like reconstruction."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#plan-for-code",
+    "href": "slides/12_tue_tsp.html#plan-for-code",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Plan for Code",
+    "text": "Plan for Code\n\n\nSteps to assemble our solution:\n\nassemble the graph and errands\ncreate pairwise distances\ncreate all possible permutations of paths\nfind minimum route and assemble turn-by-turn for that route\nvisualize on map\n\n\n\n\n\n\n\n\n\n\n\n\nCould you code up the middle three steps yourself?"
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#identifying-the-errands",
+    "href": "slides/12_tue_tsp.html#identifying-the-errands",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Identifying the Errands",
+    "text": "Identifying the Errands\n\n\nConsider some Vancouver landmarks:\n\nPNE\nQueen E Park\nTimmy’s\nESB at UBC\n\nhttps://www.openstreetmap.org/\n\n\n\n\n\n\n\n\n\nTry “Pacific National Exhibition”\nTry “Tim Horton”, then “Tim Horton’s”.\nUnlike Google / Apple maps, OSM doesn’t have a particularly good UI / AI (Nominatim) trying to interpret your search string."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#create-pairwise-distances",
+    "href": "slides/12_tue_tsp.html#create-pairwise-distances",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Create pairwise distances",
+    "text": "Create pairwise distances\nHow do we find it? SSSP!\n\nexample:\n\npath['Vancouver']['Bellingham'] = nx.shortest_path(G, 'Vancouver', 'Bellingham', weight='length')\nHow should we store it? Many possible options…\n\nexample:\n\ndist['Vancouver']['Bellingham'] -&gt; int\npath['Vancouver']['Bellingham'] -&gt; list\n\n\nLook at the distance table in the top right. How many entries? Basically \\(n^2 / 2\\)."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#create-all-possible-orders",
+    "href": "slides/12_tue_tsp.html#create-all-possible-orders",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Create all possible orders",
+    "text": "Create all possible orders\nFor a collection of items, find all possible ordering permutations.\n\nFor locations A, B, C and D we could have:\n\n\n\n\nABCD\nABDC\nACBD\nACDB\nADBC\nADCB\n\n\nBACD\nBADC\nBCAD\nBCDA\nBDAC\nBDCA\n\n\nCABD\nCADB\nCBAD\nCBDA\nCDAB\nCDBA\n\n\nDABC\nDACB\nDBAC\nDBCA\nDCAB\nDCBA\n\n\n\nFortunately, Python has a function for that:\ntours = list(itertools.permutations(list(dferrands['node'])))\n\n\nRemember: number of permutations is \\(n!\\).\n\nFor \\(n = 4\\) that is 24 permutations. For \\(n = 5\\) that is 120…"
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#tour-distance",
+    "href": "slides/12_tue_tsp.html#tour-distance",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Tour Distance",
+    "text": "Tour Distance\n\n\nConsider the example tour [A,D,B,E,F,C]\nWhat pairs of locations will we consider for a given order?\nHow do we find the total distance if we do the errands in the suggested order?\n\n\n\n\n\n\n\n\n\n\n\nWe will consider pairs at indexes k-1 and k, but how do we get the return to the beginning?\n\nUse index k % length."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#aside-adding-a-new-column-to-the-gdf",
+    "href": "slides/12_tue_tsp.html#aside-adding-a-new-column-to-the-gdf",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Aside: Adding a New Column to the gdf",
+    "text": "Aside: Adding a New Column to the gdf\nGoal: Create a new column latlong containing coordinates for each errand in the dataframe.\ndferrands['latlong'] = dferrands.apply(lambda row: ox.geocode(row['errand']), axis=1)\n\ndf.apply(..., axis=1): Run a function once for each row to create a new series.\nlambda row: ox.geocode(row['errand']): An anonymous function.\n\nGiven a row: Look up the place name in row['errand'], geocode it, and return the (lat, lon).\n\ndferrands['latlong'] = ...: Assign the returned series as a new column named latlong.\n\nWhy lambda? We only need this function once, so we write it inline.\n\n\nWhen should you use lambda?\n\nNever if you do not feel comfortable with it (you can always use a regular function that you define using def).\nWhen the function is short and its behaviour is obvious (there is no place for comments, docstring or testing).\nWhen you are not going to use the function again (to avoid extra and/or inconsistent code)."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#demo",
+    "href": "slides/12_tue_tsp.html#demo",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Demo",
+    "text": "Demo\nLaunch Class Activity: Traveling Salesperson in PrairieLearn.\nYou will complete four functions:\n\ncompute_pairwise(G, nodes): build a table of driving distances between every pair of errand locations.\ntourlength(tour, dfdist): compute the total round-trip distance for a given visit order.\nfind_best_tour(tours, dfdist): search all permutations and return the shortest tour.\nassemble_route(tour, dfdict): stitch together the full turn-by-turn road sequence using pre-computed paths."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#tsp-vs-sssp-summary",
+    "href": "slides/12_tue_tsp.html#tsp-vs-sssp-summary",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "TSP vs SSSP Summary",
+    "text": "TSP vs SSSP Summary\n\n\n\n\n\n\n\n\nAspect\nSSSP (Single-Source Shortest Paths)\nTSP (Travelling Salesperson)\n\n\n\n\nGoal\nShortest route from one source vertex to every other vertex\nOne cheapest tour visiting all vertices and returning\n\n\nShape\nTree of paths from the source\nCycle through all vertices\n\n\nMust visit all?\nNo – each path can skip most vertices\nYes – must visit every vertex exactly once\n\n\nOverlap\nPaths often share edges\nTour is one path (which might backtrack)\n\n\nDifficulty\nFast exact algorithms exist (such as Dijkstra)\nNP-hard; exact solution is hard for large graphs"
   },
   {
     "objectID": "slides/07_thu_voronoi.html#announcements",
