@@ -5,17 +5,13 @@ date: 2026-11-19
 ## Announcements
 
 - Project 3 (Campus Walks) due **Monday December 7.**
-  - Take a breather.  Get started on this project next week.
-- This week: Lab 9 (dynamic programming) and POTW 9 (potpourri) due Sunday Nov 22.
-- Examlet 4 window is Thursday Nov 19 to Monday Nov 23.
+  - You can get started after this lecture.
+- This week: Lab 10 (algorithm complexity) and POTW 10 (permutations) due Sunday Nov 29.
+- Practice Examlet 5 is available.
+  - Examlet 5 window is Thursday December 3 to Monday December 7 (after last lecture).
 
 - Feeling overwhelmed?  You are not alone!
   - Visit [student health services'](https://students.ubc.ca/health/) [mental health resources](https://students.ubc.ca/health/mental-health-care-ubc/).
-
-## Single Source Shortest Path
-
-Finish slides and code implementing Dijkstra's algorithm for SSSP problem
-from last class.
 
 # Travelling Salesperson Problem (TSP)
 
@@ -34,7 +30,6 @@ from last class.
 :::::
 
 ::: notes
-- Label the nodes.
 - A path will be a sequence of nodes.  Start node may or may not be repeated but a closed loop is assumed.
 - Observe that direction through the path and where we start doesn't matter.
 - Path length is sum of distances between each consecutive pair in the path (plus back to start if omitted).
@@ -109,3 +104,176 @@ There are *lots* of applications:
 - 🏭 Factory Robots & CNC Machines: Optimizing tool paths reduces waste, heat, and wear.
 - 🧪 Medical Lab Sample Pipelines: Robotic arms schedule efficient multi-station workflows.
 - 🧬 DNA Sequencing & Genome Assembly: Ordering fragments relies on TSP-like reconstruction.
+
+
+## Plan for Code
+
+::: {.columns}
+
+::: {.column width=50%}
+Steps to assemble our solution:
+
+1. assemble the graph and errands
+1. create pairwise distances
+1. create all possible permutations of paths
+1. find minimum route and assemble turn-by-turn for that route
+1. visualize on map
+:::
+
+::: {.column width=50%}
+
+\
+
+![](/images/maps9home.png){fig-align="center"}
+:::
+
+:::
+
+::: notes
+- Could you code up the middle three steps yourself?
+:::
+
+## Identifying the Errands
+
+::: {.columns}
+
+::: {.column width=60%}
+Consider some Vancouver landmarks:
+
+- PNE
+- Queen E Park
+- Timmy's
+- ESB at UBC
+
+<https://www.openstreetmap.org/>
+:::
+
+::: {.column width=40%}
+![](/images/maps9van.png){fig-align="center"}
+:::
+
+:::
+
+::: notes
+- Try "Pacific National Exhibition"
+- Try "Tim Horton", then "Tim Horton's".
+- Unlike Google / Apple maps, OSM doesn't have a particularly good UI / AI ([Nominatim](https://nominatim.org/)) trying to interpret your search string.
+:::
+
+## Create pairwise distances {background-image="/images/maps9chart.png" background-opacity=0.6}
+
+How do we find it?  SSSP!
+
+- example:
+```python
+path['Vancouver']['Bellingham'] = nx.shortest_path(G, 'Vancouver', 'Bellingham', weight='length')
+```
+
+How should we store it?  Many possible options...
+
+- example:
+```python
+dist['Vancouver']['Bellingham'] -> int
+path['Vancouver']['Bellingham'] -> list
+```
+
+::: notes
+- Look at the distance table in the top right.  How many entries?  Basically $n^2 / 2$.
+:::
+
+## Create all possible orders
+
+For a collection of items, find all possible ordering *permutations*.
+
+- For locations A, B, C and D we could have:
+
+|      |      |      |      |      |      | 
+|------|------|------|------|------|------|
+| ABCD | ABDC | ACBD | ACDB | ADBC | ADCB |
+| BACD | BADC | BCAD | BCDA | BDAC | BDCA |
+| CABD | CADB | CBAD | CBDA | CDAB | CDBA |
+| DABC | DACB | DBAC | DBCA | DCAB | DCBA |
+
+Fortunately, Python has a function for that:
+
+```python
+tours = list(itertools.permutations(list(dferrands['node'])))
+```
+
+::: notes
+- Remember: number of permutations is $n!$.
+  - For $n = 4$ that is 24 permutations.  For $n = 5$ that is 120...
+:::
+
+## Tour Distance
+
+::: {.columns}
+
+::: {.column}
+Consider the example tour `[A,D,B,E,F,C]`
+
+What pairs of locations will we consider for a given order?
+
+How do we find the total distance if we do the errands in the suggested order?
+:::
+
+::: {.column}
+
+\
+
+![](/images/maps9home.png){fig-align="center"}
+:::
+
+:::
+
+::: notes
+- We will consider pairs at indexes `k-1` and `k`, but how do we get the return to the beginning?
+  - Use index `k % length`.
+:::
+
+## Aside: Adding a New Column to the `gdf` {.medium}
+
+**Goal:** Create a new column `latlong` containing coordinates for each errand in the dataframe.
+
+``` python
+dferrands['latlong'] = dferrands.apply(lambda row: ox.geocode(row['errand']), axis=1)
+```
+
+- `df.apply(..., axis=1)`:  Run a function once for each row to create a new series.
+
+- `lambda row: ox.geocode(row['errand'])`: An anonymous function.
+  - Given a row: Look up the place name in `row['errand']`, geocode it, and return the (lat, lon).
+
+- `dferrands['latlong'] = ...`: Assign the returned series as a new column named `latlong`.
+
+**Why `lambda?`** We only need this function once, so we write it *inline*.
+
+::: notes
+- When should you use `lambda`?
+  - Never if you do not feel comfortable with it (you can always use a regular function that you define using `def`).
+  - When the function is short and its behaviour is obvious (there is no place for comments, docstring or testing).
+  - When you are not going to use the function again (to avoid extra and/or inconsistent code).
+:::
+
+## Demo {.activity}
+
+Launch [Class Activity: Traveling Salesperson](https://us.prairielearn.com/pl/course_instance/228149/assessment/2750355/) in PrairieLearn.
+
+You will complete four functions:
+
+- `compute_pairwise(G, nodes)`: build a table of driving distances between every pair of errand locations.
+- `tourlength(tour, dfdist)`: compute the total round-trip distance for a given visit order.
+- `find_best_tour(tours, dfdist)`: search all permutations and return the shortest tour.
+- `assemble_route(tour, dfdict)`: stitch together the full turn-by-turn road sequence using pre-computed paths.
+
+
+## TSP vs SSSP Summary
+
+| Aspect | SSSP (Single-Source Shortest Paths) | TSP (Travelling Salesperson) |
+|--------|-------------------------------------|------------------------------|
+| Goal | Shortest route from one source vertex to **every other** vertex | One **cheapest tour** visiting all vertices and returning |
+| Shape | **Tree** of paths from the source | **Cycle** through all vertices |
+| Must visit all? | No – each path can **skip** most vertices | Yes – must **visit every** vertex exactly once |
+| Overlap | Paths often **share edges** | Tour is **one path** (which might backtrack) |
+| Difficulty | Fast exact algorithms exist (such as Dijkstra) | NP-hard; exact solution is hard for large graphs |
+
