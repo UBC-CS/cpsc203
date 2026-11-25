@@ -3187,6 +3187,27 @@
     "text": "Announcements\n\nProject 3 (Campus Walks) due Monday December 7.\n\nYou can get started after this lecture.\n\nThis week: Lab 10 (algorithm complexity) and POTW 10 (permutations) due Sunday Nov 29.\nPractice Examlet 5 is available.\n\nExamlet 5 window is Thursday December 3 to Monday December 7 (after last lecture).\n\nFeeling overwhelmed? You are not alone!\n\nVisit student health services’ mental health resources."
   },
   {
+    "objectID": "slides/12_tue_tsp.html#dijkstras-algorithm-complexity",
+    "href": "slides/12_tue_tsp.html#dijkstras-algorithm-complexity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Dijkstra’s Algorithm: Complexity",
+    "text": "Dijkstra’s Algorithm: Complexity\n\nAnalysis is very similar to that for BFS / DFS:\n\nEach node enters the queue a bounded number of times (for Dijkstra: bounded by the number of neighbours).\nEach time it enters the queue, we need to do a constant amount of work (for Dijkstra: essentially nothing).\nEach time it exits the queue, we need to do a constant amount of work (for Dijkstra: for each neighbour, check whether there is a better path)."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#reminder-bfs-dfs-complexity",
+    "href": "slides/12_tue_tsp.html#reminder-bfs-dfs-complexity",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Reminder: BFS / DFS Complexity",
+    "text": "Reminder: BFS / DFS Complexity\n\nFor BFS and DFS, we used a FIFO queue and a LIFO queue (stack) respectively.\n\nFor FIFO or LIFO queue the work needed to add or remove a item is constant (does not depend on the number of items in the queue).\n\nAssume: \\(n\\) is the number of nodes in the graph and the maximum number of neighbours is bounded by a constant (it does not depend on \\(n\\)).\n\nBFS / DFS: For \\(O(n)\\) times, do work \\(O(1 + 1 + 1 + 1)\\) (work when entering the queue, work of entering the queue, work of exiting the queue, work when exiting the queue)\nBFS / DFS: Total cost \\(O(n)\\)."
+  },
+  {
+    "objectID": "slides/12_tue_tsp.html#dijkstras-algorithm-complexity-1",
+    "href": "slides/12_tue_tsp.html#dijkstras-algorithm-complexity-1",
+    "title": "Programming, problem solving, and algorithms",
+    "section": "Dijkstra’s Algorithm: Complexity",
+    "text": "Dijkstra’s Algorithm: Complexity\n\nHowever, a priority queue takes more work to maintain than a FIFO or LIFO queue.\n\nFor a priority queue containing \\(n\\) items, the work needed to add or remote an item is \\(O(\\lg n)\\) (that work is done to keep track of the item with smallest current priority).\n\nAssume: \\(n\\) is the number of nodes in the graph and the maximum number of neighbours is bounded by a constant (it does not depend on \\(n\\)).\n\nDijkstra: For \\(O(n)\\) times, do work \\(O(1 + \\lg n + \\lg n + 1)\\) (work when entering the queue, work of entering the queue, work of exiting the queue, work when exiting the queue)\nDijkstra: Total cost \\(O(n \\lg n)\\).\n\n\n\n\nNote that \\(\\lg n\\) grows much more slowly than even \\(n\\): when you double the size of \\(n\\), then \\(\\lg n\\) grows by 1.\nDijkstra is worse than BFS / DFS, but not much worse."
+  },
+  {
     "objectID": "slides/12_tue_tsp.html#maps-running-errands",
     "href": "slides/12_tue_tsp.html#maps-running-errands",
     "title": "Programming, problem solving, and algorithms",

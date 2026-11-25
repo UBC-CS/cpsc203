@@ -12,7 +12,7 @@
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.11.9">
 
-  <meta name="dcterms.date" content="2026-11-19">
+  <meta name="dcterms.date" content="2026-11-24">
   <title>CPSC 203: Programming, problem solving, and algorithms – Programming, problem solving, and algorithms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -219,7 +219,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">November 19, 2026</p>
+  <p class="date">November 24, 2026</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
@@ -239,6 +239,66 @@
 </ul></li>
 </ul>
 </section>
+<section>
+<section id="finishing-dijkstras-algorithm-for-sssp" class="title-slide slide level1 center">
+<h1>Finishing Dijkstra’s Algorithm for SSSP</h1>
+
+</section>
+<section id="dijkstras-algorithm-complexity" class="slide level2 medium">
+<h2>Dijkstra’s Algorithm: Complexity</h2>
+<ul>
+<li>Analysis is very similar to that for BFS / DFS:
+<ul>
+<li>Each node enters the queue a bounded number of times (for Dijkstra: bounded by the number of neighbours).</li>
+<li>Each time it enters the queue, we need to do a constant amount of work (for Dijkstra: essentially nothing).</li>
+<li>Each time it exits the queue, we need to do a constant amount of work (for Dijkstra: for each neighbour, check whether there is a better path).</li>
+</ul></li>
+</ul>
+</section>
+<section id="reminder-bfs-dfs-complexity" class="slide level2 medium">
+<h2>Reminder: BFS / DFS Complexity</h2>
+<ul>
+<li>For BFS and DFS, we used a FIFO queue and a LIFO queue (stack) respectively.
+<ul>
+<li>For FIFO or LIFO queue the work needed to add or remove a item is constant (does not depend on the number of items in the queue).</li>
+</ul></li>
+<li>Assume: <span class="math inline">\(n\)</span> is the number of nodes in the graph and the maximum number of neighbours is bounded by a constant (it does not depend on <span class="math inline">\(n\)</span>).
+<ul>
+<li>BFS / DFS: For <span class="math inline">\(O(n)\)</span> times, do work <span class="math inline">\(O(1 + 1 + 1 + 1)\)</span> (work <em>when entering</em> the queue, work <em>of entering</em> the queue, work <em>of exiting</em> the queue, work <em>when exiting</em> the queue)</li>
+<li>BFS / DFS: Total cost <span class="math inline">\(O(n)\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="dijkstras-algorithm-complexity-1" class="slide level2 medium">
+<h2>Dijkstra’s Algorithm: Complexity</h2>
+<ul>
+<li>However, a priority queue takes more work to maintain than a FIFO or LIFO queue.
+<ul>
+<li>For a priority queue containing <span class="math inline">\(n\)</span> items, the work needed to add or remote an item is <span class="math inline">\(O(\lg n)\)</span> (that work is done to keep track of the item with smallest current priority).</li>
+</ul></li>
+<li>Assume: <span class="math inline">\(n\)</span> is the number of nodes in the graph and the maximum number of neighbours is bounded by a constant (it does not depend on <span class="math inline">\(n\)</span>).
+<ul>
+<li>Dijkstra: For <span class="math inline">\(O(n)\)</span> times, do work <span class="math inline">\(O(1 + \lg n + \lg n + 1)\)</span> (work <em>when entering</em> the queue, work <em>of entering</em> the queue, work <em>of exiting</em> the queue, work <em>when exiting</em> the queue)</li>
+<li>Dijkstra: Total cost <span class="math inline">\(O(n \lg n)\)</span>.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Note that <span class="math inline">\(\lg n\)</span> grows <strong>much</strong> more slowly than even <span class="math inline">\(n\)</span>: when you <em>double</em> the size of <span class="math inline">\(n\)</span>, then <span class="math inline">\(\lg n\)</span> grows by 1.</li>
+<li>Dijkstra is worse than BFS / DFS, but not much worse.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="travelling-salesperson-problem-tsp" class="title-slide slide level1 center">
 <h1>Travelling Salesperson Problem (TSP)</h1>
